@@ -1,0 +1,181 @@
+{
+  "id": "calculus-sequences-limits-1",
+  "type": "problem",
+  "title": "Limits of Sequences using Squeeze Theorem",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["calculus", "sequences", "limits", "squeeze theorem"],
+  "statement": {
+    "text": "Find $\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n}$ using the Squeeze Theorem."
+  },
+  "objectives": [
+    "Identify bounds for the sequence",
+    "Apply Squeeze Theorem",
+    "Evaluate the limit"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall bounds on sine",
+      "currentState": {
+        "expression": "$a_n = \\frac{\\sin(n)}{n}$",
+        "description": "What do we know about $\\sin(n)$?"
+      },
+      "reflectionPrompt": {
+        "question": "What are the bounds on $\\sin(n)$?",
+        "hint": "$-1 \\leq \\sin(n) \\leq 1$ for all $n$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$-1 \\leq \\sin(n) \\leq 1$ (sine is bounded)"
+        },
+        {
+          "id": "b",
+          "content": "$\\sin(n) \\geq 0$ always"
+        },
+        {
+          "id": "c",
+          "content": "$\\sin(n)$ has no bounds"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The sine function is bounded: $-1 \\leq \\sin(\\theta) \\leq 1$ for all real $\\theta$.",
+          "insight": "This is the key property we'll use to squeeze the sequence."
+        },
+        "incorrect": {
+          "b": "$\\sin(n)$ can be negative! For example, $\\sin(\\pi) = 0$, $\\sin(3\\pi/2) = -1$.",
+          "c": "Sine is a bounded function with range $[-1, 1]$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Divide by n",
+      "currentState": {
+        "expression": "$-1 \\leq \\sin(n) \\leq 1$",
+        "description": "Create inequalities for $a_n$."
+      },
+      "reflectionPrompt": {
+        "question": "What inequality do we get?",
+        "hint": "Divide all parts by $n > 0$: $-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$ for all $n \\geq 1$"
+        },
+        {
+          "id": "b",
+          "content": "$0 \\leq \\frac{\\sin(n)}{n} \\leq 1$"
+        },
+        {
+          "id": "c",
+          "content": "$-n \\leq \\frac{\\sin(n)}{n} \\leq n$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Dividing $-1 \\leq \\sin(n) \\leq 1$ by $n > 0$ gives $-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$.",
+          "insight": "Now we have our sequence sandwiched between two simpler sequences."
+        },
+        "incorrect": {
+          "b": "$\\sin(n)$ can be negative, so the lower bound should account for that!",
+          "c": "Divide by $n$, don't multiply! The bounds should shrink as $n$ increases."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Find limits of bounding sequences",
+      "currentState": {
+        "expression": "$-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$",
+        "description": "What are the limits of the bounds?"
+      },
+      "reflectionPrompt": {
+        "question": "What are $\\lim_{n \\to \\infty} (-\\frac{1}{n})$ and $\\lim_{n \\to \\infty} \\frac{1}{n}$?",
+        "hint": "Both limits are 0: $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$ and $\\lim_{n \\to \\infty} (-\\frac{1}{n}) = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\lim_{n \\to \\infty} (-\\frac{1}{n}) = 0$ and $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$\\lim_{n \\to \\infty} (-\\frac{1}{n}) = -1$ and $\\lim_{n \\to \\infty} \\frac{1}{n} = 1$"
+        },
+        {
+          "id": "c",
+          "content": "The limits don't exist"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Both $\\frac{1}{n} \\to 0$ and $-\\frac{1}{n} \\to 0$ as $n \\to \\infty$.",
+          "insight": "The bounding sequences converge to the same limit (0). This is the key condition for the Squeeze Theorem!"
+        },
+        "incorrect": {
+          "b": "$\\frac{1}{n}$ gets smaller and smaller, approaching 0, not 1!",
+          "c": "These are basic limits: $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$ (fundamental limit)."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Apply Squeeze Theorem",
+      "currentState": {
+        "expression": "$-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$ and both bounds $\\to 0$",
+        "description": "Conclude using Squeeze Theorem."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n}$?",
+        "hint": "Squeeze Theorem: If $a_n \\leq b_n \\leq c_n$ and $\\lim a_n = \\lim c_n = L$, then $\\lim b_n = L$. Here $L = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0$ (by Squeeze Theorem)"
+        },
+        {
+          "id": "b",
+          "content": "$\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n}$ does not exist"
+        },
+        {
+          "id": "c",
+          "content": "$\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! By the Squeeze Theorem, since $-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$ and both bounds converge to 0, we have $\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0$.",
+          "insight": "Squeeze Theorem is powerful for evaluating limits of oscillating or complex sequences!"
+        },
+        "incorrect": {
+          "b": "The limit exists! The Squeeze Theorem guarantees it equals 0.",
+          "c": "The sequence goes to 0, not 1. The denominator $n$ grows without bound while $\\sin(n)$ stays bounded."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Squeeze Theorem: If $a_n \\leq b_n \\leq c_n$ and $\\lim a_n = \\lim c_n = L$, then $\\lim b_n = L$",
+      "$\\sin(n)$ is bounded: $-1 \\leq \\sin(n) \\leq 1$",
+      "Dividing by $n$: $-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$",
+      "Both bounds $\\to 0$",
+      "Therefore: $\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0$"
+    ],
+    "fullSolution": "**Find $\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n}$ using Squeeze Theorem**\n\n**Step 1: Identify bounds**\n\nWe know that sine is bounded:\n$$-1 \\leq \\sin(n) \\leq 1 \\quad \\text{for all } n$$\n\n**Step 2: Divide by $n > 0$**\n\n$$-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$$\n\n**Step 3: Evaluate limits of bounds**\n\n$$\\lim_{n \\to \\infty} \\left(-\\frac{1}{n}\\right) = 0$$\n$$\\lim_{n \\to \\infty} \\frac{1}{n} = 0$$\n\n**Step 4: Apply Squeeze Theorem**\n\nSince:\n- $-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$ for all $n \\geq 1$\n- $\\lim_{n \\to \\infty} (-\\frac{1}{n}) = 0 = \\lim_{n \\to \\infty} \\frac{1}{n}$\n\nBy the Squeeze Theorem:\n$$\\boxed{\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0}$$\n\n**Intuition:** As $n$ gets very large, the numerator $\\sin(n)$ oscillates between $-1$ and $1$ (staying bounded), while the denominator $n$ grows without bound. The ratio must approach 0.",
+    "relatedProblems": [
+      "calculus-limit-epsilon-delta-1",
+      "real-analysis-sequence-convergence-1"
+    ]
+  }
+}

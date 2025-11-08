@@ -67,6 +67,7 @@ import discreteMathCombinatorics1 from '@/public/problems/discrete-math-combinat
 import graphTheoryEulerPath1 from '@/public/problems/graph-theory-euler-path-1.json';
 // Calculus (Sequences & Series)
 import calculusSeriesRatioTest1 from '@/public/problems/calculus-series-ratio-test-1.json';
+import calculusSequencesLimits1 from '@/public/problems/calculus-sequences-limits-1.json';
 // Abstract Algebra (additional)
 import abstractAlgebraCyclicGroups1 from '@/public/problems/abstract-algebra-cyclic-groups-1.json';
 // Statistics
@@ -201,6 +202,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'graph-theory-euler-path-1': graphTheoryEulerPath1 as any as Problem,
   // Calculus (Sequences & Series)
   'calculus-series-ratio-test-1': calculusSeriesRatioTest1 as any as Problem,
+  'calculus-sequences-limits-1': calculusSequencesLimits1 as any as Problem,
   // Abstract Algebra (additional)
   'abstract-algebra-cyclic-groups-1': abstractAlgebraCyclicGroups1 as any as Problem,
   // Statistics
