@@ -1,0 +1,217 @@
+{
+  "id": "linear-algebra-vector-space-1",
+  "type": "problem",
+  "title": "Verify a Subspace: Is $W = \\{(x,y,z) : x+y+z=0\\}$ a subspace of $\\mathbb{R}^3$?",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": ["linear algebra", "vector spaces", "subspaces"],
+  "statement": {
+    "text": "Determine whether $W = \\{(x,y,z) \\in \\mathbb{R}^3 : x+y+z=0\\}$ is a subspace of $\\mathbb{R}^3$."
+  },
+  "objectives": [
+    "Apply the subspace test",
+    "Verify closure under addition and scalar multiplication",
+    "Check if the zero vector is included"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State the subspace criteria",
+      "currentState": {
+        "expression": "$W \\subseteq \\mathbb{R}^3$",
+        "description": "To prove $W$ is a subspace, we need three properties."
+      },
+      "reflectionPrompt": {
+        "question": "What three conditions must $W$ satisfy to be a subspace?",
+        "hint": "Think about the zero vector, addition, and scalar multiplication."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "(1) $\\vec{0} \\in W$, (2) Closed under addition, (3) Closed under scalar multiplication"
+        },
+        {
+          "id": "b",
+          "content": "(1) $W$ is non-empty, (2) $W$ is bounded, (3) $W$ is connected"
+        },
+        {
+          "id": "c",
+          "content": "(1) $W$ contains a basis, (2) $W$ has finite dimension"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The Subspace Test: (1) $\\vec{0} \\in W$, (2) if $\\vec{u}, \\vec{v} \\in W$ then $\\vec{u} + \\vec{v} \\in W$, (3) if $\\vec{u} \\in W$ and $c \\in \\mathbb{R}$ then $c\\vec{u} \\in W$.",
+          "insight": "These three conditions ensure $W$ inherits the vector space structure from $\\mathbb{R}^3$."
+        },
+        "incorrect": {
+          "b": "Those are topological properties, not subspace criteria. We need closure properties.",
+          "c": "Those are consequences of being a subspace, not the defining criteria."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Check zero vector",
+      "currentState": {
+        "expression": "$W = \\{(x,y,z) : x+y+z=0\\}$",
+        "description": "First, verify $\\vec{0} = (0,0,0) \\in W$."
+      },
+      "reflectionPrompt": {
+        "question": "Is $(0,0,0) \\in W$?",
+        "hint": "Check if $x=0, y=0, z=0$ satisfies the condition $x+y+z=0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes: $0+0+0 = 0$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "No: $(0,0,0) \\notin W$"
+        },
+        {
+          "id": "c",
+          "content": "Cannot determine"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $(0,0,0)$ satisfies $0+0+0=0$, so $\\vec{0} \\in W$. First condition satisfied! ✓",
+          "insight": "The zero vector must always be in any subspace."
+        },
+        "incorrect": {
+          "b": "Check: does $(0,0,0)$ satisfy $x+y+z=0$? Yes: $0+0+0=0$.",
+          "c": "We can determine this by substituting: $0+0+0=0$ ✓."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Check closure under addition",
+      "currentState": {
+        "expression": "Let $\\vec{u} = (x_1, y_1, z_1) \\in W$ and $\\vec{v} = (x_2, y_2, z_2) \\in W$",
+        "description": "This means $x_1+y_1+z_1=0$ and $x_2+y_2+z_2=0$."
+      },
+      "reflectionPrompt": {
+        "question": "Is $\\vec{u} + \\vec{v} = (x_1+x_2, y_1+y_2, z_1+z_2) \\in W$?",
+        "hint": "Check if $(x_1+x_2) + (y_1+y_2) + (z_1+z_2) = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "No: the sum doesn't satisfy the condition"
+        },
+        {
+          "id": "c",
+          "content": "Yes: because addition is commutative"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! By rearranging and using the fact that both vectors satisfy the condition, we get $0+0=0$. Closure under addition verified! ✓",
+          "insight": "Linear conditions like $x+y+z=0$ preserve closure under addition."
+        },
+        "incorrect": {
+          "b": "Rearrange: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$.",
+          "c": "While true, that's not the reason. We need to verify the sum satisfies $x+y+z=0$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Check closure under scalar multiplication",
+      "currentState": {
+        "expression": "Let $\\vec{u} = (x,y,z) \\in W$ and $c \\in \\mathbb{R}$",
+        "description": "We know $x+y+z=0$. Check if $c\\vec{u} = (cx, cy, cz) \\in W$."
+      },
+      "reflectionPrompt": {
+        "question": "Does $cx + cy + cz = 0$?",
+        "hint": "Factor out $c$ from the left side."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "No: $cx+cy+cz = c$"
+        },
+        {
+          "id": "c",
+          "content": "Only when $c=1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $x+y+z=0$, we have $c(x+y+z) = c \\cdot 0 = 0$ for any scalar $c$. Closure under scalar multiplication verified! ✓",
+          "insight": "Factoring shows that scalar multiplication preserves the linear condition."
+        },
+        "incorrect": {
+          "b": "Factor: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$, not $c$.",
+          "c": "It works for all $c$ because $c(x+y+z) = c \\cdot 0 = 0$ regardless of $c$'s value."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Conclusion",
+      "currentState": {
+        "expression": "All three subspace conditions verified",
+        "description": "We've checked all requirements."
+      },
+      "reflectionPrompt": {
+        "question": "What can we conclude?",
+        "hint": "All three subspace criteria are satisfied."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$W$ is a subspace of $\\mathbb{R}^3$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "$W$ is not a subspace"
+        },
+        {
+          "id": "c",
+          "content": "Need more information"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Since $W$ contains $\\vec{0}$, is closed under addition, and closed under scalar multiplication, $W$ is a subspace of $\\mathbb{R}^3$. Geometrically, $W$ is a plane through the origin.",
+          "insight": "Sets defined by homogeneous linear equations (like $x+y+z=0$) are always subspaces."
+        },
+        "incorrect": {
+          "b": "We verified all three conditions, so $W$ is indeed a subspace.",
+          "c": "We have all the information needed. All three subspace criteria are satisfied."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Subspace Test: (1) Contains $\\vec{0}$, (2) Closed under addition, (3) Closed under scalar multiplication",
+      "Homogeneous linear equations ($ax+by+cz=0$) define subspaces",
+      "Geometrically, $W = \\{(x,y,z) : x+y+z=0\\}$ is a plane through the origin in $\\mathbb{R}^3$",
+      "Non-homogeneous equations (like $x+y+z=1$) do NOT define subspaces (don't contain origin)"
+    ],
+    "fullSolution": "$W = \\{(x,y,z) \\in \\mathbb{R}^3 : x+y+z=0\\}$\n\n(1) Zero vector: $(0,0,0)$ satisfies $0+0+0=0$ ✓\n\n(2) Addition: If $\\vec{u}, \\vec{v} \\in W$, then $x_1+y_1+z_1=0$ and $x_2+y_2+z_2=0$.\n$(\\vec{u}+\\vec{v})$: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$ ✓\n\n(3) Scalar mult: If $\\vec{u} \\in W$ and $c \\in \\mathbb{R}$, then $x+y+z=0$.\n$(c\\vec{u})$: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$ ✓\n\nTherefore, $W$ is a subspace of $\\mathbb{R}^3$.",
+    "relatedProblems": [
+      "algebra-systems-linear-1",
+      "algebra-matrix-mult-1"
+    ]
+  }
+}

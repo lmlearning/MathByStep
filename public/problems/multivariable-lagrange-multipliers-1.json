@@ -1,0 +1,217 @@
+{
+  "id": "multivariable-lagrange-multipliers-1",
+  "type": "problem",
+  "title": "Lagrange Multipliers: Optimize with constraint",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 13,
+  "tags": ["multivariable calculus", "optimization", "Lagrange multipliers", "constraints"],
+  "statement": {
+    "text": "Find the maximum value of $f(x,y) = xy$ subject to the constraint $x^2 + y^2 = 8$ using Lagrange multipliers."
+  },
+  "objectives": [
+    "Understand constrained optimization",
+    "Apply the method of Lagrange multipliers",
+    "Solve the system of equations"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Set up the Lagrange function",
+      "currentState": {
+        "expression": "Maximize $f(x,y) = xy$ subject to $g(x,y) = x^2 + y^2 - 8 = 0$",
+        "description": "Use a Lagrange multiplier $\\lambda$ to handle the constraint."
+      },
+      "reflectionPrompt": {
+        "question": "What is the condition for an extremum with Lagrange multipliers?",
+        "hint": "$\\nabla f = \\lambda \\nabla g$ (gradients are parallel)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla f = \\lambda \\nabla g$ and $g(x,y) = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$f(x,y) = \\lambda g(x,y)$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla f + \\nabla g = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The method of Lagrange multipliers requires: $\\nabla f = \\lambda \\nabla g$ and the constraint $g(x,y) = 0$.",
+          "insight": "This says the gradient of $f$ is parallel to the gradient of $g$ at the extremum."
+        },
+        "incorrect": {
+          "b": "We need the gradients to be parallel: $\\nabla f = \\lambda \\nabla g$, not the functions themselves.",
+          "c": "It's $\\nabla f = \\lambda \\nabla g$, not $\\nabla f + \\nabla g = 0$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute the gradients",
+      "currentState": {
+        "expression": "$f(x,y) = xy$, $g(x,y) = x^2 + y^2 - 8$",
+        "description": "Find $\\nabla f$ and $\\nabla g$."
+      },
+      "reflectionPrompt": {
+        "question": "What are $\\nabla f$ and $\\nabla g$?",
+        "hint": "$\\nabla f = \\langle f_x, f_y \\rangle$ and $\\nabla g = \\langle g_x, g_y \\rangle$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla f = \\langle y, x \\rangle$ and $\\nabla g = \\langle 2x, 2y \\rangle$"
+        },
+        {
+          "id": "b",
+          "content": "$\\nabla f = \\langle x, y \\rangle$ and $\\nabla g = \\langle x, y \\rangle$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla f = \\langle 1, 1 \\rangle$ and $\\nabla g = \\langle 2x, 2y \\rangle$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\nabla f = \\langle \\frac{\\partial}{\\partial x}(xy), \\frac{\\partial}{\\partial y}(xy) \\rangle = \\langle y, x \\rangle$ and $\\nabla g = \\langle 2x, 2y \\rangle$.",
+          "insight": "The partial derivatives give us the components of the gradient vector."
+        },
+        "incorrect": {
+          "b": "$f_x = y$ and $f_y = x$ for $f = xy$, not $x$ and $y$. Also, $g_x = 2x$ and $g_y = 2y$.",
+          "c": "$\\frac{\\partial}{\\partial x}(xy) = y$, not 1. Similarly, $\\frac{\\partial}{\\partial y}(xy) = x$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Set up the system of equations",
+      "currentState": {
+        "expression": "$\\langle y, x \\rangle = \\lambda \\langle 2x, 2y \\rangle$ and $x^2 + y^2 = 8$",
+        "description": "This gives us three equations in three unknowns."
+      },
+      "reflectionPrompt": {
+        "question": "What system of equations do we get?",
+        "hint": "Component-wise: $y = 2\\lambda x$ and $x = 2\\lambda y$, plus the constraint."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$y = 2\\lambda x$, $x = 2\\lambda y$, $x^2 + y^2 = 8$"
+        },
+        {
+          "id": "b",
+          "content": "$y = \\lambda x$, $x = \\lambda y$, $x^2 + y^2 = 8$"
+        },
+        {
+          "id": "c",
+          "content": "$x = 2\\lambda x$, $y = 2\\lambda y$, $x^2 + y^2 = 8$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! From $\\nabla f = \\lambda \\nabla g$: $y = 2\\lambda x$ (first component) and $x = 2\\lambda y$ (second component), plus constraint $x^2 + y^2 = 8$.",
+          "insight": "These three equations will help us find the critical points."
+        },
+        "incorrect": {
+          "b": "$\\nabla g = \\langle 2x, 2y \\rangle$, so we get $y = 2\\lambda x$, not $\\lambda x$.",
+          "c": "The first component gives $y = 2\\lambda x$ (not $x = 2\\lambda x$), and second gives $x = 2\\lambda y$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Solve for the relationship between x and y",
+      "currentState": {
+        "expression": "$y = 2\\lambda x$ and $x = 2\\lambda y$",
+        "description": "Substitute one equation into the other."
+      },
+      "reflectionPrompt": {
+        "question": "What relationship do we get between $x$ and $y$?",
+        "hint": "Substitute the first into the second: $x = 2\\lambda(2\\lambda x) = 4\\lambda^2 x$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$x = \\pm y$ (from $4\\lambda^2 = 1$, so $x^2 = y^2$)"
+        },
+        {
+          "id": "b",
+          "content": "$x = 2y$"
+        },
+        {
+          "id": "c",
+          "content": "$x = y/2$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! From $x = 4\\lambda^2 x$, we get $4\\lambda^2 = 1$ (assuming $x \\neq 0$), so $\\lambda = \\pm \\frac{1}{2}$. From $y = 2\\lambda x$: if $\\lambda = \\frac{1}{2}$, then $y = x$; if $\\lambda = -\\frac{1}{2}$, then $y = -x$.",
+          "insight": "There are two cases: $x = y$ and $x = -y$."
+        },
+        "incorrect": {
+          "b": "Substituting: $x = 2\\lambda(2\\lambda x)$ gives $1 = 4\\lambda^2$, leading to $x = \\pm y$, not $x = 2y$.",
+          "c": "Check the algebra: we get $x = \\pm y$, not $x = y/2$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Find critical points and evaluate f",
+      "currentState": {
+        "expression": "Cases: $x = y$ or $x = -y$, with $x^2 + y^2 = 8$",
+        "description": "Find the points and evaluate $f(x,y) = xy$ at each."
+      },
+      "reflectionPrompt": {
+        "question": "What is the maximum value of $f$?",
+        "hint": "Case 1: $x = y$ gives $2x^2 = 8$, so $x = \\pm 2$, points $(2,2)$ and $(-2,-2)$ with $f = 4$. Case 2: $x = -y$ gives $(2,-2)$ and $(-2,2)$ with $f = -4$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Maximum value is $f = 4$ at $(2,2)$ and $(-2,-2)$"
+        },
+        {
+          "id": "b",
+          "content": "Maximum value is $f = 8$ at $(2\\sqrt{2}, 0)$"
+        },
+        {
+          "id": "c",
+          "content": "Maximum value is $f = 2$ at $(2,1)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! When $x = y$ and $x^2 + y^2 = 8$: $2x^2 = 8 \\Rightarrow x = \\pm 2$. At $(2,2)$ and $(-2,-2)$: $f = xy = 4$. When $x = -y$: $f = -4$. Maximum is 4.",
+          "insight": "Lagrange multipliers finds all critical points (max, min, saddle). We compare values to find the maximum."
+        },
+        "incorrect": {
+          "b": "$(2\\sqrt{2}, 0)$ doesn't satisfy the constraint $x^2 + y^2 = 8$ (we'd have 8 + 0 = 8, which works), but $f(2\\sqrt{2}, 0) = 0$, not 8.",
+          "c": "$(2,1)$ doesn't satisfy the constraint: $4 + 1 = 5 \\neq 8$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Lagrange multipliers: maximize $f$ subject to $g = 0$ using $\\nabla f = \\lambda \\nabla g$",
+      "Solve the system: gradient equations + constraint",
+      "Compare values at all critical points to find maximum/minimum",
+      "Maximum of $xy$ on $x^2 + y^2 = 8$ is $f = 4$ at $(2,2)$ and $(-2,-2)$"
+    ],
+    "fullSolution": "**Maximize** $f(x,y) = xy$ **subject to** $x^2 + y^2 = 8$\\n\\n**Gradients:**\\n- $\\nabla f = \\langle y, x \\rangle$\\n- $\\nabla g = \\langle 2x, 2y \\rangle$ where $g = x^2 + y^2 - 8$\\n\\n**System:** $\\nabla f = \\lambda \\nabla g$\\n- $y = 2\\lambda x$ ... (1)\\n- $x = 2\\lambda y$ ... (2)\\n- $x^2 + y^2 = 8$ ... (3)\\n\\n**Solve:** Substitute (1) into (2): $x = 4\\lambda^2 x \\Rightarrow \\lambda = \\pm \\frac{1}{2}$\\n\\nCase 1: $\\lambda = \\frac{1}{2} \\Rightarrow y = x$. From (3): $2x^2 = 8 \\Rightarrow x = \\pm 2$\\n- Points: $(2,2)$, $(-2,-2)$ with $f = 4$\\n\\nCase 2: $\\lambda = -\\frac{1}{2} \\Rightarrow y = -x$. From (3): $2x^2 = 8 \\Rightarrow x = \\pm 2$\\n- Points: $(2,-2)$, $(-2,2)$ with $f = -4$\\n\\n**Maximum: $f = 4$** at $(2,2)$ and $(-2,-2)$",
+    "relatedProblems": [
+      "multivariable-partial-derivatives-1",
+      "calculus-mvt-1"
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "id": "real-analysis-sequence-convergence-1",
+  "type": "proof",
+  "title": "Prove: If $a_n \\to L$ then $|a_n| \\to |L|$",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["real analysis", "sequences", "convergence"],
+  "statement": {
+    "text": "Prove that if the sequence $(a_n)$ converges to $L$, then the sequence $(|a_n|)$ converges to $|L|$."
+  },
+  "objectives": [
+    "Apply the epsilon definition of convergence",
+    "Use the triangle inequality",
+    "Construct an epsilon-delta style proof"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State what we know",
+      "currentState": {
+        "expression": "Given: $a_n \\to L$ as $n \\to \\infty$",
+        "description": "We need to show $|a_n| \\to |L|$."
+      },
+      "reflectionPrompt": {
+        "question": "What does $a_n \\to L$ mean by definition?",
+        "hint": "Use the $\\epsilon$-$N$ definition of convergence."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "For all $\\epsilon > 0$, there exists $N$ such that $n \\geq N$ implies $|a_n - L| < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "content": "$a_n = L$ for all sufficiently large $n$"
+        },
+        {
+          "id": "c",
+          "content": "$a_n$ gets arbitrarily close to $L$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The formal definition: $\\forall \\epsilon > 0, \\exists N \\in \\mathbb{N}$ such that $n \\geq N \\Rightarrow |a_n - L| < \\epsilon$.",
+          "insight": "The $\\epsilon$-$N$ definition makes convergence precise and rigorous."
+        },
+        "incorrect": {
+          "b": "The sequence gets close to $L$ but typically never equals $L$ exactly. The formal definition uses $|a_n - L| < \\epsilon$.",
+          "c": "While intuitively correct, we need the formal $\\epsilon$-$N$ definition for a proof."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "State what we need to prove",
+      "currentState": {
+        "expression": "Want to show: $|a_n| \\to |L|$",
+        "description": "Write this using the $\\epsilon$-$N$ definition."
+      },
+      "reflectionPrompt": {
+        "question": "What do we need to show for $|a_n| \\to |L|$?",
+        "hint": "Apply the definition with $|a_n|$ in place of $a_n$ and $|L|$ in place of $L$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "For all $\\epsilon > 0$, there exists $N$ such that $n \\geq N$ implies $||a_n| - |L|| < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "content": "For all $\\epsilon > 0$, $|a_n - L| < \\epsilon$"
+        },
+        {
+          "id": "c",
+          "content": "$|a_n|$ eventually equals $|L|$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! We need: $\\forall \\epsilon > 0, \\exists N$ such that $n \\geq N \\Rightarrow ||a_n| - |L|| < \\epsilon$.",
+          "insight": "The goal is to bound $||a_n| - |L||$ using our knowledge that $|a_n - L|$ is small."
+        },
+        "incorrect": {
+          "b": "That's our assumption, not our goal. We need to show $||a_n| - |L|| < \\epsilon$.",
+          "c": "We need the formal $\\epsilon$-$N$ statement."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Key inequality",
+      "currentState": {
+        "expression": "Need to relate $||a_n| - |L||$ to $|a_n - L|$",
+        "description": "There's a useful inequality involving absolute values."
+      },
+      "reflectionPrompt": {
+        "question": "Which inequality is most helpful?",
+        "hint": "The reverse triangle inequality."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$||a_n| - |L|| \\leq |a_n - L|$ (reverse triangle inequality)"
+        },
+        {
+          "id": "b",
+          "content": "$|a_n - L| \\leq ||a_n| - |L||$"
+        },
+        {
+          "id": "c",
+          "content": "$||a_n| - |L|| = |a_n - L|$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The reverse triangle inequality: $||a| - |b|| \\leq |a - b|$ for all $a, b$. This is the key!",
+          "insight": "This inequality connects the quantity we want to bound with the quantity we know is small."
+        },
+        "incorrect": {
+          "b": "The inequality goes the other way: $||a_n| - |L|| \\leq |a_n - L|$.",
+          "c": "They're not equal in general, but we have an inequality."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Construct the proof",
+      "currentState": {
+        "expression": "$||a_n| - |L|| \\leq |a_n - L|$",
+        "description": "Use our assumption and this inequality."
+      },
+      "reflectionPrompt": {
+        "question": "How do we complete the proof?",
+        "hint": "Given $\\epsilon > 0$, use the convergence of $a_n$ to find $N$ such that $|a_n - L| < \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Given $\\epsilon > 0$, choose $N$ so that $|a_n - L| < \\epsilon$ for $n \\geq N$. Then $||a_n| - |L|| \\leq |a_n - L| < \\epsilon$."
+        },
+        {
+          "id": "b",
+          "content": "Set $\\epsilon = 1$ and the proof is complete"
+        },
+        {
+          "id": "c",
+          "content": "Assume $|a_n| = |L|$ and we're done"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! This completes the proof:\n1. Given $\\epsilon > 0$\n2. Since $a_n \\to L$, choose $N$ so that $n \\geq N \\Rightarrow |a_n - L| < \\epsilon$\n3. For $n \\geq N$: $||a_n| - |L|| \\leq |a_n - L| < \\epsilon$\nTherefore $|a_n| \\to |L|$. ∎",
+          "insight": "The reverse triangle inequality makes this proof straightforward."
+        },
+        "incorrect": {
+          "b": "We must handle arbitrary $\\epsilon > 0$, not just specific values like $\\epsilon = 1$.",
+          "c": "That's not a valid proof technique. We use the inequality and the definition."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Convergence definition: $a_n \\to L$ means $\\forall \\epsilon > 0, \\exists N: n \\geq N \\Rightarrow |a_n - L| < \\epsilon$",
+      "Reverse triangle inequality: $||a| - |b|| \\leq |a - b|$",
+      "If $a_n \\to L$, then $|a_n| \\to |L|$",
+      "Note: The converse is FALSE! $|a_n| \\to |L|$ does NOT imply $a_n \\to L$ (consider $a_n = (-1)^n$)"
+    ],
+    "fullSolution": "**Theorem:** If $a_n \\to L$, then $|a_n| \\to |L|$.\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\nSince $a_n \\to L$, there exists $N \\in \\mathbb{N}$ such that\n$$n \\geq N \\Rightarrow |a_n - L| < \\epsilon$$\n\nBy the reverse triangle inequality: $||a_n| - |L|| \\leq |a_n - L|$\n\nTherefore, for $n \\geq N$:\n$$||a_n| - |L|| \\leq |a_n - L| < \\epsilon$$\n\nThis shows $|a_n| \\to |L|$. ∎",
+    "relatedProblems": [
+      "calculus-limit-epsilon-delta-1",
+      "calculus-mvt-1"
+    ]
+  }
+}

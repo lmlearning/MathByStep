@@ -1,0 +1,180 @@
+{
+  "id": "discrete-math-combinatorics-1",
+  "type": "problem",
+  "title": "Combinatorics: How many 5-card poker hands have exactly 3 aces?",
+  "topic": "Logic & Proofs",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": ["combinatorics", "combinations", "discrete math"],
+  "statement": {
+    "text": "In a standard 52-card deck, how many 5-card hands contain exactly 3 aces?"
+  },
+  "objectives": [
+    "Apply the multiplication principle",
+    "Use combinations (binomial coefficients)",
+    "Break down complex counting problems"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Understand the problem",
+      "currentState": {
+        "expression": "52-card deck, 4 aces total",
+        "description": "We want exactly 3 aces and 2 non-aces."
+      },
+      "reflectionPrompt": {
+        "question": "How should we break down this counting problem?",
+        "hint": "Count ways to choose aces, then ways to choose non-aces, then multiply."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "(Ways to choose 3 aces) × (Ways to choose 2 non-aces)"
+        },
+        {
+          "id": "b",
+          "content": "(Ways to choose 5 cards) − (Ways without aces)"
+        },
+        {
+          "id": "c",
+          "content": "$\\binom{52}{5}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! By the multiplication principle: first choose 3 aces (from 4), then choose 2 non-aces (from 48), and multiply.",
+          "insight": "Breaking problems into independent choices and multiplying is a fundamental counting technique."
+        },
+        "incorrect": {
+          "b": "That approach (complementary counting) doesn't easily give 'exactly 3 aces'. The direct method is simpler.",
+          "c": "That counts all 5-card hands, not specifically those with exactly 3 aces."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Count ways to choose aces",
+      "currentState": {
+        "expression": "4 aces in deck, need to choose 3",
+        "description": "Use combinations: $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$."
+      },
+      "reflectionPrompt": {
+        "question": "How many ways can we choose 3 aces from 4?",
+        "hint": "$\\binom{4}{3}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\binom{4}{3} = 4$"
+        },
+        {
+          "id": "b",
+          "content": "$\\binom{4}{3} = 12$"
+        },
+        {
+          "id": "c",
+          "content": "$\\binom{4}{3} = 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\binom{4}{3} = \\frac{4!}{3!1!} = \\frac{24}{6 \\cdot 1} = 4$. There are 4 ways (leave out clubs, diamonds, hearts, or spades).",
+          "insight": "$\\binom{n}{k} = \\binom{n}{n-k}$, so $\\binom{4}{3} = \\binom{4}{1} = 4$."
+        },
+        "incorrect": {
+          "b": "That would be $4 \\times 3 = 12$ (permutations). We want combinations: $\\binom{4}{3} = 4$.",
+          "c": "There's more than one way. Each of the 4 aces could be the one left out, so $\\binom{4}{3} = 4$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Count ways to choose non-aces",
+      "currentState": {
+        "expression": "48 non-ace cards (52−4), need to choose 2",
+        "description": "How many ways to choose 2 cards from 48?"
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\binom{48}{2}$?",
+        "hint": "$\\binom{48}{2} = \\frac{48 \\times 47}{2}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\binom{48}{2} = \\frac{48 \\times 47}{2} = 1128$"
+        },
+        {
+          "id": "b",
+          "content": "$\\binom{48}{2} = 48 \\times 2 = 96$"
+        },
+        {
+          "id": "c",
+          "content": "$\\binom{48}{2} = 48$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\binom{48}{2} = \\frac{48!}{2!46!} = \\frac{48 \\times 47}{2 \\times 1} = \\frac{2256}{2} = 1128$.",
+          "insight": "For small $k$, computing $\\binom{n}{k} = \\frac{n(n-1)\\cdots(n-k+1)}{k!}$ is efficient."
+        },
+        "incorrect": {
+          "b": "$\\binom{48}{2}$ is not $48 \\times 2$. Use the formula: $\\frac{48 \\times 47}{2} = 1128$.",
+          "c": "$\\binom{48}{2} = \\frac{48 \\times 47}{2}$, not just 48. We're choosing pairs."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Apply multiplication principle",
+      "currentState": {
+        "expression": "$\\binom{4}{3} = 4$ ways to choose aces, $\\binom{48}{2} = 1128$ ways to choose non-aces",
+        "description": "Total = product of independent choices."
+      },
+      "reflectionPrompt": {
+        "question": "How many hands have exactly 3 aces?",
+        "hint": "Multiply: $4 \\times 1128$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$4 \\times 1128 = 4512$ hands"
+        },
+        {
+          "id": "b",
+          "content": "$4 + 1128 = 1132$ hands"
+        },
+        {
+          "id": "c",
+          "content": "$\\binom{4}{3} \\times \\binom{48}{2} \\times 5 = 22560$ hands"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $4 \\times 1128 = 4512$. There are 4,512 five-card hands with exactly 3 aces.",
+          "insight": "Multiplication principle: if task A can be done in $m$ ways and task B in $n$ ways, then both can be done in $m \\times n$ ways."
+        },
+        "incorrect": {
+          "b": "We multiply the counts, not add them. The answer is $4 \\times 1128 = 4512$.",
+          "c": "Don't multiply by 5. The order of cards in a hand doesn't matter. The answer is $4 \\times 1128 = 4512$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Multiplication principle: if independent choices can be made in $m$ and $n$ ways, total is $m \\times n$",
+      "Combinations: $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$ counts ways to choose $k$ items from $n$ (order doesn't matter)",
+      "Answer: $\\binom{4}{3} \\times \\binom{48}{2} = 4 \\times 1128 = 4512$ hands",
+      "Break complex counting problems into simpler independent choices"
+    ],
+    "fullSolution": "**Question:** 5-card hands with exactly 3 aces from 52-card deck?\n\n**Solution:**\n\n1. Choose 3 aces from 4: $\\binom{4}{3} = 4$ ways\n\n2. Choose 2 non-aces from 48: $\\binom{48}{2} = \\frac{48 \\times 47}{2} = 1128$ ways\n\n3. Multiply (independent choices): $4 \\times 1128 = 4512$\n\n**Answer: 4,512 hands**",
+    "relatedProblems": [
+      "logic-proof-induction-1",
+      "probability-bayes-theorem-1"
+    ]
+  }
+}

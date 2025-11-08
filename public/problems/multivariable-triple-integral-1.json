@@ -1,0 +1,217 @@
+{
+  "id": "multivariable-triple-integral-1",
+  "type": "problem",
+  "title": "Triple Integrals: Volume using cylindrical coordinates",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["multivariable calculus", "triple integrals", "cylindrical coordinates", "volume"],
+  "statement": {
+    "text": "Find the volume of the solid bounded by the paraboloid $z = x^2 + y^2$ and the plane $z = 4$ using cylindrical coordinates."
+  },
+  "objectives": [
+    "Set up a triple integral in cylindrical coordinates",
+    "Determine correct bounds for $r$, $\\theta$, and $z$",
+    "Evaluate the integral"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Understand cylindrical coordinates",
+      "currentState": {
+        "expression": "$x = r\\cos\\theta$, $y = r\\sin\\theta$, $z = z$",
+        "description": "The paraboloid becomes $z = r^2$ in cylindrical coordinates."
+      },
+      "reflectionPrompt": {
+        "question": "What is the volume element in cylindrical coordinates?",
+        "hint": "$dV = r \\, dr \\, d\\theta \\, dz$ (note the extra $r$ factor)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$dV = r \\, dr \\, d\\theta \\, dz$"
+        },
+        {
+          "id": "b",
+          "content": "$dV = dr \\, d\\theta \\, dz$"
+        },
+        {
+          "id": "c",
+          "content": "$dV = r^2 \\, dr \\, d\\theta \\, dz$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! In cylindrical coordinates, $dV = r \\, dr \\, d\\theta \\, dz$. The $r$ factor comes from the Jacobian of the transformation.",
+          "insight": "Always remember the $r$ factor when integrating in cylindrical coordinates!"
+        },
+        "incorrect": {
+          "b": "Don't forget the Jacobian! The volume element is $r \\, dr \\, d\\theta \\, dz$, not $dr \\, d\\theta \\, dz$.",
+          "c": "It's $r$, not $r^2$. In spherical coordinates you'd have $\\rho^2\\sin\\phi$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Determine the r and θ bounds",
+      "currentState": {
+        "expression": "Paraboloid: $z = r^2$, plane: $z = 4$",
+        "description": "Find where they intersect to determine the range of $r$."
+      },
+      "reflectionPrompt": {
+        "question": "What are the bounds for $r$ and $\\theta$?",
+        "hint": "At $z = 4$: $r^2 = 4$, so $r = 2$. Full revolution: $\\theta \\in [0, 2\\pi]$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$0 \\leq r \\leq 2$, $0 \\leq \\theta \\leq 2\\pi$"
+        },
+        {
+          "id": "b",
+          "content": "$0 \\leq r \\leq 4$, $0 \\leq \\theta \\leq 2\\pi$"
+        },
+        {
+          "id": "c",
+          "content": "$0 \\leq r \\leq 2$, $0 \\leq \\theta \\leq \\pi$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The intersection occurs at $r^2 = 4$, giving $r = 2$. The solid has circular symmetry, so $\\theta$ ranges from $0$ to $2\\pi$.",
+          "insight": "The projection onto the $xy$-plane is a disk of radius 2."
+        },
+        "incorrect": {
+          "b": "At the plane $z = 4$: $r^2 = 4 \\Rightarrow r = 2$, not 4.",
+          "c": "Full revolution around the $z$-axis means $\\theta \\in [0, 2\\pi]$, not $[0, \\pi]$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Determine the z bounds",
+      "currentState": {
+        "expression": "Bottom surface: $z = r^2$, top surface: $z = 4$",
+        "description": "For each $(r, \\theta)$, $z$ ranges between the surfaces."
+      },
+      "reflectionPrompt": {
+        "question": "What are the bounds for $z$?",
+        "hint": "$z$ goes from the paraboloid $z = r^2$ up to the plane $z = 4$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$r^2 \\leq z \\leq 4$"
+        },
+        {
+          "id": "b",
+          "content": "$0 \\leq z \\leq 4$"
+        },
+        {
+          "id": "c",
+          "content": "$0 \\leq z \\leq r^2$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For a given point $(r, \\theta)$, $z$ ranges from the paraboloid $z = r^2$ to the plane $z = 4$.",
+          "insight": "The solid is between two surfaces, so $z$ bounds depend on $r$."
+        },
+        "incorrect": {
+          "b": "The lower bound is the paraboloid $z = r^2$, not $z = 0$.",
+          "c": "We want the region above the paraboloid, so $z$ goes from $r^2$ up to 4, not from 0 to $r^2$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Set up and evaluate the integral",
+      "currentState": {
+        "expression": "$V = \\int_0^{2\\pi} \\int_0^2 \\int_{r^2}^4 r \\, dz \\, dr \\, d\\theta$",
+        "description": "Integrate from innermost to outermost."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\int_{r^2}^4 r \\, dz$?",
+        "hint": "$r$ is constant with respect to $z$, so $\\int_{r^2}^4 r \\, dz = r[z]_{r^2}^4 = r(4 - r^2)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\int_{r^2}^4 r \\, dz = r(4 - r^2) = 4r - r^3$"
+        },
+        {
+          "id": "b",
+          "content": "$\\int_{r^2}^4 r \\, dz = 4r$"
+        },
+        {
+          "id": "c",
+          "content": "$\\int_{r^2}^4 r \\, dz = r^2(4 - r^2)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int_{r^2}^4 r \\, dz = r \\cdot z \\big|_{r^2}^4 = r(4 - r^2) = 4r - r^3$.",
+          "insight": "Now we integrate this with respect to $r$."
+        },
+        "incorrect": {
+          "b": "You must evaluate at both limits: $r(4 - r^2)$, not just $4r$.",
+          "c": "The integrand is $r$ (not $r^2$) times $dz$, giving $r(4 - r^2)$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Complete the integration",
+      "currentState": {
+        "expression": "$V = \\int_0^{2\\pi} \\int_0^2 (4r - r^3) \\, dr \\, d\\theta$",
+        "description": "Evaluate the $r$ and $\\theta$ integrals."
+      },
+      "reflectionPrompt": {
+        "question": "What is the volume?",
+        "hint": "$\\int_0^2 (4r - r^3) dr = [2r^2 - \\frac{r^4}{4}]_0^2 = 8 - 4 = 4$. Then multiply by $2\\pi$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$V = \\int_0^{2\\pi} 4 \\, d\\theta = 8\\pi$"
+        },
+        {
+          "id": "b",
+          "content": "$V = \\int_0^{2\\pi} 8 \\, d\\theta = 16\\pi$"
+        },
+        {
+          "id": "c",
+          "content": "$V = 4\\pi$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\int_0^2 (4r - r^3) dr = [2r^2 - \\frac{r^4}{4}]_0^2 = 8 - 4 = 4$. Then $\\int_0^{2\\pi} 4 \\, d\\theta = 4 \\cdot 2\\pi = 8\\pi$.",
+          "insight": "The volume of the solid is $8\\pi$ cubic units."
+        },
+        "incorrect": {
+          "b": "Check: $[2r^2 - \\frac{r^4}{4}]_0^2 = (8 - 4) - 0 = 4$, not 8.",
+          "c": "Don't forget to integrate over $\\theta$: $\\int_0^{2\\pi} 4 \\, d\\theta = 8\\pi$, not $4\\pi$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Cylindrical coordinates: $(x,y,z) \\to (r,\\theta,z)$ with $dV = r \\, dr \\, d\\theta \\, dz$",
+      "Useful for solids with circular or cylindrical symmetry",
+      "Determine bounds by examining intersections and projections",
+      "Volume of solid between $z = r^2$ and $z = 4$: **$V = 8\\pi$**"
+    ],
+    "fullSolution": "**Find volume between** $z = x^2 + y^2$ **and** $z = 4$\\n\\n**Cylindrical coordinates:** $z = r^2$, $dV = r \\, dr \\, d\\theta \\, dz$\\n\\n**Bounds:**\\n- Intersection: $r^2 = 4 \\Rightarrow r = 2$\\n- $0 \\leq r \\leq 2$, $0 \\leq \\theta \\leq 2\\pi$, $r^2 \\leq z \\leq 4$\\n\\n**Set up:**\\n$$V = \\int_0^{2\\pi} \\int_0^2 \\int_{r^2}^4 r \\, dz \\, dr \\, d\\theta$$\\n\\n**Integrate:**\\n$$\\int_{r^2}^4 r \\, dz = r(4 - r^2) = 4r - r^3$$\\n\\n$$\\int_0^2 (4r - r^3) dr = [2r^2 - \\frac{r^4}{4}]_0^2 = 8 - 4 = 4$$\\n\\n$$\\int_0^{2\\pi} 4 \\, d\\theta = 8\\pi$$\\n\\n**Answer: $V = 8\\pi$**",
+    "relatedProblems": [
+      "multivariable-double-integral-1",
+      "multivariable-lagrange-multipliers-1"
+    ]
+  }
+}

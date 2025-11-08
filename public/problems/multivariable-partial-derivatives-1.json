@@ -1,0 +1,217 @@
+{
+  "id": "multivariable-partial-derivatives-1",
+  "type": "problem",
+  "title": "Partial Derivatives and the Gradient: $f(x,y) = x^2y + e^{xy}$",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": ["multivariable calculus", "partial derivatives", "gradient"],
+  "statement": {
+    "text": "Find $\\frac{\\partial f}{\\partial x}$, $\\frac{\\partial f}{\\partial y}$, and $\\nabla f$ for $f(x,y) = x^2y + e^{xy}$. Then evaluate $\\nabla f(1, 0)$."
+  },
+  "objectives": [
+    "Compute partial derivatives",
+    "Form the gradient vector",
+    "Evaluate at a point"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Understand partial derivatives",
+      "currentState": {
+        "expression": "$f(x,y) = x^2y + e^{xy}$",
+        "description": "Partial derivative treats other variables as constants."
+      },
+      "reflectionPrompt": {
+        "question": "When computing $\\frac{\\partial f}{\\partial x}$, how do we treat $y$?",
+        "hint": "Only $x$ varies; $y$ is constant."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Treat $y$ as a constant"
+        },
+        {
+          "id": "b",
+          "content": "Differentiate $y$ as well"
+        },
+        {
+          "id": "c",
+          "content": "Set $y = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! When computing $\\frac{\\partial f}{\\partial x}$, we treat $y$ as a constant and differentiate only with respect to $x$.",
+          "insight": "Partial derivatives measure the rate of change in one direction while holding others fixed."
+        },
+        "incorrect": {
+          "b": "$\\frac{\\partial}{\\partial x}$ means differentiate with respect to $x$ only, treating $y$ as constant.",
+          "c": "We don't set $y = 0$. We treat it as a constant parameter during differentiation."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute ∂f/∂x",
+      "currentState": {
+        "expression": "$f(x,y) = x^2y + e^{xy}$",
+        "description": "Differentiate with respect to $x$, treating $y$ as constant."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{\\partial f}{\\partial x}$?",
+        "hint": "$\\frac{\\partial}{\\partial x}(x^2y) = 2xy$ and $\\frac{\\partial}{\\partial x}(e^{xy}) = ye^{xy}$ (chain rule)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{\\partial f}{\\partial x} = 2xy + ye^{xy}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{\\partial f}{\\partial x} = 2xy + e^{xy}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{\\partial f}{\\partial x} = x^2 + xye^{xy}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{\\partial}{\\partial x}(x^2y) = 2xy$. For $e^{xy}$, use chain rule: $\\frac{\\partial}{\\partial x}(e^{xy}) = e^{xy} \\cdot y = ye^{xy}$.",
+          "insight": "Chain rule for partial derivatives: $\\frac{\\partial}{\\partial x}(e^{g(x,y)}) = e^{g}\\frac{\\partial g}{\\partial x}$."
+        },
+        "incorrect": {
+          "b": "Don't forget the chain rule on $e^{xy}$. The derivative is $ye^{xy}$, not $e^{xy}$.",
+          "c": "For $x^2y$: treat $y$ as constant, so $\\frac{\\partial}{\\partial x}(x^2y) = 2xy$, not $x^2$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute ∂f/∂y",
+      "currentState": {
+        "expression": "$f(x,y) = x^2y + e^{xy}$",
+        "description": "Differentiate with respect to $y$, treating $x$ as constant."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{\\partial f}{\\partial y}$?",
+        "hint": "$\\frac{\\partial}{\\partial y}(x^2y) = x^2$ and $\\frac{\\partial}{\\partial y}(e^{xy}) = xe^{xy}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{\\partial f}{\\partial y} = x^2 + xe^{xy}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{\\partial f}{\\partial y} = 2xy + xe^{xy}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{\\partial f}{\\partial y} = y + e^{xy}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\frac{\\partial}{\\partial y}(x^2y) = x^2$ (treat $x^2$ as constant). For $e^{xy}$: $\\frac{\\partial}{\\partial y}(e^{xy}) = e^{xy} \\cdot x = xe^{xy}$.",
+          "insight": "Partial derivatives are symmetric in how they treat the other variable as constant."
+        },
+        "incorrect": {
+          "b": "$\\frac{\\partial}{\\partial y}(x^2y) = x^2$, not $2xy$. We're differentiating with respect to $y$.",
+          "c": "For $x^2y$, the $x^2$ is a constant coefficient, so the derivative is $x^2$, not just 1."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Form the gradient",
+      "currentState": {
+        "expression": "$\\frac{\\partial f}{\\partial x} = 2xy + ye^{xy}$, $\\frac{\\partial f}{\\partial y} = x^2 + xe^{xy}$",
+        "description": "The gradient combines all partial derivatives into a vector."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\nabla f$?",
+        "hint": "$\\nabla f = \\left(\\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y}\\right)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla f = (2xy + ye^{xy}, x^2 + xe^{xy})$"
+        },
+        {
+          "id": "b",
+          "content": "$\\nabla f = 2xy + ye^{xy} + x^2 + xe^{xy}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla f = \\frac{\\partial^2 f}{\\partial x \\partial y}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The gradient is a vector: $\\nabla f = \\left(\\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y}\\right) = (2xy + ye^{xy}, x^2 + xe^{xy})$.",
+          "insight": "The gradient points in the direction of steepest ascent and has magnitude equal to the rate of change in that direction."
+        },
+        "incorrect": {
+          "b": "The gradient is a vector, not a scalar sum. It's $(f_x, f_y)$, not $f_x + f_y$.",
+          "c": "That's a second-order mixed partial derivative, not the gradient."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Evaluate at (1,0)",
+      "currentState": {
+        "expression": "$\\nabla f = (2xy + ye^{xy}, x^2 + xe^{xy})$",
+        "description": "Substitute $x = 1, y = 0$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\nabla f(1, 0)$?",
+        "hint": "Substitute: first component is $2(1)(0) + 0 \\cdot e^0 = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla f(1, 0) = (0, 2)$"
+        },
+        {
+          "id": "b",
+          "content": "$\\nabla f(1, 0) = (1, 1)$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla f(1, 0) = (2, 0)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! First component: $2(1)(0) + 0 \\cdot e^{0} = 0 + 0 = 0$. Second component: $1^2 + 1 \\cdot e^{0} = 1 + 1 = 2$. So $\\nabla f(1,0) = (0, 2)$.",
+          "insight": "At $(1,0)$, the function increases most rapidly in the direction $(0,2)$, i.e., straight up in the $y$-direction."
+        },
+        "incorrect": {
+          "b": "Check: $2xy + ye^{xy}$ at $(1,0)$ is $0$, not $1$. And $x^2 + xe^{xy}$ is $1 + 1 = 2$.",
+          "c": "The first component is $0$, not $2$. Calculate: $2(1)(0) + 0 \\cdot e^0 = 0$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Partial derivative $\\frac{\\partial f}{\\partial x}$ treats all other variables as constants",
+      "The gradient $\\nabla f = (f_x, f_y, ...)$ is a vector of all partial derivatives",
+      "The gradient points in the direction of steepest ascent",
+      "At a critical point, $\\nabla f = \\vec{0}$"
+    ],
+    "fullSolution": "$f(x,y) = x^2y + e^{xy}$\n\n$\\frac{\\partial f}{\\partial x} = 2xy + ye^{xy}$\n\n$\\frac{\\partial f}{\\partial y} = x^2 + xe^{xy}$\n\n$\\nabla f = (2xy + ye^{xy}, x^2 + xe^{xy})$\n\n$\\nabla f(1,0) = (2(1)(0) + 0e^{0}, 1^2 + 1e^{0}) = (0, 2)$",
+    "relatedProblems": [
+      "calc-derivative-chain-rule-1",
+      "calculus-mvt-1"
+    ]
+  }
+}

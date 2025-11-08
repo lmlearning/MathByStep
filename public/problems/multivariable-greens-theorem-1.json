@@ -1,0 +1,180 @@
+{
+  "id": "multivariable-greens-theorem-1",
+  "type": "problem",
+  "title": "Green's Theorem: Convert line integral to double integral",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["multivariable calculus", "Green's theorem", "line integrals", "circulation"],
+  "statement": {
+    "text": "Use Green's theorem to evaluate $\\oint_C (x^2 + y) dx + (x + y^2) dy$ where $C$ is the circle $x^2 + y^2 = 4$ oriented counterclockwise."
+  },
+  "objectives": [
+    "Understand Green's theorem",
+    "Compute partial derivatives",
+    "Convert to a double integral and evaluate"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall Green's theorem",
+      "currentState": {
+        "expression": "$\\oint_C P \\, dx + Q \\, dy$ where $C$ is a closed curve",
+        "description": "Green's theorem relates a line integral to a double integral."
+      },
+      "reflectionPrompt": {
+        "question": "What is Green's theorem?",
+        "hint": "$\\oint_C P \\, dx + Q \\, dy = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}) \\, dA$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\oint_C P \\, dx + Q \\, dy = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}) \\, dA$"
+        },
+        {
+          "id": "b",
+          "content": "$\\oint_C P \\, dx + Q \\, dy = \\iint_D (\\frac{\\partial P}{\\partial x} + \\frac{\\partial Q}{\\partial y}) \\, dA$"
+        },
+        {
+          "id": "c",
+          "content": "$\\oint_C P \\, dx + Q \\, dy = \\oint_C Q \\, dx + P \\, dy$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Green's theorem: $\\oint_C P \\, dx + Q \\, dy = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}) \\, dA$ where $D$ is the region enclosed by $C$.",
+          "insight": "This converts a line integral around a closed curve to a double integral over the enclosed region."
+        },
+        "incorrect": {
+          "b": "It's $\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}$, not a sum. Also, this is the divergence form, not Green's circulation form.",
+          "c": "Green's theorem converts to a double integral, not another line integral."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Identify P and Q",
+      "currentState": {
+        "expression": "$\\oint_C (x^2 + y) dx + (x + y^2) dy$",
+        "description": "Match to the form $P \\, dx + Q \\, dy$."
+      },
+      "reflectionPrompt": {
+        "question": "What are $P$ and $Q$?",
+        "hint": "$P$ is the coefficient of $dx$, $Q$ is the coefficient of $dy$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P = x^2 + y$ and $Q = x + y^2$"
+        },
+        {
+          "id": "b",
+          "content": "$P = x + y^2$ and $Q = x^2 + y$"
+        },
+        {
+          "id": "c",
+          "content": "$P = x^2$ and $Q = y^2$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $P = x^2 + y$ (coefficient of $dx$) and $Q = x + y^2$ (coefficient of $dy$).",
+          "insight": "Identifying $P$ and $Q$ correctly is essential for applying Green's theorem."
+        },
+        "incorrect": {
+          "b": "The order matters: $P$ goes with $dx$, so $P = x^2 + y$.",
+          "c": "Include all terms: $P = x^2 + y$ and $Q = x + y^2$, not just the squared terms."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute partial derivatives",
+      "currentState": {
+        "expression": "$P = x^2 + y$, $Q = x + y^2$",
+        "description": "Find $\\frac{\\partial Q}{\\partial x}$ and $\\frac{\\partial P}{\\partial y}$."
+      },
+      "reflectionPrompt": {
+        "question": "What are $\\frac{\\partial Q}{\\partial x}$ and $\\frac{\\partial P}{\\partial y}$?",
+        "hint": "$\\frac{\\partial}{\\partial x}(x + y^2) = 1$ and $\\frac{\\partial}{\\partial y}(x^2 + y) = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{\\partial Q}{\\partial x} = 1$ and $\\frac{\\partial P}{\\partial y} = 1$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{\\partial Q}{\\partial x} = 2y$ and $\\frac{\\partial P}{\\partial y} = 2x$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{\\partial Q}{\\partial x} = 0$ and $\\frac{\\partial P}{\\partial y} = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{\\partial Q}{\\partial x} = \\frac{\\partial}{\\partial x}(x + y^2) = 1$ and $\\frac{\\partial P}{\\partial y} = \\frac{\\partial}{\\partial y}(x^2 + y) = 1$.",
+          "insight": "The $y^2$ term in $Q$ doesn't depend on $x$, and $x^2$ in $P$ doesn't depend on $y$."
+        },
+        "incorrect": {
+          "b": "Those would be $\\frac{\\partial Q}{\\partial y}$ and $\\frac{\\partial P}{\\partial x}$, not what we need. We want $\\frac{\\partial Q}{\\partial x}$ and $\\frac{\\partial P}{\\partial y}$.",
+          "c": "Both derivatives equal 1: $\\frac{\\partial}{\\partial x}(x) = 1$ and $\\frac{\\partial}{\\partial y}(y) = 1$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Set up the double integral",
+      "currentState": {
+        "expression": "$\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} = 1 - 1 = 0$",
+        "description": "Apply Green's theorem over the disk $D: x^2 + y^2 \\leq 4$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\oint_C (x^2 + y) dx + (x + y^2) dy$?",
+        "hint": "$\\iint_D 0 \\, dA = 0$ (integrating zero gives zero)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\oint_C (x^2 + y) dx + (x + y^2) dy = \\iint_D 0 \\, dA = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$\\oint_C (x^2 + y) dx + (x + y^2) dy = \\iint_D 1 \\, dA = 4\\pi$"
+        },
+        {
+          "id": "c",
+          "content": "$\\oint_C (x^2 + y) dx + (x + y^2) dy = \\iint_D 2 \\, dA = 8\\pi$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} = 0$, the double integral is $\\iint_D 0 \\, dA = 0$, so the line integral equals 0.",
+          "insight": "When $\\frac{\\partial Q}{\\partial x} = \\frac{\\partial P}{\\partial y}$, the vector field is conservative and circulation around any closed curve is zero."
+        },
+        "incorrect": {
+          "b": "$\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} = 1 - 1 = 0$, not 1.",
+          "c": "The integrand is 0, not 2. We get $\\iint_D 0 \\, dA = 0$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Green's theorem: $\\oint_C P \\, dx + Q \\, dy = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}) \\, dA$",
+      "Converts circulation (line integral) to a double integral over the enclosed region",
+      "When $\\frac{\\partial Q}{\\partial x} = \\frac{\\partial P}{\\partial y}$, the field is conservative (zero circulation)",
+      "Answer: $\\oint_C (x^2 + y) dx + (x + y^2) dy = 0$"
+    ],
+    "fullSolution": "**Evaluate** $\\oint_C (x^2 + y) dx + (x + y^2) dy$ **where** $C: x^2 + y^2 = 4$ (CCW)\\n\\n**Identify:** $P = x^2 + y$, $Q = x + y^2$\\n\\n**Partial derivatives:**\\n- $\\frac{\\partial Q}{\\partial x} = \\frac{\\partial}{\\partial x}(x + y^2) = 1$\\n- $\\frac{\\partial P}{\\partial y} = \\frac{\\partial}{\\partial y}(x^2 + y) = 1$\\n\\n**Green's theorem:**\\n$$\\oint_C P \\, dx + Q \\, dy = \\iint_D \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right) dA = \\iint_D (1 - 1) \\, dA = \\iint_D 0 \\, dA = 0$$\\n\\n**Answer: 0**\\n\\nNote: The vector field $\\vec{F} = \\langle x^2 + y, x + y^2 \\rangle$ is conservative on this region.",
+    "relatedProblems": [
+      "multivariable-line-integral-1",
+      "multivariable-double-integral-1"
+    ]
+  }
+}

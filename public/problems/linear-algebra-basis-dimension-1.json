@@ -1,0 +1,217 @@
+{
+  "id": "linear-algebra-basis-dimension-1",
+  "type": "problem",
+  "title": "Basis and Dimension: Find a basis for the column space",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["linear algebra", "basis", "dimension", "column space"],
+  "statement": {
+    "text": "Find a basis for the column space of the matrix $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\\\ 1 & 1 & 2 \\end{pmatrix}$ and determine its dimension."
+  },
+  "objectives": [
+    "Understand the column space of a matrix",
+    "Apply row reduction to find pivot columns",
+    "Determine basis and dimension from pivot columns"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Understand the column space",
+      "currentState": {
+        "expression": "$A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\\\ 1 & 1 & 2 \\end{pmatrix}$",
+        "description": "The column space Col(A) is the span of the column vectors."
+      },
+      "reflectionPrompt": {
+        "question": "What is the column space of a matrix?",
+        "hint": "It's the set of all linear combinations of the column vectors."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Col(A) = span of the columns of $A$"
+        },
+        {
+          "id": "b",
+          "content": "Col(A) = span of the rows of $A$"
+        },
+        {
+          "id": "c",
+          "content": "Col(A) = the null space of $A$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The column space is the span of all column vectors: Col(A) = span{$\\vec{c}_1, \\vec{c}_2, \\vec{c}_3$}.",
+          "insight": "The column space represents all possible outputs of the transformation $A\\vec{x}$."
+        },
+        "incorrect": {
+          "b": "The span of the rows is the row space, not the column space.",
+          "c": "The null space consists of vectors $\\vec{x}$ where $A\\vec{x} = \\vec{0}$, which is different from the column space."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Perform row reduction",
+      "currentState": {
+        "expression": "$A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\\\ 1 & 1 & 2 \\end{pmatrix}$",
+        "description": "Row reduce to echelon form to identify pivot columns."
+      },
+      "reflectionPrompt": {
+        "question": "What is the row-reduced echelon form (RREF) of $A$?",
+        "hint": "Start with $R_2 - 2R_1$ and $R_3 - R_1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $R_2 - 2R_1 \\to \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 1 & 1 & 2 \\end{pmatrix}$, then $R_3 - R_1$ and swapping gives RREF with pivots in columns 1 and 2.",
+          "insight": "The pivot columns in the RREF tell us which original columns form a basis."
+        },
+        "incorrect": {
+          "b": "Column 2 is twice column 1, so we can't have three independent columns.",
+          "c": "The matrix is not full rank - notice column 2 is twice column 1."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Identify pivot columns",
+      "currentState": {
+        "expression": "RREF: $\\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$",
+        "description": "Pivot positions are in columns 1 and 2."
+      },
+      "reflectionPrompt": {
+        "question": "Which columns of the original matrix $A$ should we use for the basis?",
+        "hint": "Use the columns corresponding to pivot positions in the RREF."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Columns 1 and 2 of the original matrix $A$"
+        },
+        {
+          "id": "b",
+          "content": "Columns 1 and 3 of the original matrix $A$"
+        },
+        {
+          "id": "c",
+          "content": "Columns 1 and 2 of the RREF"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The pivot columns are 1 and 2, so we take the corresponding columns from the **original** matrix $A$.",
+          "insight": "Always use the pivot columns from the original matrix, not the RREF, for the column space basis."
+        },
+        "incorrect": {
+          "b": "The pivot columns are 1 and 2, not 1 and 3.",
+          "c": "We need columns from the original matrix $A$, not the RREF. The RREF shows which columns to choose."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Write the basis",
+      "currentState": {
+        "expression": "Pivot columns: 1 and 2 from $A$",
+        "description": "Extract these column vectors from the original matrix."
+      },
+      "reflectionPrompt": {
+        "question": "What is a basis for Col(A)?",
+        "hint": "The first and second columns of $A$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 3 \\\\ 6 \\\\ 2 \\end{pmatrix} \\right\\}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\left\\{ \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix}, \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix} \\right\\}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The basis for Col(A) is $\\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\}$ from columns 1 and 2.",
+          "insight": "These two vectors span the entire column space and are linearly independent."
+        },
+        "incorrect": {
+          "b": "Column 3 is not a pivot column. Use columns 1 and 2.",
+          "c": "These are from the RREF, not the original matrix. We need the actual column vectors from $A$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Determine the dimension",
+      "currentState": {
+        "expression": "Basis: $\\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\}$",
+        "description": "The dimension is the number of vectors in the basis."
+      },
+      "reflectionPrompt": {
+        "question": "What is dim(Col(A))?",
+        "hint": "Count the number of vectors in any basis."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "dim(Col(A)) = 2"
+        },
+        {
+          "id": "b",
+          "content": "dim(Col(A)) = 3"
+        },
+        {
+          "id": "c",
+          "content": "dim(Col(A)) = 1"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The dimension equals the number of pivot columns, which is 2. This is also called the rank of $A$: rank(A) = 2.",
+          "insight": "The dimension of the column space equals the number of linearly independent columns, which equals the rank."
+        },
+        "incorrect": {
+          "b": "There are only 2 pivot columns, so dim(Col(A)) = 2, not 3.",
+          "c": "We have 2 linearly independent vectors in our basis, so the dimension is 2."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Column space Col(A) is the span of the column vectors of $A$",
+      "Row reduce to find pivot columns, then use corresponding columns from the original matrix",
+      "The dimension of Col(A) equals the number of pivot columns (the rank)",
+      "Basis for Col(A): $\\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\}$, dim(Col(A)) = 2"
+    ],
+    "fullSolution": "**Find basis for Col(A) where** $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\\\ 1 & 1 & 2 \\end{pmatrix}$\\n\\n**Step 1:** Row reduce:\\n$R_2 - 2R_1$: $\\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 1 & 1 & 2 \\end{pmatrix}$\\n\\n$R_3 - R_1$: $\\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 0 & -1 & -1 \\end{pmatrix}$\\n\\nSwap and scale: $\\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$\\n\\n**Step 2:** Pivot columns are 1 and 2\\n\\n**Step 3:** Basis = columns 1 and 2 from original $A$:\\n$$\\text{Basis for Col(A)} = \\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\}$$\\n\\n**Answer:** dim(Col(A)) = 2, rank(A) = 2",
+    "relatedProblems": [
+      "linear-algebra-vector-space-1",
+      "linear-algebra-eigenvalues-1"
+    ]
+  }
+}

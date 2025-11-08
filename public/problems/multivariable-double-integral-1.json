@@ -1,0 +1,180 @@
+{
+  "id": "multivariable-double-integral-1",
+  "type": "problem",
+  "title": "Double Integrals: Evaluate over a rectangular region",
+  "topic": "Multivariable Calculus",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": ["multivariable calculus", "double integrals", "iterated integrals"],
+  "statement": {
+    "text": "Evaluate the double integral $\\iint_R (2x + 3y) \\, dA$ where $R = [0,2] \\times [1,3]$."
+  },
+  "objectives": [
+    "Set up a double integral as an iterated integral",
+    "Evaluate inner and outer integrals",
+    "Understand Fubini's theorem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Set up the iterated integral",
+      "currentState": {
+        "expression": "$R = \\{(x,y) : 0 \\leq x \\leq 2, 1 \\leq y \\leq 3\\}$",
+        "description": "Convert the double integral to an iterated integral."
+      },
+      "reflectionPrompt": {
+        "question": "What is the iterated integral form?",
+        "hint": "Use $\\int_1^3 \\int_0^2 (2x + 3y) \\, dx \\, dy$ or $\\int_0^2 \\int_1^3 (2x + 3y) \\, dy \\, dx$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\int_1^3 \\int_0^2 (2x + 3y) \\, dx \\, dy$ (integrate $x$ first)"
+        },
+        {
+          "id": "b",
+          "content": "$\\int_0^2 \\int_0^2 (2x + 3y) \\, dx \\, dy$"
+        },
+        {
+          "id": "c",
+          "content": "$\\int_0^3 \\int_0^2 (2x + 3y) \\, dx \\, dy$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For a rectangular region, we can integrate in either order. Here: $\\int_1^3 \\int_0^2 (2x + 3y) \\, dx \\, dy$ integrates $x$ from 0 to 2 first, then $y$ from 1 to 3.",
+          "insight": "Fubini's theorem allows us to evaluate double integrals as iterated integrals when the region is simple."
+        },
+        "incorrect": {
+          "b": "The $y$ bounds are from 1 to 3, not 0 to 2.",
+          "c": "The $y$ bounds should be from 1 to 3, not 0 to 3."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Evaluate the inner integral",
+      "currentState": {
+        "expression": "$\\int_0^2 (2x + 3y) \\, dx$",
+        "description": "Treat $y$ as a constant while integrating with respect to $x$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\int_0^2 (2x + 3y) \\, dx$?",
+        "hint": "$\\int (2x + 3y) \\, dx = x^2 + 3xy + C$ (treating $y$ as constant)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$[x^2 + 3xy]_0^2 = 4 + 6y$"
+        },
+        {
+          "id": "b",
+          "content": "$[2x^2 + 3xy]_0^2 = 8 + 6y$"
+        },
+        {
+          "id": "c",
+          "content": "$[x^2 + \\frac{3y^2}{2}]_0^2 = 4 + 6y^2$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int_0^2 (2x + 3y) \\, dx = [x^2 + 3xy]_0^2 = (4 + 6y) - 0 = 4 + 6y$.",
+          "insight": "When integrating with respect to $x$, treat $y$ as a constant coefficient."
+        },
+        "incorrect": {
+          "b": "$\\int 2x \\, dx = x^2$, not $2x^2$.",
+          "c": "We're integrating with respect to $x$, not $y$. The $3y$ term gives $3xy$, not $\\frac{3y^2}{2}$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Evaluate the outer integral",
+      "currentState": {
+        "expression": "$\\int_1^3 (4 + 6y) \\, dy$",
+        "description": "Now integrate the result with respect to $y$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\int_1^3 (4 + 6y) \\, dy$?",
+        "hint": "$\\int (4 + 6y) \\, dy = 4y + 3y^2 + C$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$[4y + 3y^2]_1^3 = (12 + 27) - (4 + 3) = 32$"
+        },
+        {
+          "id": "b",
+          "content": "$[4y + 6y^2]_1^3 = (12 + 54) - (4 + 6) = 56$"
+        },
+        {
+          "id": "c",
+          "content": "$[4y + 3y^2]_1^3 = 12 + 27 = 39$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\int_1^3 (4 + 6y) \\, dy = [4y + 3y^2]_1^3 = (12 + 27) - (4 + 3) = 39 - 7 = 32$.",
+          "insight": "Don't forget to evaluate at both limits and subtract!"
+        },
+        "incorrect": {
+          "b": "$\\int 6y \\, dy = 3y^2$, not $6y^2$.",
+          "c": "You must subtract the value at the lower limit: $(12 + 27) - (4 + 3) = 32$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Verify with reversed order",
+      "currentState": {
+        "expression": "Result: 32",
+        "description": "We can verify by integrating in the opposite order."
+      },
+      "reflectionPrompt": {
+        "question": "Does $\\int_0^2 \\int_1^3 (2x + 3y) \\, dy \\, dx$ give the same result?",
+        "hint": "Inner: $\\int_1^3 (2x + 3y) \\, dy = [2xy + \\frac{3y^2}{2}]_1^3$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes, it also equals 32 (by Fubini's theorem)"
+        },
+        {
+          "id": "b",
+          "content": "No, we get a different answer"
+        },
+        {
+          "id": "c",
+          "content": "Cannot determine without calculation"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Fubini's theorem guarantees that for nice functions over rectangular regions, both orders give the same result: 32.",
+          "insight": "The order of integration doesn't matter for continuous functions over rectangular regions."
+        },
+        "incorrect": {
+          "b": "Fubini's theorem says both orders must give the same answer for continuous functions.",
+          "c": "We know from Fubini's theorem that the answer must be the same (and a quick calculation confirms: it's 32)."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Double integrals over rectangles: $\\iint_R f(x,y) \\, dA = \\int_c^d \\int_a^b f(x,y) \\, dx \\, dy$",
+      "Fubini's theorem: order of integration doesn't matter for continuous functions",
+      "Evaluate as iterated integral: inner integral first, then outer",
+      "Answer: $\\iint_R (2x + 3y) \\, dA = 32$"
+    ],
+    "fullSolution": "**Evaluate** $\\iint_R (2x + 3y) \\, dA$ **where** $R = [0,2] \\times [1,3]$\\n\\n**Set up:**\\n$$\\iint_R (2x + 3y) \\, dA = \\int_1^3 \\int_0^2 (2x + 3y) \\, dx \\, dy$$\\n\\n**Inner integral** (with respect to $x$):\\n$$\\int_0^2 (2x + 3y) \\, dx = [x^2 + 3xy]_0^2 = 4 + 6y$$\\n\\n**Outer integral** (with respect to $y$):\\n$$\\int_1^3 (4 + 6y) \\, dy = [4y + 3y^2]_1^3 = (12 + 27) - (4 + 3) = 39 - 7 = 32$$\\n\\n**Answer: 32**",
+    "relatedProblems": [
+      "multivariable-partial-derivatives-1",
+      "calculus-integration-substitution-1"
+    ]
+  }
+}

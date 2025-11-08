@@ -1,0 +1,180 @@
+{
+  "id": "real-analysis-continuity-uniform-1",
+  "type": "problem",
+  "title": "Uniform Continuity: Prove f(x)=x² is not uniformly continuous on ℝ",
+  "topic": "Real Analysis",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["real analysis", "uniform continuity", "epsilon-delta"],
+  "statement": {
+    "text": "Prove that $f(x) = x^2$ is not uniformly continuous on $\\mathbb{R}$."
+  },
+  "objectives": [
+    "Understand the definition of uniform continuity",
+    "Distinguish between continuity and uniform continuity",
+    "Construct a proof by negation"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall the definition",
+      "currentState": {
+        "expression": "$f: \\mathbb{R} \\to \\mathbb{R}$",
+        "description": "What does uniform continuity mean?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the definition of uniform continuity?",
+        "hint": "For all $\\epsilon > 0$, there exists $\\delta > 0$ such that for all $x, y$: $|x - y| < \\delta \\Rightarrow |f(x) - f(y)| < \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\forall \\epsilon > 0, \\exists \\delta > 0$ such that $\\forall x, y$: $|x-y| < \\delta \\Rightarrow |f(x)-f(y)| < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "content": "$\\forall x, \\forall \\epsilon > 0, \\exists \\delta > 0$ such that $|x-y| < \\delta \\Rightarrow |f(x)-f(y)| < \\epsilon$"
+        },
+        {
+          "id": "c",
+          "content": "$f$ is continuous at every point"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Uniform continuity: $\\delta$ depends only on $\\epsilon$, not on the point $x$. This is stronger than ordinary continuity.",
+          "insight": "In ordinary continuity, $\\delta$ can depend on both $\\epsilon$ and $x$. In uniform continuity, $\\delta$ depends only on $\\epsilon$."
+        },
+        "incorrect": {
+          "b": "The order of quantifiers matters! In uniform continuity, we choose $\\delta$ before choosing $x$ and $y$.",
+          "c": "Uniform continuity is stronger than continuity. All uniformly continuous functions are continuous, but not conversely."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Negation strategy",
+      "currentState": {
+        "expression": "To prove $f$ is NOT uniformly continuous",
+        "description": "Negate the definition."
+      },
+      "reflectionPrompt": {
+        "question": "What must we show?",
+        "hint": "$\\exists \\epsilon > 0$ such that $\\forall \\delta > 0$, $\\exists x, y$ with $|x-y| < \\delta$ but $|f(x)-f(y)| \\geq \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\exists \\epsilon > 0, \\forall \\delta > 0, \\exists x, y$: $|x-y| < \\delta$ but $|f(x)-f(y)| \\geq \\epsilon$"
+        },
+        {
+          "id": "b",
+          "content": "$f$ is not continuous"
+        },
+        {
+          "id": "c",
+          "content": "$\\forall \\epsilon, \\delta > 0$, $f(x) - f(y) \\geq \\epsilon$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! We need to find a specific $\\epsilon$ such that no matter how small we make $\\delta$, we can find points $x, y$ close together ($|x-y| < \\delta$) but with $f$-values far apart ($|f(x)-f(y)| \\geq \\epsilon$).",
+          "insight": "This shows that $\\delta$ must depend on where we are in the domain, violating uniform continuity."
+        },
+        "incorrect": {
+          "b": "$f(x) = x^2$ IS continuous everywhere. Uniform continuity is a stronger condition.",
+          "c": "The negation involves the quantifiers: there exists an $\\epsilon$ such that for ALL $\\delta$..."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Choose epsilon",
+      "currentState": {
+        "expression": "$f(x) = x^2$",
+        "description": "Pick a specific value of $\\epsilon$."
+      },
+      "reflectionPrompt": {
+        "question": "What value of $\\epsilon$ should we use?",
+        "hint": "Any positive value works; $\\epsilon = 1$ is a common choice."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Let $\\epsilon = 1$"
+        },
+        {
+          "id": "b",
+          "content": "Let $\\epsilon = 0$"
+        },
+        {
+          "id": "c",
+          "content": "Let $\\epsilon$ depend on $\\delta$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Good! We choose $\\epsilon = 1$ (or any fixed positive value). Now we must show that for any $\\delta > 0$, we can find $x, y$ close together but with $|x^2 - y^2| \\geq 1$.",
+          "insight": "The key is that the slope of $x^2$ grows without bound as $x \\to \\infty$."
+        },
+        "incorrect": {
+          "b": "$\\epsilon$ must be positive. We need $\\epsilon > 0$.",
+          "c": "$\\epsilon$ must be fixed first, then we show it fails for all $\\delta$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Construct x and y",
+      "currentState": {
+        "expression": "$\\epsilon = 1$, given any $\\delta > 0$",
+        "description": "Find points to witness the failure of uniform continuity."
+      },
+      "reflectionPrompt": {
+        "question": "How should we choose $x$ and $y$?",
+        "hint": "Let $x = n$ and $y = n + \\delta/2$ for large enough $n$. Then $|x-y| < \\delta$ but $|x^2 - y^2| = |2n(\\delta/2) + (\\delta/2)^2| \\approx n\\delta$ can be made $\\geq 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Let $x = n$ and $y = n + \\frac{\\delta}{2}$ where $n \\geq \\frac{2}{\\delta}$"
+        },
+        {
+          "id": "b",
+          "content": "Let $x = 0$ and $y = \\delta$"
+        },
+        {
+          "id": "c",
+          "content": "Let $x = 1$ and $y = 1 + \\delta$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! For large $n$, we have $|x - y| = \\delta/2 < \\delta$, but $|x^2 - y^2| = |n^2 - (n + \\delta/2)^2| = |−n\\delta - (\\delta/2)^2| \\approx n\\delta \\geq 1$ when $n \\geq 2/\\delta$.",
+          "insight": "As we move further out on the number line, the function $x^2$ becomes steeper, so even nearby points have large differences in $f$-values."
+        },
+        "incorrect": {
+          "b": "At $x = 0$: $|x^2 - y^2| = \\delta^2$, which can be made arbitrarily small. This doesn't show non-uniform continuity.",
+          "c": "$|1 - (1+\\delta)^2| = |1 - 1 - 2\\delta - \\delta^2| = |2\\delta + \\delta^2|$, which goes to 0 as $\\delta \\to 0$. We need to use large $x$ values."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Uniform continuity: $\\delta$ depends only on $\\epsilon$, not on location",
+      "$f(x) = x^2$ is continuous but NOT uniformly continuous on $\\mathbb{R}$",
+      "The slope of $x^2$ grows without bound, causing failure of uniform continuity",
+      "Bounded continuous functions on closed intervals are uniformly continuous (Heine-Cantor theorem)"
+    ],
+    "fullSolution": "**Prove:** $f(x) = x^2$ is not uniformly continuous on $\\mathbb{R}$\\n\\n**Proof:**\\nSuppose for contradiction that $f$ is uniformly continuous.\\n\\nLet $\\epsilon = 1$. Then there exists $\\delta > 0$ such that for all $x, y \\in \\mathbb{R}$:\\n$$|x - y| < \\delta \\Rightarrow |x^2 - y^2| < 1$$\\n\\nChoose $n \\in \\mathbb{N}$ with $n > 2/\\delta$. Let $x = n$ and $y = n + \\delta/2$.\\n\\nThen $|x - y| = \\delta/2 < \\delta$, but:\\n$$|x^2 - y^2| = |n^2 - (n + \\delta/2)^2| = |n^2 - n^2 - n\\delta - \\delta^2/4|$$\\n$$= |n\\delta + \\delta^2/4| = n\\delta + \\delta^2/4 > n\\delta > 2 > 1$$\\n\\nThis contradicts our assumption. Therefore $f$ is not uniformly continuous on $\\mathbb{R}$. ∎",
+    "relatedProblems": [
+      "real-analysis-sequence-convergence-1",
+      "calculus-limit-epsilon-delta-1"
+    ]
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "id": "linear-algebra-diagonalization-1",
+  "type": "problem",
+  "title": "Diagonalization: Is this matrix diagonalizable?",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["linear algebra", "diagonalization", "eigenvalues", "eigenvectors"],
+  "statement": {
+    "text": "Determine whether $A = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$ is diagonalizable. If so, find matrices $P$ and $D$ such that $A = PDP^{-1}$."
+  },
+  "objectives": [
+    "Understand conditions for diagonalizability",
+    "Find eigenvalues and eigenvectors",
+    "Determine if there are enough linearly independent eigenvectors"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Find the characteristic polynomial",
+      "currentState": {
+        "expression": "$A = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$",
+        "description": "Compute $\\det(A - \\lambda I) = 0$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the characteristic polynomial?",
+        "hint": "$\\det\\begin{pmatrix} 4-\\lambda & 1 \\\\ 0 & 4-\\lambda \\end{pmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$(4-\\lambda)^2 = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$\\lambda^2 - 8\\lambda + 15 = 0$"
+        },
+        {
+          "id": "c",
+          "content": "$\\lambda^2 - 4 = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\det(A - \\lambda I) = (4-\\lambda)(4-\\lambda) - 1 \\cdot 0 = (4-\\lambda)^2$.",
+          "insight": "For upper/lower triangular matrices, the determinant is the product of diagonal entries."
+        },
+        "incorrect": {
+          "b": "Check your determinant calculation. For this triangular matrix, det = $(4-\\lambda)^2$.",
+          "c": "The characteristic polynomial is $(4-\\lambda)^2$, which expands to $\\lambda^2 - 8\\lambda + 16$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Find eigenvalues",
+      "currentState": {
+        "expression": "$(4-\\lambda)^2 = 0$",
+        "description": "Solve for $\\lambda$."
+      },
+      "reflectionPrompt": {
+        "question": "What are the eigenvalues?",
+        "hint": "$(4-\\lambda)^2 = 0$ implies $\\lambda = 4$ with algebraic multiplicity 2."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\lambda = 4$ (repeated eigenvalue, algebraic multiplicity 2)"
+        },
+        {
+          "id": "b",
+          "content": "$\\lambda_1 = 4, \\lambda_2 = -4$"
+        },
+        {
+          "id": "c",
+          "content": "$\\lambda_1 = 2, \\lambda_2 = 2$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! There's only one eigenvalue: $\\lambda = 4$ with algebraic multiplicity 2 (it's a repeated root).",
+          "insight": "Repeated eigenvalues are a warning sign - we need to check if there are enough eigenvectors."
+        },
+        "incorrect": {
+          "b": "$(4-\\lambda)^2 = 0$ gives only $\\lambda = 4$, not two distinct eigenvalues.",
+          "c": "Solve $(4-\\lambda)^2 = 0$: this gives $\\lambda = 4$, not $\\lambda = 2$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Find eigenvectors for λ=4",
+      "currentState": {
+        "expression": "$(A - 4I)\\vec{x} = \\vec{0}$",
+        "description": "$\\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the eigenspace for $\\lambda = 4$?",
+        "hint": "From the equation: $y = 0$, $x$ is free."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Eigenspace = span$\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$ (dimension 1)"
+        },
+        {
+          "id": "b",
+          "content": "Eigenspace = span$\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}, \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\\right\\}$ (dimension 2)"
+        },
+        {
+          "id": "c",
+          "content": "Eigenspace = span$\\left\\{\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\\right\\}$ (dimension 1)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The equation gives $y = 0$, so eigenvectors have the form $\\begin{pmatrix} x \\\\ 0 \\end{pmatrix} = x\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$. The eigenspace is 1-dimensional.",
+          "insight": "Geometric multiplicity (dimension of eigenspace) = 1, but algebraic multiplicity = 2. This is the problem!"
+        },
+        "incorrect": {
+          "b": "$\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$ is NOT an eigenvector. Check: $A\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 4 \\end{pmatrix} \\neq 4\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$.",
+          "c": "Check: $y = 0$ from the equation, so $\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$ is not an eigenvector. The eigenspace is span$\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Check diagonalizability condition",
+      "currentState": {
+        "expression": "Algebraic multiplicity of $\\lambda=4$: 2",
+        "description": "Geometric multiplicity (# of linearly independent eigenvectors): 1."
+      },
+      "reflectionPrompt": {
+        "question": "Is $A$ diagonalizable?",
+        "hint": "For diagonalizability: geometric multiplicity must equal algebraic multiplicity for each eigenvalue."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "No, $A$ is NOT diagonalizable (only 1 eigenvector for a $2 \\times 2$ matrix)"
+        },
+        {
+          "id": "b",
+          "content": "Yes, $A$ is diagonalizable"
+        },
+        {
+          "id": "c",
+          "content": "Cannot determine without more information"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $A$ is NOT diagonalizable. We need 2 linearly independent eigenvectors for a $2 \\times 2$ matrix, but we only have 1.",
+          "insight": "When geometric multiplicity < algebraic multiplicity, the matrix is defective (not diagonalizable)."
+        },
+        "incorrect": {
+          "b": "We only have 1 linearly independent eigenvector, but need 2 to form $P$. The matrix is not diagonalizable.",
+          "c": "We have enough information: geometric multiplicity (1) < algebraic multiplicity (2) means not diagonalizable."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Alternative: Jordan normal form",
+      "currentState": {
+        "expression": "$A$ is not diagonalizable",
+        "description": "Non-diagonalizable matrices can still be put in Jordan normal form."
+      },
+      "reflectionPrompt": {
+        "question": "What is the Jordan normal form of $A$?",
+        "hint": "For a repeated eigenvalue with deficiency, use a Jordan block: $J = \\begin{pmatrix} \\lambda & 1 \\\\ 0 & \\lambda \\end{pmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$J = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$ (which is actually $A$ itself!)"
+        },
+        {
+          "id": "b",
+          "content": "$D = \\begin{pmatrix} 4 & 0 \\\\ 0 & 4 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$J = \\begin{pmatrix} 4 & 0 \\\\ 1 & 4 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The Jordan normal form is $J = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$, which happens to be $A$ itself! $A$ is already in Jordan form.",
+          "insight": "Matrices in Jordan normal form are as close to diagonal as non-diagonalizable matrices can get."
+        },
+        "incorrect": {
+          "b": "That would be the diagonal form, but $A$ is not diagonalizable. The Jordan form has a 1 above the diagonal.",
+          "c": "In Jordan normal form, the 1's go above the diagonal, not below: $\\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "A matrix is diagonalizable iff it has $n$ linearly independent eigenvectors (for $n \\times n$)",
+      "Equivalently: geometric multiplicity = algebraic multiplicity for each eigenvalue",
+      "$A = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$ is NOT diagonalizable (only 1 eigenvector)",
+      "The matrix is already in Jordan normal form: $J = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$",
+      "Such matrices are called defective"
+    ],
+    "fullSolution": "**Is** $A = \\begin{pmatrix} 4 & 1 \\\\ 0 & 4 \\end{pmatrix}$ **diagonalizable?**\\n\\n**Find eigenvalues:**\\n$$\\det(A - \\lambda I) = \\det\\begin{pmatrix} 4-\\lambda & 1 \\\\ 0 & 4-\\lambda \\end{pmatrix} = (4-\\lambda)^2 = 0$$\\n\\nEigenvalue: $\\lambda = 4$ (algebraic multiplicity 2)\\n\\n**Find eigenvectors:**\\n$$(A - 4I)\\vec{x} = \\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$$\\n\\nThis gives $y = 0$, $x$ free.\\n\\nEigenspace: span$\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$ (geometric multiplicity 1)\\n\\n**Conclusion:** Geometric multiplicity (1) < Algebraic multiplicity (2)\\n\\n**Answer: $A$ is NOT diagonalizable** (defective matrix)\\n\\nNote: $A$ is already in Jordan normal form.",
+    "relatedProblems": [
+      "linear-algebra-eigenvalues-1",
+      "linear-algebra-basis-dimension-1"
+    ]
+  }
+}

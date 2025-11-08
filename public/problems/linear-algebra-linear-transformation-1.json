@@ -1,0 +1,217 @@
+{
+  "id": "linear-algebra-linear-transformation-1",
+  "type": "problem",
+  "title": "Linear Transformations: Find the standard matrix",
+  "topic": "Linear Algebra",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": ["linear algebra", "linear transformations", "standard matrix"],
+  "statement": {
+    "text": "Let $T: \\mathbb{R}^2 \\to \\mathbb{R}^3$ be the linear transformation defined by $T\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 2x - y \\\\ x + 3y \\\\ 4x \\end{pmatrix}$. Find the standard matrix $[T]$ for this transformation."
+  },
+  "objectives": [
+    "Understand the relationship between linear transformations and matrices",
+    "Find the standard matrix by applying $T$ to the standard basis",
+    "Verify the matrix representation"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall the standard matrix",
+      "currentState": {
+        "expression": "$T: \\mathbb{R}^2 \\to \\mathbb{R}^3$",
+        "description": "The standard matrix represents the linear transformation."
+      },
+      "reflectionPrompt": {
+        "question": "How do we find the standard matrix of a linear transformation?",
+        "hint": "Apply $T$ to each standard basis vector and use the results as columns."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$[T] = [T(\\vec{e}_1) \\ | \\ T(\\vec{e}_2)]$ where $\\vec{e}_1, \\vec{e}_2$ are standard basis vectors"
+        },
+        {
+          "id": "b",
+          "content": "$[T]$ is any matrix that makes $T$ work"
+        },
+        {
+          "id": "c",
+          "content": "$[T] = [\\vec{e}_1 \\ | \\ \\vec{e}_2]$ (the identity matrix)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The standard matrix has columns $[T] = [T(\\vec{e}_1) \\ | \\ T(\\vec{e}_2) \\ | \\ \\cdots]$ where $\\vec{e}_i$ are the standard basis vectors.",
+          "insight": "This construction ensures that $[T]\\vec{x} = T(\\vec{x})$ for all $\\vec{x}$."
+        },
+        "incorrect": {
+          "b": "The standard matrix is uniquely determined by the transformation.",
+          "c": "We need to apply $T$ to the basis vectors, not just use the basis vectors themselves."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Apply T to the first basis vector",
+      "currentState": {
+        "expression": "$\\vec{e}_1 = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$",
+        "description": "Compute $T(\\vec{e}_1)$ to get the first column."
+      },
+      "reflectionPrompt": {
+        "question": "What is $T(\\vec{e}_1)$?",
+        "hint": "Substitute $x = 1, y = 0$ into the transformation formula."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$T(\\vec{e}_1) = \\begin{pmatrix} 2 \\\\ 1 \\\\ 4 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$T(\\vec{e}_1) = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$T(\\vec{e}_1) = \\begin{pmatrix} 2 \\\\ 3 \\\\ 4 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $T\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix} = \\begin{pmatrix} 2(1) - 0 \\\\ 1 + 3(0) \\\\ 4(1) \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 1 \\\\ 4 \\end{pmatrix}$.",
+          "insight": "This vector becomes the first column of the standard matrix."
+        },
+        "incorrect": {
+          "b": "Apply the transformation formula: $2x - y$, $x + 3y$, $4x$ with $x=1, y=0$.",
+          "c": "For $y=0$: the second component is $1 + 3(0) = 1$, not 3."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Apply T to the second basis vector",
+      "currentState": {
+        "expression": "$\\vec{e}_2 = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$",
+        "description": "Compute $T(\\vec{e}_2)$ to get the second column."
+      },
+      "reflectionPrompt": {
+        "question": "What is $T(\\vec{e}_2)$?",
+        "hint": "Substitute $x = 0, y = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$T(\\vec{e}_2) = \\begin{pmatrix} -1 \\\\ 3 \\\\ 0 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$T(\\vec{e}_2) = \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$T(\\vec{e}_2) = \\begin{pmatrix} 1 \\\\ 3 \\\\ 4 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $T\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 2(0) - 1 \\\\ 0 + 3(1) \\\\ 4(0) \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ 3 \\\\ 0 \\end{pmatrix}$.",
+          "insight": "This becomes the second column of the standard matrix."
+        },
+        "incorrect": {
+          "b": "Don't forget to apply the transformation! Use the formula with $x=0, y=1$.",
+          "c": "With $x=0$: the first component is $2(0) - 1 = -1$ and the third is $4(0) = 0$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Construct the standard matrix",
+      "currentState": {
+        "expression": "$T(\\vec{e}_1) = \\begin{pmatrix} 2 \\\\ 1 \\\\ 4 \\end{pmatrix}$, $T(\\vec{e}_2) = \\begin{pmatrix} -1 \\\\ 3 \\\\ 0 \\end{pmatrix}$",
+        "description": "Place these as columns to form $[T]$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the standard matrix $[T]$?",
+        "hint": "$[T] = [T(\\vec{e}_1) \\ | \\ T(\\vec{e}_2)]$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$[T] = \\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$[T] = \\begin{pmatrix} 2 & 1 & 4 \\\\ -1 & 3 & 0 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$[T] = \\begin{pmatrix} 2 & 1 \\\\ -1 & 3 \\\\ 4 & 0 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $[T] = \\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}$ is a $3 \\times 2$ matrix with columns $T(\\vec{e}_1)$ and $T(\\vec{e}_2)$.",
+          "insight": "The matrix has 3 rows (dimension of codomain) and 2 columns (dimension of domain)."
+        },
+        "incorrect": {
+          "b": "The dimensions are wrong. For $T: \\mathbb{R}^2 \\to \\mathbb{R}^3$, the matrix should be $3 \\times 2$.",
+          "c": "The second column should be $T(\\vec{e}_2) = \\begin{pmatrix} -1 \\\\ 3 \\\\ 0 \\end{pmatrix}$, not the transpose."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Verify the matrix",
+      "currentState": {
+        "expression": "$[T] = \\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}$",
+        "description": "Check that $[T]\\begin{pmatrix} x \\\\ y \\end{pmatrix} = T\\begin{pmatrix} x \\\\ y \\end{pmatrix}$."
+      },
+      "reflectionPrompt": {
+        "question": "Does $[T]\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ equal $\\begin{pmatrix} 2x - y \\\\ x + 3y \\\\ 4x \\end{pmatrix}$?",
+        "hint": "Multiply: $\\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes! $[T]\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 2x - y \\\\ x + 3y \\\\ 4x \\end{pmatrix} = T\\begin{pmatrix} x \\\\ y \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "No, the result is $\\begin{pmatrix} 2x + y \\\\ x + 3y \\\\ 4x \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "No, we get a $2 \\times 1$ vector, not $3 \\times 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 2x - y \\\\ x + 3y \\\\ 4x + 0y \\end{pmatrix} = T\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ ✓",
+          "insight": "The standard matrix completely represents the linear transformation via matrix multiplication."
+        },
+        "incorrect": {
+          "b": "Check the first row: $2 \\cdot x + (-1) \\cdot y = 2x - y$, not $2x + y$.",
+          "c": "A $3 \\times 2$ matrix times a $2 \\times 1$ vector gives a $3 \\times 1$ vector."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Every linear transformation $T: \\mathbb{R}^n \\to \\mathbb{R}^m$ has a unique standard matrix representation",
+      "Standard matrix: $[T] = [T(\\vec{e}_1) \\ | \\ T(\\vec{e}_2) \\ | \\ \\cdots \\ | \\ T(\\vec{e}_n)]$",
+      "The matrix satisfies $[T]\\vec{x} = T(\\vec{x})$ for all $\\vec{x}$",
+      "For this problem: $[T] = \\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}$"
+    ],
+    "fullSolution": "**Find standard matrix for** $T\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 2x - y \\\\ x + 3y \\\\ 4x \\end{pmatrix}$\\n\\n**Step 1:** Apply $T$ to standard basis vectors\\n\\n$\\vec{e}_1 = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$: \\n$$T(\\vec{e}_1) = \\begin{pmatrix} 2(1) - 0 \\\\ 1 + 3(0) \\\\ 4(1) \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 1 \\\\ 4 \\end{pmatrix}$$\\n\\n$\\vec{e}_2 = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$:\\n$$T(\\vec{e}_2) = \\begin{pmatrix} 2(0) - 1 \\\\ 0 + 3(1) \\\\ 4(0) \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ 3 \\\\ 0 \\end{pmatrix}$$\\n\\n**Step 2:** Form matrix with these columns:\\n$$[T] = \\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\\\ 4 & 0 \\end{pmatrix}$$\\n\\n**Verification:** $[T]\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 2x - y \\\\ x + 3y \\\\ 4x \\end{pmatrix}$ ✓",
+    "relatedProblems": [
+      "linear-algebra-basis-dimension-1",
+      "linear-algebra-eigenvalues-1"
+    ]
+  }
+}

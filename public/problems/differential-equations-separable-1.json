@@ -1,0 +1,181 @@
+{
+  "id": "differential-equations-separable-1",
+  "type": "problem",
+  "title": "Separable ODE: Solve $\\frac{dy}{dx} = xy$",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": ["differential equations", "separable", "ODEs"],
+  "statement": {
+    "text": "Solve the differential equation $\\frac{dy}{dx} = xy$ with initial condition $y(0) = 1$."
+  },
+  "objectives": [
+    "Recognize a separable differential equation",
+    "Separate variables and integrate",
+    "Apply initial conditions"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Identify as separable",
+      "currentState": {
+        "expression": "$\\frac{dy}{dx} = xy$",
+        "description": "A separable ODE can be written as $g(y)dy = f(x)dx$."
+      },
+      "reflectionPrompt": {
+        "question": "How can we separate the variables?",
+        "hint": "Divide both sides to get all $y$ terms on one side and all $x$ terms on the other."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dy}{y} = x \\, dx$"
+        },
+        {
+          "id": "b",
+          "content": "$dy = xy \\, dx$"
+        },
+        {
+          "id": "c",
+          "content": "$y \\, dy = x \\, dx$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Divide both sides by $y$ to get $\\frac{1}{y}dy = x \\, dx$, or equivalently $\\frac{dy}{y} = x \\, dx$.",
+          "insight": "Separation of variables isolates each variable with its differential on opposite sides."
+        },
+        "incorrect": {
+          "b": "That's just rewriting. We need to separate: divide by $y$ to get $\\frac{dy}{y} = x \\, dx$.",
+          "c": "Not quite. We should have $\\frac{dy}{y} = x \\, dx$ (note the $\\frac{1}{y}$, not $y$)."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Integrate both sides",
+      "currentState": {
+        "expression": "$\\frac{dy}{y} = x \\, dx$",
+        "description": "Integrate both sides."
+      },
+      "reflectionPrompt": {
+        "question": "What are the integrals?",
+        "hint": "$\\int \\frac{dy}{y} = \\ln|y| + C_1$ and $\\int x \\, dx = \\frac{x^2}{2} + C_2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\ln|y| = \\frac{x^2}{2} + C$"
+        },
+        {
+          "id": "b",
+          "content": "$y = \\frac{x^2}{2} + C$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{y^2}{2} = \\frac{x^2}{2} + C$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int \\frac{dy}{y} = \\ln|y|$ and $\\int x \\, dx = \\frac{x^2}{2}$. Combining constants: $\\ln|y| = \\frac{x^2}{2} + C$.",
+          "insight": "When integrating both sides of a separated equation, combine the constants into one."
+        },
+        "incorrect": {
+          "b": "$\\int \\frac{dy}{y} = \\ln|y|$, not just $y$. Use the logarithm rule.",
+          "c": "The integral of $\\frac{1}{y}$ is $\\ln|y|$, not $\\frac{y^2}{2}$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Solve for y",
+      "currentState": {
+        "expression": "$\\ln|y| = \\frac{x^2}{2} + C$",
+        "description": "Exponentiate to solve for $y$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $y$ in terms of $x$?",
+        "hint": "Exponentiate both sides: $|y| = e^{\\frac{x^2}{2} + C} = e^C \\cdot e^{\\frac{x^2}{2}}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$y = Ae^{\\frac{x^2}{2}}$ where $A = \\pm e^C$"
+        },
+        {
+          "id": "b",
+          "content": "$y = e^{\\frac{x^2}{2}} + C$"
+        },
+        {
+          "id": "c",
+          "content": "$y = \\frac{x^2}{2} + C$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Exponentiating: $|y| = e^C \\cdot e^{\\frac{x^2}{2}}$. Letting $A = \\pm e^C$ (any nonzero constant), we get $y = Ae^{\\frac{x^2}{2}}$.",
+          "insight": "The general solution contains an arbitrary constant $A$."
+        },
+        "incorrect": {
+          "b": "When exponentiating, $e^C$ multiplies, not adds: $y = e^C \\cdot e^{\\frac{x^2}{2}} = Ae^{\\frac{x^2}{2}}$.",
+          "c": "You need to exponentiate to remove the logarithm: $e^{\\ln|y|} = |y|$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Apply initial condition",
+      "currentState": {
+        "expression": "$y = Ae^{\\frac{x^2}{2}}$, $y(0) = 1$",
+        "description": "Find the specific value of $A$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $A$?",
+        "hint": "Substitute $x = 0, y = 1$ into $y = Ae^{\\frac{x^2}{2}}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$A = 1$ (since $1 = A \\cdot e^0 = A$)"
+        },
+        {
+          "id": "b",
+          "content": "$A = 0$"
+        },
+        {
+          "id": "c",
+          "content": "$A = e$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! At $x = 0$: $1 = A \\cdot e^{0} = A \\cdot 1 = A$. So $A = 1$ and the solution is $y = e^{\\frac{x^2}{2}}$.",
+          "insight": "Initial conditions determine the particular solution from the general solution."
+        },
+        "incorrect": {
+          "b": "If $A = 0$ then $y = 0$ everywhere, which doesn't satisfy $y(0) = 1$.",
+          "c": "$y(0) = A \\cdot e^0 = A = 1$, not $e$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Separable ODEs have the form $\\frac{dy}{dx} = f(x)g(y)$",
+      "Separate variables: $\\frac{1}{g(y)}dy = f(x)dx$",
+      "Integrate both sides and solve for $y$",
+      "Initial conditions determine the constant of integration",
+      "Solution: $y = e^{\\frac{x^2}{2}}$"
+    ],
+    "fullSolution": "$\\frac{dy}{dx} = xy$, $y(0) = 1$\n\nSeparate: $\\frac{dy}{y} = x \\, dx$\n\nIntegrate: $\\ln|y| = \\frac{x^2}{2} + C$\n\nExponentiate: $y = Ae^{\\frac{x^2}{2}}$\n\nApply $y(0) = 1$: $1 = A \\cdot e^0 = A$, so $A = 1$\n\nSolution: $y = e^{\\frac{x^2}{2}}$",
+    "relatedProblems": [
+      "calculus-integration-substitution-1",
+      "calculus-integration-by-parts-1"
+    ]
+  }
+}

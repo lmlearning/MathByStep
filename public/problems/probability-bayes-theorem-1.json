@@ -1,0 +1,218 @@
+{
+  "id": "probability-bayes-theorem-1",
+  "type": "problem",
+  "title": "Bayes' Theorem: Medical Test Problem",
+  "topic": "Logic & Proofs",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["probability", "Bayes theorem", "conditional probability"],
+  "statement": {
+    "text": "A disease affects 1% of the population. A test for the disease is 95% accurate (both sensitivity and specificity). If someone tests positive, what is the probability they actually have the disease?"
+  },
+  "objectives": [
+    "Apply Bayes' Theorem",
+    "Understand conditional probability",
+    "Interpret false positives"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Define events",
+      "currentState": {
+        "expression": "Disease prevalence: 1%",
+        "description": "Let $D$ = person has disease, $T^+$ = test positive."
+      },
+      "reflectionPrompt": {
+        "question": "What is $P(D)$?",
+        "hint": "1% of population has the disease."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P(D) = 0.01$"
+        },
+        {
+          "id": "b",
+          "content": "$P(D) = 0.1$"
+        },
+        {
+          "id": "c",
+          "content": "$P(D) = 0.95$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $P(D) = 0.01$ (1% = 1/100). This is the prior probability.",
+          "insight": "The prior probability represents how common the disease is before testing."
+        },
+        "incorrect": {
+          "b": "1% = 0.01, not 0.1 (which would be 10%).",
+          "c": "95% is the test accuracy, not the disease prevalence. $P(D) = 0.01$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Identify conditional probabilities",
+      "currentState": {
+        "expression": "Test is 95% accurate",
+        "description": "This means 95% sensitivity (true positive rate) and 95% specificity (true negative rate)."
+      },
+      "reflectionPrompt": {
+        "question": "What is $P(T^+|D)$ (probability of testing positive given disease)?",
+        "hint": "Sensitivity = 95% means if you have the disease, there's 95% chance the test is positive."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P(T^+|D) = 0.95$ (sensitivity)"
+        },
+        {
+          "id": "b",
+          "content": "$P(T^+|D) = 0.01$"
+        },
+        {
+          "id": "c",
+          "content": "$P(T^+|D) = 0.05$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Sensitivity (true positive rate) is $P(T^+|D) = 0.95$. Also, specificity gives $P(T^-|D^c) = 0.95$, so $P(T^+|D^c) = 0.05$ (false positive rate).",
+          "insight": "Conditional probabilities $P(A|B)$ read as 'probability of A given B'."
+        },
+        "incorrect": {
+          "b": "That's the disease prevalence. Sensitivity is the test accuracy: $P(T^+|D) = 0.95$.",
+          "c": "That's the false positive rate $P(T^+|D^c)$. We want true positive: $P(T^+|D) = 0.95$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "State Bayes' Theorem",
+      "currentState": {
+        "expression": "Want: $P(D|T^+)$ (probability of disease given positive test)",
+        "description": "Use Bayes' Theorem."
+      },
+      "reflectionPrompt": {
+        "question": "What is Bayes' Theorem?",
+        "hint": "$P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P(D|T^+) = \\frac{P(T^+|D)P(D)}{P(T^+)}$"
+        },
+        {
+          "id": "b",
+          "content": "$P(D|T^+) = P(T^+|D) \\cdot P(D)$"
+        },
+        {
+          "id": "c",
+          "content": "$P(D|T^+) = \\frac{P(D)}{P(T^+)}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Bayes' Theorem: $P(D|T^+) = \\frac{P(T^+|D)P(D)}{P(T^+)}$. This reverses the conditioning.",
+          "insight": "Bayes' Theorem lets us compute $P(A|B)$ from $P(B|A)$ and the marginal probabilities."
+        },
+        "incorrect": {
+          "b": "Don't forget to divide by $P(T^+)$. The full formula is $P(D|T^+) = \\frac{P(T^+|D)P(D)}{P(T^+)}$.",
+          "c": "Missing the key term $P(T^+|D)$ in the numerator."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Calculate P(T+)",
+      "currentState": {
+        "expression": "$P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)$",
+        "description": "Law of total probability."
+      },
+      "reflectionPrompt": {
+        "question": "What is $P(T^+)$?",
+        "hint": "$P(T^+) = 0.95 \\cdot 0.01 + 0.05 \\cdot 0.99$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P(T^+) = 0.0095 + 0.0495 = 0.059$"
+        },
+        {
+          "id": "b",
+          "content": "$P(T^+) = 0.95$"
+        },
+        {
+          "id": "c",
+          "content": "$P(T^+) = 0.01$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c) = (0.95)(0.01) + (0.05)(0.99) = 0.0095 + 0.0495 = 0.059$ (5.9%).",
+          "insight": "About 5.9% of people test positive (both true and false positives combined)."
+        },
+        "incorrect": {
+          "b": "That's just the test accuracy. We need to weight by disease prevalence: $P(T^+) = 0.95(0.01) + 0.05(0.99) = 0.059$.",
+          "c": "That's just $P(D)$. Account for false positives too: $P(T^+) = 0.059$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Apply Bayes' Theorem",
+      "currentState": {
+        "expression": "$P(D|T^+) = \\frac{P(T^+|D)P(D)}{P(T^+)} = \\frac{0.95 \\cdot 0.01}{0.059}$",
+        "description": "Calculate the final probability."
+      },
+      "reflectionPrompt": {
+        "question": "What is $P(D|T^+)$?",
+        "hint": "$\\frac{0.0095}{0.059} \\approx 0.161$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P(D|T^+) \\approx 0.161$ or about 16.1%"
+        },
+        {
+          "id": "b",
+          "content": "$P(D|T^+) = 0.95$ (95%)"
+        },
+        {
+          "id": "c",
+          "content": "$P(D|T^+) = 0.5$ (50%)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $P(D|T^+) = \\frac{0.0095}{0.059} \\approx 0.161$ or 16.1%. Despite a positive test, there's only about a 16% chance of actually having the disease! This surprising result comes from the low base rate (1%).",
+          "insight": "Base rate fallacy: when disease is rare, even accurate tests have many false positives. Most positive tests are false positives!"
+        },
+        "incorrect": {
+          "b": "That's the test accuracy, not the probability of disease given positive test. Due to low prevalence, $P(D|T^+) \\approx 16\\%$.",
+          "c": "$P(D|T^+) = \\frac{0.0095}{0.059} \\approx 0.161$ (16%), not 50%."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Bayes' Theorem: $P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$",
+      "Despite 95% test accuracy, $P(D|T^+) \\approx 16\\%$ due to 1% base rate",
+      "When disease is rare, most positive tests are false positives",
+      "This is the base rate fallacy - ignoring prior probabilities leads to wrong conclusions",
+      "Law of total probability: $P(B) = \\sum_i P(B|A_i)P(A_i)$"
+    ],
+    "fullSolution": "Given: $P(D) = 0.01$, $P(T^+|D) = 0.95$, $P(T^+|D^c) = 0.05$\n\nWant: $P(D|T^+)$\n\n**Law of total probability:**\n$P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)$\n$= 0.95(0.01) + 0.05(0.99) = 0.0095 + 0.0495 = 0.059$\n\n**Bayes' Theorem:**\n$P(D|T^+) = \\frac{P(T^+|D)P(D)}{P(T^+)} = \\frac{0.95 \\times 0.01}{0.059} = \\frac{0.0095}{0.059} \\approx 0.161$\n\nAnswer: About **16.1%**",
+    "relatedProblems": [
+      "logic-proof-direct-1",
+      "discrete-math-combinatorics-1"
+    ]
+  }
+}

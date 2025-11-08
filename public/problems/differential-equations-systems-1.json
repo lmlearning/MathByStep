@@ -1,0 +1,218 @@
+{
+  "id": "differential-equations-systems-1",
+  "type": "problem",
+  "title": "Systems of DEs: Solve using eigenvalues",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 13,
+  "tags": ["differential equations", "systems", "eigenvalues", "linear algebra"],
+  "statement": {
+    "text": "Solve the system $\\vec{x}' = A\\vec{x}$ where $A = \\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$ and $\\vec{x} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}$."
+  },
+  "objectives": [
+    "Find eigenvalues and eigenvectors of the coefficient matrix",
+    "Write the general solution using eigenvectors",
+    "Understand the phase portrait behavior"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Find the characteristic equation",
+      "currentState": {
+        "expression": "$A = \\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$",
+        "description": "Compute $\\det(A - \\lambda I) = 0$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the characteristic polynomial?",
+        "hint": "$\\det\\begin{pmatrix} 1-\\lambda & 2 \\\\ 2 & 1-\\lambda \\end{pmatrix} = (1-\\lambda)^2 - 4$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$(1-\\lambda)^2 - 4 = \\lambda^2 - 2\\lambda - 3 = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$(1-\\lambda)^2 + 4 = 0$"
+        },
+        {
+          "id": "c",
+          "content": "$\\lambda^2 - 2\\lambda + 1 = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\det(A - \\lambda I) = (1-\\lambda)^2 - 4 = 1 - 2\\lambda + \\lambda^2 - 4 = \\lambda^2 - 2\\lambda - 3$.",
+          "insight": "This factors as $(\\lambda - 3)(\\lambda + 1) = 0$."
+        },
+        "incorrect": {
+          "b": "The determinant is $(1-\\lambda)^2 - 4$, not $(1-\\lambda)^2 + 4$. The off-diagonal terms give $-2 \\cdot 2 = -4$.",
+          "c": "Don't forget the off-diagonal terms: det = $(1-\\lambda)^2 - 2 \\cdot 2 = (1-\\lambda)^2 - 4$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Find the eigenvalues",
+      "currentState": {
+        "expression": "$\\lambda^2 - 2\\lambda - 3 = 0$",
+        "description": "Solve for $\\lambda$."
+      },
+      "reflectionPrompt": {
+        "question": "What are the eigenvalues?",
+        "hint": "Factor: $(\\lambda - 3)(\\lambda + 1) = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\lambda_1 = 3$, $\\lambda_2 = -1$"
+        },
+        {
+          "id": "b",
+          "content": "$\\lambda_1 = 1$, $\\lambda_2 = -3$"
+        },
+        {
+          "id": "c",
+          "content": "$\\lambda_1 = 2$, $\\lambda_2 = -1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $(\\lambda - 3)(\\lambda + 1) = 0$ gives $\\lambda = 3$ and $\\lambda = -1$.",
+          "insight": "One positive eigenvalue (unstable direction) and one negative (stable direction) makes this a saddle point."
+        },
+        "incorrect": {
+          "b": "Factor correctly: $\\lambda^2 - 2\\lambda - 3 = (\\lambda - 3)(\\lambda + 1)$, giving $\\lambda = 3$ and $\\lambda = -1$.",
+          "c": "Check: $2 + (-1) = 1 \\neq 2$ (sum should equal trace). The eigenvalues are 3 and -1."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Find eigenvector for λ₁=3",
+      "currentState": {
+        "expression": "$(A - 3I)\\vec{v}_1 = \\vec{0}$",
+        "description": "$\\begin{pmatrix} -2 & 2 \\\\ 2 & -2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is an eigenvector for $\\lambda_1 = 3$?",
+        "hint": "$-2v_1 + 2v_2 = 0 \\Rightarrow v_2 = v_1$. Choose $v_1 = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\vec{v}_1 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\vec{v}_1 = \\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! From $-2v_1 + 2v_2 = 0$, we get $v_2 = v_1$. Choosing $v_1 = 1$ gives $\\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$.",
+          "insight": "Any scalar multiple works, but $\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$ is the simplest choice."
+        },
+        "incorrect": {
+          "b": "From the equation, $v_2 = v_1$ (not $v_2 = -v_1$). The eigenvector is $\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$.",
+          "c": "Check: $A\\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix} \\neq 3\\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix}$. The correct eigenvector is $\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Find eigenvector for λ₂=-1",
+      "currentState": {
+        "expression": "$(A + I)\\vec{v}_2 = \\vec{0}$",
+        "description": "$\\begin{pmatrix} 2 & 2 \\\\ 2 & 2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is an eigenvector for $\\lambda_2 = -1$?",
+        "hint": "$2v_1 + 2v_2 = 0 \\Rightarrow v_2 = -v_1$. Choose $v_1 = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\vec{v}_2 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\vec{v}_2 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\vec{v}_2 = \\begin{pmatrix} -1 \\\\ -1 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! From $2v_1 + 2v_2 = 0$, we get $v_2 = -v_1$. Choosing $v_1 = 1$ gives $\\vec{v}_2 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$.",
+          "insight": "The two eigenvectors are linearly independent, forming a basis for $\\mathbb{R}^2$."
+        },
+        "incorrect": {
+          "b": "That's the eigenvector for $\\lambda = 3$. For $\\lambda = -1$, we get $v_2 = -v_1$, giving $\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$.",
+          "c": "Any scalar multiple works, but $\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$ is simpler than $\\begin{pmatrix} -1 \\\\ -1 \\end{pmatrix}$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Write the general solution",
+      "currentState": {
+        "expression": "$\\lambda_1 = 3$, $\\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$; $\\lambda_2 = -1$, $\\vec{v}_2 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$",
+        "description": "The general solution is $\\vec{x}(t) = c_1e^{\\lambda_1 t}\\vec{v}_1 + c_2e^{\\lambda_2 t}\\vec{v}_2$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the solution $\\vec{x}(t)$?",
+        "hint": "$\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\vec{x}(t) = c_1e^{t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-3t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\vec{x}(t) = e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$. In components: $x(t) = c_1e^{3t} + c_2e^{-t}$, $y(t) = c_1e^{3t} - c_2e^{-t}$.",
+          "insight": "As $t \\to \\infty$, the $e^{3t}$ term dominates (unstable). As $t \\to -\\infty$, the $e^{-t}$ term dominates. This is a saddle point."
+        },
+        "incorrect": {
+          "b": "The eigenvalues are 3 and -1, not 1 and -3. Check your characteristic equation.",
+          "c": "Don't forget the arbitrary constants $c_1$ and $c_2$!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "System $\\vec{x}' = A\\vec{x}$: solution uses eigenvalues and eigenvectors of $A$",
+      "General solution: $\\vec{x}(t) = c_1e^{\\lambda_1 t}\\vec{v}_1 + c_2e^{\\lambda_2 t}\\vec{v}_2 + \\cdots$",
+      "Phase portrait depends on eigenvalues: both negative (stable node), both positive (unstable node), opposite signs (saddle)",
+      "For this problem: saddle point with eigenvalues 3 and -1",
+      "Solution: $\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
+    ],
+    "fullSolution": "**Solve:** $\\vec{x}' = A\\vec{x}$ where $A = \\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$\\n\\n**Characteristic equation:**\\n$$\\det(A - \\lambda I) = (1-\\lambda)^2 - 4 = \\lambda^2 - 2\\lambda - 3 = 0$$\\n$$(\\lambda - 3)(\\lambda + 1) = 0$$\\n\\n**Eigenvalues:** $\\lambda_1 = 3$, $\\lambda_2 = -1$\\n\\n**Eigenvector for λ₁=3:**\\n$(A - 3I)\\vec{v} = \\vec{0}$: $\\begin{pmatrix} -2 & 2 \\\\ 2 & -2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\vec{0}$\\n\\n$v_2 = v_1 \\Rightarrow \\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$\\n\\n**Eigenvector for λ₂=-1:**\\n$(A + I)\\vec{v} = \\vec{0}$: $v_2 = -v_1 \\Rightarrow \\vec{v}_2 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$\\n\\n**General solution:**\\n$$\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$$\\n\\n**Components:**\\n$x(t) = c_1e^{3t} + c_2e^{-t}$\\n$y(t) = c_1e^{3t} - c_2e^{-t}$",
+    "relatedProblems": [
+      "linear-algebra-eigenvalues-1",
+      "differential-equations-second-order-homogeneous-1"
+    ]
+  }
+}

@@ -25,6 +25,44 @@ import logicProofContradiction1 from '@/public/problems/logic-proof-contradictio
 import logicProofInduction1 from '@/public/problems/logic-proof-induction-1.json';
 import logicProofDirect1 from '@/public/problems/logic-proof-direct-1.json';
 import logicSetTheoryDemorgans1 from '@/public/problems/logic-set-theory-demorgans-1.json';
+// Linear Algebra
+import linearAlgebraVectorSpace1 from '@/public/problems/linear-algebra-vector-space-1.json';
+import linearAlgebraEigenvalues1 from '@/public/problems/linear-algebra-eigenvalues-1.json';
+import linearAlgebraBasisDimension1 from '@/public/problems/linear-algebra-basis-dimension-1.json';
+import linearAlgebraDeterminants1 from '@/public/problems/linear-algebra-determinants-1.json';
+import linearAlgebraNullSpace1 from '@/public/problems/linear-algebra-null-space-1.json';
+import linearAlgebraLinearTransformation1 from '@/public/problems/linear-algebra-linear-transformation-1.json';
+import linearAlgebraGramSchmidt1 from '@/public/problems/linear-algebra-gram-schmidt-1.json';
+import linearAlgebraDiagonalization1 from '@/public/problems/linear-algebra-diagonalization-1.json';
+// Multivariable Calculus
+import multivariablePartialDerivatives1 from '@/public/problems/multivariable-partial-derivatives-1.json';
+import multivariableDoubleIntegral1 from '@/public/problems/multivariable-double-integral-1.json';
+import multivariableChainRule1 from '@/public/problems/multivariable-chain-rule-1.json';
+import multivariableLagrangeMultipliers1 from '@/public/problems/multivariable-lagrange-multipliers-1.json';
+import multivariableLineIntegral1 from '@/public/problems/multivariable-line-integral-1.json';
+import multivariableGreensTheorem1 from '@/public/problems/multivariable-greens-theorem-1.json';
+import multivariableTripleIntegral1 from '@/public/problems/multivariable-triple-integral-1.json';
+import multivariableDivergenceTheorem1 from '@/public/problems/multivariable-divergence-theorem-1.json';
+// Differential Equations
+import differentialEquationsSeparable1 from '@/public/problems/differential-equations-separable-1.json';
+import differentialEquationsFirstOrderLinear1 from '@/public/problems/differential-equations-first-order-linear-1.json';
+import differentialEquationsSecondOrderHomogeneous1 from '@/public/problems/differential-equations-second-order-homogeneous-1.json';
+import differentialEquationsUndeterminedCoefficients1 from '@/public/problems/differential-equations-undetermined-coefficients-1.json';
+import differentialEquationsSystems1 from '@/public/problems/differential-equations-systems-1.json';
+import differentialEquationsLaplaceTransform1 from '@/public/problems/differential-equations-laplace-transform-1.json';
+// Real Analysis
+import realAnalysisSequenceConvergence1 from '@/public/problems/real-analysis-sequence-convergence-1.json';
+import realAnalysisContinuityUniform1 from '@/public/problems/real-analysis-continuity-uniform-1.json';
+// Abstract Algebra
+import abstractAlgebraGroup1 from '@/public/problems/abstract-algebra-group-1.json';
+// Complex Analysis
+import complexAnalysisCauchyRiemann1 from '@/public/problems/complex-analysis-cauchy-riemann-1.json';
+// Topology
+import topologyMetricSpaces1 from '@/public/problems/topology-metric-spaces-1.json';
+// Probability
+import probabilityBayesTheorem1 from '@/public/problems/probability-bayes-theorem-1.json';
+// Discrete Math
+import discreteMathCombinatorics1 from '@/public/problems/discrete-math-combinatorics-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -52,6 +90,44 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'logic-proof-induction-1': logicProofInduction1 as any as Problem,
   'logic-proof-direct-1': logicProofDirect1 as any as Problem,
   'logic-set-theory-demorgans-1': logicSetTheoryDemorgans1 as any as Problem,
+  // Linear Algebra
+  'linear-algebra-vector-space-1': linearAlgebraVectorSpace1 as any as Problem,
+  'linear-algebra-eigenvalues-1': linearAlgebraEigenvalues1 as any as Problem,
+  'linear-algebra-basis-dimension-1': linearAlgebraBasisDimension1 as any as Problem,
+  'linear-algebra-determinants-1': linearAlgebraDeterminants1 as any as Problem,
+  'linear-algebra-null-space-1': linearAlgebraNullSpace1 as any as Problem,
+  'linear-algebra-linear-transformation-1': linearAlgebraLinearTransformation1 as any as Problem,
+  'linear-algebra-gram-schmidt-1': linearAlgebraGramSchmidt1 as any as Problem,
+  'linear-algebra-diagonalization-1': linearAlgebraDiagonalization1 as any as Problem,
+  // Multivariable Calculus
+  'multivariable-partial-derivatives-1': multivariablePartialDerivatives1 as any as Problem,
+  'multivariable-double-integral-1': multivariableDoubleIntegral1 as any as Problem,
+  'multivariable-chain-rule-1': multivariableChainRule1 as any as Problem,
+  'multivariable-lagrange-multipliers-1': multivariableLagrangeMultipliers1 as any as Problem,
+  'multivariable-line-integral-1': multivariableLineIntegral1 as any as Problem,
+  'multivariable-greens-theorem-1': multivariableGreensTheorem1 as any as Problem,
+  'multivariable-triple-integral-1': multivariableTripleIntegral1 as any as Problem,
+  'multivariable-divergence-theorem-1': multivariableDivergenceTheorem1 as any as Problem,
+  // Differential Equations
+  'differential-equations-separable-1': differentialEquationsSeparable1 as any as Problem,
+  'differential-equations-first-order-linear-1': differentialEquationsFirstOrderLinear1 as any as Problem,
+  'differential-equations-second-order-homogeneous-1': differentialEquationsSecondOrderHomogeneous1 as any as Problem,
+  'differential-equations-undetermined-coefficients-1': differentialEquationsUndeterminedCoefficients1 as any as Problem,
+  'differential-equations-systems-1': differentialEquationsSystems1 as any as Problem,
+  'differential-equations-laplace-transform-1': differentialEquationsLaplaceTransform1 as any as Problem,
+  // Real Analysis
+  'real-analysis-sequence-convergence-1': realAnalysisSequenceConvergence1 as any as Problem,
+  'real-analysis-continuity-uniform-1': realAnalysisContinuityUniform1 as any as Problem,
+  // Abstract Algebra
+  'abstract-algebra-group-1': abstractAlgebraGroup1 as any as Problem,
+  // Complex Analysis
+  'complex-analysis-cauchy-riemann-1': complexAnalysisCauchyRiemann1 as any as Problem,
+  // Topology
+  'topology-metric-spaces-1': topologyMetricSpaces1 as any as Problem,
+  // Probability
+  'probability-bayes-theorem-1': probabilityBayesTheorem1 as any as Problem,
+  // Discrete Math
+  'discrete-math-combinatorics-1': discreteMathCombinatorics1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

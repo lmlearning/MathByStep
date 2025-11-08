@@ -1,0 +1,180 @@
+{
+  "id": "topology-metric-spaces-1",
+  "type": "proof",
+  "title": "Prove the Triangle Inequality for Metric Spaces",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": ["topology", "metric spaces", "triangle inequality"],
+  "statement": {
+    "text": "Let $(X, d)$ be a metric space. Verify that the standard Euclidean metric $d(x,y) = \\sqrt{\\sum (x_i - y_i)^2}$ on $\\mathbb{R}^n$ satisfies the triangle inequality: $d(x,z) \\leq d(x,y) + d(y,z)$."
+  },
+  "objectives": [
+    "Understand metric space axioms",
+    "Apply Cauchy-Schwarz inequality",
+    "Verify triangle inequality"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State the triangle inequality",
+      "currentState": {
+        "expression": "$d(x,y) = ||x-y||$ in $\\mathbb{R}^n$",
+        "description": "Triangle inequality: $d(x,z) \\leq d(x,y) + d(y,z)$."
+      },
+      "reflectionPrompt": {
+        "question": "What does this inequality mean geometrically?",
+        "hint": "The direct path is shorter than or equal to any detour."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Going directly from $x$ to $z$ is no longer than going via $y$"
+        },
+        {
+          "id": "b",
+          "content": "The sum of distances equals the total distance"
+        },
+        {
+          "id": "c",
+          "content": "Distances are always positive"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The triangle inequality says the direct path $d(x,z)$ is at most as long as the path $d(x,y) + d(y,z)$ that goes via $y$.",
+          "insight": "This is one of the defining axioms of a metric space."
+        },
+        "incorrect": {
+          "b": "The inequality $\\leq$ shows the direct path is shorter or equal, not that they're equal.",
+          "c": "That's a different axiom ($d(x,y) \\geq 0$). Triangle inequality is about the relationship between three points."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Rewrite in vector notation",
+      "currentState": {
+        "expression": "$d(x,z) \\leq d(x,y) + d(y,z)$",
+        "description": "Use vector form: $||x-z|| \\leq ||x-y|| + ||y-z||$."
+      },
+      "reflectionPrompt": {
+        "question": "How can we relate $x-z$ to $(x-y)$ and $(y-z)$?",
+        "hint": "$x - z = (x-y) + (y-z)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$x - z = (x-y) + (y-z)$, so we need $||a+b|| \\leq ||a|| + ||b||$"
+        },
+        {
+          "id": "b",
+          "content": "$x - z = (x-y) - (y-z)$"
+        },
+        {
+          "id": "c",
+          "content": "$||x-z|| = ||x-y|| \\cdot ||y-z||$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Let $a = x-y$ and $b = y-z$. Then $a+b = x-z$. The triangle inequality becomes $||a+b|| \\leq ||a|| + ||b||$.",
+          "insight": "This reduces to proving the triangle inequality for vectors in $\\mathbb{R}^n$."
+        },
+        "incorrect": {
+          "b": "Check: $(x-y) + (y-z) = x - y + y - z = x - z$ ✓. Addition, not subtraction.",
+          "c": "Distances don't multiply. The triangle inequality is about addition: $||a+b|| \\leq ||a|| + ||b||$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Square both sides",
+      "currentState": {
+        "expression": "Want: $||a+b|| \\leq ||a|| + ||b||$",
+        "description": "Square both sides (valid since both are non-negative)."
+      },
+      "reflectionPrompt": {
+        "question": "What do we need to prove after squaring?",
+        "hint": "$||a+b||^2 \\leq (||a|| + ||b||)^2 = ||a||^2 + 2||a||||b|| + ||b||^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$||a+b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2$"
+        },
+        {
+          "id": "b",
+          "content": "$||a+b||^2 \\leq ||a||^2 + ||b||^2$"
+        },
+        {
+          "id": "c",
+          "content": "$||a+b|| \\leq ||a|| \\cdot ||b||$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Right! Squaring preserves the inequality (both sides are positive), giving $||a+b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2$.",
+          "insight": "Squaring makes the proof easier by eliminating square roots."
+        },
+        "incorrect": {
+          "b": "Don't forget the cross term when expanding $(||a|| + ||b||)^2 = ||a||^2 + 2||a||||b|| + ||b||^2$.",
+          "c": "We're adding norms, not multiplying. After squaring: $||a+b||^2 \\leq (||a|| + ||b||)^2$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Use Cauchy-Schwarz",
+      "currentState": {
+        "expression": "$||a+b||^2 = (a+b) \\cdot (a+b) = ||a||^2 + 2a \\cdot b + ||b||^2$",
+        "description": "We need $a \\cdot b \\leq ||a||||b||$ (Cauchy-Schwarz)."
+      },
+      "reflectionPrompt": {
+        "question": "If $a \\cdot b \\leq ||a||||b||$, what can we conclude?",
+        "hint": "Then $||a||^2 + 2a \\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$||a+b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2 = (||a|| + ||b||)^2$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "The triangle inequality fails"
+        },
+        {
+          "id": "c",
+          "content": "$||a+b|| = ||a|| + ||b||$ exactly"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $a \\cdot b \\leq ||a||||b||$ by Cauchy-Schwarz, we have $||a+b||^2 = ||a||^2 + 2a\\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2 = (||a||+||b||)^2$. Taking square roots: $||a+b|| \\leq ||a|| + ||b||$ ✓",
+          "insight": "Cauchy-Schwarz inequality is the key to proving the triangle inequality."
+        },
+        "incorrect": {
+          "b": "Using Cauchy-Schwarz proves the triangle inequality! $2a \\cdot b \\leq 2||a||||b||$ gives the result.",
+          "c": "Equality holds only when $a$ and $b$ are parallel and point in the same direction."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Metric space axioms: (1) $d(x,y) \\geq 0$, (2) $d(x,y) = 0 \\Leftrightarrow x=y$, (3) $d(x,y) = d(y,x)$, (4) Triangle inequality",
+      "Triangle inequality: $d(x,z) \\leq d(x,y) + d(y,z)$",
+      "For Euclidean metric, the proof uses Cauchy-Schwarz: $a \\cdot b \\leq ||a||||b||$",
+      "This makes $\\mathbb{R}^n$ with standard distance a metric space"
+    ],
+    "fullSolution": "**Triangle Inequality:** $d(x,z) \\leq d(x,y) + d(y,z)$ for Euclidean metric.\n\n**Proof:**\nLet $a = x-y$, $b = y-z$. Then $a+b = x-z$.\n\nWant: $||a+b|| \\leq ||a|| + ||b||$\n\nSquare both sides:\n$||a+b||^2 \\leq (||a||+||b||)^2$\n\nExpand:\n$||a||^2 + 2a\\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2$\n\nThis reduces to: $a \\cdot b \\leq ||a||||b||$\n\nwhich is Cauchy-Schwarz inequality ✓\n\nTherefore triangle inequality holds.",
+    "relatedProblems": [
+      "geometry-triangle-angles-1",
+      "real-analysis-sequence-convergence-1"
+    ]
+  }
+}

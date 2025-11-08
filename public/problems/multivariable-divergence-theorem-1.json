@@ -1,0 +1,180 @@
+{
+  "id": "multivariable-divergence-theorem-1",
+  "type": "problem",
+  "title": "Divergence Theorem: Flux through a closed surface",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["multivariable calculus", "divergence theorem", "flux", "vector fields"],
+  "statement": {
+    "text": "Use the divergence theorem to find the flux of $\\vec{F} = \\langle x, y, z \\rangle$ outward through the surface of the cube $[0,1]^3$."
+  },
+  "objectives": [
+    "Understand the divergence theorem",
+    "Compute divergence of a vector field",
+    "Convert surface integral to volume integral"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall the divergence theorem",
+      "currentState": {
+        "expression": "$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS$ where $S$ is a closed surface",
+        "description": "The divergence theorem relates flux to a volume integral."
+      },
+      "reflectionPrompt": {
+        "question": "What is the divergence theorem?",
+        "hint": "$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E \\nabla \\cdot \\vec{F} \\, dV$ where $E$ is the solid enclosed by $S$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E \\nabla \\cdot \\vec{F} \\, dV$"
+        },
+        {
+          "id": "b",
+          "content": "$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E |\\vec{F}| \\, dV$"
+        },
+        {
+          "id": "c",
+          "content": "$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\oint_C \\vec{F} \\cdot d\\vec{r}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The divergence theorem: $\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E (\\nabla \\cdot \\vec{F}) \\, dV$ converts flux through a closed surface to a volume integral.",
+          "insight": "This is also called Gauss's theorem. It's a 3D generalization of Green's theorem."
+        },
+        "incorrect": {
+          "b": "We need the divergence $\\nabla \\cdot \\vec{F}$, not the magnitude $|\\vec{F}|$.",
+          "c": "That's Stokes' theorem (relating surface integrals to line integrals), not the divergence theorem."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute the divergence",
+      "currentState": {
+        "expression": "$\\vec{F} = \\langle x, y, z \\rangle = \\langle F_1, F_2, F_3 \\rangle$",
+        "description": "Find $\\nabla \\cdot \\vec{F} = \\frac{\\partial F_1}{\\partial x} + \\frac{\\partial F_2}{\\partial y} + \\frac{\\partial F_3}{\\partial z}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\nabla \\cdot \\vec{F}$?",
+        "hint": "$\\frac{\\partial}{\\partial x}(x) + \\frac{\\partial}{\\partial y}(y) + \\frac{\\partial}{\\partial z}(z)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla \\cdot \\vec{F} = 1 + 1 + 1 = 3$"
+        },
+        {
+          "id": "b",
+          "content": "$\\nabla \\cdot \\vec{F} = x + y + z$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla \\cdot \\vec{F} = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\nabla \\cdot \\vec{F} = \\frac{\\partial x}{\\partial x} + \\frac{\\partial y}{\\partial y} + \\frac{\\partial z}{\\partial z} = 1 + 1 + 1 = 3$.",
+          "insight": "The divergence is constant throughout the region."
+        },
+        "incorrect": {
+          "b": "That's $F_1 + F_2 + F_3 = x + y + z$, not the divergence. The divergence involves partial derivatives.",
+          "c": "Each component contributes 1: $\\frac{\\partial x}{\\partial x} = 1$, etc."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Set up the volume integral",
+      "currentState": {
+        "expression": "$\\nabla \\cdot \\vec{F} = 3$, region $E = [0,1]^3$",
+        "description": "The divergence theorem gives: $\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E 3 \\, dV$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\iiint_E 3 \\, dV$?",
+        "hint": "$\\iiint_E 3 \\, dV = 3 \\cdot \\text{(volume of cube)}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\iiint_E 3 \\, dV = 3 \\cdot \\text{Volume}(E) = 3 \\cdot 1 = 3$"
+        },
+        {
+          "id": "b",
+          "content": "$\\iiint_E 3 \\, dV = \\int_0^1 \\int_0^1 \\int_0^1 3 \\, dx \\, dy \\, dz = 1$"
+        },
+        {
+          "id": "c",
+          "content": "$\\iiint_E 3 \\, dV = 9$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The volume of the unit cube $[0,1]^3$ is 1, so $\\iiint_E 3 \\, dV = 3 \\times 1 = 3$.",
+          "insight": "When the integrand is constant, the integral is just the constant times the volume."
+        },
+        "incorrect": {
+          "b": "$\\int_0^1 \\int_0^1 \\int_0^1 3 \\, dx \\, dy \\, dz = 3 \\int_0^1 \\int_0^1 1 \\, dy \\, dz = 3 \\int_0^1 1 \\, dz = 3$, not 1.",
+          "c": "$3 \\times \\text{Volume} = 3 \\times 1 = 3$, not 9."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Verify the answer",
+      "currentState": {
+        "expression": "Flux = $\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = 3$",
+        "description": "We could verify by computing the flux through all 6 faces directly."
+      },
+      "reflectionPrompt": {
+        "question": "Why is the divergence theorem useful here?",
+        "hint": "Instead of computing 6 surface integrals, we computed 1 volume integral."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "It converts a difficult surface integral into a simpler volume integral"
+        },
+        {
+          "id": "b",
+          "content": "It's the only way to compute flux"
+        },
+        {
+          "id": "c",
+          "content": "It gives a different answer than direct computation"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! The divergence theorem saves work: one volume integral instead of six surface integrals.",
+          "insight": "For complex surfaces or vector fields, the divergence theorem is often much easier than direct computation."
+        },
+        "incorrect": {
+          "b": "We could compute flux directly (6 face integrals), but the divergence theorem is much easier.",
+          "c": "Both methods give the same answer - the divergence theorem is just easier!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Divergence theorem: $\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E (\\nabla \\cdot \\vec{F}) \\, dV$",
+      "Divergence: $\\nabla \\cdot \\langle F_1, F_2, F_3 \\rangle = \\frac{\\partial F_1}{\\partial x} + \\frac{\\partial F_2}{\\partial y} + \\frac{\\partial F_3}{\\partial z}$",
+      "Converts flux through closed surface to volume integral",
+      "Flux of $\\vec{F} = \\langle x, y, z \\rangle$ through cube surface: **3**"
+    ],
+    "fullSolution": "**Find flux of** $\\vec{F} = \\langle x, y, z \\rangle$ **through surface of** $[0,1]^3$\\n\\n**Divergence:**\\n$$\\nabla \\cdot \\vec{F} = \\frac{\\partial x}{\\partial x} + \\frac{\\partial y}{\\partial y} + \\frac{\\partial z}{\\partial z} = 1 + 1 + 1 = 3$$\\n\\n**Divergence theorem:**\\n$$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E 3 \\, dV$$\\n\\n**Volume integral:**\\n$$\\iiint_E 3 \\, dV = 3 \\cdot \\text{Volume}([0,1]^3) = 3 \\cdot 1 = 3$$\\n\\n**Answer: Flux = 3**\\n\\n**Verification:** Direct computation through 6 faces would give:\\n- Right ($x=1$): $\\iint 1 \\, dy\\,dz = 1$\\n- Left ($x=0$): $\\iint 0 \\, dy\\,dz = 0$ (outward normal is $-\\hat{i}$, flux is 0)\\n- Similarly for other faces, total = 3 ✓",
+    "relatedProblems": [
+      "multivariable-greens-theorem-1",
+      "multivariable-triple-integral-1"
+    ]
+  }
+}

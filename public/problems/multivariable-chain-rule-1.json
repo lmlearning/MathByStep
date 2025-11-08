@@ -1,0 +1,217 @@
+{
+  "id": "multivariable-chain-rule-1",
+  "type": "problem",
+  "title": "Multivariable Chain Rule: Compute dz/dt",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["multivariable calculus", "chain rule", "partial derivatives"],
+  "statement": {
+    "text": "Let $z = x^2y$ where $x = t^2$ and $y = \\sin(t)$. Find $\\frac{dz}{dt}$ using the multivariable chain rule."
+  },
+  "objectives": [
+    "Apply the multivariable chain rule",
+    "Compute partial derivatives",
+    "Combine derivatives correctly"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall the chain rule",
+      "currentState": {
+        "expression": "$z = f(x,y)$ where $x = x(t)$, $y = y(t)$",
+        "description": "How does $z$ change with respect to $t$?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the multivariable chain rule for $\\frac{dz}{dt}$?",
+        "hint": "$z$ depends on $t$ through both $x$ and $y$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x} + \\frac{\\partial z}{\\partial y}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{dz}{dt} = \\frac{dx}{dt} \\cdot \\frac{dy}{dt}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The multivariable chain rule: $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$.",
+          "insight": "Each path from $z$ to $t$ (through $x$ or $y$) contributes a term to the derivative."
+        },
+        "incorrect": {
+          "b": "You must multiply each partial by the corresponding rate: $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$.",
+          "c": "This isn't the correct formula. We need partial derivatives of $z$ and derivatives of $x$ and $y$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute ∂z/∂x",
+      "currentState": {
+        "expression": "$z = x^2y$",
+        "description": "Differentiate with respect to $x$, treating $y$ as constant."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{\\partial z}{\\partial x}$?",
+        "hint": "Use the power rule, treating $y$ as a constant."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{\\partial z}{\\partial x} = 2xy$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{\\partial z}{\\partial x} = x^2$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{\\partial z}{\\partial x} = 2x^2y$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{\\partial}{\\partial x}(x^2y) = 2xy$ (treating $y$ as a constant coefficient).",
+          "insight": "Partial derivatives hold all other variables constant."
+        },
+        "incorrect": {
+          "b": "Don't forget the $y$ factor: $\\frac{\\partial}{\\partial x}(x^2y) = 2xy$.",
+          "c": "Apply the power rule correctly: $\\frac{\\partial}{\\partial x}(x^2) = 2x$, not $2x^2$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute ∂z/∂y and dx/dt, dy/dt",
+      "currentState": {
+        "expression": "$z = x^2y$, $x = t^2$, $y = \\sin(t)$",
+        "description": "Find the remaining derivatives."
+      },
+      "reflectionPrompt": {
+        "question": "What are $\\frac{\\partial z}{\\partial y}$, $\\frac{dx}{dt}$, and $\\frac{dy}{dt}$?",
+        "hint": "$\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = 2t$, $\\frac{dy}{dt} = \\cos(t)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = 2t$, $\\frac{dy}{dt} = \\cos(t)$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{\\partial z}{\\partial y} = 2xy$, $\\frac{dx}{dt} = t$, $\\frac{dy}{dt} = \\cos(t)$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = 2t$, $\\frac{dy}{dt} = -\\sin(t)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = 2t$, and $\\frac{dy}{dt} = \\cos(t)$.",
+          "insight": "These are straightforward derivatives - now we combine them with the chain rule."
+        },
+        "incorrect": {
+          "b": "$\\frac{\\partial z}{\\partial y}(x^2y) = x^2$, not $2xy$. Also, $\\frac{d}{dt}(t^2) = 2t$, not $t$.",
+          "c": "$\\frac{d}{dt}(\\sin t) = \\cos t$, not $-\\sin t$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Apply the chain rule",
+      "currentState": {
+        "expression": "$\\frac{\\partial z}{\\partial x} = 2xy$, $\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = 2t$, $\\frac{dy}{dt} = \\cos(t)$",
+        "description": "Substitute into the chain rule formula."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{dz}{dt}$?",
+        "hint": "$\\frac{dz}{dt} = (2xy)(2t) + (x^2)(\\cos t)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dz}{dt} = 4txy + x^2\\cos(t)$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{dz}{dt} = 2xy + 2tx^2$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{dz}{dt} = 2t + \\cos(t)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt} = (2xy)(2t) + (x^2)(\\cos t) = 4txy + x^2\\cos(t)$.",
+          "insight": "This expression is in terms of $x$, $y$, and $t$. We can substitute if needed."
+        },
+        "incorrect": {
+          "b": "Check your multiplication: $(2xy)(2t) = 4txy$ and $(x^2)(\\cos t) = x^2\\cos t$.",
+          "c": "Don't forget to include the factors $2xy$ and $x^2$!"
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Substitute to get dz/dt in terms of t",
+      "currentState": {
+        "expression": "$\\frac{dz}{dt} = 4txy + x^2\\cos(t)$",
+        "description": "Use $x = t^2$ and $y = \\sin(t)$ to express entirely in terms of $t$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{dz}{dt}$ in terms of $t$ only?",
+        "hint": "Substitute: $x = t^2$, $y = \\sin(t)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dz}{dt} = 4t(t^2)(\\sin t) + (t^2)^2\\cos(t) = 4t^3\\sin(t) + t^4\\cos(t)$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{dz}{dt} = 4t\\sin(t) + t^2\\cos(t)$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{dz}{dt} = 2t^2\\sin(t) + t^4\\cos(t)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Substituting $x = t^2$ and $y = \\sin(t)$: $$\\frac{dz}{dt} = 4t(t^2)(\\sin t) + (t^4)\\cos(t) = 4t^3\\sin(t) + t^4\\cos(t)$$",
+          "insight": "We can verify this by computing $z = (t^2)^2\\sin(t) = t^4\\sin(t)$ directly and differentiating."
+        },
+        "incorrect": {
+          "b": "Be careful with substitution: $x = t^2$ means $4txy = 4t(t^2)\\sin(t) = 4t^3\\sin(t)$ and $x^2 = t^4$.",
+          "c": "$4txy = 4t(t^2)(\\sin t) = 4t^3\\sin(t)$, not $2t^2\\sin(t)$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Multivariable chain rule: $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$",
+      "Each intermediate variable contributes a term to the total derivative",
+      "Can express answer in terms of intermediate variables or substitute back",
+      "Answer: $\\frac{dz}{dt} = 4t^3\\sin(t) + t^4\\cos(t)$"
+    ],
+    "fullSolution": "**Find** $\\frac{dz}{dt}$ **where** $z = x^2y$, $x = t^2$, $y = \\sin(t)$\\n\\n**Chain rule:**\\n$$\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$$\\n\\n**Compute derivatives:**\\n- $\\frac{\\partial z}{\\partial x} = 2xy$\\n- $\\frac{\\partial z}{\\partial y} = x^2$\\n- $\\frac{dx}{dt} = 2t$\\n- $\\frac{dy}{dt} = \\cos(t)$\\n\\n**Substitute:**\\n$$\\frac{dz}{dt} = (2xy)(2t) + (x^2)(\\cos t) = 4txy + x^2\\cos(t)$$\\n\\n**In terms of $t$:** (substitute $x = t^2$, $y = \\sin t$)\\n$$\\frac{dz}{dt} = 4t(t^2)(\\sin t) + (t^4)\\cos(t) = 4t^3\\sin(t) + t^4\\cos(t)$$\\n\\n**Verification:** $z = t^4\\sin(t) \\Rightarrow \\frac{dz}{dt} = 4t^3\\sin(t) + t^4\\cos(t)$ ✓",
+    "relatedProblems": [
+      "multivariable-partial-derivatives-1",
+      "calc-derivative-chain-rule-1"
+    ]
+  }
+}

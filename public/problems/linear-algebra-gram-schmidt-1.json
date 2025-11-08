@@ -1,0 +1,217 @@
+{
+  "id": "linear-algebra-gram-schmidt-1",
+  "type": "problem",
+  "title": "Gram-Schmidt: Orthogonalize a basis",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 13,
+  "tags": ["linear algebra", "orthogonality", "Gram-Schmidt", "inner product"],
+  "statement": {
+    "text": "Apply the Gram-Schmidt process to orthogonalize the basis $\\{\\vec{v}_1, \\vec{v}_2\\}$ where $\\vec{v}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$ and $\\vec{v}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}$."
+  },
+  "objectives": [
+    "Understand orthogonal and orthonormal bases",
+    "Apply the Gram-Schmidt orthogonalization process",
+    "Compute projections and normalize vectors"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Keep the first vector",
+      "currentState": {
+        "expression": "$\\vec{v}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$",
+        "description": "The first step of Gram-Schmidt: $\\vec{u}_1 = \\vec{v}_1$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\vec{u}_1$ in the Gram-Schmidt process?",
+        "hint": "We keep the first vector unchanged."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\vec{u}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\vec{u}_1 = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$ (normalize first)"
+        },
+        {
+          "id": "c",
+          "content": "$\\vec{u}_1 = \\begin{pmatrix} 3/\\sqrt{10} \\\\ 1/\\sqrt{10} \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! In Gram-Schmidt, we start with $\\vec{u}_1 = \\vec{v}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$. Normalization comes later if we want an orthonormal basis.",
+          "insight": "The first vector remains unchanged; orthogonalization affects subsequent vectors."
+        },
+        "incorrect": {
+          "b": "We don't normalize yet - that's only if we want an orthonormal basis. For now, just $\\vec{u}_1 = \\vec{v}_1$.",
+          "c": "Normalization is optional and comes after orthogonalization. First, we simply set $\\vec{u}_1 = \\vec{v}_1$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute the projection",
+      "currentState": {
+        "expression": "$\\vec{v}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}$, $\\vec{u}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$",
+        "description": "Find $\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\frac{\\vec{v}_2 \\cdot \\vec{u}_1}{\\vec{u}_1 \\cdot \\vec{u}_1} \\vec{u}_1$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\text{proj}_{\\vec{u}_1} \\vec{v}_2$?",
+        "hint": "First compute $\\vec{v}_2 \\cdot \\vec{u}_1 = 2(3) + 2(1) = 8$ and $\\vec{u}_1 \\cdot \\vec{u}_1 = 9 + 1 = 10$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\frac{8}{10} \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\frac{8}{4} \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ 2 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\frac{8}{10} \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix} = \\frac{4}{5} \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix}$.",
+          "insight": "This projection represents the component of $\\vec{v}_2$ in the direction of $\\vec{u}_1$."
+        },
+        "incorrect": {
+          "b": "You need to compute the projection formula: $\\frac{\\vec{v}_2 \\cdot \\vec{u}_1}{\\vec{u}_1 \\cdot \\vec{u}_1} \\vec{u}_1$.",
+          "c": "The denominator should be $\\vec{u}_1 \\cdot \\vec{u}_1 = 10$, not 4."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Orthogonalize the second vector",
+      "currentState": {
+        "expression": "$\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix}$",
+        "description": "Subtract the projection: $\\vec{u}_2 = \\vec{v}_2 - \\text{proj}_{\\vec{u}_1} \\vec{v}_2$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\vec{u}_2$?",
+        "hint": "$\\vec{u}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix} - \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\vec{u}_2 = \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\vec{u}_2 = \\begin{pmatrix} 2/5 \\\\ -6/5 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\vec{u}_2 = \\begin{pmatrix} 22/5 \\\\ 14/5 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\vec{u}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix} - \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix} = \\begin{pmatrix} 10/5 - 12/5 \\\\ 10/5 - 4/5 \\end{pmatrix} = \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}$.",
+          "insight": "This vector is orthogonal to $\\vec{u}_1$ - the key result of Gram-Schmidt!"
+        },
+        "incorrect": {
+          "b": "Check your signs: $2 - 12/5 = 10/5 - 12/5 = -2/5$, and $2 - 4/5 = 10/5 - 4/5 = 6/5$.",
+          "c": "We subtract the projection, not add it: $\\vec{v}_2 - \\text{proj}_{\\vec{u}_1} \\vec{v}_2$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Verify orthogonality",
+      "currentState": {
+        "expression": "$\\vec{u}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$, $\\vec{u}_2 = \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}$",
+        "description": "Check that $\\vec{u}_1 \\cdot \\vec{u}_2 = 0$."
+      },
+      "reflectionPrompt": {
+        "question": "Is $\\vec{u}_1 \\perp \\vec{u}_2$?",
+        "hint": "Compute $3 \\cdot (-2/5) + 1 \\cdot (6/5)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes! $\\vec{u}_1 \\cdot \\vec{u}_2 = -6/5 + 6/5 = 0$"
+        },
+        {
+          "id": "b",
+          "content": "No, $\\vec{u}_1 \\cdot \\vec{u}_2 = 8$"
+        },
+        {
+          "id": "c",
+          "content": "No, $\\vec{u}_1 \\cdot \\vec{u}_2 = 12/5$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\vec{u}_1 \\cdot \\vec{u}_2 = 3(-2/5) + 1(6/5) = -6/5 + 6/5 = 0$. The vectors are orthogonal!",
+          "insight": "Gram-Schmidt guarantees orthogonality: $\\{\\vec{u}_1, \\vec{u}_2\\}$ is an orthogonal basis for span$\\{\\vec{v}_1, \\vec{v}_2\\}$."
+        },
+        "incorrect": {
+          "b": "That's $\\vec{v}_2 \\cdot \\vec{u}_1$, not $\\vec{u}_2 \\cdot \\vec{u}_1$. Compute with $\\vec{u}_2 = \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}$.",
+          "c": "Check your calculation: $3(-2/5) = -6/5$ and $1(6/5) = 6/5$, which sum to 0."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Optional: Normalize for orthonormal basis",
+      "currentState": {
+        "expression": "Orthogonal basis: $\\left\\{\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}\\right\\}$",
+        "description": "To get an orthonormal basis, divide each by its length."
+      },
+      "reflectionPrompt": {
+        "question": "What is the orthonormal basis?",
+        "hint": "$||\\vec{u}_1|| = \\sqrt{10}$, $||\\vec{u}_2|| = \\sqrt{4/25 + 36/25} = \\sqrt{40/25} = 2/\\sqrt{10}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\left\\{\\frac{1}{\\sqrt{10}}\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\frac{1}{\\sqrt{10}}\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}\\right\\}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}, \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\\right\\}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\left\\{\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} -2 \\\\ 6 \\end{pmatrix}\\right\\}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Normalizing: $\\frac{\\vec{u}_1}{||\\vec{u}_1||} = \\frac{1}{\\sqrt{10}}\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$ and $\\frac{\\vec{u}_2}{||\\vec{u}_2||} = \\frac{\\sqrt{10}}{2}\\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix} = \\frac{1}{\\sqrt{10}}\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$.",
+          "insight": "An orthonormal basis consists of mutually perpendicular unit vectors."
+        },
+        "incorrect": {
+          "b": "That's the standard basis, not the orthonormalized version of our vectors.",
+          "c": "These vectors are orthogonal but not normalized (not unit vectors)."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Gram-Schmidt converts any basis into an orthogonal (or orthonormal) basis",
+      "Process: $\\vec{u}_1 = \\vec{v}_1$, then $\\vec{u}_k = \\vec{v}_k - \\sum_{j=1}^{k-1} \\text{proj}_{\\vec{u}_j} \\vec{v}_k$",
+      "Projection formula: $\\text{proj}_{\\vec{u}} \\vec{v} = \\frac{\\vec{v} \\cdot \\vec{u}}{\\vec{u} \\cdot \\vec{u}} \\vec{u}$",
+      "Orthogonal basis: $\\left\\{\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}\\right\\}$ or simplified: $\\left\\{\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}\\right\\}$"
+    ],
+    "fullSolution": "**Gram-Schmidt on** $\\vec{v}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$, $\\vec{v}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}$\\n\\n**Step 1:** $\\vec{u}_1 = \\vec{v}_1 = \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$\\n\\n**Step 2:** Compute projection:\\n$$\\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\frac{\\vec{v}_2 \\cdot \\vec{u}_1}{\\vec{u}_1 \\cdot \\vec{u}_1} \\vec{u}_1 = \\frac{8}{10} \\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix}$$\\n\\n**Step 3:** Orthogonalize:\\n$$\\vec{u}_2 = \\vec{v}_2 - \\text{proj}_{\\vec{u}_1} \\vec{v}_2 = \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix} - \\begin{pmatrix} 12/5 \\\\ 4/5 \\end{pmatrix} = \\begin{pmatrix} -2/5 \\\\ 6/5 \\end{pmatrix}$$\\n\\nMultiply by 5: $\\vec{u}_2 = \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$ (equivalent)\\n\\n**Verify:** $\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix} \\cdot \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix} = -3 + 3 = 0$ ✓\\n\\n**Orthogonal basis:** $\\left\\{\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}, \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}\\right\\}$",
+    "relatedProblems": [
+      "linear-algebra-basis-dimension-1",
+      "linear-algebra-linear-transformation-1"
+    ]
+  }
+}

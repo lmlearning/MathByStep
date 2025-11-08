@@ -1,0 +1,218 @@
+{
+  "id": "abstract-algebra-group-1",
+  "type": "proof",
+  "title": "Lagrange's Theorem: Order of Subgroup Divides Order of Group",
+  "topic": "Algebra",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": ["abstract algebra", "group theory", "Lagrange's theorem"],
+  "statement": {
+    "text": "Prove Lagrange's Theorem: If $H$ is a subgroup of a finite group $G$, then $|H|$ divides $|G|$."
+  },
+  "objectives": [
+    "Understand cosets and their properties",
+    "Show cosets partition the group",
+    "Apply counting arguments"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Define left cosets",
+      "currentState": {
+        "expression": "$H$ is a subgroup of $G$",
+        "description": "For $g \\in G$, define the left coset $gH = \\{gh : h \\in H\\}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the size of each coset $gH$?",
+        "hint": "The map $h \\mapsto gh$ is a bijection from $H$ to $gH$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$|gH| = |H|$ for all $g \\in G$"
+        },
+        {
+          "id": "b",
+          "content": "$|gH| = |G|$"
+        },
+        {
+          "id": "c",
+          "content": "$|gH|$ depends on $g$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The map $\\phi: H \\to gH$ given by $\\phi(h) = gh$ is a bijection (1-1 and onto). So every coset has the same size as $H$.",
+          "insight": "All cosets have the same cardinality as the subgroup."
+        },
+        "incorrect": {
+          "b": "Cosets have size $|H|$, not $|G|$ (unless $H = G$).",
+          "c": "All cosets have the same size $|H|$, regardless of which $g$ is chosen."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Show cosets are either equal or disjoint",
+      "currentState": {
+        "expression": "Consider two cosets $g_1H$ and $g_2H$",
+        "description": "Either they're the same set, or they have no elements in common."
+      },
+      "reflectionPrompt": {
+        "question": "If $g_1H$ and $g_2H$ have an element in common, what can we conclude?",
+        "hint": "If $g_1h_1 = g_2h_2$ for some $h_1, h_2 \\in H$, then $g_1 = g_2h_2h_1^{-1} \\in g_2H$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$g_1H = g_2H$"
+        },
+        {
+          "id": "b",
+          "content": "$g_1 = g_2$"
+        },
+        {
+          "id": "c",
+          "content": "$|g_1H| = |g_2H|$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! If the cosets overlap, they must be equal. This is because if $g_1h_1 = g_2h_2$, then $g_1 \\in g_2H$, which forces $g_1H = g_2H$.",
+          "insight": "Cosets partition the group: they're either identical or completely disjoint."
+        },
+        "incorrect": {
+          "b": "We can't conclude $g_1 = g_2$ (they might differ by an element of $H$). But we can conclude $g_1H = g_2H$.",
+          "c": "While true, that's not the key point. The key is that overlapping cosets are actually the same set."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Cosets partition G",
+      "currentState": {
+        "expression": "Distinct cosets are disjoint",
+        "description": "Every element $g \\in G$ belongs to exactly one coset."
+      },
+      "reflectionPrompt": {
+        "question": "Which coset does $g$ belong to?",
+        "hint": "$g \\in gH$ since $g = g \\cdot e$ where $e$ is the identity."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$g \\in gH$ (since $g = g \\cdot e \\in gH$)"
+        },
+        {
+          "id": "b",
+          "content": "$g$ might not be in any coset"
+        },
+        {
+          "id": "c",
+          "content": "$g \\in H$ always"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Right! Every $g \\in G$ belongs to the coset $gH$ (using the identity $e \\in H$). So cosets cover all of $G$, and they don't overlap, meaning they partition $G$.",
+          "insight": "The cosets of $H$ partition $G$ into equal-sized pieces."
+        },
+        "incorrect": {
+          "b": "Every element is in some coset, specifically $g \\in gH$.",
+          "c": "Only elements of $H$ are in $H$. Other elements are in other cosets."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Count the cosets",
+      "currentState": {
+        "expression": "$G$ is partitioned into disjoint cosets, each of size $|H|$",
+        "description": "Let $[G:H]$ denote the number of distinct cosets (the index of $H$ in $G$)."
+      },
+      "reflectionPrompt": {
+        "question": "What is the relationship between $|G|$, $|H|$, and $[G:H]$?",
+        "hint": "$G$ is divided into $[G:H]$ cosets, each of size $|H|$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$|G| = [G:H] \\cdot |H|$"
+        },
+        {
+          "id": "b",
+          "content": "$|G| = [G:H] + |H|$"
+        },
+        {
+          "id": "c",
+          "content": "$|G| = [G:H]^{|H|}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since cosets partition $G$ and there are $[G:H]$ cosets each of size $|H|$: $|G| = [G:H] \\cdot |H|$.",
+          "insight": "This multiplicative relationship is the heart of Lagrange's Theorem."
+        },
+        "incorrect": {
+          "b": "They multiply, not add. We have $[G:H]$ disjoint sets each of size $|H|$.",
+          "c": "It's multiplication, not exponentiation: $|G| = [G:H] \\cdot |H|$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Conclude Lagrange's Theorem",
+      "currentState": {
+        "expression": "$|G| = [G:H] \\cdot |H|$",
+        "description": "This shows $|H|$ divides $|G|$."
+      },
+      "reflectionPrompt": {
+        "question": "What does this equation tell us?",
+        "hint": "$|H|$ is a factor of $|G|$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$|H|$ divides $|G|$ (with quotient $[G:H]$)"
+        },
+        {
+          "id": "b",
+          "content": "$|H| = |G|$"
+        },
+        {
+          "id": "c",
+          "content": "$|H|$ and $|G|$ are coprime"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! Since $|G| = [G:H] \\cdot |H|$ where $[G:H]$ is a positive integer, $|H|$ divides $|G|$. This is Lagrange's Theorem! ∎",
+          "insight": "Lagrange's Theorem has many consequences: the order of any element divides $|G|$, and groups of prime order are cyclic."
+        },
+        "incorrect": {
+          "b": "Only if $[G:H] = 1$, meaning $H = G$. In general, $|H|$ is a proper divisor of $|G|$.",
+          "c": "No, $|H|$ divides $|G|$, so they share common factors."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Lagrange's Theorem: If $H \\leq G$ (finite), then $|H|$ divides $|G|$",
+      "Cosets of $H$ partition $G$ into equal-sized pieces",
+      "All cosets have the same cardinality as $H$",
+      "Corollary: For any $g \\in G$, the order of $g$ divides $|G|$",
+      "Corollary: Groups of prime order are cyclic"
+    ],
+    "fullSolution": "**Lagrange's Theorem:** If $H$ is a subgroup of finite group $G$, then $|H|$ divides $|G|$.\n\n**Proof:**\n\n1. Every left coset $gH$ has cardinality $|H|$ (via the bijection $h \\mapsto gh$).\n\n2. Cosets partition $G$: \n   - Every $g \\in G$ belongs to $gH$\n   - If $g_1H \\cap g_2H \\neq \\emptyset$, then $g_1H = g_2H$\n\n3. Let $[G:H]$ = number of distinct cosets.\n\n4. Since cosets partition $G$ into $[G:H]$ disjoint sets of size $|H|$:\n$$|G| = [G:H] \\cdot |H|$$\n\n5. Therefore $|H|$ divides $|G|$. ∎",
+    "relatedProblems": [
+      "number-theory-modular-arithmetic-1",
+      "logic-proof-direct-1"
+    ]
+  }
+}
