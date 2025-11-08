@@ -1,0 +1,234 @@
+{
+  "id": "logic-proof-contradiction-1",
+  "type": "proof",
+  "title": "Prove $\\sqrt{2}$ is Irrational (Proof by Contradiction)",
+  "topic": "Logic & Proofs",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": ["logic", "proofs", "contradiction", "irrationality", "number-theory"],
+  "statement": {
+    "text": "Prove that $\\sqrt{2}$ is irrational using proof by contradiction."
+  },
+  "objectives": [
+    "Apply proof by contradiction technique",
+    "Work with rational number representations",
+    "Understand parity arguments in proofs"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We want to prove $\\sqrt{2}$ is irrational.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "How do we start a proof by contradiction?",
+        "hint": "Assume the opposite of what we want to prove."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Assume $\\sqrt{2}$ is rational, i.e., $\\sqrt{2} = \\frac{a}{b}$ where $a, b \\in \\mathbb{Z}$, $b \\neq 0$, and $\\gcd(a,b) = 1$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Assume $\\sqrt{2}$ is irrational and derive a contradiction"
+        },
+        {
+          "id": "opt-3",
+          "text": "Assume $2$ is not a perfect square"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! In proof by contradiction, we assume the negation of what we want to prove. Since we want to prove $\\sqrt{2}$ is irrational, we assume it's rational. We also assume the fraction is in lowest terms ($\\gcd(a,b) = 1$).",
+          "insight": "Proof by contradiction: assume the opposite and derive an impossibility."
+        },
+        "incorrect": {
+          "1": "If we assume what we're trying to prove, we're doing a direct proof, not proof by contradiction.",
+          "2": "This is a true statement but doesn't help us start the proof. We need to assume $\\sqrt{2}$ can be written as a fraction."
+        }
+      },
+      "resultState": {
+        "description": "Assumption (seeking contradiction):",
+        "equations": ["\\sqrt{2} = \\frac{a}{b} \\text{ where } \\gcd(a,b) = 1"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "We're assuming $\\sqrt{2} = \\frac{a}{b}$ in lowest terms.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What should we do next?",
+        "hint": "Square both sides to eliminate the square root."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Square both sides: $2 = \\frac{a^2}{b^2}$, so $2b^2 = a^2$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Check if $a$ and $b$ are even or odd"
+        },
+        {
+          "id": "opt-3",
+          "text": "Use the fact that $\\gcd(a,b) = 1$ to show $a$ and $b$ can't both be even"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Squaring both sides of $\\sqrt{2} = \\frac{a}{b}$ gives $2 = \\frac{a^2}{b^2}$. Multiplying by $b^2$: $2b^2 = a^2$. This equation is key to the proof.",
+          "insight": "Algebraic manipulation can reveal hidden relationships."
+        },
+        "incorrect": {
+          "1": "We'll check parity soon, but first we need an equation to work with. Square both sides first.",
+          "2": "This is true (they can't both be even since $\\gcd(a,b)=1$), but we need an equation first."
+        }
+      },
+      "resultState": {
+        "description": "After squaring and rearranging:",
+        "equations": ["2b^2 = a^2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "From $2b^2 = a^2$, we know $a^2 = 2b^2$.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What does $a^2 = 2b^2$ tell us about $a$?",
+        "hint": "If $a^2$ is even, what can we conclude about $a$?"
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "$a^2$ is even (divisible by 2), therefore $a$ must be even"
+        },
+        {
+          "id": "opt-2",
+          "text": "$a^2$ is odd, therefore $a$ is odd"
+        },
+        {
+          "id": "opt-3",
+          "text": "$a$ must equal $b\\sqrt{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! Since $a^2 = 2b^2$, we see that $a^2$ is even (it's 2 times something). We proved earlier that if $n^2$ is even, then $n$ is even. Therefore, $a$ is even.",
+          "insight": "Parity (even/odd) is preserved under squaring."
+        },
+        "incorrect": {
+          "1": "$a^2 = 2b^2$ means $a^2$ is even (2 times $b^2$), not odd.",
+          "2": "This is circular - we're trying to find relationships between $a$ and $b$, not assume them."
+        }
+      },
+      "resultState": {
+        "description": "Since $a^2$ is even:",
+        "equations": ["a \\text{ is even, so } a = 2k \\text{ for some } k \\in \\mathbb{Z}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "We know $a = 2k$ for some integer $k$. We also have:",
+        "equations": ["2b^2 = a^2"]
+      },
+      "prompt": {
+        "question": "How do we continue?",
+        "hint": "Substitute $a = 2k$ into $a^2 = 2b^2$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Substitute: $(2k)^2 = 2b^2$, so $4k^2 = 2b^2$, thus $2k^2 = b^2$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Since $a$ is even and $\\gcd(a,b) = 1$, we have $b$ is odd"
+        },
+        {
+          "id": "opt-3",
+          "text": "We've shown $a$ is even, so the proof is complete"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Substituting $a = 2k$: $(2k)^2 = 2b^2$ gives $4k^2 = 2b^2$. Dividing by 2: $2k^2 = b^2$. This tells us something important about $b$!",
+          "insight": "Keep manipulating equations to reveal the contradiction."
+        },
+        "incorrect": {
+          "1": "While that reasoning is correct, we can derive something stronger by continuing our algebraic manipulation.",
+          "2": "We're not done yet! We need to derive a clear contradiction."
+        }
+      },
+      "resultState": {
+        "description": "After substitution:",
+        "equations": ["b^2 = 2k^2"]
+      }
+    },
+    {
+      "id": "step-5",
+      "order": 5,
+      "currentState": {
+        "description": "We have $b^2 = 2k^2$, which means $b^2$ is even.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What contradiction have we reached?",
+        "hint": "If $b^2$ is even, what does that mean about $b$? Compare with our assumption."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Since $b^2$ is even, $b$ is even. But we showed $a$ is even too, contradicting $\\gcd(a,b) = 1$ ✗"
+        },
+        {
+          "id": "opt-2",
+          "text": "$b^2 = 2k^2$ means $b = k\\sqrt{2}$, which would make $b$ irrational"
+        },
+        {
+          "id": "opt-3",
+          "text": "We assumed $a$ and $b$ were integers but got non-integers"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! Since $b^2 = 2k^2$, we have $b^2$ is even, so $b$ is even. But we already showed $a$ is even. This means both $a$ and $b$ are divisible by 2, contradicting our assumption that $\\gcd(a,b) = 1$. This contradiction proves $\\sqrt{2}$ is irrational! $\\square$",
+          "insight": "The contradiction proves our assumption was false, completing the proof."
+        },
+        "incorrect": {
+          "1": "Be careful! $b^2 = 2k^2$ doesn't mean $b = k\\sqrt{2}$. It means $b^2$ is even, so $b$ is even (an integer).",
+          "2": "Both $a$ and $b$ remain integers throughout. The contradiction is that they're both even."
+        }
+      },
+      "resultState": {
+        "description": "Contradiction reached! Therefore:",
+        "equations": ["\\sqrt{2} \\text{ is irrational} \\quad \\square"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Proof by contradiction assumes the opposite and derives an impossibility",
+      "Assuming the fraction is in lowest terms is crucial for this proof",
+      "Parity arguments (even/odd) are powerful in number theory",
+      "The contradiction shows our assumption must be false"
+    ],
+    "fullSolution": "**Proof by contradiction**: Assume $\\sqrt{2} = \\frac{a}{b}$ where $\\gcd(a,b) = 1$.\n\nSquaring: $2 = \\frac{a^2}{b^2}$, so $a^2 = 2b^2$.\n\nThus $a^2$ is even, so $a$ is even: $a = 2k$.\n\nSubstituting: $(2k)^2 = 2b^2 \\Rightarrow 4k^2 = 2b^2 \\Rightarrow b^2 = 2k^2$.\n\nThus $b^2$ is even, so $b$ is even.\n\nBut if both $a$ and $b$ are even, then $\\gcd(a,b) \\geq 2$, contradicting $\\gcd(a,b) = 1$.\n\nTherefore, $\\sqrt{2}$ is irrational. $\\square$",
+    "relatedProblems": []
+  }
+}

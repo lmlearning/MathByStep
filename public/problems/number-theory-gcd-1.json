@@ -1,0 +1,193 @@
+{
+  "id": "number-theory-gcd-1",
+  "type": "problem",
+  "title": "Finding GCD using Euclidean Algorithm",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": ["number-theory", "gcd", "euclidean-algorithm", "divisibility"],
+  "statement": {
+    "text": "Find $\\gcd(48, 18)$ using the Euclidean Algorithm."
+  },
+  "objectives": [
+    "Apply the Euclidean Algorithm",
+    "Understand the division algorithm",
+    "Compute greatest common divisors efficiently"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We want to find $\\gcd(48, 18)$ using the Euclidean Algorithm.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What is the first step of the Euclidean Algorithm?",
+        "hint": "Divide the larger number by the smaller and find the remainder."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Divide 48 by 18: $48 = 18 \\cdot 2 + 12$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Divide 18 by 48: $18 = 48 \\cdot 0 + 18$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Subtract 18 from 48 repeatedly until we get 0"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! We divide the larger number (48) by the smaller (18). The quotient is 2 and the remainder is 12, since $48 = 18 \\times 2 + 12$.",
+          "insight": "The Euclidean Algorithm uses repeated division to find the GCD."
+        },
+        "incorrect": {
+          "1": "We divide the larger by the smaller, not the other way around. So we should divide 48 by 18.",
+          "2": "While repeated subtraction works, the Euclidean Algorithm is more efficient using division with remainders."
+        }
+      },
+      "resultState": {
+        "description": "First division:",
+        "equations": ["48 = 18 \\cdot 2 + 12"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "From $48 = 18 \\cdot 2 + 12$, we have remainder 12.",
+        "equations": ["\\gcd(48, 18) = \\gcd(18, 12)"]
+      },
+      "prompt": {
+        "question": "What do we do next?",
+        "hint": "Replace the pair with (divisor, remainder)."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Divide 18 by 12: $18 = 12 \\cdot 1 + 6$"
+        },
+        {
+          "id": "opt-2",
+          "text": "The GCD is 12 since it's the remainder"
+        },
+        {
+          "id": "opt-3",
+          "text": "Start over with 48 and 12"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The key insight of the Euclidean Algorithm is that $\\gcd(a, b) = \\gcd(b, r)$ where $r$ is the remainder. So we divide 18 by 12: $18 = 12 \\times 1 + 6$.",
+          "insight": "The GCD doesn't change when we replace $(a, b)$ with $(b, r)$."
+        },
+        "incorrect": {
+          "1": "Not yet! We continue the algorithm until we reach a remainder of 0. Then the last non-zero remainder is the GCD.",
+          "2": "We already worked with 48 and 18 in the first step. We don't start over; we continue with the new pair (18, 12)."
+        }
+      },
+      "resultState": {
+        "description": "Second division:",
+        "equations": ["18 = 12 \\cdot 1 + 6", "\\gcd(18, 12) = \\gcd(12, 6)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "From $18 = 12 \\cdot 1 + 6$, we now find $\\gcd(12, 6)$.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "Continue the algorithm with $\\gcd(12, 6)$.",
+        "hint": "Divide 12 by 6."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Divide: $12 = 6 \\cdot 2 + 0$ (remainder is 0, so $\\gcd(12, 6) = 6$)"
+        },
+        {
+          "id": "opt-2",
+          "text": "Since 6 divides 12, the GCD is 12"
+        },
+        {
+          "id": "opt-3",
+          "text": "Divide: $12 = 6 \\cdot 2$, so we need another step"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! When we divide 12 by 6, we get $12 = 6 \\times 2 + 0$. The remainder is 0, which means the algorithm terminates. The last non-zero remainder (6) is the GCD.",
+          "insight": "When the remainder becomes 0, the previous remainder is the GCD."
+        },
+        "incorrect": {
+          "1": "The GCD of 12 and 6 is the smaller number (6), not the larger. Think: what's the largest number that divides both?",
+          "2": "We don't need another step. When the remainder is 0, the algorithm stops and the divisor (6) is the GCD."
+        }
+      },
+      "resultState": {
+        "description": "Third division (final):",
+        "equations": ["12 = 6 \\cdot 2 + 0", "\\text{Remainder is 0, so algorithm terminates}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "The algorithm has terminated with remainder 0. The last non-zero remainder was 6.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What is $\\gcd(48, 18)$?",
+        "hint": "The GCD is the last non-zero remainder."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "$\\gcd(48, 18) = 6$"
+        },
+        {
+          "id": "opt-2",
+          "text": "$\\gcd(48, 18) = 12$"
+        },
+        {
+          "id": "opt-3",
+          "text": "$\\gcd(48, 18) = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The Euclidean Algorithm gave us: $48 = 18 \\cdot 2 + 12$, then $18 = 12 \\cdot 1 + 6$, then $12 = 6 \\cdot 2 + 0$. The last non-zero remainder is 6, so $\\gcd(48, 18) = 6$.",
+          "insight": "The Euclidean Algorithm is very efficient, especially for large numbers."
+        },
+        "incorrect": {
+          "1": "12 was a remainder during the process, but not the last non-zero remainder. The GCD is 6.",
+          "2": "While 2 divides both 48 and 18, it's not the greatest common divisor. The GCD is 6."
+        }
+      },
+      "resultState": {
+        "description": "Solution:",
+        "equations": ["\\gcd(48, 18) = 6"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "The Euclidean Algorithm finds GCD through repeated division",
+      "Key property: $\\gcd(a, b) = \\gcd(b, r)$ where $r$ is the remainder",
+      "Algorithm terminates when remainder becomes 0",
+      "Much faster than factoring for large numbers"
+    ],
+    "fullSolution": "$48 = 18 \\cdot 2 + 12$\n$18 = 12 \\cdot 1 + 6$\n$12 = 6 \\cdot 2 + 0$\n\nLast non-zero remainder: $\\gcd(48, 18) = 6$",
+    "relatedProblems": []
+  }
+}

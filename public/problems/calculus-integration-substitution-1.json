@@ -1,0 +1,193 @@
+{
+  "id": "calculus-integration-substitution-1",
+  "type": "problem",
+  "title": "Integration by Substitution: $\\int 2x(x^2 + 1)^3 \\, dx$",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": ["calculus", "integration", "u-substitution", "antiderivatives"],
+  "statement": {
+    "text": "Evaluate the integral $\\int 2x(x^2 + 1)^3 \\, dx$ using the substitution method."
+  },
+  "objectives": [
+    "Apply u-substitution to simplify integrals",
+    "Identify appropriate substitutions",
+    "Compute antiderivatives using the power rule"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We need to evaluate:",
+        "equations": ["\\int 2x(x^2 + 1)^3 \\, dx"]
+      },
+      "prompt": {
+        "question": "What substitution should we use?",
+        "hint": "Look for a function whose derivative appears in the integrand."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Let $u = x^2 + 1$, so $du = 2x \\, dx$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Let $u = 2x$, so $du = 2 \\, dx$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Let $u = (x^2 + 1)^3$, so $du = 3(x^2 + 1)^2 \\cdot 2x \\, dx$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Notice that if $u = x^2 + 1$, then $\\frac{du}{dx} = 2x$, which means $du = 2x \\, dx$. This exact expression appears in our integrand!",
+          "insight": "For u-substitution, look for a function whose derivative (possibly with a constant) appears in the integrand."
+        },
+        "incorrect": {
+          "1": "This substitution doesn't help simplify $(x^2 + 1)^3$, which is the complicated part of our integrand.",
+          "2": "This would work but is unnecessarily complicated. The simpler substitution $u = x^2 + 1$ is more natural since $2x$ is already the derivative of $x^2 + 1$."
+        }
+      },
+      "resultState": {
+        "description": "We make the substitution:",
+        "equations": ["u = x^2 + 1", "du = 2x \\, dx"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "With $u = x^2 + 1$ and $du = 2x \\, dx$:",
+        "equations": []
+      },
+      "prompt": {
+        "question": "How do we rewrite the integral in terms of $u$?",
+        "hint": "Replace $x^2 + 1$ with $u$ and $2x \\, dx$ with $du$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "$\\int 2x(x^2 + 1)^3 \\, dx = \\int u^3 \\, du$"
+        },
+        {
+          "id": "opt-2",
+          "text": "$\\int 2x(x^2 + 1)^3 \\, dx = \\int 2x \\cdot u^3 \\, du$"
+        },
+        {
+          "id": "opt-3",
+          "text": "$\\int 2x(x^2 + 1)^3 \\, dx = \\int u^3 \\, dx$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $u = x^2 + 1$ and $du = 2x \\, dx$, we can replace $(x^2 + 1)^3$ with $u^3$ and $2x \\, dx$ with $du$, giving us $\\int u^3 \\, du$. Much simpler!",
+          "insight": "The goal of u-substitution is to transform the integral into a simpler form."
+        },
+        "incorrect": {
+          "1": "We've already accounted for the $2x$ when we wrote $du = 2x \\, dx$. Don't include it again!",
+          "2": "The differential should change from $dx$ to $du$ when we substitute. We can't mix $u$ and $dx$."
+        }
+      },
+      "resultState": {
+        "description": "The integral becomes:",
+        "equations": ["\\int u^3 \\, du"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "We now need to evaluate:",
+        "equations": ["\\int u^3 \\, du"]
+      },
+      "prompt": {
+        "question": "What is $\\int u^3 \\, du$?",
+        "hint": "Use the power rule for integration: $\\int u^n \\, du = \\frac{u^{n+1}}{n+1} + C$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "$\\int u^3 \\, du = \\frac{u^4}{4} + C$"
+        },
+        {
+          "id": "opt-2",
+          "text": "$\\int u^3 \\, du = \\frac{u^3}{3} + C$"
+        },
+        {
+          "id": "opt-3",
+          "text": "$\\int u^3 \\, du = 3u^2 + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Using the power rule: $\\int u^3 \\, du = \\frac{u^{3+1}}{3+1} + C = \\frac{u^4}{4} + C$.",
+          "insight": "Power rule for integration: increase the exponent by 1, then divide by the new exponent."
+        },
+        "incorrect": {
+          "1": "That looks like you used the power rule incorrectly. Remember: $\\int u^n \\, du = \\frac{u^{n+1}}{n+1} + C$, not $\\frac{u^n}{n}$.",
+          "2": "That's the derivative of $u^3$, not the antiderivative! Integration and differentiation are inverse operations."
+        }
+      },
+      "resultState": {
+        "description": "We have:",
+        "equations": ["\\int u^3 \\, du = \\frac{u^4}{4} + C"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "We found $\\frac{u^4}{4} + C$ but need to express this in terms of $x$. Recall:",
+        "equations": ["u = x^2 + 1"]
+      },
+      "prompt": {
+        "question": "How do we write the final answer in terms of $x$?",
+        "hint": "Substitute back $u = x^2 + 1$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "$\\frac{(x^2 + 1)^4}{4} + C$"
+        },
+        {
+          "id": "opt-2",
+          "text": "$\\frac{x^8 + 4x^6 + 6x^4 + 4x^2 + 1}{4} + C$"
+        },
+        {
+          "id": "opt-3",
+          "text": "$\\frac{u^4}{4} + C$ (leave in terms of $u$)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! Substituting $u = x^2 + 1$ back gives us $\\frac{(x^2 + 1)^4}{4} + C$. This is our final answer. You can verify by differentiating!",
+          "insight": "Always substitute back to express the final answer in terms of the original variable."
+        },
+        "incorrect": {
+          "1": "While this is mathematically equivalent (expanding $(x^2 + 1)^4$), it's unnecessarily complicated. Leave it in factored form: $\\frac{(x^2 + 1)^4}{4} + C$.",
+          "2": "We must substitute back to express our answer in terms of $x$, the original variable of integration."
+        }
+      },
+      "resultState": {
+        "description": "Final answer:",
+        "equations": ["\\int 2x(x^2 + 1)^3 \\, dx = \\frac{(x^2 + 1)^4}{4} + C"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "U-substitution simplifies integrals by changing variables",
+      "Look for a function whose derivative appears in the integrand",
+      "After integrating, always substitute back to the original variable",
+      "Verify your answer by taking the derivative"
+    ],
+    "fullSolution": "Let $u = x^2 + 1$, so $du = 2x \\, dx$.\n\n$\\int 2x(x^2 + 1)^3 \\, dx = \\int u^3 \\, du = \\frac{u^4}{4} + C$\n\nSubstituting back: $\\frac{(x^2 + 1)^4}{4} + C$",
+    "relatedProblems": []
+  }
+}

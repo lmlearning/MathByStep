@@ -1,0 +1,234 @@
+{
+  "id": "geometry-pythagorean-proof-1",
+  "type": "proof",
+  "title": "Pythagorean Theorem: $a^2 + b^2 = c^2$",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["geometry", "pythagorean-theorem", "proofs", "right-triangles"],
+  "statement": {
+    "text": "Prove the Pythagorean Theorem: In a right triangle with legs $a$ and $b$ and hypotenuse $c$, we have $a^2 + b^2 = c^2$."
+  },
+  "objectives": [
+    "Understand geometric proof using area",
+    "Apply area relationships in squares",
+    "Visualize algebraic identities geometrically"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We have a right triangle with legs $a$ and $b$, and hypotenuse $c$. We want to prove:",
+        "equations": ["a^2 + b^2 = c^2"]
+      },
+      "prompt": {
+        "question": "What geometric construction should we use for this proof?",
+        "hint": "Think about arranging squares and triangles."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Construct a large square with side length $(a + b)$ containing four copies of our right triangle"
+        },
+        {
+          "id": "opt-2",
+          "text": "Draw three separate squares on each side of the triangle"
+        },
+        {
+          "id": "opt-3",
+          "text": "Use similar triangles and proportions"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! This is one of the classic proofs. By arranging four identical right triangles inside a square with side $(a + b)$, we can compare areas to prove the theorem.",
+          "insight": "Geometric proofs often use area relationships and clever constructions."
+        },
+        "incorrect": {
+          "1": "While drawing squares on the sides demonstrates the theorem visually, it doesn't constitute a rigorous proof without additional area calculations.",
+          "2": "Similar triangles can be used for a proof, but the area method with a square is more direct and elegant."
+        }
+      },
+      "resultState": {
+        "description": "We construct a square with side length $(a + b)$. Inside, we place four identical right triangles with legs $a$ and $b$.",
+        "equations": []
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "We have a square with side $(a + b)$ containing four right triangles. The space remaining in the center forms a smaller square.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What is the side length of the inner (tilted) square?",
+        "hint": "The inner square's sides are the hypotenuses of the right triangles."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "The inner square has side length $c$ (the hypotenuse)"
+        },
+        {
+          "id": "opt-2",
+          "text": "The inner square has side length $a - b$"
+        },
+        {
+          "id": "opt-3",
+          "text": "The inner square has side length $\\sqrt{a^2 + b^2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! Each side of the inner square is a hypotenuse of one of the right triangles, so it has length $c$. Therefore, the inner square has area $c^2$.",
+          "insight": "Identifying the geometric relationships is key to setting up the area equation."
+        },
+        "incorrect": {
+          "1": "While $c = \\sqrt{a^2 + b^2}$ is true (that's what we're proving!), we can't use it in our proof. We identify the side as $c$ from the triangle's hypotenuse.",
+          "2": "The inner square's sides are hypotenuses, not differences of the legs."
+        }
+      },
+      "resultState": {
+        "description": "The inner square has side length $c$, so its area is:",
+        "equations": ["\\text{Inner square area} = c^2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "We have an outer square with side $(a + b)$ and an inner square with area $c^2$.",
+        "equations": []
+      },
+      "prompt": {
+        "question": "What's the area of the large outer square?",
+        "hint": "Area of a square is side squared."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Area = $(a + b)^2 = a^2 + 2ab + b^2$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Area = $a^2 + b^2$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Area = $4ab + c^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The outer square has side length $(a + b)$, so its area is $(a + b)^2$. Expanding: $(a + b)^2 = a^2 + 2ab + b^2$.",
+          "insight": "Remember the algebraic identity $(a + b)^2 = a^2 + 2ab + b^2$."
+        },
+        "incorrect": {
+          "1": "That's missing the cross term. $(a + b)^2 = a^2 + 2ab + b^2$, not just $a^2 + b^2$.",
+          "2": "This is close to what we'll find, but we need to derive it from $(a + b)^2$."
+        }
+      },
+      "resultState": {
+        "description": "The outer square's area is:",
+        "equations": ["\\text{Outer square area} = (a + b)^2 = a^2 + 2ab + b^2"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "The outer square contains four right triangles plus the inner square.",
+        "equations": ["\\text{Outer area} = a^2 + 2ab + b^2", "\\text{Inner area} = c^2"]
+      },
+      "prompt": {
+        "question": "What is the total area of the four right triangles?",
+        "hint": "Each triangle has area $\\frac{1}{2}ab$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Four triangles have total area $4 \\cdot \\frac{1}{2}ab = 2ab$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Four triangles have total area $4ab$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Four triangles have total area $ab$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Each right triangle has legs $a$ and $b$, so area = $\\frac{1}{2}ab$. Four triangles give $4 \\cdot \\frac{1}{2}ab = 2ab$.",
+          "insight": "The area of a right triangle is $\\frac{1}{2} \\times \\text{base} \\times \\text{height}$."
+        },
+        "incorrect": {
+          "1": "Remember, the area of a triangle is $\\frac{1}{2}ab$, not $ab$. So four triangles give $2ab$, not $4ab$.",
+          "2": "Each triangle has area $\\frac{1}{2}ab$. Four triangles would be $4 \\times \\frac{1}{2}ab = 2ab$, not just $ab$."
+        }
+      },
+      "resultState": {
+        "description": "We can now write an equation:",
+        "equations": ["\\text{Outer square} = \\text{Four triangles} + \\text{Inner square}", "a^2 + 2ab + b^2 = 2ab + c^2"]
+      }
+    },
+    {
+      "id": "step-5",
+      "order": 5,
+      "currentState": {
+        "description": "We have the area relationship:",
+        "equations": ["a^2 + 2ab + b^2 = 2ab + c^2"]
+      },
+      "prompt": {
+        "question": "How do we complete the proof?",
+        "hint": "Simplify the equation."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Subtract $2ab$ from both sides to get $a^2 + b^2 = c^2$ ✓"
+        },
+        {
+          "id": "opt-2",
+          "text": "Divide both sides by $(a + b)$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Take the square root of both sides"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Subtracting $2ab$ from both sides: $a^2 + 2ab + b^2 - 2ab = 2ab + c^2 - 2ab$, which simplifies to $a^2 + b^2 = c^2$. This is the Pythagorean Theorem! $\\square$",
+          "insight": "Geometric proofs use area relationships to establish algebraic identities."
+        },
+        "incorrect": {
+          "1": "Dividing by $(a + b)$ would complicate things unnecessarily. Simple subtraction is all we need.",
+          "2": "Taking square roots now would lose information. We need to simplify first to isolate the relationship."
+        }
+      },
+      "resultState": {
+        "description": "Proof complete!",
+        "equations": ["a^2 + b^2 = c^2 \\quad \\square"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Area relationships can prove algebraic identities",
+      "The Pythagorean Theorem connects geometry and algebra",
+      "Clever constructions reveal hidden relationships",
+      "This proof works by comparing two ways to calculate the same area"
+    ],
+    "fullSolution": "Construct a square with side $(a+b)$ containing four right triangles (legs $a$, $b$) arranged to leave a tilted square with side $c$ in the center.\n\nOuter square area: $(a+b)^2 = a^2 + 2ab + b^2$\nInner square area: $c^2$\nFour triangles area: $4 \\cdot \\frac{1}{2}ab = 2ab$\n\nSince outer = inner + triangles:\n$a^2 + 2ab + b^2 = c^2 + 2ab$\n\nSubtracting $2ab$: $a^2 + b^2 = c^2$ $\\square$",
+    "relatedProblems": []
+  }
+}

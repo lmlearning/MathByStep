@@ -1,0 +1,193 @@
+{
+  "id": "algebra-systems-linear-1",
+  "type": "problem",
+  "title": "Solving a System of Linear Equations",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": ["systems", "linear-equations", "substitution"],
+  "statement": {
+    "text": "Solve the system of equations: $2x + y = 7$ and $x - y = 2$"
+  },
+  "objectives": [
+    "Apply substitution method to solve systems",
+    "Manipulate linear equations algebraically",
+    "Verify solutions by substitution"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We have two equations:",
+        "equations": ["2x + y = 7", "x - y = 2"]
+      },
+      "prompt": {
+        "question": "What's the best first step for solving this system?",
+        "hint": "Look for an equation that's easy to solve for one variable."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Solve the second equation for $x$: $x = y + 2$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Add the two equations together immediately"
+        },
+        {
+          "id": "opt-3",
+          "text": "Multiply the first equation by 2"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The second equation $x - y = 2$ is easy to solve for $x$ by adding $y$ to both sides. This gives us $x = y + 2$, which we can substitute into the first equation.",
+          "insight": "In the substitution method, look for the simplest equation to solve for one variable."
+        },
+        "incorrect": {
+          "1": "While adding equations is valid (elimination method), we'd need to set it up properly first. Substitution is more straightforward here.",
+          "2": "That would make the coefficients more complicated. We want to simplify, not complicate!"
+        }
+      },
+      "resultState": {
+        "description": "From the second equation:",
+        "equations": ["x = y + 2"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "We have $x = y + 2$. Our first equation is:",
+        "equations": ["2x + y = 7"]
+      },
+      "prompt": {
+        "question": "How do we use $x = y + 2$ to solve the system?",
+        "hint": "Replace $x$ in the first equation."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Substitute $x = y + 2$ into $2x + y = 7$ to get $2(y + 2) + y = 7$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Set $y + 2 = 7$ to solve for $y$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Substitute $y = x - 2$ into the first equation"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! By substituting $x = y + 2$ into $2x + y = 7$, we get an equation with only one variable: $2(y + 2) + y = 7$. Now we can solve for $y$.",
+          "insight": "Substitution eliminates one variable, leaving an equation we can solve."
+        },
+        "incorrect": {
+          "1": "That equation doesn't come from our system. We need to substitute into the full equation $2x + y = 7$.",
+          "2": "While mathematically equivalent, we'd get $y = x - 2$ from $x = y + 2$. But it's clearer to substitute the expression we already have."
+        }
+      },
+      "resultState": {
+        "description": "After substitution:",
+        "equations": ["2(y + 2) + y = 7"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "We need to solve:",
+        "equations": ["2(y + 2) + y = 7"]
+      },
+      "prompt": {
+        "question": "Simplify and solve for $y$.",
+        "hint": "Distribute the 2, then combine like terms."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Distribute: $2y + 4 + y = 7$, combine: $3y + 4 = 7$, solve: $y = 1$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Simplify to: $2y + 2 + y = 7$, so $3y = 5$, thus $y = \\frac{5}{3}$"
+        },
+        {
+          "id": "opt-3",
+          "text": "This gives $y + 2 + y = 7$, so $2y = 5$, thus $y = \\frac{5}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent work! Distributing gives $2y + 4 + y = 7$. Combining like terms: $3y + 4 = 7$. Subtracting 4: $3y = 3$. Dividing by 3: $y = 1$.",
+          "insight": "Always distribute before combining like terms."
+        },
+        "incorrect": {
+          "1": "Be careful! $2(y + 2) = 2y + 4$, not $2y + 2$. Remember to multiply 2 by everything inside the parentheses.",
+          "2": "You forgot to distribute the 2. We have $2(y + 2)$, not just $(y + 2)$."
+        }
+      },
+      "resultState": {
+        "description": "Solved for $y$:",
+        "equations": ["y = 1"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "We found $y = 1$. Recall:",
+        "equations": ["x = y + 2"]
+      },
+      "prompt": {
+        "question": "Now find $x$.",
+        "hint": "Substitute $y = 1$ into $x = y + 2$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Substitute: $x = 1 + 2 = 3$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Use the first equation: $2x + 1 = 7$, so $x = 3$"
+        },
+        {
+          "id": "opt-3",
+          "text": "From $x - y = 2$: $x = 2 - 1 = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Substituting $y = 1$ into $x = y + 2$ gives $x = 1 + 2 = 3$. The solution is $(x, y) = (3, 1)$. You can verify: $2(3) + 1 = 7$ ✓ and $3 - 1 = 2$ ✓",
+          "insight": "Always verify your solution in both original equations!"
+        },
+        "incorrect": {
+          "1": "This also works and gives the correct answer! Either method is valid for finding $x$.",
+          "2": "Check your arithmetic: $x - y = 2$ means $x - 1 = 2$, so $x = 3$, not 1."
+        }
+      },
+      "resultState": {
+        "description": "Solution found!",
+        "equations": ["(x, y) = (3, 1)"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Substitution method solves for one variable, then substitutes into the other equation",
+      "Choose the easiest equation to isolate a variable",
+      "Always verify solutions in both original equations",
+      "Systems of two linear equations typically have one unique solution (intersection point)"
+    ],
+    "fullSolution": "From $x - y = 2$, we get $x = y + 2$. Substituting into $2x + y = 7$:\n$2(y + 2) + y = 7 \\Rightarrow 2y + 4 + y = 7 \\Rightarrow 3y = 3 \\Rightarrow y = 1$\nThen $x = 1 + 2 = 3$. Solution: $(x, y) = (3, 1)$",
+    "relatedProblems": []
+  }
+}
