@@ -1,0 +1,200 @@
+{
+  "id": "logic-strong-induction-1",
+  "type": "problem",
+  "title": "Strong Induction and the Fundamental Theorem of Arithmetic",
+  "topic": "Logic & Proofs",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "logic",
+    "proof-techniques",
+    "strong-induction",
+    "number-theory",
+    "fundamental-theorem-arithmetic"
+  ],
+  "statement": {
+    "text": "Use strong induction to prove that every integer $n \\geq 2$ can be expressed as a product of prime numbers. (This is existence part of the Fundamental Theorem of Arithmetic.)"
+  },
+  "objectives": [
+    "Understand strong vs weak induction",
+    "Apply strong induction to number theory",
+    "Structure inductive proofs properly",
+    "Prove fundamental theorem (existence)"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Want to prove: every $n \\geq 2$ is a product of primes."
+      },
+      "prompt": {
+        "question": "What is the difference between weak and strong induction?",
+        "hint": "Weak: assume $P(k)$ to prove $P(k+1)$. Strong: assume $P(2), P(3), \\ldots, P(k)$ to prove $P(k+1)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Strong induction: assume $P(m)$ for all $m \\leq k$ to prove $P(k+1)$"
+        },
+        {
+          "id": "b",
+          "text": "Strong induction: assume $P(k)$ and $P(k-1)$ only"
+        },
+        {
+          "id": "c",
+          "text": "Strong and weak induction are the same"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Induction comparison:**\n\n**Weak (Ordinary) Induction:**\n1. **Base case:** Prove $P(n_0)$\n2. **Inductive step:** Assume $P(k)$, prove $P(k+1)$\n3. **Conclusion:** $P(n)$ holds for all $n \\geq n_0$\n\n**Strong Induction:**\n1. **Base case:** Prove $P(n_0)$ (sometimes multiple base cases)\n2. **Inductive step:** Assume $P(m)$ for ALL $m$ with $n_0 \\leq m \\leq k$, prove $P(k+1)$\n3. **Conclusion:** $P(n)$ holds for all $n \\geq n_0$\n\n**Key difference:** Strong induction allows you to use ANY previous case, not just the immediate predecessor!\n\n**When to use strong:**\n- Recurrence relations with multiple previous terms (like Fibonacci)\n- Structural induction (trees, graphs)\n- Number theory problems where $n$ might factor\n\n**Equivalence:** Strong and weak induction are logically equivalent, but strong is more convenient for some proofs.",
+          "insight": "Strong induction lets you use ALL previous cases, not just $P(k)$!"
+        },
+        "incorrect": {
+          "1": "That's just using two previous cases! Strong induction uses ALL previous cases.",
+          "2": "They differ in the inductive hypothesis! Strong uses all previous cases."
+        }
+      },
+      "resultState": {
+        "description": "Strong induction understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Set up the proof."
+      },
+      "prompt": {
+        "question": "What should the base case be?",
+        "hint": "Base case: $n = 2$. Check: $2$ is prime, so $2 = 2$ is a product of primes (one factor). ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Base case: $n = 2$ (smallest integer $\\geq 2$, and $2$ is prime)"
+        },
+        {
+          "id": "b",
+          "text": "Base case: $n = 0$"
+        },
+        {
+          "id": "c",
+          "text": "Base case: $n = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Base case: $n = 2$**\n\nWe want to prove $P(n)$: \"$n$ is a product of primes\" for all $n \\geq 2$.\n\n**Why $n = 2$?**\n- The statement is for $n \\geq 2$\n- $n = 2$ is the smallest case\n\n**Verification:**\n$n = 2$ is prime, so:\n$$2 = 2$$\n\nThis is a product of one prime (itself), so $P(2)$ is true ✓\n\n**Note:** We could write $2$ as a product of primes in the form:\n$$2 = p_1$$\nwhere $p_1 = 2$ is prime.\n\n**Why not $n = 1$?**\n$1$ is NOT prime and NOT a product of primes (by convention, empty product issues). The fundamental theorem starts at $n = 2$.",
+          "insight": "Base case is the smallest value in your domain!"
+        },
+        "incorrect": {
+          "1": "We're proving for $n \\geq 2$, so base case should be $n = 2$!",
+          "2": "$1$ is not prime and not considered a product of primes. Start at $n = 2$."
+        }
+      },
+      "resultState": {
+        "description": "Base case: $P(2)$ verified",
+        "equations": ["P(2): 2 \\text{ is prime}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Inductive step: assume $P(m)$ for $2 \\leq m \\leq k$."
+      },
+      "prompt": {
+        "question": "How do we prove $P(k+1)$: \"$k+1$ is a product of primes\"?",
+        "hint": "Case 1: If $k+1$ is prime, done! Case 2: If $k+1$ is composite, write $k+1 = ab$ where $2 \\leq a, b \\leq k$. By strong induction hypothesis, both $a$ and $b$ are products of primes, so $k+1 = ab$ is too!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "If $k+1$ prime, done. If composite, $k+1 = ab$ with $a,b < k+1$, use strong IH on $a,b$"
+        },
+        {
+          "id": "b",
+          "text": "Write $k+1 = k + 1$ and use IH on $k$"
+        },
+        {
+          "id": "c",
+          "text": "Assume $k+1$ is prime"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Inductive step proof:**\n\n**Inductive Hypothesis (IH):** Assume $P(m)$ is true for all $2 \\leq m \\leq k$.\n\nThat is, every integer from $2$ to $k$ is a product of primes.\n\n**Prove $P(k+1)$:** Show $k+1$ is a product of primes.\n\n**Case 1:** $k+1$ is prime\n- Then $k+1 = k+1$ is already a product of one prime ✓\n\n**Case 2:** $k+1$ is composite\n- By definition of composite, $k+1 = ab$ where $a, b$ are integers with $1 < a, b < k+1$\n- Since $a \\geq 2$ and $b \\geq 2$ and $ab = k+1$, we have:\n  - $a \\leq k$ (since $a < k+1$ and $a$ is an integer)\n  - $b \\leq k$ (same reason)\n- By **strong IH**, both $a$ and $b$ are products of primes:\n  - $a = p_1 p_2 \\cdots p_r$ (primes)\n  - $b = q_1 q_2 \\cdots q_s$ (primes)\n- Therefore:\n  $$k+1 = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s$$\n  is a product of primes ✓\n\n**Conclusion:** In both cases, $k+1$ is a product of primes, so $P(k+1)$ holds!",
+          "insight": "Strong induction is perfect when the problem naturally breaks into smaller pieces!"
+        },
+        "incorrect": {
+          "1": "That doesn't help! Addition doesn't preserve the product of primes structure.",
+          "2": "We can't assume that! We need to consider both prime and composite cases."
+        }
+      },
+      "resultState": {
+        "description": "Inductive step complete",
+        "equations": ["P(k+1) \\text{ proven using strong IH}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Conclude the proof."
+      },
+      "prompt": {
+        "question": "What can we conclude?",
+        "hint": "By principle of strong induction, $P(n)$ holds for all $n \\geq 2$. Every integer $\\geq 2$ is a product of primes."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "By strong induction, every $n \\geq 2$ is a product of primes"
+        },
+        {
+          "id": "b",
+          "text": "We only proved it for even numbers"
+        },
+        {
+          "id": "c",
+          "text": "We need to prove uniqueness separately"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Conclusion:**\n\nBy the principle of strong mathematical induction:\n\n$$\\boxed{\\text{Every integer } n \\geq 2 \\text{ can be expressed as a product of prime numbers.}}$$\n\n**Complete proof summary:**\n\n1. **Base case:** $n = 2$ is prime, so $P(2)$ holds ✓\n\n2. **Inductive step:** \n   - **Assume:** $P(m)$ for all $2 \\leq m \\leq k$\n   - **Prove:** $P(k+1)$\n   - If $k+1$ is prime: done!\n   - If $k+1$ is composite: $k+1 = ab$ with $2 \\leq a,b \\leq k$\n     - By IH: $a$ and $b$ are products of primes\n     - So $k+1 = ab$ is a product of primes ✓\n\n3. **Conclusion:** By strong induction, $P(n)$ holds for all $n \\geq 2$ ✓\n\n**Note:** This proves **existence** of prime factorization. The **uniqueness** (up to order) requires a separate argument using properties of primes and divisibility. Together, they form the Fundamental Theorem of Arithmetic.",
+          "insight": "Strong induction proves every integer has a prime factorization!"
+        },
+        "incorrect": {
+          "1": "No! Induction works for all $n \\geq 2$, not just even numbers.",
+          "2": "True, but we've proven existence! That's what this problem asked for."
+        }
+      },
+      "resultState": {
+        "description": "Proof complete",
+        "equations": ["\\forall n \\geq 2: n = p_1 p_2 \\cdots p_k \\text{ (primes)}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Strong induction: assume $P(m)$ for ALL $m \\leq k$ to prove $P(k+1)$",
+      "Base case: $n = 2$ is prime ✓",
+      "Inductive step cases: (1) $k+1$ prime - done, (2) $k+1$ composite - factor and use IH",
+      "Composite: $k+1 = ab$ with $a,b \\leq k$, apply IH to both factors",
+      "Conclusion: every $n \\geq 2$ is a product of primes",
+      "This proves existence part of Fundamental Theorem of Arithmetic"
+    ],
+    "fullSolution": "**Prove: Every integer $n \\geq 2$ is a product of primes (Strong Induction)**\n\n---\n\n**Statement:** $P(n)$: \"$n$ can be written as a product of prime numbers\"\n\n---\n\n**Base Case:** $n = 2$\n\n$2$ is prime, so $2 = 2$ is a product of primes (one factor). ✓\n\n---\n\n**Inductive Step:**\n\n**Inductive Hypothesis:** Assume $P(m)$ is true for all $2 \\leq m \\leq k$.\n\n**Prove:** $P(k+1)$\n\n**Case 1:** $k+1$ is prime\n- Then $k+1$ itself is a product of one prime ✓\n\n**Case 2:** $k+1$ is composite\n- By definition, $\\exists$ integers $a, b$ with $1 < a, b < k+1$ such that $k+1 = ab$\n- Since $a, b \\geq 2$ and $a, b < k+1$, we have $2 \\leq a, b \\leq k$\n- By **strong IH**:\n  - $a = p_1 p_2 \\cdots p_r$ (product of primes)\n  - $b = q_1 q_2 \\cdots q_s$ (product of primes)\n- Therefore:\n  $$k+1 = ab = (p_1 p_2 \\cdots p_r)(q_1 q_2 \\cdots q_s)$$\n  is a product of primes ✓\n\n**In both cases,** $P(k+1)$ holds.\n\n---\n\n**Conclusion:**\n\nBy the principle of strong mathematical induction, $P(n)$ is true for all $n \\geq 2$.\n\n$$\\boxed{\\text{Every integer } n \\geq 2 \\text{ is a product of prime numbers.}}$$\n\nThis is the **existence** part of the Fundamental Theorem of Arithmetic.",
+    "relatedProblems": [
+      "logic-mathematical-induction-1",
+      "number-theory-primes-1"
+    ]
+  }
+}

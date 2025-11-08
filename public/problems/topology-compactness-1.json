@@ -1,195 +1,203 @@
 {
   "id": "topology-compactness-1",
   "type": "problem",
-  "title": "Proving Compactness of Closed Bounded Intervals",
+  "title": "Compactness and Heine-Borel",
   "topic": "Topology",
   "difficulty": 4,
-  "estimatedTime": 14,
+  "estimatedTime": 12,
   "tags": [
     "topology",
     "compactness",
-    "Heine-Borel",
-    "open covers"
+    "heine-borel",
+    "open-covers",
+    "closed-and-bounded"
   ],
   "statement": {
-    "text": "Prove that the closed interval $[0, 1]$ is compact in $\\mathbb{R}$ by showing every open cover has a finite subcover."
+    "text": "Determine whether $S = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 \\leq 1\\}$ (closed unit disk) is compact. Then determine if $T = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 < 1\\}$ (open unit disk) is compact."
   },
   "objectives": [
-    "Understand open covers",
-    "Use Heine-Borel approach",
-    "Construct finite subcover"
+    "Understand definition of compactness",
+    "Apply Heine-Borel theorem",
+    "Distinguish closed vs open sets",
+    "Verify bounded and closed conditions"
   ],
   "steps": [
     {
       "id": "step-1",
       "order": 1,
       "currentState": {
-        "description": "What does it mean for $[0, 1]$ to be compact?"
+        "description": "Set $S = \\{(x,y) : x^2 + y^2 \\leq 1\\}$ (closed unit disk)."
       },
       "prompt": {
-        "question": "What is the definition of compactness?",
-        "hint": "A space is compact if every open cover has a finite subcover. Open cover: collection of open sets whose union contains $[0, 1]$."
+        "question": "What does it mean for a set to be compact?",
+        "hint": "Compact means every open cover has a finite subcover. In $\\mathbb{R}^n$, by Heine-Borel, compact $\\Leftrightarrow$ closed and bounded."
       },
       "options": [
         {
           "id": "a",
-          "text": "Every open cover $\\{U_\\alpha\\}$ of $[0, 1]$ has a finite subcover $\\{U_1, \\ldots, U_n\\}$"
+          "text": "Every open cover has a finite subcover (Heine-Borel: closed and bounded in $\\mathbb{R}^n$)"
         },
         {
           "id": "b",
-          "text": "$[0, 1]$ is closed and bounded"
+          "text": "The set is closed"
         },
         {
           "id": "c",
-          "text": "Every sequence in $[0, 1]$ has a convergent subsequence"
+          "text": "The set is bounded"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! Compactness means: if $[0,1] \\subseteq \\bigcup_\\alpha U_\\alpha$ with $U_\\alpha$ open, then $[0,1] \\subseteq U_1 \\cup \\cdots \\cup U_n$ for finitely many.",
-          "insight": "In metric spaces, all three definitions are equivalent (Heine-Borel). We'll use definition (a)."
+          "explanation": "Perfect! **Compactness definition:**\n\nA set $K$ is **compact** if every open cover of $K$ has a finite subcover.\n\n**Open cover:** A collection $\\{U_\\alpha\\}_{\\alpha \\in A}$ of open sets with $K \\subseteq \\bigcup_{\\alpha \\in A} U_\\alpha$\n\n**Finite subcover:** There exist finitely many indices $\\alpha_1, \\ldots, \\alpha_n$ such that $K \\subseteq U_{\\alpha_1} \\cup \\cdots \\cup U_{\\alpha_n}$\n\n**Heine-Borel Theorem (for $\\mathbb{R}^n$):**\nA subset of $\\mathbb{R}^n$ is compact if and only if it is:\n1. **Closed** (contains all its limit points)\n2. **Bounded** (contained in some ball $B_R(0)$)\n\n**Important:** Heine-Borel is specific to $\\mathbb{R}^n$ with standard topology! In general metric spaces, closed + bounded $\\not\\Rightarrow$ compact.",
+          "insight": "Heine-Borel simplifies compactness checking in Euclidean spaces!"
         },
         "incorrect": {
-          "1": "That's the Heine-Borel characterization for $\\mathbb{R}^n$, but we need to prove it using the definition!",
-          "2": "That's sequential compactness, equivalent to compactness in metric spaces but not the definition we'll use."
+          "1": "Closed alone isn't enough! $\\mathbb{R}$ is closed but not compact.",
+          "2": "Bounded alone isn't enough! $(0,1)$ is bounded but not compact."
         }
       },
       "resultState": {
-        "description": "Definition of compactness"
+        "description": "Compactness definition understood"
       }
     },
     {
       "id": "step-2",
       "order": 2,
       "currentState": {
-        "description": "We'll derive a contradiction."
+        "description": "Check if $S$ is closed."
       },
       "prompt": {
-        "question": "How to proceed with proof by contradiction?",
-        "hint": "Bisect $[0, 1]$ into $[0, 1/2]$ and $[1/2, 1]$. At least one cannot be covered by finitely many $U_\\alpha$ (else $[0,1]$ could be). Continue bisecting to get nested intervals."
+        "question": "Is $S = \\{(x,y) : x^2 + y^2 \\leq 1\\}$ closed?",
+        "hint": "Yes! $S = f^{-1}((-\\infty, 1])$ where $f(x,y) = x^2 + y^2$ is continuous, and $(-\\infty, 1]$ is closed."
       },
       "options": [
         {
           "id": "a",
-          "text": "Bisect repeatedly: at each step, choose a half-interval not covered by finitely many $U_\\alpha$"
+          "text": "Yes, $S$ is closed"
         },
         {
           "id": "b",
-          "text": "Show $[0, 1]$ is not bounded"
+          "text": "No, $S$ is open"
         },
         {
           "id": "c",
-          "text": "Find a single open set covering $[0, 1]$"
+          "text": "Neither open nor closed"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Bisection method: If both halves had finite subcovers, their union would be a finite subcover of $[0, 1]$ - contradiction. So one half has no finite subcover. Repeat.",
-          "insight": "This creates nested intervals $I_0 \\supseteq I_1 \\supseteq I_2 \\supseteq \\cdots$ with length $\\to 0$."
+          "explanation": "Correct! **$S$ is closed:**\n\n**Method 1: Preimage of closed set**\nDefine $f: \\mathbb{R}^2 \\to \\mathbb{R}$ by $f(x,y) = x^2 + y^2$.\n\n- $f$ is continuous (polynomial)\n- $S = f^{-1}((-\\infty, 1])$\n- $(-\\infty, 1]$ is closed in $\\mathbb{R}$\n- Preimage of closed set under continuous map is closed ✓\n\n**Method 2: Contains limit points**\nIf $(x_n, y_n) \\in S$ and $(x_n, y_n) \\to (x, y)$, then:\n$$x_n^2 + y_n^2 \\leq 1$$\n\nBy continuity of $f$:\n$$x^2 + y^2 = \\lim_{n \\to \\infty} (x_n^2 + y_n^2) \\leq 1$$\n\nSo $(x, y) \\in S$ ✓\n\n**Method 3: Complement is open**\n$$S^c = \\{(x,y) : x^2 + y^2 > 1\\} = f^{-1}((1, \\infty))$$\n\nSince $(1, \\infty)$ is open and $f$ is continuous, $S^c$ is open, so $S$ is closed ✓",
+          "insight": "Closed sets are precisely the preimages of closed sets under continuous maps!"
         },
         "incorrect": {
-          "1": "$[0, 1]$ is clearly bounded! That won't help.",
-          "2": "We assumed NO finite subcover exists. Need different approach."
+          "1": "$S$ includes its boundary (the circle $x^2 + y^2 = 1$), so it's closed, not open!",
+          "2": "$S$ is definitely closed - it contains all its limit points."
         }
       },
       "resultState": {
-        "description": "Proof by contradiction setup"
+        "description": "$S$ is closed",
+        "equations": ["S \\text{ is closed}"]
       }
     },
     {
       "id": "step-3",
       "order": 3,
       "currentState": {
-        "description": "Each $I_n$ has no finite subcover."
+        "description": "Check if $S$ is bounded."
       },
       "prompt": {
-        "question": "What does the Nested Interval Theorem give us?",
-        "hint": "There exists unique $x \\in \\bigcap_{n=1}^\\infty I_n$. Since $\\{U_\\alpha\\}$ covers $[0,1]$, we have $x \\in U_\\alpha$ for some $\\alpha$."
+        "question": "Is $S$ bounded?",
+        "hint": "Yes! $S \\subseteq B_2(0) = \\{(x,y) : x^2 + y^2 < 4\\}$, so $S$ is contained in a ball."
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\bigcap_{n=1}^\\infty I_n = \\{x\\}$ for some $x \\in [0, 1]$, and $x \\in U_\\alpha$ for some $\\alpha$"
+          "text": "Yes, $S$ is bounded"
         },
         {
           "id": "b",
-          "text": "$\\bigcap_{n=1}^\\infty I_n = \\emptyset$"
+          "text": "No, $S$ is unbounded"
         },
         {
           "id": "c",
-          "text": "The intersection contains infinitely many points"
+          "text": "Cannot determine"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! Nested Interval Theorem: For closed bounded intervals $I_n$ with length $\\to 0$, there's unique $x \\in \\bigcap I_n$. Since $\\{U_\\alpha\\}$ covers $[0,1]$, some $U_\\alpha$ contains $x$.",
-          "insight": "Since $U_\\alpha$ is open, it contains an interval $(x - \\epsilon, x + \\epsilon)$ around $x$."
+          "explanation": "Correct! **$S$ is bounded:**\n\n**Definition:** A set $S \\subseteq \\mathbb{R}^n$ is **bounded** if there exists $M > 0$ such that:\n$$\\|x\\| \\leq M \\quad \\text{for all } x \\in S$$\n\nEquivalently, $S \\subseteq B_R(0)$ for some $R > 0$.\n\n**For our $S$:**\nIf $(x, y) \\in S$, then $x^2 + y^2 \\leq 1$, so:\n$$\\|(x,y)\\| = \\sqrt{x^2 + y^2} \\leq 1$$\n\nTherefore $S \\subseteq B_2(0)$ (or even $S \\subseteq \\overline{B_1(0)}$), so $S$ is bounded ✓\n\n**Alternative:** \n$$\\text{diam}(S) = \\sup_{p,q \\in S} \\|p - q\\| = 2 < \\infty$$\n\nThe diameter is finite, confirming boundedness.",
+          "insight": "Boundedness means the set fits inside some ball!"
         },
         "incorrect": {
-          "1": "Nested Interval Theorem guarantees non-empty intersection for closed bounded intervals!",
-          "2": "Since interval lengths $\\to 0$, intersection is a single point."
+          "1": "$S$ is clearly bounded - all points satisfy $\\|(x,y)\\| \\leq 1$!",
+          "2": "We can determine this! Check if $\\|(x,y)\\|$ is bounded for $(x,y) \\in S$."
         }
       },
       "resultState": {
-        "description": "Apply Nested Interval Property"
+        "description": "$S$ is bounded",
+        "equations": ["S \\text{ is bounded}"]
       }
     },
     {
       "id": "step-4",
       "order": 4,
       "currentState": {
-        "description": "Since $U_\\alpha$ is open, $\\exists \\epsilon > 0$ such that $(x-\\epsilon, x+\\epsilon) \\subseteq U_\\alpha$."
+        "description": "Determine compactness of $S$ and $T$."
       },
       "prompt": {
-        "question": "How does this contradict our assumption?",
-        "hint": "For large $n$, $I_n \\subseteq (x-\\epsilon, x+\\epsilon) \\subseteq U_\\alpha$, so $I_n$ is covered by single $U_\\alpha$. But we said no $I_n$ has finite subcover!"
+        "question": "Which sets are compact: $S = \\{x^2 + y^2 \\leq 1\\}$ or $T = \\{x^2 + y^2 < 1\\}$?",
+        "hint": "$S$ is closed and bounded, so compact by Heine-Borel. $T$ is bounded but not closed (doesn't include boundary), so not compact."
       },
       "options": [
         {
           "id": "a",
-          "text": "For large $n$, $I_n \\subseteq U_\\alpha$ (single set covers $I_n$), contradicting that $I_n$ needs infinite cover"
+          "text": "$S$ is compact, $T$ is not compact"
         },
         {
           "id": "b",
-          "text": "$x$ is not in $[0, 1]$"
+          "text": "Both $S$ and $T$ are compact"
         },
         {
           "id": "c",
-          "text": "$U_\\alpha$ is not actually open"
+          "text": "Neither $S$ nor $T$ is compact"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Since $I_n \\to \\{x\\}$ and $(x-\\epsilon, x+\\epsilon) \\subseteq U_\\alpha$, eventually $I_n \\subseteq U_\\alpha$. But we chose $I_n$ to have NO finite subcover - contradiction!",
-          "insight": "This contradiction shows our assumption was false: every open cover of $[0, 1]$ DOES have a finite subcover. Thus $[0, 1]$ is compact!"
+          "explanation": "Excellent! **Compactness analysis:**\n\n**$S = \\{(x,y) : x^2 + y^2 \\leq 1\\}$ (closed disk):**\n- Closed ✓\n- Bounded ✓\n- By Heine-Borel: **$S$ is compact** ✓\n\n**$T = \\{(x,y) : x^2 + y^2 < 1\\}$ (open disk):**\n- Open (NOT closed) ✗\n- Bounded ✓\n- By Heine-Borel: **$T$ is NOT compact** ✗\n\n**Explicit open cover for $T$ with no finite subcover:**\nLet $U_n = \\{(x,y) : x^2 + y^2 < 1 - \\frac{1}{n}\\}$ for $n \\geq 2$.\n\nThen $\\{U_n\\}_{n=2}^{\\infty}$ is an open cover of $T$:\n- Each $U_n$ is open\n- For any $(x,y) \\in T$, we have $x^2 + y^2 = r < 1$, so choose $n > \\frac{1}{1-r}$ to get $(x,y) \\in U_n$\n\n**But no finite subcover:** Any finite subcollection $\\{U_{n_1}, \\ldots, U_{n_k}\\}$ only covers up to radius $1 - \\frac{1}{\\max_i n_i} < 1$!\n\nThis proves $T$ is not compact.",
+          "insight": "The boundary makes all the difference - open sets can't be compact in $\\mathbb{R}^n$!"
         },
         "incorrect": {
-          "1": "$x \\in \\bigcap I_n \\subseteq I_0 = [0, 1]$, so $x \\in [0, 1]$.",
-          "2": "$U_\\alpha$ is open by assumption (it's part of an open cover)."
+          "1": "$T$ is open, not closed! Only $S$ satisfies Heine-Borel conditions.",
+          "2": "$S$ is closed and bounded, so it IS compact by Heine-Borel!"
         }
       },
       "resultState": {
-        "description": "Derive contradiction"
+        "description": "Compactness determined",
+        "equations": [
+          "S \\text{ is compact}",
+          "T \\text{ is not compact}"
+        ]
       }
     }
   ],
   "summary": {
     "keyInsights": [
       "Compactness: every open cover has a finite subcover",
-      "Proof by contradiction: assume open cover with no finite subcover",
-      "Bisection method: create nested intervals $I_n$ with no finite subcover",
-      "Nested Interval Theorem: $\\bigcap I_n = \\{x\\}$ for some $x$",
-      "Contradiction: $x \\in U_\\alpha$ (open) implies $I_n \\subseteq U_\\alpha$ for large $n$",
-      "Conclusion: $[0, 1]$ is compact"
+      "Heine-Borel (for $\\mathbb{R}^n$): compact $\\Leftrightarrow$ closed and bounded",
+      "Closed disk $S = \\{x^2 + y^2 \\leq 1\\}$: closed ✓, bounded ✓, compact ✓",
+      "Open disk $T = \\{x^2 + y^2 < 1\\}$: open (not closed) ✗, bounded ✓, not compact ✗",
+      "The boundary determines compactness in $\\mathbb{R}^n$",
+      "Open bounded sets in $\\mathbb{R}^n$ are never compact"
     ],
-    "fullSolution": "**Prove $[0, 1]$ is compact**\n\n**Proof by contradiction:**\n\nAssume $\\{U_\\alpha\\}_{\\alpha \\in A}$ is an open cover of $[0, 1]$ with NO finite subcover.\n\n**Step 1: Bisection**\n\nDivide $[0, 1]$ into $[0, 1/2]$ and $[1/2, 1]$.\n\nIf both had finite subcovers, their union would give a finite subcover of $[0, 1]$ - contradiction.\n\nSo at least one half has no finite subcover. Call it $I_1$.\n\n**Step 2: Iterate**\n\nRepeat bisection on $I_1$, choosing half $I_2$ with no finite subcover.\n\nContinue: get nested intervals $I_0 \\supseteq I_1 \\supseteq I_2 \\supseteq \\cdots$ where:\n- Each $I_n$ is closed and bounded\n- Length: $|I_n| = 1/2^n \\to 0$\n- No $I_n$ has finite subcover from $\\{U_\\alpha\\}$\n\n**Step 3: Nested Interval Theorem**\n\n$$\\bigcap_{n=0}^\\infty I_n = \\{x\\}$$\n\nfor unique $x \\in [0, 1]$.\n\n**Step 4: Contradiction**\n\nSince $\\{U_\\alpha\\}$ covers $[0, 1]$, we have $x \\in U_\\alpha$ for some $\\alpha$.\n\nSince $U_\\alpha$ is open: $\\exists \\epsilon > 0$ such that $(x - \\epsilon, x + \\epsilon) \\subseteq U_\\alpha$.\n\nSince $|I_n| = 1/2^n \\to 0$, for sufficiently large $n$:\n$$I_n \\subseteq (x - \\epsilon, x + \\epsilon) \\subseteq U_\\alpha$$\n\nThus $\\{U_\\alpha\\}$ (a single set!) is a finite subcover of $I_n$.\n\nThis **contradicts** our construction where $I_n$ has no finite subcover.\n\n**Conclusion:** Our assumption was false. Every open cover of $[0, 1]$ has a finite subcover.\n\nTherefore, $[0, 1]$ is **compact**. $\\square$",
+    "fullSolution": "**Determine compactness of closed and open unit disks**\n\n---\n\n**Heine-Borel Theorem:**\nIn $\\mathbb{R}^n$, a set is compact $\\Leftrightarrow$ it is closed and bounded.\n\n---\n\n**$S = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 \\leq 1\\}$**\n\n**Closed?** Yes!\n- $S = f^{-1}((-\\infty, 1])$ where $f(x,y) = x^2 + y^2$\n- $f$ continuous, $(-\\infty, 1]$ closed\n- Preimage of closed set is closed ✓\n\n**Bounded?** Yes!\n- If $(x,y) \\in S$, then $\\|(x,y)\\| = \\sqrt{x^2+y^2} \\leq 1$\n- So $S \\subseteq B_2(0)$ ✓\n\n**Conclusion:** $S$ is closed and bounded, so **$S$ is compact** ✓\n\n---\n\n**$T = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 < 1\\}$**\n\n**Closed?** No!\n- $T$ is open (standard open disk)\n- Doesn't contain its boundary circle $\\{x^2 + y^2 = 1\\}$\n- Not closed ✗\n\n**Bounded?** Yes!\n- Same argument: $\\|(x,y)\\| < 1$ for all $(x,y) \\in T$ ✓\n\n**Conclusion:** $T$ is bounded but NOT closed, so **$T$ is not compact** ✗\n\n---\n\n**Answer:**\n- $\\boxed{S \\text{ is compact}}$\n- $\\boxed{T \\text{ is not compact}}$",
     "relatedProblems": [
-      "topology-heine-borel-1",
-      "topology-connectedness-1"
+      "topology-connectedness-1",
+      "real-analysis-bolzano-weierstrass-1"
     ]
   }
 }

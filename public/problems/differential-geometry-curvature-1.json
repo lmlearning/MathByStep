@@ -1,0 +1,204 @@
+{
+  "id": "differential-geometry-curvature-1",
+  "type": "problem",
+  "title": "Curvature of Plane Curves",
+  "topic": "Geometry",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "differential-geometry",
+    "curvature",
+    "arc-length-parametrization",
+    "osculating-circle",
+    "radius-of-curvature"
+  ],
+  "statement": {
+    "text": "Find the curvature $\\kappa$ of the parabola $y = x^2$ at the point $(1, 1)$. Then find the radius and center of the osculating circle at this point."
+  },
+  "objectives": [
+    "Understand curvature as a measure of bending",
+    "Apply curvature formula for explicit curves",
+    "Find osculating circle (circle of curvature)",
+    "Interpret geometric meaning"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Curve: $y = f(x) = x^2$, point: $(1, 1)$."
+      },
+      "prompt": {
+        "question": "What is the formula for curvature $\\kappa$ of a curve $y = f(x)$?",
+        "hint": "For $y = f(x)$: $\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\kappa = |f''(x)|$"
+        },
+        {
+          "id": "c",
+          "text": "$\\kappa = \\frac{f''(x)}{f'(x)}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Curvature formula for $y = f(x)$:**\n\n$$\\kappa(x) = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}$$\n\n**Derivation idea:**\nCurvature measures how fast the unit tangent vector changes direction with respect to arc length:\n$$\\kappa = \\left\\|\\frac{d\\mathbf{T}}{ds}\\right\\|$$\n\nwhere $\\mathbf{T}$ is the unit tangent vector and $s$ is arc length.\n\n**For parametric curve $(x, f(x))$:**\n- Tangent vector: $(1, f'(x))$\n- Speed: $\\|(1, f'(x))\\| = \\sqrt{1 + (f'(x))^2}$\n- After arc length reparametrization and differentiation, we get the formula above\n\n**Special cases:**\n- Straight line: $f''(x) = 0$, so $\\kappa = 0$ (no curvature)\n- Circle of radius $r$: $\\kappa = \\frac{1}{r}$ (constant curvature)\n\n**Alternative forms:**\n- Parametric: $\\kappa = \\frac{|\\dot{x}\\ddot{y} - \\dot{y}\\ddot{x}|}{(\\dot{x}^2 + \\dot{y}^2)^{3/2}}$\n- Implicit: More complex",
+          "insight": "Curvature measures how much a curve bends - larger $\\kappa$ means tighter turn!"
+        },
+        "incorrect": {
+          "1": "That's just the second derivative! Curvature needs normalization by speed.",
+          "2": "Dimensional analysis fails! Curvature has units of $1/\\text{length}$."
+        }
+      },
+      "resultState": {
+        "description": "Curvature formula",
+        "equations": ["\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Compute derivatives of $f(x) = x^2$."
+      },
+      "prompt": {
+        "question": "What are $f'(1)$ and $f''(1)$ for $f(x) = x^2$?",
+        "hint": "$f'(x) = 2x$, so $f'(1) = 2$. $f''(x) = 2$, so $f''(1) = 2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(1) = 2$, $f''(1) = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$f'(1) = 1$, $f''(1) = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$f'(1) = 2$, $f''(1) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Compute derivatives:**\n\n$$f(x) = x^2$$\n\n**First derivative:**\n$$f'(x) = 2x$$\n\nAt $x = 1$:\n$$f'(1) = 2(1) = 2$$\n\n**Second derivative:**\n$$f''(x) = 2$$\n\nAt $x = 1$:\n$$f''(1) = 2$$\n\n**Geometric interpretation:**\n- $f'(1) = 2$: slope of tangent line at $(1,1)$ is $2$\n- $f''(1) = 2 > 0$: curve is concave up (opening upward)\n\n**Tangent line equation:**\n$$y - 1 = 2(x - 1)$$\n$$y = 2x - 1$$",
+          "insight": "The first derivative gives slope, second derivative gives concavity!"
+        },
+        "incorrect": {
+          "1": "$f'(x) = 2x$, not $x$! So $f'(1) = 2$.",
+          "2": "$f''(x) = 2$ (constant), not zero!"
+        }
+      },
+      "resultState": {
+        "description": "Derivatives computed",
+        "equations": ["f'(1) = 2, \\quad f''(1) = 2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Calculate curvature at $(1, 1)$."
+      },
+      "prompt": {
+        "question": "What is the curvature $\\kappa$ at $(1, 1)$?",
+        "hint": "$\\kappa = \\frac{|f''(1)|}{(1 + (f'(1))^2)^{3/2}} = \\frac{2}{(1 + 4)^{3/2}} = \\frac{2}{5^{3/2}} = \\frac{2}{5\\sqrt{5}} = \\frac{2\\sqrt{5}}{25}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\kappa = \\frac{2\\sqrt{5}}{25}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\kappa = \\frac{2}{5}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\kappa = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Curvature calculation:**\n\n$$\\kappa = \\frac{|f''(1)|}{(1 + (f'(1))^2)^{3/2}}$$\n\nSubstitute $f'(1) = 2$ and $f''(1) = 2$:\n\n$$\\kappa = \\frac{|2|}{(1 + 2^2)^{3/2}}$$\n$$= \\frac{2}{(1 + 4)^{3/2}}$$\n$$= \\frac{2}{5^{3/2}}$$\n$$= \\frac{2}{5 \\cdot \\sqrt{5}}$$\n\n**Rationalize denominator:**\n$$= \\frac{2}{5\\sqrt{5}} \\cdot \\frac{\\sqrt{5}}{\\sqrt{5}}$$\n$$= \\frac{2\\sqrt{5}}{25}$$\n\n**Numerical value:**\n$$\\kappa \\approx \\frac{2 \\cdot 2.236}{25} \\approx \\frac{4.472}{25} \\approx 0.179$$\n\n**Radius of curvature:**\n$$R = \\frac{1}{\\kappa} = \\frac{25}{2\\sqrt{5}} = \\frac{5\\sqrt{5}}{2} \\approx 5.59$$",
+          "insight": "Curvature is reciprocal of the radius of the osculating circle!"
+        },
+        "incorrect": {
+          "1": "Don't forget the $3/2$ exponent! $(1+4)^{3/2} = 5^{3/2} = 5\\sqrt{5}$.",
+          "2": "That's just $|f''(1)|$ without the denominator!"
+        }
+      },
+      "resultState": {
+        "description": "Curvature at $(1,1)$",
+        "equations": ["\\kappa = \\frac{2\\sqrt{5}}{25}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Find osculating circle."
+      },
+      "prompt": {
+        "question": "What are the radius and center of the osculating circle at $(1, 1)$?",
+        "hint": "Radius: $R = \\frac{1}{\\kappa} = \\frac{25}{2\\sqrt{5}} = \\frac{5\\sqrt{5}}{2}$. Center: along normal direction (perpendicular to tangent). Normal vector: $(-2, 1)$ normalized. Center: $(1, 1) + R \\cdot \\frac{(-2, 1)}{\\sqrt{5}} = (1 - 2\\sqrt{5}, 1 + \\frac{5}{2})$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Radius: $R = \\frac{5\\sqrt{5}}{2}$, Center: $(1, 1 + \\frac{5\\sqrt{5}}{2}\\cdot\\frac{1}{\\sqrt{5}})$ toward concave side"
+        },
+        {
+          "id": "b",
+          "text": "Radius: $R = \\frac{25}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "Radius: $R = 2\\sqrt{5}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Osculating circle (circle of curvature):**\n\nThe osculating circle is the circle that best approximates the curve at a point.\n\n**Radius of curvature:**\n$$R = \\frac{1}{\\kappa} = \\frac{1}{\\frac{2\\sqrt{5}}{25}} = \\frac{25}{2\\sqrt{5}} = \\frac{25\\sqrt{5}}{10} = \\frac{5\\sqrt{5}}{2}$$\n\n**Center location:**\nThe center lies on the normal line (perpendicular to tangent), on the concave side.\n\n**Normal direction:**\n- Tangent direction: $(1, f'(1)) = (1, 2)$\n- Normal direction: perpendicular = $(-f'(1), 1) = (-2, 1)$\n- Since $f''(1) > 0$ (concave up), center is above the curve\n\n**Unit normal (upward):**\n$$\\mathbf{n} = \\frac{(-2, 1)}{\\sqrt{4+1}} = \\frac{(-2, 1)}{\\sqrt{5}}$$\n\n**Center:**\n$$\\mathbf{c} = (1, 1) + R \\cdot \\mathbf{n}$$\n$$= (1, 1) + \\frac{5\\sqrt{5}}{2} \\cdot \\frac{(-2, 1)}{\\sqrt{5}}$$\n$$= (1, 1) + \\frac{5}{2}(-2, 1)$$\n$$= (1, 1) + (-5, \\frac{5}{2})$$\n$$= (1 - 5, 1 + \\frac{5}{2})$$\n$$= \\left(-4, \\frac{7}{2}\\right)$$\n\n**Osculating circle equation:**\n$$(x + 4)^2 + \\left(y - \\frac{7}{2}\\right)^2 = \\left(\\frac{5\\sqrt{5}}{2}\\right)^2 = \\frac{125}{4}$$",
+          "insight": "The osculating circle is the best-fitting circle at a point on the curve!"
+        },
+        "incorrect": {
+          "1": "$R = \\frac{1}{\\kappa}$, and simplify the radical correctly!",
+          "2": "$R = \\frac{1}{\\kappa} = \\frac{25}{2\\sqrt{5}}$, not $2\\sqrt{5}$!"
+        }
+      },
+      "resultState": {
+        "description": "Osculating circle found",
+        "equations": [
+          "R = \\frac{5\\sqrt{5}}{2}",
+          "\\text{Center: } \\left(-4, \\frac{7}{2}\\right)"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Curvature formula: $\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}$",
+      "For $y = x^2$ at $(1,1)$: $f'(1) = 2$, $f''(1) = 2$",
+      "Curvature: $\\kappa = \\frac{2\\sqrt{5}}{25}$",
+      "Radius of curvature: $R = \\frac{1}{\\kappa} = \\frac{5\\sqrt{5}}{2}$",
+      "Osculating circle center: $(-4, \\frac{7}{2})$",
+      "Curvature measures how much curve bends; osculating circle best approximates curve"
+    ],
+    "fullSolution": "**Find curvature and osculating circle of $y = x^2$ at $(1, 1)$**\n\n---\n\n**Step 1: Curvature Formula**\n\nFor curve $y = f(x)$:\n$$\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}$$\n\n---\n\n**Step 2: Compute Derivatives**\n\n$$f(x) = x^2$$\n$$f'(x) = 2x \\implies f'(1) = 2$$\n$$f''(x) = 2 \\implies f''(1) = 2$$\n\n---\n\n**Step 3: Calculate Curvature**\n\n$$\\kappa = \\frac{|f''(1)|}{(1 + (f'(1))^2)^{3/2}}$$\n$$= \\frac{2}{(1 + 4)^{3/2}}$$\n$$= \\frac{2}{5^{3/2}}$$\n$$= \\frac{2}{5\\sqrt{5}}$$\n$$= \\frac{2\\sqrt{5}}{25}$$\n\n---\n\n**Step 4: Radius of Curvature**\n\n$$R = \\frac{1}{\\kappa} = \\frac{25}{2\\sqrt{5}} = \\frac{25\\sqrt{5}}{10} = \\frac{5\\sqrt{5}}{2}$$\n\n---\n\n**Step 5: Center of Osculating Circle**\n\n**Normal direction** (toward concave side):\n$$\\mathbf{n} = \\frac{(-f'(1), 1)}{\\sqrt{(f'(1))^2 + 1}} = \\frac{(-2, 1)}{\\sqrt{5}}$$\n\n**Center:**\n$$\\mathbf{c} = (1, 1) + R \\cdot \\mathbf{n}$$\n$$= (1, 1) + \\frac{5\\sqrt{5}}{2} \\cdot \\frac{(-2, 1)}{\\sqrt{5}}$$\n$$= (1, 1) + \\frac{5}{2}(-2, 1)$$\n$$= (1, 1) + (-5, \\frac{5}{2})$$\n$$= \\left(-4, \\frac{7}{2}\\right)$$\n\n---\n\n**Answer:**\n- $\\boxed{\\kappa = \\frac{2\\sqrt{5}}{25}}$\n- $\\boxed{R = \\frac{5\\sqrt{5}}{2}}$\n- $\\boxed{\\text{Center: } \\left(-4, \\frac{7}{2}\\right)}$",
+    "relatedProblems": [
+      "calculus-arc-length-1",
+      "multivariable-parametric-surfaces-1"
+    ]
+  }
+}

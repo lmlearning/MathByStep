@@ -21,6 +21,7 @@ import geometryInscribedAngle1 from '@/public/problems/geometry-inscribed-angle-
 import geometryCoordinateGeometry1 from '@/public/problems/geometry-coordinate-geometry-1.json';
 import geometryPowerOfAPoint1 from '@/public/problems/geometry-power-of-a-point-1.json';
 import geometryTriangleCenters1 from '@/public/problems/geometry-triangle-centers-1.json';
+import differentialGeometryCurvature1 from '@/public/problems/differential-geometry-curvature-1.json';
 import numberTheoryDivisibility1 from '@/public/problems/number-theory-divisibility-1.json';
 import numberTheoryGcd1 from '@/public/problems/number-theory-gcd-1.json';
 import numberTheoryInfinitelyManyPrimes1 from '@/public/problems/number-theory-infinitely-many-primes-1.json';
@@ -153,6 +154,7 @@ import complexAnalysisCauchyTheorem1 from '@/public/problems/complex-analysis-ca
 import complexAnalysisConformalMapping1 from '@/public/problems/complex-analysis-conformal-mapping-1.json';
 import complexAnalysisAnalyticContinuation1 from '@/public/problems/complex-analysis-analytic-continuation-1.json';
 import complexAnalysisPolesResidues1 from '@/public/problems/complex-analysis-poles-residues-1.json';
+import complexAnalysisConformalMappings1 from '@/public/problems/complex-analysis-conformal-mappings-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
@@ -167,8 +169,10 @@ import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-f
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
 import numberTheoryBezoutsIdentity1 from '@/public/problems/number-theory-bezouts-identity-1.json';
 import numberTheoryEulerTotient1 from '@/public/problems/number-theory-euler-totient-1.json';
+import numberTheoryQuadraticResidues1 from '@/public/problems/number-theory-quadratic-residues-1.json';
 // Mathematical Logic
 import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logic-1.json';
+import logicStrongInduction1 from '@/public/problems/logic-strong-induction-1.json';
 // Topology (additional)
 import topologyOpenClosedSets1 from '@/public/problems/topology-open-closed-sets-1.json';
 import topologyCompactness1 from '@/public/problems/topology-compactness-1.json';
@@ -200,6 +204,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'geometry-coordinate-geometry-1': geometryCoordinateGeometry1 as any as Problem,
   'geometry-power-of-a-point-1': geometryPowerOfAPoint1 as any as Problem,
   'geometry-triangle-centers-1': geometryTriangleCenters1 as any as Problem,
+  'differential-geometry-curvature-1': differentialGeometryCurvature1 as any as Problem,
   'number-theory-divisibility-1': numberTheoryDivisibility1 as Problem,
   'number-theory-gcd-1': numberTheoryGcd1 as Problem,
   'number-theory-infinitely-many-primes-1': numberTheoryInfinitelyManyPrimes1 as any as Problem,
@@ -332,6 +337,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'complex-analysis-conformal-mapping-1': complexAnalysisConformalMapping1 as any as Problem,
   'complex-analysis-analytic-continuation-1': complexAnalysisAnalyticContinuation1 as any as Problem,
   'complex-analysis-poles-residues-1': complexAnalysisPolesResidues1 as any as Problem,
+  'complex-analysis-conformal-mappings-1': complexAnalysisConformalMappings1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,
@@ -346,8 +352,10 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,
   'number-theory-bezouts-identity-1': numberTheoryBezoutsIdentity1 as any as Problem,
   'number-theory-euler-totient-1': numberTheoryEulerTotient1 as any as Problem,
+  'number-theory-quadratic-residues-1': numberTheoryQuadraticResidues1 as any as Problem,
   // Mathematical Logic
   'logic-propositional-logic-1': logicPropositionalLogic1 as any as Problem,
+  'logic-strong-induction-1': logicStrongInduction1 as any as Problem,
   // Topology (additional)
   'topology-open-closed-sets-1': topologyOpenClosedSets1 as any as Problem,
   'topology-compactness-1': topologyCompactness1 as any as Problem,

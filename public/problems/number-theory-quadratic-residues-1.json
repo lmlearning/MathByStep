@@ -1,0 +1,203 @@
+{
+  "id": "number-theory-quadratic-residues-1",
+  "type": "problem",
+  "title": "Quadratic Residues and Legendre Symbol",
+  "topic": "Number Theory",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "number-theory",
+    "quadratic-residues",
+    "legendre-symbol",
+    "modular-arithmetic",
+    "eulers-criterion"
+  ],
+  "statement": {
+    "text": "Determine whether $5$ is a quadratic residue modulo $11$. That is, does there exist an integer $x$ such that $x^2 \\equiv 5 \\pmod{11}$? Use Euler's criterion to verify your answer."
+  },
+  "objectives": [
+    "Understand quadratic residues",
+    "Apply Legendre symbol notation",
+    "Use Euler's criterion",
+    "Verify by checking all squares mod $p$"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Question: Is $5$ a quadratic residue mod $11$?"
+      },
+      "prompt": {
+        "question": "What is a quadratic residue modulo $p$?",
+        "hint": "$a$ is a quadratic residue mod $p$ if $\\exists x: x^2 \\equiv a \\pmod{p}$. Otherwise, $a$ is a quadratic non-residue."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$a$ is a QR mod $p$ if $\\exists x$ such that $x^2 \\equiv a \\pmod{p}$"
+        },
+        {
+          "id": "b",
+          "text": "$a$ is a QR mod $p$ if $a$ is even"
+        },
+        {
+          "id": "c",
+          "text": "$a$ is a QR mod $p$ if $\\gcd(a, p) = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Quadratic residue definition:**\n\nLet $p$ be an odd prime and $a$ an integer with $\\gcd(a, p) = 1$.\n\n$a$ is a **quadratic residue (QR) modulo $p$** if there exists an integer $x$ such that:\n$$x^2 \\equiv a \\pmod{p}$$\n\nIf no such $x$ exists, $a$ is a **quadratic non-residue (QNR)** modulo $p$.\n\n**Legendre symbol:** $\\left(\\frac{a}{p}\\right) = \\begin{cases} +1 & \\text{if } a \\text{ is QR mod } p \\\\ -1 & \\text{if } a \\text{ is QNR mod } p \\\\ 0 & \\text{if } p | a \\end{cases}$\n\n**Examples mod 7:**\n- $1^2 \\equiv 1$, $2^2 \\equiv 4$, $3^2 \\equiv 2$, $4^2 \\equiv 2$, $5^2 \\equiv 4$, $6^2 \\equiv 1$\n- QRs mod 7: $\\{1, 2, 4\\}$\n- QNRs mod 7: $\\{3, 5, 6\\}$\n\n**Key fact:** Exactly half of the non-zero elements mod $p$ are QRs.",
+          "insight": "About half of numbers are squares modulo a prime!"
+        },
+        "incorrect": {
+          "1": "Parity doesn't determine quadratic residues! It's about perfect squares.",
+          "2": "Coprimality is necessary but not sufficient! E.g., 3 is coprime to 7 but not a QR."
+        }
+      },
+      "resultState": {
+        "description": "QR definition understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find all squares modulo $11$."
+      },
+      "prompt": {
+        "question": "What are all the quadratic residues modulo $11$?",
+        "hint": "Compute $x^2 \\bmod 11$ for $x = 0, 1, 2, \\ldots, 10$. QRs: $\\{1, 3, 4, 5, 9\\}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "QRs mod $11$: $\\{1, 3, 4, 5, 9\\}$"
+        },
+        {
+          "id": "b",
+          "text": "QRs mod $11$: $\\{1, 2, 3, 4, 5\\}$"
+        },
+        {
+          "id": "c",
+          "text": "QRs mod $11$: all odd numbers"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Compute all squares mod $11$:**\n\n$$\\begin{align}\n0^2 &\\equiv 0 \\pmod{11} \\\\\n1^2 &\\equiv 1 \\pmod{11} \\\\\n2^2 &\\equiv 4 \\pmod{11} \\\\\n3^2 &\\equiv 9 \\pmod{11} \\\\\n4^2 &\\equiv 16 \\equiv 5 \\pmod{11} \\\\\n5^2 &\\equiv 25 \\equiv 3 \\pmod{11} \\\\\n6^2 &\\equiv 36 \\equiv 3 \\pmod{11} \\\\\n7^2 &\\equiv 49 \\equiv 5 \\pmod{11} \\\\\n8^2 &\\equiv 64 \\equiv 9 \\pmod{11} \\\\\n9^2 &\\equiv 81 \\equiv 4 \\pmod{11} \\\\\n10^2 &\\equiv 100 \\equiv 1 \\pmod{11}\n\\end{align}$$\n\n**Non-zero quadratic residues mod $11$:**\n$$\\{1, 3, 4, 5, 9\\}$$\n\n**Count:** $\\frac{p-1}{2} = \\frac{11-1}{2} = 5$ QRs ✓\n\n**Quadratic non-residues mod $11$:**\n$$\\{2, 6, 7, 8, 10\\}$$\n\n**Key observation:** Since $5 \\in \\{1, 3, 4, 5, 9\\}$, we have **$5$ is a QR mod $11$** ✓\n\nSpecifically, $4^2 \\equiv 5 \\pmod{11}$ and $7^2 \\equiv 5 \\pmod{11}$.",
+          "insight": "Exactly $(p-1)/2$ non-zero elements are quadratic residues mod $p$!"
+        },
+        "incorrect": {
+          "1": "Not all these are squares! Compute $x^2 \\bmod 11$ for each $x$.",
+          "2": "Parity doesn't matter for QRs! Both even and odd numbers can be QRs."
+        }
+      },
+      "resultState": {
+        "description": "QRs mod 11 found",
+        "equations": ["\\text{QRs mod } 11: \\{1, 3, 4, 5, 9\\}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply Euler's criterion."
+      },
+      "prompt": {
+        "question": "What is Euler's criterion for determining if $a$ is a QR mod $p$?",
+        "hint": "Euler's criterion: $a^{(p-1)/2} \\equiv \\left(\\frac{a}{p}\\right) \\pmod{p}$. If $\\equiv 1$, then QR. If $\\equiv -1$, then QNR."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$a^{(p-1)/2} \\equiv 1 \\pmod{p}$ iff $a$ is QR; $\\equiv -1$ iff QNR"
+        },
+        {
+          "id": "b",
+          "text": "$a^{p-1} \\equiv 1 \\pmod{p}$ iff $a$ is QR"
+        },
+        {
+          "id": "c",
+          "text": "$a^2 \\equiv 1 \\pmod{p}$ iff $a$ is QR"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Euler's Criterion:**\n\nLet $p$ be an odd prime and $\\gcd(a, p) = 1$. Then:\n\n$$a^{(p-1)/2} \\equiv \\left(\\frac{a}{p}\\right) \\pmod{p}$$\n\nwhere $\\left(\\frac{a}{p}\\right)$ is the Legendre symbol.\n\n**Equivalently:**\n- $a$ is a **quadratic residue** mod $p$ $\\iff$ $a^{(p-1)/2} \\equiv 1 \\pmod{p}$\n- $a$ is a **quadratic non-residue** mod $p$ $\\iff$ $a^{(p-1)/2} \\equiv -1 \\pmod{p}$\n\n**Proof idea:**\n- By Fermat's Little Theorem: $a^{p-1} \\equiv 1 \\pmod{p}$\n- So $a^{(p-1)/2}$ is a square root of $1$ mod $p$\n- The only square roots of $1$ mod $p$ are $\\pm 1$\n- If $a = x^2$, then $a^{(p-1)/2} = x^{p-1} \\equiv 1$ by FLT\n- For QNRs, we get $-1$\n\n**Application:** To test if $5$ is QR mod $11$:\n$$5^{(11-1)/2} = 5^5 \\pmod{11}$$",
+          "insight": "Euler's criterion gives a computational test for quadratic residues!"
+        },
+        "incorrect": {
+          "1": "That's Fermat's Little Theorem! All coprime $a$ satisfy this, not just QRs.",
+          "2": "Not quite! We need $a^{(p-1)/2}$, which is half the exponent in FLT."
+        }
+      },
+      "resultState": {
+        "description": "Euler's criterion",
+        "equations": ["a^{(p-1)/2} \\equiv \\pm 1 \\pmod{p}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Verify using Euler's criterion for $a = 5$, $p = 11$."
+      },
+      "prompt": {
+        "question": "Compute $5^5 \\bmod 11$ to verify if $5$ is a QR mod $11$.",
+        "hint": "$5^2 = 25 \\equiv 3$, $5^4 \\equiv 9$, $5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$5^5 \\equiv 1 \\pmod{11}$, so $5$ is a QR mod $11$"
+        },
+        {
+          "id": "b",
+          "text": "$5^5 \\equiv -1 \\pmod{11}$, so $5$ is a QNR mod $11$"
+        },
+        {
+          "id": "c",
+          "text": "$5^5 \\equiv 0 \\pmod{11}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Compute $5^5 \\bmod 11$:**\n\n**Method 1: Successive squaring**\n$$5^1 \\equiv 5 \\pmod{11}$$\n$$5^2 = 25 \\equiv 3 \\pmod{11}$$\n$$5^4 = (5^2)^2 \\equiv 3^2 = 9 \\pmod{11}$$\n$$5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$$\n\n**Method 2: Direct**\n$$5^5 = 3125 = 284 \\cdot 11 + 1 \\equiv 1 \\pmod{11}$$\n\n**By Euler's Criterion:**\n$$5^{(11-1)/2} = 5^5 \\equiv 1 \\pmod{11}$$\n\nTherefore:\n$$\\left(\\frac{5}{11}\\right) = 1$$\n\nSo **$5$ is a quadratic residue modulo $11$** ✓\n\n**Verification:** Indeed, $4^2 = 16 \\equiv 5 \\pmod{11}$ ✓\n\nAlso, $7^2 = 49 = 44 + 5 \\equiv 5 \\pmod{11}$ ✓\n\n**Solutions to $x^2 \\equiv 5 \\pmod{11}$:** $x \\equiv \\pm 4 \\equiv 4, 7 \\pmod{11}$",
+          "insight": "Euler's criterion provides a quick computational test without trying all squares!"
+        },
+        "incorrect": {
+          "1": "Check arithmetic! $5^4 \\equiv 9$, and $9 \\cdot 5 = 45 \\equiv 1$, not $-1$.",
+          "2": "$\\gcd(5, 11) = 1$, so $5^k$ can never be $0$ mod $11$!"
+        }
+      },
+      "resultState": {
+        "description": "Verified with Euler's criterion",
+        "equations": [
+          "5^5 \\equiv 1 \\pmod{11}",
+          "5 \\text{ is a QR mod } 11"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Quadratic residue: $a$ is QR mod $p$ if $\\exists x: x^2 \\equiv a \\pmod{p}$",
+      "QRs mod 11: $\\{1, 3, 4, 5, 9\\}$ (exactly $(p-1)/2 = 5$ of them)",
+      "Euler's criterion: $a^{(p-1)/2} \\equiv 1 \\pmod{p}$ iff $a$ is QR",
+      "$5^5 \\equiv 1 \\pmod{11}$, so $5$ is a QR mod $11$",
+      "Solutions: $4^2 \\equiv 5$ and $7^2 \\equiv 5 \\pmod{11}$",
+      "Legendre symbol: $\\left(\\frac{5}{11}\\right) = +1$"
+    ],
+    "fullSolution": "**Determine if $5$ is a quadratic residue mod $11$**\n\n---\n\n**Method 1: Check All Squares**\n\nCompute $x^2 \\bmod 11$ for $x = 0, 1, 2, \\ldots, 10$:\n\n$$\\begin{array}{c|c}\nx & x^2 \\bmod 11 \\\\ \\hline\n0 & 0 \\\\\n1 & 1 \\\\\n2 & 4 \\\\\n3 & 9 \\\\\n4 & 5 \\\\\n5 & 3 \\\\\n6 & 3 \\\\\n7 & 5 \\\\\n8 & 9 \\\\\n9 & 4 \\\\\n10 & 1\n\\end{array}$$\n\n**QRs mod $11$:** $\\{1, 3, 4, 5, 9\\}$\n\nSince $5 \\in \\{1, 3, 4, 5, 9\\}$, **$5$ is a QR mod $11$** ✓\n\n---\n\n**Method 2: Euler's Criterion**\n\n$$5^{(11-1)/2} = 5^5 \\pmod{11}$$\n\n**Compute:**\n$$5^2 = 25 \\equiv 3 \\pmod{11}$$\n$$5^4 \\equiv 3^2 = 9 \\pmod{11}$$\n$$5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$$\n\n**By Euler's Criterion:**\n$$5^5 \\equiv 1 \\pmod{11}$$\n\nTherefore **$5$ is a QR mod $11$** ✓\n\n---\n\n**Solutions:**\n\n$$x^2 \\equiv 5 \\pmod{11}$$\n\nSolutions: $x \\equiv 4, 7 \\pmod{11}$\n\n**Verify:**\n- $4^2 = 16 \\equiv 5 \\pmod{11}$ ✓\n- $7^2 = 49 \\equiv 5 \\pmod{11}$ ✓\n\n---\n\n**Answer:** $\\boxed{5 \\text{ is a quadratic residue modulo } 11}$\n\n**Legendre symbol:** $\\boxed{\\left(\\frac{5}{11}\\right) = +1}$",
+    "relatedProblems": [
+      "number-theory-fermats-little-theorem-1",
+      "number-theory-primes-1"
+    ]
+  }
+}

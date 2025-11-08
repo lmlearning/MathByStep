@@ -1,0 +1,201 @@
+{
+  "id": "complex-analysis-conformal-mappings-1",
+  "type": "problem",
+  "title": "Introduction to Conformal Mappings",
+  "topic": "Complex Analysis",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "complex-analysis",
+    "conformal-mappings",
+    "mobius-transformations",
+    "angle-preservation",
+    "holomorphic-functions"
+  ],
+  "statement": {
+    "text": "Consider the mapping $f(z) = \\frac{1}{z}$ (inversion). Show that this mapping is conformal except at $z = 0$. Then find the image of the circle $|z| = 2$ under this transformation."
+  },
+  "objectives": [
+    "Understand conformal mappings",
+    "Verify angle preservation",
+    "Compute derivative for conformality",
+    "Find images of curves under mappings"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Function: $f(z) = \\frac{1}{z}$, want to show conformality."
+      },
+      "prompt": {
+        "question": "What does it mean for a mapping to be conformal?",
+        "hint": "A mapping is conformal at $z_0$ if it is holomorphic with $f'(z_0) \\neq 0$. This preserves angles between curves."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Holomorphic with non-zero derivative (preserves angles)"
+        },
+        {
+          "id": "b",
+          "text": "Preserves distances"
+        },
+        {
+          "id": "c",
+          "text": "Maps circles to circles"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Conformal mapping definition:**\n\nA mapping $f: \\mathbb{C} \\to \\mathbb{C}$ is **conformal at $z_0$** if:\n1. $f$ is **holomorphic** (complex differentiable) at $z_0$\n2. $f'(z_0) \\neq 0$ (derivative is non-zero)\n\n**Key property:** Conformal mappings **preserve angles**.\n\nIf two smooth curves intersect at angle $\\theta$ at point $z_0$, their images intersect at the same angle $\\theta$ at $f(z_0)$.\n\n**Geometric interpretation:**\n- Locally, $f$ acts like rotation by $\\arg(f'(z_0))$ and scaling by $|f'(z_0)|$\n- Angles are preserved, but lengths are scaled\n\n**Examples:**\n- $f(z) = z^2$: conformal except at $z = 0$ (where $f'(0) = 0$)\n- $f(z) = e^z$: conformal everywhere\n- $f(z) = \\bar{z}$ (conjugate): NOT conformal (reverses orientation)\n\n**Contrast:**\n- **Conformal:** preserves angles\n- **Isometry:** preserves distances and angles\n\nConformal mappings are weaker than isometries.",
+          "insight": "Conformal = angle-preserving; requires holomorphic with $f' \\neq 0$!"
+        },
+        "incorrect": {
+          "1": "That's an isometry! Conformal only preserves angles, not necessarily distances.",
+          "2": "That's a property, but not the definition! Mobius transformations do this."
+        }
+      },
+      "resultState": {
+        "description": "Conformal definition understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Check if $f(z) = \\frac{1}{z}$ is holomorphic."
+      },
+      "prompt": {
+        "question": "Where is $f(z) = \\frac{1}{z}$ holomorphic?",
+        "hint": "$f(z) = \\frac{1}{z} = z^{-1}$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ (everywhere except $z = 0$)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ (everywhere except origin)"
+        },
+        {
+          "id": "b",
+          "text": "Holomorphic everywhere in $\\mathbb{C}$"
+        },
+        {
+          "id": "c",
+          "text": "Not holomorphic anywhere"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Holomorphicity of $f(z) = \\frac{1}{z}$:**\n\n**Domain:** $f$ is defined for $z \\in \\mathbb{C} \\setminus \\{0\\}$\n\n**Derivative:**\n$$f'(z) = \\frac{d}{dz}\\left(\\frac{1}{z}\\right) = \\frac{d}{dz}(z^{-1}) = -z^{-2} = -\\frac{1}{z^2}$$\n\nFor any $z \\neq 0$:\n- The limit $\\lim_{h \\to 0} \\frac{f(z+h) - f(z)}{h}$ exists\n- $f'(z) = -\\frac{1}{z^2}$ exists and is continuous\n\nTherefore, $f$ is **holomorphic on $\\mathbb{C} \\setminus \\{0\\}$** ✓\n\n**At $z = 0$:**\n- $f(0)$ is undefined\n- $z = 0$ is a **simple pole** of $f$\n- Not holomorphic at $z = 0$\n\n**Cauchy-Riemann equations:**\nWrite $f(z) = f(x + iy) = \\frac{1}{x+iy} = \\frac{x-iy}{x^2+y^2}$\n\n$u = \\frac{x}{x^2+y^2}$, $v = -\\frac{y}{x^2+y^2}$\n\nC-R equations $u_x = v_y$ and $u_y = -v_x$ hold for $(x,y) \\neq (0,0)$ ✓",
+          "insight": "Rational functions are holomorphic except at poles!"
+        },
+        "incorrect": {
+          "1": "$f(0)$ is undefined! There's a pole at the origin.",
+          "2": "$f$ has a complex derivative for $z \\neq 0$! Check: $f'(z) = -1/z^2$ exists."
+        }
+      },
+      "resultState": {
+        "description": "Holomorphic on $\\mathbb{C} \\setminus \\{0\\}$",
+        "equations": ["f'(z) = -\\frac{1}{z^2}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Verify $f'(z) \\neq 0$ for conformality."
+      },
+      "prompt": {
+        "question": "Is $f'(z) = -\\frac{1}{z^2}$ ever zero for $z \\neq 0$?",
+        "hint": "No! $-\\frac{1}{z^2} = 0$ would require $z^2 = \\infty$, which never happens. So $f'(z) \\neq 0$ for all $z \\neq 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No, $f'(z) \\neq 0$ for all $z \\neq 0$, so $f$ is conformal on $\\mathbb{C} \\setminus \\{0\\}$"
+        },
+        {
+          "id": "b",
+          "text": "Yes, $f'(i) = 0$"
+        },
+        {
+          "id": "c",
+          "text": "Yes, $f'(1) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Non-vanishing derivative:**\n\n$$f'(z) = -\\frac{1}{z^2}$$\n\nFor $f'(z) = 0$:\n$$-\\frac{1}{z^2} = 0$$\n\nThis would require $z^2 = \\infty$, which is impossible for finite $z$.\n\nTherefore: **$f'(z) \\neq 0$ for all $z \\in \\mathbb{C} \\setminus \\{0\\}$** ✓\n\n**Conclusion:**\n- $f(z) = \\frac{1}{z}$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n- $f'(z) \\neq 0$ on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n\n**Therefore:** $f$ is **conformal on $\\mathbb{C} \\setminus \\{0\\}$** ✓\n\n**Geometric meaning:**\n- Angles are preserved at every point except $z = 0$\n- At $z = 0$, the mapping has a singularity (pole)\n\n**Example:** At $z = 1$:\n- $f'(1) = -1$ (rotation by $\\pi$ and no scaling)\n- Angles preserved, but orientation reversed by the negative sign",
+          "insight": "Non-zero derivative everywhere ensures angle preservation!"
+        },
+        "incorrect": {
+          "1": "$f'(i) = -\\frac{1}{i^2} = -\\frac{1}{-1} = 1 \\neq 0$!",
+          "2": "$f'(1) = -\\frac{1}{1^2} = -1 \\neq 0$!"
+        }
+      },
+      "resultState": {
+        "description": "$f$ conformal on $\\mathbb{C} \\setminus \\{0\\}$",
+        "equations": ["f'(z) \\neq 0 \\text{ for } z \\neq 0"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Find image of circle $|z| = 2$ under $f(z) = \\frac{1}{z}$."
+      },
+      "prompt": {
+        "question": "What is the image of the circle $|z| = 2$ under $f(z) = \\frac{1}{z}$?",
+        "hint": "If $|z| = 2$, then $z = 2e^{i\\theta}$. So $w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2}e^{-i\\theta}$. Thus $|w| = \\frac{1}{2}$, a circle of radius $\\frac{1}{2}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Circle $|w| = \\frac{1}{2}$ (radius $\\frac{1}{2}$, centered at origin)"
+        },
+        {
+          "id": "b",
+          "text": "Circle $|w| = 2$ (same circle)"
+        },
+        {
+          "id": "c",
+          "text": "A line"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Image of circle under inversion:**\n\n**Parametrization of $|z| = 2$:**\n$$z = 2e^{i\\theta}, \\quad \\theta \\in [0, 2\\pi)$$\n\n**Apply $f(z) = \\frac{1}{z}$:**\n$$w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2} e^{-i\\theta}$$\n\n**Modulus of $w$:**\n$$|w| = \\left|\\frac{1}{2} e^{-i\\theta}\\right| = \\frac{1}{2}|e^{-i\\theta}| = \\frac{1}{2}$$\n\n**Image:** The circle $|w| = \\frac{1}{2}$ ✓\n\n**General principle:**\n\nInversion $f(z) = \\frac{1}{z}$ maps:\n- Circle $|z| = r$ centered at origin $\\to$ Circle $|w| = \\frac{1}{r}$ centered at origin\n- **Radius reciprocal:** $r \\to \\frac{1}{r}$\n- **Orientation reversed:** clockwise $\\leftrightarrow$ counterclockwise\n\n**Additional properties:**\n- Lines through origin $\\to$ Lines through origin\n- Circles through origin $\\to$ Lines not through origin\n- Circles not through origin $\\to$ Circles not through origin (but possibly different center)\n\n**Example:**\n- $|z| = 1$ $\\to$ $|w| = 1$ (unit circle maps to itself!)\n- $|z| = 2$ $\\to$ $|w| = \\frac{1}{2}$\n- $|z| = \\frac{1}{3}$ $\\to$ $|w| = 3$",
+          "insight": "Inversion maps circles through origin to circles, with reciprocal radii!"
+        },
+        "incorrect": {
+          "1": "Inversion changes the radius! If $|z| = r$, then $|\\frac{1}{z}| = \\frac{1}{r}$.",
+          "2": "Circles centered at origin map to circles, not lines! Lines occur for circles through origin."
+        }
+      },
+      "resultState": {
+        "description": "Image of circle",
+        "equations": ["|z| = 2 \\to |w| = \\frac{1}{2}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Conformal mapping: holomorphic with $f'(z) \\neq 0$ (preserves angles)",
+      "$f(z) = \\frac{1}{z}$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$",
+      "$f'(z) = -\\frac{1}{z^2} \\neq 0$ for $z \\neq 0$",
+      "$f$ is conformal except at $z = 0$ (pole)",
+      "Inversion maps circle $|z| = r$ to circle $|w| = \\frac{1}{r}$",
+      "Image of $|z| = 2$ is $|w| = \\frac{1}{2}$",
+      "Inversion reverses orientation and takes reciprocal of radii"
+    ],
+    "fullSolution": "**Show $f(z) = \\frac{1}{z}$ is conformal and find image of $|z| = 2$**\n\n---\n\n**Step 1: Holomorphicity**\n\n$$f(z) = \\frac{1}{z} = z^{-1}$$\n\n**Derivative:**\n$$f'(z) = -z^{-2} = -\\frac{1}{z^2}$$\n\nThis exists for all $z \\in \\mathbb{C} \\setminus \\{0\\}$.\n\nSo $f$ is **holomorphic on $\\mathbb{C} \\setminus \\{0\\}$** ✓\n\n---\n\n**Step 2: Non-vanishing Derivative**\n\n$$f'(z) = -\\frac{1}{z^2}$$\n\nFor $z \\neq 0$:\n$$f'(z) = -\\frac{1}{z^2} \\neq 0$$\n\n(never zero for finite $z$)\n\n---\n\n**Step 3: Conformality**\n\nSince:\n- $f$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n- $f'(z) \\neq 0$ on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n\n**Conclusion:** $\\boxed{f \\text{ is conformal on } \\mathbb{C} \\setminus \\{0\\}}$ ✓\n\nAt $z = 0$, $f$ has a simple pole, so not conformal there.\n\n---\n\n**Step 4: Image of Circle $|z| = 2$**\n\n**Parametrize:**\n$$z = 2e^{i\\theta}, \\quad \\theta \\in [0, 2\\pi)$$\n\n**Apply $f$:**\n$$w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2}e^{-i\\theta}$$\n\n**Modulus:**\n$$|w| = \\frac{1}{2}$$\n\n**Image:** Circle $|w| = \\frac{1}{2}$ ✓\n\n---\n\n**General Rule:**\n\nInversion $f(z) = \\frac{1}{z}$ maps circle $|z| = r$ to circle $|w| = \\frac{1}{r}$.\n\n---\n\n**Answer:**\n- $\\boxed{f(z) = \\frac{1}{z} \\text{ is conformal on } \\mathbb{C} \\setminus \\{0\\}}$\n- $\\boxed{|z| = 2 \\to |w| = \\frac{1}{2}}$",
+    "relatedProblems": [
+      "complex-analysis-mobius-transformations-1",
+      "complex-analysis-holomorphic-functions-1"
+    ]
+  }
+}
