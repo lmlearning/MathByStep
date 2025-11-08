@@ -5,7 +5,12 @@
   "topic": "Geometry",
   "difficulty": 3,
   "estimatedTime": 13,
-  "tags": ["geometry", "coordinate geometry", "circles", "systems of equations"],
+  "tags": [
+    "geometry",
+    "coordinate geometry",
+    "circles",
+    "systems of equations"
+  ],
   "statement": {
     "text": "Find the equation of the circle passing through the points $(1, 1)$, $(2, 4)$, and $(5, 3)$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "General circle equation",
+      "order": 1,
       "currentState": {
-        "expression": "Circle through $(1,1)$, $(2,4)$, $(5,3)$",
         "description": "What form should we use?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the general equation of a circle?",
         "hint": "$x^2 + y^2 + Dx + Ey + F = 0$ (three unknowns: $D, E, F$)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x^2 + y^2 + Dx + Ey + F = 0$ (general form with 3 parameters)"
+          "text": "$x^2 + y^2 + Dx + Ey + F = 0$ (general form with 3 parameters)"
         },
         {
           "id": "b",
-          "content": "$(x-h)^2 + (y-k)^2 = r^2$ (standard form with center $(h,k)$, radius $r$)"
+          "text": "$(x-h)^2 + (y-k)^2 = r^2$ (standard form with center $(h,k)$, radius $r$)"
         },
         {
           "id": "c",
-          "content": "$y = mx + b$ (line equation)"
+          "text": "$y = mx + b$ (line equation)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! The general form $x^2 + y^2 + Dx + Ey + F = 0$ has 3 unknowns, perfect for 3 points giving 3 equations.",
           "insight": "We can convert to standard form later: center $(-D/2, -E/2)$, radius $\\sqrt{D^2/4 + E^2/4 - F}$."
         },
         "incorrect": {
-          "b": "Standard form is cleaner but has 3 unknowns ($h, k, r$). General form is easier for setting up the system.",
-          "c": "We need a circle equation, not a line!"
+          "1": "Standard form is cleaner but has 3 unknowns ($h, k, r$). General form is easier for setting up the system.",
+          "2": "We need a circle equation, not a line!"
         }
+      },
+      "resultState": {
+        "description": "General circle equation"
       }
     },
     {
       "id": "step-2",
-      "title": "Substitute three points",
+      "order": 2,
       "currentState": {
-        "expression": "$x^2 + y^2 + Dx + Ey + F = 0$",
         "description": "Each point gives one equation."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What system do we get?",
         "hint": "$(1,1)$: $1+1+D+E+F=0 \\to D+E+F=-2$. $(2,4)$: $4+16+2D+4E+F=0 \\to 2D+4E+F=-20$. $(5,3)$: $25+9+5D+3E+F=0 \\to 5D+3E+F=-34$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\begin{cases} D+E+F = -2 \\\\ 2D+4E+F = -20 \\\\ 5D+3E+F = -34 \\end{cases}$"
+          "text": "$\\begin{cases} D+E+F = -2 \\\\ 2D+4E+F = -20 \\\\ 5D+3E+F = -34 \\end{cases}$"
         },
         {
           "id": "b",
-          "content": "$\\begin{cases} D+E+F = 2 \\\\ 2D+4E+F = 20 \\\\ 5D+3E+F = 34 \\end{cases}$"
+          "text": "$\\begin{cases} D+E+F = 2 \\\\ 2D+4E+F = 20 \\\\ 5D+3E+F = 34 \\end{cases}$"
         },
         {
           "id": "c",
-          "content": "$\\begin{cases} D+E = -2 \\\\ 2D+4E = -20 \\\\ 5D+3E = -34 \\end{cases}$"
+          "text": "$\\begin{cases} D+E = -2 \\\\ 2D+4E = -20 \\\\ 5D+3E = -34 \\end{cases}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Substituting each point: $(1,1)$: $1+1+D+E+F=0$. $(2,4)$: $4+16+2D+4E+F=0$. $(5,3)$: $25+9+5D+3E+F=0$.",
           "insight": "Three points determine a unique circle (unless they're collinear)."
         },
         "incorrect": {
-          "b": "Signs are wrong - move $x^2+y^2$ terms to the other side to get negative values.",
-          "c": "Don't forget the $F$ terms!"
+          "1": "Signs are wrong - move $x^2+y^2$ terms to the other side to get negative values.",
+          "2": "Don't forget the $F$ terms!"
         }
+      },
+      "resultState": {
+        "description": "Substitute three points"
       }
     },
     {
       "id": "step-3",
-      "title": "Solve the system",
+      "order": 3,
       "currentState": {
-        "expression": "$\\begin{cases} D+E+F = -2 \\\\ 2D+4E+F = -20 \\\\ 5D+3E+F = -34 \\end{cases}$",
         "description": "Use elimination or substitution."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $D$, $E$, and $F$?",
         "hint": "Subtract eq1 from eq2: $D+3E = -18$. Subtract eq1 from eq3: $4D+2E = -32$ or $2D+E = -16$. Solve: $D=-6$, $E=-4$, $F=8$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$D = -6$, $E = -4$, $F = 8$"
+          "text": "$D = -6$, $E = -4$, $F = 8$"
         },
         {
           "id": "b",
-          "content": "$D = 6$, $E = 4$, $F = -8$"
+          "text": "$D = 6$, $E = 4$, $F = -8$"
         },
         {
           "id": "c",
-          "content": "$D = -4$, $E = -6$, $F = 8$"
+          "text": "$D = -4$, $E = -6$, $F = 8$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! From the system: $D+3E = -18$ and $2D+E = -16$. Solving: $D = -6$, $E = -4$. Then $F = -2-D-E = 8$.",
           "insight": "The linear system has a unique solution since the three points are not collinear."
         },
         "incorrect": {
-          "b": "Check your algebra - the signs should be $D=-6, E=-4, F=8$.",
-          "c": "You swapped $D$ and $E$! Recheck your elimination steps."
+          "1": "Check your algebra - the signs should be $D=-6, E=-4, F=8$.",
+          "2": "You swapped $D$ and $E$! Recheck your elimination steps."
         }
+      },
+      "resultState": {
+        "description": "Solve the system"
       }
     },
     {
       "id": "step-4",
-      "title": "Write final equation",
+      "order": 4,
       "currentState": {
-        "expression": "$D=-6$, $E=-4$, $F=8$",
         "description": "Substitute back and simplify."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the circle equation?",
         "hint": "$x^2 + y^2 - 6x - 4y + 8 = 0$. Can also write in standard form: center $(3, 2)$, radius $\\sqrt{5}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x^2 + y^2 - 6x - 4y + 8 = 0$ or $(x-3)^2 + (y-2)^2 = 5$"
+          "text": "$x^2 + y^2 - 6x - 4y + 8 = 0$ or $(x-3)^2 + (y-2)^2 = 5$"
         },
         {
           "id": "b",
-          "content": "$x^2 + y^2 + 6x + 4y + 8 = 0$"
+          "text": "$x^2 + y^2 + 6x + 4y + 8 = 0$"
         },
         {
           "id": "c",
-          "content": "$(x+3)^2 + (y+2)^2 = 5$"
+          "text": "$(x+3)^2 + (y+2)^2 = 5$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! General form: $x^2 + y^2 - 6x - 4y + 8 = 0$. Standard form: complete the square to get $(x-3)^2 + (y-2)^2 = 9+4-8 = 5$.",
           "insight": "Center: $(-D/2, -E/2) = (3, 2)$. Radius: $\\sqrt{D^2/4+E^2/4-F} = \\sqrt{9+4-8} = \\sqrt{5}$."
         },
         "incorrect": {
-          "b": "With $D=-6$ and $E=-4$, the terms are $-6x$ and $-4y$, not positive!",
-          "c": "Center is $(3, 2)$, not $(-3, -2)$. Check the signs!"
+          "1": "With $D=-6$ and $E=-4$, the terms are $-6x$ and $-4y$, not positive!",
+          "2": "Center is $(3, 2)$, not $(-3, -2)$. Check the signs!"
         }
+      },
+      "resultState": {
+        "description": "Write final equation"
       }
     }
   ],

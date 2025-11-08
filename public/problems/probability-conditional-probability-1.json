@@ -5,7 +5,12 @@
   "topic": "Probability",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["probability", "conditional probability", "independence", "multiplication rule"],
+  "tags": [
+    "probability",
+    "conditional probability",
+    "independence",
+    "multiplication rule"
+  ],
   "statement": {
     "text": "A medical test for a disease is 95% accurate when a person has the disease, and 90% accurate when a person doesn't have the disease. If 1% of the population has the disease, what is the probability that a person who tests positive actually has the disease?"
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Define events and probabilities",
+      "order": 1,
       "currentState": {
-        "expression": "Medical test problem",
         "description": "Identify the given information."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What events and probabilities are given?",
         "hint": "Let $D$ = has disease, $+$ = tests positive. Given: $P(D) = 0.01$, $P(+|D) = 0.95$ (sensitivity), $P(-|D^c) = 0.90$ (specificity, so $P(+|D^c) = 0.10$). Want: $P(D|+)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(D) = 0.01$, $P(+|D) = 0.95$, $P(+|D^c) = 0.10$. Find $P(D|+)$"
+          "text": "$P(D) = 0.01$, $P(+|D) = 0.95$, $P(+|D^c) = 0.10$. Find $P(D|+)$"
         },
         {
           "id": "b",
-          "content": "$P(D) = 0.95$, $P(+) = 0.01$"
+          "text": "$P(D) = 0.95$, $P(+) = 0.01$"
         },
         {
           "id": "c",
-          "content": "Cannot determine from given information"
+          "text": "Cannot determine from given information"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Disease rate: $P(D) = 0.01$. Test sensitivity: $P(+|D) = 0.95$. False positive rate: $P(+|D^c) = 1 - 0.90 = 0.10$. We want the posterior probability $P(D|+)$.",
           "insight": "This is a classic application of Bayes' Theorem - updating beliefs given new evidence."
         },
         "incorrect": {
-          "b": "Careful! 0.95 is the test accuracy given disease, not the disease rate. 0.01 is the base rate, not probability of positive test.",
-          "c": "We have all the information needed to apply Bayes' Theorem!"
+          "1": "Careful! 0.95 is the test accuracy given disease, not the disease rate. 0.01 is the base rate, not probability of positive test.",
+          "2": "We have all the information needed to apply Bayes' Theorem!"
         }
+      },
+      "resultState": {
+        "description": "Define events and probabilities"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply Bayes' Theorem",
+      "order": 2,
       "currentState": {
-        "expression": "Want: $P(D|+)$",
         "description": "Use Bayes' formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is Bayes' Theorem for this problem?",
         "hint": "$P(D|+) = \\frac{P(+|D)P(D)}{P(+)}$ where $P(+) = P(+|D)P(D) + P(+|D^c)P(D^c)$ by law of total probability."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(D|+) = \\frac{P(+|D)P(D)}{P(+|D)P(D) + P(+|D^c)P(D^c)}$"
+          "text": "$P(D|+) = \\frac{P(+|D)P(D)}{P(+|D)P(D) + P(+|D^c)P(D^c)}$"
         },
         {
           "id": "b",
-          "content": "$P(D|+) = P(+|D) \\cdot P(D)$"
+          "text": "$P(D|+) = P(+|D) \\cdot P(D)$"
         },
         {
           "id": "c",
-          "content": "$P(D|+) = \\frac{P(D)}{P(+)}$"
+          "text": "$P(D|+) = \\frac{P(D)}{P(+)}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Bayes' Theorem: $P(D|+) = \\frac{P(+|D)P(D)}{P(+)}$ where denominator $P(+)$ is computed using law of total probability.",
           "insight": "Law of total probability partitions $P(+)$ across all possible states (disease or no disease)."
         },
         "incorrect": {
-          "b": "Missing the normalization by $P(+)$ in the denominator!",
-          "c": "Missing $P(+|D)$ in the numerator - need to weight by the likelihood!"
+          "1": "Missing the normalization by $P(+)$ in the denominator!",
+          "2": "Missing $P(+|D)$ in the numerator - need to weight by the likelihood!"
         }
+      },
+      "resultState": {
+        "description": "Apply Bayes' Theorem"
       }
     },
     {
       "id": "step-3",
-      "title": "Compute P(+)",
+      "order": 3,
       "currentState": {
-        "expression": "$P(+) = P(+|D)P(D) + P(+|D^c)P(D^c)$",
         "description": "Calculate total probability of positive test."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $P(+)$?",
         "hint": "$P(+) = (0.95)(0.01) + (0.10)(0.99) = 0.0095 + 0.099 = 0.1085$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(+) = 0.95(0.01) + 0.10(0.99) = 0.0095 + 0.099 = 0.1085$"
+          "text": "$P(+) = 0.95(0.01) + 0.10(0.99) = 0.0095 + 0.099 = 0.1085$"
         },
         {
           "id": "b",
-          "content": "$P(+) = 0.95$"
+          "text": "$P(+) = 0.95$"
         },
         {
           "id": "c",
-          "content": "$P(+) = 0.01$"
+          "text": "$P(+) = 0.01$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $P(+) = P(+|D)P(D) + P(+|D^c)P(D^c) = 0.95 \\times 0.01 + 0.10 \\times 0.99 = 0.1085$.",
           "insight": "About 10.85% of population tests positive. Most positives are false positives due to low disease rate!"
         },
         "incorrect": {
-          "b": "0.95 is $P(+|D)$, not $P(+)$. Need to account for both diseased and healthy populations!",
-          "c": "0.01 is the disease rate $P(D)$, not the positive test rate!"
+          "1": "0.95 is $P(+|D)$, not $P(+)$. Need to account for both diseased and healthy populations!",
+          "2": "0.01 is the disease rate $P(D)$, not the positive test rate!"
         }
+      },
+      "resultState": {
+        "description": "Compute P(+)"
       }
     },
     {
       "id": "step-4",
-      "title": "Calculate posterior probability",
+      "order": 4,
       "currentState": {
-        "expression": "$P(D|+) = \\frac{0.95 \\times 0.01}{0.1085}$",
         "description": "Final calculation."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $P(D|+)$?",
         "hint": "$P(D|+) = \\frac{0.0095}{0.1085} \\approx 0.0876$ or about 8.76%."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(D|+) = \\frac{0.0095}{0.1085} \\approx 0.0876$ or about 8.76%"
+          "text": "$P(D|+) = \\frac{0.0095}{0.1085} \\approx 0.0876$ or about 8.76%"
         },
         {
           "id": "b",
-          "content": "$P(D|+) = 0.95$ (95% because test is 95% accurate)"
+          "text": "$P(D|+) = 0.95$ (95% because test is 95% accurate)"
         },
         {
           "id": "c",
-          "content": "$P(D|+) = 0.50$ (50-50 chance)"
+          "text": "$P(D|+) = 0.50$ (50-50 chance)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $P(D|+) \\approx 0.0876$ or 8.76%. Even with a positive test, only about 9% chance of actually having the disease!",
           "insight": "Counterintuitive result! Low base rate (1%) means most positives are false positives, despite 95% test accuracy. This is why screening rare diseases is challenging."
         },
         "incorrect": {
-          "b": "Common misconception! 95% is $P(+|D)$, not $P(D|+)$. Must account for base rate of disease.",
-          "c": "The probability depends on the specific values. Calculate using Bayes' Theorem!"
+          "1": "Common misconception! 95% is $P(+|D)$, not $P(D|+)$. Must account for base rate of disease.",
+          "2": "The probability depends on the specific values. Calculate using Bayes' Theorem!"
         }
+      },
+      "resultState": {
+        "description": "Calculate posterior probability"
       }
     }
   ],

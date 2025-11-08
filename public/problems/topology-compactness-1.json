@@ -5,7 +5,12 @@
   "topic": "Topology",
   "difficulty": 4,
   "estimatedTime": 14,
-  "tags": ["topology", "compactness", "Heine-Borel", "open covers"],
+  "tags": [
+    "topology",
+    "compactness",
+    "Heine-Borel",
+    "open covers"
+  ],
   "statement": {
     "text": "Prove that the closed interval $[0, 1]$ is compact in $\\mathbb{R}$ by showing every open cover has a finite subcover."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Definition of compactness",
+      "order": 1,
       "currentState": {
-        "expression": "$[0, 1]$ with standard topology",
         "description": "What does it mean for $[0, 1]$ to be compact?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the definition of compactness?",
         "hint": "A space is compact if every open cover has a finite subcover. Open cover: collection of open sets whose union contains $[0, 1]$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Every open cover $\\{U_\\alpha\\}$ of $[0, 1]$ has a finite subcover $\\{U_1, \\ldots, U_n\\}$"
+          "text": "Every open cover $\\{U_\\alpha\\}$ of $[0, 1]$ has a finite subcover $\\{U_1, \\ldots, U_n\\}$"
         },
         {
           "id": "b",
-          "content": "$[0, 1]$ is closed and bounded"
+          "text": "$[0, 1]$ is closed and bounded"
         },
         {
           "id": "c",
-          "content": "Every sequence in $[0, 1]$ has a convergent subsequence"
+          "text": "Every sequence in $[0, 1]$ has a convergent subsequence"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Compactness means: if $[0,1] \\subseteq \\bigcup_\\alpha U_\\alpha$ with $U_\\alpha$ open, then $[0,1] \\subseteq U_1 \\cup \\cdots \\cup U_n$ for finitely many.",
           "insight": "In metric spaces, all three definitions are equivalent (Heine-Borel). We'll use definition (a)."
         },
         "incorrect": {
-          "b": "That's the Heine-Borel characterization for $\\mathbb{R}^n$, but we need to prove it using the definition!",
-          "c": "That's sequential compactness, equivalent to compactness in metric spaces but not the definition we'll use."
+          "1": "That's the Heine-Borel characterization for $\\mathbb{R}^n$, but we need to prove it using the definition!",
+          "2": "That's sequential compactness, equivalent to compactness in metric spaces but not the definition we'll use."
         }
+      },
+      "resultState": {
+        "description": "Definition of compactness"
       }
     },
     {
       "id": "step-2",
-      "title": "Proof by contradiction setup",
+      "order": 2,
       "currentState": {
-        "expression": "Assume $\\{U_\\alpha\\}$ is an open cover with no finite subcover",
         "description": "We'll derive a contradiction."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How to proceed with proof by contradiction?",
         "hint": "Bisect $[0, 1]$ into $[0, 1/2]$ and $[1/2, 1]$. At least one cannot be covered by finitely many $U_\\alpha$ (else $[0,1]$ could be). Continue bisecting to get nested intervals."
       },
       "options": [
         {
           "id": "a",
-          "content": "Bisect repeatedly: at each step, choose a half-interval not covered by finitely many $U_\\alpha$"
+          "text": "Bisect repeatedly: at each step, choose a half-interval not covered by finitely many $U_\\alpha$"
         },
         {
           "id": "b",
-          "content": "Show $[0, 1]$ is not bounded"
+          "text": "Show $[0, 1]$ is not bounded"
         },
         {
           "id": "c",
-          "content": "Find a single open set covering $[0, 1]$"
+          "text": "Find a single open set covering $[0, 1]$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Bisection method: If both halves had finite subcovers, their union would be a finite subcover of $[0, 1]$ - contradiction. So one half has no finite subcover. Repeat.",
           "insight": "This creates nested intervals $I_0 \\supseteq I_1 \\supseteq I_2 \\supseteq \\cdots$ with length $\\to 0$."
         },
         "incorrect": {
-          "b": "$[0, 1]$ is clearly bounded! That won't help.",
-          "c": "We assumed NO finite subcover exists. Need different approach."
+          "1": "$[0, 1]$ is clearly bounded! That won't help.",
+          "2": "We assumed NO finite subcover exists. Need different approach."
         }
+      },
+      "resultState": {
+        "description": "Proof by contradiction setup"
       }
     },
     {
       "id": "step-3",
-      "title": "Apply Nested Interval Property",
+      "order": 3,
       "currentState": {
-        "expression": "Nested intervals $I_n = [a_n, b_n]$ with $b_n - a_n = 1/2^n$",
         "description": "Each $I_n$ has no finite subcover."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does the Nested Interval Theorem give us?",
         "hint": "There exists unique $x \\in \\bigcap_{n=1}^\\infty I_n$. Since $\\{U_\\alpha\\}$ covers $[0,1]$, we have $x \\in U_\\alpha$ for some $\\alpha$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\bigcap_{n=1}^\\infty I_n = \\{x\\}$ for some $x \\in [0, 1]$, and $x \\in U_\\alpha$ for some $\\alpha$"
+          "text": "$\\bigcap_{n=1}^\\infty I_n = \\{x\\}$ for some $x \\in [0, 1]$, and $x \\in U_\\alpha$ for some $\\alpha$"
         },
         {
           "id": "b",
-          "content": "$\\bigcap_{n=1}^\\infty I_n = \\emptyset$"
+          "text": "$\\bigcap_{n=1}^\\infty I_n = \\emptyset$"
         },
         {
           "id": "c",
-          "content": "The intersection contains infinitely many points"
+          "text": "The intersection contains infinitely many points"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Nested Interval Theorem: For closed bounded intervals $I_n$ with length $\\to 0$, there's unique $x \\in \\bigcap I_n$. Since $\\{U_\\alpha\\}$ covers $[0,1]$, some $U_\\alpha$ contains $x$.",
           "insight": "Since $U_\\alpha$ is open, it contains an interval $(x - \\epsilon, x + \\epsilon)$ around $x$."
         },
         "incorrect": {
-          "b": "Nested Interval Theorem guarantees non-empty intersection for closed bounded intervals!",
-          "c": "Since interval lengths $\\to 0$, intersection is a single point."
+          "1": "Nested Interval Theorem guarantees non-empty intersection for closed bounded intervals!",
+          "2": "Since interval lengths $\\to 0$, intersection is a single point."
         }
+      },
+      "resultState": {
+        "description": "Apply Nested Interval Property"
       }
     },
     {
       "id": "step-4",
-      "title": "Derive contradiction",
+      "order": 4,
       "currentState": {
-        "expression": "$x \\in U_\\alpha$ and $U_\\alpha$ is open",
         "description": "Since $U_\\alpha$ is open, $\\exists \\epsilon > 0$ such that $(x-\\epsilon, x+\\epsilon) \\subseteq U_\\alpha$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How does this contradict our assumption?",
         "hint": "For large $n$, $I_n \\subseteq (x-\\epsilon, x+\\epsilon) \\subseteq U_\\alpha$, so $I_n$ is covered by single $U_\\alpha$. But we said no $I_n$ has finite subcover!"
       },
       "options": [
         {
           "id": "a",
-          "content": "For large $n$, $I_n \\subseteq U_\\alpha$ (single set covers $I_n$), contradicting that $I_n$ needs infinite cover"
+          "text": "For large $n$, $I_n \\subseteq U_\\alpha$ (single set covers $I_n$), contradicting that $I_n$ needs infinite cover"
         },
         {
           "id": "b",
-          "content": "$x$ is not in $[0, 1]$"
+          "text": "$x$ is not in $[0, 1]$"
         },
         {
           "id": "c",
-          "content": "$U_\\alpha$ is not actually open"
+          "text": "$U_\\alpha$ is not actually open"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Since $I_n \\to \\{x\\}$ and $(x-\\epsilon, x+\\epsilon) \\subseteq U_\\alpha$, eventually $I_n \\subseteq U_\\alpha$. But we chose $I_n$ to have NO finite subcover - contradiction!",
           "insight": "This contradiction shows our assumption was false: every open cover of $[0, 1]$ DOES have a finite subcover. Thus $[0, 1]$ is compact!"
         },
         "incorrect": {
-          "b": "$x \\in \\bigcap I_n \\subseteq I_0 = [0, 1]$, so $x \\in [0, 1]$.",
-          "c": "$U_\\alpha$ is open by assumption (it's part of an open cover)."
+          "1": "$x \\in \\bigcap I_n \\subseteq I_0 = [0, 1]$, so $x \\in [0, 1]$.",
+          "2": "$U_\\alpha$ is open by assumption (it's part of an open cover)."
         }
+      },
+      "resultState": {
+        "description": "Derive contradiction"
       }
     }
   ],

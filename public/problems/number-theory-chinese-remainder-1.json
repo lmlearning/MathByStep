@@ -5,7 +5,12 @@
   "topic": "Number Theory",
   "difficulty": 3,
   "estimatedTime": 13,
-  "tags": ["number theory", "chinese remainder theorem", "modular arithmetic", "congruences"],
+  "tags": [
+    "number theory",
+    "chinese remainder theorem",
+    "modular arithmetic",
+    "congruences"
+  ],
   "statement": {
     "text": "Find all integers $x$ that satisfy the system of congruences: $x \\equiv 2 \\pmod{3}$, $x \\equiv 3 \\pmod{5}$, $x \\equiv 2 \\pmod{7}$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Verify CRT applies",
+      "order": 1,
       "currentState": {
-        "expression": "$x \\equiv 2 \\pmod{3}$, $x \\equiv 3 \\pmod{5}$, $x \\equiv 2 \\pmod{7}$",
         "description": "Check if Chinese Remainder Theorem can be used."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "When does CRT apply?",
         "hint": "CRT applies when the moduli are pairwise coprime. Check: $\\gcd(3,5) = 1$, $\\gcd(3,7) = 1$, $\\gcd(5,7) = 1$. All coprime!"
       },
       "options": [
         {
           "id": "a",
-          "content": "CRT applies: moduli 3, 5, 7 are pairwise coprime"
+          "text": "CRT applies: moduli 3, 5, 7 are pairwise coprime"
         },
         {
           "id": "b",
-          "content": "CRT does not apply: moduli are not coprime"
+          "text": "CRT does not apply: moduli are not coprime"
         },
         {
           "id": "c",
-          "content": "CRT only works for two congruences"
+          "text": "CRT only works for two congruences"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Since $\\gcd(3,5) = \\gcd(3,7) = \\gcd(5,7) = 1$, the moduli are pairwise coprime. CRT guarantees a unique solution modulo $3 \\cdot 5 \\cdot 7 = 105$.",
           "insight": "CRT works for any number of congruences as long as moduli are pairwise coprime."
         },
         "incorrect": {
-          "b": "3, 5, and 7 are all prime, so they're definitely coprime!",
-          "c": "CRT extends to any number of congruences with pairwise coprime moduli!"
+          "1": "3, 5, and 7 are all prime, so they're definitely coprime!",
+          "2": "CRT extends to any number of congruences with pairwise coprime moduli!"
         }
+      },
+      "resultState": {
+        "description": "Verify CRT applies"
       }
     },
     {
       "id": "step-2",
-      "title": "Set up CRT construction",
+      "order": 2,
       "currentState": {
-        "expression": "$N = 3 \\cdot 5 \\cdot 7 = 105$",
         "description": "Define $N_i = N/n_i$ for each modulus."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $N_1, N_2, N_3$?",
         "hint": "$N_1 = N/3 = 35$, $N_2 = N/5 = 21$, $N_3 = N/7 = 15$. These are coprime to their respective moduli."
       },
       "options": [
         {
           "id": "a",
-          "content": "$N_1 = 35$ (coprime to 3), $N_2 = 21$ (coprime to 5), $N_3 = 15$ (coprime to 7)"
+          "text": "$N_1 = 35$ (coprime to 3), $N_2 = 21$ (coprime to 5), $N_3 = 15$ (coprime to 7)"
         },
         {
           "id": "b",
-          "content": "$N_1 = 3$, $N_2 = 5$, $N_3 = 7$"
+          "text": "$N_1 = 3$, $N_2 = 5$, $N_3 = 7$"
         },
         {
           "id": "c",
-          "content": "$N_1 = 105$, $N_2 = 105$, $N_3 = 105$"
+          "text": "$N_1 = 105$, $N_2 = 105$, $N_3 = 105$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $N_i = \\frac{N}{n_i}$ gives $N_1 = 35$, $N_2 = 21$, $N_3 = 15$. Each $N_i$ is divisible by all moduli except $n_i$, so $\\gcd(N_i, n_i) = 1$.",
           "insight": "The $N_i$ values are key to the CRT construction - they \"knock out\" all congruences except one."
         },
         "incorrect": {
-          "b": "Those are the moduli themselves, not $N/n_i$!",
-          "c": "Need to divide $N$ by each modulus, not keep $N$ unchanged!"
+          "1": "Those are the moduli themselves, not $N/n_i$!",
+          "2": "Need to divide $N$ by each modulus, not keep $N$ unchanged!"
         }
+      },
+      "resultState": {
+        "description": "Set up CRT construction"
       }
     },
     {
       "id": "step-3",
-      "title": "Find modular inverses",
+      "order": 3,
       "currentState": {
-        "expression": "Need $M_i$ such that $N_i M_i \\equiv 1 \\pmod{n_i}$",
         "description": "Solve for multiplicative inverses."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $M_1, M_2, M_3$?",
         "hint": "$35M_1 \\equiv 1 \\pmod{3}$: $35 \\equiv 2 \\pmod{3}$, so $2M_1 \\equiv 1 \\pmod{3} \\implies M_1 = 2$. Similarly: $21M_2 \\equiv 1 \\pmod{5}$: $21 \\equiv 1 \\pmod{5} \\implies M_2 = 1$. $15M_3 \\equiv 1 \\pmod{7}$: $15 \\equiv 1 \\pmod{7} \\implies M_3 = 1$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$M_1 = 2$ (since $35 \\cdot 2 \\equiv 1 \\pmod{3}$), $M_2 = 1$, $M_3 = 1$"
+          "text": "$M_1 = 2$ (since $35 \\cdot 2 \\equiv 1 \\pmod{3}$), $M_2 = 1$, $M_3 = 1$"
         },
         {
           "id": "b",
-          "content": "$M_1 = 1$, $M_2 = 1$, $M_3 = 1$ (all equal 1)"
+          "text": "$M_1 = 1$, $M_2 = 1$, $M_3 = 1$ (all equal 1)"
         },
         {
           "id": "c",
-          "content": "No inverses exist"
+          "text": "No inverses exist"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $35 \\equiv 2 \\pmod{3}$, and $2 \\cdot 2 = 4 \\equiv 1 \\pmod{3}$, so $M_1 = 2$. $21 \\equiv 1 \\pmod{5}$ and $15 \\equiv 1 \\pmod{7}$, so $M_2 = M_3 = 1$.",
           "insight": "Finding modular inverses is crucial. Can use Extended Euclidean Algorithm for harder cases."
         },
         "incorrect": {
-          "b": "$35 \\not\\equiv 1 \\pmod{3}$, so $M_1 \\neq 1$. Need to find the inverse!",
-          "c": "Inverses exist because each $N_i$ is coprime to $n_i$!"
+          "1": "$35 \\not\\equiv 1 \\pmod{3}$, so $M_1 \\neq 1$. Need to find the inverse!",
+          "2": "Inverses exist because each $N_i$ is coprime to $n_i$!"
         }
+      },
+      "resultState": {
+        "description": "Find modular inverses"
       }
     },
     {
       "id": "step-4",
-      "title": "Construct solution",
+      "order": 4,
       "currentState": {
-        "expression": "$x = \\sum a_i N_i M_i \\pmod{N}$",
         "description": "Combine using CRT formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the solution?",
         "hint": "$x = 2(35)(2) + 3(21)(1) + 2(15)(1) = 140 + 63 + 30 = 233 \\equiv 233 - 2(105) = 23 \\pmod{105}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x \\equiv 23 \\pmod{105}$ (general solution: $x = 23 + 105k$ for $k \\in \\mathbb{Z}$)"
+          "text": "$x \\equiv 23 \\pmod{105}$ (general solution: $x = 23 + 105k$ for $k \\in \\mathbb{Z}$)"
         },
         {
           "id": "b",
-          "content": "$x = 233$ (unique answer)"
+          "text": "$x = 233$ (unique answer)"
         },
         {
           "id": "c",
-          "content": "$x \\equiv 2 \\pmod{105}$"
+          "text": "$x \\equiv 2 \\pmod{105}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $x = 2(35)(2) + 3(21)(1) + 2(15)(1) = 233 \\equiv 23 \\pmod{105}$. General solution: $x = 23 + 105k$ for any integer $k$.",
           "insight": "CRT gives unique solution modulo $N = 105$. All solutions differ by multiples of 105."
         },
         "incorrect": {
-          "b": "233 is A solution, but not unique. Need to reduce modulo 105: $233 = 2(105) + 23$.",
-          "c": "Check: $23 \\equiv 2 \\pmod{3}$ ✓, $23 \\equiv 3 \\pmod{5}$ ✓, $23 \\equiv 2 \\pmod{7}$ ✓. Not 2!"
+          "1": "233 is A solution, but not unique. Need to reduce modulo 105: $233 = 2(105) + 23$.",
+          "2": "Check: $23 \\equiv 2 \\pmod{3}$ ✓, $23 \\equiv 3 \\pmod{5}$ ✓, $23 \\equiv 2 \\pmod{7}$ ✓. Not 2!"
         }
+      },
+      "resultState": {
+        "description": "Construct solution"
       }
     }
   ],

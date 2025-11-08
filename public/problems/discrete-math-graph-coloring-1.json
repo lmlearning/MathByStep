@@ -5,7 +5,12 @@
   "topic": "Discrete Math",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["discrete math", "graph theory", "graph coloring", "chromatic number"],
+  "tags": [
+    "discrete math",
+    "graph theory",
+    "graph coloring",
+    "chromatic number"
+  ],
   "statement": {
     "text": "Determine the chromatic number of the complete bipartite graph $K_{3,4}$ and the cycle graph $C_5$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Definition of chromatic number",
+      "order": 1,
       "currentState": {
-        "expression": "Graph $G = (V, E)$",
         "description": "What is the chromatic number?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does chromatic number $\\chi(G)$ mean?",
         "hint": "$\\chi(G)$ is the minimum number of colors needed to color vertices so that no two adjacent vertices have the same color."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\chi(G)$ = minimum colors needed so adjacent vertices have different colors"
+          "text": "$\\chi(G)$ = minimum colors needed so adjacent vertices have different colors"
         },
         {
           "id": "b",
-          "content": "$\\chi(G)$ = number of vertices in $G$"
+          "text": "$\\chi(G)$ = number of vertices in $G$"
         },
         {
           "id": "c",
-          "content": "$\\chi(G)$ = number of edges in $G$"
+          "text": "$\\chi(G)$ = number of edges in $G$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Chromatic number is the smallest $k$ such that we can assign one of $k$ colors to each vertex with no edge connecting same-colored vertices.",
           "insight": "Graph coloring has applications in scheduling, register allocation, and map coloring."
         },
         "incorrect": {
-          "b": "Not related to vertex count directly! A graph with $n$ vertices might need anywhere from 1 to $n$ colors.",
-          "c": "Edge count doesn't determine chromatic number. Structure matters!"
+          "1": "Not related to vertex count directly! A graph with $n$ vertices might need anywhere from 1 to $n$ colors.",
+          "2": "Edge count doesn't determine chromatic number. Structure matters!"
         }
+      },
+      "resultState": {
+        "description": "Definition of chromatic number"
       }
     },
     {
       "id": "step-2",
-      "title": "Chromatic number of bipartite graphs",
+      "order": 2,
       "currentState": {
-        "expression": "$K_{3,4}$ is complete bipartite graph",
         "description": "$K_{m,n}$ has two parts: one with $m$ vertices, one with $n$, with all possible edges between parts."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\chi(K_{3,4})$?",
         "hint": "Bipartite means vertices split into two sets with edges only between sets. Color one part red, other part blue. Only 2 colors needed!"
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\chi(K_{3,4}) = 2$ (all bipartite graphs have chromatic number 2)"
+          "text": "$\\chi(K_{3,4}) = 2$ (all bipartite graphs have chromatic number 2)"
         },
         {
           "id": "b",
-          "content": "$\\chi(K_{3,4}) = 7$ (need one color per vertex)"
+          "text": "$\\chi(K_{3,4}) = 7$ (need one color per vertex)"
         },
         {
           "id": "c",
-          "content": "$\\chi(K_{3,4}) = 12$ (number of edges)"
+          "text": "$\\chi(K_{3,4}) = 12$ (number of edges)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Every bipartite graph has $\\chi(G) = 2$. Color the two parts with different colors - no edges within parts, so no conflicts!",
           "insight": "Fundamental theorem: $\\chi(G) \\leq 2$ iff $G$ is bipartite (no odd cycles)."
         },
         "incorrect": {
-          "b": "Can do much better! Since no edges within each part, vertices in same part can share colors.",
-          "c": "Chromatic number is about vertex coloring, not edges!"
+          "1": "Can do much better! Since no edges within each part, vertices in same part can share colors.",
+          "2": "Chromatic number is about vertex coloring, not edges!"
         }
+      },
+      "resultState": {
+        "description": "Chromatic number of bipartite graphs"
       }
     },
     {
       "id": "step-3",
-      "title": "Chromatic number of odd cycles",
+      "order": 3,
       "currentState": {
-        "expression": "$C_5$: cycle with 5 vertices",
         "description": "Vertices $v_1, v_2, v_3, v_4, v_5$ with edges forming a cycle."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\chi(C_5)$?",
         "hint": "Try 2 colors: $v_1$ red, $v_2$ blue, $v_3$ red, $v_4$ blue, $v_5$ red. But $v_5$ is adjacent to both $v_1$ (red) and $v_4$ (blue)! Contradiction. Need 3 colors."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\chi(C_5) = 3$ (odd cycles need 3 colors; even cycles need 2)"
+          "text": "$\\chi(C_5) = 3$ (odd cycles need 3 colors; even cycles need 2)"
         },
         {
           "id": "b",
-          "content": "$\\chi(C_5) = 2$ (like all cycles)"
+          "text": "$\\chi(C_5) = 2$ (like all cycles)"
         },
         {
           "id": "c",
-          "content": "$\\chi(C_5) = 5$ (one color per vertex)"
+          "text": "$\\chi(C_5) = 5$ (one color per vertex)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Odd cycles require 3 colors. Try alternating 2 colors - doesn't work because odd number of vertices means last vertex adjacent to two of same color. 3 colors suffice: e.g., R-B-R-B-G.",
           "insight": "General rule: $\\chi(C_n) = 2$ if $n$ even, $\\chi(C_n) = 3$ if $n$ odd."
         },
         "incorrect": {
-          "b": "Even cycles can use 2 colors (alternating). But odd cycles need 3!",
-          "c": "Can do better! Don't need a unique color for each vertex."
+          "1": "Even cycles can use 2 colors (alternating). But odd cycles need 3!",
+          "2": "Can do better! Don't need a unique color for each vertex."
         }
+      },
+      "resultState": {
+        "description": "Chromatic number of odd cycles"
       }
     },
     {
       "id": "step-4",
-      "title": "Verify the colorings",
+      "order": 4,
       "currentState": {
-        "expression": "$\\chi(K_{3,4}) = 2$, $\\chi(C_5) = 3$",
         "description": "Provide explicit colorings."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Can you give explicit colorings?",
         "hint": "$K_{3,4}$: Part A (3 vertices) all red, Part B (4 vertices) all blue. $C_5$: vertices $v_1, v_2, v_3, v_4, v_5$ get colors Red, Blue, Red, Blue, Green."
       },
       "options": [
         {
           "id": "a",
-          "content": "$K_{3,4}$: {R,R,R,B,B,B,B}. $C_5$: {R,B,R,B,G} (or similar)"
+          "text": "$K_{3,4}$: {R,R,R,B,B,B,B}. $C_5$: {R,B,R,B,G} (or similar)"
         },
         {
           "id": "b",
-          "content": "Cannot provide explicit coloring"
+          "text": "Cannot provide explicit coloring"
         },
         {
           "id": "c",
-          "content": "$K_{3,4}$ needs 3+ colors"
+          "text": "$K_{3,4}$ needs 3+ colors"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $K_{3,4}$: two-color the bipartition. $C_5$: use 3 colors (e.g., RBRBG going around the cycle).",
           "insight": "Showing a valid $k$-coloring proves $\\chi(G) \\leq k$. Proving no $(k-1)$-coloring exists shows $\\chi(G) \\geq k$."
         },
         "incorrect": {
-          "b": "We can! See the explicit colorings.",
-          "c": "$K_{3,4}$ is bipartite, so 2 colors suffice!"
+          "1": "We can! See the explicit colorings.",
+          "2": "$K_{3,4}$ is bipartite, so 2 colors suffice!"
         }
+      },
+      "resultState": {
+        "description": "Verify the colorings"
       }
     }
   ],

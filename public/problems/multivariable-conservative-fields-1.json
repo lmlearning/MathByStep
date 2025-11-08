@@ -5,7 +5,12 @@
   "topic": "Multivariable Calculus",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["multivariable calculus", "vector fields", "conservative fields", "potential functions"],
+  "tags": [
+    "multivariable calculus",
+    "vector fields",
+    "conservative fields",
+    "potential functions"
+  ],
   "statement": {
     "text": "Determine if the vector field $\\mathbf{F}(x,y) = \\langle 2xy + y^2, x^2 + 2xy \\rangle$ is conservative. If so, find a potential function $f$ such that $\\nabla f = \\mathbf{F}$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Test if conservative",
+      "order": 1,
       "currentState": {
-        "expression": "$\\mathbf{F} = \\langle P, Q \\rangle = \\langle 2xy + y^2, x^2 + 2xy \\rangle$",
         "description": "Conservative iff $\\frac{\\partial P}{\\partial y} = \\frac{\\partial Q}{\\partial x}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Is $\\mathbf{F}$ conservative?",
         "hint": "$\\frac{\\partial P}{\\partial y} = \\frac{\\partial}{\\partial y}[2xy + y^2] = 2x + 2y$. $\\frac{\\partial Q}{\\partial x} = \\frac{\\partial}{\\partial x}[x^2 + 2xy] = 2x + 2y$. Equal!"
       },
       "options": [
         {
           "id": "a",
-          "content": "Yes, conservative: $\\frac{\\partial P}{\\partial y} = 2x + 2y = \\frac{\\partial Q}{\\partial x}$"
+          "text": "Yes, conservative: $\\frac{\\partial P}{\\partial y} = 2x + 2y = \\frac{\\partial Q}{\\partial x}$"
         },
         {
           "id": "b",
-          "content": "No, not conservative: partial derivatives don't match"
+          "text": "No, not conservative: partial derivatives don't match"
         },
         {
           "id": "c",
-          "content": "Cannot determine from partial derivatives"
+          "text": "Cannot determine from partial derivatives"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $P_y = 2x + 2y = Q_x$, so the field is conservative. This means there exists a potential function $f$ with $\\nabla f = \\mathbf{F}$.",
           "insight": "Conservative fields are path-independent - line integrals depend only on endpoints!"
         },
         "incorrect": {
-          "b": "Check again: $P_y = 2x + 2y$ and $Q_x = 2x + 2y$. They match!",
-          "c": "In simply connected domains, $P_y = Q_x$ is the test for conservative fields."
+          "1": "Check again: $P_y = 2x + 2y$ and $Q_x = 2x + 2y$. They match!",
+          "2": "In simply connected domains, $P_y = Q_x$ is the test for conservative fields."
         }
+      },
+      "resultState": {
+        "description": "Test if conservative"
       }
     },
     {
       "id": "step-2",
-      "title": "Integrate P with respect to x",
+      "order": 2,
       "currentState": {
-        "expression": "$f_x = P = 2xy + y^2$",
         "description": "Integrate to find $f$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $f(x,y) = \\int P\\, dx$?",
         "hint": "$f = \\int (2xy + y^2)\\, dx = x^2y + xy^2 + g(y)$ where $g(y)$ is an unknown function of $y$ only."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f(x,y) = x^2y + xy^2 + g(y)$ for some function $g(y)$"
+          "text": "$f(x,y) = x^2y + xy^2 + g(y)$ for some function $g(y)$"
         },
         {
           "id": "b",
-          "content": "$f(x,y) = x^2y + xy^2 + C$ (constant)"
+          "text": "$f(x,y) = x^2y + xy^2 + C$ (constant)"
         },
         {
           "id": "c",
-          "content": "$f(x,y) = xy^2 + \\frac{y^3}{3}$"
+          "text": "$f(x,y) = xy^2 + \\frac{y^3}{3}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\int (2xy + y^2)\\, dx = x^2y + xy^2 + g(y)$ where $g(y)$ is the \"constant\" of integration (can depend on $y$).",
           "insight": "When integrating wrt $x$, terms involving only $y$ act as constants."
         },
         "incorrect": {
-          "b": "The \"constant\" can depend on $y$ since we integrated wrt $x$. Use $g(y)$ instead of $C$.",
-          "c": "Don't integrate wrt $y$ yet! First integrate $P$ wrt $x$."
+          "1": "The \"constant\" can depend on $y$ since we integrated wrt $x$. Use $g(y)$ instead of $C$.",
+          "2": "Don't integrate wrt $y$ yet! First integrate $P$ wrt $x$."
         }
+      },
+      "resultState": {
+        "description": "Integrate P with respect to x"
       }
     },
     {
       "id": "step-3",
-      "title": "Find g(y) using Q",
+      "order": 3,
       "currentState": {
-        "expression": "$f = x^2y + xy^2 + g(y)$, and we know $f_y = Q = x^2 + 2xy$",
         "description": "Differentiate $f$ wrt $y$ and match to $Q$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $g(y)$?",
         "hint": "$f_y = x^2 + 2xy + g'(y) = Q = x^2 + 2xy$. So $g'(y) = 0 \\to g(y) = C$ (constant)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$g'(y) = 0$, so $g(y) = C$ (constant)"
+          "text": "$g'(y) = 0$, so $g(y) = C$ (constant)"
         },
         {
           "id": "b",
-          "content": "$g(y) = y^2$"
+          "text": "$g(y) = y^2$"
         },
         {
           "id": "c",
-          "content": "$g(y) = xy$"
+          "text": "$g(y) = xy$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $f_y = \\frac{\\partial}{\\partial y}[x^2y + xy^2 + g(y)] = x^2 + 2xy + g'(y)$. This must equal $Q = x^2 + 2xy$, so $g'(y) = 0 \\implies g(y) = C$.",
           "insight": "We can set $C = 0$ since potential functions are unique up to a constant."
         },
         "incorrect": {
-          "b": "$f_y$ already has all terms matching $Q$, so $g'(y) = 0$. No additional $y$ terms needed!",
-          "c": "$g(y)$ cannot depend on $x$ - it's a function of $y$ only!"
+          "1": "$f_y$ already has all terms matching $Q$, so $g'(y) = 0$. No additional $y$ terms needed!",
+          "2": "$g(y)$ cannot depend on $x$ - it's a function of $y$ only!"
         }
+      },
+      "resultState": {
+        "description": "Find g(y) using Q"
       }
     },
     {
       "id": "step-4",
-      "title": "Write potential function",
+      "order": 4,
       "currentState": {
-        "expression": "$f(x,y) = x^2y + xy^2 + C$",
         "description": "Verify $\\nabla f = \\mathbf{F}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Does $\\nabla f = \\mathbf{F}$?",
         "hint": "$f_x = 2xy + y^2 = P$ ✓, $f_y = x^2 + 2xy = Q$ ✓. Verified!"
       },
       "options": [
         {
           "id": "a",
-          "content": "Potential function: $f(x,y) = x^2y + xy^2$ (taking $C=0$). Verify: $\\nabla f = \\mathbf{F}$ ✓"
+          "text": "Potential function: $f(x,y) = x^2y + xy^2$ (taking $C=0$). Verify: $\\nabla f = \\mathbf{F}$ ✓"
         },
         {
           "id": "b",
-          "content": "$f(x,y) = 2xy + y^2$"
+          "text": "$f(x,y) = 2xy + y^2$"
         },
         {
           "id": "c",
-          "content": "No potential function exists"
+          "text": "No potential function exists"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $f(x,y) = x^2y + xy^2$ is the potential function. Check: $\\nabla f = \\langle 2xy + y^2, x^2 + 2xy \\rangle = \\mathbf{F}$ ✓.",
           "insight": "For conservative fields, $\\int_C \\mathbf{F} \\cdot d\\mathbf{r} = f(\\text{end}) - f(\\text{start})$ (Fundamental Theorem for Line Integrals)."
         },
         "incorrect": {
-          "b": "That's just the $P$ component, not the full potential function!",
-          "c": "We proved it's conservative, so a potential function DOES exist!"
+          "1": "That's just the $P$ component, not the full potential function!",
+          "2": "We proved it's conservative, so a potential function DOES exist!"
         }
+      },
+      "resultState": {
+        "description": "Write potential function"
       }
     }
   ],

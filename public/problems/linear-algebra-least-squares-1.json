@@ -5,7 +5,12 @@
   "topic": "Linear Algebra",
   "difficulty": 3,
   "estimatedTime": 13,
-  "tags": ["linear algebra", "least squares", "overdetermined systems", "normal equations"],
+  "tags": [
+    "linear algebra",
+    "least squares",
+    "overdetermined systems",
+    "normal equations"
+  ],
   "statement": {
     "text": "Find the least squares solution to the inconsistent system $A\\mathbf{x} = \\mathbf{b}$ where $A = \\begin{bmatrix} 1 & 1 \\\\ 1 & 2 \\\\ 1 & 3 \\end{bmatrix}$ and $\\mathbf{b} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix}$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify the problem",
+      "order": 1,
       "currentState": {
-        "expression": "$A$ is $3 \\times 2$, $\\mathbf{x}$ is $2 \\times 1$, $\\mathbf{b}$ is $3 \\times 1$",
         "description": "3 equations, 2 unknowns - overdetermined."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Why might this system have no exact solution?",
         "hint": "3 equations but only 2 unknowns - the system is overdetermined and generally inconsistent."
       },
       "options": [
         {
           "id": "a",
-          "content": "Overdetermined system (more equations than unknowns) - generally has no exact solution"
+          "text": "Overdetermined system (more equations than unknowns) - generally has no exact solution"
         },
         {
           "id": "b",
-          "content": "Underdetermined system - infinitely many solutions"
+          "text": "Underdetermined system - infinitely many solutions"
         },
         {
           "id": "c",
-          "content": "Always has a unique solution"
+          "text": "Always has a unique solution"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! With 3 equations and 2 unknowns, $\\mathbf{b}$ is unlikely to lie in the column space of $A$. We seek the \"best\" approximate solution.",
           "insight": "Least squares finds $\\hat{\\mathbf{x}}$ that minimizes $\\|A\\mathbf{x} - \\mathbf{b}\\|^2$."
         },
         "incorrect": {
-          "b": "Underdetermined means fewer equations than unknowns. Here we have MORE equations (3) than unknowns (2).",
-          "c": "Overdetermined systems generally have no solution - need least squares approximation!"
+          "1": "Underdetermined means fewer equations than unknowns. Here we have MORE equations (3) than unknowns (2).",
+          "2": "Overdetermined systems generally have no solution - need least squares approximation!"
         }
+      },
+      "resultState": {
+        "description": "Identify the problem"
       }
     },
     {
       "id": "step-2",
-      "title": "Form normal equations",
+      "order": 2,
       "currentState": {
-        "expression": "Normal equations: $A^TA\\mathbf{x} = A^T\\mathbf{b}$",
         "description": "This transforms overdetermined system to square system."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $A^TA$ and $A^T\\mathbf{b}$?",
         "hint": "$A^T = \\begin{bmatrix} 1 & 1 & 1 \\\\ 1 & 2 & 3 \\end{bmatrix}$. $A^TA = \\begin{bmatrix} 3 & 6 \\\\ 6 & 14 \\end{bmatrix}$. $A^T\\mathbf{b} = \\begin{bmatrix} 5 \\\\ 11 \\end{bmatrix}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$A^TA = \\begin{bmatrix} 3 & 6 \\\\ 6 & 14 \\end{bmatrix}$, $A^T\\mathbf{b} = \\begin{bmatrix} 5 \\\\ 11 \\end{bmatrix}$"
+          "text": "$A^TA = \\begin{bmatrix} 3 & 6 \\\\ 6 & 14 \\end{bmatrix}$, $A^T\\mathbf{b} = \\begin{bmatrix} 5 \\\\ 11 \\end{bmatrix}$"
         },
         {
           "id": "b",
-          "content": "$A^TA = \\begin{bmatrix} 1 & 1 \\\\ 1 & 2 \\end{bmatrix}$, $A^T\\mathbf{b} = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$"
+          "text": "$A^TA = \\begin{bmatrix} 1 & 1 \\\\ 1 & 2 \\end{bmatrix}$, $A^T\\mathbf{b} = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$"
         },
         {
           "id": "c",
-          "content": "$A^TA = \\begin{bmatrix} 3 & 0 \\\\ 0 & 14 \\end{bmatrix}$"
+          "text": "$A^TA = \\begin{bmatrix} 3 & 0 \\\\ 0 & 14 \\end{bmatrix}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $A^TA = \\begin{bmatrix} 1 & 1 & 1 \\\\ 1 & 2 & 3 \\end{bmatrix}\\begin{bmatrix} 1 & 1 \\\\ 1 & 2 \\\\ 1 & 3 \\end{bmatrix} = \\begin{bmatrix} 3 & 6 \\\\ 6 & 14 \\end{bmatrix}$. $A^T\\mathbf{b} = \\begin{bmatrix} 1 & 1 & 1 \\\\ 1 & 2 & 3 \\end{bmatrix}\\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 5 \\\\ 11 \\end{bmatrix}$.",
           "insight": "$A^TA$ is always square and symmetric. If $A$ has full column rank, $A^TA$ is invertible."
         },
         "incorrect": {
-          "b": "Need to compute the matrix products! $A^TA$ is $2 \\times 2$ with entries from inner products of columns.",
-          "c": "$A^TA$ is generally not diagonal. Compute the off-diagonal entries!"
+          "1": "Need to compute the matrix products! $A^TA$ is $2 \\times 2$ with entries from inner products of columns.",
+          "2": "$A^TA$ is generally not diagonal. Compute the off-diagonal entries!"
         }
+      },
+      "resultState": {
+        "description": "Form normal equations"
       }
     },
     {
       "id": "step-3",
-      "title": "Solve normal equations",
+      "order": 3,
       "currentState": {
-        "expression": "$\\begin{bmatrix} 3 & 6 \\\\ 6 & 14 \\end{bmatrix}\\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} = \\begin{bmatrix} 5 \\\\ 11 \\end{bmatrix}$",
         "description": "Solve for $\\mathbf{x}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the least squares solution $\\hat{\\mathbf{x}}$?",
         "hint": "From row 1: $3x_1 + 6x_2 = 5$. Row 2: $6x_1 + 14x_2 = 11$. Solve: $x_1 = \\frac{1}{3}$, $x_2 = \\frac{2}{3}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 1/3 \\\\ 2/3 \\end{bmatrix}$"
+          "text": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 1/3 \\\\ 2/3 \\end{bmatrix}$"
         },
         {
           "id": "b",
-          "content": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}$"
+          "text": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}$"
         },
         {
           "id": "c",
-          "content": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 5/3 \\\\ 11/6 \\end{bmatrix}$"
+          "text": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 5/3 \\\\ 11/6 \\end{bmatrix}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Solving the normal equations: $3x_1 + 6x_2 = 5$ and $6x_1 + 14x_2 = 11$ gives $x_1 = 1/3$, $x_2 = 2/3$.",
           "insight": "This $\\hat{\\mathbf{x}}$ minimizes the residual $\\|A\\mathbf{x} - \\mathbf{b}\\|^2$."
         },
         "incorrect": {
-          "b": "Check: $A\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 2 \\\\ 3 \\\\ 4 \\end{bmatrix} \\neq \\mathbf{b}$. Not the solution to normal equations!",
-          "c": "Solve the system carefully. Use elimination or substitution."
+          "1": "Check: $A\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 2 \\\\ 3 \\\\ 4 \\end{bmatrix} \\neq \\mathbf{b}$. Not the solution to normal equations!",
+          "2": "Solve the system carefully. Use elimination or substitution."
         }
+      },
+      "resultState": {
+        "description": "Solve normal equations"
       }
     },
     {
       "id": "step-4",
-      "title": "Interpret the result",
+      "order": 4,
       "currentState": {
-        "expression": "$\\hat{\\mathbf{x}} = \\begin{bmatrix} 1/3 \\\\ 2/3 \\end{bmatrix}$",
         "description": "What does this mean?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How good is the approximation?",
         "hint": "$A\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 1+2/3 \\\\ 1+2 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 5/3 \\\\ 3 \\end{bmatrix}$. Compare to $\\mathbf{b} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$A\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 5/3 \\\\ 3 \\end{bmatrix} \\approx \\begin{bmatrix} 1 \\\\ 1.67 \\\\ 3 \\end{bmatrix}$ (best approximation to $\\mathbf{b}$ in column space of $A$)"
+          "text": "$A\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 5/3 \\\\ 3 \\end{bmatrix} \\approx \\begin{bmatrix} 1 \\\\ 1.67 \\\\ 3 \\end{bmatrix}$ (best approximation to $\\mathbf{b}$ in column space of $A$)"
         },
         {
           "id": "b",
-          "content": "$A\\hat{\\mathbf{x}} = \\mathbf{b}$ exactly"
+          "text": "$A\\hat{\\mathbf{x}} = \\mathbf{b}$ exactly"
         },
         {
           "id": "c",
-          "content": "No approximate solution exists"
+          "text": "No approximate solution exists"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $A\\hat{\\mathbf{x}} = \\begin{bmatrix} 1 \\\\ 5/3 \\\\ 3 \\end{bmatrix}$ is the closest point to $\\mathbf{b}$ in $\\text{col}(A)$. Residual: $\\mathbf{r} = \\mathbf{b} - A\\hat{\\mathbf{x}} = \\begin{bmatrix} 0 \\\\ 1/3 \\\\ -1 \\end{bmatrix}$.",
           "insight": "Least squares gives the orthogonal projection of $\\mathbf{b}$ onto the column space of $A$!"
         },
         "incorrect": {
-          "b": "System is inconsistent - no exact solution exists. This is the BEST approximation.",
-          "c": "Least squares ALWAYS gives a best approximation (when $A$ has full column rank)."
+          "1": "System is inconsistent - no exact solution exists. This is the BEST approximation.",
+          "2": "Least squares ALWAYS gives a best approximation (when $A$ has full column rank)."
         }
+      },
+      "resultState": {
+        "description": "Interpret the result"
       }
     }
   ],

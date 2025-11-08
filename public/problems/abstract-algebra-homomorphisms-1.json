@@ -5,7 +5,13 @@
   "topic": "Abstract Algebra",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["abstract algebra", "group theory", "homomorphisms", "kernel", "image"],
+  "tags": [
+    "abstract algebra",
+    "group theory",
+    "homomorphisms",
+    "kernel",
+    "image"
+  ],
   "statement": {
     "text": "Let $\\phi: \\mathbb{Z} \\to \\mathbb{Z}_6$ be defined by $\\phi(n) = n \\bmod 6$. Prove that $\\phi$ is a group homomorphism and find its kernel and image."
   },
@@ -17,150 +23,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Verify homomorphism",
+      "order": 1,
       "currentState": {
-        "expression": "$\\phi: \\mathbb{Z} \\to \\mathbb{Z}_6$, $\\phi(n) = n \\bmod 6$",
         "description": "Must show $\\phi(a + b) = \\phi(a) + \\phi(b)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Is $\\phi$ a homomorphism?",
         "hint": "$\\phi(a+b) = (a+b) \\bmod 6 = (a \\bmod 6) + (b \\bmod 6) = \\phi(a) + \\phi(b)$ in $\\mathbb{Z}_6$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Yes: $\\phi(a+b) = (a+b) \\bmod 6 = (a \\bmod 6) + (b \\bmod 6) = \\phi(a) + \\phi(b)$ ✓"
+          "text": "Yes: $\\phi(a+b) = (a+b) \\bmod 6 = (a \\bmod 6) + (b \\bmod 6) = \\phi(a) + \\phi(b)$ ✓"
         },
         {
           "id": "b",
-          "content": "No: $\\phi(a+b) \\neq \\phi(a) + \\phi(b)$ in general"
+          "text": "No: $\\phi(a+b) \\neq \\phi(a) + \\phi(b)$ in general"
         },
         {
           "id": "c",
-          "content": "Only when $a$ and $b$ are even"
+          "text": "Only when $a$ and $b$ are even"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Modular arithmetic respects addition: $(a+b) \\bmod 6 = (a \\bmod 6 + b \\bmod 6) \\bmod 6$. So $\\phi$ preserves the group operation.",
           "insight": "A homomorphism preserves the algebraic structure between groups."
         },
         "incorrect": {
-          "b": "Modular arithmetic is compatible with addition - this IS a homomorphism!",
-          "c": "The homomorphism property holds for ALL integers $a, b$, not just even ones."
+          "1": "Modular arithmetic is compatible with addition - this IS a homomorphism!",
+          "2": "The homomorphism property holds for ALL integers $a, b$, not just even ones."
         }
+      },
+      "resultState": {
+        "description": "Verify homomorphism"
       }
     },
     {
       "id": "step-2",
-      "title": "Find the kernel",
+      "order": 2,
       "currentState": {
-        "expression": "$\\ker(\\phi) = \\{n \\in \\mathbb{Z} : \\phi(n) = 0\\}$",
         "description": "Which integers map to the identity in $\\mathbb{Z}_6$?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\ker(\\phi)$?",
         "hint": "$\\phi(n) = 0$ iff $n \\equiv 0 \\pmod{6}$ iff $n = 6k$ for some $k \\in \\mathbb{Z}$. So $\\ker(\\phi) = 6\\mathbb{Z}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\ker(\\phi) = 6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, \\ldots\\}$ (multiples of 6)"
+          "text": "$\\ker(\\phi) = 6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, \\ldots\\}$ (multiples of 6)"
         },
         {
           "id": "b",
-          "content": "$\\ker(\\phi) = \\{0\\}$ (trivial kernel)"
+          "text": "$\\ker(\\phi) = \\{0\\}$ (trivial kernel)"
         },
         {
           "id": "c",
-          "content": "$\\ker(\\phi) = \\mathbb{Z}$ (everything maps to 0)"
+          "text": "$\\ker(\\phi) = \\mathbb{Z}$ (everything maps to 0)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $n \\in \\ker(\\phi)$ iff $n \\bmod 6 = 0$ iff $6 | n$ iff $n = 6k$. So $\\ker(\\phi) = 6\\mathbb{Z}$.",
           "insight": "The kernel is always a normal subgroup of the domain. Here it's a subgroup of $\\mathbb{Z}$."
         },
         "incorrect": {
-          "b": "Many integers map to 0: all multiples of 6!",
-          "c": "Not everything maps to 0 - for example, $\\phi(1) = 1 \\neq 0$."
+          "1": "Many integers map to 0: all multiples of 6!",
+          "2": "Not everything maps to 0 - for example, $\\phi(1) = 1 \\neq 0$."
         }
+      },
+      "resultState": {
+        "description": "Find the kernel"
       }
     },
     {
       "id": "step-3",
-      "title": "Find the image",
+      "order": 3,
       "currentState": {
-        "expression": "$\\text{Im}(\\phi) = \\{\\phi(n) : n \\in \\mathbb{Z}\\}$",
         "description": "What are all possible outputs?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\text{Im}(\\phi)$?",
         "hint": "Any $n \\in \\mathbb{Z}$ can be written as $n = 6q + r$ where $0 \\leq r < 6$. So $\\phi(n) = r$ can be any element of $\\mathbb{Z}_6$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\text{Im}(\\phi) = \\mathbb{Z}_6 = \\{0, 1, 2, 3, 4, 5\\}$ (entire codomain)"
+          "text": "$\\text{Im}(\\phi) = \\mathbb{Z}_6 = \\{0, 1, 2, 3, 4, 5\\}$ (entire codomain)"
         },
         {
           "id": "b",
-          "content": "$\\text{Im}(\\phi) = \\{0, 2, 4\\}$ (even elements)"
+          "text": "$\\text{Im}(\\phi) = \\{0, 2, 4\\}$ (even elements)"
         },
         {
           "id": "c",
-          "content": "$\\text{Im}(\\phi) = \\{0\\}$"
+          "text": "$\\text{Im}(\\phi) = \\{0\\}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\phi$ is surjective: for any $r \\in \\mathbb{Z}_6$, we can choose $n = r \\in \\mathbb{Z}$ to get $\\phi(n) = r$. So $\\text{Im}(\\phi) = \\mathbb{Z}_6$.",
           "insight": "This homomorphism is onto - every element in $\\mathbb{Z}_6$ is hit."
         },
         "incorrect": {
-          "b": "$\\phi(1) = 1$, $\\phi(3) = 3$, etc. Odd elements are in the image too!",
-          "c": "Many elements are in the image: $\\phi(0)=0, \\phi(1)=1, \\ldots, \\phi(5)=5$."
+          "1": "$\\phi(1) = 1$, $\\phi(3) = 3$, etc. Odd elements are in the image too!",
+          "2": "Many elements are in the image: $\\phi(0)=0, \\phi(1)=1, \\ldots, \\phi(5)=5$."
         }
+      },
+      "resultState": {
+        "description": "Find the image"
       }
     },
     {
       "id": "step-4",
-      "title": "Apply First Isomorphism Theorem",
+      "order": 4,
       "currentState": {
-        "expression": "$\\ker(\\phi) = 6\\mathbb{Z}$, $\\text{Im}(\\phi) = \\mathbb{Z}_6$",
         "description": "What does the theorem tell us?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\mathbb{Z}/\\ker(\\phi)$ isomorphic to?",
         "hint": "First Isomorphism Theorem: $\\mathbb{Z}/\\ker(\\phi) \\cong \\text{Im}(\\phi)$. So $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$ (First Isomorphism Theorem)"
+          "text": "$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$ (First Isomorphism Theorem)"
         },
         {
           "id": "b",
-          "content": "$\\mathbb{Z} \\cong \\mathbb{Z}_6$"
+          "text": "$\\mathbb{Z} \\cong \\mathbb{Z}_6$"
         },
         {
           "id": "c",
-          "content": "$6\\mathbb{Z} \\cong \\mathbb{Z}_6$"
+          "text": "$6\\mathbb{Z} \\cong \\mathbb{Z}_6$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! First Isomorphism Theorem: $G/\\ker(\\phi) \\cong \\text{Im}(\\phi)$. Here: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$, confirming they're the same group!",
           "insight": "This theorem is fundamental - it relates quotient groups to images of homomorphisms."
         },
         "incorrect": {
-          "b": "$\\mathbb{Z}$ is infinite, $\\mathbb{Z}_6$ is finite. Not isomorphic! Need the quotient.",
-          "c": "$6\\mathbb{Z}$ is infinite, $\\mathbb{Z}_6$ has 6 elements. The isomorphism involves $\\mathbb{Z}/6\\mathbb{Z}$."
+          "1": "$\\mathbb{Z}$ is infinite, $\\mathbb{Z}_6$ is finite. Not isomorphic! Need the quotient.",
+          "2": "$6\\mathbb{Z}$ is infinite, $\\mathbb{Z}_6$ has 6 elements. The isomorphism involves $\\mathbb{Z}/6\\mathbb{Z}$."
         }
+      },
+      "resultState": {
+        "description": "Apply First Isomorphism Theorem"
       }
     }
   ],

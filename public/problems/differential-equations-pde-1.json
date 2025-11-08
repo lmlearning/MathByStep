@@ -5,7 +5,12 @@
   "topic": "Differential Equations",
   "difficulty": 4,
   "estimatedTime": 16,
-  "tags": ["differential equations", "partial differential equations", "heat equation", "separation of variables"],
+  "tags": [
+    "differential equations",
+    "partial differential equations",
+    "heat equation",
+    "separation of variables"
+  ],
   "statement": {
     "text": "Solve the heat equation $\\frac{\\partial u}{\\partial t} = k\\frac{\\partial^2 u}{\\partial x^2}$ on $0 < x < L$ with boundary conditions $u(0,t) = u(L,t) = 0$ and initial condition $u(x,0) = f(x)$ using separation of variables."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Assume separated solution",
+      "order": 1,
       "currentState": {
-        "expression": "$\\frac{\\partial u}{\\partial t} = k\\frac{\\partial^2 u}{\\partial x^2}$",
         "description": "Separation of variables method."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What form should we assume for $u(x,t)$?",
         "hint": "Try $u(x,t) = X(x)T(t)$ (product of function of $x$ alone and function of $t$ alone)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$u(x,t) = X(x)T(t)$ (separated solution)"
+          "text": "$u(x,t) = X(x)T(t)$ (separated solution)"
         },
         {
           "id": "b",
-          "content": "$u(x,t) = X(x) + T(t)$ (sum)"
+          "text": "$u(x,t) = X(x) + T(t)$ (sum)"
         },
         {
           "id": "c",
-          "content": "$u(x,t) = XT$ where $X$ and $T$ both depend on $x$ and $t$"
+          "text": "$u(x,t) = XT$ where $X$ and $T$ both depend on $x$ and $t$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Assume $u(x,t) = X(x)T(t)$. Then $\\frac{\\partial u}{\\partial t} = X(x)T'(t)$ and $\\frac{\\partial^2 u}{\\partial x^2} = X''(x)T(t)$.",
           "insight": "Separation of variables works when we can write the solution as a product."
         },
         "incorrect": {
-          "b": "Sum doesn't work for separation of variables in PDEs. Need product form!",
-          "c": "$X$ should only depend on $x$, and $T$ only on $t$ for separation to work."
+          "1": "Sum doesn't work for separation of variables in PDEs. Need product form!",
+          "2": "$X$ should only depend on $x$, and $T$ only on $t$ for separation to work."
         }
+      },
+      "resultState": {
+        "description": "Assume separated solution"
       }
     },
     {
       "id": "step-2",
-      "title": "Separate the PDE",
+      "order": 2,
       "currentState": {
-        "expression": "$u = X(x)T(t)$, so $X(x)T'(t) = kX''(x)T(t)$",
         "description": "Divide both sides to separate variables."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How to separate $x$ and $t$?",
         "hint": "Divide by $X(x)T(t)$: $\\frac{T'(t)}{kT(t)} = \\frac{X''(x)}{X(x)}$. Left side depends only on $t$, right only on $x$. Both must equal a constant!"
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{T'(t)}{kT(t)} = \\frac{X''(x)}{X(x)} = -\\lambda$ (separation constant)"
+          "text": "$\\frac{T'(t)}{kT(t)} = \\frac{X''(x)}{X(x)} = -\\lambda$ (separation constant)"
         },
         {
           "id": "b",
-          "content": "$T'(t) = X''(x)$"
+          "text": "$T'(t) = X''(x)$"
         },
         {
           "id": "c",
-          "content": "$\\frac{T'(t)}{T(t)} = \\frac{X''(x)}{X(x)} = 0$"
+          "text": "$\\frac{T'(t)}{T(t)} = \\frac{X''(x)}{X(x)} = 0$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Dividing by $kXT$: $\\frac{T'}{kT} = \\frac{X''}{X}$. Since LHS depends only on $t$ and RHS only on $x$, both equal a constant $-\\lambda$.",
           "insight": "We choose $-\\lambda$ (negative) because boundary conditions lead to eigenvalue problem with negative eigenvalues."
         },
         "incorrect": {
-          "b": "Need to divide by the functions to separate! Each side must be constant.",
-          "c": "The constant is generally not zero. We call it $-\\lambda$ for convenience."
+          "1": "Need to divide by the functions to separate! Each side must be constant.",
+          "2": "The constant is generally not zero. We call it $-\\lambda$ for convenience."
         }
+      },
+      "resultState": {
+        "description": "Separate the PDE"
       }
     },
     {
       "id": "step-3",
-      "title": "Solve spatial eigenvalue problem",
+      "order": 3,
       "currentState": {
-        "expression": "$X''(x) = -\\lambda X(x)$ with $X(0) = X(L) = 0$",
         "description": "Boundary value problem for $X(x)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are the eigenvalues and eigenfunctions?",
         "hint": "For $\\lambda > 0$: $X(x) = A\\sin(\\sqrt{\\lambda}x) + B\\cos(\\sqrt{\\lambda}x)$. $X(0) = 0 \\implies B = 0$. $X(L) = 0 \\implies A\\sin(\\sqrt{\\lambda}L) = 0$. So $\\sqrt{\\lambda}L = n\\pi$, giving $\\lambda_n = \\frac{n^2\\pi^2}{L^2}$ and $X_n(x) = \\sin\\left(\\frac{n\\pi x}{L}\\right)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Eigenvalues: $\\lambda_n = \\frac{n^2\\pi^2}{L^2}$, Eigenfunctions: $X_n(x) = \\sin\\left(\\frac{n\\pi x}{L}\\right)$, $n = 1, 2, 3, \\ldots$"
+          "text": "Eigenvalues: $\\lambda_n = \\frac{n^2\\pi^2}{L^2}$, Eigenfunctions: $X_n(x) = \\sin\\left(\\frac{n\\pi x}{L}\\right)$, $n = 1, 2, 3, \\ldots$"
         },
         {
           "id": "b",
-          "content": "Eigenvalues: $\\lambda_n = n\\pi$, Eigenfunctions: $X_n = \\cos(nx)$"
+          "text": "Eigenvalues: $\\lambda_n = n\\pi$, Eigenfunctions: $X_n = \\cos(nx)$"
         },
         {
           "id": "c",
-          "content": "Only trivial solution $X(x) = 0$"
+          "text": "Only trivial solution $X(x) = 0$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Boundary conditions force $\\lambda_n = \\left(\\frac{n\\pi}{L}\\right)^2$ and $X_n(x) = \\sin\\left(\\frac{n\\pi x}{L}\\right)$ for $n = 1, 2, 3, \\ldots$",
           "insight": "These are the modes of vibration/heat distribution that satisfy the boundary conditions."
         },
         "incorrect": {
-          "b": "Check the boundary conditions! $\\cos(0) \\neq 0$, so cosine doesn't work. Need sine with the right frequencies.",
-          "c": "Non-trivial solutions exist for special values of $\\lambda$ (eigenvalues)!"
+          "1": "Check the boundary conditions! $\\cos(0) \\neq 0$, so cosine doesn't work. Need sine with the right frequencies.",
+          "2": "Non-trivial solutions exist for special values of $\\lambda$ (eigenvalues)!"
         }
+      },
+      "resultState": {
+        "description": "Solve spatial eigenvalue problem"
       }
     },
     {
       "id": "step-4",
-      "title": "Solve temporal equation and construct solution",
+      "order": 4,
       "currentState": {
-        "expression": "$T'(t) = -k\\lambda T(t)$ for each $\\lambda_n = \\frac{n^2\\pi^2}{L^2}$",
         "description": "ODE for time dependence."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the general solution?",
         "hint": "$T_n(t) = e^{-k\\lambda_n t} = e^{-kn^2\\pi^2 t/L^2}$. General solution: $u(x,t) = \\sum_{n=1}^\\infty c_n \\sin\\left(\\frac{n\\pi x}{L}\\right) e^{-kn^2\\pi^2 t/L^2}$ where $c_n$ are determined by $u(x,0) = f(x)$ (Fourier sine series)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$u(x,t) = \\sum_{n=1}^\\infty c_n \\sin\\left(\\frac{n\\pi x}{L}\\right) e^{-kn^2\\pi^2 t/L^2}$ where $c_n = \\frac{2}{L}\\int_0^L f(x)\\sin\\left(\\frac{n\\pi x}{L}\\right)\\,dx$"
+          "text": "$u(x,t) = \\sum_{n=1}^\\infty c_n \\sin\\left(\\frac{n\\pi x}{L}\\right) e^{-kn^2\\pi^2 t/L^2}$ where $c_n = \\frac{2}{L}\\int_0^L f(x)\\sin\\left(\\frac{n\\pi x}{L}\\right)\\,dx$"
         },
         {
           "id": "b",
-          "content": "$u(x,t) = \\sin(x)e^{-t}$"
+          "text": "$u(x,t) = \\sin(x)e^{-t}$"
         },
         {
           "id": "c",
-          "content": "$u(x,t) = \\sum_{n=1}^\\infty c_n \\sin(nx)e^{t}$ (growing exponentials)"
+          "text": "$u(x,t) = \\sum_{n=1}^\\infty c_n \\sin(nx)e^{t}$ (growing exponentials)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! By superposition, $u(x,t) = \\sum c_n X_n(x)T_n(t)$. The $c_n$ are Fourier coefficients: $c_n = \\frac{2}{L}\\int_0^L f(x)\\sin\\left(\\frac{n\\pi x}{L}\\right)\\,dx$.",
           "insight": "Each mode decays exponentially with rate $kn^2\\pi^2/L^2$. Higher modes (higher $n$) decay faster!"
         },
         "incorrect": {
-          "b": "Need infinite series to match arbitrary initial condition $f(x)$!",
-          "c": "Heat equation has decaying exponentials ($e^{-kt}$), not growing ones!"
+          "1": "Need infinite series to match arbitrary initial condition $f(x)$!",
+          "2": "Heat equation has decaying exponentials ($e^{-kt}$), not growing ones!"
         }
+      },
+      "resultState": {
+        "description": "Solve temporal equation and construct solution"
       }
     }
   ],

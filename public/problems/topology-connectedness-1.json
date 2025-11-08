@@ -5,7 +5,12 @@
   "topic": "Topology",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["topology", "connectedness", "continuous functions", "intermediate value theorem"],
+  "tags": [
+    "topology",
+    "connectedness",
+    "continuous functions",
+    "intermediate value theorem"
+  ],
   "statement": {
     "text": "Prove that the continuous image of a connected space is connected. Use this to prove the Intermediate Value Theorem."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Definition of connected space",
+      "order": 1,
       "currentState": {
-        "expression": "Space $X$ with topology",
         "description": "What does it mean for $X$ to be connected?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "When is a space connected?",
         "hint": "$X$ is connected if it cannot be written as a disjoint union of two non-empty open sets. Equivalently: the only sets that are both open and closed (clopen) are $\\emptyset$ and $X$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$X$ is connected if it cannot be written as $X = U \\cup V$ where $U, V$ are disjoint non-empty open sets"
+          "text": "$X$ is connected if it cannot be written as $X = U \\cup V$ where $U, V$ are disjoint non-empty open sets"
         },
         {
           "id": "b",
-          "content": "$X$ is connected if it has no open sets"
+          "text": "$X$ is connected if it has no open sets"
         },
         {
           "id": "c",
-          "content": "$X$ is connected if every point is connected to every other point by a path"
+          "text": "$X$ is connected if every point is connected to every other point by a path"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $X$ is disconnected if $X = U \\cup V$ with $U, V$ disjoint, non-empty, and open. Otherwise connected.",
           "insight": "Connected means \"in one piece\" - cannot be separated into disjoint open parts."
         },
         "incorrect": {
-          "b": "Connected spaces can have many open sets! Just not a separation into two disjoint non-empty open sets.",
-          "c": "That's path-connectedness, a stronger notion. We're defining connectedness (weaker concept)."
+          "1": "Connected spaces can have many open sets! Just not a separation into two disjoint non-empty open sets.",
+          "2": "That's path-connectedness, a stronger notion. We're defining connectedness (weaker concept)."
         }
+      },
+      "resultState": {
+        "description": "Definition of connected space"
       }
     },
     {
       "id": "step-2",
-      "title": "Prove continuous images are connected",
+      "order": 2,
       "currentState": {
-        "expression": "Let $f: X \\to Y$ be continuous, $X$ connected",
         "description": "Show $f(X)$ is connected."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How to prove $f(X)$ is connected?",
         "hint": "Proof by contradiction: Suppose $f(X) = U \\cup V$ with $U, V$ disjoint non-empty open in $f(X)$. Then $X = f^{-1}(U) \\cup f^{-1}(V)$ separates $X$ (both preimages are open by continuity). Contradiction!"
       },
       "options": [
         {
           "id": "a",
-          "content": "Assume $f(X)$ disconnected, then $f^{-1}(U)$ and $f^{-1}(V)$ separate $X$ (contradiction)"
+          "text": "Assume $f(X)$ disconnected, then $f^{-1}(U)$ and $f^{-1}(V)$ separate $X$ (contradiction)"
         },
         {
           "id": "b",
-          "content": "Show $f(X)$ has no open sets"
+          "text": "Show $f(X)$ has no open sets"
         },
         {
           "id": "c",
-          "content": "Continuous functions always map to connected spaces"
+          "text": "Continuous functions always map to connected spaces"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! If $f(X) = U \\cup V$ (separation), then $X = f^{-1}(U) \\cup f^{-1}(V)$ is also a separation (since $f$ continuous $\\implies$ preimages of open sets are open). But $X$ connected - contradiction!",
           "insight": "Continuity pulls back separations, so connected spaces stay connected under continuous maps."
         },
         "incorrect": {
-          "b": "$f(X)$ can have open sets! Just cannot be separated.",
-          "c": "Need to prove this! It's not automatic for all continuous functions."
+          "1": "$f(X)$ can have open sets! Just cannot be separated.",
+          "2": "Need to prove this! It's not automatic for all continuous functions."
         }
+      },
+      "resultState": {
+        "description": "Prove continuous images are connected"
       }
     },
     {
       "id": "step-3",
-      "title": "Connectedness of intervals",
+      "order": 3,
       "currentState": {
-        "expression": "Intervals $[a, b] \\subseteq \\mathbb{R}$",
         "description": "Are intervals connected?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Is $[a, b]$ connected in $\\mathbb{R}$?",
         "hint": "Yes! If $[a,b] = U \\cup V$ (disjoint non-empty open), pick $x \\in U$, $y \\in V$ with $x < y$. Then $c = \\sup(U \\cap [x,y])$ is in $[x,y]$. But $c \\notin U$ and $c \\notin V$ (check cases) - contradiction. So no separation exists."
       },
       "options": [
         {
           "id": "a",
-          "content": "Yes, $[a, b]$ is connected (cannot be separated into disjoint open sets)"
+          "text": "Yes, $[a, b]$ is connected (cannot be separated into disjoint open sets)"
         },
         {
           "id": "b",
-          "content": "No, $[a, b]$ is disconnected"
+          "text": "No, $[a, b]$ is disconnected"
         },
         {
           "id": "c",
-          "content": "Only single points are connected"
+          "text": "Only single points are connected"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Intervals in $\\mathbb{R}$ are connected. Proof uses completeness: any attempted separation leads to a point that cannot belong to either part.",
           "insight": "Connected subsets of $\\mathbb{R}$ are exactly the intervals (including infinite intervals)."
         },
         "incorrect": {
-          "b": "Intervals cannot be separated! They're \"in one piece.\"",
-          "c": "All intervals are connected, not just points!"
+          "1": "Intervals cannot be separated! They're \"in one piece.\"",
+          "2": "All intervals are connected, not just points!"
         }
+      },
+      "resultState": {
+        "description": "Connectedness of intervals"
       }
     },
     {
       "id": "step-4",
-      "title": "Prove Intermediate Value Theorem",
+      "order": 4,
       "currentState": {
-        "expression": "$f: [a, b] \\to \\mathbb{R}$ continuous, $f(a) < c < f(b)$",
         "description": "Show $\\exists x \\in [a, b]$ with $f(x) = c$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How does connectedness prove IVT?",
         "hint": "$[a,b]$ is connected. $f$ continuous $\\implies$ $f([a,b])$ is connected. Connected subsets of $\\mathbb{R}$ are intervals. Since $f(a), f(b) \\in f([a,b])$ and $f([a,b])$ is an interval, all values between $f(a)$ and $f(b)$ are in $f([a,b])$!"
       },
       "options": [
         {
           "id": "a",
-          "content": "$f([a,b])$ is connected $\\implies$ $f([a,b])$ is an interval $\\implies$ $c \\in f([a,b])$ since $f(a) < c < f(b)$"
+          "text": "$f([a,b])$ is connected $\\implies$ $f([a,b])$ is an interval $\\implies$ $c \\in f([a,b])$ since $f(a) < c < f(b)$"
         },
         {
           "id": "b",
-          "content": "Use mean value theorem"
+          "text": "Use mean value theorem"
         },
         {
           "id": "c",
-          "content": "Cannot prove without using limits"
+          "text": "Cannot prove without using limits"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Since $[a,b]$ connected and $f$ continuous, $f([a,b])$ is connected. Connected subsets of $\\mathbb{R}$ are intervals, so $f([a,b]) \\supseteq [\\min f, \\max f] \\ni c$.",
           "insight": "IVT is a topological consequence of connectedness! Continuous functions preserve connectedness."
         },
         "incorrect": {
-          "b": "MVT is different (requires differentiability). IVT only needs continuity!",
-          "c": "Connectedness provides a clean, topological proof without $\\epsilon$-$\\delta$!"
+          "1": "MVT is different (requires differentiability). IVT only needs continuity!",
+          "2": "Connectedness provides a clean, topological proof without $\\epsilon$-$\\delta$!"
         }
+      },
+      "resultState": {
+        "description": "Prove Intermediate Value Theorem"
       }
     }
   ],

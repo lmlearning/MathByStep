@@ -5,7 +5,12 @@
   "topic": "Differential Equations",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["differential equations", "Bernoulli equation", "substitution", "first-order ODEs"],
+  "tags": [
+    "differential equations",
+    "Bernoulli equation",
+    "substitution",
+    "first-order ODEs"
+  ],
   "statement": {
     "text": "Solve the Bernoulli equation $\\frac{dy}{dx} + \\frac{2y}{x} = xy^3$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recognize Bernoulli form",
+      "order": 1,
       "currentState": {
-        "expression": "$y' + \\frac{2y}{x} = xy^3$",
         "description": "Bernoulli equation: $y' + P(x)y = Q(x)y^n$ where $n \\neq 0, 1$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $n$ in this Bernoulli equation?",
         "hint": "Rewrite as $y' + \\frac{2}{x}y = xy^3$. Here $P(x) = \\frac{2}{x}$, $Q(x) = x$, and $n = 3$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$n = 3$ (Bernoulli equation with $P(x) = \\frac{2}{x}$, $Q(x) = x$)"
+          "text": "$n = 3$ (Bernoulli equation with $P(x) = \\frac{2}{x}$, $Q(x) = x$)"
         },
         {
           "id": "b",
-          "content": "$n = 1$ (linear equation)"
+          "text": "$n = 1$ (linear equation)"
         },
         {
           "id": "c",
-          "content": "$n = 2$"
+          "text": "$n = 2$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! The equation has form $y' + P(x)y = Q(x)y^3$ with $n=3$. This is Bernoulli since $n \\neq 0, 1$.",
           "insight": "Bernoulli equations can be linearized using the substitution $v = y^{1-n}$."
         },
         "incorrect": {
-          "b": "The right side has $y^3$, not $y^1$. This is nonlinear!",
-          "c": "The exponent on the right side is 3, not 2."
+          "1": "The right side has $y^3$, not $y^1$. This is nonlinear!",
+          "2": "The exponent on the right side is 3, not 2."
         }
+      },
+      "resultState": {
+        "description": "Recognize Bernoulli form"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply substitution",
+      "order": 2,
       "currentState": {
-        "expression": "$n = 3$, so use $v = y^{1-n} = y^{-2}$",
         "description": "Transform to linear equation in $v$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\frac{dv}{dx}$ in terms of $y$?",
         "hint": "$v = y^{-2}$, so $\\frac{dv}{dx} = -2y^{-3}\\frac{dy}{dx}$. Thus $\\frac{dy}{dx} = -\\frac{1}{2}y^3\\frac{dv}{dx}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{dv}{dx} = -2y^{-3}\\frac{dy}{dx}$, so $\\frac{dy}{dx} = -\\frac{y^3}{2}\\frac{dv}{dx}$"
+          "text": "$\\frac{dv}{dx} = -2y^{-3}\\frac{dy}{dx}$, so $\\frac{dy}{dx} = -\\frac{y^3}{2}\\frac{dv}{dx}$"
         },
         {
           "id": "b",
-          "content": "$\\frac{dv}{dx} = -2y^{-1}\\frac{dy}{dx}$"
+          "text": "$\\frac{dv}{dx} = -2y^{-1}\\frac{dy}{dx}$"
         },
         {
           "id": "c",
-          "content": "$\\frac{dv}{dx} = 2y^{-3}\\frac{dy}{dx}$ (positive)"
+          "text": "$\\frac{dv}{dx} = 2y^{-3}\\frac{dy}{dx}$ (positive)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Differentiating $v = y^{-2}$: $\\frac{dv}{dx} = -2y^{-3}\\frac{dy}{dx}$, giving $\\frac{dy}{dx} = -\\frac{1}{2}y^3\\frac{dv}{dx}$.",
           "insight": "This substitution will eliminate the $y^3$ term from the equation."
         },
         "incorrect": {
-          "b": "Chain rule on $y^{-2}$: derivative is $-2y^{-3}$, not $-2y^{-1}$.",
-          "c": "Don't forget the negative sign from the power rule!"
+          "1": "Chain rule on $y^{-2}$: derivative is $-2y^{-3}$, not $-2y^{-1}$.",
+          "2": "Don't forget the negative sign from the power rule!"
         }
+      },
+      "resultState": {
+        "description": "Apply substitution"
       }
     },
     {
       "id": "step-3",
-      "title": "Substitute and simplify",
+      "order": 3,
       "currentState": {
-        "expression": "$y' + \\frac{2y}{x} = xy^3$",
         "description": "Replace $y'$ and divide by $y^3$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What equation do we get in $v$?",
         "hint": "Divide original by $y^3$: $y^{-3}y' + \\frac{2y^{-2}}{x} = x$. Substitute: $-\\frac{1}{2}\\frac{dv}{dx} + \\frac{2v}{x} = x$. Multiply by $-2$: $\\frac{dv}{dx} - \\frac{4v}{x} = -2x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{dv}{dx} - \\frac{4v}{x} = -2x$ (linear in $v$!)"
+          "text": "$\\frac{dv}{dx} - \\frac{4v}{x} = -2x$ (linear in $v$!)"
         },
         {
           "id": "b",
-          "content": "$\\frac{dv}{dx} + \\frac{2v}{x} = x$"
+          "text": "$\\frac{dv}{dx} + \\frac{2v}{x} = x$"
         },
         {
           "id": "c",
-          "content": "$v' - \\frac{2v}{x} = -x$"
+          "text": "$v' - \\frac{2v}{x} = -x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Dividing original equation by $y^3$ and substituting gives: $-\\frac{1}{2}v' + \\frac{2v}{x} = x$. Multiply by $-2$: $v' - \\frac{4v}{x} = -2x$.",
           "insight": "The Bernoulli equation is now linear in $v$! We can use integrating factor method."
         },
         "incorrect": {
-          "b": "After substitution and simplification, the coefficient of $v/x$ is $-4$, not $+2$.",
-          "c": "The coefficient of $v/x$ should be $-4$ and right side is $-2x$."
+          "1": "After substitution and simplification, the coefficient of $v/x$ is $-4$, not $+2$.",
+          "2": "The coefficient of $v/x$ should be $-4$ and right side is $-2x$."
         }
+      },
+      "resultState": {
+        "description": "Substitute and simplify"
       }
     },
     {
       "id": "step-4",
-      "title": "Solve linear equation",
+      "order": 4,
       "currentState": {
-        "expression": "$v' - \\frac{4v}{x} = -2x$",
         "description": "Use integrating factor $\\mu = e^{\\int -4/x\\, dx} = x^{-4}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the solution for $v$?",
         "hint": "Integrating factor: $\\mu = x^{-4}$. Multiply: $(x^{-4}v)' = -2x \\cdot x^{-4} = -2x^{-3}$. Integrate: $x^{-4}v = \\frac{x^{-2}}{1} + C = x^{-2} + C$. So $v = x^2 + Cx^4$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$v = x^2 + Cx^4$, so $y^{-2} = x^2 + Cx^4$ giving $y = \\frac{1}{\\sqrt{x^2 + Cx^4}}$"
+          "text": "$v = x^2 + Cx^4$, so $y^{-2} = x^2 + Cx^4$ giving $y = \\frac{1}{\\sqrt{x^2 + Cx^4}}$"
         },
         {
           "id": "b",
-          "content": "$v = x^2 + C$"
+          "text": "$v = x^2 + C$"
         },
         {
           "id": "c",
-          "content": "$v = Cx^2$"
+          "text": "$v = Cx^2$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! After integrating factor method: $v = x^2 + Cx^4$. Since $v = y^{-2}$: $y^{-2} = x^2 + Cx^4$, so $y = \\pm(x^2 + Cx^4)^{-1/2}$.",
           "insight": "Bernoulli equations reduce to linear equations via clever substitution!"
         },
         "incorrect": {
-          "b": "After multiplying by $\\mu = x^{-4}$ and integrating, you get $x^{-4}v = x^{-2} + C$, so $v = x^2 + Cx^4$.",
-          "c": "Don't forget the particular solution! Integration gives both homogeneous and particular parts."
+          "1": "After multiplying by $\\mu = x^{-4}$ and integrating, you get $x^{-4}v = x^{-2} + C$, so $v = x^2 + Cx^4$.",
+          "2": "Don't forget the particular solution! Integration gives both homogeneous and particular parts."
         }
+      },
+      "resultState": {
+        "description": "Solve linear equation"
       }
     }
   ],

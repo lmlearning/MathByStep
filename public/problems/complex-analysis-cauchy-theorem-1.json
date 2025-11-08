@@ -5,7 +5,12 @@
   "topic": "Complex Analysis",
   "difficulty": 4,
   "estimatedTime": 13,
-  "tags": ["complex analysis", "Cauchy theorem", "contour integration", "holomorphic functions"],
+  "tags": [
+    "complex analysis",
+    "Cauchy theorem",
+    "contour integration",
+    "holomorphic functions"
+  ],
   "statement": {
     "text": "Use Cauchy's Integral Theorem and Formula to evaluate $\\oint_C \\frac{e^z}{z^2(z-1)} dz$ where $C$ is the circle $|z| = 2$ traversed counterclockwise."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify singularities",
+      "order": 1,
       "currentState": {
-        "expression": "$f(z) = \\frac{e^z}{z^2(z-1)}$, contour $C: |z| = 2$",
         "description": "Find where $f$ is not analytic."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Where are the singularities?",
         "hint": "Singularities at zeros of denominator: $z = 0$ (order 2) and $z = 1$ (order 1). Both lie inside $|z| = 2$ since $|0| = 0 < 2$ and $|1| = 1 < 2$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Singularities at $z = 0$ (pole of order 2) and $z = 1$ (simple pole), both inside $C$"
+          "text": "Singularities at $z = 0$ (pole of order 2) and $z = 1$ (simple pole), both inside $C$"
         },
         {
           "id": "b",
-          "content": "Singularity only at $z = 0$"
+          "text": "Singularity only at $z = 0$"
         },
         {
           "id": "c",
-          "content": "No singularities inside $C$"
+          "text": "No singularities inside $C$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $f(z) = \\frac{e^z}{z^2(z-1)}$ has poles at $z = 0$ (order 2) and $z = 1$ (simple pole). Both are inside the circle $|z| = 2$.",
           "insight": "Since singularities are inside the contour, we cannot directly apply Cauchy's Theorem (which requires analyticity). Need Residue Theorem or partial fractions."
         },
         "incorrect": {
-          "b": "Don't forget $z = 1$! The denominator has factor $(z-1)$.",
-          "c": "$z = 0$ and $z = 1$ are both inside $|z| = 2$. Function is not analytic there!"
+          "1": "Don't forget $z = 1$! The denominator has factor $(z-1)$.",
+          "2": "$z = 0$ and $z = 1$ are both inside $|z| = 2$. Function is not analytic there!"
         }
+      },
+      "resultState": {
+        "description": "Identify singularities"
       }
     },
     {
       "id": "step-2",
-      "title": "Use partial fractions approach",
+      "order": 2,
       "currentState": {
-        "expression": "$\\frac{e^z}{z^2(z-1)}$",
         "description": "Rewrite to use Cauchy's Integral Formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How to split the integral?",
         "hint": "Partial fractions of $\\frac{1}{z^2(z-1)}$: $\\frac{1}{z^2(z-1)} = \\frac{A}{z} + \\frac{B}{z^2} + \\frac{C}{z-1}$. Solving: $A = -1$, $B = -1$, $C = 1$. So $f(z) = e^z\\left(-\\frac{1}{z} - \\frac{1}{z^2} + \\frac{1}{z-1}\\right)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f(z) = -\\frac{e^z}{z} - \\frac{e^z}{z^2} + \\frac{e^z}{z-1}$"
+          "text": "$f(z) = -\\frac{e^z}{z} - \\frac{e^z}{z^2} + \\frac{e^z}{z-1}$"
         },
         {
           "id": "b",
-          "content": "$f(z) = \\frac{e^z}{z^2} + \\frac{e^z}{z-1}$"
+          "text": "$f(z) = \\frac{e^z}{z^2} + \\frac{e^z}{z-1}$"
         },
         {
           "id": "c",
-          "content": "Cannot use partial fractions with $e^z$"
+          "text": "Cannot use partial fractions with $e^z$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Partial fractions: $\\frac{1}{z^2(z-1)} = -\\frac{1}{z} - \\frac{1}{z^2} + \\frac{1}{z-1}$. Multiply by $e^z$ to get the decomposition.",
           "insight": "This splits the integral into three parts, each handled by Cauchy's Integral Formula."
         },
         "incorrect": {
-          "b": "Missing the $-\\frac{e^z}{z}$ term from partial fractions!",
-          "c": "Partial fractions work on the rational part $\\frac{1}{z^2(z-1)}$. Then multiply by $e^z$."
+          "1": "Missing the $-\\frac{e^z}{z}$ term from partial fractions!",
+          "2": "Partial fractions work on the rational part $\\frac{1}{z^2(z-1)}$. Then multiply by $e^z$."
         }
+      },
+      "resultState": {
+        "description": "Use partial fractions approach"
       }
     },
     {
       "id": "step-3",
-      "title": "Apply Cauchy's Integral Formula",
+      "order": 3,
       "currentState": {
-        "expression": "$\\oint_C f(z)\\,dz = -\\oint_C \\frac{e^z}{z}\\,dz - \\oint_C \\frac{e^z}{z^2}\\,dz + \\oint_C \\frac{e^z}{z-1}\\,dz$",
         "description": "Use Cauchy formulas."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are the three integrals?",
         "hint": "Cauchy: $\\oint_C \\frac{f(z)}{z-a}\\,dz = 2\\pi i f(a)$ and $\\oint_C \\frac{f(z)}{(z-a)^2}\\,dz = 2\\pi i f'(a)$. So: $-2\\pi i e^0 - 2\\pi i(e^z)' |_{z=0} + 2\\pi i e^1 = -2\\pi i - 2\\pi i + 2\\pi i e$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$-2\\pi i \\cdot 1 - 2\\pi i \\cdot 1 + 2\\pi i \\cdot e = 2\\pi i(e - 2)$"
+          "text": "$-2\\pi i \\cdot 1 - 2\\pi i \\cdot 1 + 2\\pi i \\cdot e = 2\\pi i(e - 2)$"
         },
         {
           "id": "b",
-          "content": "$2\\pi i e$"
+          "text": "$2\\pi i e$"
         },
         {
           "id": "c",
-          "content": "$0$ (all singularities cancel)"
+          "text": "$0$ (all singularities cancel)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Using Cauchy formulas: $\\oint \\frac{e^z}{z}dz = 2\\pi i \\cdot e^0 = 2\\pi i$. $\\oint \\frac{e^z}{z^2}dz = 2\\pi i \\cdot (e^z)'|_0 = 2\\pi i$. $\\oint \\frac{e^z}{z-1}dz = 2\\pi i \\cdot e^1 = 2\\pi i e$. Total: $2\\pi i(e-2)$.",
           "insight": "Cauchy's Integral Formula generalizes: $\\oint_C \\frac{f(z)}{(z-a)^{n+1}}dz = \\frac{2\\pi i}{n!}f^{(n)}(a)$."
         },
         "incorrect": {
-          "b": "Don't forget the other two terms! Each integral contributes.",
-          "c": "The integrals don't sum to zero. Calculate each using Cauchy's formula!"
+          "1": "Don't forget the other two terms! Each integral contributes.",
+          "2": "The integrals don't sum to zero. Calculate each using Cauchy's formula!"
         }
+      },
+      "resultState": {
+        "description": "Apply Cauchy's Integral Formula"
       }
     },
     {
       "id": "step-4",
-      "title": "Final answer",
+      "order": 4,
       "currentState": {
-        "expression": "$\\oint_C \\frac{e^z}{z^2(z-1)}dz = 2\\pi i(e - 2)$",
         "description": "Simplify."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Can we simplify further?",
         "hint": "$2\\pi i(e - 2)$ is already simplified."
       },
       "options": [
         {
           "id": "a",
-          "content": "$2\\pi i(e - 2)$ (final answer)"
+          "text": "$2\\pi i(e - 2)$ (final answer)"
         },
         {
           "id": "b",
-          "content": "$2\\pi i e$"
+          "text": "$2\\pi i e$"
         },
         {
           "id": "c",
-          "content": "$-4\\pi i$"
+          "text": "$-4\\pi i$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! The integral equals $2\\pi i(e - 2) \\approx 2\\pi i(2.718 - 2) = 2\\pi i(0.718) \\approx 4.51i$.",
           "insight": "Cauchy's formulas reduce complex contour integrals to simple function evaluations!"
         },
         "incorrect": {
-          "b": "Missing the $-4\\pi i$ contribution from the other two terms!",
-          "c": "Missing the $2\\pi i e$ term! All three integrals contribute."
+          "1": "Missing the $-4\\pi i$ contribution from the other two terms!",
+          "2": "Missing the $2\\pi i e$ term! All three integrals contribute."
         }
+      },
+      "resultState": {
+        "description": "Final answer"
       }
     }
   ],

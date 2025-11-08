@@ -5,7 +5,12 @@
   "topic": "Linear Algebra",
   "difficulty": 4,
   "estimatedTime": 15,
-  "tags": ["linear algebra", "QR decomposition", "Gram-Schmidt", "orthogonal matrices"],
+  "tags": [
+    "linear algebra",
+    "QR decomposition",
+    "Gram-Schmidt",
+    "orthogonal matrices"
+  ],
   "statement": {
     "text": "Find the QR decomposition of the matrix $A = \\begin{bmatrix} 1 & 1 \\\\\\\\ 1 & 0 \\\\\\\\ 1 & 1 \\end{bmatrix}$ using the Gram-Schmidt process."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Understand QR decomposition",
+      "order": 1,
       "currentState": {
-        "expression": "$A = QR$ where $Q$ is orthogonal, $R$ is upper triangular",
         "description": "For $m \\times n$ matrix $A$ with $m \\geq n$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What properties must $Q$ and $R$ have?",
         "hint": "$Q$ is $m \\times n$ with orthonormal columns ($Q^TQ = I_n$). $R$ is $n \\times n$ upper triangular. Gram-Schmidt orthogonalizes columns of $A$ to get $Q$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$Q$ has orthonormal columns, $R$ is upper triangular, $A = QR$"
+          "text": "$Q$ has orthonormal columns, $R$ is upper triangular, $A = QR$"
         },
         {
           "id": "b",
-          "content": "$Q$ is upper triangular, $R$ is orthogonal"
+          "text": "$Q$ is upper triangular, $R$ is orthogonal"
         },
         {
           "id": "c",
-          "content": "$Q$ and $R$ are both diagonal"
+          "text": "$Q$ and $R$ are both diagonal"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! QR decomposition factors $A = QR$ where $Q$ has orthonormal columns and $R$ is upper triangular with positive diagonal entries.",
           "insight": "QR decomposition is fundamental for solving least squares, computing eigenvalues, and numerical linear algebra."
         },
         "incorrect": {
-          "b": "Q is orthogonal (orthonormal columns), not upper triangular! R is upper triangular.",
-          "c": "R is upper triangular (not just diagonal), and Q has orthonormal columns (not diagonal)."
+          "1": "Q is orthogonal (orthonormal columns), not upper triangular! R is upper triangular.",
+          "2": "R is upper triangular (not just diagonal), and Q has orthonormal columns (not diagonal)."
         }
+      },
+      "resultState": {
+        "description": "Understand QR decomposition"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply Gram-Schmidt: first vector",
+      "order": 2,
       "currentState": {
-        "expression": "$A = \\begin{bmatrix} \\mathbf{a}_1 & \\mathbf{a}_2 \\end{bmatrix} = \\begin{bmatrix} 1 & 1 \\\\\\\\ 1 & 0 \\\\\\\\ 1 & 1 \\end{bmatrix}$",
         "description": "Start with $\\mathbf{a}_1 = \\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\mathbf{q}_1$ (first orthonormal vector)?",
         "hint": "$\\mathbf{u}_1 = \\mathbf{a}_1 = \\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$. $\\|\\mathbf{u}_1\\| = \\sqrt{1+1+1} = \\sqrt{3}$. $\\mathbf{q}_1 = \\frac{\\mathbf{u}_1}{\\|\\mathbf{u}_1\\|} = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\mathbf{q}_1 = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$ (normalized $\\mathbf{a}_1$)"
+          "text": "$\\mathbf{q}_1 = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$ (normalized $\\mathbf{a}_1$)"
         },
         {
           "id": "b",
-          "content": "$\\mathbf{q}_1 = \\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$ (unnormalized)"
+          "text": "$\\mathbf{q}_1 = \\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$ (unnormalized)"
         },
         {
           "id": "c",
-          "content": "$\\mathbf{q}_1 = \\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 0 \\end{bmatrix}$"
+          "text": "$\\mathbf{q}_1 = \\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 0 \\end{bmatrix}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Normalize $\\mathbf{a}_1$: $\\mathbf{q}_1 = \\frac{\\mathbf{a}_1}{\\|\\mathbf{a}_1\\|} = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$. Check: $\\|\\mathbf{q}_1\\| = 1$ ✓",
           "insight": "First step of Gram-Schmidt is just normalization of the first vector."
         },
         "incorrect": {
-          "b": "Must normalize! $\\mathbf{q}_1$ should be a unit vector.",
-          "c": "Start with the first column of $A$, not a standard basis vector!"
+          "1": "Must normalize! $\\mathbf{q}_1$ should be a unit vector.",
+          "2": "Start with the first column of $A$, not a standard basis vector!"
         }
+      },
+      "resultState": {
+        "description": "Apply Gram-Schmidt: first vector"
       }
     },
     {
       "id": "step-3",
-      "title": "Apply Gram-Schmidt: second vector",
+      "order": 3,
       "currentState": {
-        "expression": "$\\mathbf{a}_2 = \\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 1 \\end{bmatrix}$, $\\mathbf{q}_1 = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$",
         "description": "Orthogonalize and normalize."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\mathbf{q}_2$?",
         "hint": "Subtract projection: $\\mathbf{u}_2 = \\mathbf{a}_2 - (\\mathbf{q}_1^T\\mathbf{a}_2)\\mathbf{q}_1$. $\\mathbf{q}_1^T\\mathbf{a}_2 = \\frac{1}{\\sqrt{3}}(1+0+1) = \\frac{2}{\\sqrt{3}}$. So $\\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 1 \\end{bmatrix} - \\frac{2}{\\sqrt{3}} \\cdot \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 1 \\end{bmatrix} - \\frac{2}{3}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 1/3 \\\\\\\\ -2/3 \\\\\\\\ 1/3 \\end{bmatrix}$. $\\|\\mathbf{u}_2\\| = \\sqrt{1/9 + 4/9 + 1/9} = \\sqrt{6/9} = \\sqrt{2/3}$. $\\mathbf{q}_2 = \\frac{1}{\\sqrt{2/3}}\\begin{bmatrix} 1/3 \\\\\\\\ -2/3 \\\\\\\\ 1/3 \\end{bmatrix} = \\sqrt{3/2}\\begin{bmatrix} 1/3 \\\\\\\\ -2/3 \\\\\\\\ 1/3 \\end{bmatrix} = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\mathbf{q}_2 = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$"
+          "text": "$\\mathbf{q}_2 = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$"
         },
         {
           "id": "b",
-          "content": "$\\mathbf{q}_2 = \\frac{1}{\\sqrt{2}}\\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 1 \\end{bmatrix}$"
+          "text": "$\\mathbf{q}_2 = \\frac{1}{\\sqrt{2}}\\begin{bmatrix} 1 \\\\\\\\ 0 \\\\\\\\ 1 \\end{bmatrix}$"
         },
         {
           "id": "c",
-          "content": "$\\mathbf{q}_2 = \\begin{bmatrix} 0 \\\\\\\\ 1 \\\\\\\\ 0 \\end{bmatrix}$"
+          "text": "$\\mathbf{q}_2 = \\begin{bmatrix} 0 \\\\\\\\ 1 \\\\\\\\ 0 \\end{bmatrix}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Subtract projection onto $\\mathbf{q}_1$: $\\mathbf{u}_2 = \\mathbf{a}_2 - (\\mathbf{q}_1^T\\mathbf{a}_2)\\mathbf{q}_1 = \\frac{1}{3}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$. Normalize: $\\mathbf{q}_2 = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$.",
           "insight": "Check orthogonality: $\\mathbf{q}_1^T\\mathbf{q}_2 = \\frac{1}{\\sqrt{18}}(1 - 2 + 1) = 0$ ✓"
         },
         "incorrect": {
-          "b": "Must subtract the projection onto $\\mathbf{q}_1$ first before normalizing!",
-          "c": "Need to orthogonalize against $\\mathbf{q}_1$, not choose arbitrary perpendicular vector!"
+          "1": "Must subtract the projection onto $\\mathbf{q}_1$ first before normalizing!",
+          "2": "Need to orthogonalize against $\\mathbf{q}_1$, not choose arbitrary perpendicular vector!"
         }
+      },
+      "resultState": {
+        "description": "Apply Gram-Schmidt: second vector"
       }
     },
     {
       "id": "step-4",
-      "title": "Form Q and compute R",
+      "order": 4,
       "currentState": {
-        "expression": "$Q = \\begin{bmatrix} \\mathbf{q}_1 & \\mathbf{q}_2 \\end{bmatrix}$",
         "description": "Find $R = Q^TA$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $Q$ and $R$?",
         "hint": "$Q = \\begin{bmatrix} 1/\\sqrt{3} & 1/\\sqrt{6} \\\\\\\\ 1/\\sqrt{3} & -2/\\sqrt{6} \\\\\\\\ 1/\\sqrt{3} & 1/\\sqrt{6} \\end{bmatrix}$. $R = Q^TA = \\begin{bmatrix} \\mathbf{q}_1^T\\mathbf{a}_1 & \\mathbf{q}_1^T\\mathbf{a}_2 \\\\\\\\ 0 & \\mathbf{q}_2^T\\mathbf{a}_2 \\end{bmatrix} = \\begin{bmatrix} \\sqrt{3} & 2/\\sqrt{3} \\\\\\\\ 0 & \\sqrt{2/3} \\end{bmatrix}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$Q = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} \\sqrt{2} & 1 \\\\\\\\ \\sqrt{2} & -2 \\\\\\\\ \\sqrt{2} & 1 \\end{bmatrix}$, $R = \\begin{bmatrix} \\sqrt{3} & 2/\\sqrt{3} \\\\\\\\ 0 & \\sqrt{2/3} \\end{bmatrix}$"
+          "text": "$Q = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} \\sqrt{2} & 1 \\\\\\\\ \\sqrt{2} & -2 \\\\\\\\ \\sqrt{2} & 1 \\end{bmatrix}$, $R = \\begin{bmatrix} \\sqrt{3} & 2/\\sqrt{3} \\\\\\\\ 0 & \\sqrt{2/3} \\end{bmatrix}$"
         },
         {
           "id": "b",
-          "content": "$Q = A$, $R = I$"
+          "text": "$Q = A$, $R = I$"
         },
         {
           "id": "c",
-          "content": "$Q = I$, $R = A$"
+          "text": "$Q = I$, $R = A$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $Q$ has orthonormal columns $\\mathbf{q}_1, \\mathbf{q}_2$. $R = Q^TA$ is upper triangular with entries $r_{ij} = \\mathbf{q}_i^T\\mathbf{a}_j$. Verify: $QR = A$ ✓",
           "insight": "QR decomposition: $A = QR$ where columns of $Q$ are orthonormal basis for column space of $A$."
         },
         "incorrect": {
-          "b": "$A$ doesn't have orthonormal columns, so $Q \\neq A$!",
-          "c": "$Q$ should have orthonormal columns, not be the identity!"
+          "1": "$A$ doesn't have orthonormal columns, so $Q \\neq A$!",
+          "2": "$Q$ should have orthonormal columns, not be the identity!"
         }
+      },
+      "resultState": {
+        "description": "Form Q and compute R"
       }
     }
   ],

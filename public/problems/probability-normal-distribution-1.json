@@ -5,7 +5,12 @@
   "topic": "Probability & Statistics",
   "difficulty": 2,
   "estimatedTime": 10,
-  "tags": ["probability", "normal distribution", "z-scores", "standard normal"],
+  "tags": [
+    "probability",
+    "normal distribution",
+    "z-scores",
+    "standard normal"
+  ],
   "statement": {
     "text": "Scores on a test are normally distributed with mean $\\mu = 75$ and standard deviation $\\sigma = 10$. What percentage of scores are between 65 and 85?"
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Standardize the values",
+      "order": 1,
       "currentState": {
-        "expression": "$X \\sim N(75, 10^2)$, find $P(65 < X < 85)$",
         "description": "Convert to standard normal using $Z = \\frac{X - \\mu}{\\sigma}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are the z-scores for 65 and 85?",
         "hint": "$z_1 = \\frac{65-75}{10} = -1$. $z_2 = \\frac{85-75}{10} = 1$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$z_1 = -1$ (for $x=65$) and $z_2 = 1$ (for $x=85$)"
+          "text": "$z_1 = -1$ (for $x=65$) and $z_2 = 1$ (for $x=85$)"
         },
         {
           "id": "b",
-          "content": "$z_1 = -10$ and $z_2 = 10$"
+          "text": "$z_1 = -10$ and $z_2 = 10$"
         },
         {
           "id": "c",
-          "content": "$z_1 = 0.65$ and $z_2 = 0.85$"
+          "text": "$z_1 = 0.65$ and $z_2 = 0.85$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $z = \\frac{x-\\mu}{\\sigma}$. For $x=65$: $z = \\frac{65-75}{10} = -1$. For $x=85$: $z = \\frac{85-75}{10} = 1$.",
           "insight": "Z-scores measure how many standard deviations away from the mean a value is."
         },
         "incorrect": {
-          "b": "Z-score formula is $(x-\\mu)/\\sigma$, not $x-\\mu$. Divide by $\\sigma=10$!",
-          "c": "Don't divide by 100! Formula: $z = (x-75)/10$."
+          "1": "Z-score formula is $(x-\\mu)/\\sigma$, not $x-\\mu$. Divide by $\\sigma=10$!",
+          "2": "Don't divide by 100! Formula: $z = (x-75)/10$."
         }
+      },
+      "resultState": {
+        "description": "Standardize the values"
       }
     },
     {
       "id": "step-2",
-      "title": "Rewrite probability",
+      "order": 2,
       "currentState": {
-        "expression": "$P(65 < X < 85) = P(-1 < Z < 1)$",
         "description": "Where $Z \\sim N(0,1)$ is standard normal."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does $P(-1 < Z < 1)$ represent?",
         "hint": "Probability that $Z$ is within 1 standard deviation of the mean (empirical rule: about 68%)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(-1 < Z < 1)$ = probability within 1 std dev of mean"
+          "text": "$P(-1 < Z < 1)$ = probability within 1 std dev of mean"
         },
         {
           "id": "b",
-          "content": "$P(-1 < Z < 1) = 0.5$ (half the distribution)"
+          "text": "$P(-1 < Z < 1) = 0.5$ (half the distribution)"
         },
         {
           "id": "c",
-          "content": "$P(-1 < Z < 1) = 1$ (certainty)"
+          "text": "$P(-1 < Z < 1) = 1$ (certainty)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! This is the probability that a standard normal variable is between -1 and 1 (within one standard deviation).",
           "insight": "Empirical rule: ~68% within 1σ, ~95% within 2σ, ~99.7% within 3σ."
         },
         "incorrect": {
-          "b": "Half would be $P(Z < 0)$. This interval is symmetric around 0 but smaller.",
-          "c": "Not all values are between -1 and 1! The tails extend to $\\pm\\infty$."
+          "1": "Half would be $P(Z < 0)$. This interval is symmetric around 0 but smaller.",
+          "2": "Not all values are between -1 and 1! The tails extend to $\\pm\\infty$."
         }
+      },
+      "resultState": {
+        "description": "Rewrite probability"
       }
     },
     {
       "id": "step-3",
-      "title": "Use standard normal table",
+      "order": 3,
       "currentState": {
-        "expression": "$P(-1 < Z < 1)$",
         "description": "Use symmetry and tables."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $P(-1 < Z < 1)$?",
         "hint": "$P(-1 < Z < 1) = P(Z < 1) - P(Z < -1) = \\Phi(1) - \\Phi(-1) = 0.8413 - 0.1587 = 0.6826 \\approx 68.3\\%$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(-1 < Z < 1) = \\Phi(1) - \\Phi(-1) \\approx 0.6826$ or $68.26\\%$"
+          "text": "$P(-1 < Z < 1) = \\Phi(1) - \\Phi(-1) \\approx 0.6826$ or $68.26\\%$"
         },
         {
           "id": "b",
-          "content": "$P(-1 < Z < 1) = 0.5$ or $50\\%$"
+          "text": "$P(-1 < Z < 1) = 0.5$ or $50\\%$"
         },
         {
           "id": "c",
-          "content": "$P(-1 < Z < 1) = 0.95$ or $95\\%$"
+          "text": "$P(-1 < Z < 1) = 0.95$ or $95\\%$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Using standard normal tables: $\\Phi(1) \\approx 0.8413$ and $\\Phi(-1) \\approx 0.1587$. So $P(-1 < Z < 1) \\approx 0.6826$ or about 68%.",
           "insight": "This is the empirical rule: about 68% of data falls within 1 standard deviation of the mean in a normal distribution."
         },
         "incorrect": {
-          "b": "That's the probability of being above or below the mean, not within 1 standard deviation.",
-          "c": "That's approximately $P(-2 < Z < 2)$ (within 2 standard deviations)."
+          "1": "That's the probability of being above or below the mean, not within 1 standard deviation.",
+          "2": "That's approximately $P(-2 < Z < 2)$ (within 2 standard deviations)."
         }
+      },
+      "resultState": {
+        "description": "Use standard normal table"
       }
     },
     {
       "id": "step-4",
-      "title": "Interpret the result",
+      "order": 4,
       "currentState": {
-        "expression": "$P(65 < X < 85) \\approx 0.6826$",
         "description": "Convert to percentage."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What percentage of scores are between 65 and 85?",
         "hint": "$0.6826 \\times 100\\% \\approx 68.26\\%$ or about 68%."
       },
       "options": [
         {
           "id": "a",
-          "content": "Approximately $68\\%$ of scores are between 65 and 85"
+          "text": "Approximately $68\\%$ of scores are between 65 and 85"
         },
         {
           "id": "b",
-          "content": "Approximately $95\\%$ of scores are between 65 and 85"
+          "text": "Approximately $95\\%$ of scores are between 65 and 85"
         },
         {
           "id": "c",
-          "content": "Exactly $50\\%$ of scores are between 65 and 85"
+          "text": "Exactly $50\\%$ of scores are between 65 and 85"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! About 68% of test scores fall between 65 and 85, which is $\\mu \\pm \\sigma$ (one standard deviation from the mean).",
           "insight": "This is a classic application of the empirical rule for normal distributions."
         },
         "incorrect": {
-          "b": "95% is for $\\mu \\pm 2\\sigma$ (55 to 95 in this case), not $\\mu \\pm \\sigma$.",
-          "c": "50% would be for an asymmetric interval like below the mean."
+          "1": "95% is for $\\mu \\pm 2\\sigma$ (55 to 95 in this case), not $\\mu \\pm \\sigma$.",
+          "2": "50% would be for an asymmetric interval like below the mean."
         }
+      },
+      "resultState": {
+        "description": "Interpret the result"
       }
     }
   ],
