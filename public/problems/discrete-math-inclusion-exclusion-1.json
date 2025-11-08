@@ -1,0 +1,203 @@
+{
+  "id": "discrete-math-inclusion-exclusion-1",
+  "type": "problem",
+  "title": "Inclusion-Exclusion Principle",
+  "topic": "Discrete Mathematics",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "discrete-math",
+    "combinatorics",
+    "inclusion-exclusion",
+    "counting"
+  ],
+  "statement": {
+    "text": "How many integers from 1 to 100 are divisible by 2, 3, or 5?"
+  },
+  "objectives": [
+    "Understand inclusion-exclusion principle",
+    "Count elements in union of sets",
+    "Handle overlapping conditions"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Count integers in $\\{1, 2, \\ldots, 100\\}$ divisible by 2, 3, or 5."
+      },
+      "prompt": {
+        "question": "What is the inclusion-exclusion principle for three sets $A$, $B$, $C$?",
+        "hint": "$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$"
+        },
+        {
+          "id": "b",
+          "text": "$|A \\cup B \\cup C| = |A| + |B| + |C|$"
+        },
+        {
+          "id": "c",
+          "text": "$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B \\cap C|$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The inclusion-exclusion principle accounts for overcounting:\n\n$$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$$\n\n**Why:** When we add $|A| + |B| + |C|$, elements in two sets are counted twice, and elements in all three sets are counted three times. We subtract pairwise intersections to correct, but then elements in all three are removed too many times, so we add back $|A \\cap B \\cap C|$!",
+          "insight": "Pattern: add individual sets, subtract pairs, add triples, subtract quadruples, ... (alternating signs)!"
+        },
+        "incorrect": {
+          "1": "This ignores overlaps! Elements in multiple sets would be counted multiple times.",
+          "2": "Missing pairwise intersections! Need to subtract $|A \\cap B|$, $|A \\cap C|$, $|B \\cap C|$ first."
+        }
+      },
+      "resultState": {
+        "description": "Inclusion-exclusion formula established"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply inclusion-exclusion to divisibility problem."
+      },
+      "prompt": {
+        "question": "Let $A$ = multiples of 2, $B$ = multiples of 3, $C$ = multiples of 5 in $\\{1, \\ldots, 100\\}$. What are $|A|$, $|B|$, $|C|$?",
+        "hint": "$|A| = \\lfloor 100/2 \\rfloor = 50$, $|B| = \\lfloor 100/3 \\rfloor = 33$, $|C| = \\lfloor 100/5 \\rfloor = 20$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$|A| = 50, |B| = 33, |C| = 20$"
+        },
+        {
+          "id": "b",
+          "text": "$|A| = 49, |B| = 33, |C| = 19$"
+        },
+        {
+          "id": "c",
+          "text": "$|A| = 100, |B| = 100, |C| = 100$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Count multiples up to 100:\n\n- Multiples of 2: $2, 4, 6, \\ldots, 100$. Count: $\\lfloor 100/2 \\rfloor = 50$\n- Multiples of 3: $3, 6, 9, \\ldots, 99$. Count: $\\lfloor 100/3 \\rfloor = 33$\n- Multiples of 5: $5, 10, 15, \\ldots, 100$. Count: $\\lfloor 100/5 \\rfloor = 20$\n\nSo $|A| = 50$, $|B| = 33$, $|C| = 20$.",
+          "insight": "General formula: multiples of $n$ in $\\{1, \\ldots, N\\}$ count is $\\lfloor N/n \\rfloor$."
+        },
+        "incorrect": {
+          "1": "Close! But 100 is divisible by 2, and 100 is divisible by 5, so include them.",
+          "2": "Each set has its own count based on divisibility, not 100!"
+        }
+      },
+      "resultState": {
+        "description": "Individual set sizes found",
+        "equations": ["|A| = 50, |B| = 33, |C| = 20"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Individual sets counted: $|A| = 50, |B| = 33, |C| = 20$."
+      },
+      "prompt": {
+        "question": "What are the pairwise intersections $|A \\cap B|$, $|A \\cap C|$, $|B \\cap C|$?",
+        "hint": "$A \\cap B$ = multiples of $\\text{lcm}(2,3) = 6$. So $|A \\cap B| = \\lfloor 100/6 \\rfloor = 16$. Similarly for others."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$|A \\cap B| = 16, |A \\cap C| = 10, |B \\cap C| = 6$"
+        },
+        {
+          "id": "b",
+          "text": "$|A \\cap B| = 50, |A \\cap C| = 50, |B \\cap C| = 33$"
+        },
+        {
+          "id": "c",
+          "text": "$|A \\cap B| = 0, |A \\cap C| = 0, |B \\cap C| = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Numbers divisible by both $m$ and $n$ are exactly multiples of $\\text{lcm}(m, n)$:\n\n**$A \\cap B$ (divisible by 2 AND 3):**\nMultiples of $\\text{lcm}(2, 3) = 6$: $|A \\cap B| = \\lfloor 100/6 \\rfloor = 16$\n\n**$A \\cap C$ (divisible by 2 AND 5):**\nMultiples of $\\text{lcm}(2, 5) = 10$: $|A \\cap C| = \\lfloor 100/10 \\rfloor = 10$\n\n**$B \\cap C$ (divisible by 3 AND 5):**\nMultiples of $\\text{lcm}(3, 5) = 15$: $|B \\cap C| = \\lfloor 100/15 \\rfloor = 6$",
+          "insight": "Key: $n \\in A \\cap B \\iff m_1 | n \\land m_2 | n \\iff \\text{lcm}(m_1, m_2) | n$"
+        },
+        "incorrect": {
+          "1": "The sets overlap! For example, 6 is in both $A$ and $B$.",
+          "2": "The intersection is smaller than the individual sets! It's the common elements."
+        }
+      },
+      "resultState": {
+        "description": "Pairwise intersections found",
+        "equations": ["|A \\cap B| = 16, |A \\cap C| = 10, |B \\cap C| = 6"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Computed all pairwise intersections.",
+        "equations": [
+          "|A| = 50, |B| = 33, |C| = 20",
+          "|A \\cap B| = 16, |A \\cap C| = 10, |B \\cap C| = 6"
+        ]
+      },
+      "prompt": {
+        "question": "What is $|A \\cap B \\cap C|$ and the final answer?",
+        "hint": "$A \\cap B \\cap C$ = multiples of $\\text{lcm}(2, 3, 5) = 30$. So $|A \\cap B \\cap C| = \\lfloor 100/30 \\rfloor = 3$. Apply inclusion-exclusion."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$|A \\cap B \\cap C| = 3$; total = $50 + 33 + 20 - 16 - 10 - 6 + 3 = 74$"
+        },
+        {
+          "id": "b",
+          "text": "$|A \\cap B \\cap C| = 0$; total = $50 + 33 + 20 = 103$"
+        },
+        {
+          "id": "c",
+          "text": "$|A \\cap B \\cap C| = 1$; total = $50 + 33 + 20 - 16 - 10 - 6 + 1 = 72$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Numbers divisible by 2, 3, AND 5 are multiples of $\\text{lcm}(2, 3, 5) = 30$:\n\nMultiples of 30 in $\\{1, \\ldots, 100\\}$: $30, 60, 90$.\n\n$|A \\cap B \\cap C| = 3$\n\nNow apply inclusion-exclusion:\n$$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$$\n\n$$= 50 + 33 + 20 - 16 - 10 - 6 + 3$$\n\n$$= 103 - 32 + 3$$\n\n$$= 74$$\n\nThere are **74 integers** from 1 to 100 divisible by 2, 3, or 5!",
+          "insight": "Inclusion-exclusion systematically corrects for overcounting in overlapping sets!"
+        },
+        "incorrect": {
+          "1": "Can't just add! That counts overlaps multiple times. Need inclusion-exclusion.",
+          "2": "$|A \\cap B \\cap C| = 3$, not 1. Multiples of 30 up to 100 are 30, 60, 90."
+        }
+      },
+      "resultState": {
+        "description": "Answer: 74 integers divisible by 2, 3, or 5",
+        "equations": ["|A \\cup B \\cup C| = 74"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Inclusion-exclusion: $|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$",
+      "Multiples of $n$ in $\\{1, \\ldots, N\\}$: count is $\\lfloor N/n \\rfloor$",
+      "Multiples of both $m$ and $n$: multiples of $\\text{lcm}(m, n)$",
+      "Individual counts: $|A| = 50, |B| = 33, |C| = 20$",
+      "Pairwise: $|A \\cap B| = 16, |A \\cap C| = 10, |B \\cap C| = 6$",
+      "Triple: $|A \\cap B \\cap C| = 3$",
+      "Final answer: 74 integers"
+    ],
+    "fullSolution": "**Count integers from 1 to 100 divisible by 2, 3, or 5**\n\n---\n\n**Setup:**\n\nLet:\n- $A$ = multiples of 2 in $\\{1, \\ldots, 100\\}$\n- $B$ = multiples of 3 in $\\{1, \\ldots, 100\\}$\n- $C$ = multiples of 5 in $\\{1, \\ldots, 100\\}$\n\nWe seek $|A \\cup B \\cup C|$.\n\n---\n\n**Inclusion-Exclusion Formula:**\n\n$$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$$\n\n---\n\n**Individual Sets:**\n\n$$|A| = \\left\\lfloor \\frac{100}{2} \\right\\rfloor = 50$$\n\n$$|B| = \\left\\lfloor \\frac{100}{3} \\right\\rfloor = 33$$\n\n$$|C| = \\left\\lfloor \\frac{100}{5} \\right\\rfloor = 20$$\n\n---\n\n**Pairwise Intersections:**\n\nNumbers divisible by both $m$ and $n$ are multiples of $\\text{lcm}(m, n)$:\n\n$$|A \\cap B| = \\left\\lfloor \\frac{100}{\\text{lcm}(2,3)} \\right\\rfloor = \\left\\lfloor \\frac{100}{6} \\right\\rfloor = 16$$\n\n$$|A \\cap C| = \\left\\lfloor \\frac{100}{\\text{lcm}(2,5)} \\right\\rfloor = \\left\\lfloor \\frac{100}{10} \\right\\rfloor = 10$$\n\n$$|B \\cap C| = \\left\\lfloor \\frac{100}{\\text{lcm}(3,5)} \\right\\rfloor = \\left\\lfloor \\frac{100}{15} \\right\\rfloor = 6$$\n\n---\n\n**Triple Intersection:**\n\n$$|A \\cap B \\cap C| = \\left\\lfloor \\frac{100}{\\text{lcm}(2,3,5)} \\right\\rfloor = \\left\\lfloor \\frac{100}{30} \\right\\rfloor = 3$$\n\n(Multiples of 30: $30, 60, 90$)\n\n---\n\n**Apply Inclusion-Exclusion:**\n\n$$|A \\cup B \\cup C| = 50 + 33 + 20 - 16 - 10 - 6 + 3$$\n\n$$= 103 - 32 + 3$$\n\n$$= 74$$\n\n---\n\n**Answer:** $\\boxed{74}$ integers from 1 to 100 are divisible by 2, 3, or 5.\n\n---\n\n**Verification:**\n\nAlternatively, count integers NOT divisible by any: those coprime to 2, 3, and 5.\n\nBy inclusion-exclusion on complements: $100 - 74 = 26$ integers are coprime to 2, 3, and 5.",
+    "relatedProblems": [
+      "discrete-math-combinatorics-pigeonhole-1",
+      "number-theory-gcd-1"
+    ]
+  }
+}

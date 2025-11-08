@@ -7,6 +7,7 @@ import algebraPolynomialDivision1 from '@/public/problems/algebra-polynomial-div
 import algebraComplexNumbers1 from '@/public/problems/algebra-complex-numbers-1.json';
 import algebraMatrixMult1 from '@/public/problems/algebra-matrix-mult-1.json';
 import algebraPartialFractions1 from '@/public/problems/algebra-partial-fractions-1.json';
+import algebraVietasFormulas1 from '@/public/problems/algebra-vietas-formulas-1.json';
 import calcDerivativeChainRule1 from '@/public/problems/calc-derivative-chain-rule-1.json';
 import calculusLimitEpsilonDelta1 from '@/public/problems/calculus-limit-epsilon-delta-1.json';
 import calculusIntegrationSubstitution1 from '@/public/problems/calculus-integration-substitution-1.json';
@@ -117,21 +118,29 @@ import probabilityBayesNetwork1 from '@/public/problems/probability-bayes-networ
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 import numericalAnalysisEulerMethod1 from '@/public/problems/numerical-analysis-euler-method-1.json';
 import numericalAnalysisRungeKutta1 from '@/public/problems/numerical-analysis-runge-kutta-1.json';
+import numericalAnalysisLagrangeInterpolation1 from '@/public/problems/numerical-analysis-lagrange-interpolation-1.json';
+import numericalAnalysisSimpsonsRule1 from '@/public/problems/numerical-analysis-simpsons-rule-1.json';
+import numericalAnalysisBisectionMethod1 from '@/public/problems/numerical-analysis-bisection-method-1.json';
 // Abstract Algebra (more topics)
 import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
 import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-homomorphisms-1.json';
 import abstractAlgebraRings1 from '@/public/problems/abstract-algebra-rings-1.json';
 import abstractAlgebraGroupActions1 from '@/public/problems/abstract-algebra-group-actions-1.json';
+import abstractAlgebraQuotientGroups1 from '@/public/problems/abstract-algebra-quotient-groups-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
 import complexAnalysisCauchyTheorem1 from '@/public/problems/complex-analysis-cauchy-theorem-1.json';
 import complexAnalysisConformalMapping1 from '@/public/problems/complex-analysis-conformal-mapping-1.json';
+import complexAnalysisAnalyticContinuation1 from '@/public/problems/complex-analysis-analytic-continuation-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
 import discreteMathCombinatoricsPigeonhole1 from '@/public/problems/discrete-math-combinatorics-pigeonhole-1.json';
 import discreteMathGeneratingFunctions1 from '@/public/problems/discrete-math-generating-functions-1.json';
+import discreteMathRamseyTheory1 from '@/public/problems/discrete-math-ramsey-theory-1.json';
+import discreteMathInclusionExclusion1 from '@/public/problems/discrete-math-inclusion-exclusion-1.json';
+import graphTheoryEulersFormula1 from '@/public/problems/graph-theory-eulers-formula-1.json';
 // Number Theory (additional)
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
@@ -142,6 +151,8 @@ import topologyOpenClosedSets1 from '@/public/problems/topology-open-closed-sets
 import topologyCompactness1 from '@/public/problems/topology-compactness-1.json';
 import topologyConnectedness1 from '@/public/problems/topology-connectedness-1.json';
 import topologyHausdorffSpaces1 from '@/public/problems/topology-hausdorff-spaces-1.json';
+import topologyContinuousFunctions1 from '@/public/problems/topology-continuous-functions-1.json';
+import topologyHomeomorphisms1 from '@/public/problems/topology-homeomorphisms-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -151,6 +162,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'algebra-complex-numbers-1': algebraComplexNumbers1 as any as Problem,
   'algebra-matrix-mult-1': algebraMatrixMult1 as any as Problem,
   'algebra-partial-fractions-1': algebraPartialFractions1 as any as Problem,
+  'algebra-vietas-formulas-1': algebraVietasFormulas1 as any as Problem,
   'calc-derivative-chain-rule-1': calcDerivativeChainRule1 as Problem,
   'calculus-limit-epsilon-delta-1': calculusLimitEpsilonDelta1 as Problem,
   'calculus-integration-substitution-1': calculusIntegrationSubstitution1 as Problem,
@@ -261,21 +273,29 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   'numerical-analysis-euler-method-1': numericalAnalysisEulerMethod1 as any as Problem,
   'numerical-analysis-runge-kutta-1': numericalAnalysisRungeKutta1 as any as Problem,
+  'numerical-analysis-lagrange-interpolation-1': numericalAnalysisLagrangeInterpolation1 as any as Problem,
+  'numerical-analysis-simpsons-rule-1': numericalAnalysisSimpsonsRule1 as any as Problem,
+  'numerical-analysis-bisection-method-1': numericalAnalysisBisectionMethod1 as any as Problem,
   // Abstract Algebra (more topics)
   'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
   'abstract-algebra-homomorphisms-1': abstractAlgebraHomomorphisms1 as any as Problem,
   'abstract-algebra-rings-1': abstractAlgebraRings1 as any as Problem,
   'abstract-algebra-group-actions-1': abstractAlgebraGroupActions1 as any as Problem,
+  'abstract-algebra-quotient-groups-1': abstractAlgebraQuotientGroups1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
   'complex-analysis-cauchy-theorem-1': complexAnalysisCauchyTheorem1 as any as Problem,
   'complex-analysis-conformal-mapping-1': complexAnalysisConformalMapping1 as any as Problem,
+  'complex-analysis-analytic-continuation-1': complexAnalysisAnalyticContinuation1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,
   'discrete-math-combinatorics-pigeonhole-1': discreteMathCombinatoricsPigeonhole1 as any as Problem,
   'discrete-math-generating-functions-1': discreteMathGeneratingFunctions1 as any as Problem,
+  'discrete-math-ramsey-theory-1': discreteMathRamseyTheory1 as any as Problem,
+  'discrete-math-inclusion-exclusion-1': discreteMathInclusionExclusion1 as any as Problem,
+  'graph-theory-eulers-formula-1': graphTheoryEulersFormula1 as any as Problem,
   // Number Theory (additional)
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,
@@ -286,6 +306,8 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'topology-compactness-1': topologyCompactness1 as any as Problem,
   'topology-connectedness-1': topologyConnectedness1 as any as Problem,
   'topology-hausdorff-spaces-1': topologyHausdorffSpaces1 as any as Problem,
+  'topology-continuous-functions-1': topologyContinuousFunctions1 as any as Problem,
+  'topology-homeomorphisms-1': topologyHomeomorphisms1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

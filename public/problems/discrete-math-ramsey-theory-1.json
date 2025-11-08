@@ -1,0 +1,196 @@
+{
+  "id": "discrete-math-ramsey-theory-1",
+  "type": "proof",
+  "title": "Ramsey's Theorem: Friends and Strangers",
+  "topic": "Discrete Mathematics",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": [
+    "discrete-math",
+    "ramsey-theory",
+    "graph-theory",
+    "combinatorics"
+  ],
+  "statement": {
+    "text": "Prove that in any party of 6 people, there must exist either 3 mutual friends or 3 mutual strangers. (This is $R(3,3) = 6$ in Ramsey theory.)"
+  },
+  "objectives": [
+    "Model problem as graph coloring",
+    "Use pigeonhole principle",
+    "Apply case analysis systematically"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Party of 6 people: each pair either knows each other or doesn't."
+      },
+      "prompt": {
+        "question": "How should we model this problem?",
+        "hint": "Represent people as vertices. Draw a red edge if two people are friends, blue edge if strangers. We seek a monochromatic triangle (all edges same color)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Complete graph $K_6$ with edges colored red (friends) or blue (strangers). Seek monochromatic triangle."
+        },
+        {
+          "id": "b",
+          "text": "Tree with 6 nodes, colored paths indicate relationships"
+        },
+        {
+          "id": "c",
+          "text": "Matrix where entry $(i,j)$ is 1 for friends, 0 for strangers"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Model as complete graph $K_6$ (all pairs connected) with 2-edge-coloring (red/blue). A monochromatic triangle means 3 people all mutually friends (red triangle) or all mutually strangers (blue triangle).",
+          "insight": "This is the classic Ramsey theory setup: how large must a graph be to guarantee a monochromatic clique?"
+        },
+        "incorrect": {
+          "1": "Trees don't capture all pairwise relationships - we need a complete graph where every pair is connected.",
+          "2": "While a matrix could represent it, the graph model makes the structure clearer for this proof."
+        }
+      },
+      "resultState": {
+        "description": "Problem modeled as 2-edge-coloring of $K_6$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Complete graph $K_6$ with red/blue edges. Seek monochromatic triangle."
+      },
+      "prompt": {
+        "question": "Pick any person (vertex $v$). How many edges connect $v$ to the other 5 people?",
+        "hint": "Person $v$ is connected to 5 others. Each edge is red or blue. By pigeonhole principle, at least $\\lceil 5/2 \\rceil = 3$ edges have the same color."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "5 edges total; by pigeonhole, at least 3 must be the same color"
+        },
+        {
+          "id": "b",
+          "text": "6 edges total; 3 red and 3 blue"
+        },
+        {
+          "id": "c",
+          "text": "5 edges; could all be different colors"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Vertex $v$ connects to 5 others via 5 edges. Each edge is red or blue (2 colors). By pigeonhole: $\\lceil 5/2 \\rceil = 3$, so at least 3 edges from $v$ share the same color. WLOG, say at least 3 are red.",
+          "insight": "Pigeonhole principle: distributing $n$ items into $k$ bins guarantees one bin has $\\lceil n/k \\rceil$ items!"
+        },
+        "incorrect": {
+          "1": "$K_6$ has ${6 \\choose 2} = 15$ edges total, but from any single vertex there are only 5 edges.",
+          "2": "We only have 2 colors (red/blue) for edges, not more!"
+        }
+      },
+      "resultState": {
+        "description": "WLOG, $v$ has 3 red edges to vertices $a, b, c$",
+        "equations": ["\\text{Red edges: } va, vb, vc"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Vertex $v$ connects to $a, b, c$ via red edges.",
+        "equations": ["\\text{Red edges: } va, vb, vc"]
+      },
+      "prompt": {
+        "question": "Now consider edges among $a, b, c$. What can we conclude?",
+        "hint": "Look at edge $ab$. If $ab$ is red, we have red triangle $vab$. If $ab$ is blue, check other edges..."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "If any edge among $a,b,c$ is red, we get red triangle. If all are blue, we get blue triangle."
+        },
+        {
+          "id": "b",
+          "text": "We need to check all 6 people again"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine without more information"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Case analysis:\n\n**Case 1:** Any edge among $\\{a, b, c\\}$ is red, say $ab$ red. Then triangle $vab$ is all red (edges $va$, $vb$, $ab$ all red). Done!\n\n**Case 2:** All edges among $\\{a, b, c\\}$ are blue. Then triangle $abc$ is all blue (edges $ab$, $bc$, $ca$ all blue). Done!\n\nEither way, we find a monochromatic triangle!",
+          "insight": "The key: focus on 3 vertices ($a, b, c$) connected to our chosen vertex by same color. Their internal edges must form the opposite color triangle if no monochromatic triangle exists with $v$."
+        },
+        "incorrect": {
+          "1": "We've already reduced the problem to these 3 vertices and can complete the argument here!",
+          "2": "Not true! We can make a definite conclusion using case analysis."
+        }
+      },
+      "resultState": {
+        "description": "Found monochromatic triangle in all cases"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Case analysis complete: always find monochromatic triangle."
+      },
+      "prompt": {
+        "question": "What have we proven?",
+        "hint": "We showed any 2-coloring of $K_6$ must contain a monochromatic $K_3$ (triangle)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "In any group of 6 people, there exist 3 mutual friends or 3 mutual strangers: $R(3,3) = 6$"
+        },
+        {
+          "id": "b",
+          "text": "In any group of 6 people, everyone is friends with everyone"
+        },
+        {
+          "id": "c",
+          "text": "We need at least 7 people to guarantee 3 mutual friends"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! We've proven $R(3, 3) = 6$: the minimum number of people needed to guarantee either 3 mutual friends or 3 mutual strangers is 6.\n\nThis is a foundational result in Ramsey theory, which studies how large a structure must be to guarantee certain patterns appear!",
+          "insight": "Ramsey theory shows 'complete disorder is impossible' - in any large enough system, patterns must emerge! The Ramsey number $R(m, n)$ is the minimum size needed to force either an $m$-clique in one color or $n$-clique in another."
+        },
+        "incorrect": {
+          "1": "We didn't prove everyone is friends - we proved a subset of 3 must all be friends OR all be strangers.",
+          "2": "6 is sufficient! With 5 people, you can avoid monochromatic triangles (pentagon with alternating colors)."
+        }
+      },
+      "resultState": {
+        "description": "Ramsey number $R(3,3) = 6$ established"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Model as 2-edge-coloring of complete graph $K_6$",
+      "Pigeonhole: any vertex has $\\geq 3$ edges of same color",
+      "Case analysis on triangle formed by endpoints",
+      "Either find red triangle with original vertex, or blue triangle among endpoints",
+      "Ramsey's theorem: $R(3, 3) = 6$ - complete disorder is impossible!"
+    ],
+    "fullSolution": "**Prove: In any party of 6 people, $\\exists$ 3 mutual friends or 3 mutual strangers**\n\n---\n\n**Model:** Represent as complete graph $K_6$ with edges colored:\n- Red edge: two people are friends\n- Blue edge: two people are strangers\n\n**Goal:** Prove existence of monochromatic triangle (3 vertices with all edges same color).\n\n---\n\n**Proof:**\n\nLet $v$ be any person. Person $v$ is connected to 5 others.\n\nEach of the 5 edges from $v$ is red or blue.\n\nBy **pigeonhole principle**: at least $\\lceil 5/2 \\rceil = 3$ edges have the same color.\n\nWLOG, assume at least 3 edges from $v$ are red. Call the endpoints $a, b, c$.\n\nSo we have red edges: $va$, $vb$, $vc$.\n\nNow consider edges among $\\{a, b, c\\}$:\n\n**Case 1:** At least one edge among $\\{a, b, c\\}$ is red.\n\nWLOG, say $ab$ is red.\n\nThen triangle $vab$ has all red edges: $va$, $vb$, $ab$.\n\nWe found 3 mutual friends! ✓\n\n**Case 2:** All edges among $\\{a, b, c\\}$ are blue.\n\nThen triangle $abc$ has all blue edges: $ab$, $bc$, $ca$.\n\nWe found 3 mutual strangers! ✓\n\n---\n\n**Conclusion:**\n\nIn any 2-edge-coloring of $K_6$, a monochromatic triangle exists.\n\n**Therefore:** In any group of 6 people, there exist 3 mutual friends or 3 mutual strangers. $\\square$\n\n---\n\n**Ramsey Theory:** This proves $R(3, 3) = 6$. More generally, $R(m, n)$ is the minimum number of vertices needed to guarantee either a red $K_m$ or blue $K_n$ in any 2-edge-coloring. Most Ramsey numbers are unknown!",
+    "relatedProblems": [
+      "discrete-math-combinatorics-pigeonhole-1",
+      "discrete-math-graph-coloring-1"
+    ]
+  }
+}

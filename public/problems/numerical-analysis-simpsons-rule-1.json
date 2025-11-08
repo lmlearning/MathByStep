@@ -1,0 +1,208 @@
+{
+  "id": "numerical-analysis-simpsons-rule-1",
+  "type": "problem",
+  "title": "Simpson's Rule for Numerical Integration",
+  "topic": "Numerical Analysis",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "numerical-analysis",
+    "integration",
+    "simpson-rule",
+    "approximation"
+  ],
+  "statement": {
+    "text": "Use Simpson's Rule with $n = 2$ subintervals to approximate $\\int_0^1 e^{-x^2} \\, dx$."
+  },
+  "objectives": [
+    "Understand Simpson's Rule formula",
+    "Apply quadratic interpolation",
+    "Calculate numerical approximation"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Approximate $\\int_0^1 e^{-x^2} \\, dx$ using $n = 2$ subintervals."
+      },
+      "prompt": {
+        "question": "What is the formula for Simpson's Rule with $n$ subintervals?",
+        "hint": "Simpson's Rule uses quadratic interpolation: $\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \\ldots + f(x_n)]$ where $h = \\frac{b-a}{n}$ and $n$ is even."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + \\ldots + 4f(x_{n-1}) + f(x_n)]$ with alternating 4,2,4,2,... coefficients"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{h}{2}[f(x_0) + 2f(x_1) + 2f(x_2) + \\ldots + f(x_n)]$ (Trapezoidal Rule)"
+        },
+        {
+          "id": "c",
+          "text": "$h[f(x_0) + f(x_1) + f(x_2) + \\ldots + f(x_n)]$ (Rectangle Rule)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Simpson's Rule uses pattern:\n$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \\ldots + 4f(x_{n-1}) + f(x_n)]$$\n\nwhere $h = \\frac{b-a}{n}$ and $n$ must be even.\n\n**Pattern:** First and last terms have coefficient 1, odd indices get 4, even indices (except endpoints) get 2.",
+          "insight": "Simpson's Rule is exact for polynomials of degree ≤ 3! It's based on approximating $f$ with parabolas (quadratic interpolation)."
+        },
+        "incorrect": {
+          "1": "That's the Trapezoidal Rule, which uses linear interpolation. Simpson's Rule has coefficient $\\frac{h}{3}$ and pattern 1,4,2,4,...,1.",
+          "2": "That's a simple rectangle/midpoint rule. Simpson's uses weighted sum with pattern 1,4,2,4,...,1."
+        }
+      },
+      "resultState": {
+        "description": "Simpson's Rule formula identified",
+        "equations": ["\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + \\ldots + f(x_n)]"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Using $n = 2$ subintervals on $[0, 1]$.",
+        "equations": ["\\int_0^1 e^{-x^2} \\, dx \\approx ?"]
+      },
+      "prompt": {
+        "question": "What are the grid points $x_0, x_1, x_2$ and step size $h$?",
+        "hint": "$h = \\frac{b-a}{n} = \\frac{1-0}{2} = 0.5$. Grid points: $x_0 = 0$, $x_1 = 0.5$, $x_2 = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$h = 0.5$, grid points: $x_0 = 0, x_1 = 0.5, x_2 = 1$"
+        },
+        {
+          "id": "b",
+          "text": "$h = 1$, grid points: $x_0 = 0, x_1 = 1, x_2 = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$h = 0.25$, grid points: $x_0 = 0, x_1 = 0.25, x_2 = 0.5$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! With $n = 2$ subintervals on $[a, b] = [0, 1]$:\n$$h = \\frac{1 - 0}{2} = 0.5$$\n\nGrid points divide $[0, 1]$ into 2 equal parts:\n$$x_0 = 0, \\quad x_1 = 0.5, \\quad x_2 = 1$$",
+          "insight": "Always verify: $x_0 = a$, $x_n = b$, and $x_{i+1} - x_i = h$ for all $i$."
+        },
+        "incorrect": {
+          "1": "Interval is $[0, 1]$, not $[0, 2]$! Step size $h = \\frac{1-0}{2} = 0.5$.",
+          "2": "That's $n = 2$ points, not $n = 2$ subintervals! We need $n+1 = 3$ points for $n = 2$ subintervals."
+        }
+      },
+      "resultState": {
+        "description": "Grid established",
+        "equations": ["h = 0.5", "x_0 = 0, \\, x_1 = 0.5, \\, x_2 = 1"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Grid: $x_0 = 0, x_1 = 0.5, x_2 = 1$; $h = 0.5$.",
+        "equations": ["f(x) = e^{-x^2}"]
+      },
+      "prompt": {
+        "question": "Evaluate $f(x) = e^{-x^2}$ at the grid points.",
+        "hint": "$f(0) = e^0 = 1$, $f(0.5) = e^{-0.25} \\approx 0.7788$, $f(1) = e^{-1} \\approx 0.3679$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(0) = 1, \\, f(0.5) \\approx 0.7788, \\, f(1) \\approx 0.3679$"
+        },
+        {
+          "id": "b",
+          "text": "$f(0) = 0, \\, f(0.5) = 0.5, \\, f(1) = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$f(0) = 1, \\, f(0.5) = 0.5, \\, f(1) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Evaluating $f(x) = e^{-x^2}$:\n\n$$f(x_0) = f(0) = e^{-0^2} = e^0 = 1$$\n\n$$f(x_1) = f(0.5) = e^{-(0.5)^2} = e^{-0.25} \\approx 0.7788$$\n\n$$f(x_2) = f(1) = e^{-1^2} = e^{-1} \\approx 0.3679$$",
+          "insight": "The function $e^{-x^2}$ is the bell curve kernel - it appears in probability (Gaussian) and has no elementary antiderivative!"
+        },
+        "incorrect": {
+          "1": "Check your function! We have $f(x) = e^{-x^2}$, not a linear function.",
+          "2": "Incorrect! $f(0) = e^0 = 1$, not 0. And $f(1) = e^{-1} \\approx 0.368$, not 0."
+        }
+      },
+      "resultState": {
+        "description": "Function values computed",
+        "equations": [
+          "f(x_0) = 1",
+          "f(x_1) \\approx 0.7788",
+          "f(x_2) \\approx 0.3679"
+        ]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Apply Simpson's Rule with $n = 2$.",
+        "equations": [
+          "h = 0.5",
+          "f(x_0) = 1, \\, f(x_1) \\approx 0.7788, \\, f(x_2) \\approx 0.3679"
+        ]
+      },
+      "prompt": {
+        "question": "What is the Simpson's Rule approximation?",
+        "hint": "For $n = 2$: $\\int_0^1 f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + f(x_2)] = \\frac{0.5}{3}[1 + 4(0.7788) + 0.3679]$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\int_0^1 e^{-x^2} \\, dx \\approx \\frac{0.5}{3}[1 + 4(0.7788) + 0.3679] \\approx 0.7468$"
+        },
+        {
+          "id": "b",
+          "text": "$\\int_0^1 e^{-x^2} \\, dx \\approx 0.5[1 + 0.7788 + 0.3679] \\approx 1.073$"
+        },
+        {
+          "id": "c",
+          "text": "$\\int_0^1 e^{-x^2} \\, dx \\approx \\frac{1}{3}[1 + 4(0.7788) + 0.3679] \\approx 1.494$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Applying Simpson's Rule with $n = 2$:\n\n$$\\int_0^1 e^{-x^2} \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + f(x_2)]$$\n\n$$= \\frac{0.5}{3}[1 + 4(0.7788) + 0.3679]$$\n\n$$= \\frac{0.5}{3}[1 + 3.1152 + 0.3679]$$\n\n$$= \\frac{0.5}{3}[4.4831]$$\n\n$$= \\frac{2.24155}{3}$$\n\n$$\\approx 0.7472$$\n\nThe true value is $\\int_0^1 e^{-x^2} \\, dx \\approx 0.7468$ (related to error function $\\text{erf}(1)$), so our approximation is very accurate!",
+          "insight": "Simpson's Rule gives excellent accuracy with just 2 subintervals because it's exact for cubics and $e^{-x^2}$ is well-approximated by a parabola on $[0,1]$!"
+        },
+        "incorrect": {
+          "1": "Missing the coefficient $\\frac{h}{3} = \\frac{0.5}{3}$! Simpson's Rule has $\\frac{h}{3}$, not just $h$.",
+          "2": "Wrong coefficient! Should be $\\frac{h}{3} = \\frac{0.5}{3}$, not $\\frac{1}{3}$."
+        }
+      },
+      "resultState": {
+        "description": "Simpson's Rule approximation complete",
+        "equations": ["\\int_0^1 e^{-x^2} \\, dx \\approx 0.7472"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Simpson's Rule: $\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + \\ldots + f(x_n)]$",
+      "Pattern: coefficients 1, 4, 2, 4, 2, ..., 4, 1 for $n$ even",
+      "Step size $h = \\frac{b-a}{n}$; need $n+1$ function evaluations",
+      "Based on quadratic interpolation; exact for polynomials of degree $\\leq 3$",
+      "For $\\int_0^1 e^{-x^2} \\, dx$ with $n=2$: approximation $\\approx 0.7472$"
+    ],
+    "fullSolution": "**Approximate $\\int_0^1 e^{-x^2} \\, dx$ using Simpson's Rule with $n = 2$**\n\n---\n\n**Step 1: Simpson's Rule Formula**\n\nFor $n$ subintervals ($n$ even):\n$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \\ldots + 4f(x_{n-1}) + f(x_n)]$$\n\nwhere $h = \\frac{b-a}{n}$.\n\n---\n\n**Step 2: Setup**\n\nGiven: $a = 0$, $b = 1$, $n = 2$, $f(x) = e^{-x^2}$.\n\n$$h = \\frac{1 - 0}{2} = 0.5$$\n\nGrid points:\n$$x_0 = 0, \\quad x_1 = 0.5, \\quad x_2 = 1$$\n\n---\n\n**Step 3: Function Evaluations**\n\n$$f(x_0) = f(0) = e^0 = 1$$\n\n$$f(x_1) = f(0.5) = e^{-0.25} \\approx 0.7788$$\n\n$$f(x_2) = f(1) = e^{-1} \\approx 0.3679$$\n\n---\n\n**Step 4: Apply Simpson's Rule**\n\nFor $n = 2$, the formula simplifies to:\n$$\\int_0^1 f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + f(x_2)]$$\n\n$$= \\frac{0.5}{3}[1 + 4(0.7788) + 0.3679]$$\n\n$$= \\frac{0.5}{3}[1 + 3.1152 + 0.3679]$$\n\n$$= \\frac{0.5}{3} \\times 4.4831$$\n\n$$= \\frac{2.24155}{3}$$\n\n$$\\approx 0.7472$$\n\n---\n\n**Result:**\n$$\\boxed{\\int_0^1 e^{-x^2} \\, dx \\approx 0.7472}$$\n\n**Note:** The exact value is $\\frac{\\sqrt{\\pi}}{2} \\text{erf}(1) \\approx 0.746824$, so our approximation has error $< 0.0004$!",
+    "relatedProblems": [
+      "numerical-analysis-euler-method-1",
+      "calculus-integration-substitution-1"
+    ]
+  }
+}

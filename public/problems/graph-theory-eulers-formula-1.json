@@ -1,0 +1,199 @@
+{
+  "id": "graph-theory-eulers-formula-1",
+  "type": "proof",
+  "title": "Euler's Formula for Planar Graphs",
+  "topic": "Discrete Mathematics",
+  "difficulty": 3,
+  "estimatedTime": 13,
+  "tags": [
+    "discrete-math",
+    "graph-theory",
+    "planar-graphs",
+    "eulers-formula",
+    "topology"
+  ],
+  "statement": {
+    "text": "Use Euler's formula $V - E + F = 2$ to prove that $K_5$ (complete graph on 5 vertices) is not planar."
+  },
+  "objectives": [
+    "Understand Euler's formula for planar graphs",
+    "Derive edge bound for planar graphs",
+    "Apply contradiction to prove non-planarity"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Prove $K_5$ is not planar using Euler's formula."
+      },
+      "prompt": {
+        "question": "What is Euler's formula for connected planar graphs?",
+        "hint": "For a connected planar graph with $V$ vertices, $E$ edges, and $F$ faces (including the outer infinite face): $V - E + F = 2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$V - E + F = 2$ for connected planar graphs"
+        },
+        {
+          "id": "b",
+          "text": "$V + E + F = 2$ for all graphs"
+        },
+        {
+          "id": "c",
+          "text": "$V - E - F = 2$ for planar graphs"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Euler's Formula:** For any connected planar graph:\n\n$$V - E + F = 2$$\n\nwhere:\n- $V$ = number of vertices\n- $E$ = number of edges\n- $F$ = number of faces (regions, including the outer unbounded face)\n\nThis remarkable formula connects combinatorics and topology!",
+          "insight": "Euler's formula holds for any planar embedding of a connected graph - it's a topological invariant!"
+        },
+        "incorrect": {
+          "1": "Signs matter! The formula is $V - E + F = 2$, not with all additions.",
+          "2": "Check the signs! It's $V - E + F = 2$."
+        }
+      },
+      "resultState": {
+        "description": "Euler's formula: $V - E + F = 2$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Euler's formula established for planar graphs."
+      },
+      "prompt": {
+        "question": "For a simple planar graph (no loops or multiple edges), what bound relates $E$ and $F$?",
+        "hint": "Each face is bounded by at least 3 edges. Each edge borders at most 2 faces. Counting edge-face incidences: $2E \\geq 3F$, so $F \\leq \\frac{2E}{3}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F \\leq \\frac{2E}{3}$ (each face bounded by $\\geq 3$ edges)"
+        },
+        {
+          "id": "b",
+          "text": "$F = E$ (one face per edge)"
+        },
+        {
+          "id": "c",
+          "text": "$F \\geq 2E$ (many faces)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! For a **simple** planar graph (no loops or multiple edges):\n\nEach face is bounded by **at least 3 edges** (since no loops or double edges means cycles have length $\\geq 3$).\n\nEach edge borders **at most 2 faces**.\n\n**Count edge-face incidences:**\n\nLet $I$ = total incidences between edges and faces.\n\n- From faces: $I \\geq 3F$ (each face uses $\\geq 3$ edges)\n- From edges: $I \\leq 2E$ (each edge borders $\\leq 2$ faces)\n\nTherefore: $3F \\leq 2E$, giving $F \\leq \\frac{2E}{3}$.",
+          "insight": "This counting argument uses the fact that simple planar graphs can't have 2-cycles (loops or multiple edges)!"
+        },
+        "incorrect": {
+          "1": "Not one-to-one! An edge can border 2 faces, and a face is bordered by multiple edges.",
+          "2": "Wrong direction! $F$ is bounded above by a function of $E$, giving $F \\leq \\frac{2E}{3}$."
+        }
+      },
+      "resultState": {
+        "description": "Face-edge bound: $F \\leq \\frac{2E}{3}$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "For simple planar graphs: $V - E + F = 2$ and $F \\leq \\frac{2E}{3}$."
+      },
+      "prompt": {
+        "question": "Combine Euler's formula and the face bound to get an edge bound.",
+        "hint": "From $V - E + F = 2$: $F = E - V + 2$. From $F \\leq \\frac{2E}{3}$: $E - V + 2 \\leq \\frac{2E}{3}$. Solve: $E \\leq 3V - 6$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E \\leq 3V - 6$ for simple planar graphs with $V \\geq 3$"
+        },
+        {
+          "id": "b",
+          "text": "$E = V - 1$ for all planar graphs"
+        },
+        {
+          "id": "c",
+          "text": "$E \\geq 3V$ for planar graphs"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Combine the two inequalities:\n\nFrom Euler's formula: $F = E - V + 2$\n\nFrom face bound: $F \\leq \\frac{2E}{3}$\n\nSubstitute:\n$$E - V + 2 \\leq \\frac{2E}{3}$$\n\nMultiply by 3:\n$$3E - 3V + 6 \\leq 2E$$\n\n$$E \\leq 3V - 6$$\n\n**Key result:** Any simple planar graph with $V \\geq 3$ vertices satisfies $E \\leq 3V - 6$!",
+          "insight": "This edge bound is a necessary condition for planarity - if a graph has too many edges, it can't be planar!"
+        },
+        "incorrect": {
+          "1": "That's for trees! Planar graphs can have cycles, giving more edges.",
+          "2": "Wrong direction! Planar graphs have LIMITED edges: $E \\leq 3V - 6$."
+        }
+      },
+      "resultState": {
+        "description": "Edge bound for planar graphs: $E \\leq 3V - 6$",
+        "equations": ["E \\leq 3V - 6 \\quad (V \\geq 3)"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Necessary condition for planarity: $E \\leq 3V - 6$.",
+        "equations": ["E \\leq 3V - 6"]
+      },
+      "prompt": {
+        "question": "Apply this bound to $K_5$ (complete graph on 5 vertices).",
+        "hint": "$K_5$ has $V = 5$ vertices and $E = \\binom{5}{2} = 10$ edges. Check: $10 \\leq 3(5) - 6 = 9$? No! So $K_5$ is not planar."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$K_5$ has $V=5, E=10$. Since $10 \\not\\leq 9$, $K_5$ is not planar."
+        },
+        {
+          "id": "b",
+          "text": "$K_5$ has $V=5, E=10$. Since $10 \\leq 15$, $K_5$ is planar."
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine from Euler's formula alone"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Apply to $K_5$:**\n\nThe complete graph $K_5$ has:\n- $V = 5$ vertices\n- $E = \\binom{5}{2} = 10$ edges (all pairs connected)\n\n**Check planarity bound:**\n$$E \\leq 3V - 6$$\n$$10 \\leq 3(5) - 6$$\n$$10 \\leq 9$$\n\nThis is **FALSE**!\n\nSince $K_5$ violates the necessary condition $E \\leq 3V - 6$, it **cannot be planar**.\n\n**Conclusion:** $K_5$ is not planar. $\\square$",
+          "insight": "$K_5$ is one of the two minimal non-planar graphs (the other is $K_{3,3}$). By Kuratowski's theorem, every non-planar graph contains a subdivision of $K_5$ or $K_{3,3}$!"
+        },
+        "incorrect": {
+          "1": "Check your arithmetic! $3V - 6 = 3(5) - 6 = 15 - 6 = 9$, not 15.",
+          "2": "We can! Euler's formula gives a necessary condition, and $K_5$ violates it."
+        }
+      },
+      "resultState": {
+        "description": "Proven: $K_5$ is not planar",
+        "equations": ["K_5: V=5, E=10, \\quad 10 > 9 = 3(5)-6"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Euler's formula: $V - E + F = 2$ for connected planar graphs",
+      "Face bound for simple planar graphs: $F \\leq \\frac{2E}{3}$ (each face has $\\geq 3$ edges)",
+      "Edge bound: $E \\leq 3V - 6$ for simple planar graphs with $V \\geq 3$",
+      "$K_5$ has 5 vertices and 10 edges",
+      "Check: $10 \\not\\leq 3(5) - 6 = 9$",
+      "Therefore $K_5$ is not planar"
+    ],
+    "fullSolution": "**Prove $K_5$ is not planar using Euler's formula**\n\n---\n\n**Step 1: Euler's Formula**\n\nFor any connected planar graph:\n$$V - E + F = 2$$\n\nwhere $V$ = vertices, $E$ = edges, $F$ = faces (including outer face).\n\n---\n\n**Step 2: Face-Edge Bound**\n\nFor a **simple** planar graph (no loops/multiple edges):\n\nEach face is bounded by at least 3 edges.\n\nEach edge borders at most 2 faces.\n\nCounting edge-face incidences: $2E \\geq 3F$\n\nTherefore: $F \\leq \\frac{2E}{3}$\n\n---\n\n**Step 3: Edge Bound**\n\nFrom Euler's formula:\n$$F = E - V + 2$$\n\nFrom face bound:\n$$E - V + 2 \\leq \\frac{2E}{3}$$\n\nMultiply by 3:\n$$3E - 3V + 6 \\leq 2E$$\n\n$$E \\leq 3V - 6$$\n\n**Key Result:** Every simple planar graph satisfies $E \\leq 3V - 6$ (for $V \\geq 3$).\n\n---\n\n**Step 4: Apply to $K_5$**\n\nThe complete graph $K_5$:\n- $V = 5$ vertices\n- $E = \\binom{5}{2} = 10$ edges\n\n**Check planarity condition:**\n$$E \\leq 3V - 6$$\n$$10 \\leq 3(5) - 6$$\n$$10 \\leq 9$$\n\n**FALSE!**\n\nSince $K_5$ has too many edges to satisfy the necessary planarity condition, $K_5$ is **not planar**.\n\n$$\\boxed{K_5 \\text{ is not planar}}$$\n\n---\n\n**Note:** $K_5$ and $K_{3,3}$ are the two minimal non-planar graphs. Kuratowski's Theorem states that a graph is planar if and only if it contains no subdivision of $K_5$ or $K_{3,3}$.",
+    "relatedProblems": [
+      "graph-theory-euler-path-1",
+      "discrete-math-graph-coloring-1"
+    ]
+  }
+}

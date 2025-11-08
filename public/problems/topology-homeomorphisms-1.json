@@ -1,0 +1,202 @@
+{
+  "id": "topology-homeomorphisms-1",
+  "type": "problem",
+  "title": "Homeomorphisms and Topological Equivalence",
+  "topic": "Topology",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "topology",
+    "homeomorphisms",
+    "continuous-functions",
+    "topological-equivalence"
+  ],
+  "statement": {
+    "text": "Show that the open interval $(0, 1)$ is homeomorphic to $\\mathbb{R}$ by constructing an explicit homeomorphism."
+  },
+  "objectives": [
+    "Understand homeomorphism definition",
+    "Construct explicit bijection",
+    "Verify continuity of function and inverse"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Need to find homeomorphism between $(0, 1)$ and $\\mathbb{R}$."
+      },
+      "prompt": {
+        "question": "What is a homeomorphism between topological spaces $X$ and $Y$?",
+        "hint": "A homeomorphism is a bijection $f: X \\to Y$ such that both $f$ and $f^{-1}$ are continuous."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Continuous bijection $f: X \\to Y$ with continuous inverse $f^{-1}: Y \\to X$"
+        },
+        {
+          "id": "b",
+          "text": "Any continuous function $f: X \\to Y$"
+        },
+        {
+          "id": "c",
+          "text": "Bijection $f: X \\to Y$ (continuity not required)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! A homeomorphism is a bijection $f: X \\to Y$ such that:\n1. $f$ is continuous\n2. $f^{-1}$ exists (bijection)\n3. $f^{-1}: Y \\to X$ is continuous\n\nWhen a homeomorphism exists, we say $X$ and $Y$ are **topologically equivalent** or **homeomorphic** (written $X \\cong Y$).",
+          "insight": "Homeomorphisms preserve all topological properties! They're 'rubber-sheet geometry' - stretching and bending allowed, but no tearing or gluing."
+        },
+        "incorrect": {
+          "1": "Need MORE than continuity - also need bijection and continuous inverse!",
+          "2": "Bijection alone isn't enough - both $f$ and $f^{-1}$ must be continuous!"
+        }
+      },
+      "resultState": {
+        "description": "Homeomorphism: continuous bijection with continuous inverse"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Construct homeomorphism $f: (0, 1) \\to \\mathbb{R}$."
+      },
+      "prompt": {
+        "question": "Which function maps $(0, 1)$ bijectively onto $\\mathbb{R}$?",
+        "hint": "Try $f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$. As $x \\to 0^+$, $f(x) \\to -\\infty$. As $x \\to 1^-$, $f(x) \\to +\\infty$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$"
+        },
+        {
+          "id": "b",
+          "text": "$f(x) = \\frac{1}{x}$"
+        },
+        {
+          "id": "c",
+          "text": "$f(x) = e^x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Consider $f: (0, 1) \\to \\mathbb{R}$ defined by:\n$$f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\nAnalyze behavior:\n- At $x = 1/2$: $f(1/2) = \\tan(0) = 0$\n- As $x \\to 0^+$: argument $\\to \\pi(0 - 1/2) = -\\pi/2$, so $f(x) \\to -\\infty$\n- As $x \\to 1^-$: argument $\\to \\pi(1 - 1/2) = \\pi/2$, so $f(x) \\to +\\infty$\n\nSince $\\tan$ is strictly increasing on $(-\\pi/2, \\pi/2)$ and maps it onto $\\mathbb{R}$, $f$ is a bijection!",
+          "insight": "We use $\\tan$ because it maps a bounded interval $(-\\pi/2, \\pi/2)$ onto all of $\\mathbb{R}$!"
+        },
+        "incorrect": {
+          "1": "$f(x) = 1/x$ doesn't map $(0,1)$ onto $\\mathbb{R}$ - only onto $(1, \\infty)$!",
+          "2": "$f(x) = e^x$ maps $(0,1)$ to $(1, e) \\subset \\mathbb{R}$, not onto all of $\\mathbb{R}$."
+        }
+      },
+      "resultState": {
+        "description": "Bijection constructed",
+        "equations": ["f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Candidate homeomorphism: $f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$.",
+        "equations": ["f: (0, 1) \\to \\mathbb{R}"]
+      },
+      "prompt": {
+        "question": "Is $f$ continuous on $(0, 1)$?",
+        "hint": "$f$ is the composition of continuous functions: $x \\mapsto x - 1/2$ (continuous), $x \\mapsto \\pi x$ (continuous), and $\\tan$ (continuous on $(-\\pi/2, \\pi/2)$)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, $f$ is continuous on $(0, 1)$ as composition of continuous functions"
+        },
+        {
+          "id": "b",
+          "text": "No, $\\tan$ has discontinuities"
+        },
+        {
+          "id": "c",
+          "text": "Only continuous at $x = 1/2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $f(x) = \\tan(\\pi(x - 1/2))$ is continuous on $(0, 1)$ because:\n\n1. $g(x) = x - 1/2$ is continuous\n2. $h(x) = \\pi x$ is continuous  \n3. $\\tan(x)$ is continuous on $(-\\pi/2, \\pi/2)$\n\nFor $x \\in (0, 1)$, we have $\\pi(x - 1/2) \\in (-\\pi/2, \\pi/2)$, so $\\tan$ is defined and continuous.\n\nBy composition: $f = \\tan \\circ h \\circ g$ is continuous on $(0, 1)$.",
+          "insight": "Composition of continuous functions is continuous!"
+        },
+        "incorrect": {
+          "1": "$\\tan$ has discontinuities at odd multiples of $\\pi/2$, but for $x \\in (0,1)$, the argument stays in $(-\\pi/2, \\pi/2)$ where $\\tan$ is continuous!",
+          "2": "It's continuous everywhere on $(0, 1)$, not just at one point!"
+        }
+      },
+      "resultState": {
+        "description": "$f$ is continuous on $(0, 1)$"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "$f: (0, 1) \\to \\mathbb{R}$ is a continuous bijection.",
+        "equations": ["f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)"]
+      },
+      "prompt": {
+        "question": "What is the inverse function $f^{-1}: \\mathbb{R} \\to (0, 1)$, and is it continuous?",
+        "hint": "$f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$. Since $\\arctan: \\mathbb{R} \\to (-\\pi/2, \\pi/2)$ is continuous, $f^{-1}$ is continuous."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$, which is continuous on $\\mathbb{R}$"
+        },
+        {
+          "id": "b",
+          "text": "$f^{-1}(y) = \\arctan(y)$"
+        },
+        {
+          "id": "c",
+          "text": "Inverse exists but is not continuous"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! To find the inverse, solve $y = \\tan(\\pi(x - 1/2))$ for $x$:\n\n$$\\arctan(y) = \\pi\\left(x - \\frac{1}{2}\\right)$$\n\n$$\\frac{1}{\\pi}\\arctan(y) = x - \\frac{1}{2}$$\n\n$$x = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\nSo $f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$.\n\nSince $\\arctan: \\mathbb{R} \\to (-\\pi/2, \\pi/2)$ is continuous (it's the inverse of the continuous, strictly increasing function $\\tan$ on $(-\\pi/2, \\pi/2)$), $f^{-1}$ is continuous on $\\mathbb{R}$ as a composition of continuous functions.\n\nTherefore, $f$ is a **homeomorphism**!",
+          "insight": "$(0, 1) \\cong \\mathbb{R}$ - a bounded interval is topologically equivalent to the entire real line!"
+        },
+        "incorrect": {
+          "1": "Missing the scaling and shift! Need to solve for $x$ completely.",
+          "2": "The inverse exists AND is continuous - that's what makes $f$ a homeomorphism!"
+        }
+      },
+      "resultState": {
+        "description": "Homeomorphism established: $(0, 1) \\cong \\mathbb{R}$",
+        "equations": [
+          "f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)",
+          "f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Homeomorphism: continuous bijection with continuous inverse",
+      "$(0, 1)$ and $\\mathbb{R}$ are topologically equivalent",
+      "Explicit homeomorphism: $f(x) = \\tan(\\pi(x - 1/2))$",
+      "Inverse: $f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$",
+      "Both $f$ and $f^{-1}$ are continuous",
+      "Homeomorphisms preserve all topological properties"
+    ],
+    "fullSolution": "**Show $(0, 1) \\cong \\mathbb{R}$ via explicit homeomorphism**\n\n---\n\n**Definition:** Homeomorphism $f: X \\to Y$ is a continuous bijection with continuous inverse.\n\n---\n\n**Construction:**\n\nDefine $f: (0, 1) \\to \\mathbb{R}$ by:\n$$f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\n---\n\n**Verify Bijection:**\n\nFor $x \\in (0, 1)$:\n$$\\pi\\left(x - \\frac{1}{2}\\right) \\in \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$$\n\nSince $\\tan: (-\\pi/2, \\pi/2) \\to \\mathbb{R}$ is a strictly increasing bijection, $f$ is a bijection.\n\n**Boundary behavior:**\n- $x \\to 0^+$: $f(x) \\to \\tan(-\\pi/2) = -\\infty$\n- $x \\to 1^-$: $f(x) \\to \\tan(\\pi/2) = +\\infty$\n- $x = 1/2$: $f(1/2) = \\tan(0) = 0$\n\n---\n\n**Verify Continuity of $f$:**\n\n$f$ is the composition:\n$$x \\xrightarrow{g} x - \\frac{1}{2} \\xrightarrow{h} \\pi\\left(x - \\frac{1}{2}\\right) \\xrightarrow{\\tan} \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\nEach component is continuous:\n- $g(x) = x - 1/2$ continuous\n- $h(t) = \\pi t$ continuous\n- $\\tan$ continuous on $(-\\pi/2, \\pi/2)$\n\nSo $f = \\tan \\circ h \\circ g$ is continuous on $(0, 1)$. ✓\n\n---\n\n**Find and Verify $f^{-1}$:**\n\nSolve $y = \\tan(\\pi(x - 1/2))$ for $x$:\n$$\\arctan(y) = \\pi\\left(x - \\frac{1}{2}\\right)$$\n$$x = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\nSo:\n$$f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\n$f^{-1}$ is continuous as composition of continuous functions:\n- $\\arctan: \\mathbb{R} \\to (-\\pi/2, \\pi/2)$ continuous\n- Multiplication by $1/\\pi$ continuous\n- Addition of $1/2$ continuous\n\nSo $f^{-1}$ is continuous on $\\mathbb{R}$. ✓\n\n---\n\n**Conclusion:**\n\n$f: (0, 1) \\to \\mathbb{R}$ is a homeomorphism.\n\nTherefore: $\\boxed{(0, 1) \\cong \\mathbb{R}}$\n\n---\n\n**Topological Interpretation:**\n\nDespite $(0, 1)$ being bounded and $\\mathbb{R}$ unbounded, they are **topologically indistinguishable** - they have the same topological structure!\n\nThis shows topology cares about properties preserved under continuous deformation, not metric properties like boundedness.",
+    "relatedProblems": [
+      "topology-continuous-functions-1",
+      "topology-compactness-1"
+    ]
+  }
+}

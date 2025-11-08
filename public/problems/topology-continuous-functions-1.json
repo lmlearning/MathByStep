@@ -1,0 +1,195 @@
+{
+  "id": "topology-continuous-functions-1",
+  "type": "problem",
+  "title": "Continuity in Topology",
+  "topic": "Topology",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "topology",
+    "continuity",
+    "open sets",
+    "preimages"
+  ],
+  "statement": {
+    "text": "Prove that a function $f: X \\to Y$ between topological spaces is continuous if and only if the preimage of every open set is open."
+  },
+  "objectives": [
+    "Understand topological continuity definition",
+    "Prove forward direction",
+    "Prove reverse direction"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What is topological continuity?"
+      },
+      "prompt": {
+        "question": "What does it mean for $f: X \\to Y$ to be continuous at $x \\in X$?",
+        "hint": "For every open neighborhood $V$ of $f(x)$, there exists an open neighborhood $U$ of $x$ such that $f(U) \\subseteq V$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "For every open $V$ containing $f(x)$, $\\exists$ open $U$ containing $x$ with $f(U) \\subseteq V$"
+        },
+        {
+          "id": "b",
+          "text": "$|f(x) - f(y)| < \\epsilon$ whenever $|x - y| < \\delta$"
+        },
+        {
+          "id": "c",
+          "text": "$f$ maps open sets to open sets"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Topological continuity generalizes metric continuity: neighborhoods (not distances) matter. $f$ is continuous at $x$ if small neighborhoods of $x$ map into small neighborhoods of $f(x)$.",
+          "insight": "This definition works in any topological space, even without a metric!"
+        },
+        "incorrect": {
+          "1": "That's metric space continuity - requires a distance function! Topological continuity uses open sets.",
+          "2": "Wrong direction! Continuous functions don't necessarily map open sets to open sets (consider constant functions)."
+        }
+      },
+      "resultState": {
+        "description": "Continuity at a point"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Prove forward direction: continuous $\\implies$ preimages of opens are open."
+      },
+      "prompt": {
+        "question": "How do we prove preimages are open?",
+        "hint": "Let $V \\subseteq Y$ be open. For each $x \\in f^{-1}(V)$, use continuity at $x$ to find open $U_x$ with $x \\in U_x$ and $f(U_x) \\subseteq V$. Then $U_x \\subseteq f^{-1}(V)$. Union: $f^{-1}(V) = \\bigcup_{x \\in f^{-1}(V)} U_x$ is open."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "For each $x \\in f^{-1}(V)$, find open $U_x$ around $x$ with $U_x \\subseteq f^{-1}(V)$. Union is open."
+        },
+        {
+          "id": "b",
+          "text": "$f^{-1}(V)$ is open because $V$ is open"
+        },
+        {
+          "id": "c",
+          "text": "Use $\\epsilon$-$\\delta$ definition"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Let $V$ be open in $Y$. For $x \\in f^{-1}(V)$: $f(x) \\in V$ (open), so by continuity at $x$, $\\exists$ open $U_x$ with $x \\in U_x$ and $f(U_x) \\subseteq V$, meaning $U_x \\subseteq f^{-1}(V)$. Then $f^{-1}(V) = \\bigcup_{x} U_x$ (union of opens) is open!",
+          "insight": "Key: cover $f^{-1}(V)$ with open sets using continuity at each point."
+        },
+        "incorrect": {
+          "1": "Not automatic! Need to use continuity at each point to construct the open set.",
+          "2": "Not available in general topological spaces! Need open sets only."
+        }
+      },
+      "resultState": {
+        "description": "Forward direction proven"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Prove reverse: preimages of opens are open $\\implies$ continuous."
+      },
+      "prompt": {
+        "question": "How do we prove continuity at $x$?",
+        "hint": "Let $V$ be open containing $f(x)$. By assumption, $U = f^{-1}(V)$ is open. Since $f(x) \\in V$, we have $x \\in U$. And $f(U) \\subseteq V$ by definition of preimage. Done!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Given open $V$ containing $f(x)$, use $U = f^{-1}(V)$ (open by assumption, contains $x$)"
+        },
+        {
+          "id": "b",
+          "text": "Show $|f(x) - f(y)| \\to 0$ as $|x - y| \\to 0$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot prove this direction"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! To show continuity at $x$: let $V$ be any open set with $f(x) \\in V$. Set $U = f^{-1}(V)$. By assumption, $U$ is open. Since $f(x) \\in V$, we have $x \\in f^{-1}(V) = U$. And $f(U) = f(f^{-1}(V)) \\subseteq V$ automatically. So continuity at $x$ holds!",
+          "insight": "Reverse direction is actually easier - just use preimage directly!"
+        },
+        "incorrect": {
+          "1": "No metric in general topology!",
+          "2": "We can! The preimage condition is very powerful."
+        }
+      },
+      "resultState": {
+        "description": "Reverse direction proven"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Conclude the equivalence."
+      },
+      "prompt": {
+        "question": "What have we proven?",
+        "hint": "We've shown both directions: (1) continuous $\\implies$ preimages of opens are open, and (2) preimages of opens are open $\\implies$ continuous. Therefore they're equivalent!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ continuous $\\iff$ $f^{-1}(V)$ open for all open $V \\subseteq Y$"
+        },
+        {
+          "id": "b",
+          "text": "$f$ continuous $\\implies$ $f(U)$ open for all open $U \\subseteq X$"
+        },
+        {
+          "id": "c",
+          "text": "Only forward direction works"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! We've established the fundamental characterization of continuous functions in topology: $f: X \\to Y$ is continuous $\\iff$ the preimage of every open set is open. This is often taken as THE definition in topology!",
+          "insight": "This preimage characterization is the standard definition in topology - much cleaner than point-by-point continuity! It immediately gives: compositions of continuous functions are continuous."
+        },
+        "incorrect": {
+          "1": "That's false! Continuous functions don't preserve opens (consider constant functions). They preserve preimages of opens!",
+          "2": "Both directions work! That's the point of the equivalence."
+        }
+      },
+      "resultState": {
+        "description": "Equivalence established"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Continuity at $x$: for open $V$ containing $f(x)$, $\\exists$ open $U$ containing $x$ with $f(U) \\subseteq V$",
+      "Forward: continuous $\\implies$ preimages of opens are open",
+      "Proof: cover $f^{-1}(V)$ with open sets using continuity at each point",
+      "Reverse: preimages of opens are open $\\implies$ continuous",
+      "Proof: use $U = f^{-1}(V)$ directly",
+      "Equivalence: $f$ continuous $\\iff$ $f^{-1}(V)$ open for all open $V$"
+    ],
+    "fullSolution": "**Prove: $f: X \\to Y$ continuous $\\iff$ $f^{-1}(V)$ open for all open $V \\subseteq Y$**\n\n---\n\n**Forward Direction:** Assume $f$ is continuous. Let $V \\subseteq Y$ be open.\n\n**Goal:** Show $f^{-1}(V)$ is open in $X$.\n\n**Proof:** \n\nIf $f^{-1}(V) = \\emptyset$, we're done (empty set is open).\n\nOtherwise, let $x \\in f^{-1}(V)$. Then $f(x) \\in V$.\n\nSince $V$ is open and $f(x) \\in V$, and $f$ is continuous at $x$, there exists an open neighborhood $U_x$ of $x$ such that:\n$$f(U_x) \\subseteq V$$\n\nThis means $U_x \\subseteq f^{-1}(V)$.\n\nSince this holds for every $x \\in f^{-1}(V)$:\n$$f^{-1}(V) = \\bigcup_{x \\in f^{-1}(V)} U_x$$\n\nAs a union of open sets, $f^{-1}(V)$ is open. $\\square$\n\n---\n\n**Reverse Direction:** Assume $f^{-1}(V)$ is open for all open $V \\subseteq Y$.\n\n**Goal:** Show $f$ is continuous at every $x \\in X$.\n\n**Proof:**\n\nLet $x \\in X$ and let $V$ be any open set in $Y$ with $f(x) \\in V$.\n\nDefine:\n$$U = f^{-1}(V)$$\n\nBy assumption, $U$ is open in $X$.\n\nSince $f(x) \\in V$, we have $x \\in f^{-1}(V) = U$.\n\nBy definition of preimage:\n$$f(U) = f(f^{-1}(V)) \\subseteq V$$\n\nTherefore, for every open $V$ containing $f(x)$, we found an open $U$ containing $x$ with $f(U) \\subseteq V$.\n\nThis shows $f$ is continuous at $x$. Since $x$ was arbitrary, $f$ is continuous. $\\square$\n\n---\n\n**Conclusion:** \n$$f \\text{ continuous} \\iff f^{-1}(V) \\text{ open for all open } V \\subseteq Y$$\n\n**Note:** This preimage characterization is the standard definition of continuity in topology!",
+    "relatedProblems": [
+      "topology-hausdorff-spaces-1",
+      "topology-compactness-1"
+    ]
+  }
+}

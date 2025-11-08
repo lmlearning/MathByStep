@@ -1,0 +1,201 @@
+{
+  "id": "abstract-algebra-quotient-groups-1",
+  "type": "problem",
+  "title": "Quotient Groups and Cosets",
+  "topic": "Abstract Algebra",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "abstract-algebra",
+    "groups",
+    "quotient-groups",
+    "normal-subgroups",
+    "cosets"
+  ],
+  "statement": {
+    "text": "Let $G = \\mathbb{Z}$ under addition and $H = 6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, \\ldots\\}$. Describe the quotient group $G/H$ and determine its structure."
+  },
+  "objectives": [
+    "Understand quotient group construction",
+    "Find all cosets of the subgroup",
+    "Identify group structure"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "$G = \\mathbb{Z}$ (integers under addition), $H = 6\\mathbb{Z}$ (multiples of 6)."
+      },
+      "prompt": {
+        "question": "What is the quotient group $G/H$?",
+        "hint": "$G/H$ is the set of all cosets $\\{a + H : a \\in G\\}$. Two elements $a, b \\in G$ are in the same coset iff $a - b \\in H$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$G/H = \\{a + H : a \\in \\mathbb{Z}\\}$ where $a + H = \\{a + 6k : k \\in \\mathbb{Z}\\}$"
+        },
+        {
+          "id": "b",
+          "text": "$G/H = \\mathbb{Z}/6$ is just the integers divided by 6"
+        },
+        {
+          "id": "c",
+          "text": "$G/H = H$ since we're dividing by $H$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The quotient group $G/H$ consists of cosets $a + H$ for $a \\in \\mathbb{Z}$. Each coset is:\n\n$$a + H = \\{a + 6k : k \\in \\mathbb{Z}\\}$$\n\nTwo integers are in the same coset iff they differ by a multiple of 6 (i.e., they're congruent mod 6).",
+          "insight": "Quotient groups partition the original group into disjoint cosets!"
+        },
+        "incorrect": {
+          "1": "Close notation, but $G/H$ is the SET of cosets, not just 'integers divided by 6'.",
+          "2": "No! $G/H$ is a new group whose elements are entire cosets, not individual integers."
+        }
+      },
+      "resultState": {
+        "description": "Quotient group defined as cosets",
+        "equations": ["G/H = \\{a + H : a \\in \\mathbb{Z}\\}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Quotient group $G/H$ contains cosets $a + H$.",
+        "equations": ["a + H = \\{a + 6k : k \\in \\mathbb{Z}\\}"]
+      },
+      "prompt": {
+        "question": "How many distinct cosets are there in $G/H$?",
+        "hint": "Two cosets $a + H$ and $b + H$ are equal iff $a \\equiv b \\pmod{6}$. So distinct cosets correspond to residue classes mod 6."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "6 distinct cosets: $0+H, 1+H, 2+H, 3+H, 4+H, 5+H$"
+        },
+        {
+          "id": "b",
+          "text": "Infinitely many cosets, one for each integer"
+        },
+        {
+          "id": "c",
+          "text": "12 distinct cosets"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since $a + H = b + H \\iff a - b \\in 6\\mathbb{Z} \\iff a \\equiv b \\pmod{6}$, the distinct cosets correspond to residue classes mod 6.\n\nThere are exactly 6 distinct cosets:\n$$0+H, 1+H, 2+H, 3+H, 4+H, 5+H$$\n\nFor example:\n- $7 + H = 1 + H$ (since $7 \\equiv 1 \\pmod{6}$)\n- $-2 + H = 4 + H$ (since $-2 \\equiv 4 \\pmod{6}$)",
+          "insight": "The index $[G : H]$ (number of cosets) equals $|G|/|H|$ when finite. Here $H$ has 'index 6' in $\\mathbb{Z}$."
+        },
+        "incorrect": {
+          "1": "Many integers give the SAME coset! For example, $7 + H = 1 + H$. Count distinct cosets.",
+          "2": "Too many! The subgroup $6\\mathbb{Z}$ partitions $\\mathbb{Z}$ into fewer pieces."
+        }
+      },
+      "resultState": {
+        "description": "6 distinct cosets identified",
+        "equations": ["G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Six cosets in $G/H$.",
+        "equations": ["G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"]
+      },
+      "prompt": {
+        "question": "What is the group operation in $G/H$?",
+        "hint": "Coset addition: $(a+H) + (b+H) = (a+b) + H$. This is well-defined because $H$ is a normal subgroup."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(a+H) + (b+H) = (a+b) + H$ (add representatives mod 6)"
+        },
+        {
+          "id": "b",
+          "text": "$(a+H) \\cdot (b+H) = (ab) + H$ (multiply representatives)"
+        },
+        {
+          "id": "c",
+          "text": "$(a+H) + (b+H) = (a+b+6) + H$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The group operation is coset addition:\n$$(a+H) + (b+H) = (a+b) + H$$\n\nFor example:\n- $(2+H) + (3+H) = (2+3)+H = 5+H$\n- $(4+H) + (5+H) = 9+H = 3+H$ (since $9 \\equiv 3 \\pmod{6}$)\n\nThis is well-defined because $H$ is normal in $G$ (in fact, all subgroups of abelian groups are normal).",
+          "insight": "Quotient group operation 'lifts' the original operation to cosets!"
+        },
+        "incorrect": {
+          "1": "We're working with addition in $\\mathbb{Z}$, not multiplication!",
+          "2": "No extra constant! Just add representatives: $(a+H) + (b+H) = (a+b) + H$."
+        }
+      },
+      "resultState": {
+        "description": "Group operation defined",
+        "equations": ["(a+H) + (b+H) = (a+b) + H"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "$G/H$ has 6 elements with operation $(a+H) + (b+H) = (a+b) + H$.",
+        "equations": ["G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"]
+      },
+      "prompt": {
+        "question": "What familiar group is $G/H$ isomorphic to?",
+        "hint": "$G/H$ has 6 elements, and adding $1+H$ six times gives $6+H = 0+H$. It's cyclic!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$G/H \\cong \\mathbb{Z}_6$ (cyclic group of order 6)"
+        },
+        {
+          "id": "b",
+          "text": "$G/H \\cong S_3$ (symmetric group on 3 elements)"
+        },
+        {
+          "id": "c",
+          "text": "$G/H \\cong \\mathbb{Z} \\times \\mathbb{Z}_2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $G/H \\cong \\mathbb{Z}_6$, the cyclic group of order 6 (integers mod 6).\n\nThe isomorphism is:\n$$\\phi: G/H \\to \\mathbb{Z}_6, \\quad \\phi(a+H) = [a]_6$$\n\nwhere $[a]_6$ is the residue class of $a$ modulo 6.\n\n$G/H$ is cyclic generated by $1+H$:\n- $0 \\cdot (1+H) = 0+H$\n- $1 \\cdot (1+H) = 1+H$\n- $2 \\cdot (1+H) = 2+H$\n- ...\n- $6 \\cdot (1+H) = 6+H = 0+H$",
+          "insight": "Quotient $\\mathbb{Z}/n\\mathbb{Z} \\cong \\mathbb{Z}_n$ always! This is how we rigorously define modular arithmetic."
+        },
+        "incorrect": {
+          "1": "$S_3$ has order 6 but is not abelian! Our group is abelian (inherited from $\\mathbb{Z}$).",
+          "2": "This is infinite! $G/H$ has only 6 elements."
+        }
+      },
+      "resultState": {
+        "description": "Structure determined: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Quotient group $G/H$ consists of cosets $a + H$",
+      "Cosets partition $G$: $a+H = b+H \\iff a - b \\in H$",
+      "$\\mathbb{Z}/6\\mathbb{Z}$ has 6 cosets corresponding to residue classes mod 6",
+      "Group operation: $(a+H) + (b+H) = (a+b) + H$",
+      "Structure: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$ (cyclic of order 6)"
+    ],
+    "fullSolution": "**Describe quotient group $\\mathbb{Z}/6\\mathbb{Z}$**\n\n---\n\n**Definition:**\n$$G/H = \\{a + H : a \\in \\mathbb{Z}\\}$$\n\nwhere $H = 6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, \\ldots\\}$.\n\nEach coset is:\n$$a + H = \\{a + 6k : k \\in \\mathbb{Z}\\}$$\n\n---\n\n**Distinct Cosets:**\n\nTwo cosets are equal iff:\n$$a + H = b + H \\iff a - b \\in H \\iff a \\equiv b \\pmod{6}$$\n\nSo distinct cosets correspond to residue classes mod 6:\n$$G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}$$\n\n**Examples:**\n- $7 + H = 1 + H$ (since $7 = 1 + 6$)\n- $-2 + H = 4 + H$ (since $-2 = 4 - 6$)\n- $13 + H = 1 + H$ (since $13 = 1 + 12$)\n\n---\n\n**Group Operation:**\n\nCoset addition:\n$$(a+H) + (b+H) = (a+b) + H$$\n\n**Identity:** $0 + H$\n\n**Inverse:** $-(a+H) = (-a) + H$\n\n**Example:** $(4+H) + (5+H) = 9+H = 3+H$\n\n---\n\n**Structure:**\n\n$$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$$\n\nThe quotient group is cyclic of order 6, generated by $1+H$:\n$$\\langle 1+H \\rangle = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}$$\n\n**Isomorphism:**\n$$\\phi: \\mathbb{Z}/6\\mathbb{Z} \\to \\mathbb{Z}_6, \\quad \\phi(a+H) = [a]_6$$\n\n---\n\n**General Result:** For any $n \\geq 1$:\n$$\\mathbb{Z}/n\\mathbb{Z} \\cong \\mathbb{Z}_n$$\n\nThis is the rigorous foundation for modular arithmetic!",
+    "relatedProblems": [
+      "abstract-algebra-group-1",
+      "abstract-algebra-homomorphisms-1"
+    ]
+  }
+}

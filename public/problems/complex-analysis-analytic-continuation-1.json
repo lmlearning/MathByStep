@@ -1,0 +1,204 @@
+{
+  "id": "complex-analysis-analytic-continuation-1",
+  "type": "problem",
+  "title": "Analytic Continuation of Power Series",
+  "topic": "Complex Analysis",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "complex-analysis",
+    "analytic-continuation",
+    "power-series",
+    "radius-of-convergence"
+  ],
+  "statement": {
+    "text": "The geometric series $f(z) = \\sum_{n=0}^{\\infty} z^n$ converges for $|z| < 1$ to $\\frac{1}{1-z}$. Explain how $\\frac{1}{1-z}$ serves as an analytic continuation of $f(z)$ beyond its original domain."
+  },
+  "objectives": [
+    "Understand radius of convergence",
+    "Recognize analytic continuation concept",
+    "Identify singularities"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Power series $f(z) = \\sum_{n=0}^{\\infty} z^n$ for $|z| < 1$."
+      },
+      "prompt": {
+        "question": "What is the radius of convergence of this power series?",
+        "hint": "Use ratio test: $\\lim_{n \\to \\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = \\lim_{n \\to \\infty} \\left|\\frac{z^{n+1}}{z^n}\\right| = |z|$. Converges when $|z| < 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Radius of convergence $R = 1$, converges for $|z| < 1$"
+        },
+        {
+          "id": "b",
+          "text": "Radius of convergence $R = \\infty$, converges everywhere"
+        },
+        {
+          "id": "c",
+          "text": "Radius of convergence $R = 0$, converges only at origin"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The coefficients are $a_n = 1$ for all $n$. By the ratio test:\n$$\\frac{1}{R} = \\lim_{n \\to \\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = \\lim_{n \\to \\infty} \\frac{1}{1} = 1$$\n\nSo $R = 1$. The series converges absolutely for $|z| < 1$ and diverges for $|z| > 1$.",
+          "insight": "On the boundary $|z| = 1$, convergence depends on the specific point!"
+        },
+        "incorrect": {
+          "1": "Not everywhere! Try $z = 2$: series becomes $1 + 2 + 4 + 8 + \\ldots$ which diverges.",
+          "2": "The series does converge somewhere! Try $z = 1/2$: $1 + 1/2 + 1/4 + \\ldots = 2$."
+        }
+      },
+      "resultState": {
+        "description": "Radius of convergence established",
+        "equations": ["R = 1, \\quad |z| < 1"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Series converges for $|z| < 1$.",
+        "equations": ["\\sum_{n=0}^{\\infty} z^n \\quad \\text{for } |z| < 1"]
+      },
+      "prompt": {
+        "question": "What is the sum of this geometric series in its domain of convergence?",
+        "hint": "Geometric series formula: $\\sum_{n=0}^{\\infty} r^n = \\frac{1}{1-r}$ for $|r| < 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(z) = \\frac{1}{1-z}$ for $|z| < 1$"
+        },
+        {
+          "id": "b",
+          "text": "$f(z) = e^z$ for $|z| < 1$"
+        },
+        {
+          "id": "c",
+          "text": "$f(z) = \\frac{z}{1-z}$ for $|z| < 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! For $|z| < 1$, the geometric series sums to:\n$$\\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}$$\n\nVerify: Multiply both sides by $(1-z)$:\n$$(1-z) \\sum_{n=0}^{\\infty} z^n = (1-z)(1 + z + z^2 + \\ldots) = 1 + z + z^2 + \\ldots - z - z^2 - z^3 - \\ldots = 1$$ ✓",
+          "insight": "This is the complex version of the familiar geometric series!"
+        },
+        "incorrect": {
+          "1": "That's the exponential series $\\sum z^n/n!$, not $\\sum z^n$.",
+          "2": "Close! But $\\sum_{n=0}^{\\infty} z^n$ starts with $z^0 = 1$, giving $\\frac{1}{1-z}$, not $\\frac{z}{1-z}$."
+        }
+      },
+      "resultState": {
+        "description": "Sum identified in domain of convergence",
+        "equations": ["f(z) = \\frac{1}{1-z} \\quad \\text{for } |z| < 1"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Power series $f(z) = \\frac{1}{1-z}$ valid for $|z| < 1$.",
+        "equations": ["\\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}, \\quad |z| < 1"]
+      },
+      "prompt": {
+        "question": "What is the domain of the function $g(z) = \\frac{1}{1-z}$ as a meromorphic function?",
+        "hint": "$\\frac{1}{1-z}$ is analytic everywhere except where the denominator vanishes: $1 - z = 0 \\implies z = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Analytic on $\\mathbb{C} \\setminus \\{1\\}$ (all of $\\mathbb{C}$ except $z = 1$)"
+        },
+        {
+          "id": "b",
+          "text": "Analytic only on $|z| < 1$ (unit disk)"
+        },
+        {
+          "id": "c",
+          "text": "Analytic everywhere on $\\mathbb{C}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The function $g(z) = \\frac{1}{1-z}$ is a rational function, analytic everywhere except at its pole $z = 1$.\n\nDomain of $g$: $\\mathbb{C} \\setminus \\{1\\}$.\n\nThis is MUCH larger than the domain $|z| < 1$ where the power series converges!\n\nFor example, $g(2) = \\frac{1}{1-2} = -1$ is perfectly well-defined, even though the series $\\sum 2^n$ diverges.",
+          "insight": "The closed form $\\frac{1}{1-z}$ extends the function beyond where the series converges!"
+        },
+        "incorrect": {
+          "1": "The SERIES only converges on $|z| < 1$, but the FUNCTION $\\frac{1}{1-z}$ is defined more broadly!",
+          "2": "No! $g(z) = \\frac{1}{1-z}$ has a pole at $z = 1$, where it's undefined."
+        }
+      },
+      "resultState": {
+        "description": "Domain of rational function identified",
+        "equations": ["g(z) = \\frac{1}{1-z} \\text{ analytic on } \\mathbb{C} \\setminus \\{1\\}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Power series $f$ defined on $|z| < 1$, function $g(z) = \\frac{1}{1-z}$ on $\\mathbb{C} \\setminus \\{1\\}$.",
+        "equations": [
+          "f(z) = \\sum_{n=0}^{\\infty} z^n, \\quad |z| < 1",
+          "g(z) = \\frac{1}{1-z}, \\quad z \\in \\mathbb{C} \\setminus \\{1\\}"
+        ]
+      },
+      "prompt": {
+        "question": "How does $g(z) = \\frac{1}{1-z}$ relate to the original power series $f(z)$?",
+        "hint": "$g$ agrees with $f$ on the disk $|z| < 1$ where both are defined, and $g$ extends $f$ to a larger domain. This is analytic continuation!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$g(z) = \\frac{1}{1-z}$ is the analytic continuation of $f(z)$ from $|z| < 1$ to $\\mathbb{C} \\setminus \\{1\\}$"
+        },
+        {
+          "id": "b",
+          "text": "$g(z)$ is a different function that happens to have the same values as $f$ sometimes"
+        },
+        {
+          "id": "c",
+          "text": "Cannot extend $f$ beyond $|z| < 1$ because the series diverges"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $g(z) = \\frac{1}{1-z}$ is the **analytic continuation** of the power series $f(z) = \\sum z^n$ from the disk $|z| < 1$ to the larger domain $\\mathbb{C} \\setminus \\{1\\}$.\n\n**Key properties:**\n1. $g$ agrees with $f$ on the original domain: $g(z) = f(z)$ for $|z| < 1$\n2. $g$ is analytic on a larger domain: $\\mathbb{C} \\setminus \\{1\\} \\supset \\{z : |z| < 1\\}$\n3. $g$ is the unique analytic function extending $f$\n\nThe singularity at $z = 1$ is why the power series has radius of convergence exactly 1!",
+          "insight": "Analytic continuation extends functions beyond their original definition! The singularities of the continuation determine the radius of convergence of the power series."
+        },
+        "incorrect": {
+          "1": "They're the SAME function! $g$ is the natural extension of $f$ to a larger domain.",
+          "2": "The SERIES cannot be extended, but the FUNCTION it represents can! That's the power of analytic continuation."
+        }
+      },
+      "resultState": {
+        "description": "Analytic continuation established",
+        "equations": ["\\frac{1}{1-z} \\text{ extends } \\sum_{n=0}^{\\infty} z^n \\text{ to } \\mathbb{C} \\setminus \\{1\\}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Power series $\\sum_{n=0}^{\\infty} z^n$ has radius of convergence $R = 1$",
+      "Sum equals $\\frac{1}{1-z}$ for $|z| < 1$ (geometric series)",
+      "Function $\\frac{1}{1-z}$ is analytic on $\\mathbb{C} \\setminus \\{1\\}$, much larger than disk",
+      "$\\frac{1}{1-z}$ is the analytic continuation of the series",
+      "Singularity at $z = 1$ explains why radius of convergence is exactly 1"
+    ],
+    "fullSolution": "**Analytic Continuation of $\\sum_{n=0}^{\\infty} z^n$**\n\n---\n\n**Step 1: Radius of Convergence**\n\nFor $\\sum_{n=0}^{\\infty} z^n$, coefficients $a_n = 1$.\n\nRatio test:\n$$\\frac{1}{R} = \\lim_{n \\to \\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = 1$$\n\nSo $R = 1$: series converges for $|z| < 1$.\n\n---\n\n**Step 2: Sum in Domain of Convergence**\n\nFor $|z| < 1$, geometric series:\n$$f(z) = \\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}$$\n\n---\n\n**Step 3: Domain of Rational Function**\n\nConsider $g(z) = \\frac{1}{1-z}$ as a meromorphic function.\n\nSingularities: $1 - z = 0 \\implies z = 1$ (simple pole).\n\nDomain: $g$ is analytic on $\\mathbb{C} \\setminus \\{1\\}$.\n\n---\n\n**Step 4: Analytic Continuation**\n\nCompare domains:\n- Power series $f$: defined on $|z| < 1$\n- Rational function $g$: defined on $\\mathbb{C} \\setminus \\{1\\}$\n\n**Key observation:** $g$ agrees with $f$ on $|z| < 1$ and extends to larger domain.\n\n$$\\boxed{g(z) = \\frac{1}{1-z} \\text{ is the analytic continuation of } f(z) = \\sum_{n=0}^{\\infty} z^n}$$\n\n---\n\n**Interpretation:**\n\nThe power series 'represents' the function $\\frac{1}{1-z}$ near the origin, but the function itself is defined more broadly.\n\nThe nearest singularity ($z = 1$) determines the radius of convergence!\n\n**General Principle:** Power series centered at $z_0$ converges in a disk extending to the nearest singularity of its analytic continuation.",
+    "relatedProblems": [
+      "complex-analysis-cauchy-riemann-1",
+      "complex-analysis-laurent-series-1"
+    ]
+  }
+}
