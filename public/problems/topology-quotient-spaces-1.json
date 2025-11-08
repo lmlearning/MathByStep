@@ -1,0 +1,200 @@
+{
+  "id": "topology-quotient-spaces-1",
+  "type": "problem",
+  "title": "Quotient Spaces and Identification",
+  "topic": "Topology",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "topology",
+    "quotient-spaces",
+    "identification-topology",
+    "equivalence-relations",
+    "quotient-map"
+  ],
+  "statement": {
+    "text": "Consider the unit square $[0,1] \\times [0,1]$ with equivalence relation: $(x, 0) \\sim (x, 1)$ for all $x \\in [0,1]$ (identifying top and bottom edges). What familiar space is the quotient $([0,1] \\times [0,1]) / {\\sim}$?"
+  },
+  "objectives": [
+    "Understand quotient topology",
+    "Visualize edge identification",
+    "Recognize quotient spaces geometrically",
+    "Understand equivalence relations on spaces"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Square $[0,1] \\times [0,1]$ with $(x, 0) \\sim (x, 1)$."
+      },
+      "prompt": {
+        "question": "What does the equivalence relation $(x, 0) \\sim (x, 1)$ mean geometrically?",
+        "hint": "It identifies (glues together) the bottom edge with the top edge, matching points with the same $x$-coordinate."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Glue the bottom edge to the top edge (matching $x$-coordinates)"
+        },
+        {
+          "id": "b",
+          "text": "Glue the left edge to the right edge"
+        },
+        {
+          "id": "c",
+          "text": "Fold the square in half horizontally"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The equivalence relation $(x, 0) \\sim (x, 1)$ means:\n\n**Every point on the bottom edge is identified with the corresponding point on the top edge.**\n\n- Point $(0, 0)$ is glued to $(0, 1)$\n- Point $(0.5, 0)$ is glued to $(0.5, 1)$\n- Point $(1, 0)$ is glued to $(1, 1)$\n- And so on for all $x \\in [0, 1]$\n\n**Visualization:** Take the square, bring the top edge down to meet the bottom edge, and glue them together. The left and right edges remain free (not identified).",
+          "insight": "Edge identification is how we build new topological spaces from familiar ones!"
+        },
+        "incorrect": {
+          "1": "That would be $(0, y) \\sim (1, y)$, not $(x, 0) \\sim (x, 1)$!",
+          "2": "Not folding - we're identifying/gluing points, creating a quotient space."
+        }
+      },
+      "resultState": {
+        "description": "Edge identification understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Top and bottom edges glued together."
+      },
+      "prompt": {
+        "question": "After gluing top to bottom, what shape do we get?",
+        "hint": "When you glue the top edge of a rectangle to the bottom edge, you get a cylinder (or tube)!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A cylinder (tube)"
+        },
+        {
+          "id": "b",
+          "text": "A sphere"
+        },
+        {
+          "id": "c",
+          "text": "A torus (doughnut)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Geometric construction:**\n\n1. Start with flat square $[0,1] \\times [0,1]$\n2. Identify $(x, 0)$ with $(x, 1)$ for all $x$\n3. This glues the bottom edge to the top edge\n4. Result: a **cylinder** (or tube)\n\n**Think of it like rolling up a piece of paper:**\n- The paper is rectangular\n- When you roll it so top meets bottom, you get a tube\n- The left and right edges become the two circular boundaries of the cylinder\n\n**Topologically:** $([0,1] \\times [0,1]) / {\\sim} \\cong S^1 \\times [0,1]$\n\nThe quotient is homeomorphic to a cylinder $S^1 \\times [0,1]$ (circle $\\times$ interval).",
+          "insight": "Quotient spaces let us build complex shapes from simple ones by gluing!"
+        },
+        "incorrect": {
+          "1": "A sphere requires identifying more edges! This is simpler - just a cylinder.",
+          "2": "A torus requires identifying BOTH pairs of opposite edges (top-bottom AND left-right). We only identified top-bottom."
+        }
+      },
+      "resultState": {
+        "description": "Shape identified as cylinder",
+        "equations": ["([0,1] \\times [0,1]) / {\\sim} \\cong S^1 \\times [0,1]"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Understanding quotient topology."
+      },
+      "prompt": {
+        "question": "What is the quotient map $q: [0,1] \\times [0,1] \\to ([0,1] \\times [0,1]) / {\\sim}$?",
+        "hint": "$q$ sends each point to its equivalence class. Points on bottom and top edges with the same $x$ map to the same point in the quotient."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$q$ maps each point to its equivalence class $[x, y]$"
+        },
+        {
+          "id": "b",
+          "text": "$q$ is the identity map"
+        },
+        {
+          "id": "c",
+          "text": "$q$ maps everything to a single point"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The **quotient map** $q: X \\to X/\\sim$ is defined by:\n\n$$q(x) = [x] \\quad \\text{(the equivalence class containing } x)$$\n\nFor our space:\n- Most points map to singleton equivalence classes: $q(x, y) = [(x, y)] = \\{(x, y)\\}$ for $0 < y < 1$\n- But edge points are identified: $q(x, 0) = q(x, 1) = [(x, 0)] = \\{(x, 0), (x, 1)\\}$\n\n**Quotient topology:** A set $U \\subseteq X/\\sim$ is open if and only if $q^{-1}(U)$ is open in $X$.\n\n**Properties of $q$:**\n- Continuous (by definition of quotient topology)\n- Surjective (maps onto the quotient)\n- Generally not injective (identifies points)",
+          "insight": "The quotient map is the natural projection from space to its quotient!"
+        },
+        "incorrect": {
+          "1": "No! The identity would mean no points are identified. We're identifying top and bottom edges.",
+          "2": "That would be the quotient by the relation where everything is equivalent. We only identify specific edges!"
+        }
+      },
+      "resultState": {
+        "description": "Quotient map understood",
+        "equations": ["q(x, y) = [x, y]"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Additional quotient example."
+      },
+      "prompt": {
+        "question": "What if we ALSO identified left and right edges: $(0, y) \\sim (1, y)$ along with $(x, 0) \\sim (x, 1)$?",
+        "hint": "Identifying both pairs of opposite edges of a square gives a torus $T^2 = S^1 \\times S^1$ (doughnut shape)!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A torus $T^2 = S^1 \\times S^1$ (doughnut)"
+        },
+        {
+          "id": "b",
+          "text": "A sphere $S^2$"
+        },
+        {
+          "id": "c",
+          "text": "A Klein bottle (non-orientable surface)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Torus construction:**\n\nIdentify BOTH pairs of opposite edges:\n1. $(x, 0) \\sim (x, 1)$ (top-bottom)\n2. $(0, y) \\sim (1, y)$ (left-right)\n\n**Geometric visualization:**\n- First identification (top-bottom) → cylinder\n- Second identification (left-right) → bend the cylinder and glue its circular ends together → **torus** (doughnut)\n\n**Topologically:** $T^2 = S^1 \\times S^1$ (product of two circles)\n\n**Other quotients of the square:**\n- Identify top-bottom only: **Cylinder** $S^1 \\times [0,1]$\n- Identify left-right only: **Cylinder** $[0,1] \\times S^1$\n- Identify both: **Torus** $T^2$\n- Identify with twist: **Klein bottle** or **Möbius strip** (non-orientable)\n\n**Video game screens:** The classic \"wrap-around\" (like in Pac-Man or Asteroids) implements torus topology!",
+          "insight": "Different edge identifications create different topological spaces from the same square!"
+        },
+        "incorrect": {
+          "1": "A sphere requires identifying all boundary points to a single point, not edge-by-edge matching.",
+          "2": "A Klein bottle needs a twist in one identification. Our identifications are orientation-preserving."
+        }
+      },
+      "resultState": {
+        "description": "Torus as double quotient",
+        "equations": ["\\text{Square with both edge pairs identified} \\cong T^2"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Quotient topology: $X/\\sim$ is $X$ modulo equivalence relation $\\sim$",
+      "Square with $(x,0) \\sim (x,1)$ → **Cylinder** $S^1 \\times [0,1]$",
+      "Square with both edge pairs identified → **Torus** $T^2 = S^1 \\times S^1$",
+      "Quotient map $q: X \\to X/\\sim$ sends points to equivalence classes",
+      "Quotient topology: $U$ open in $X/\\sim$ iff $q^{-1}(U)$ open in $X$",
+      "Edge identifications build complex spaces from simple ones"
+    ],
+    "fullSolution": "**Identify quotient space from square with edge identification**\n\n---\n\n**Given:** $X = [0,1] \\times [0,1]$ with $(x, 0) \\sim (x, 1)$ for all $x \\in [0,1]$\n\n---\n\n**Step 1: Understand the Equivalence Relation**\n\nThe relation identifies:\n- $(0, 0) \\sim (0, 1)$\n- $(0.5, 0) \\sim (0.5, 1)$\n- $(1, 0) \\sim (1, 1)$\n- Generally: top edge glued to bottom edge\n\n---\n\n**Step 2: Geometric Construction**\n\n1. Take a flat square\n2. Bring top edge down to bottom edge\n3. Glue points with matching $x$-coordinates\n4. Result: **Cylinder** (tube shape)\n\n---\n\n**Step 3: Topological Identification**\n\n$$([0,1] \\times [0,1]) / {\\sim} \\; \\cong \\; S^1 \\times [0,1]$$\n\nThe quotient is homeomorphic to a cylinder:\n- $S^1$ represents the circular cross-section (from glued edges)\n- $[0,1]$ represents the height (from left to right edges)\n\n---\n\n**Step 4: Quotient Map**\n\n$$q: [0,1] \\times [0,1] \\to ([0,1] \\times [0,1]) / {\\sim}$$\n\n$$q(x, y) = [(x, y)] = \\begin{cases} \\{(x, y)\\} & \\text{if } 0 < y < 1 \\\\ \\{(x, 0), (x, 1)\\} & \\text{if } y \\in \\{0, 1\\} \\end{cases}$$\n\n---\n\n**Answer:** $\\boxed{\\text{Cylinder } S^1 \\times [0,1]}$\n\n---\n\n**Bonus:** If we also identified $(0, y) \\sim (1, y)$, we'd get a **torus** $T^2$!",
+    "relatedProblems": [
+      "topology-metric-spaces-1",
+      "topology-continuous-functions-1"
+    ]
+  }
+}

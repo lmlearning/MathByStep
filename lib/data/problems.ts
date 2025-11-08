@@ -20,6 +20,7 @@ import geometrySimilarTriangles1 from '@/public/problems/geometry-similar-triang
 import geometryInscribedAngle1 from '@/public/problems/geometry-inscribed-angle-1.json';
 import geometryCoordinateGeometry1 from '@/public/problems/geometry-coordinate-geometry-1.json';
 import geometryPowerOfAPoint1 from '@/public/problems/geometry-power-of-a-point-1.json';
+import geometryTriangleCenters1 from '@/public/problems/geometry-triangle-centers-1.json';
 import numberTheoryDivisibility1 from '@/public/problems/number-theory-divisibility-1.json';
 import numberTheoryGcd1 from '@/public/problems/number-theory-gcd-1.json';
 import numberTheoryInfinitelyManyPrimes1 from '@/public/problems/number-theory-infinitely-many-primes-1.json';
@@ -100,6 +101,7 @@ import linearAlgebraOrthogonalProjection1 from '@/public/problems/linear-algebra
 import linearAlgebraLeastSquares1 from '@/public/problems/linear-algebra-least-squares-1.json';
 import linearAlgebraQrDecomposition1 from '@/public/problems/linear-algebra-qr-decomposition-1.json';
 import linearAlgebraEigenspaces1 from '@/public/problems/linear-algebra-eigenspaces-1.json';
+import linearAlgebraSvdIntro1 from '@/public/problems/linear-algebra-svd-intro-1.json';
 // Multivariable Calculus (additional)
 import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
 import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
@@ -154,6 +156,7 @@ import graphTheoryEulersFormula1 from '@/public/problems/graph-theory-eulers-for
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
 import numberTheoryBezoutsIdentity1 from '@/public/problems/number-theory-bezouts-identity-1.json';
+import numberTheoryEulerTotient1 from '@/public/problems/number-theory-euler-totient-1.json';
 // Mathematical Logic
 import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logic-1.json';
 // Topology (additional)
@@ -163,6 +166,7 @@ import topologyConnectedness1 from '@/public/problems/topology-connectedness-1.j
 import topologyHausdorffSpaces1 from '@/public/problems/topology-hausdorff-spaces-1.json';
 import topologyContinuousFunctions1 from '@/public/problems/topology-continuous-functions-1.json';
 import topologyHomeomorphisms1 from '@/public/problems/topology-homeomorphisms-1.json';
+import topologyQuotientSpaces1 from '@/public/problems/topology-quotient-spaces-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -185,6 +189,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'geometry-inscribed-angle-1': geometryInscribedAngle1 as any as Problem,
   'geometry-coordinate-geometry-1': geometryCoordinateGeometry1 as any as Problem,
   'geometry-power-of-a-point-1': geometryPowerOfAPoint1 as any as Problem,
+  'geometry-triangle-centers-1': geometryTriangleCenters1 as any as Problem,
   'number-theory-divisibility-1': numberTheoryDivisibility1 as Problem,
   'number-theory-gcd-1': numberTheoryGcd1 as Problem,
   'number-theory-infinitely-many-primes-1': numberTheoryInfinitelyManyPrimes1 as any as Problem,
@@ -265,6 +270,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'linear-algebra-least-squares-1': linearAlgebraLeastSquares1 as any as Problem,
   'linear-algebra-qr-decomposition-1': linearAlgebraQrDecomposition1 as any as Problem,
   'linear-algebra-eigenspaces-1': linearAlgebraEigenspaces1 as any as Problem,
+  'linear-algebra-svd-intro-1': linearAlgebraSvdIntro1 as any as Problem,
   // Multivariable Calculus (additional)
   'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
   'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
@@ -319,6 +325,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,
   'number-theory-bezouts-identity-1': numberTheoryBezoutsIdentity1 as any as Problem,
+  'number-theory-euler-totient-1': numberTheoryEulerTotient1 as any as Problem,
   // Mathematical Logic
   'logic-propositional-logic-1': logicPropositionalLogic1 as any as Problem,
   // Topology (additional)
@@ -328,6 +335,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'topology-hausdorff-spaces-1': topologyHausdorffSpaces1 as any as Problem,
   'topology-continuous-functions-1': topologyContinuousFunctions1 as any as Problem,
   'topology-homeomorphisms-1': topologyHomeomorphisms1 as any as Problem,
+  'topology-quotient-spaces-1': topologyQuotientSpaces1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

@@ -1,0 +1,200 @@
+{
+  "id": "number-theory-euler-totient-1",
+  "type": "problem",
+  "title": "Euler's Totient Function",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "number-theory",
+    "euler-totient",
+    "totient-function",
+    "coprime",
+    "multiplicative-function"
+  ],
+  "statement": {
+    "text": "Compute $\\phi(72)$ where $\\phi(n)$ is Euler's totient function (the number of positive integers up to $n$ that are relatively prime to $n$)."
+  },
+  "objectives": [
+    "Understand Euler's totient function",
+    "Apply totient formula for prime powers",
+    "Use multiplicativity property"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Compute $\\phi(72)$."
+      },
+      "prompt": {
+        "question": "What is the prime factorization of 72?",
+        "hint": "$72 = 8 \\times 9 = 2^3 \\times 3^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$72 = 2^3 \\times 3^2$"
+        },
+        {
+          "id": "b",
+          "text": "$72 = 2^2 \\times 3^3$"
+        },
+        {
+          "id": "c",
+          "text": "$72 = 2^4 \\times 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Prime factorization:\n\n$$72 = 8 \\times 9 = 2^3 \\times 3^2$$\n\nThis factorization is essential for computing $\\phi(72)$ using the formula.",
+          "insight": "Prime factorization is the key to computing totient function efficiently!"
+        },
+        "incorrect": {
+          "1": "$72 = 8 \\times 9 = 2^3 \\times 3^2$. Check: $2^3 = 8, 3^2 = 9, 8 \\times 9 = 72$ ✓",
+          "2": "$2^4 = 16$ and $16 \\times 3 = 48 \\neq 72$. The correct factorization is $2^3 \\times 3^2$."
+        }
+      },
+      "resultState": {
+        "description": "Prime factorization found",
+        "equations": ["72 = 2^3 \\times 3^2"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Use totient formula."
+      },
+      "prompt": {
+        "question": "What is the formula for $\\phi(p^k)$ where $p$ is prime?",
+        "hint": "$\\phi(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1)$. This counts numbers not divisible by $p$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\phi(p^k) = p^{k-1}(p - 1)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\phi(p^k) = p^k - 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\phi(p^k) = (p-1)^k$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! For a prime power $p^k$:\n\n$$\\phi(p^k) = p^{k-1}(p - 1) = p^k - p^{k-1}$$\n\n**Reasoning:** Among $\\{1, 2, \\ldots, p^k\\}$, the numbers NOT coprime to $p^k$ are exactly the multiples of $p$:\n$$p, 2p, 3p, \\ldots, p^{k-1} \\cdot p$$\n\nThere are $p^{k-1}$ such multiples. So:\n$$\\phi(p^k) = p^k - p^{k-1} = p^{k-1}(p-1)$$\n\n**Examples:**\n- $\\phi(2^3) = 2^2(2-1) = 4$\n- $\\phi(3^2) = 3^1(3-1) = 6$",
+          "insight": "The totient formula for prime powers is the building block!"
+        },
+        "incorrect": {
+          "1": "That's only true when $k = 1$! For $k > 1$, use $\\phi(p^k) = p^{k-1}(p-1)$.",
+          "2": "Not quite! The formula is $\\phi(p^k) = p^{k-1}(p-1)$, not $(p-1)^k$."
+        }
+      },
+      "resultState": {
+        "description": "Totient formula for prime powers",
+        "equations": ["\\phi(p^k) = p^{k-1}(p - 1)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply formula to $72 = 2^3 \\times 3^2$."
+      },
+      "prompt": {
+        "question": "The totient function is multiplicative: if $\\gcd(m, n) = 1$, then $\\phi(mn) = \\phi(m)\\phi(n)$. What is $\\phi(72)$?",
+        "hint": "$\\phi(72) = \\phi(2^3) \\times \\phi(3^2) = 2^2(2-1) \\times 3^1(3-1) = 4 \\times 1 \\times 3 \\times 2 = 24$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\phi(72) = 24$"
+        },
+        {
+          "id": "b",
+          "text": "$\\phi(72) = 36$"
+        },
+        {
+          "id": "c",
+          "text": "$\\phi(72) = 48$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Using multiplicativity:\n\n$$\\phi(72) = \\phi(2^3 \\times 3^2) = \\phi(2^3) \\times \\phi(3^2)$$\n\nSince $\\gcd(2^3, 3^2) = 1$.\n\n**Compute each:**\n$$\\phi(2^3) = 2^{3-1}(2-1) = 2^2 \\times 1 = 4$$\n$$\\phi(3^2) = 3^{2-1}(3-1) = 3^1 \\times 2 = 6$$\n\n**Multiply:**\n$$\\phi(72) = 4 \\times 6 = 24$$\n\nSo there are **24 positive integers** less than or equal to 72 that are coprime to 72.",
+          "insight": "Multiplicativity makes totient computation efficient for any number!"
+        },
+        "incorrect": {
+          "1": "Use $\\phi(2^3) = 4$ and $\\phi(3^2) = 6$, then multiply: $4 \\times 6 = 24$.",
+          "2": "Don't just multiply the prime powers! Use the totient formula for each."
+        }
+      },
+      "resultState": {
+        "description": "Totient computed",
+        "equations": ["\\phi(72) = 24"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Alternative formula."
+      },
+      "prompt": {
+        "question": "What is the general formula for $\\phi(n)$ where $n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k}$?",
+        "hint": "$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$ where the product is over all prime divisors $p$ of $n$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\phi(n) = n - 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\phi(n) = \\prod_{p | n} (p - 1)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **General Totient Formula:**\n\n$$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$$\n\nwhere the product is over all distinct prime divisors of $n$.\n\n**Verify for $n = 72 = 2^3 \\times 3^2$:**\n\nPrime divisors: $p = 2, 3$\n\n$$\\phi(72) = 72 \\times \\left(1 - \\frac{1}{2}\\right) \\times \\left(1 - \\frac{1}{3}\\right)$$\n\n$$= 72 \\times \\frac{1}{2} \\times \\frac{2}{3}$$\n\n$$= 72 \\times \\frac{2}{6} = 72 \\times \\frac{1}{3} = 24$$ ✓\n\n**Interpretation:** We remove fractions $\\frac{1}{p}$ for each prime $p$ dividing $n$.",
+          "insight": "This formula is elegant and makes the structure of $\\phi$ transparent!"
+        },
+        "incorrect": {
+          "1": "That's only true for primes! For composite $n$, use $\\phi(n) = n \\prod (1 - 1/p)$.",
+          "2": "Missing the factor $n$! The formula is $\\phi(n) = n \\prod (1 - 1/p)$."
+        }
+      },
+      "resultState": {
+        "description": "General formula verified",
+        "equations": ["\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\phi(n)$ counts integers in $\\{1, \\ldots, n\\}$ coprime to $n$",
+      "For prime power: $\\phi(p^k) = p^{k-1}(p-1)$",
+      "Totient function is multiplicative: $\\phi(mn) = \\phi(m)\\phi(n)$ if $\\gcd(m,n) = 1$",
+      "$72 = 2^3 \\times 3^2$, so $\\phi(72) = \\phi(2^3)\\phi(3^2) = 4 \\times 6 = 24$",
+      "General formula: $\\phi(n) = n \\prod_{p|n}(1 - 1/p)$",
+      "Used in Euler's theorem: $a^{\\phi(n)} \\equiv 1 \\pmod{n}$ for $\\gcd(a,n) = 1$"
+    ],
+    "fullSolution": "**Compute $\\phi(72)$ using Euler's totient function**\n\n---\n\n**Step 1: Prime Factorization**\n\n$$72 = 8 \\times 9 = 2^3 \\times 3^2$$\n\n---\n\n**Step 2: Totient of Prime Powers**\n\nFor prime power $p^k$:\n$$\\phi(p^k) = p^{k-1}(p - 1)$$\n\nApply:\n$$\\phi(2^3) = 2^2(2-1) = 4 \\times 1 = 4$$\n$$\\phi(3^2) = 3^1(3-1) = 3 \\times 2 = 6$$\n\n---\n\n**Step 3: Multiplicativity**\n\nSince $\\gcd(2^3, 3^2) = 1$:\n$$\\phi(72) = \\phi(2^3 \\times 3^2) = \\phi(2^3) \\times \\phi(3^2)$$\n\n$$= 4 \\times 6 = 24$$\n\n---\n\n**Step 4: Alternative Formula**\n\n$$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$$\n\nFor $n = 72$ with prime divisors $2, 3$:\n$$\\phi(72) = 72 \\left(1 - \\frac{1}{2}\\right)\\left(1 - \\frac{1}{3}\\right)$$\n\n$$= 72 \\times \\frac{1}{2} \\times \\frac{2}{3} = 24$$\n\n---\n\n**Answer:** $\\boxed{\\phi(72) = 24}$\n\n---\n\n**Meaning:** There are exactly 24 positive integers $\\leq 72$ that are coprime to 72.",
+    "relatedProblems": [
+      "number-theory-modular-arithmetic-1",
+      "number-theory-fermats-little-theorem-1"
+    ]
+  }
+}
