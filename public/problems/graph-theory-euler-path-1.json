@@ -1,0 +1,217 @@
+{
+  "id": "graph-theory-euler-path-1",
+  "type": "problem",
+  "title": "Graph Theory: Euler Paths and Circuits",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": ["discrete math", "graph theory", "Euler path", "graph traversal"],
+  "statement": {
+    "text": "Determine whether the graph with vertices $\\{A, B, C, D\\}$ and edges $\\{AB, BC, CD, DA, AC\\}$ has an Euler path or Euler circuit."
+  },
+  "objectives": [
+    "Understand Euler paths and circuits",
+    "Compute vertex degrees",
+    "Apply Euler's theorem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Understand definitions",
+      "currentState": {
+        "expression": "Graph $G$ with 4 vertices and 5 edges",
+        "description": "What are Euler paths and circuits?"
+      },
+      "reflectionPrompt": {
+        "question": "What is an Euler circuit?",
+        "hint": "A path that uses every edge exactly once and returns to the starting vertex."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Euler circuit: uses every edge once, returns to start. Euler path: uses every edge once."
+        },
+        {
+          "id": "b",
+          "content": "Euler circuit: visits every vertex once"
+        },
+        {
+          "id": "c",
+          "content": "Euler circuit: uses every vertex and edge exactly once"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Euler circuit = closed path using all edges once. Euler path = open path using all edges once.",
+          "insight": "Euler circuits visit all edges, not necessarily all vertices (but they must in a connected graph)."
+        },
+        "incorrect": {
+          "b": "That's a Hamiltonian circuit (visits all vertices). Euler focuses on edges.",
+          "c": "Vertices can be visited multiple times. It's the edges that must be used exactly once."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Draw the graph",
+      "currentState": {
+        "expression": "Vertices: A, B, C, D; Edges: AB, BC, CD, DA, AC",
+        "description": "Visualize the graph structure."
+      },
+      "reflectionPrompt": {
+        "question": "What does this graph look like?",
+        "hint": "It's a square (A-B-C-D-A) with one diagonal (AC)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "A square with diagonal AC"
+        },
+        {
+          "id": "b",
+          "content": "A complete graph $K_4$"
+        },
+        {
+          "id": "c",
+          "content": "A tree with 4 vertices"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The edges AB, BC, CD, DA form a square, and AC is a diagonal.",
+          "insight": "Visualizing the graph helps identify its structure and properties."
+        },
+        "incorrect": {
+          "b": "$K_4$ has 6 edges (all possible pairs). This graph only has 5 edges.",
+          "c": "This graph has a cycle (A-B-C-D-A), so it's not a tree."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute degrees",
+      "currentState": {
+        "expression": "Graph with vertices A, B, C, D",
+        "description": "The degree of a vertex is the number of edges incident to it."
+      },
+      "reflectionPrompt": {
+        "question": "What are the degrees of each vertex?",
+        "hint": "A: connected to B, D, C (deg 3); B: connected to A, C (deg 2); C: connected to B, D, A (deg 3); D: connected to C, A (deg 2)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "deg(A) = 3, deg(B) = 2, deg(C) = 3, deg(D) = 2"
+        },
+        {
+          "id": "b",
+          "content": "All vertices have degree 2"
+        },
+        {
+          "id": "c",
+          "content": "deg(A) = 2, deg(B) = 2, deg(C) = 2, deg(D) = 2"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! A and C each have degree 3 (three edges), while B and D each have degree 2.",
+          "insight": "The diagonal AC adds one to the degrees of A and C."
+        },
+        "incorrect": {
+          "b": "A and C are connected to 3 edges each because of the diagonal AC.",
+          "c": "Count carefully: A connects to B, D, and C (3 edges). Same for C."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Apply Euler's theorem",
+      "currentState": {
+        "expression": "Degrees: A=3, B=2, C=3, D=2",
+        "description": "Euler's theorem relates degrees to Euler paths/circuits."
+      },
+      "reflectionPrompt": {
+        "question": "What does Euler's theorem say?",
+        "hint": "Euler circuit exists iff all vertices have even degree. Euler path exists iff exactly 2 vertices have odd degree."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Euler path exists iff exactly 2 vertices have odd degree (here: A and C)"
+        },
+        {
+          "id": "b",
+          "content": "Euler circuit exists iff all degrees are equal"
+        },
+        {
+          "id": "c",
+          "content": "No Euler path exists since some degrees are odd"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Exactly 2 vertices (A and C) have odd degree, so an Euler path exists (but not a circuit).",
+          "insight": "The Euler path must start at one odd-degree vertex and end at the other."
+        },
+        "incorrect": {
+          "b": "Degrees don't need to be equal. All must be even for an Euler circuit.",
+          "c": "An Euler path exists when exactly 2 vertices have odd degree!"
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Find an Euler path",
+      "currentState": {
+        "expression": "Euler path must start at A or C (odd degree vertices)",
+        "description": "Construct an actual path."
+      },
+      "reflectionPrompt": {
+        "question": "Which is an Euler path for this graph?",
+        "hint": "Start at A (odd degree), end at C (odd degree), use all 5 edges once."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "A → B → C → D → A → C (uses all 5 edges exactly once)"
+        },
+        {
+          "id": "b",
+          "content": "A → B → C → A → D → C (repeats edge AC)"
+        },
+        {
+          "id": "c",
+          "content": "A → D → C → B → A (only uses 4 edges, misses AC)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! A → B → C → D → A → C uses edges AB, BC, CD, DA, AC exactly once, starting at A and ending at C.",
+          "insight": "This is an Euler path (not circuit) since it doesn't return to the starting vertex."
+        },
+        "incorrect": {
+          "b": "This path uses edge AC twice. Each edge must be used exactly once.",
+          "c": "This path misses the diagonal AC. An Euler path must use all edges."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Euler circuit: uses all edges once, returns to start (exists iff all degrees even)",
+      "Euler path: uses all edges once (exists iff exactly 2 vertices have odd degree)",
+      "The path starts and ends at the odd-degree vertices",
+      "This graph has Euler path A → B → C → D → A → C, but no Euler circuit"
+    ],
+    "fullSolution": "**Graph:** Vertices {A,B,C,D}, Edges {AB, BC, CD, DA, AC}\\n\\n**Degrees:**\\n- deg(A) = 3 (edges to B, D, C)\\n- deg(B) = 2 (edges to A, C)\\n- deg(C) = 3 (edges to B, D, A)\\n- deg(D) = 2 (edges to C, A)\\n\\n**Euler's Theorem:**\\n- Euler circuit: all degrees even → **NO** (A and C have odd degree)\\n- Euler path: exactly 2 odd degrees → **YES** (A and C)\\n\\n**Euler Path:** A → B → C → D → A → C\\n\\nEdges used: AB, BC, CD, DA, AC ✓ (all 5 edges exactly once)",
+    "relatedProblems": [
+      "discrete-math-combinatorics-1",
+      "logic-proof-induction-1"
+    ]
+  }
+}

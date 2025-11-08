@@ -1,0 +1,218 @@
+{
+  "id": "complex-analysis-contour-integration-1",
+  "type": "problem",
+  "title": "Complex Analysis: Evaluate a Contour Integral",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["complex analysis", "contour integration", "Cauchy theorem", "residues"],
+  "statement": {
+    "text": "Evaluate $\\oint_C \\frac{1}{z} \\, dz$ where $C$ is the circle $|z|=1$ traversed counterclockwise."
+  },
+  "objectives": [
+    "Understand contour integrals",
+    "Apply Cauchy's integral formula",
+    "Recognize singularities"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Identify the function and contour",
+      "currentState": {
+        "expression": "$f(z) = \\frac{1}{z}$, $C: |z| = 1$ (unit circle)",
+        "description": "What kind of integral is this?"
+      },
+      "reflectionPrompt": {
+        "question": "Where is $f(z) = 1/z$ analytic?",
+        "hint": "$1/z$ is analytic everywhere except at $z=0$ (a singularity)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$f(z) = 1/z$ is analytic on $\\mathbb{C} \\setminus \\{0\\}$ (has singularity at $z=0$)"
+        },
+        {
+          "id": "b",
+          "content": "$f(z) = 1/z$ is analytic everywhere"
+        },
+        {
+          "id": "c",
+          "content": "$f(z) = 1/z$ is not analytic anywhere"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $f(z) = 1/z$ is undefined at $z=0$, so it has a singularity there. It's analytic everywhere else.",
+          "insight": "The singularity at $z=0$ is enclosed by the contour $|z|=1$, which affects the integral."
+        },
+        "incorrect": {
+          "b": "$f(z) = 1/z$ is undefined at $z=0$, so it's not analytic there.",
+          "c": "$1/z$ is analytic everywhere except $z=0$. It satisfies the Cauchy-Riemann equations away from the origin."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Parametrize the contour",
+      "currentState": {
+        "expression": "$C: |z| = 1$ counterclockwise",
+        "description": "Use $z = e^{i\\theta}$ for $\\theta \\in [0, 2\\pi]$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $dz$ in terms of $\\theta$?",
+        "hint": "If $z = e^{i\\theta}$, then $dz = ie^{i\\theta} d\\theta = iz \\, d\\theta$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$z = e^{i\\theta}$, $dz = ie^{i\\theta} d\\theta$"
+        },
+        {
+          "id": "b",
+          "content": "$z = e^{i\\theta}$, $dz = e^{i\\theta} d\\theta$"
+        },
+        {
+          "id": "c",
+          "content": "$z = \\cos\\theta + i\\sin\\theta$, $dz = d\\theta$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $z(\\theta) = e^{i\\theta}$ gives $dz = \\frac{dz}{d\\theta} d\\theta = ie^{i\\theta} d\\theta$.",
+          "insight": "This parametrization is standard for circles centered at the origin."
+        },
+        "incorrect": {
+          "b": "Don't forget the factor of $i$: $\\frac{d}{d\\theta}(e^{i\\theta}) = ie^{i\\theta}$.",
+          "c": "$dz = \\frac{dz}{d\\theta} d\\theta = (-\\sin\\theta + i\\cos\\theta) d\\theta = ie^{i\\theta} d\\theta$, not just $d\\theta$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Substitute into the integral",
+      "currentState": {
+        "expression": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} \\frac{1}{e^{i\\theta}} \\cdot ie^{i\\theta} d\\theta$",
+        "description": "Simplify the integrand."
+      },
+      "reflectionPrompt": {
+        "question": "What does the integrand simplify to?",
+        "hint": "$\\frac{1}{e^{i\\theta}} \\cdot ie^{i\\theta} = i$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} i \\, d\\theta = i \\cdot 2\\pi = 2\\pi i$"
+        },
+        {
+          "id": "b",
+          "content": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} 1 \\, d\\theta = 2\\pi$"
+        },
+        {
+          "id": "c",
+          "content": "$\\oint_C \\frac{1}{z} dz = 0$ (by Cauchy's theorem)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\frac{ie^{i\\theta}}{e^{i\\theta}} = i$, so $\\int_0^{2\\pi} i \\, d\\theta = i[\\theta]_0^{2\\pi} = 2\\pi i$.",
+          "insight": "This is a fundamental result: $\\oint_{|z|=r} \\frac{1}{z} dz = 2\\pi i$ for any circle around the origin."
+        },
+        "incorrect": {
+          "b": "Don't forget the factor of $i$ in $dz = ie^{i\\theta} d\\theta$.",
+          "c": "Cauchy's theorem requires the function to be analytic inside the contour. Here $1/z$ has a singularity at $z=0$ inside $C$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Relate to Cauchy's integral formula",
+      "currentState": {
+        "expression": "$\\oint_C \\frac{1}{z} dz = 2\\pi i$",
+        "description": "This is a special case of Cauchy's integral formula."
+      },
+      "reflectionPrompt": {
+        "question": "How does this relate to Cauchy's formula?",
+        "hint": "Cauchy: $\\oint_C \\frac{f(z)}{z-a} dz = 2\\pi i \\cdot f(a)$ for $a$ inside $C$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "This is Cauchy's formula with $f(z) = 1$ and $a = 0$: $2\\pi i \\cdot f(0) = 2\\pi i$"
+        },
+        {
+          "id": "b",
+          "content": "This contradicts Cauchy's theorem since the integral is nonzero"
+        },
+        {
+          "id": "c",
+          "content": "This result is unrelated to Cauchy's formulas"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! This is Cauchy's integral formula: $\\oint_C \\frac{f(z)}{z-z_0} dz = 2\\pi i \\cdot f(z_0)$ with $f(z)=1$ and $z_0=0$.",
+          "insight": "Cauchy's formula generalizes this: $\\oint \\frac{f(z)}{z-a} dz = 2\\pi i f(a)$ for analytic $f$ and $a$ inside $C$."
+        },
+        "incorrect": {
+          "b": "It doesn't contradict Cauchy's theorem - that requires analyticity inside $C$. Here we have a singularity at $z=0$.",
+          "c": "This is exactly an instance of Cauchy's integral formula!"
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Generalize the result",
+      "currentState": {
+        "expression": "$\\oint_{|z|=1} \\frac{1}{z} dz = 2\\pi i$",
+        "description": "What if we integrate $1/z^n$ for other values of $n$?"
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\oint_{|z|=1} z^n dz$ for integer $n$?",
+        "hint": "For $n \\neq -1$: the result is 0 (analytic inside). For $n = -1$: $2\\pi i$ (singularity at origin)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\oint_{|z|=1} z^n dz = \\begin{cases} 2\\pi i & n = -1 \\\\ 0 & n \\neq -1 \\end{cases}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\oint_{|z|=1} z^n dz = 2\\pi i$ for all $n$"
+        },
+        {
+          "id": "c",
+          "content": "$\\oint_{|z|=1} z^n dz = 0$ for all $n$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! For $n \\neq -1$, $z^n$ is analytic inside $|z|=1$, so integral is 0 (Cauchy). For $n=-1$, singularity at origin gives $2\\pi i$.",
+          "insight": "This forms the basis of residue theory: only the $1/z$ term (residue) contributes to the integral around a closed contour."
+        },
+        "incorrect": {
+          "b": "Only $n=-1$ gives $2\\pi i$. For other $n$, the function is analytic inside, giving 0 by Cauchy's theorem.",
+          "c": "$n=-1$ is special because $1/z$ has a singularity at the origin. The integral equals $2\\pi i$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Contour integral: $\\oint_C f(z) dz$ where $C$ is a curve in $\\mathbb{C}$",
+      "Parametrize circle $|z|=r$: $z = re^{i\\theta}$, $dz = ire^{i\\theta} d\\theta$",
+      "Fundamental result: $\\oint_{|z|=r} \\frac{1}{z} dz = 2\\pi i$ (any circle around origin)",
+      "Cauchy's integral formula: $\\oint_C \\frac{f(z)}{z-a} dz = 2\\pi i f(a)$ ($a$ inside $C$, $f$ analytic)",
+      "For $n \\neq -1$: $\\oint_{|z|=r} z^n dz = 0$ (no singularity)"
+    ],
+    "fullSolution": "**Evaluate** $\\oint_C \\frac{1}{z} dz$ **where** $C: |z|=1$ (CCW)\\n\\n**Parametrize:** $z = e^{i\\theta}$, $\\theta \\in [0,2\\pi]$\\n$$dz = ie^{i\\theta} d\\theta$$\\n\\n**Substitute:**\\n$$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} \\frac{1}{e^{i\\theta}} \\cdot ie^{i\\theta} d\\theta = \\int_0^{2\\pi} i \\, d\\theta$$\\n\\n**Evaluate:**\\n$$= i[\\theta]_0^{2\\pi} = 2\\pi i$$\\n\\n**Answer: $2\\pi i$**\\n\\n**Interpretation:** This is Cauchy's integral formula with $f(z) = 1$, $z_0 = 0$:\\n$$\\oint_C \\frac{f(z)}{z-z_0} dz = 2\\pi i \\cdot f(z_0) = 2\\pi i \\cdot 1 = 2\\pi i$$",
+    "relatedProblems": [
+      "complex-analysis-cauchy-riemann-1",
+      "calculus-integration-by-parts-1"
+    ]
+  }
+}

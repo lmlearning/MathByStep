@@ -1,0 +1,218 @@
+{
+  "id": "statistics-hypothesis-testing-1",
+  "type": "problem",
+  "title": "Statistics: Hypothesis Testing with t-test",
+  "topic": "Probability & Statistics",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["statistics", "hypothesis testing", "t-test", "inference"],
+  "statement": {
+    "text": "A coffee shop claims their average serving time is 5 minutes. A sample of 16 customers shows mean time 5.8 minutes with standard deviation 1.2 minutes. Test at $\\alpha = 0.05$ whether the true mean is greater than 5 minutes."
+  },
+  "objectives": [
+    "Set up null and alternative hypotheses",
+    "Compute test statistic",
+    "Make statistical decision using critical values"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State the hypotheses",
+      "currentState": {
+        "expression": "Claim: $\\mu > 5$ (one-sided test)",
+        "description": "Set up $H_0$ and $H_a$."
+      },
+      "reflectionPrompt": {
+        "question": "What are the null and alternative hypotheses?",
+        "hint": "$H_0$: status quo ($\\mu = 5$). $H_a$: what we're testing ($\\mu > 5$)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$H_0: \\mu = 5$ vs $H_a: \\mu > 5$ (right-tailed test)"
+        },
+        {
+          "id": "b",
+          "content": "$H_0: \\mu > 5$ vs $H_a: \\mu = 5$"
+        },
+        {
+          "id": "c",
+          "content": "$H_0: \\mu = 5$ vs $H_a: \\mu \\neq 5$ (two-tailed test)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $H_0: \\mu = 5$ (null hypothesis: claim is false) vs $H_a: \\mu > 5$ (alternative: serving time is longer).",
+          "insight": "Null hypothesis represents the status quo or no effect. Alternative is what we're trying to prove."
+        },
+        "incorrect": {
+          "b": "The null hypothesis is always the equality statement. Alternative is what we test.",
+          "c": "The question asks if mean is greater than 5, so use one-sided test ($>$), not two-sided ($\\neq$)."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Check conditions and choose test",
+      "currentState": {
+        "expression": "Sample: $n=16$, $\\bar{x}=5.8$, $s=1.2$",
+        "description": "Population standard deviation unknown, small sample."
+      },
+      "reflectionPrompt": {
+        "question": "Which test should we use?",
+        "hint": "Unknown $\\sigma$, small sample $\\to$ use t-test with df = n-1 = 15."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Use t-test with df = 15 (unknown $\\sigma$, small sample)"
+        },
+        {
+          "id": "b",
+          "content": "Use z-test (we have sample standard deviation)"
+        },
+        {
+          "id": "c",
+          "content": "Use chi-square test"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! When population $\\sigma$ is unknown and $n < 30$, use t-test with degrees of freedom = $n - 1 = 15$.",
+          "insight": "The t-distribution accounts for extra uncertainty from estimating $\\sigma$ with $s$."
+        },
+        "incorrect": {
+          "b": "Z-test requires known population $\\sigma$. Here we only have sample $s$.",
+          "c": "Chi-square is for variance testing or categorical data, not mean testing."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute the test statistic",
+      "currentState": {
+        "expression": "$t = \\frac{\\bar{x} - \\mu_0}{s/\\sqrt{n}}$",
+        "description": "Standardize the sample mean."
+      },
+      "reflectionPrompt": {
+        "question": "What is the t-statistic?",
+        "hint": "$t = \\frac{5.8 - 5}{1.2/\\sqrt{16}} = \\frac{0.8}{0.3}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$t = \\frac{5.8-5}{1.2/4} = \\frac{0.8}{0.3} = 2.67$"
+        },
+        {
+          "id": "b",
+          "content": "$t = \\frac{5.8-5}{1.2} = 0.67$"
+        },
+        {
+          "id": "c",
+          "content": "$t = \\frac{5.8-5}{1.2/16} = 10.67$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $t = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}} = \\frac{5.8-5}{1.2/\\sqrt{16}} = \\frac{0.8}{0.3} \\approx 2.67$.",
+          "insight": "The test statistic measures how many standard errors the sample mean is from the hypothesized value."
+        },
+        "incorrect": {
+          "b": "Don't forget to divide by $\\sqrt{n}$: standard error is $s/\\sqrt{n}$, not just $s$.",
+          "c": "Use $\\sqrt{16} = 4$ in the denominator, not 16."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Find the critical value",
+      "currentState": {
+        "expression": "$\\alpha = 0.05$, df = 15, right-tailed test",
+        "description": "Look up $t_{0.05,15}$ in t-table."
+      },
+      "reflectionPrompt": {
+        "question": "What is the critical value $t_{\\alpha,df}$?",
+        "hint": "For df=15, right-tail, $\\alpha=0.05$: $t_{0.05,15} \\approx 1.753$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$t_{critical} = 1.753$ (from t-table with df=15, $\\alpha=0.05$)"
+        },
+        {
+          "id": "b",
+          "content": "$t_{critical} = 1.96$ (z-value)"
+        },
+        {
+          "id": "c",
+          "content": "$t_{critical} = 2.131$ (two-tailed value)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For a right-tailed test with df=15 and $\\alpha=0.05$, $t_{critical} = 1.753$.",
+          "insight": "If $t_{statistic} > t_{critical}$, we reject $H_0$."
+        },
+        "incorrect": {
+          "b": "1.96 is the z-value. For small samples, t-distribution has heavier tails, so $t_{critical} < z_{critical}$ here.",
+          "c": "2.131 is for a two-tailed test. For one-tailed, use 1.753."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Make decision",
+      "currentState": {
+        "expression": "$t = 2.67 > 1.753 = t_{critical}$",
+        "description": "Compare test statistic to critical value."
+      },
+      "reflectionPrompt": {
+        "question": "What is the conclusion?",
+        "hint": "Since $2.67 > 1.753$, the result falls in the rejection region."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Reject $H_0$. Evidence suggests mean serving time > 5 minutes (at $\\alpha=0.05$)"
+        },
+        {
+          "id": "b",
+          "content": "Fail to reject $H_0$. No evidence that mean > 5 minutes"
+        },
+        {
+          "id": "c",
+          "content": "Accept $H_0$. Mean equals exactly 5 minutes"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $t=2.67 > 1.753$, we reject $H_0$ at the 0.05 significance level. The data supports that average serving time exceeds 5 minutes.",
+          "insight": "p-value would be $P(t_{15} > 2.67) < 0.01$, which is less than $\\alpha = 0.05$, confirming rejection."
+        },
+        "incorrect": {
+          "b": "The test statistic exceeds the critical value, so we DO reject $H_0$.",
+          "c": "We never 'accept' $H_0$. We either reject it or fail to reject it. Here we reject it."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Hypothesis testing: $H_0$ (null) vs $H_a$ (alternative)",
+      "Use t-test when $\\sigma$ unknown and small sample",
+      "Test statistic: $t = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}}$ with df = n-1",
+      "Decision rule: reject $H_0$ if $|t| > t_{critical}$ (or use p-value)",
+      "Conclusion: Reject $H_0$; evidence suggests serving time > 5 minutes"
+    ],
+    "fullSolution": "**Hypothesis Test**\\n\\n**Given:** $n=16$, $\\bar{x}=5.8$, $s=1.2$, $\\alpha=0.05$\\n\\n**Hypotheses:**\\n- $H_0: \\mu = 5$\\n- $H_a: \\mu > 5$ (right-tailed)\\n\\n**Test:** t-test (unknown $\\sigma$, small sample)\\n\\n**Test statistic:**\\n$$t = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}} = \\frac{5.8-5}{1.2/4} = \\frac{0.8}{0.3} = 2.67$$\\n\\n**Critical value:** df = 15, $\\alpha=0.05$ (one-tail): $t_{0.05,15} = 1.753$\\n\\n**Decision:** $t = 2.67 > 1.753$ → **Reject $H_0$**\\n\\n**Conclusion:** At 5% significance level, there is sufficient evidence to conclude that the average serving time exceeds 5 minutes.\\n\\n**p-value:** $P(t_{15} > 2.67) \\approx 0.009 < 0.05$ ✓",
+    "relatedProblems": [
+      "probability-bayes-theorem-1",
+      "real-analysis-sequence-convergence-1"
+    ]
+  }
+}

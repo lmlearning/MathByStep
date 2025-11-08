@@ -63,6 +63,15 @@ import topologyMetricSpaces1 from '@/public/problems/topology-metric-spaces-1.js
 import probabilityBayesTheorem1 from '@/public/problems/probability-bayes-theorem-1.json';
 // Discrete Math
 import discreteMathCombinatorics1 from '@/public/problems/discrete-math-combinatorics-1.json';
+import graphTheoryEulerPath1 from '@/public/problems/graph-theory-euler-path-1.json';
+// Calculus (Sequences & Series)
+import calculusSeriesRatioTest1 from '@/public/problems/calculus-series-ratio-test-1.json';
+// Abstract Algebra (additional)
+import abstractAlgebraCyclicGroups1 from '@/public/problems/abstract-algebra-cyclic-groups-1.json';
+// Statistics
+import statisticsHypothesisTesting1 from '@/public/problems/statistics-hypothesis-testing-1.json';
+// Complex Analysis (additional)
+import complexAnalysisContourIntegration1 from '@/public/problems/complex-analysis-contour-integration-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -128,6 +137,15 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'probability-bayes-theorem-1': probabilityBayesTheorem1 as any as Problem,
   // Discrete Math
   'discrete-math-combinatorics-1': discreteMathCombinatorics1 as any as Problem,
+  'graph-theory-euler-path-1': graphTheoryEulerPath1 as any as Problem,
+  // Calculus (Sequences & Series)
+  'calculus-series-ratio-test-1': calculusSeriesRatioTest1 as any as Problem,
+  // Abstract Algebra (additional)
+  'abstract-algebra-cyclic-groups-1': abstractAlgebraCyclicGroups1 as any as Problem,
+  // Statistics
+  'statistics-hypothesis-testing-1': statisticsHypothesisTesting1 as any as Problem,
+  // Complex Analysis (additional)
+  'complex-analysis-contour-integration-1': complexAnalysisContourIntegration1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);
