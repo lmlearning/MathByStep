@@ -14,9 +14,19 @@ interface CategoryPageProps {
 const CATEGORY_MAP: { [key: string]: string } = {
   'algebra': 'Algebra',
   'calculus': 'Calculus',
+  'linear-algebra': 'Linear Algebra',
+  'multivariable-calculus': 'Multivariable Calculus',
+  'differential-equations': 'Differential Equations',
   'geometry': 'Geometry',
   'number-theory': 'Number Theory',
   'logic-proofs': 'Logic & Proofs',
+  'probability-statistics': 'Probability & Statistics',
+  'real-analysis': 'Real Analysis',
+  'abstract-algebra': 'Abstract Algebra',
+  'complex-analysis': 'Complex Analysis',
+  'discrete-mathematics': 'Discrete Mathematics',
+  'topology': 'Topology',
+  'numerical-analysis': 'Numerical Analysis',
 };
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
