@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllProblemMetadata } from '@/lib/data/problems';
 import { Card } from '@/components/shared/Card';
+import { TextWithMath } from '@/components/shared/MathRenderer';
 
 export default async function Home() {
   const problems = await getAllProblemMetadata();
@@ -40,9 +41,7 @@ export default async function Home() {
                             {problem.topic}
                           </span>
                         </div>
-                        <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100">
-                          {problem.title}
-                        </h3>
+                        <TextWithMath text={problem.title} className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100" />
                       </div>
 
                       {/* Difficulty Badge */}
