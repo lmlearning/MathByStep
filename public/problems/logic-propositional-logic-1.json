@@ -1,0 +1,181 @@
+{
+  "id": "logic-propositional-logic-1",
+  "type": "problem",
+  "title": "Propositional Logic and Truth Tables",
+  "topic": "Mathematical Logic",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": ["logic", "propositional logic", "truth tables", "logical equivalence"],
+  "statement": {
+    "text": "Determine whether $(P \\to Q) \\land (Q \\to R)$ is logically equivalent to $P \\to R$ using a truth table."
+  },
+  "objectives": [
+    "Construct truth table",
+    "Evaluate compound propositions",
+    "Check logical equivalence"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Set up truth table",
+      "currentState": {
+        "expression": "3 variables: $P, Q, R$",
+        "description": "How many rows needed?"
+      },
+      "reflectionPrompt": {
+        "question": "How many rows in the truth table?",
+        "hint": "3 variables → $2^3 = 8$ rows."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "8 rows (for all combinations of T/F for $P, Q, R$)"
+        },
+        {
+          "id": "b",
+          "content": "3 rows (one per variable)"
+        },
+        {
+          "id": "c",
+          "content": "6 rows"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! With $n$ variables, we need $2^n$ rows. Here $n=3$, so $2^3 = 8$ rows.",
+          "insight": "Each variable can be T or F independently, giving $2^n$ combinations."
+        },
+        "incorrect": {
+          "b": "Need to consider ALL combinations of truth values for the 3 variables: $2^3 = 8$ rows.",
+          "c": "$2^3 = 8$, not 6. Each variable doubles the number of rows."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Evaluate P → Q and Q → R",
+      "currentState": {
+        "expression": "Conditional: $P \\to Q$ is false only when $P$ is true and $Q$ is false",
+        "description": "Compute intermediate columns."
+      },
+      "reflectionPrompt": {
+        "question": "When is $P \\to Q$ false?",
+        "hint": "$P \\to Q$ is false only when $P=T$ and $Q=F$. Otherwise true."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P \\to Q$ is false only when $P=T$ and $Q=F$"
+        },
+        {
+          "id": "b",
+          "content": "$P \\to Q$ is false when $P$ and $Q$ have different truth values"
+        },
+        {
+          "id": "c",
+          "content": "$P \\to Q$ is true only when both are true"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Implication $P \\to Q$ (\"if P then Q\") is false only when premise $P$ is true but conclusion $Q$ is false.",
+          "insight": "Think: \"a true statement can't imply a false one.\""
+        },
+        "incorrect": {
+          "b": "When $P=F$ and $Q=T$, $P \\to Q$ is TRUE (false premise implies anything).",
+          "c": "No! $P \\to Q$ is also true when $P=F$ (regardless of $Q$)."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Evaluate conjunction",
+      "currentState": {
+        "expression": "$(P \\to Q) \\land (Q \\to R)$",
+        "description": "Conjunction is true when BOTH parts are true."
+      },
+      "reflectionPrompt": {
+        "question": "When is $(P \\to Q) \\land (Q \\to R)$ true?",
+        "hint": "True only in rows where BOTH $P \\to Q$ and $Q \\to R$ are true."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "True when both $P \\to Q$ and $Q \\to R$ are true (rows: TTT, TTF, TFF, FTT, FTF, FFT, FFF)"
+        },
+        {
+          "id": "b",
+          "content": "True when at least one of $P \\to Q$ or $Q \\to R$ is true"
+        },
+        {
+          "id": "c",
+          "content": "Always true"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $A \\land B$ is true iff both $A$ and $B$ are true. Check each row in the truth table.",
+          "insight": "Conjunction (AND) requires all components to be true."
+        },
+        "incorrect": {
+          "b": "That's disjunction (OR), not conjunction (AND)!",
+          "c": "Not a tautology - it's false when either implication is false."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Compare with P → R",
+      "currentState": {
+        "expression": "Check if $(P \\to Q) \\land (Q \\to R)$ has same truth values as $P \\to R$",
+        "description": "Are the columns identical?"
+      },
+      "reflectionPrompt": {
+        "question": "Are they logically equivalent?",
+        "hint": "Check row TFT: $(P \\to Q) \\land (Q \\to R) = F \\land T = F$, but $P \\to R = T \\to T = T$. NOT equivalent!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "NOT equivalent - they differ in row TFT (and possibly others)"
+        },
+        {
+          "id": "b",
+          "content": "YES, logically equivalent (same truth values in all rows)"
+        },
+        {
+          "id": "c",
+          "content": "Cannot determine from truth table"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Example: $P=T, Q=F, R=T$: $(T \\to F) \\land (F \\to T) = F \\land T = F$, but $T \\to T = T$. Different values → not equivalent.",
+          "insight": "The converse would be true: $(P \\to Q) \\land (Q \\to R) \\implies (P \\to R)$ is valid (hypothetical syllogism), but not the equivalence!"
+        },
+        "incorrect": {
+          "b": "Check row (T,F,T): LHS = F, RHS = T. They differ!",
+          "c": "Truth tables ARE the definitive method to check logical equivalence for propositional logic!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Truth table for $n$ variables has $2^n$ rows",
+      "Implication $P \\to Q$ is false only when $P=T$ and $Q=F$",
+      "$(P \\to Q) \\land (Q \\to R)$ is NOT logically equivalent to $P \\to R$",
+      "Counterexample: $P=T, Q=F, R=T$ gives different truth values",
+      "However, $(P \\to Q) \\land (Q \\to R) \\implies (P \\to R)$ IS valid!"
+    ],
+    "fullSolution": "**Check if $(P \\to Q) \\land (Q \\to R) \\equiv P \\to R$**\n\n**Truth Table:**\n\n| $P$ | $Q$ | $R$ | $P \\to Q$ | $Q \\to R$ | $(P \\to Q) \\land (Q \\to R)$ | $P \\to R$ |\n|-----|-----|-----|-----------|-----------|----------------------------|----------|\n| T   | T   | T   | T         | T         | T                          | T        |\n| T   | T   | F   | T         | F         | F                          | F        |\n| T   | F   | T   | F         | T         | **F**                      | **T**    |\n| T   | F   | F   | F         | T         | F                          | F        |\n| F   | T   | T   | T         | T         | T                          | T        |\n| F   | T   | F   | T         | F         | F                          | T        |\n| F   | F   | T   | T         | T         | T                          | T        |\n| F   | F   | F   | T         | T         | T                          | T        |\n\n**Conclusion:** Columns differ in row 3 (and row 6). **NOT logically equivalent.**\n\n**Note:** $(P \\to Q) \\land (Q \\to R) \\implies (P \\to R)$ is a valid inference (hypothetical syllogism)!",
+    "relatedProblems": [
+      "logic-proof-direct-1",
+      "logic-set-theory-demorgans-1"
+    ]
+  }
+}

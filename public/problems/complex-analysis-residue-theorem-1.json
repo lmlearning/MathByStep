@@ -1,0 +1,144 @@
+{
+  "id": "complex-analysis-residue-theorem-1",
+  "type": "problem",
+  "title": "Residue Theorem and Contour Integration",
+  "topic": "Complex Analysis",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": ["complex analysis", "residue theorem", "contour integration", "singularities"],
+  "statement": {
+    "text": "Evaluate $\\oint_C \\frac{z}{(z-1)(z-2)}\\, dz$ where $C$ is the circle $|z| = 1.5$ traversed counterclockwise."
+  },
+  "objectives": [
+    "Identify singularities inside contour",
+    "Compute residues",
+    "Apply residue theorem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Find singularities",
+      "currentState": {
+        "expression": "$f(z) = \\frac{z}{(z-1)(z-2)}$, $C: |z| = 1.5$",
+        "description": "Where is $f$ not analytic?"
+      },
+      "reflectionPrompt": {
+        "question": "What are the singularities and which are inside $C$?",
+        "hint": "Poles at $z=1$ and $z=2$. $|1| = 1 < 1.5$ (inside), $|2| = 2 > 1.5$ (outside)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Poles: $z=1$ (inside $C$), $z=2$ (outside $C$)"
+        },
+        {
+          "id": "b",
+          "content": "Poles: both $z=1$ and $z=2$ inside $C$"
+        },
+        {
+          "id": "c",
+          "content": "No singularities inside $C$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Denominator zeros at $z=1,2$ are simple poles. Circle $|z|=1.5$ contains $z=1$ but excludes $z=2$.",
+          "insight": "Only residues at singularities INSIDE the contour contribute to the integral!"
+        },
+        "incorrect": {
+          "b": "$|2| = 2 > 1.5$, so $z=2$ is OUTSIDE the contour $|z|=1.5$.",
+          "c": "$z=1$ satisfies $|1| = 1 < 1.5$, so it IS inside $C$!"
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute residue at z=1",
+      "currentState": {
+        "expression": "Simple pole at $z=1$",
+        "description": "Residue: $\\text{Res}(f, 1) = \\lim_{z \\to 1} (z-1)f(z)$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\text{Res}(f, 1)$?",
+        "hint": "$\\text{Res}(f,1) = \\lim_{z \\to 1} (z-1) \\cdot \\frac{z}{(z-1)(z-2)} = \\lim_{z \\to 1} \\frac{z}{z-2} = \\frac{1}{-1} = -1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\text{Res}(f, 1) = \\lim_{z \\to 1} \\frac{z}{z-2} = \\frac{1}{-1} = -1$"
+        },
+        {
+          "id": "b",
+          "content": "$\\text{Res}(f, 1) = \\frac{1}{(1-2)} = -1$ (wrong reasoning but same answer)"
+        },
+        {
+          "id": "c",
+          "content": "$\\text{Res}(f, 1) = 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! For simple pole at $z=a$: $\\text{Res}(f,a) = \\lim_{z \\to a} (z-a)f(z)$. Here: $(z-1)f(z) = \\frac{z}{z-2} \\to \\frac{1}{-1} = -1$ as $z \\to 1$.",
+          "insight": "Residue at simple pole: cancel the pole factor and evaluate the limit."
+        },
+        "incorrect": {
+          "b": "While the answer is correct, the method is incomplete - must multiply by $(z-1)$ first, then take limit.",
+          "c": "Check the arithmetic: $\\frac{1}{1-2} = \\frac{1}{-1} = -1$, not $+1$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Apply residue theorem",
+      "currentState": {
+        "expression": "Only singularity inside $C$ is $z=1$ with residue $-1$",
+        "description": "Residue theorem: $\\oint_C f(z)\\, dz = 2\\pi i \\sum \\text{Res}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the integral value?",
+        "hint": "$\\oint_C f = 2\\pi i \\cdot (\\text{sum of residues inside}) = 2\\pi i \\cdot (-1) = -2\\pi i$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\oint_C \\frac{z}{(z-1)(z-2)}\\, dz = 2\\pi i \\cdot (-1) = -2\\pi i$"
+        },
+        {
+          "id": "b",
+          "content": "$\\oint_C \\frac{z}{(z-1)(z-2)}\\, dz = 2\\pi i \\cdot \\text{Res}(f,1) + 2\\pi i \\cdot \\text{Res}(f,2)$"
+        },
+        {
+          "id": "c",
+          "content": "$\\oint_C \\frac{z}{(z-1)(z-2)}\\, dz = 0$ (Cauchy's theorem)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Residue Theorem: $\\oint_C f(z)\\, dz = 2\\pi i \\sum_{\\text{inside } C} \\text{Res}(f, z_k)$. Only $z=1$ is inside, so integral = $2\\pi i(-1) = -2\\pi i$.",
+          "insight": "Residue theorem converts difficult contour integrals into residue calculations!"
+        },
+        "incorrect": {
+          "b": "$z=2$ is OUTSIDE $C$, so its residue doesn't contribute!",
+          "c": "Cauchy's theorem applies when $f$ is analytic inside $C$. Here $f$ has a pole at $z=1$ inside!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Residue Theorem: $\\oint_C f\\, dz = 2\\pi i \\sum_{\\text{inside}} \\text{Res}(f, z_k)$",
+      "Singularities: poles at $z=1$ (inside $|z|=1.5$) and $z=2$ (outside)",
+      "Residue at $z=1$: $\\text{Res}(f,1) = -1$",
+      "Integral: $2\\pi i \\cdot (-1) = -2\\pi i$",
+      "Only singularities INSIDE contour contribute!"
+    ],
+    "fullSolution": "**Evaluate $\\oint_C \\frac{z}{(z-1)(z-2)}\\, dz$ where $C: |z|=1.5$**\n\n**Step 1: Find singularities**\nPoles at $z=1, 2$ (denominator zeros)\n- $z=1$: $|1| = 1 < 1.5$ → **inside** $C$\n- $z=2$: $|2| = 2 > 1.5$ → **outside** $C$\n\n**Step 2: Compute residue at $z=1$**\nFor simple pole:\n$$\\text{Res}(f, 1) = \\lim_{z \\to 1} (z-1) \\cdot \\frac{z}{(z-1)(z-2)} = \\lim_{z \\to 1} \\frac{z}{z-2} = \\frac{1}{-1} = -1$$\n\n**Step 3: Apply Residue Theorem**\n$$\\oint_C f(z)\\, dz = 2\\pi i \\sum_{\\text{singularities inside } C} \\text{Res}(f, z_k)$$\n$$= 2\\pi i \\cdot \\text{Res}(f, 1) = 2\\pi i \\cdot (-1) = -2\\pi i$$\n\n**Answer:** $\\displaystyle -2\\pi i$",
+    "relatedProblems": [
+      "complex-analysis-cauchy-riemann-1",
+      "complex-analysis-contour-integration-1"
+    ]
+  }
+}

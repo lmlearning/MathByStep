@@ -100,6 +100,18 @@ import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
+// Abstract Algebra (more topics)
+import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
+// Complex Analysis (more topics)
+import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
+// Discrete Math (additional)
+import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
+// Number Theory (additional)
+import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
+// Mathematical Logic
+import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logic-1.json';
+// Topology (additional)
+import topologyOpenClosedSets1 from '@/public/problems/topology-open-closed-sets-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -202,6 +214,18 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
+  // Abstract Algebra (more topics)
+  'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
+  // Complex Analysis (more topics)
+  'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
+  // Discrete Math (additional)
+  'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
+  // Number Theory (additional)
+  'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
+  // Mathematical Logic
+  'logic-propositional-logic-1': logicPropositionalLogic1 as any as Problem,
+  // Topology (additional)
+  'topology-open-closed-sets-1': topologyOpenClosedSets1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

@@ -1,0 +1,144 @@
+{
+  "id": "number-theory-fermats-little-theorem-1",
+  "type": "problem",
+  "title": "Fermat's Little Theorem",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": ["number theory", "Fermat's little theorem", "modular arithmetic", "primes"],
+  "statement": {
+    "text": "Use Fermat's Little Theorem to find the remainder when $7^{100}$ is divided by 11."
+  },
+  "objectives": [
+    "Apply Fermat's Little Theorem",
+    "Simplify large powers modulo prime",
+    "Compute final remainder"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State Fermat's Little Theorem",
+      "currentState": {
+        "expression": "$7^{100} \\bmod 11$",
+        "description": "11 is prime, $\\gcd(7, 11) = 1$."
+      },
+      "reflectionPrompt": {
+        "question": "What does Fermat's Little Theorem say?",
+        "hint": "If $p$ is prime and $\\gcd(a,p) = 1$, then $a^{p-1} \\equiv 1 \\pmod{p}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "If $p$ prime and $\\gcd(a,p)=1$: $a^{p-1} \\equiv 1 \\pmod{p}$"
+        },
+        {
+          "id": "b",
+          "content": "If $p$ prime: $a^p \\equiv a \\pmod{p}$ for all $a$"
+        },
+        {
+          "id": "c",
+          "content": "If $p$ prime: $a^p \\equiv 1 \\pmod{p}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Fermat's Little Theorem: If $p$ is prime and $p \\nmid a$, then $a^{p-1} \\equiv 1 \\pmod{p}$.",
+          "insight": "This powerful theorem reduces large powers modulo primes to small remainders!"
+        },
+        "incorrect": {
+          "b": "That's the alternative form. The standard form uses $p-1$ as exponent.",
+          "c": "Close! The exponent should be $p-1$, not $p$. And need $\\gcd(a,p)=1$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Apply the theorem",
+      "currentState": {
+        "expression": "$p = 11$, $a = 7$, $\\gcd(7, 11) = 1$",
+        "description": "Use $a^{p-1} \\equiv 1 \\pmod{p}$."
+      },
+      "reflectionPrompt": {
+        "question": "What does FLT tell us about $7^{10}$?",
+        "hint": "$7^{11-1} = 7^{10} \\equiv 1 \\pmod{11}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$7^{10} \\equiv 1 \\pmod{11}$ (by Fermat's Little Theorem)"
+        },
+        {
+          "id": "b",
+          "content": "$7^{11} \\equiv 1 \\pmod{11}$"
+        },
+        {
+          "id": "c",
+          "content": "$7^{100} \\equiv 1 \\pmod{11}$ directly"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since 11 is prime and $\\gcd(7,11)=1$: $7^{11-1} = 7^{10} \\equiv 1 \\pmod{11}$.",
+          "insight": "This gives us a way to simplify $7^{100}$ by writing it as a power of $7^{10}$."
+        },
+        "incorrect": {
+          "b": "The exponent in FLT is $p-1 = 10$, not $p = 11$.",
+          "c": "We know $7^{10} \\equiv 1$, but 100 is not 10! Need to express 100 in terms of 10."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Simplify the power",
+      "currentState": {
+        "expression": "$7^{100} \\bmod 11$, knowing $7^{10} \\equiv 1 \\pmod{11}$",
+        "description": "Write 100 as a multiple of 10."
+      },
+      "reflectionPrompt": {
+        "question": "How to use $7^{10} \\equiv 1$?",
+        "hint": "$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$"
+        },
+        {
+          "id": "b",
+          "content": "$7^{100} = 7^{10} \\cdot 7^{90} \\equiv 1 \\cdot 7^{90} \\pmod{11}$ (still need to compute)"
+        },
+        {
+          "id": "c",
+          "content": "$7^{100} \\equiv 100 \\cdot 7 \\pmod{11}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$ since $7^{10} \\equiv 1$.",
+          "insight": "Fermat's Little Theorem makes computing huge powers modulo primes trivial!"
+        },
+        "incorrect": {
+          "b": "Better to write $7^{100} = (7^{10})^{10}$ to use $7^{10} \\equiv 1$ directly.",
+          "c": "That's not a valid modular arithmetic operation. Use the power property!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Fermat's Little Theorem: $a^{p-1} \\equiv 1 \\pmod{p}$ if $p$ prime and $\\gcd(a,p)=1$",
+      "For $p=11$, $a=7$: $7^{10} \\equiv 1 \\pmod{11}$",
+      "$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$",
+      "Remainder when $7^{100}$ divided by 11: **1**",
+      "FLT is fundamental for modular exponentiation!"
+    ],
+    "fullSolution": "**Find $7^{100} \\bmod 11$**\n\n**Fermat's Little Theorem:** If $p$ is prime and $\\gcd(a,p) = 1$:\n$$a^{p-1} \\equiv 1 \\pmod{p}$$\n\n**Apply to our problem:**\n- $p = 11$ (prime)\n- $a = 7$\n- $\\gcd(7, 11) = 1$ ✓\n\nTherefore:\n$$7^{11-1} = 7^{10} \\equiv 1 \\pmod{11}$$\n\n**Simplify $7^{100}$:**\n$$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$$\n\n**Answer:** The remainder is **1**.\n\n**Verification:** We can also write $7^{100} \\equiv 1 \\pmod{11}$, meaning $11 \\mid (7^{100} - 1)$.",
+    "relatedProblems": [
+      "number-theory-modular-arithmetic-1",
+      "abstract-algebra-cyclic-groups-1"
+    ]
+  }
+}
