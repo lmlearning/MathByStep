@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Card } from '../shared/Card';
+import { TextWithMath } from '../shared/MathRenderer';
 
 interface ReflectionPromptProps {
   question: string;
@@ -16,9 +17,7 @@ export function ReflectionPrompt({ question, hint }: ReflectionPromptProps) {
       <div className="space-y-3">
         <div className="flex items-start gap-2">
           <span className="text-2xl">🤔</span>
-          <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 pt-1">
-            {question}
-          </p>
+          <TextWithMath text={question} className="text-lg font-semibold text-gray-900 dark:text-gray-100 pt-1" />
         </div>
 
         {hint && (
@@ -31,7 +30,7 @@ export function ReflectionPrompt({ question, hint }: ReflectionPromptProps) {
             </button>
             {showHint && (
               <div className="mt-2 p-3 bg-purple-100 dark:bg-purple-900/30 rounded border border-purple-200 dark:border-purple-700">
-                <p className="text-sm text-gray-800 dark:text-gray-200">💡 {hint}</p>
+                <TextWithMath text={`💡 ${hint}`} className="text-sm text-gray-800 dark:text-gray-200" />
               </div>
             )}
           </div>
