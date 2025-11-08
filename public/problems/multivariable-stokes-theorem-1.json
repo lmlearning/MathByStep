@@ -1,0 +1,196 @@
+{
+  "id": "multivariable-stokes-theorem-1",
+  "type": "problem",
+  "title": "Stokes' Theorem",
+  "topic": "Multivariable Calculus",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": [
+    "multivariable-calculus",
+    "stokes-theorem",
+    "line-integrals",
+    "surface-integrals",
+    "curl"
+  ],
+  "statement": {
+    "text": "Verify Stokes' Theorem for $\\mathbf{F} = (y, -x, z)$ over the hemisphere $x^2 + y^2 + z^2 = 1$, $z \\geq 0$, with boundary the circle $x^2 + y^2 = 1$ in the $xy$-plane."
+  },
+  "objectives": [
+    "Understand Stokes' Theorem",
+    "Compute curl of vector field",
+    "Evaluate surface and line integrals"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Stokes' Theorem relates line integral around boundary to surface integral of curl."
+      },
+      "prompt": {
+        "question": "What does Stokes' Theorem state?",
+        "hint": "$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$ where $C = \\partial S$ (boundary of surface $S$)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iiint_V (\\nabla \\cdot \\mathbf{F}) \\, dV$ (Divergence Theorem)"
+        },
+        {
+          "id": "c",
+          "text": "$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = 0$ for all fields"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Stokes' Theorem:**\n\nFor a smooth oriented surface $S$ with boundary curve $C = \\partial S$:\n$$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$$\n\nThe line integral around the boundary equals the surface integral of the curl!",
+          "insight": "Stokes generalizes Green's theorem to 3D! It's also a special case of the general Stokes theorem on manifolds."
+        },
+        "incorrect": {
+          "1": "That's the Divergence Theorem, not Stokes! Stokes involves curl, not divergence.",
+          "2": "Not always! Only when $\\nabla \\times \\mathbf{F} = \\mathbf{0}$ (conservative field)."
+        }
+      },
+      "resultState": {
+        "description": "Stokes' Theorem: $\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Compute curl of $\\mathbf{F} = (y, -x, z)$."
+      },
+      "prompt": {
+        "question": "What is $\\nabla \\times \\mathbf{F}$?",
+        "hint": "$\\nabla \\times \\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ y & -x & z \\end{vmatrix} = (0 - 0)\\mathbf{i} - (0 - 0)\\mathbf{j} + (-1 - 1)\\mathbf{k} = -2\\mathbf{k}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\nabla \\times \\mathbf{F} = (0, 0, -2)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\nabla \\times \\mathbf{F} = (0, 0, 0)$"
+        },
+        {
+          "id": "c",
+          "text": "$\\nabla \\times \\mathbf{F} = (0, 0, 2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Compute the curl:\n\n$$\\nabla \\times \\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ y & -x & z \\end{vmatrix}$$\n\n$$= \\mathbf{i}\\left(\\frac{\\partial z}{\\partial y} - \\frac{\\partial (-x)}{\\partial z}\\right) - \\mathbf{j}\\left(\\frac{\\partial z}{\\partial x} - \\frac{\\partial y}{\\partial z}\\right) + \\mathbf{k}\\left(\\frac{\\partial (-x)}{\\partial x} - \\frac{\\partial y}{\\partial y}\\right)$$\n\n$$= \\mathbf{i}(0 - 0) - \\mathbf{j}(0 - 0) + \\mathbf{k}(-1 - 1)$$\n\n$$= (0, 0, -2)$$",
+          "insight": "The curl points in the $-z$ direction with magnitude 2!"
+        },
+        "incorrect": {
+          "1": "Not zero! $\\mathbf{F}$ has rotation. Calculate $\\frac{\\partial (-x)}{\\partial x} - \\frac{\\partial y}{\\partial y}$.",
+          "2": "Sign error! $\\frac{\\partial (-x)}{\\partial x} - \\frac{\\partial y}{\\partial y} = -1 - 1 = -2$, not $+2$."
+        }
+      },
+      "resultState": {
+        "description": "Curl computed",
+        "equations": ["\\nabla \\times \\mathbf{F} = (0, 0, -2)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Surface integral: $\\iint_S (0, 0, -2) \\cdot d\\mathbf{S}$ over hemisphere."
+      },
+      "prompt": {
+        "question": "For the hemisphere with upward normal, what is $\\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$?",
+        "hint": "$d\\mathbf{S} = \\mathbf{n} \\, dS$ where $\\mathbf{n}$ is upward normal. On sphere, $\\mathbf{n} = (x, y, z)$. So $(0,0,-2) \\cdot (x,y,z) \\, dS = -2z \\, dS$. Using spherical coords and symmetry, this equals $-2\\pi$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = -2\\pi$"
+        },
+        {
+          "id": "b",
+          "text": "$\\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$\\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = 2\\pi$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! For the hemisphere $S$ with outward (upward) normal:\n\nOutward unit normal: $\\mathbf{n} = (x, y, z)$ on unit sphere\n\n$$(\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{n} = (0, 0, -2) \\cdot (x, y, z) = -2z$$\n\nSurface integral:\n$$\\iint_S -2z \\, dS$$\n\nUsing spherical coordinates or by symmetry and projection:\n$$= -2 \\cdot (\\text{area of unit disk}) = -2 \\cdot \\pi = -2\\pi$$",
+          "insight": "The surface integral captures the total circulation on the hemisphere!"
+        },
+        "incorrect": {
+          "1": "Not zero! The curl has a non-zero component in the normal direction.",
+          "2": "Sign error! $(0,0,-2) \\cdot \\mathbf{n}$ with upward normal gives negative value."
+        }
+      },
+      "resultState": {
+        "description": "Surface integral = $-2\\pi$"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Verify with line integral around $C$: circle $x^2 + y^2 = 1$, $z = 0$."
+      },
+      "prompt": {
+        "question": "Compute $\\oint_C \\mathbf{F} \\cdot d\\mathbf{r}$ where $C$ is traversed counterclockwise (viewed from above).",
+        "hint": "Parametrize: $\\mathbf{r}(t) = (\\cos t, \\sin t, 0)$, $t \\in [0, 2\\pi]$. Then $\\mathbf{r}'(t) = (-\\sin t, \\cos t, 0)$. $\\mathbf{F}(\\mathbf{r}(t)) = (\\sin t, -\\cos t, 0)$. So $\\mathbf{F} \\cdot \\mathbf{r}' = -\\sin^2 t - \\cos^2 t = -1$. Integral: $\\int_0^{2\\pi} -1 \\, dt = -2\\pi$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = -2\\pi$"
+        },
+        {
+          "id": "b",
+          "text": "$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = 2\\pi$"
+        },
+        {
+          "id": "c",
+          "text": "$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Parametrize the circle counterclockwise:\n$$\\mathbf{r}(t) = (\\cos t, \\sin t, 0), \\quad t \\in [0, 2\\pi]$$\n\n$$\\mathbf{r}'(t) = (-\\sin t, \\cos t, 0)$$\n\n$$\\mathbf{F}(\\mathbf{r}(t)) = (y, -x, z) = (\\sin t, -\\cos t, 0)$$\n\n$$\\mathbf{F} \\cdot \\mathbf{r}' = \\sin t(-\\sin t) + (-\\cos t)(\\cos t) + 0 = -\\sin^2 t - \\cos^2 t = -1$$\n\n$$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_0^{2\\pi} -1 \\, dt = -2\\pi$$\n\n**Stokes verified:** $\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = -2\\pi = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$ ✓",
+          "insight": "Stokes' Theorem connects the circulation around the boundary to the curl flux through the surface!"
+        },
+        "incorrect": {
+          "1": "Sign/orientation issue! Check that $C$ is oriented consistently with the surface normal.",
+          "2": "Not zero! The field has non-zero circulation around the circle."
+        }
+      },
+      "resultState": {
+        "description": "Stokes' Theorem verified: both integrals equal $-2\\pi$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Stokes' Theorem: $\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$",
+      "Curl: $\\nabla \\times \\mathbf{F} = (0, 0, -2)$ for $\\mathbf{F} = (y, -x, z)$",
+      "Surface integral over hemisphere: $-2\\pi$",
+      "Line integral around boundary circle: $-2\\pi$",
+      "Both sides equal - Stokes verified!"
+    ],
+    "fullSolution": "**Verify Stokes' Theorem for $\\mathbf{F} = (y, -x, z)$ on hemisphere**\n\n---\n\n**Stokes' Theorem:**\n$$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$$\n\n---\n\n**Step 1: Compute Curl**\n\n$$\\nabla \\times \\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ \\partial_x & \\partial_y & \\partial_z \\\\ y & -x & z \\end{vmatrix}$$\n\n$$= \\mathbf{i}(0 - 0) - \\mathbf{j}(0 - 0) + \\mathbf{k}(-1 - 1) = (0, 0, -2)$$\n\n---\n\n**Step 2: Surface Integral (Right Side)**\n\nSurface $S$: hemisphere $x^2 + y^2 + z^2 = 1$, $z \\geq 0$ with upward normal.\n\nOutward unit normal: $\\mathbf{n} = (x, y, z)$\n\n$$(\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{n} = (0, 0, -2) \\cdot (x, y, z) = -2z$$\n\n$$\\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S} = \\iint_S -2z \\, dS$$\n\nBy projection onto $xy$-plane:\n$$= -2 \\iint_D 1 \\, dA = -2 \\cdot \\pi(1)^2 = -2\\pi$$\n\nwhere $D$ is unit disk.\n\n---\n\n**Step 3: Line Integral (Left Side)**\n\nBoundary $C$: circle $x^2 + y^2 = 1$, $z = 0$, counterclockwise.\n\nParametrize: $\\mathbf{r}(t) = (\\cos t, \\sin t, 0)$, $t \\in [0, 2\\pi]$\n\n$$\\mathbf{r}'(t) = (-\\sin t, \\cos t, 0)$$\n\n$$\\mathbf{F}(\\mathbf{r}(t)) = (\\sin t, -\\cos t, 0)$$\n\n$$\\mathbf{F} \\cdot \\mathbf{r}' = -\\sin^2 t - \\cos^2 t = -1$$\n\n$$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_0^{2\\pi} -1 \\, dt = -2\\pi$$\n\n---\n\n**Verification:**\n$$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = -2\\pi = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}$$ ✓\n\n**Stokes' Theorem confirmed!**",
+    "relatedProblems": [
+      "multivariable-greens-theorem-1",
+      "multivariable-divergence-theorem-1"
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "id": "abstract-algebra-field-extensions-1",
+  "type": "problem",
+  "title": "Field Extensions and Degree",
+  "topic": "Abstract Algebra",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "abstract-algebra",
+    "field-theory",
+    "field-extensions",
+    "degree",
+    "minimal-polynomial"
+  ],
+  "statement": {
+    "text": "Find the degree $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}]$ of the field extension $\\mathbb{Q}(\\sqrt{2}, \\sqrt{3})$ over $\\mathbb{Q}$."
+  },
+  "objectives": [
+    "Understand field extensions",
+    "Apply tower law for degrees",
+    "Determine basis for extension"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Field extension $\\mathbb{Q}(\\sqrt{2}, \\sqrt{3})$ over $\\mathbb{Q}$."
+      },
+      "prompt": {
+        "question": "What does $[K : F]$ (degree of extension) mean?",
+        "hint": "$[K : F]$ is the dimension of $K$ as a vector space over $F$. It counts how many basis elements are needed."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$[K : F] = \\dim_F(K)$ (dimension of $K$ as vector space over $F$)"
+        },
+        {
+          "id": "b",
+          "text": "$[K : F]$ is the number of elements in $K$"
+        },
+        {
+          "id": "c",
+          "text": "$[K : F] = |K| - |F|$ (difference in cardinalities)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The **degree of field extension** $[K : F]$ is:\n\n$$[K : F] = \\dim_F(K)$$\n\nIt's the dimension of $K$ viewed as a vector space over the base field $F$.\n\nFor example, $[\\mathbb{C} : \\mathbb{R}] = 2$ because $\\{1, i\\}$ is a basis for $\\mathbb{C}$ over $\\mathbb{R}$.",
+          "insight": "Field extensions are vector spaces! The degree measures how 'big' the extension is."
+        },
+        "incorrect": {
+          "1": "Field extensions are usually infinite sets! $[K : F]$ measures dimension, not cardinality.",
+          "2": "Both fields are infinite, so this doesn't work. $[K : F]$ is about dimension as a vector space."
+        }
+      },
+      "resultState": {
+        "description": "Degree = dimension as vector space"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Use tower law: build extension in steps."
+      },
+      "prompt": {
+        "question": "What is $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$?",
+        "hint": "$\\sqrt{2}$ satisfies $x^2 - 2 = 0$ (irreducible over $\\mathbb{Q}$), so minimal polynomial has degree 2. Thus $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\sqrt{2}$ is a root of $x^2 - 2$.\n\n$x^2 - 2$ is irreducible over $\\mathbb{Q}$ (no rational roots by Rational Root Theorem).\n\nThe degree of the minimal polynomial equals the degree of the extension:\n$$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$$\n\n**Basis:** $\\{1, \\sqrt{2}\\}$ spans $\\mathbb{Q}(\\sqrt{2})$ over $\\mathbb{Q}$.\n\nElements look like $a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.",
+          "insight": "Degree of extension equals degree of minimal polynomial!"
+        },
+        "incorrect": {
+          "1": "If degree were 1, then $\\sqrt{2} \\in \\mathbb{Q}$. But $\\sqrt{2}$ is irrational!",
+          "2": "Too large! The minimal polynomial of $\\sqrt{2}$ has degree 2, not 4."
+        }
+      },
+      "resultState": {
+        "description": "First step computed",
+        "equations": ["[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Now extend from $\\mathbb{Q}(\\sqrt{2})$ to $\\mathbb{Q}(\\sqrt{2}, \\sqrt{3})$."
+      },
+      "prompt": {
+        "question": "What is $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})]$?",
+        "hint": "$\\sqrt{3}$ satisfies $x^2 - 3 = 0$. Check if irreducible over $\\mathbb{Q}(\\sqrt{2})$: if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$, then $\\sqrt{3} = a + b\\sqrt{2}$ for some $a, b \\in \\mathbb{Q}$. Squaring: $3 = a^2 + 2b^2 + 2ab\\sqrt{2}$. For this to hold, $2ab = 0$ and $a^2 + 2b^2 = 3$. If $a = 0$: $2b^2 = 3 \\implies b = \\sqrt{3/2} \\notin \\mathbb{Q}$. If $b = 0$: $a^2 = 3 \\implies a = \\sqrt{3} \\notin \\mathbb{Q}$. So $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$, thus degree is 2."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$ ($\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$)"
+        },
+        {
+          "id": "b",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 1$ ($\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$)"
+        },
+        {
+          "id": "c",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! We need to check if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$.\n\nSuppose $\\sqrt{3} = a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.\n\nSquaring: $3 = a^2 + 2ab\\sqrt{2} + 2b^2$\n\nFor equality: $a^2 + 2b^2 = 3$ and $2ab = 0$.\n\nIf $a = 0$: $2b^2 = 3 \\implies b^2 = 3/2$, so $b \\notin \\mathbb{Q}$. ✗\n\nIf $b = 0$: $a^2 = 3 \\implies a \\notin \\mathbb{Q}$. ✗\n\nSo $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$, meaning $x^2 - 3$ is irreducible over $\\mathbb{Q}(\\sqrt{2})$.\n\nTherefore: $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$",
+          "insight": "$\\sqrt{3}$ can't be written in terms of $\\sqrt{2}$ and rationals!"
+        },
+        "incorrect": {
+          "1": "If degree were 1, then $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$. But they're algebraically independent!",
+          "2": "The minimal polynomial is $x^2 - 3$, which has degree 2."
+        }
+      },
+      "resultState": {
+        "description": "Second step computed",
+        "equations": ["[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Apply tower law."
+      },
+      "prompt": {
+        "question": "Using the Tower Law, what is $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}]$?",
+        "hint": "Tower Law: $[K : F] = [K : L] \\cdot [L : F]$. Here: $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = [\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] \\cdot [\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2 \\cdot 2 = 4$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 2 \\times 2 = 4$"
+        },
+        {
+          "id": "b",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 2 + 2 = 4$"
+        },
+        {
+          "id": "c",
+          "text": "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Tower Law (Multiplicativity of Degrees):**\n\nFor field extensions $F \\subseteq L \\subseteq K$:\n$$[K : F] = [K : L] \\cdot [L : F]$$\n\nApply with $F = \\mathbb{Q}$, $L = \\mathbb{Q}(\\sqrt{2})$, $K = \\mathbb{Q}(\\sqrt{2}, \\sqrt{3})$:\n\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = [\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] \\cdot [\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$$\n\n$$= 2 \\times 2 = 4$$\n\n**Basis:** $\\{1, \\sqrt{2}, \\sqrt{3}, \\sqrt{6}\\}$ for $\\mathbb{Q}(\\sqrt{2}, \\sqrt{3})$ over $\\mathbb{Q}$.\n\nElements: $a + b\\sqrt{2} + c\\sqrt{3} + d\\sqrt{6}$ for $a,b,c,d \\in \\mathbb{Q}$.",
+          "insight": "Degrees MULTIPLY in towers, not add! This is because dimensions multiply."
+        },
+        "incorrect": {
+          "1": "Degrees multiply (not add) in the tower law! $[K : F] = [K : L] \\cdot [L : F]$.",
+          "2": "Too small! The extension contains both $\\sqrt{2}$ and $\\sqrt{3}$, giving 4-dimensional space."
+        }
+      },
+      "resultState": {
+        "description": "Degree computed using Tower Law",
+        "equations": ["[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Degree $[K : F] = \\dim_F(K)$ (dimension as vector space)",
+      "$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$ (minimal polynomial $x^2 - 2$)",
+      "$\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$ (algebraically independent)",
+      "$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$",
+      "Tower Law: $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 2 \\times 2 = 4$",
+      "Basis: $\\{1, \\sqrt{2}, \\sqrt{3}, \\sqrt{6}\\}$"
+    ],
+    "fullSolution": "**Find $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}]$**\n\n---\n\n**Strategy:** Use Tower Law with intermediate field $\\mathbb{Q}(\\sqrt{2})$.\n\n---\n\n**Step 1:** $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$\n\n$\\sqrt{2}$ is root of $x^2 - 2$, irreducible over $\\mathbb{Q}$ (no rational roots).\n\nDegree of minimal polynomial = degree of extension:\n$$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$$\n\nBasis: $\\{1, \\sqrt{2}\\}$\n\n---\n\n**Step 2:** $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})]$\n\nCheck if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$.\n\nSuppose $\\sqrt{3} = a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.\n\nSquare: $3 = a^2 + 2ab\\sqrt{2} + 2b^2$\n\nComparing rational and irrational parts:\n- $a^2 + 2b^2 = 3$\n- $2ab = 0$\n\nIf $a = 0$: $b^2 = 3/2 \\implies b \\notin \\mathbb{Q}$ ✗\n\nIf $b = 0$: $a^2 = 3 \\implies a \\notin \\mathbb{Q}$ ✗\n\nSo $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$.\n\nMinimal polynomial $x^2 - 3$ is irreducible over $\\mathbb{Q}(\\sqrt{2})$:\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$$\n\nBasis: $\\{1, \\sqrt{3}\\}$ over $\\mathbb{Q}(\\sqrt{2})$\n\n---\n\n**Step 3:** Tower Law\n\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = [\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] \\cdot [\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$$\n\n$$= 2 \\times 2 = 4$$\n\n---\n\n**Answer:** $\\boxed{[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4}$\n\n---\n\n**Basis over $\\mathbb{Q}$:** $\\{1, \\sqrt{2}, \\sqrt{3}, \\sqrt{6}\\}$\n\n**General element:** $a + b\\sqrt{2} + c\\sqrt{3} + d\\sqrt{6}$ for $a,b,c,d \\in \\mathbb{Q}$",
+    "relatedProblems": [
+      "abstract-algebra-group-1",
+      "abstract-algebra-rings-1"
+    ]
+  }
+}

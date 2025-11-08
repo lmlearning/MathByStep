@@ -1,0 +1,199 @@
+{
+  "id": "differential-equations-variation-parameters-1",
+  "type": "problem",
+  "title": "Variation of Parameters",
+  "topic": "Differential Equations",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": [
+    "differential-equations",
+    "variation-of-parameters",
+    "second-order",
+    "non-homogeneous"
+  ],
+  "statement": {
+    "text": "Solve the differential equation $y'' - y = e^x$ using variation of parameters."
+  },
+  "objectives": [
+    "Find complementary solution",
+    "Apply variation of parameters formula",
+    "Compute particular solution"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Non-homogeneous ODE: $y'' - y = e^x$."
+      },
+      "prompt": {
+        "question": "First, find the complementary solution $y_c$ by solving $y'' - y = 0$.",
+        "hint": "Characteristic equation: $r^2 - 1 = 0$ gives $r = \\pm 1$. So $y_c = c_1 e^x + c_2 e^{-x}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_c = c_1 e^x + c_2 e^{-x}$"
+        },
+        {
+          "id": "b",
+          "text": "$y_c = c_1 \\cos x + c_2 \\sin x$"
+        },
+        {
+          "id": "c",
+          "text": "$y_c = c_1 + c_2 x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Solve the homogeneous equation $y'' - y = 0$:\n\nCharacteristic equation: $r^2 - 1 = 0$\n\nFactor: $(r-1)(r+1) = 0$\n\nRoots: $r_1 = 1, r_2 = -1$\n\nComplementary solution:\n$$y_c = c_1 e^x + c_2 e^{-x}$$",
+          "insight": "The complementary solution solves the homogeneous version of the ODE!"
+        },
+        "incorrect": {
+          "1": "That's for $y'' + y = 0$, not $y'' - y = 0$. Check the characteristic equation!",
+          "2": "That's for $y'' = 0$. Our characteristic equation is $r^2 - 1 = 0$."
+        }
+      },
+      "resultState": {
+        "description": "Complementary solution found",
+        "equations": ["y_c = c_1 e^x + c_2 e^{-x}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Complementary solution: $y_c = c_1 e^x + c_2 e^{-x}$.",
+        "equations": ["y_1 = e^x, \\quad y_2 = e^{-x}"]
+      },
+      "prompt": {
+        "question": "What is the Wronskian $W(y_1, y_2)$?",
+        "hint": "$W = \\begin{vmatrix} e^x & e^{-x} \\\\ e^x & -e^{-x} \\end{vmatrix} = e^x(-e^{-x}) - e^{-x}(e^x) = -1 - 1 = -2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$W(y_1, y_2) = -2$"
+        },
+        {
+          "id": "b",
+          "text": "$W(y_1, y_2) = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$W(y_1, y_2) = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The Wronskian is:\n\n$$W(y_1, y_2) = \\begin{vmatrix} y_1 & y_2 \\\\ y_1' & y_2' \\end{vmatrix} = \\begin{vmatrix} e^x & e^{-x} \\\\ e^x & -e^{-x} \\end{vmatrix}$$\n\n$$= e^x \\cdot (-e^{-x}) - e^{-x} \\cdot e^x$$\n\n$$= -e^{x-x} - e^{-x+x} = -1 - 1 = -2$$\n\nSince $W \\neq 0$, the solutions are linearly independent!",
+          "insight": "Non-zero Wronskian confirms our fundamental set of solutions!"
+        },
+        "incorrect": {
+          "1": "If $W = 0$, the solutions would be linearly dependent. Calculate the determinant!",
+          "2": "Check signs! $e^x \\cdot (-e^{-x}) = -1$, and we subtract another 1."
+        }
+      },
+      "resultState": {
+        "description": "Wronskian computed",
+        "equations": ["W = -2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply variation of parameters formula."
+      },
+      "prompt": {
+        "question": "Using $u_1' = -\\frac{y_2 f}{W}$ and $u_2' = \\frac{y_1 f}{W}$ where $f(x) = e^x$, what are $u_1'$ and $u_2'$?",
+        "hint": "$u_1' = -\\frac{e^{-x} \\cdot e^x}{-2} = \\frac{1}{2}$ and $u_2' = \\frac{e^x \\cdot e^x}{-2} = -\\frac{e^{2x}}{2}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$u_1' = \\frac{1}{2}$ and $u_2' = -\\frac{e^{2x}}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$u_1' = e^x$ and $u_2' = e^{-x}$"
+        },
+        {
+          "id": "c",
+          "text": "$u_1' = -\\frac{1}{2}$ and $u_2' = \\frac{e^{2x}}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Variation of Parameters Formulas:**\n\n$$u_1' = -\\frac{y_2 f}{W} = -\\frac{e^{-x} \\cdot e^x}{-2} = \\frac{e^0}{2} = \\frac{1}{2}$$\n\n$$u_2' = \\frac{y_1 f}{W} = \\frac{e^x \\cdot e^x}{-2} = -\\frac{e^{2x}}{2}$$",
+          "insight": "These formulas systematically find the varying coefficients!"
+        },
+        "incorrect": {
+          "1": "Not the derivatives! Apply the variation of parameters formulas with $f(x) = e^x$.",
+          "2": "Sign error! Check: $u_1' = -\\frac{y_2 f}{W}$ with $W = -2$ (negative)."
+        }
+      },
+      "resultState": {
+        "description": "Derivatives found",
+        "equations": ["u_1' = \\frac{1}{2}, \\quad u_2' = -\\frac{e^{2x}}{2}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Integrate to find $u_1$ and $u_2$."
+      },
+      "prompt": {
+        "question": "What is the particular solution $y_p = u_1 y_1 + u_2 y_2$?",
+        "hint": "$u_1 = \\int \\frac{1}{2} dx = \\frac{x}{2}$ and $u_2 = \\int -\\frac{e^{2x}}{2} dx = -\\frac{e^{2x}}{4}$. So $y_p = \\frac{x}{2} e^x - \\frac{e^{2x}}{4} e^{-x} = \\frac{x}{2} e^x - \\frac{e^x}{4}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_p = \\frac{x}{2} e^x - \\frac{e^x}{4} = \\frac{e^x}{4}(2x - 1)$"
+        },
+        {
+          "id": "b",
+          "text": "$y_p = xe^x$"
+        },
+        {
+          "id": "c",
+          "text": "$y_p = \\frac{e^x}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Integrate:\n\n$$u_1 = \\int \\frac{1}{2} dx = \\frac{x}{2}$$\n\n$$u_2 = \\int -\\frac{e^{2x}}{2} dx = -\\frac{e^{2x}}{4}$$\n\nParticular solution:\n$$y_p = u_1 y_1 + u_2 y_2 = \\frac{x}{2} e^x + \\left(-\\frac{e^{2x}}{4}\\right) e^{-x}$$\n\n$$= \\frac{x}{2} e^x - \\frac{e^{2x-x}}{4} = \\frac{x}{2} e^x - \\frac{e^x}{4}$$\n\n$$= \\frac{e^x}{4}(2x - 1)$$\n\n**General solution:** $y = y_c + y_p = c_1 e^x + c_2 e^{-x} + \\frac{e^x}{4}(2x - 1)$",
+          "insight": "Variation of parameters works even when undetermined coefficients fails (like when $f(x)$ is in $y_c$)!"
+        },
+        "incorrect": {
+          "1": "Close, but missing a constant term. Calculate $u_2 y_2$ carefully.",
+          "2": "That's a simpler form, but doesn't account for both terms in $y_p$."
+        }
+      },
+      "resultState": {
+        "description": "Particular solution complete",
+        "equations": ["y_p = \\frac{e^x}{4}(2x - 1)"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Homogeneous solution: $y_c = c_1 e^x + c_2 e^{-x}$",
+      "Wronskian: $W = -2$ (non-zero, so linearly independent)",
+      "Variation of parameters: $u_1' = \\frac{1}{2}$, $u_2' = -\\frac{e^{2x}}{2}$",
+      "Particular solution: $y_p = \\frac{e^x}{4}(2x - 1)$",
+      "General solution: $y = c_1 e^x + c_2 e^{-x} + \\frac{e^x}{4}(2x - 1)$"
+    ],
+    "fullSolution": "**Solve $y'' - y = e^x$ using variation of parameters**\n\n---\n\n**Step 1: Complementary Solution**\n\nSolve $y'' - y = 0$:\n\nCharacteristic equation: $r^2 - 1 = 0$\n\nRoots: $r = \\pm 1$\n\n$$y_c = c_1 e^x + c_2 e^{-x}$$\n\nFundamental set: $y_1 = e^x$, $y_2 = e^{-x}$\n\n---\n\n**Step 2: Wronskian**\n\n$$W = \\begin{vmatrix} e^x & e^{-x} \\\\ e^x & -e^{-x} \\end{vmatrix} = -e^0 - e^0 = -2$$\n\n---\n\n**Step 3: Variation of Parameters**\n\nFor $y'' + P(x)y' + Q(x)y = f(x)$, particular solution is:\n$$y_p = u_1(x) y_1 + u_2(x) y_2$$\n\nwhere:\n$$u_1' = -\\frac{y_2 f}{W}, \\quad u_2' = \\frac{y_1 f}{W}$$\n\nHere $f(x) = e^x$:\n\n$$u_1' = -\\frac{e^{-x} \\cdot e^x}{-2} = \\frac{1}{2}$$\n\n$$u_2' = \\frac{e^x \\cdot e^x}{-2} = -\\frac{e^{2x}}{2}$$\n\n---\n\n**Step 4: Integrate**\n\n$$u_1 = \\int \\frac{1}{2} dx = \\frac{x}{2}$$\n\n$$u_2 = \\int -\\frac{e^{2x}}{2} dx = -\\frac{e^{2x}}{4}$$\n\n---\n\n**Step 5: Particular Solution**\n\n$$y_p = u_1 y_1 + u_2 y_2 = \\frac{x}{2} e^x - \\frac{e^{2x}}{4} e^{-x}$$\n\n$$= \\frac{x}{2} e^x - \\frac{e^x}{4} = \\frac{e^x}{4}(2x - 1)$$\n\n---\n\n**General Solution:**\n\n$$\\boxed{y = c_1 e^x + c_2 e^{-x} + \\frac{e^x}{4}(2x - 1)}$$\n\nOr simplified:\n$$y = \\left(c_1 + \\frac{2x-1}{4}\\right) e^x + c_2 e^{-x}$$",
+    "relatedProblems": [
+      "differential-equations-second-order-homogeneous-1",
+      "differential-equations-undetermined-coefficients-1"
+    ]
+  }
+}

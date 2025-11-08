@@ -53,6 +53,7 @@ import differentialEquationsSecondOrderHomogeneous1 from '@/public/problems/diff
 import differentialEquationsUndeterminedCoefficients1 from '@/public/problems/differential-equations-undetermined-coefficients-1.json';
 import differentialEquationsSystems1 from '@/public/problems/differential-equations-systems-1.json';
 import differentialEquationsLaplaceTransform1 from '@/public/problems/differential-equations-laplace-transform-1.json';
+import differentialEquationsVariationParameters1 from '@/public/problems/differential-equations-variation-parameters-1.json';
 // Real Analysis
 import realAnalysisSequenceConvergence1 from '@/public/problems/real-analysis-sequence-convergence-1.json';
 import realAnalysisContinuityUniform1 from '@/public/problems/real-analysis-continuity-uniform-1.json';
@@ -102,6 +103,7 @@ import linearAlgebraEigenspaces1 from '@/public/problems/linear-algebra-eigenspa
 // Multivariable Calculus (additional)
 import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
 import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
+import multivariableStokesTheorem1 from '@/public/problems/multivariable-stokes-theorem-1.json';
 // Differential Equations (additional)
 import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
 import differentialEquationsBernoulli1 from '@/public/problems/differential-equations-bernoulli-1.json';
@@ -132,12 +134,14 @@ import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-ho
 import abstractAlgebraRings1 from '@/public/problems/abstract-algebra-rings-1.json';
 import abstractAlgebraGroupActions1 from '@/public/problems/abstract-algebra-group-actions-1.json';
 import abstractAlgebraQuotientGroups1 from '@/public/problems/abstract-algebra-quotient-groups-1.json';
+import abstractAlgebraFieldExtensions1 from '@/public/problems/abstract-algebra-field-extensions-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
 import complexAnalysisCauchyTheorem1 from '@/public/problems/complex-analysis-cauchy-theorem-1.json';
 import complexAnalysisConformalMapping1 from '@/public/problems/complex-analysis-conformal-mapping-1.json';
 import complexAnalysisAnalyticContinuation1 from '@/public/problems/complex-analysis-analytic-continuation-1.json';
+import complexAnalysisPolesResidues1 from '@/public/problems/complex-analysis-poles-residues-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
@@ -214,6 +218,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'differential-equations-undetermined-coefficients-1': differentialEquationsUndeterminedCoefficients1 as any as Problem,
   'differential-equations-systems-1': differentialEquationsSystems1 as any as Problem,
   'differential-equations-laplace-transform-1': differentialEquationsLaplaceTransform1 as any as Problem,
+  'differential-equations-variation-parameters-1': differentialEquationsVariationParameters1 as any as Problem,
   // Real Analysis
   'real-analysis-sequence-convergence-1': realAnalysisSequenceConvergence1 as any as Problem,
   'real-analysis-continuity-uniform-1': realAnalysisContinuityUniform1 as any as Problem,
@@ -263,6 +268,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Multivariable Calculus (additional)
   'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
   'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
+  'multivariable-stokes-theorem-1': multivariableStokesTheorem1 as any as Problem,
   // Differential Equations (additional)
   'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
   'differential-equations-bernoulli-1': differentialEquationsBernoulli1 as any as Problem,
@@ -293,12 +299,14 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'abstract-algebra-rings-1': abstractAlgebraRings1 as any as Problem,
   'abstract-algebra-group-actions-1': abstractAlgebraGroupActions1 as any as Problem,
   'abstract-algebra-quotient-groups-1': abstractAlgebraQuotientGroups1 as any as Problem,
+  'abstract-algebra-field-extensions-1': abstractAlgebraFieldExtensions1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
   'complex-analysis-cauchy-theorem-1': complexAnalysisCauchyTheorem1 as any as Problem,
   'complex-analysis-conformal-mapping-1': complexAnalysisConformalMapping1 as any as Problem,
   'complex-analysis-analytic-continuation-1': complexAnalysisAnalyticContinuation1 as any as Problem,
+  'complex-analysis-poles-residues-1': complexAnalysisPolesResidues1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,

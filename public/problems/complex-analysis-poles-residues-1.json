@@ -1,0 +1,199 @@
+{
+  "id": "complex-analysis-poles-residues-1",
+  "type": "problem",
+  "title": "Poles and Residues",
+  "topic": "Complex Analysis",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "complex-analysis",
+    "poles",
+    "residues",
+    "laurent-series",
+    "singularities"
+  ],
+  "statement": {
+    "text": "Find all poles and their residues for $f(z) = \\frac{z^2 + 1}{z^2(z-1)}$."
+  },
+  "objectives": [
+    "Identify poles and their orders",
+    "Compute residues using formulas",
+    "Understand Laurent series"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Function: $f(z) = \\frac{z^2 + 1}{z^2(z-1)}$."
+      },
+      "prompt": {
+        "question": "What are the poles of $f(z)$ and their orders?",
+        "hint": "Poles occur where denominator vanishes: $z^2(z-1) = 0$ gives $z = 0$ (order 2) and $z = 1$ (order 1)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Pole of order 2 at $z = 0$; pole of order 1 at $z = 1$"
+        },
+        {
+          "id": "b",
+          "text": "Pole of order 1 at $z = 0$; pole of order 1 at $z = 1$"
+        },
+        {
+          "id": "c",
+          "text": "Pole of order 3 at $z = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Analyze singularities:\n\nDenominator: $z^2(z-1)$\n\n**At $z = 0$:** Factor $z^2$ means pole of order 2 (numerator $z^2 + 1 = 1 \\neq 0$ at $z=0$)\n\n**At $z = 1$:** Factor $(z-1)$ means pole of order 1 (numerator $z^2 + 1 = 2 \\neq 0$ at $z=1$)\n\nBoth are poles (not removable) since numerator doesn't vanish at these points.",
+          "insight": "Order of pole = power of factor in denominator (when numerator is non-zero)!"
+        },
+        "incorrect": {
+          "1": "$z = 0$ appears with power 2 in denominator, so it's order 2, not 1!",
+          "2": "There are two separate poles! $z = 0$ (order 2) and $z = 1$ (order 1)."
+        }
+      },
+      "resultState": {
+        "description": "Poles identified",
+        "equations": ["z = 0 \\text{ (order 2)}, \\quad z = 1 \\text{ (order 1)}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find residue at simple pole $z = 1$."
+      },
+      "prompt": {
+        "question": "What is $\\text{Res}(f, 1)$ for the simple pole at $z = 1$?",
+        "hint": "For simple pole: $\\text{Res}(f, z_0) = \\lim_{z \\to z_0} (z - z_0) f(z)$. Here: $\\lim_{z \\to 1} (z-1) \\cdot \\frac{z^2+1}{z^2(z-1)} = \\lim_{z \\to 1} \\frac{z^2+1}{z^2} = \\frac{2}{1} = 2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\text{Res}(f, 1) = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$\\text{Res}(f, 1) = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\text{Res}(f, 1) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! For a **simple pole** at $z = z_0$:\n$$\\text{Res}(f, z_0) = \\lim_{z \\to z_0} (z - z_0) f(z)$$\n\nAt $z = 1$:\n$$\\text{Res}(f, 1) = \\lim_{z \\to 1} (z-1) \\cdot \\frac{z^2+1}{z^2(z-1)}$$\n\n$$= \\lim_{z \\to 1} \\frac{z^2+1}{z^2} = \\frac{1^2+1}{1^2} = \\frac{2}{1} = 2$$",
+          "insight": "For simple poles, the residue formula is straightforward - just cancel the pole!"
+        },
+        "incorrect": {
+          "1": "Check numerator at $z=1$: $z^2 + 1 = 1 + 1 = 2$, not 1!",
+          "2": "Residue is non-zero! Evaluate $\\frac{z^2+1}{z^2}$ at $z=1$."
+        }
+      },
+      "resultState": {
+        "description": "Residue at $z=1$ found",
+        "equations": ["\\text{Res}(f, 1) = 2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find residue at pole of order 2 at $z = 0$."
+      },
+      "prompt": {
+        "question": "What is $\\text{Res}(f, 0)$ for the pole of order 2?",
+        "hint": "For pole of order $m$: $\\text{Res}(f, z_0) = \\frac{1}{(m-1)!} \\lim_{z \\to z_0} \\frac{d^{m-1}}{dz^{m-1}}[(z-z_0)^m f(z)]$. Here $m=2$: $\\text{Res}(f, 0) = \\lim_{z \\to 0} \\frac{d}{dz}\\left[z^2 \\cdot \\frac{z^2+1}{z^2(z-1)}\\right] = \\lim_{z \\to 0} \\frac{d}{dz}\\left[\\frac{z^2+1}{z-1}\\right]$. Use quotient rule: $\\frac{d}{dz}\\left[\\frac{z^2+1}{z-1}\\right] = \\frac{2z(z-1) - (z^2+1)}{(z-1)^2} = \\frac{2z^2 - 2z - z^2 - 1}{(z-1)^2} = \\frac{z^2 - 2z - 1}{(z-1)^2}$. At $z=0$: $\\frac{-1}{1} = -1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\text{Res}(f, 0) = -1$"
+        },
+        {
+          "id": "b",
+          "text": "$\\text{Res}(f, 0) = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$\\text{Res}(f, 0) = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! For pole of order $m = 2$:\n$$\\text{Res}(f, 0) = \\lim_{z \\to 0} \\frac{d}{dz}\\left[z^2 f(z)\\right]$$\n\nCompute:\n$$z^2 f(z) = z^2 \\cdot \\frac{z^2+1}{z^2(z-1)} = \\frac{z^2+1}{z-1}$$\n\nDerivative using quotient rule:\n$$\\frac{d}{dz}\\left[\\frac{z^2+1}{z-1}\\right] = \\frac{2z(z-1) - (z^2+1) \\cdot 1}{(z-1)^2}$$\n\n$$= \\frac{2z^2 - 2z - z^2 - 1}{(z-1)^2} = \\frac{z^2 - 2z - 1}{(z-1)^2}$$\n\nAt $z = 0$:\n$$\\text{Res}(f, 0) = \\frac{0 - 0 - 1}{(-1)^2} = \\frac{-1}{1} = -1$$",
+          "insight": "For higher order poles, we need derivatives! This comes from the Laurent series coefficient."
+        },
+        "incorrect": {
+          "1": "Residue is non-zero! Calculate the derivative carefully.",
+          "2": "Sign error! At $z=0$: numerator is $-1$ and denominator is $1$."
+        }
+      },
+      "resultState": {
+        "description": "Residue at $z=0$ found",
+        "equations": ["\\text{Res}(f, 0) = -1"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "All residues computed."
+      },
+      "prompt": {
+        "question": "Verify using the residue theorem: What is $\\sum \\text{Res}(f)$?",
+        "hint": "Sum of residues: $-1 + 2 = 1$. If we integrate $f$ around a large circle, by residue theorem, we get $2\\pi i \\cdot 1 = 2\\pi i$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Sum of residues = $-1 + 2 = 1$"
+        },
+        {
+          "id": "b",
+          "text": "Sum of residues = $0$"
+        },
+        {
+          "id": "c",
+          "text": "Sum of residues = $3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Summary of residues:**\n\n- $\\text{Res}(f, 0) = -1$ (pole of order 2)\n- $\\text{Res}(f, 1) = 2$ (simple pole)\n\n**Sum:** $-1 + 2 = 1$\n\n**Residue Theorem:** For a contour $C$ enclosing all poles:\n$$\\oint_C f(z) \\, dz = 2\\pi i \\sum \\text{residues} = 2\\pi i \\cdot 1 = 2\\pi i$$",
+          "insight": "Residues encode the 'circulation' around poles. The residue theorem converts difficult contour integrals into simple residue sums!"
+        },
+        "incorrect": {
+          "1": "Not zero! We have $-1 + 2 = 1$.",
+          "2": "Check arithmetic: $-1 + 2 = 1$, not 3!"
+        }
+      },
+      "resultState": {
+        "description": "All residues found and verified",
+        "equations": ["\\text{Residues: } -1 \\text{ at } z=0, \\; 2 \\text{ at } z=1"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Poles: $z = 0$ (order 2), $z = 1$ (order 1)",
+      "Simple pole formula: $\\text{Res}(f, z_0) = \\lim_{z \\to z_0} (z-z_0)f(z)$",
+      "Order 2 pole formula: $\\text{Res}(f, z_0) = \\lim_{z \\to z_0} \\frac{d}{dz}[(z-z_0)^2 f(z)]$",
+      "Residues: $\\text{Res}(f, 0) = -1$, $\\text{Res}(f, 1) = 2$",
+      "Sum of residues: $1$"
+    ],
+    "fullSolution": "**Find poles and residues of $f(z) = \\frac{z^2+1}{z^2(z-1)}$**\n\n---\n\n**Step 1: Identify Poles**\n\nSingularities occur where denominator vanishes:\n$$z^2(z-1) = 0$$\n\n- $z = 0$ with multiplicity 2 → pole of order 2\n- $z = 1$ with multiplicity 1 → simple pole\n\n(Numerator $z^2 + 1$ is non-zero at both points)\n\n---\n\n**Step 2: Residue at $z = 1$ (Simple Pole)**\n\nFormula for simple pole:\n$$\\text{Res}(f, z_0) = \\lim_{z \\to z_0} (z - z_0) f(z)$$\n\n$$\\text{Res}(f, 1) = \\lim_{z \\to 1} (z-1) \\cdot \\frac{z^2+1}{z^2(z-1)}$$\n\n$$= \\lim_{z \\to 1} \\frac{z^2+1}{z^2} = \\frac{2}{1} = 2$$\n\n---\n\n**Step 3: Residue at $z = 0$ (Order 2 Pole)**\n\nFormula for pole of order $m$:\n$$\\text{Res}(f, z_0) = \\frac{1}{(m-1)!} \\lim_{z \\to z_0} \\frac{d^{m-1}}{dz^{m-1}}\\left[(z-z_0)^m f(z)\\right]$$\n\nFor $m = 2$:\n$$\\text{Res}(f, 0) = \\lim_{z \\to 0} \\frac{d}{dz}\\left[z^2 f(z)\\right]$$\n\nCompute:\n$$z^2 f(z) = \\frac{z^2+1}{z-1}$$\n\nDerivative (quotient rule):\n$$\\frac{d}{dz}\\left[\\frac{z^2+1}{z-1}\\right] = \\frac{2z(z-1) - (z^2+1)}{(z-1)^2} = \\frac{z^2 - 2z - 1}{(z-1)^2}$$\n\nAt $z = 0$:\n$$\\text{Res}(f, 0) = \\frac{-1}{1} = -1$$\n\n---\n\n**Answer:**\n\n| Pole | Order | Residue |\n|------|-------|----------|\n| $z = 0$ | 2 | $-1$ |\n| $z = 1$ | 1 | $2$ |\n\n**Sum of residues:** $-1 + 2 = 1$",
+    "relatedProblems": [
+      "complex-analysis-residue-theorem-1",
+      "complex-analysis-laurent-series-1"
+    ]
+  }
+}
