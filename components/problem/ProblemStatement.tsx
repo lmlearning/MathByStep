@@ -16,9 +16,7 @@ export function ProblemStatement({ title, statement, type }: ProblemStatementPro
             {type}
           </span>
         </div>
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
-          {title}
-        </h2>
+        <TextWithMath text={title} className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100" />
         <TextWithMath text={statement} className="text-base md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed" />
       </div>
     </Card>

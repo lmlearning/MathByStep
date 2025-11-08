@@ -66,9 +66,9 @@ export default function CompletionPage() {
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
               Problem Complete!
             </h1>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              Great work on <strong>{problem.title}</strong>
-            </p>
+            <div className="text-lg text-gray-700 dark:text-gray-300">
+              Great work on <strong><TextWithMath text={problem.title} /></strong>
+            </div>
           </div>
         </Card>
 
