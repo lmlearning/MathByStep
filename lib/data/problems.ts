@@ -70,6 +70,7 @@ import calculusSeriesRatioTest1 from '@/public/problems/calculus-series-ratio-te
 import abstractAlgebraCyclicGroups1 from '@/public/problems/abstract-algebra-cyclic-groups-1.json';
 // Statistics
 import statisticsHypothesisTesting1 from '@/public/problems/statistics-hypothesis-testing-1.json';
+import statisticsLinearRegression1 from '@/public/problems/statistics-linear-regression-1.json';
 // Complex Analysis (additional)
 import complexAnalysisContourIntegration1 from '@/public/problems/complex-analysis-contour-integration-1.json';
 // Calculus (additional topics)
@@ -90,8 +91,10 @@ import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-com
 import linearAlgebraGaussianElimination1 from '@/public/problems/linear-algebra-gaussian-elimination-1.json';
 import linearAlgebraMatrixInverse1 from '@/public/problems/linear-algebra-matrix-inverse-1.json';
 import linearAlgebraOrthogonalProjection1 from '@/public/problems/linear-algebra-orthogonal-projection-1.json';
+import linearAlgebraLeastSquares1 from '@/public/problems/linear-algebra-least-squares-1.json';
 // Multivariable Calculus (additional)
 import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
+import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
 // Differential Equations (additional)
 import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
 // Real Analysis (additional)
@@ -185,6 +188,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'abstract-algebra-cyclic-groups-1': abstractAlgebraCyclicGroups1 as any as Problem,
   // Statistics
   'statistics-hypothesis-testing-1': statisticsHypothesisTesting1 as any as Problem,
+  'statistics-linear-regression-1': statisticsLinearRegression1 as any as Problem,
   // Complex Analysis (additional)
   'complex-analysis-contour-integration-1': complexAnalysisContourIntegration1 as any as Problem,
   // Calculus (additional topics)
@@ -205,8 +209,10 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'linear-algebra-gaussian-elimination-1': linearAlgebraGaussianElimination1 as any as Problem,
   'linear-algebra-matrix-inverse-1': linearAlgebraMatrixInverse1 as any as Problem,
   'linear-algebra-orthogonal-projection-1': linearAlgebraOrthogonalProjection1 as any as Problem,
+  'linear-algebra-least-squares-1': linearAlgebraLeastSquares1 as any as Problem,
   // Multivariable Calculus (additional)
   'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
+  'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
   // Differential Equations (additional)
   'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
   // Real Analysis (additional)
