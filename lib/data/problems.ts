@@ -93,6 +93,7 @@ import linearAlgebraGaussianElimination1 from '@/public/problems/linear-algebra-
 import linearAlgebraMatrixInverse1 from '@/public/problems/linear-algebra-matrix-inverse-1.json';
 import linearAlgebraOrthogonalProjection1 from '@/public/problems/linear-algebra-orthogonal-projection-1.json';
 import linearAlgebraLeastSquares1 from '@/public/problems/linear-algebra-least-squares-1.json';
+import linearAlgebraQrDecomposition1 from '@/public/problems/linear-algebra-qr-decomposition-1.json';
 // Multivariable Calculus (additional)
 import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
 import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
@@ -104,9 +105,11 @@ import differentialEquationsPde1 from '@/public/problems/differential-equations-
 import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-sequence-1.json';
 import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bolzano-weierstrass-1.json';
 import realAnalysisUniformConvergence1 from '@/public/problems/real-analysis-uniform-convergence-1.json';
+import realAnalysisRiemannIntegration1 from '@/public/problems/real-analysis-riemann-integration-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 import probabilityNormalDistribution1 from '@/public/problems/probability-normal-distribution-1.json';
+import probabilityConditionalProbability1 from '@/public/problems/probability-conditional-probability-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 // Abstract Algebra (more topics)
@@ -116,6 +119,7 @@ import abstractAlgebraRings1 from '@/public/problems/abstract-algebra-rings-1.js
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
+import complexAnalysisCauchyTheorem1 from '@/public/problems/complex-analysis-cauchy-theorem-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
@@ -223,6 +227,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'linear-algebra-matrix-inverse-1': linearAlgebraMatrixInverse1 as any as Problem,
   'linear-algebra-orthogonal-projection-1': linearAlgebraOrthogonalProjection1 as any as Problem,
   'linear-algebra-least-squares-1': linearAlgebraLeastSquares1 as any as Problem,
+  'linear-algebra-qr-decomposition-1': linearAlgebraQrDecomposition1 as any as Problem,
   // Multivariable Calculus (additional)
   'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
   'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
@@ -234,9 +239,11 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'real-analysis-cauchy-sequence-1': realAnalysisCauchySequence1 as any as Problem,
   'real-analysis-bolzano-weierstrass-1': realAnalysisBolzanoWeierstrass1 as any as Problem,
   'real-analysis-uniform-convergence-1': realAnalysisUniformConvergence1 as any as Problem,
+  'real-analysis-riemann-integration-1': realAnalysisRiemannIntegration1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   'probability-normal-distribution-1': probabilityNormalDistribution1 as any as Problem,
+  'probability-conditional-probability-1': probabilityConditionalProbability1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   // Abstract Algebra (more topics)
@@ -246,6 +253,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
+  'complex-analysis-cauchy-theorem-1': complexAnalysisCauchyTheorem1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,

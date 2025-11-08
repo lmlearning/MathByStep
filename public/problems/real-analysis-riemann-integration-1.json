@@ -1,0 +1,183 @@
+{
+  "id": "real-analysis-riemann-integration-1",
+  "type": "problem",
+  "title": "Riemann Integrability and Darboux Sums",
+  "topic": "Real Analysis",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": ["real analysis", "Riemann integration", "Darboux sums", "upper and lower sums"],
+  "statement": {
+    "text": "Prove that $f(x) = x^2$ is Riemann integrable on $[0, 1]$ by showing that for any $\\epsilon > 0$, there exists a partition such that $U(f, P) - L(f, P) < \\epsilon$, where $U$ and $L$ are upper and lower Darboux sums."
+  },
+  "objectives": [
+    "Understand Riemann integrability criterion",
+    "Compute upper and lower sums",
+    "Show difference can be made arbitrarily small"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Riemann integrability criterion",
+      "currentState": {
+        "expression": "$f$ on $[a, b]$",
+        "description": "When is $f$ Riemann integrable?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the criterion for Riemann integrability?",
+        "hint": "$f$ is Riemann integrable on $[a,b]$ iff for every $\\epsilon > 0$, there exists a partition $P$ such that $U(f,P) - L(f,P) < \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$f$ is Riemann integrable iff $\\forall \\epsilon > 0, \\exists P: U(f,P) - L(f,P) < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "content": "$f$ is Riemann integrable iff $f$ is continuous"
+        },
+        {
+          "id": "c",
+          "content": "$f$ is Riemann integrable iff $\\int_a^b f = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Riemann integrability criterion: upper and lower sums can be made arbitrarily close. Equivalently: $\\sup_P L(f,P) = \\inf_P U(f,P)$.",
+          "insight": "Upper sum: use supremum of $f$ on each subinterval. Lower sum: use infimum."
+        },
+        "incorrect": {
+          "b": "Continuity implies integrability, but not necessary! Discontinuous functions can be integrable.",
+          "c": "The value of the integral doesn't determine integrability. Even $\\int f = 100$ can be integrable!"
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Choose partition",
+      "currentState": {
+        "expression": "$f(x) = x^2$ on $[0, 1]$",
+        "description": "Select uniform partition."
+      },
+      "reflectionPrompt": {
+        "question": "What partition should we use?",
+        "hint": "Uniform partition with $n$ subintervals: $P_n = \\{0, 1/n, 2/n, \\ldots, (n-1)/n, 1\\}$. Width of each subinterval: $\\Delta x = 1/n$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$P_n = \\{0, 1/n, 2/n, \\ldots, 1\\}$ (uniform partition with $n$ subintervals of width $1/n$)"
+        },
+        {
+          "id": "b",
+          "content": "$P = \\{0, 1\\}$ (no subdivision)"
+        },
+        {
+          "id": "c",
+          "content": "$P = \\{0, 0.5, 1\\}$ (fixed partition)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Use uniform partition $P_n$ with $n$ equal subintervals. As $n \\to \\infty$, the difference $U - L$ will shrink to 0.",
+          "insight": "Uniform partitions work well for monotone and continuous functions."
+        },
+        "incorrect": {
+          "b": "Need to refine the partition! With just 2 points, $U - L$ will be large.",
+          "c": "Fixed partition won't work for all $\\epsilon$. Need $n$ dependent on $\\epsilon$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute upper and lower sums",
+      "currentState": {
+        "expression": "$P_n = \\{0, 1/n, 2/n, \\ldots, 1\\}$, $f(x) = x^2$",
+        "description": "Find $U(f, P_n)$ and $L(f, P_n)$."
+      },
+      "reflectionPrompt": {
+        "question": "What are $U$ and $L$?",
+        "hint": "Since $f(x) = x^2$ is increasing on $[0,1]$: on $[\\frac{k-1}{n}, \\frac{k}{n}]$, $\\min f = f(\\frac{k-1}{n}) = \\frac{(k-1)^2}{n^2}$ and $\\max f = f(\\frac{k}{n}) = \\frac{k^2}{n^2}$. $L = \\sum_{k=1}^n \\frac{(k-1)^2}{n^2} \\cdot \\frac{1}{n} = \\frac{1}{n^3}\\sum_{k=0}^{n-1} k^2$. $U = \\sum_{k=1}^n \\frac{k^2}{n^2} \\cdot \\frac{1}{n} = \\frac{1}{n^3}\\sum_{k=1}^{n} k^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$L = \\frac{1}{n^3}\\sum_{k=0}^{n-1} k^2$, $U = \\frac{1}{n^3}\\sum_{k=1}^{n} k^2$ (using monotonicity)"
+        },
+        {
+          "id": "b",
+          "content": "$L = U = \\frac{1}{3}$ (always equal)"
+        },
+        {
+          "id": "c",
+          "content": "$L = 0$, $U = 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $x^2$ is increasing, minimum on each interval is at left endpoint, maximum at right. This gives the sum formulas.",
+          "insight": "For increasing functions, lower sum uses left endpoints, upper sum uses right endpoints."
+        },
+        "incorrect": {
+          "b": "$L \\neq U$ for finite partitions. They converge to same value as $n \\to \\infty$.",
+          "c": "That's too crude! Use the actual values of $f$ at partition points."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Compute U - L",
+      "currentState": {
+        "expression": "$U - L = \\frac{1}{n^3}\\left(\\sum_{k=1}^{n} k^2 - \\sum_{k=0}^{n-1} k^2\\right)$",
+        "description": "Simplify using sum formulas."
+      },
+      "reflectionPrompt": {
+        "question": "What is $U - L$?",
+        "hint": "$U - L = \\frac{1}{n^3}(n^2) = \\frac{1}{n}$ (the difference of sums telescopes to just the last term minus the first). For $U - L < \\epsilon$, need $\\frac{1}{n} < \\epsilon$, i.e., $n > 1/\\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$U - L = \\frac{1}{n}$ (choose $n > 1/\\epsilon$ to make this $< \\epsilon$)"
+        },
+        {
+          "id": "b",
+          "content": "$U - L = 1$ (independent of $n$)"
+        },
+        {
+          "id": "c",
+          "content": "$U - L = \\frac{1}{n^2}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $U - L = \\frac{1}{n^3}(n^2 - 0^2) = \\frac{1}{n}$. Given $\\epsilon > 0$, choose $n > 1/\\epsilon$ so that $U - L = \\frac{1}{n} < \\epsilon$. Thus $f$ is Riemann integrable!",
+          "insight": "This proves integrability. The actual integral value is $\\lim_{n\\to\\infty} L = \\lim_{n\\to\\infty} U = \\frac{1}{3}$."
+        },
+        "incorrect": {
+          "b": "$U - L$ definitely depends on $n$! As $n$ increases, the difference shrinks.",
+          "c": "The difference is $\\frac{1}{n}$, not $\\frac{1}{n^2}$. The sums differ by one term $k = n$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Riemann integrability: $\\forall \\epsilon > 0, \\exists P: U(f,P) - L(f,P) < \\epsilon$",
+      "Darboux sums: $L(f,P) = \\sum_i m_i \\Delta x_i$, $U(f,P) = \\sum_i M_i \\Delta x_i$",
+      "For $f(x) = x^2$ on $[0,1]$: use uniform partition $P_n$ with width $1/n$",
+      "Monotonicity: $L = \\frac{1}{n^3}\\sum_{k=0}^{n-1} k^2$, $U = \\frac{1}{n^3}\\sum_{k=1}^{n} k^2$",
+      "$U - L = \\frac{1}{n} \\to 0$ as $n \\to \\infty$",
+      "Choose $n > 1/\\epsilon$ to get $U - L < \\epsilon$",
+      "Therefore $f(x) = x^2$ is Riemann integrable on $[0,1]$"
+    ],
+    "fullSolution": "**Prove $f(x) = x^2$ is Riemann integrable on $[0, 1]$**\n\n**Goal:** Show $\\forall \\epsilon > 0, \\exists P: U(f,P) - L(f,P) < \\epsilon$\n\n**Step 1: Choose partition**\n\nLet $n \\in \\mathbb{N}$ (to be determined). Define uniform partition:\n$$P_n = \\left\\{0, \\frac{1}{n}, \\frac{2}{n}, \\ldots, \\frac{n-1}{n}, 1\\right\\}$$\n\nSubintervals: $I_k = \\left[\\frac{k-1}{n}, \\frac{k}{n}\\right]$ for $k = 1, 2, \\ldots, n$\n\nWidth: $\\Delta x_k = \\frac{1}{n}$\n\n**Step 2: Compute lower sum**\n\nSince $f(x) = x^2$ is increasing on $[0,1]$:\n$$m_k = \\inf_{x \\in I_k} f(x) = f\\left(\\frac{k-1}{n}\\right) = \\frac{(k-1)^2}{n^2}$$\n\n$$L(f, P_n) = \\sum_{k=1}^n m_k \\Delta x_k = \\sum_{k=1}^n \\frac{(k-1)^2}{n^2} \\cdot \\frac{1}{n}$$\n$$= \\frac{1}{n^3} \\sum_{k=1}^n (k-1)^2 = \\frac{1}{n^3} \\sum_{j=0}^{n-1} j^2$$\n\nUsing $\\sum_{j=0}^{n-1} j^2 = \\frac{(n-1)n(2n-1)}{6}$:\n$$L(f, P_n) = \\frac{1}{n^3} \\cdot \\frac{(n-1)n(2n-1)}{6} = \\frac{(n-1)(2n-1)}{6n^2}$$\n\n**Step 3: Compute upper sum**\n\n$$M_k = \\sup_{x \\in I_k} f(x) = f\\left(\\frac{k}{n}\\right) = \\frac{k^2}{n^2}$$\n\n$$U(f, P_n) = \\sum_{k=1}^n M_k \\Delta x_k = \\sum_{k=1}^n \\frac{k^2}{n^2} \\cdot \\frac{1}{n}$$\n$$= \\frac{1}{n^3} \\sum_{k=1}^n k^2 = \\frac{1}{n^3} \\cdot \\frac{n(n+1)(2n+1)}{6}$$\n$$= \\frac{(n+1)(2n+1)}{6n^2}$$\n\n**Step 4: Compute difference**\n\n$$U(f, P_n) - L(f, P_n) = \\frac{(n+1)(2n+1) - (n-1)(2n-1)}{6n^2}$$\n\nExpand numerator:\n$$(n+1)(2n+1) = 2n^2 + 3n + 1$$\n$$(n-1)(2n-1) = 2n^2 - 3n + 1$$\n\nDifference:\n$$(2n^2 + 3n + 1) - (2n^2 - 3n + 1) = 6n$$\n\n$$U(f, P_n) - L(f, P_n) = \\frac{6n}{6n^2} = \\frac{1}{n}$$\n\n**Step 5: Choose n to satisfy criterion**\n\nGiven $\\epsilon > 0$, choose $n > \\frac{1}{\\epsilon}$.\n\nThen:\n$$U(f, P_n) - L(f, P_n) = \\frac{1}{n} < \\epsilon$$\n\n**Conclusion:** For any $\\epsilon > 0$, there exists partition $P_n$ (with $n > 1/\\epsilon$) such that $U(f, P_n) - L(f, P_n) < \\epsilon$.\n\nTherefore, **$f(x) = x^2$ is Riemann integrable on $[0, 1]$**. $\\square$\n\n**Note:** The integral value is:\n$$\\int_0^1 x^2\\,dx = \\lim_{n \\to \\infty} L(f, P_n) = \\lim_{n \\to \\infty} U(f, P_n) = \\frac{1}{3}$$",
+    "relatedProblems": [
+      "real-analysis-sequence-convergence-1",
+      "calculus-integration-substitution-1"
+    ]
+  }
+}
