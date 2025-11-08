@@ -1,0 +1,254 @@
+{
+  "id": "calculus-mvt-1",
+  "type": "problem",
+  "title": "Mean Value Theorem Application",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 14,
+  "tags": ["mean value theorem", "derivatives", "applications"],
+  "statement": {
+    "text": "Use the Mean Value Theorem to show that $\\sin(b) - \\sin(a) \\leq b - a$ for all $b > a$."
+  },
+  "objectives": [
+    "State the Mean Value Theorem correctly",
+    "Verify hypotheses are satisfied",
+    "Apply MVT to prove an inequality"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State the Mean Value Theorem",
+      "currentState": {
+        "expression": "We want to prove: $\\sin(b) - \\sin(a) \\leq b - a$ for $b > a$",
+        "description": "First, recall the MVT statement."
+      },
+      "reflectionPrompt": {
+        "question": "What does the Mean Value Theorem state?",
+        "hint": "It relates the average rate of change to the instantaneous rate of change."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then $\\exists c \\in (a,b)$ such that $f'(c) = \\frac{f(b)-f(a)}{b-a}$"
+        },
+        {
+          "id": "b",
+          "content": "If $f$ is continuous, then $f(b) - f(a) = f'(c)$ for some $c$"
+        },
+        {
+          "id": "c",
+          "content": "The derivative equals the average value of the function"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The MVT guarantees a point where the instantaneous rate equals the average rate: $f'(c) = \\frac{f(b)-f(a)}{b-a}$.",
+          "insight": "MVT is one of the most important theorems in calculus, connecting local and global properties."
+        },
+        "incorrect": {
+          "b": "Close, but missing the crucial division by $(b-a)$ and the specific conditions on continuity and differentiability.",
+          "c": "That describes the Mean Value Theorem for Integrals, not the MVT for derivatives."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Check hypotheses",
+      "currentState": {
+        "expression": "Consider $f(x) = \\sin(x)$ on $[a, b]$",
+        "description": "MVT requires continuity and differentiability."
+      },
+      "reflectionPrompt": {
+        "question": "Does $f(x) = \\sin(x)$ satisfy the MVT hypotheses on $[a,b]$?",
+        "hint": "Is sine continuous and differentiable everywhere?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes, $\\sin(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$"
+        },
+        {
+          "id": "b",
+          "content": "No, $\\sin(x)$ is not continuous"
+        },
+        {
+          "id": "c",
+          "content": "No, $\\sin(x)$ is not differentiable"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\sin(x)$ is continuous and differentiable everywhere, so certainly on any interval $[a,b]$. MVT applies!",
+          "insight": "Verifying hypotheses is essential before applying any theorem."
+        },
+        "incorrect": {
+          "b": "$\\sin(x)$ is continuous everywhere (it has no breaks or jumps).",
+          "c": "$\\sin(x)$ is differentiable everywhere, with derivative $\\cos(x)$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Apply MVT",
+      "currentState": {
+        "expression": "MVT applies to $f(x) = \\sin(x)$ on $[a,b]$",
+        "description": "There exists $c \\in (a,b)$ with a special property."
+      },
+      "reflectionPrompt": {
+        "question": "What does MVT tell us about $\\sin(x)$ on $[a,b]$?",
+        "hint": "Use $f'(c) = \\frac{f(b)-f(a)}{b-a}$ with $f(x) = \\sin(x)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\exists c \\in (a,b)$ such that $\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\sin(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$ for some $c$"
+        },
+        {
+          "id": "c",
+          "content": "$\\cos(b) - \\cos(a) = b - a$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! Since $\\frac{d}{dx}\\sin(x) = \\cos(x)$, MVT gives: $\\cos(c) = \\frac{\\sin(b)-\\sin(a)}{b-a}$ for some $c \\in (a,b)$.",
+          "insight": "MVT connects the derivative at a point to the average rate of change over an interval."
+        },
+        "incorrect": {
+          "b": "We need the derivative of sine, which is cosine, not sine itself.",
+          "c": "MVT involves the derivative of the function, not the function applied to the endpoints."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Rearrange the MVT equation",
+      "currentState": {
+        "expression": "$\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$ for some $c \\in (a,b)$",
+        "description": "Solve for $\\sin(b) - \\sin(a)$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\sin(b) - \\sin(a)$ in terms of $\\cos(c)$?",
+        "hint": "Multiply both sides by $(b-a)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$"
+        },
+        {
+          "id": "b",
+          "content": "$\\sin(b) - \\sin(a) = \\frac{\\cos(c)}{b-a}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\sin(b) - \\sin(a) = \\cos(b) - \\cos(a)$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Multiplying both sides by $(b-a)$: $\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$.",
+          "insight": "This equation relates the change in sine to the value of cosine at some intermediate point."
+        },
+        "incorrect": {
+          "b": "Multiply, don't divide. We want to eliminate the fraction: $\\sin(b) - \\sin(a) = \\cos(c)(b-a)$.",
+          "c": "This isn't what MVT gives us. We have $\\sin(b) - \\sin(a) = \\cos(c)(b-a)$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Use bounds on cosine",
+      "currentState": {
+        "expression": "$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$ where $c \\in (a,b)$",
+        "description": "What do we know about $\\cos(c)$?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the range of $\\cos(c)$?",
+        "hint": "Cosine is bounded for all real numbers."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$-1 \\leq \\cos(c) \\leq 1$ for all $c$"
+        },
+        {
+          "id": "b",
+          "content": "$0 \\leq \\cos(c) \\leq 1$ for all $c$"
+        },
+        {
+          "id": "c",
+          "content": "$\\cos(c) > 0$ for all $c$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Cosine oscillates between -1 and 1: $-1 \\leq \\cos(c) \\leq 1$ for any value of $c$.",
+          "insight": "Knowing bounds on functions helps establish inequalities."
+        },
+        "incorrect": {
+          "b": "Cosine can be negative (e.g., $\\cos(\\pi) = -1$). The range is $[-1, 1]$.",
+          "c": "Cosine is negative in some regions (e.g., when $\\frac{\\pi}{2} < c < \\frac{3\\pi}{2}$)."
+        }
+      }
+    },
+    {
+      "id": "step-6",
+      "title": "Establish the inequality",
+      "currentState": {
+        "expression": "$\\sin(b) - \\sin(a) = \\cos(c)(b-a)$ and $-1 \\leq \\cos(c) \\leq 1$",
+        "description": "Since $b > a$, we have $b - a > 0$."
+      },
+      "reflectionPrompt": {
+        "question": "How do we conclude $\\sin(b) - \\sin(a) \\leq b - a$?",
+        "hint": "Since $\\cos(c) \\leq 1$ and $b - a > 0$, multiply the inequality."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "$\\sin(b) - \\sin(a) = (b-a)$ exactly"
+        },
+        {
+          "id": "c",
+          "content": "We cannot establish this inequality"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since $\\cos(c) \\leq 1$ and $b-a > 0$: $\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq (b-a)$. QED!",
+          "insight": "MVT combined with boundedness gives powerful inequalities. This shows sine grows slower than the identity function."
+        },
+        "incorrect": {
+          "b": "Equality only holds if $\\cos(c) = 1$, which isn't always true. We have an inequality: $\\leq$.",
+          "c": "We can! Use $\\cos(c) \\leq 1$ to get $\\cos(c)(b-a) \\leq (b-a)$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Mean Value Theorem: If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then $f'(c) = \\frac{f(b)-f(a)}{b-a}$ for some $c \\in (a,b)$",
+      "Always verify hypotheses (continuity, differentiability) before applying MVT",
+      "MVT combined with bounds on derivatives yields inequalities",
+      "This proof shows $|\\sin(b) - \\sin(a)| \\leq |b-a|$, meaning sine is Lipschitz continuous with constant 1"
+    ],
+    "fullSolution": "**Theorem:** For all $b > a$, $\\sin(b) - \\sin(a) \\leq b - a$.\n\n**Proof:**\n\nLet $f(x) = \\sin(x)$. Then $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f'(x) = \\cos(x)$.\n\nBy the Mean Value Theorem, $\\exists c \\in (a,b)$ such that:\n$$f'(c) = \\frac{f(b) - f(a)}{b-a}$$\n\nSubstituting:\n$$\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$$\n\nTherefore:\n$$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$$\n\nSince $-1 \\leq \\cos(c) \\leq 1$ and $b - a > 0$:\n$$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$$\n\n∎",
+    "relatedProblems": [
+      "calc-derivative-chain-rule-1",
+      "calculus-limit-epsilon-delta-1"
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "id": "algebra-matrix-mult-1",
+  "type": "problem",
+  "title": "Matrix Multiplication: Properties and Computation",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": ["matrices", "linear algebra", "multiplication"],
+  "statement": {
+    "text": "Given matrices $A = \\begin{pmatrix} 2 & 1 \\\\ 3 & 4 \\end{pmatrix}$ and $B = \\begin{pmatrix} 1 & 0 \\\\ 2 & 3 \\end{pmatrix}$, compute $AB$ and determine if $AB = BA$."
+  },
+  "objectives": [
+    "Apply the matrix multiplication algorithm",
+    "Understand non-commutativity of matrix multiplication",
+    "Compute matrix products correctly"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Check dimensions",
+      "currentState": {
+        "expression": "$A$ is $2 \\times 2$, $B$ is $2 \\times 2$",
+        "description": "Before multiplying, verify the product is defined."
+      },
+      "reflectionPrompt": {
+        "question": "Can we multiply $AB$? What will be the dimension of the result?",
+        "hint": "For $A_{m \\times n} \\cdot B_{n \\times p}$, the result is $m \\times p$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes, $AB$ will be $2 \\times 2$"
+        },
+        {
+          "id": "b",
+          "content": "No, multiplication is not defined"
+        },
+        {
+          "id": "c",
+          "content": "Yes, $AB$ will be $2 \\times 4$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $A$ is $2 \\times 2$ and $B$ is $2 \\times 2$. The inner dimensions match (both 2), so we can multiply. The result will be $2 \\times 2$.",
+          "insight": "Matrix multiplication is defined when the number of columns in the first matrix equals the number of rows in the second."
+        },
+        "incorrect": {
+          "b": "The multiplication is defined because both matrices are $2 \\times 2$ (inner dimensions match).",
+          "c": "The result dimension is (rows of A) × (columns of B) = $2 \\times 2$, not $2 \\times 4$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute first row, first column",
+      "currentState": {
+        "expression": "$(AB)_{11} = $ (row 1 of A) · (column 1 of B)",
+        "description": "Each entry is a dot product of a row from A with a column from B."
+      },
+      "reflectionPrompt": {
+        "question": "What is $(AB)_{11}$?",
+        "hint": "$(2, 1) \\cdot (1, 2) = 2(1) + 1(2)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$4$"
+        },
+        {
+          "id": "b",
+          "content": "$2$"
+        },
+        {
+          "id": "c",
+          "content": "$3$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $(AB)_{11} = 2(1) + 1(2) = 2 + 2 = 4$.",
+          "insight": "Each entry is the dot product of the corresponding row and column."
+        },
+        "incorrect": {
+          "b": "Don't forget to add both products: $2(1) + 1(2) = 2 + 2 = 4$.",
+          "c": "Check your arithmetic: $2(1) + 1(2) = 2 + 2 = 4$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Complete the matrix AB",
+      "currentState": {
+        "expression": "$(AB)_{11} = 4$. Now compute the remaining entries.",
+        "description": "Apply the same dot product process for all entries."
+      },
+      "reflectionPrompt": {
+        "question": "What is $AB$?",
+        "hint": "Compute each entry: $(AB)_{ij} = $ (row $i$ of A) · (column $j$ of B)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$AB = \\begin{pmatrix} 4 & 3 \\\\ 11 & 12 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$AB = \\begin{pmatrix} 2 & 0 \\\\ 6 & 12 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$AB = \\begin{pmatrix} 3 & 1 \\\\ 10 & 12 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! \n$(AB)_{11} = 2(1) + 1(2) = 4$\n$(AB)_{12} = 2(0) + 1(3) = 3$\n$(AB)_{21} = 3(1) + 4(2) = 11$\n$(AB)_{22} = 3(0) + 4(3) = 12$",
+          "insight": "Systematic computation of each entry gives the full product matrix."
+        },
+        "incorrect": {
+          "b": "Check your multiplication. For example, $(AB)_{12} = 2(0) + 1(3) = 3$, not 0.",
+          "c": "$(AB)_{11} = 4$ (we computed this), and $(AB)_{21} = 3(1) + 4(2) = 11$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Test commutativity",
+      "currentState": {
+        "expression": "$AB = \\begin{pmatrix} 4 & 3 \\\\ 11 & 12 \\end{pmatrix}$",
+        "description": "Now compute $BA$ to see if $AB = BA$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $BA$?",
+        "hint": "Apply the same process: $(BA)_{ij} = $ (row $i$ of B) · (column $j$ of A)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$BA = \\begin{pmatrix} 2 & 1 \\\\ 13 & 14 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$BA = \\begin{pmatrix} 4 & 3 \\\\ 11 & 12 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$BA = \\begin{pmatrix} 1 & 0 \\\\ 6 & 12 \\end{pmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! \n$(BA)_{11} = 1(2) + 0(3) = 2$\n$(BA)_{12} = 1(1) + 0(4) = 1$\n$(BA)_{21} = 2(2) + 3(3) = 13$\n$(BA)_{22} = 2(1) + 3(4) = 14$\n\nNote: $AB \\neq BA$!",
+          "insight": "Matrix multiplication is generally not commutative: order matters!"
+        },
+        "incorrect": {
+          "b": "If $BA = AB$, that would mean multiplication is commutative. Compute $BA$ carefully to see they're different.",
+          "c": "Check your calculations. $(BA)_{22} = 2(1) + 3(4) = 2 + 12 = 14$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Matrix multiplication: $(AB)_{ij} = \\sum_k a_{ik}b_{kj}$ (row $i$ · column $j$)",
+      "Multiplication is defined when inner dimensions match: $A_{m \\times n} \\cdot B_{n \\times p} = C_{m \\times p}$",
+      "Matrix multiplication is NOT commutative: generally $AB \\neq BA$",
+      "Order matters in matrix multiplication"
+    ],
+    "fullSolution": "$A = \\begin{pmatrix} 2 & 1 \\\\ 3 & 4 \\end{pmatrix}$, $B = \\begin{pmatrix} 1 & 0 \\\\ 2 & 3 \\end{pmatrix}$\n\n$AB = \\begin{pmatrix} 2(1)+1(2) & 2(0)+1(3) \\\\ 3(1)+4(2) & 3(0)+4(3) \\end{pmatrix} = \\begin{pmatrix} 4 & 3 \\\\ 11 & 12 \\end{pmatrix}$\n\n$BA = \\begin{pmatrix} 1(2)+0(3) & 1(1)+0(4) \\\\ 2(2)+3(3) & 2(1)+3(4) \\end{pmatrix} = \\begin{pmatrix} 2 & 1 \\\\ 13 & 14 \\end{pmatrix}$\n\nTherefore $AB \\neq BA$. Matrix multiplication is not commutative.",
+    "relatedProblems": [
+      "algebra-systems-linear-1"
+    ]
+  }
+}

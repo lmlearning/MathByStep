@@ -1,0 +1,217 @@
+{
+  "id": "calculus-integration-by-parts-1",
+  "type": "problem",
+  "title": "Integration by Parts: $\\int x e^x dx$",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": ["integration", "by parts", "techniques"],
+  "statement": {
+    "text": "Evaluate $\\int x e^x dx$ using integration by parts."
+  },
+  "objectives": [
+    "Apply the integration by parts formula",
+    "Choose appropriate u and dv",
+    "Complete the integration"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall the formula",
+      "currentState": {
+        "expression": "$\\int x e^x dx$",
+        "description": "Integration by parts is useful for products of functions."
+      },
+      "reflectionPrompt": {
+        "question": "What is the integration by parts formula?",
+        "hint": "It comes from the product rule for derivatives."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\int u \\, dv = uv - \\int v \\, du$"
+        },
+        {
+          "id": "b",
+          "content": "$\\int u \\, dv = uv + \\int v \\, du$"
+        },
+        {
+          "id": "c",
+          "content": "$\\int u \\, v = \\frac{uv}{2}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\int u \\, dv = uv - \\int v \\, du$. This formula trades one integral for (hopefully) an easier one.",
+          "insight": "Integration by parts is derived from the product rule: $(uv)' = u'v + uv'$."
+        },
+        "incorrect": {
+          "b": "Close! It's minus, not plus: $\\int u \\, dv = uv - \\int v \\, du$.",
+          "c": "That's not a valid integration formula. The correct formula is $\\int u \\, dv = uv - \\int v \\, du$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Choose u and dv",
+      "currentState": {
+        "expression": "$\\int x e^x dx$",
+        "description": "We need to split $x e^x dx$ into $u$ and $dv$."
+      },
+      "reflectionPrompt": {
+        "question": "Which choice is best?",
+        "hint": "Choose $u$ to be something that simplifies when differentiated. Remember LIATE: Logarithmic, Inverse trig, Algebraic, Trig, Exponential."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$u = x$, $dv = e^x dx$"
+        },
+        {
+          "id": "b",
+          "content": "$u = e^x$, $dv = x dx$"
+        },
+        {
+          "id": "c",
+          "content": "$u = x e^x$, $dv = dx$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Let $u = x$ (simplifies to $du = dx$) and $dv = e^x dx$ (easy to integrate to $v = e^x$).",
+          "insight": "LIATE helps remember priority: Algebraic ($x$) before Exponential ($e^x$) for choosing $u$."
+        },
+        "incorrect": {
+          "b": "If $u = e^x$, then $du = e^x dx$, which doesn't simplify. Choose $u = x$ instead.",
+          "c": "We need to split the integrand into two parts for integration by parts, not lump them together."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Find du and v",
+      "currentState": {
+        "expression": "$u = x$, $dv = e^x dx$",
+        "description": "Differentiate $u$ and integrate $dv$."
+      },
+      "reflectionPrompt": {
+        "question": "What are $du$ and $v$?",
+        "hint": "$du = \\frac{d}{dx}(x) dx$ and $v = \\int e^x dx$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$du = dx$, $v = e^x$"
+        },
+        {
+          "id": "b",
+          "content": "$du = 1$, $v = e^x + C$"
+        },
+        {
+          "id": "c",
+          "content": "$du = x dx$, $v = e^x$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $du = dx$ and $v = \\int e^x dx = e^x$ (we omit the constant in the intermediate step).",
+          "insight": "When finding $v$ for integration by parts, we don't need the $+C$ until the final answer."
+        },
+        "incorrect": {
+          "b": "$du$ needs the differential: $du = dx$, not just 1. Also, omit $+C$ when finding $v$ in integration by parts.",
+          "c": "$\\frac{d}{dx}(x) = 1$, so $du = 1 \\cdot dx = dx$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Apply the formula",
+      "currentState": {
+        "expression": "$u = x$, $v = e^x$, $du = dx$",
+        "description": "Substitute into $\\int u \\, dv = uv - \\int v \\, du$."
+      },
+      "reflectionPrompt": {
+        "question": "What does the formula give us?",
+        "hint": "$uv - \\int v \\, du = x \\cdot e^x - \\int e^x \\, dx$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\int x e^x dx = x e^x - \\int e^x dx$"
+        },
+        {
+          "id": "b",
+          "content": "$\\int x e^x dx = x e^x + \\int e^x dx$"
+        },
+        {
+          "id": "c",
+          "content": "$\\int x e^x dx = e^x - \\int x dx$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\int x e^x dx = uv - \\int v \\, du = x e^x - \\int e^x dx$.",
+          "insight": "Integration by parts transforms the original integral into a simpler one."
+        },
+        "incorrect": {
+          "b": "It's minus, not plus: $uv - \\int v \\, du$.",
+          "c": "Check your substitution: $uv = x \\cdot e^x$ and $\\int v \\, du = \\int e^x dx$."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Complete the integration",
+      "currentState": {
+        "expression": "$\\int x e^x dx = x e^x - \\int e^x dx$",
+        "description": "Evaluate the remaining integral."
+      },
+      "reflectionPrompt": {
+        "question": "What is the final answer?",
+        "hint": "$\\int e^x dx = e^x + C$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\int x e^x dx = xe^x - e^x + C = e^x(x-1) + C$"
+        },
+        {
+          "id": "b",
+          "content": "$\\int x e^x dx = xe^x + e^x + C$"
+        },
+        {
+          "id": "c",
+          "content": "$\\int x e^x dx = x e^x + C$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int x e^x dx = xe^x - e^x + C = e^x(x-1) + C$. We can verify by differentiating: $\\frac{d}{dx}[e^x(x-1)] = e^x(x-1) + e^x = xe^x$ ✓",
+          "insight": "Always add the constant of integration for indefinite integrals!"
+        },
+        "incorrect": {
+          "b": "It should be minus: $xe^x - e^x + C$.",
+          "c": "Don't forget to evaluate $- \\int e^x dx = -e^x$. The answer is $xe^x - e^x + C$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Integration by parts: $\\int u \\, dv = uv - \\int v \\, du$",
+      "Choose $u$ using LIATE priority (Logarithmic, Inverse trig, Algebraic, Trig, Exponential)",
+      "The goal is to make $\\int v \\, du$ simpler than the original integral",
+      "Verify your answer by differentiating"
+    ],
+    "fullSolution": "$\\int x e^x dx$\n\nLet $u = x$, $dv = e^x dx$\n\nThen $du = dx$, $v = e^x$\n\nBy integration by parts:\n$$\\int x e^x dx = xe^x - \\int e^x dx = xe^x - e^x + C = e^x(x-1) + C$$\n\nVerification: $\\frac{d}{dx}[e^x(x-1)] = e^x + e^x(x-1)' = e^x + e^x = xe^x$ ✓",
+    "relatedProblems": [
+      "calculus-integration-substitution-1",
+      "calculus-ftc-1"
+    ]
+  }
+}
