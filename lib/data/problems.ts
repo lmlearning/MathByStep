@@ -86,6 +86,20 @@ import calculusArcLength1 from '@/public/problems/calculus-arc-length-1.json';
 import calculusPowerSeries1 from '@/public/problems/calculus-power-series-1.json';
 import calculusTaylorSeries1 from '@/public/problems/calculus-taylor-series-1.json';
 import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-comparison-test-1.json';
+// Linear Algebra (additional)
+import linearAlgebraGaussianElimination1 from '@/public/problems/linear-algebra-gaussian-elimination-1.json';
+import linearAlgebraMatrixInverse1 from '@/public/problems/linear-algebra-matrix-inverse-1.json';
+import linearAlgebraOrthogonalProjection1 from '@/public/problems/linear-algebra-orthogonal-projection-1.json';
+// Multivariable Calculus (additional)
+import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
+// Differential Equations (additional)
+import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
+// Real Analysis (additional)
+import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-sequence-1.json';
+// Probability (additional)
+import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
+// Numerical Analysis
+import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -174,6 +188,20 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'calculus-power-series-1': calculusPowerSeries1 as any as Problem,
   'calculus-taylor-series-1': calculusTaylorSeries1 as any as Problem,
   'calculus-series-comparison-test-1': calculusSeriesComparisonTest1 as any as Problem,
+  // Linear Algebra (additional)
+  'linear-algebra-gaussian-elimination-1': linearAlgebraGaussianElimination1 as any as Problem,
+  'linear-algebra-matrix-inverse-1': linearAlgebraMatrixInverse1 as any as Problem,
+  'linear-algebra-orthogonal-projection-1': linearAlgebraOrthogonalProjection1 as any as Problem,
+  // Multivariable Calculus (additional)
+  'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
+  // Differential Equations (additional)
+  'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
+  // Real Analysis (additional)
+  'real-analysis-cauchy-sequence-1': realAnalysisCauchySequence1 as any as Problem,
+  // Probability (additional)
+  'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
+  // Numerical Analysis
+  'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

@@ -1,0 +1,144 @@
+{
+  "id": "linear-algebra-orthogonal-projection-1",
+  "type": "problem",
+  "title": "Orthogonal Projection onto a Subspace",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["linear algebra", "orthogonal projection", "inner product", "subspaces"],
+  "statement": {
+    "text": "Find the orthogonal projection of $\\mathbf{v} = \\begin{bmatrix} 3 \\\\ 4 \\\\ 0 \\end{bmatrix}$ onto the subspace $W$ spanned by $\\mathbf{u} = \\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix}$."
+  },
+  "objectives": [
+    "Understand orthogonal projection formula",
+    "Compute inner products",
+    "Apply projection formula"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall projection formula",
+      "currentState": {
+        "expression": "$\\mathbf{v} = \\begin{bmatrix} 3 \\\\ 4 \\\\ 0 \\end{bmatrix}$, $\\mathbf{u} = \\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix}$",
+        "description": "Project $\\mathbf{v}$ onto span of $\\mathbf{u}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the formula for orthogonal projection?",
+        "hint": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\mathbf{v} \\cdot \\mathbf{u}}{\\mathbf{u} \\cdot \\mathbf{u}} \\mathbf{u}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\mathbf{v} \\cdot \\mathbf{u}}{\\mathbf{u} \\cdot \\mathbf{u}} \\mathbf{u}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\mathbf{u} \\cdot \\mathbf{u}}{\\mathbf{v} \\cdot \\mathbf{u}} \\mathbf{v}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = (\\mathbf{v} \\cdot \\mathbf{u})\\mathbf{u}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Orthogonal projection formula: $\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\langle \\mathbf{v}, \\mathbf{u} \\rangle}{\\langle \\mathbf{u}, \\mathbf{u} \\rangle} \\mathbf{u}$.",
+          "insight": "This is a scalar multiple of $\\mathbf{u}$ - the component of $\\mathbf{v}$ in the direction of $\\mathbf{u}$."
+        },
+        "incorrect": {
+          "b": "You flipped the fraction! It's $\\frac{\\mathbf{v}\\cdot\\mathbf{u}}{\\|\\mathbf{u}\\|^2}$, not the other way.",
+          "c": "Missing the normalization factor $\\frac{1}{\\mathbf{u}\\cdot\\mathbf{u}}$ to account for $\\mathbf{u}$'s length."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Compute inner products",
+      "currentState": {
+        "expression": "$\\mathbf{v} \\cdot \\mathbf{u} = ?$, $\\mathbf{u} \\cdot \\mathbf{u} = ?$",
+        "description": "Calculate the dot products needed."
+      },
+      "reflectionPrompt": {
+        "question": "What are $\\mathbf{v} \\cdot \\mathbf{u}$ and $\\mathbf{u} \\cdot \\mathbf{u}$?",
+        "hint": "$\\mathbf{v} \\cdot \\mathbf{u} = 3(1) + 4(1) + 0(1) = 7$. $\\mathbf{u} \\cdot \\mathbf{u} = 1 + 1 + 1 = 3$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\mathbf{v} \\cdot \\mathbf{u} = 7$, $\\mathbf{u} \\cdot \\mathbf{u} = 3$"
+        },
+        {
+          "id": "b",
+          "content": "$\\mathbf{v} \\cdot \\mathbf{u} = 12$, $\\mathbf{u} \\cdot \\mathbf{u} = 3$"
+        },
+        {
+          "id": "c",
+          "content": "$\\mathbf{v} \\cdot \\mathbf{u} = 7$, $\\mathbf{u} \\cdot \\mathbf{u} = 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\mathbf{v} \\cdot \\mathbf{u} = 3(1) + 4(1) + 0(1) = 7$. $\\mathbf{u} \\cdot \\mathbf{u} = 1^2 + 1^2 + 1^2 = 3$.",
+          "insight": "$\\mathbf{u} \\cdot \\mathbf{u} = \\|\\mathbf{u}\\|^2$ is the squared length of $\\mathbf{u}$."
+        },
+        "incorrect": {
+          "b": "Check: $3 + 4 + 0 = 7$, not 12.",
+          "c": "$\\mathbf{u} \\cdot \\mathbf{u} = 1 + 1 + 1 = 3$, not 1."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Calculate projection",
+      "currentState": {
+        "expression": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{7}{3} \\mathbf{u}$",
+        "description": "Multiply $\\mathbf{u}$ by the scalar $\\frac{7}{3}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the projection vector?",
+        "hint": "$\\frac{7}{3}\\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 7/3 \\\\ 7/3 \\\\ 7/3 \\end{bmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\begin{bmatrix} 7/3 \\\\ 7/3 \\\\ 7/3 \\end{bmatrix}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\begin{bmatrix} 7 \\\\ 7 \\\\ 7 \\end{bmatrix}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{7}{3}\\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 7/3 \\\\ 7/3 \\\\ 7/3 \\end{bmatrix}$.",
+          "insight": "The projection is parallel to $\\mathbf{u}$ and is the closest point in span($\\mathbf{u}$) to $\\mathbf{v}$."
+        },
+        "incorrect": {
+          "b": "Don't forget to divide by $\\mathbf{u} \\cdot \\mathbf{u} = 3$. Each component is $7/3$.",
+          "c": "That's just $\\mathbf{u}$ itself. Need to scale by $7/3$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Orthogonal projection formula: $\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\mathbf{v} \\cdot \\mathbf{u}}{\\mathbf{u} \\cdot \\mathbf{u}} \\mathbf{u}$",
+      "Projection is parallel to $\\mathbf{u}$ (same direction)",
+      "$\\mathbf{v} \\cdot \\mathbf{u} = 7$, $\\mathbf{u} \\cdot \\mathbf{u} = 3$",
+      "Scalar coefficient: $\\frac{7}{3}$",
+      "Answer: $\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\begin{bmatrix} 7/3 \\\\ 7/3 \\\\ 7/3 \\end{bmatrix}$"
+    ],
+    "fullSolution": "**Find projection of $\\mathbf{v} = \\begin{bmatrix} 3 \\\\ 4 \\\\ 0 \\end{bmatrix}$ onto $\\mathbf{u} = \\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix}$**\n\n**Formula:**\n$$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\mathbf{v} \\cdot \\mathbf{u}}{\\mathbf{u} \\cdot \\mathbf{u}} \\mathbf{u}$$\n\n**Compute dot products:**\n$$\\mathbf{v} \\cdot \\mathbf{u} = 3(1) + 4(1) + 0(1) = 7$$\n$$\\mathbf{u} \\cdot \\mathbf{u} = 1^2 + 1^2 + 1^2 = 3$$\n\n**Calculate projection:**\n$$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{7}{3}\\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 7/3 \\\\ 7/3 \\\\ 7/3 \\end{bmatrix}$$\n\n**Answer:** $\\displaystyle\\begin{bmatrix} 7/3 \\\\ 7/3 \\\\ 7/3 \\end{bmatrix}$ or $\\displaystyle\\frac{7}{3}\\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\end{bmatrix}$",
+    "relatedProblems": [
+      "linear-algebra-gram-schmidt-1",
+      "linear-algebra-basis-dimension-1"
+    ]
+  }
+}

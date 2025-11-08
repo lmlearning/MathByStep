@@ -1,0 +1,181 @@
+{
+  "id": "differential-equations-exact-1",
+  "type": "problem",
+  "title": "Exact Differential Equations",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["differential equations", "exact equations", "first-order ODEs"],
+  "statement": {
+    "text": "Solve the exact differential equation $(2x + y)dx + (x + 2y)dy = 0$."
+  },
+  "objectives": [
+    "Verify equation is exact",
+    "Find potential function",
+    "Write implicit solution"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Check if exact",
+      "currentState": {
+        "expression": "$M(x,y)dx + N(x,y)dy = 0$ where $M = 2x+y$, $N = x+2y$",
+        "description": "Exact if $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$."
+      },
+      "reflectionPrompt": {
+        "question": "Is the equation exact?",
+        "hint": "$\\frac{\\partial M}{\\partial y} = \\frac{\\partial}{\\partial y}[2x+y] = 1$. $\\frac{\\partial N}{\\partial x} = \\frac{\\partial}{\\partial x}[x+2y] = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes, exact: $\\frac{\\partial M}{\\partial y} = 1 = \\frac{\\partial N}{\\partial x}$"
+        },
+        {
+          "id": "b",
+          "content": "No, not exact: $\\frac{\\partial M}{\\partial y} = 2 \\neq 1 = \\frac{\\partial N}{\\partial x}$"
+        },
+        {
+          "id": "c",
+          "content": "Cannot determine"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $M_y = 1 = N_x$, so the equation is exact. There exists a function $F(x,y)$ with $F_x = M$ and $F_y = N$.",
+          "insight": "Exact equations can be solved by finding a potential function $F$ such that $dF = 0$."
+        },
+        "incorrect": {
+          "b": "$\\frac{\\partial M}{\\partial y} = \\frac{\\partial}{\\partial y}[2x+y] = 1$, not 2. The coefficient of $x$ doesn't matter when differentiating wrt $y$.",
+          "c": "We can check! Compute the partial derivatives and compare."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Integrate M with respect to x",
+      "currentState": {
+        "expression": "$F_x = M = 2x + y$",
+        "description": "Integrate to find $F(x,y)$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $F(x,y) = \\int M\\, dx$?",
+        "hint": "$F = \\int (2x+y)\\, dx = x^2 + xy + g(y)$ where $g(y)$ is an arbitrary function of $y$ only."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$F(x,y) = x^2 + xy + g(y)$ for some function $g(y)$"
+        },
+        {
+          "id": "b",
+          "content": "$F(x,y) = x^2 + xy + C$ (constant)"
+        },
+        {
+          "id": "c",
+          "content": "$F(x,y) = 2x^2 + xy$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int (2x+y)\\, dx = x^2 + xy + g(y)$ where $g(y)$ plays the role of \"constant of integration\" (but can depend on $y$).",
+          "insight": "When integrating wrt $x$, terms involving only $y$ act like constants."
+        },
+        "incorrect": {
+          "b": "The \"constant\" can depend on $y$ since we integrated wrt $x$. Use $g(y)$, not $C$.",
+          "c": "$\\int 2x\\, dx = x^2$, not $2x^2$. Also missing $g(y)$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Find g(y) using N",
+      "currentState": {
+        "expression": "$F = x^2 + xy + g(y)$, and we know $F_y = N = x + 2y$",
+        "description": "Differentiate $F$ wrt $y$ and match to $N$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $g(y)$?",
+        "hint": "$F_y = \\frac{\\partial}{\\partial y}[x^2 + xy + g(y)] = x + g'(y) = N = x + 2y$. So $g'(y) = 2y \\to g(y) = y^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$g'(y) = 2y$, so $g(y) = y^2$ (plus constant)"
+        },
+        {
+          "id": "b",
+          "content": "$g(y) = 2y$"
+        },
+        {
+          "id": "c",
+          "content": "$g(y) = y$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $F_y = x + g'(y)$ must equal $N = x + 2y$, so $g'(y) = 2y$. Integrating: $g(y) = y^2 + C$.",
+          "insight": "We can absorb the constant into the final solution, so $g(y) = y^2$ works."
+        },
+        "incorrect": {
+          "b": "That's $g'(y)$, not $g(y)$. Need to integrate $2y$ to get $y^2$.",
+          "c": "$\\int 2y\\, dy = y^2$, not $y$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Write the solution",
+      "currentState": {
+        "expression": "$F(x,y) = x^2 + xy + y^2$",
+        "description": "Solution is $F(x,y) = C$ (constant)."
+      },
+      "reflectionPrompt": {
+        "question": "What is the implicit solution?",
+        "hint": "The solution is $F(x,y) = C$, or $x^2 + xy + y^2 = C$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$x^2 + xy + y^2 = C$ (family of curves)"
+        },
+        {
+          "id": "b",
+          "content": "$x^2 + xy + y^2 = 0$"
+        },
+        {
+          "id": "c",
+          "content": "$y = \\frac{-x \\pm \\sqrt{x^2 - 4x^2}}{2} = \\frac{-x \\pm x\\sqrt{-3}}{2}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The general solution to the exact equation is $F(x,y) = C$, where $C$ is determined by initial conditions.",
+          "insight": "This represents a family of conic sections (ellipses for positive $C$)."
+        },
+        "incorrect": {
+          "b": "That's just one specific solution ($C=0$). The general solution has arbitrary constant $C$.",
+          "c": "While you could solve for $y$ explicitly, the implicit form $x^2 + xy + y^2 = C$ is simpler."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Exact equation: $M\\,dx + N\\,dy = 0$ where $M_y = N_x$",
+      "Solution method: Find $F$ such that $F_x = M$ and $F_y = N$",
+      "Integrate $M$ wrt $x$: $F = x^2 + xy + g(y)$",
+      "Use $F_y = N$ to find $g(y) = y^2$",
+      "General solution: $x^2 + xy + y^2 = C$"
+    ],
+    "fullSolution": "**Solve $(2x+y)dx + (x+2y)dy = 0$**\n\n**Check exactness:** $M = 2x+y$, $N = x+2y$\n$$\\frac{\\partial M}{\\partial y} = 1 = \\frac{\\partial N}{\\partial x} \\quad \\checkmark$$\n\n**Find potential function $F$:**\n$$F_x = M \\implies F = \\int (2x+y)\\,dx = x^2 + xy + g(y)$$\n\n**Use $F_y = N$:**\n$$F_y = x + g'(y) = N = x + 2y$$\n$$g'(y) = 2y \\implies g(y) = y^2$$\n\n**Therefore:**\n$$F(x,y) = x^2 + xy + y^2$$\n\n**General solution:**\n$$x^2 + xy + y^2 = C$$\n\nwhere $C$ is an arbitrary constant determined by initial conditions.",
+    "relatedProblems": [
+      "differential-equations-separable-1",
+      "differential-equations-first-order-linear-1"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "id": "multivariable-directional-derivative-1",
+  "type": "problem",
+  "title": "Directional Derivatives and Gradient",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": ["multivariable calculus", "directional derivative", "gradient", "vector calculus"],
+  "statement": {
+    "text": "Find the directional derivative of $f(x,y) = x^2 + xy$ at the point $(2, 1)$ in the direction of $\\mathbf{v} = \\langle 3, 4 \\rangle$."
+  },
+  "objectives": [
+    "Compute the gradient vector",
+    "Normalize the direction vector",
+    "Calculate directional derivative"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Find the gradient",
+      "currentState": {
+        "expression": "$f(x,y) = x^2 + xy$",
+        "description": "Gradient: $\\nabla f = \\langle f_x, f_y \\rangle$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\nabla f$?",
+        "hint": "$f_x = 2x + y$, $f_y = x$. So $\\nabla f = \\langle 2x+y, x \\rangle$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla f = \\langle 2x + y, x \\rangle$"
+        },
+        {
+          "id": "b",
+          "content": "$\\nabla f = \\langle x^2 + xy, 0 \\rangle$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla f = \\langle 2x, y \\rangle$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{\\partial f}{\\partial x} = 2x + y$ and $\\frac{\\partial f}{\\partial y} = x$, so $\\nabla f = \\langle 2x+y, x \\rangle$.",
+          "insight": "The gradient points in the direction of steepest ascent."
+        },
+        "incorrect": {
+          "b": "That's the function itself, not its gradient. Take partial derivatives!",
+          "c": "Don't forget: $\\frac{\\partial}{\\partial x}[xy] = y$ and $\\frac{\\partial}{\\partial y}[xy] = x$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Evaluate gradient at point",
+      "currentState": {
+        "expression": "$\\nabla f = \\langle 2x+y, x \\rangle$ at $(2, 1)$",
+        "description": "Substitute the point into the gradient."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\nabla f(2, 1)$?",
+        "hint": "$\\nabla f(2,1) = \\langle 2(2)+1, 2 \\rangle = \\langle 5, 2 \\rangle$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\nabla f(2, 1) = \\langle 5, 2 \\rangle$"
+        },
+        {
+          "id": "b",
+          "content": "$\\nabla f(2, 1) = \\langle 4, 2 \\rangle$"
+        },
+        {
+          "id": "c",
+          "content": "$\\nabla f(2, 1) = \\langle 2, 1 \\rangle$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! At $(2,1)$: $2x+y = 2(2)+1 = 5$ and $x = 2$. So $\\nabla f(2,1) = \\langle 5, 2 \\rangle$.",
+          "insight": "This vector gives the direction and rate of steepest increase at $(2,1)$."
+        },
+        "incorrect": {
+          "b": "Check: $2(2) + 1 = 5$, not 4.",
+          "c": "That's just the point coordinates. Evaluate the gradient formula!"
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Normalize direction vector",
+      "currentState": {
+        "expression": "$\\mathbf{v} = \\langle 3, 4 \\rangle$",
+        "description": "Directional derivative requires unit vector: $\\mathbf{u} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the unit vector $\\mathbf{u}$ in the direction of $\\mathbf{v}$?",
+        "hint": "$\\|\\mathbf{v}\\| = \\sqrt{3^2 + 4^2} = 5$, so $\\mathbf{u} = \\langle 3/5, 4/5 \\rangle$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\mathbf{u} = \\frac{1}{5}\\langle 3, 4 \\rangle = \\langle 3/5, 4/5 \\rangle$"
+        },
+        {
+          "id": "b",
+          "content": "$\\mathbf{u} = \\langle 3, 4 \\rangle$ (already unit)"
+        },
+        {
+          "id": "c",
+          "content": "$\\mathbf{u} = \\frac{1}{7}\\langle 3, 4 \\rangle$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\|\\mathbf{v}\\| = \\sqrt{9+16} = \\sqrt{25} = 5$, so $\\mathbf{u} = \\frac{1}{5}\\langle 3, 4 \\rangle = \\langle 0.6, 0.8 \\rangle$.",
+          "insight": "Unit vectors have length 1 and specify direction only."
+        },
+        "incorrect": {
+          "b": "$\\|\\langle 3,4 \\rangle\\| = 5 \\neq 1$, so it's not a unit vector. Must normalize!",
+          "c": "$\\sqrt{3^2 + 4^2} = 5$, not 7."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Compute directional derivative",
+      "currentState": {
+        "expression": "$D_{\\mathbf{u}}f = \\nabla f \\cdot \\mathbf{u}$",
+        "description": "Dot product of gradient and unit direction."
+      },
+      "reflectionPrompt": {
+        "question": "What is $D_{\\mathbf{u}}f(2,1)$?",
+        "hint": "$\\langle 5, 2 \\rangle \\cdot \\langle 3/5, 4/5 \\rangle = 5(3/5) + 2(4/5) = 3 + 8/5 = 23/5$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$D_{\\mathbf{u}}f(2,1) = \\langle 5,2 \\rangle \\cdot \\langle 3/5, 4/5 \\rangle = 3 + \\frac{8}{5} = \\frac{23}{5} = 4.6$"
+        },
+        {
+          "id": "b",
+          "content": "$D_{\\mathbf{u}}f(2,1) = 5 \\cdot 3 + 2 \\cdot 4 = 23$"
+        },
+        {
+          "id": "c",
+          "content": "$D_{\\mathbf{u}}f(2,1) = \\sqrt{5^2 + 2^2} = \\sqrt{29}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $D_{\\mathbf{u}}f = \\nabla f \\cdot \\mathbf{u} = 5(3/5) + 2(4/5) = 15/5 + 8/5 = 23/5 = 4.6$.",
+          "insight": "This is the rate of change of $f$ in the direction of $\\mathbf{v}$ at point $(2,1)$."
+        },
+        "incorrect": {
+          "b": "Must use the UNIT vector $\\mathbf{u} = \\langle 3/5, 4/5 \\rangle$, not $\\mathbf{v} = \\langle 3, 4 \\rangle$!",
+          "c": "That's the magnitude of the gradient, not the directional derivative. Need dot product with $\\mathbf{u}$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Directional derivative: $D_{\\mathbf{u}}f = \\nabla f \\cdot \\mathbf{u}$ (dot product with UNIT vector)",
+      "Gradient at $(2,1)$: $\\nabla f(2,1) = \\langle 5, 2 \\rangle$",
+      "Unit direction: $\\mathbf{u} = \\frac{1}{5}\\langle 3, 4 \\rangle = \\langle 3/5, 4/5 \\rangle$",
+      "Directional derivative: $D_{\\mathbf{u}}f(2,1) = 23/5 = 4.6$",
+      "Interpretation: $f$ increases at rate 4.6 in direction $\\langle 3, 4 \\rangle$ at $(2,1)$"
+    ],
+    "fullSolution": "**Find $D_{\\mathbf{v}}f$ at $(2,1)$ for $f(x,y) = x^2 + xy$ and $\\mathbf{v} = \\langle 3,4 \\rangle$**\n\n**Step 1: Gradient**\n$$\\nabla f = \\left\\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\right\\rangle = \\langle 2x+y, x \\rangle$$\n\n**Step 2: Evaluate at $(2,1)$**\n$$\\nabla f(2,1) = \\langle 2(2)+1, 2 \\rangle = \\langle 5, 2 \\rangle$$\n\n**Step 3: Normalize direction**\n$$\\|\\mathbf{v}\\| = \\sqrt{3^2+4^2} = 5$$\n$$\\mathbf{u} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{1}{5}\\langle 3, 4 \\rangle = \\left\\langle \\frac{3}{5}, \\frac{4}{5} \\right\\rangle$$\n\n**Step 4: Directional derivative**\n$$D_{\\mathbf{u}}f(2,1) = \\nabla f(2,1) \\cdot \\mathbf{u} = \\langle 5,2 \\rangle \\cdot \\left\\langle \\frac{3}{5}, \\frac{4}{5} \\right\\rangle$$\n$$= 5 \\cdot \\frac{3}{5} + 2 \\cdot \\frac{4}{5} = 3 + \\frac{8}{5} = \\frac{23}{5} = 4.6$$\n\n**Answer:** $\\displaystyle\\frac{23}{5}$ or $4.6$",
+    "relatedProblems": [
+      "multivariable-partial-derivatives-1",
+      "multivariable-chain-rule-1"
+    ]
+  }
+}
