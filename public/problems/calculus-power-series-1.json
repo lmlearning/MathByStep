@@ -5,7 +5,12 @@
   "topic": "Calculus",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["calculus", "series", "power series", "convergence"],
+  "tags": [
+    "calculus",
+    "series",
+    "power series",
+    "convergence"
+  ],
   "statement": {
     "text": "Find the radius and interval of convergence for the power series $\\sum_{n=1}^{\\infty} \\frac{(x-2)^n}{n \\cdot 3^n}$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify the center",
+      "order": 1,
       "currentState": {
-        "expression": "$\\sum_{n=1}^{\\infty} \\frac{(x-2)^n}{n \\cdot 3^n}$",
         "description": "Power series in the form $\\sum a_n(x-c)^n$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the center $c$ of this power series?",
         "hint": "The series is in powers of $(x-2)$, so center is $c = 2$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Center: $c = 2$"
+          "text": "Center: $c = 2$"
         },
         {
           "id": "b",
-          "content": "Center: $c = 0$"
+          "text": "Center: $c = 0$"
         },
         {
           "id": "c",
-          "content": "Center: $c = 3$"
+          "text": "Center: $c = 3$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! The series is in powers of $(x-2)$, so it's centered at $c = 2$.",
           "insight": "Power series $\\sum a_n(x-c)^n$ is centered at $x = c$."
         },
         "incorrect": {
-          "b": "The series uses $(x-2)^n$, not $x^n$, so center is 2, not 0.",
-          "c": "The denominator has $3^n$, but center comes from $(x-c)$ form. Here $c = 2$."
+          "1": "The series uses $(x-2)^n$, not $x^n$, so center is 2, not 0.",
+          "2": "The denominator has $3^n$, but center comes from $(x-c)$ form. Here $c = 2$."
         }
+      },
+      "resultState": {
+        "description": "Identify the center"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply ratio test",
+      "order": 2,
       "currentState": {
-        "expression": "$a_n = \\frac{(x-2)^n}{n \\cdot 3^n}$",
         "description": "Find $\\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right|$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\left|\\frac{a_{n+1}}{a_n}\\right|$?",
         "hint": "$\\frac{a_{n+1}}{a_n} = \\frac{(x-2)^{n+1}}{(n+1)\\cdot 3^{n+1}} \\cdot \\frac{n \\cdot 3^n}{(x-2)^n} = \\frac{n}{n+1} \\cdot \\frac{x-2}{3}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{n}{n+1} \\cdot \\frac{|x-2|}{3} \\to \\frac{|x-2|}{3}$ as $n \\to \\infty$"
+          "text": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{n}{n+1} \\cdot \\frac{|x-2|}{3} \\to \\frac{|x-2|}{3}$ as $n \\to \\infty$"
         },
         {
           "id": "b",
-          "content": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x-2|}{n} \\to 0$ as $n \\to \\infty$"
+          "text": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x-2|}{n} \\to 0$ as $n \\to \\infty$"
         },
         {
           "id": "c",
-          "content": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{n+1}{n} \\cdot |x-2| \\to |x-2|$ as $n \\to \\infty$"
+          "text": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{n+1}{n} \\cdot |x-2| \\to |x-2|$ as $n \\to \\infty$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\frac{a_{n+1}}{a_n} = \\frac{(x-2)^{n+1}}{(n+1)3^{n+1}} \\cdot \\frac{n \\cdot 3^n}{(x-2)^n} = \\frac{n}{n+1} \\cdot \\frac{x-2}{3}$. As $n\\to\\infty$: $\\frac{n}{n+1} \\to 1$, so limit is $\\frac{|x-2|}{3}$.",
           "insight": "Ratio test gives us the convergence condition."
         },
         "incorrect": {
-          "b": "Check your algebra - the $n$ terms don't cancel completely.",
-          "c": "You flipped the fraction from $(n+1)$ - it should be $\\frac{n}{n+1}$, not $\\frac{n+1}{n}$."
+          "1": "Check your algebra - the $n$ terms don't cancel completely.",
+          "2": "You flipped the fraction from $(n+1)$ - it should be $\\frac{n}{n+1}$, not $\\frac{n+1}{n}$."
         }
+      },
+      "resultState": {
+        "description": "Apply ratio test"
       }
     },
     {
       "id": "step-3",
-      "title": "Find radius of convergence",
+      "order": 3,
       "currentState": {
-        "expression": "$\\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x-2|}{3}$",
         "description": "Series converges when this limit $< 1$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the radius of convergence $R$?",
         "hint": "$\\frac{|x-2|}{3} < 1 \\implies |x-2| < 3$, so $R = 3$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$R = 3$ (from $|x-2| < 3$)"
+          "text": "$R = 3$ (from $|x-2| < 3$)"
         },
         {
           "id": "b",
-          "content": "$R = 2$ (the center)"
+          "text": "$R = 2$ (the center)"
         },
         {
           "id": "c",
-          "content": "$R = \\frac{1}{3}$ (reciprocal)"
+          "text": "$R = \\frac{1}{3}$ (reciprocal)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Ratio test: converges when $\\frac{|x-2|}{3} < 1$, so $|x-2| < 3$. Radius of convergence is $R = 3$.",
           "insight": "The series converges absolutely within distance $R$ from center $c$."
         },
         "incorrect": {
-          "b": "The center is 2, but radius is 3. Don't confuse center with radius!",
-          "c": "Solve $\\frac{|x-2|}{3} < 1$ to get $|x-2| < 3$, not $|x-2| < 1/3$."
+          "1": "The center is 2, but radius is 3. Don't confuse center with radius!",
+          "2": "Solve $\\frac{|x-2|}{3} < 1$ to get $|x-2| < 3$, not $|x-2| < 1/3$."
         }
+      },
+      "resultState": {
+        "description": "Find radius of convergence"
       }
     },
     {
       "id": "step-4",
-      "title": "Check endpoints",
+      "order": 4,
       "currentState": {
-        "expression": "$|x-2| < 3 \\implies -1 < x < 5$",
         "description": "Test endpoints $x = -1$ and $x = 5$ separately."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Do the endpoints converge?",
         "hint": "At $x=-1$: $\\sum \\frac{(-3)^n}{n\\cdot 3^n} = \\sum \\frac{(-1)^n}{n}$ (alternating harmonic, converges). At $x=5$: $\\sum \\frac{3^n}{n\\cdot 3^n} = \\sum \\frac{1}{n}$ (harmonic, diverges)."
       },
       "options": [
         {
           "id": "a",
-          "content": "At $x=-1$: $\\sum \\frac{(-1)^n}{n}$ converges (alternating harmonic). At $x=5$: $\\sum \\frac{1}{n}$ diverges (harmonic). Interval: $[-1, 5)$"
+          "text": "At $x=-1$: $\\sum \\frac{(-1)^n}{n}$ converges (alternating harmonic). At $x=5$: $\\sum \\frac{1}{n}$ diverges (harmonic). Interval: $[-1, 5)$"
         },
         {
           "id": "b",
-          "content": "Both endpoints diverge. Interval: $(-1, 5)$"
+          "text": "Both endpoints diverge. Interval: $(-1, 5)$"
         },
         {
           "id": "c",
-          "content": "Both endpoints converge. Interval: $[-1, 5]$"
+          "text": "Both endpoints converge. Interval: $[-1, 5]$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! At $x=-1$: series becomes $\\sum \\frac{(-1)^n}{n}$, which converges by alternating series test. At $x=5$: series becomes $\\sum \\frac{1}{n}$, the harmonic series, which diverges. Interval: $[-1, 5)$.",
           "insight": "Always check endpoints separately - they may or may not be included in the interval of convergence."
         },
         "incorrect": {
-          "b": "Check $x=-1$ carefully: $\\sum \\frac{(-1)^n}{n}$ is the alternating harmonic series, which DOES converge.",
-          "c": "$x=5$ gives $\\sum \\frac{1}{n}$, the harmonic series, which diverges."
+          "1": "Check $x=-1$ carefully: $\\sum \\frac{(-1)^n}{n}$ is the alternating harmonic series, which DOES converge.",
+          "2": "$x=5$ gives $\\sum \\frac{1}{n}$, the harmonic series, which diverges."
         }
+      },
+      "resultState": {
+        "description": "Check endpoints"
       }
     }
   ],

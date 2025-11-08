@@ -5,7 +5,12 @@
   "topic": "Linear Algebra",
   "difficulty": 2,
   "estimatedTime": 8,
-  "tags": ["linear algebra", "matrices", "inverse", "determinant"],
+  "tags": [
+    "linear algebra",
+    "matrices",
+    "inverse",
+    "determinant"
+  ],
   "statement": {
     "text": "Find the inverse of the matrix $A = \\begin{bmatrix} 3 & 1 \\\\ 5 & 2 \\end{bmatrix}$."
   },
@@ -17,113 +22,119 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Check if invertible",
+      "order": 1,
       "currentState": {
-        "expression": "$A = \\begin{bmatrix} 3 & 1 \\\\ 5 & 2 \\end{bmatrix}$",
         "description": "Matrix is invertible if $\\det(A) \\neq 0$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\det(A)$?",
         "hint": "For $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, det = $ad - bc$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\det(A) = (3)(2) - (1)(5) = 6 - 5 = 1 \\neq 0$ (invertible!)"
+          "text": "$\\det(A) = (3)(2) - (1)(5) = 6 - 5 = 1 \\neq 0$ (invertible!)"
         },
         {
           "id": "b",
-          "content": "$\\det(A) = 3 + 2 - 1 - 5 = -1$"
+          "text": "$\\det(A) = 3 + 2 - 1 - 5 = -1$"
         },
         {
           "id": "c",
-          "content": "$\\det(A) = 0$ (not invertible)"
+          "text": "$\\det(A) = 0$ (not invertible)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\det(A) = ad - bc = (3)(2) - (1)(5) = 1 \\neq 0$, so $A$ is invertible.",
           "insight": "Nonzero determinant guarantees the inverse exists."
         },
         "incorrect": {
-          "b": "The formula is $ad - bc$ (product of diagonal minus product of anti-diagonal), not a sum.",
-          "c": "Calculate: $3 \\cdot 2 - 1 \\cdot 5 = 6 - 5 = 1 \\neq 0$."
+          "1": "The formula is $ad - bc$ (product of diagonal minus product of anti-diagonal), not a sum.",
+          "2": "Calculate: $3 \\cdot 2 - 1 \\cdot 5 = 6 - 5 = 1 \\neq 0$."
         }
+      },
+      "resultState": {
+        "description": "Check if invertible"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply 2×2 inverse formula",
+      "order": 2,
       "currentState": {
-        "expression": "$\\det(A) = 1$",
         "description": "Formula: $A^{-1} = \\frac{1}{\\det(A)} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $A^{-1}$?",
         "hint": "Swap $a$ and $d$, negate $b$ and $c$, then divide by det = 1."
       },
       "options": [
         {
           "id": "a",
-          "content": "$A^{-1} = \\frac{1}{1}\\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix} = \\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix}$"
+          "text": "$A^{-1} = \\frac{1}{1}\\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix} = \\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix}$"
         },
         {
           "id": "b",
-          "content": "$A^{-1} = \\begin{bmatrix} \\frac{1}{3} & \\frac{1}{1} \\\\ \\frac{1}{5} & \\frac{1}{2} \\end{bmatrix}$"
+          "text": "$A^{-1} = \\begin{bmatrix} \\frac{1}{3} & \\frac{1}{1} \\\\ \\frac{1}{5} & \\frac{1}{2} \\end{bmatrix}$"
         },
         {
           "id": "c",
-          "content": "$A^{-1} = \\begin{bmatrix} 3 & 1 \\\\ 5 & 2 \\end{bmatrix}$ (same as $A$)"
+          "text": "$A^{-1} = \\begin{bmatrix} 3 & 1 \\\\ 5 & 2 \\end{bmatrix}$ (same as $A$)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! For $\\begin{bmatrix} 3 & 1 \\\\ 5 & 2 \\end{bmatrix}$: swap diagonal (3↔2), negate off-diagonal, divide by det(1): $\\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix}$.",
           "insight": "The 2×2 inverse formula: $\\frac{1}{ad-bc}\\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$."
         },
         "incorrect": {
-          "b": "Don't invert entries individually! Use the formula for the entire matrix.",
-          "c": "The inverse is different from $A$ itself (unless $A^2 = I$, which isn't the case here)."
+          "1": "Don't invert entries individually! Use the formula for the entire matrix.",
+          "2": "The inverse is different from $A$ itself (unless $A^2 = I$, which isn't the case here)."
         }
+      },
+      "resultState": {
+        "description": "Apply 2×2 inverse formula"
       }
     },
     {
       "id": "step-3",
-      "title": "Verify the inverse",
+      "order": 3,
       "currentState": {
-        "expression": "$A^{-1} = \\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix}$",
         "description": "Check that $AA^{-1} = I$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $AA^{-1}$?",
         "hint": "$\\begin{bmatrix} 3 & 1 \\\\ 5 & 2 \\end{bmatrix}\\begin{bmatrix} 2 & -1 \\\\ -5 & 3 \\end{bmatrix}$. Multiply row by column."
       },
       "options": [
         {
           "id": "a",
-          "content": "$AA^{-1} = \\begin{bmatrix} 6-5 & -3+3 \\\\ 10-10 & -5+6 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = I$ ✓"
+          "text": "$AA^{-1} = \\begin{bmatrix} 6-5 & -3+3 \\\\ 10-10 & -5+6 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = I$ ✓"
         },
         {
           "id": "b",
-          "content": "$AA^{-1} = \\begin{bmatrix} 6 & -3 \\\\ 10 & -5 \\end{bmatrix}$"
+          "text": "$AA^{-1} = \\begin{bmatrix} 6 & -3 \\\\ 10 & -5 \\end{bmatrix}$"
         },
         {
           "id": "c",
-          "content": "$AA^{-1} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$"
+          "text": "$AA^{-1} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $(1,1)$: $3(2) + 1(-5) = 1$. $(1,2)$: $3(-1) + 1(3) = 0$. $(2,1)$: $5(2) + 2(-5) = 0$. $(2,2)$: $5(-1) + 2(3) = 1$. So $AA^{-1} = I$ ✓.",
           "insight": "Verification confirms our inverse is correct!"
         },
         "incorrect": {
-          "b": "You computed the products but didn't add them. Each entry is a dot product of row and column.",
-          "c": "Check your arithmetic - the products should give the identity matrix."
+          "1": "You computed the products but didn't add them. Each entry is a dot product of row and column.",
+          "2": "Check your arithmetic - the products should give the identity matrix."
         }
+      },
+      "resultState": {
+        "description": "Verify the inverse"
       }
     }
   ],

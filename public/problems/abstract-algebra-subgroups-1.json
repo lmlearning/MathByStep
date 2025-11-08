@@ -5,7 +5,12 @@
   "topic": "Abstract Algebra",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["abstract algebra", "group theory", "subgroups", "Lagrange's theorem"],
+  "tags": [
+    "abstract algebra",
+    "group theory",
+    "subgroups",
+    "Lagrange's theorem"
+  ],
   "statement": {
     "text": "Let $G = \\mathbb{Z}_{12}$ under addition modulo 12. Find all subgroups of $G$ and verify Lagrange's Theorem."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall subgroup definition",
+      "order": 1,
       "currentState": {
-        "expression": "$G = \\mathbb{Z}_{12} = \\{0, 1, 2, ..., 11\\}$",
         "description": "What is a subgroup?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What makes $H \\subseteq G$ a subgroup?",
         "hint": "$H$ must be closed under the operation, contain identity, and contain inverses."
       },
       "options": [
         {
           "id": "a",
-          "content": "$H$ is a subgroup if: (1) closed under $+$, (2) contains 0 (identity), (3) contains additive inverses"
+          "text": "$H$ is a subgroup if: (1) closed under $+$, (2) contains 0 (identity), (3) contains additive inverses"
         },
         {
           "id": "b",
-          "content": "$H$ is a subgroup if it contains at least two elements"
+          "text": "$H$ is a subgroup if it contains at least two elements"
         },
         {
           "id": "c",
-          "content": "$H$ is a subgroup if every element has order dividing 12"
+          "text": "$H$ is a subgroup if every element has order dividing 12"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Subgroup test: $H \\leq G$ iff (1) $a,b \\in H \\implies a+b \\in H$, (2) $0 \\in H$, (3) $a \\in H \\implies -a \\in H$.",
           "insight": "For finite groups, closure + non-empty is actually sufficient!"
         },
         "incorrect": {
-          "b": "Not enough! Must satisfy group axioms restricted to $H$.",
-          "c": "That's true for elements in ANY subgroup (by Lagrange), but doesn't define subgroups."
+          "1": "Not enough! Must satisfy group axioms restricted to $H$.",
+          "2": "That's true for elements in ANY subgroup (by Lagrange), but doesn't define subgroups."
         }
+      },
+      "resultState": {
+        "description": "Recall subgroup definition"
       }
     },
     {
       "id": "step-2",
-      "title": "Find cyclic subgroups",
+      "order": 2,
       "currentState": {
-        "expression": "$\\langle a \\rangle = \\{0, a, 2a, 3a, ...\\}$ in $\\mathbb{Z}_{12}$",
         "description": "Every element generates a cyclic subgroup."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are the distinct cyclic subgroups?",
         "hint": "$\\langle 1 \\rangle = \\mathbb{Z}_{12}$, $\\langle 2 \\rangle = \\{0,2,4,6,8,10\\}$, $\\langle 3 \\rangle = \\{0,3,6,9\\}$, $\\langle 4 \\rangle = \\{0,4,8\\}$, $\\langle 6 \\rangle = \\{0,6\\}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\langle 0 \\rangle = \\{0\\}$, $\\langle 1 \\rangle = \\mathbb{Z}_{12}$, $\\langle 2 \\rangle = \\{0,2,4,6,8,10\\}$, $\\langle 3 \\rangle = \\{0,3,6,9\\}$, $\\langle 4 \\rangle = \\{0,4,8\\}$, $\\langle 6 \\rangle = \\{0,6\\}$"
+          "text": "$\\langle 0 \\rangle = \\{0\\}$, $\\langle 1 \\rangle = \\mathbb{Z}_{12}$, $\\langle 2 \\rangle = \\{0,2,4,6,8,10\\}$, $\\langle 3 \\rangle = \\{0,3,6,9\\}$, $\\langle 4 \\rangle = \\{0,4,8\\}$, $\\langle 6 \\rangle = \\{0,6\\}$"
         },
         {
           "id": "b",
-          "content": "12 different cyclic subgroups, one for each element"
+          "text": "12 different cyclic subgroups, one for each element"
         },
         {
           "id": "c",
-          "content": "Only $\\{0\\}$ and $\\mathbb{Z}_{12}$ (trivial subgroups)"
+          "text": "Only $\\{0\\}$ and $\\mathbb{Z}_{12}$ (trivial subgroups)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! The distinct cyclic subgroups have orders dividing 12: sizes 1, 2, 3, 4, 6, 12. Note: $\\langle 5 \\rangle = \\langle 1 \\rangle$, $\\langle 7 \\rangle = \\langle 1 \\rangle$, etc. (generators of whole group).",
           "insight": "Different generators can produce the same subgroup! $\\langle d \\rangle$ has order $12/\\gcd(d, 12)$."
         },
         "incorrect": {
-          "b": "Many elements generate the same subgroup! For example, $\\langle 2 \\rangle = \\langle 10 \\rangle$.",
-          "c": "$\\mathbb{Z}_{12}$ has many nontrivial subgroups. It's NOT a simple group."
+          "1": "Many elements generate the same subgroup! For example, $\\langle 2 \\rangle = \\langle 10 \\rangle$.",
+          "2": "$\\mathbb{Z}_{12}$ has many nontrivial subgroups. It's NOT a simple group."
         }
+      },
+      "resultState": {
+        "description": "Find cyclic subgroups"
       }
     },
     {
       "id": "step-3",
-      "title": "List all subgroups",
+      "order": 3,
       "currentState": {
-        "expression": "Every subgroup is cyclic (since $G$ is cyclic)",
         "description": "Subgroups must have order dividing 12."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are ALL subgroups of $\\mathbb{Z}_{12}$?",
         "hint": "Divisors of 12: 1, 2, 3, 4, 6, 12. One subgroup of each order."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\{0\\}$ (order 1), $\\{0,6\\}$ (order 2), $\\{0,4,8\\}$ (order 3), $\\{0,3,6,9\\}$ (order 4), $\\{0,2,4,6,8,10\\}$ (order 6), $\\mathbb{Z}_{12}$ (order 12)"
+          "text": "$\\{0\\}$ (order 1), $\\{0,6\\}$ (order 2), $\\{0,4,8\\}$ (order 3), $\\{0,3,6,9\\}$ (order 4), $\\{0,2,4,6,8,10\\}$ (order 6), $\\mathbb{Z}_{12}$ (order 12)"
         },
         {
           "id": "b",
-          "content": "Only $\\{0\\}$ and $\\mathbb{Z}_{12}$"
+          "text": "Only $\\{0\\}$ and $\\mathbb{Z}_{12}$"
         },
         {
           "id": "c",
-          "content": "All subsets of size dividing 12"
+          "text": "All subsets of size dividing 12"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! For cyclic group $\\mathbb{Z}_n$, there's exactly ONE subgroup of order $d$ for each divisor $d$ of $n$. Here 12 has divisors 1,2,3,4,6,12, giving 6 subgroups total.",
           "insight": "Subgroup of order $d$ is $\\langle 12/d \\rangle = \\{0, 12/d, 2(12/d), ...\\}$."
         },
         "incorrect": {
-          "b": "$\\mathbb{Z}_{12}$ is cyclic but NOT simple - it has many proper subgroups!",
-          "c": "Not all subsets are subgroups! Must be closed under addition. Subgroup orders must DIVIDE the group order."
+          "1": "$\\mathbb{Z}_{12}$ is cyclic but NOT simple - it has many proper subgroups!",
+          "2": "Not all subsets are subgroups! Must be closed under addition. Subgroup orders must DIVIDE the group order."
         }
+      },
+      "resultState": {
+        "description": "List all subgroups"
       }
     },
     {
       "id": "step-4",
-      "title": "Verify Lagrange's Theorem",
+      "order": 4,
       "currentState": {
-        "expression": "Lagrange: If $H \\leq G$, then $|H|$ divides $|G|$",
         "description": "Check for our subgroups."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Do all subgroup orders divide $|G| = 12$?",
         "hint": "Subgroup orders are 1, 2, 3, 4, 6, 12. All divide 12! ✓"
       },
       "options": [
         {
           "id": "a",
-          "content": "Yes! Subgroup orders {1, 2, 3, 4, 6, 12} all divide 12. Lagrange's Theorem verified ✓"
+          "text": "Yes! Subgroup orders {1, 2, 3, 4, 6, 12} all divide 12. Lagrange's Theorem verified ✓"
         },
         {
           "id": "b",
-          "content": "No, we found a subgroup of order 5"
+          "text": "No, we found a subgroup of order 5"
         },
         {
           "id": "c",
-          "content": "Lagrange doesn't apply to abelian groups"
+          "text": "Lagrange doesn't apply to abelian groups"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Every subgroup order (1,2,3,4,6,12) divides 12, confirming Lagrange's Theorem. Moreover, for cyclic groups, the converse holds: there exists a subgroup of order $d$ for each divisor $d$.",
           "insight": "Lagrange's Theorem is fundamental: $|H|$ always divides $|G|$ for finite groups."
         },
         "incorrect": {
-          "b": "5 doesn't divide 12, so by Lagrange, there CAN'T be a subgroup of order 5!",
-          "c": "Lagrange's Theorem applies to ALL finite groups, abelian or not!"
+          "1": "5 doesn't divide 12, so by Lagrange, there CAN'T be a subgroup of order 5!",
+          "2": "Lagrange's Theorem applies to ALL finite groups, abelian or not!"
         }
+      },
+      "resultState": {
+        "description": "Verify Lagrange's Theorem"
       }
     }
   ],

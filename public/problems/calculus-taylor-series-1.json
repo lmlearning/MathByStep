@@ -5,7 +5,12 @@
   "topic": "Calculus",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["calculus", "series", "Taylor series", "power series"],
+  "tags": [
+    "calculus",
+    "series",
+    "Taylor series",
+    "power series"
+  ],
   "statement": {
     "text": "Find the Taylor series for $f(x) = e^x$ centered at $a = 0$ (Maclaurin series) and determine its radius of convergence."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall Taylor series formula",
+      "order": 1,
       "currentState": {
-        "expression": "$f(x) = e^x$ centered at $a = 0$",
         "description": "Taylor series formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the Taylor series formula?",
         "hint": "$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$"
+          "text": "$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$"
         },
         {
           "id": "b",
-          "content": "$f(x) = \\sum_{n=0}^{\\infty} f^{(n)}(a)(x-a)^n$"
+          "text": "$f(x) = \\sum_{n=0}^{\\infty} f^{(n)}(a)(x-a)^n$"
         },
         {
           "id": "c",
-          "content": "$f(x) = \\sum_{n=1}^{\\infty} \\frac{(x-a)^n}{n}$"
+          "text": "$f(x) = \\sum_{n=1}^{\\infty} \\frac{(x-a)^n}{n}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Taylor series: $f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$ where $f^{(n)}(a)$ is the $n$th derivative at $a$.",
           "insight": "When $a=0$, this is called the Maclaurin series."
         },
         "incorrect": {
-          "b": "Missing the $n!$ in the denominator - it's crucial for convergence!",
-          "c": "That's the series for $\\ln(1+x-a)$, not the general Taylor formula."
+          "1": "Missing the $n!$ in the denominator - it's crucial for convergence!",
+          "2": "That's the series for $\\ln(1+x-a)$, not the general Taylor formula."
         }
+      },
+      "resultState": {
+        "description": "Recall Taylor series formula"
       }
     },
     {
       "id": "step-2",
-      "title": "Find derivatives",
+      "order": 2,
       "currentState": {
-        "expression": "$f(x) = e^x$",
         "description": "Compute $f^{(n)}(0)$ for all $n$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is special about derivatives of $e^x$?",
         "hint": "$\\frac{d}{dx}[e^x] = e^x$, so all derivatives equal $e^x$. At $x=0$: $f^{(n)}(0) = e^0 = 1$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f^{(n)}(x) = e^x$ for all $n$, so $f^{(n)}(0) = 1$ for all $n$"
+          "text": "$f^{(n)}(x) = e^x$ for all $n$, so $f^{(n)}(0) = 1$ for all $n$"
         },
         {
           "id": "b",
-          "content": "$f^{(n)}(0) = n!$ for all $n$"
+          "text": "$f^{(n)}(0) = n!$ for all $n$"
         },
         {
           "id": "c",
-          "content": "$f'(0) = 1$, but higher derivatives are different"
+          "text": "$f'(0) = 1$, but higher derivatives are different"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\frac{d^n}{dx^n}[e^x] = e^x$ for all $n \\geq 0$. At $x=0$: $f^{(n)}(0) = e^0 = 1$ for all $n$.",
           "insight": "The exponential function is its own derivative - a unique property!"
         },
         "incorrect": {
-          "b": "The derivative of $e^x$ is $e^x$, not $n!$. At $x=0$, all derivatives equal 1.",
-          "c": "Every derivative of $e^x$ is $e^x$, so all derivatives at 0 equal 1."
+          "1": "The derivative of $e^x$ is $e^x$, not $n!$. At $x=0$, all derivatives equal 1.",
+          "2": "Every derivative of $e^x$ is $e^x$, so all derivatives at 0 equal 1."
         }
+      },
+      "resultState": {
+        "description": "Find derivatives"
       }
     },
     {
       "id": "step-3",
-      "title": "Write the series",
+      "order": 3,
       "currentState": {
-        "expression": "$f^{(n)}(0) = 1$ for all $n$, $a = 0$",
         "description": "Substitute into Taylor formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the Maclaurin series for $e^x$?",
         "hint": "$\\sum_{n=0}^{\\infty} \\frac{1}{n!}x^n = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\cdots$"
       },
       "options": [
         {
           "id": "a",
-          "content": "$e^x = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!} = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\frac{x^4}{4!} + \\cdots$"
+          "text": "$e^x = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!} = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\frac{x^4}{4!} + \\cdots$"
         },
         {
           "id": "b",
-          "content": "$e^x = \\sum_{n=0}^{\\infty} x^n = 1 + x + x^2 + x^3 + \\cdots$"
+          "text": "$e^x = \\sum_{n=0}^{\\infty} x^n = 1 + x + x^2 + x^3 + \\cdots$"
         },
         {
           "id": "c",
-          "content": "$e^x = \\sum_{n=1}^{\\infty} \\frac{x^n}{n}$"
+          "text": "$e^x = \\sum_{n=1}^{\\infty} \\frac{x^n}{n}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! With $f^{(n)}(0) = 1$ and $a=0$: $e^x = \\sum_{n=0}^{\\infty} \\frac{1 \\cdot x^n}{n!} = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$.",
           "insight": "This is one of the most important series in mathematics!"
         },
         "incorrect": {
-          "b": "That's the geometric series (converges only for $|x|<1$). Missing the $n!$ factorial!",
-          "c": "That's close to $\\ln(1+x)$. The series for $e^x$ has $n!$ in denominator, starts at $n=0$."
+          "1": "That's the geometric series (converges only for $|x|<1$). Missing the $n!$ factorial!",
+          "2": "That's close to $\\ln(1+x)$. The series for $e^x$ has $n!$ in denominator, starts at $n=0$."
         }
+      },
+      "resultState": {
+        "description": "Write the series"
       }
     },
     {
       "id": "step-4",
-      "title": "Find radius of convergence",
+      "order": 4,
       "currentState": {
-        "expression": "$e^x = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$",
         "description": "Apply ratio test."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the radius of convergence?",
         "hint": "$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x|^{n+1}}{(n+1)!} \\cdot \\frac{n!}{|x|^n} = \\frac{|x|}{n+1} \\to 0$ for all $x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$R = \\infty$ (converges for all $x$)"
+          "text": "$R = \\infty$ (converges for all $x$)"
         },
         {
           "id": "b",
-          "content": "$R = 1$ (converges for $|x| < 1$)"
+          "text": "$R = 1$ (converges for $|x| < 1$)"
         },
         {
           "id": "c",
-          "content": "$R = e$ (converges for $|x| < e$)"
+          "text": "$R = e$ (converges for $|x| < e$)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Ratio test: $\\lim_{n\\to\\infty} \\frac{|x|}{n+1} = 0 < 1$ for ALL $x$. So the series converges for all real $x$.",
           "insight": "The Maclaurin series for $e^x$ converges to $e^x$ for every real number!"
         },
         "incorrect": {
-          "b": "The factorial $n!$ grows so fast that the series converges for ALL $x$, not just $|x|<1$.",
-          "c": "The radius is infinite - the series converges everywhere, not just near the origin."
+          "1": "The factorial $n!$ grows so fast that the series converges for ALL $x$, not just $|x|<1$.",
+          "2": "The radius is infinite - the series converges everywhere, not just near the origin."
         }
+      },
+      "resultState": {
+        "description": "Find radius of convergence"
       }
     }
   ],

@@ -5,7 +5,12 @@
   "topic": "Real Analysis",
   "difficulty": 3,
   "estimatedTime": 10,
-  "tags": ["real analysis", "sequences", "Cauchy sequences", "completeness"],
+  "tags": [
+    "real analysis",
+    "sequences",
+    "Cauchy sequences",
+    "completeness"
+  ],
   "statement": {
     "text": "Prove that the sequence $a_n = \\sum_{k=1}^{n} \\frac{1}{k^2}$ is a Cauchy sequence in $\\mathbb{R}$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall Cauchy definition",
+      "order": 1,
       "currentState": {
-        "expression": "Sequence $(a_n)$ in $\\mathbb{R}$",
         "description": "What makes a sequence Cauchy?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the definition of a Cauchy sequence?",
         "hint": "For all $\\epsilon > 0$, there exists $N$ such that for all $m, n > N$: $|a_m - a_n| < \\epsilon$."
       },
       "options": [
         {
           "id": "a",
-          "content": "For all $\\epsilon > 0$, $\\exists N$ such that $m, n > N \\implies |a_m - a_n| < \\epsilon$"
+          "text": "For all $\\epsilon > 0$, $\\exists N$ such that $m, n > N \\implies |a_m - a_n| < \\epsilon$"
         },
         {
           "id": "b",
-          "content": "For all $n$: $|a_{n+1} - a_n| < \\epsilon$"
+          "text": "For all $n$: $|a_{n+1} - a_n| < \\epsilon$"
         },
         {
           "id": "c",
-          "content": "Sequence converges to some limit $L$"
+          "text": "Sequence converges to some limit $L$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Cauchy: terms become arbitrarily close to EACH OTHER (not necessarily to a known limit).",
           "insight": "In $\\mathbb{R}$, Cauchy sequences converge (completeness). But the definition doesn't require knowing the limit."
         },
         "incorrect": {
-          "b": "That's not enough - consecutive terms being close doesn't guarantee ALL terms are eventually close.",
-          "c": "That's convergence. Cauchy is defined without mentioning a limit (though in $\\mathbb{R}$ they're equivalent)."
+          "1": "That's not enough - consecutive terms being close doesn't guarantee ALL terms are eventually close.",
+          "2": "That's convergence. Cauchy is defined without mentioning a limit (though in $\\mathbb{R}$ they're equivalent)."
         }
+      },
+      "resultState": {
+        "description": "Recall Cauchy definition"
       }
     },
     {
       "id": "step-2",
-      "title": "Express difference",
+      "order": 2,
       "currentState": {
-        "expression": "$a_n = \\sum_{k=1}^{n} \\frac{1}{k^2}$",
         "description": "For $m > n$, what is $a_m - a_n$?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $a_m - a_n$ when $m > n$?",
         "hint": "$a_m - a_n = \\sum_{k=n+1}^{m} \\frac{1}{k^2}$ (the tail of the series)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$a_m - a_n = \\sum_{k=n+1}^{m} \\frac{1}{k^2} = \\frac{1}{(n+1)^2} + \\frac{1}{(n+2)^2} + \\cdots + \\frac{1}{m^2}$"
+          "text": "$a_m - a_n = \\sum_{k=n+1}^{m} \\frac{1}{k^2} = \\frac{1}{(n+1)^2} + \\frac{1}{(n+2)^2} + \\cdots + \\frac{1}{m^2}$"
         },
         {
           "id": "b",
-          "content": "$a_m - a_n = \\frac{1}{m^2} - \\frac{1}{n^2}$"
+          "text": "$a_m - a_n = \\frac{1}{m^2} - \\frac{1}{n^2}$"
         },
         {
           "id": "c",
-          "content": "$a_m - a_n = \\frac{m-n}{n^2}$"
+          "text": "$a_m - a_n = \\frac{m-n}{n^2}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Since $a_m = \\sum_{k=1}^{m} \\frac{1}{k^2}$ and $a_n = \\sum_{k=1}^{n} \\frac{1}{k^2}$, their difference is the sum from $k=n+1$ to $m$.",
           "insight": "The difference represents the tail of the series."
         },
         "incorrect": {
-          "b": "That's the difference of individual terms, not partial sums. The sums include many terms!",
-          "c": "The partial sums are not simple fractions - they're sums of many fractions."
+          "1": "That's the difference of individual terms, not partial sums. The sums include many terms!",
+          "2": "The partial sums are not simple fractions - they're sums of many fractions."
         }
+      },
+      "resultState": {
+        "description": "Express difference"
       }
     },
     {
       "id": "step-3",
-      "title": "Bound the difference",
+      "order": 3,
       "currentState": {
-        "expression": "$|a_m - a_n| = \\sum_{k=n+1}^{m} \\frac{1}{k^2}$",
         "description": "Find an upper bound for this sum."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How can we bound $\\sum_{k=n+1}^{m} \\frac{1}{k^2}$?",
         "hint": "Use $\\frac{1}{k^2} < \\frac{1}{k(k-1)} = \\frac{1}{k-1} - \\frac{1}{k}$ (telescoping), or compare to integral."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\sum_{k=n+1}^{m} \\frac{1}{k^2} < \\sum_{k=n+1}^{\\infty} \\frac{1}{k^2} \\leq \\int_n^{\\infty} \\frac{1}{x^2}\\,dx = \\frac{1}{n}$"
+          "text": "$\\sum_{k=n+1}^{m} \\frac{1}{k^2} < \\sum_{k=n+1}^{\\infty} \\frac{1}{k^2} \\leq \\int_n^{\\infty} \\frac{1}{x^2}\\,dx = \\frac{1}{n}$"
         },
         {
           "id": "b",
-          "content": "$\\sum_{k=n+1}^{m} \\frac{1}{k^2} = \\frac{m-n}{n^2}$"
+          "text": "$\\sum_{k=n+1}^{m} \\frac{1}{k^2} = \\frac{m-n}{n^2}$"
         },
         {
           "id": "c",
-          "content": "$\\sum_{k=n+1}^{m} \\frac{1}{k^2} \\leq \\frac{1}{n}$"
+          "text": "$\\sum_{k=n+1}^{m} \\frac{1}{k^2} \\leq \\frac{1}{n}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! The tail is bounded by the integral: $\\sum_{k=n+1}^{\\infty} \\frac{1}{k^2} \\leq \\int_n^{\\infty} x^{-2}\\,dx = [-x^{-1}]_n^{\\infty} = \\frac{1}{n}$.",
           "insight": "Integral test provides a tight bound for series tails."
         },
         "incorrect": {
-          "b": "That's not correct - each term has different denominator $k^2$, not constant $n^2$.",
-          "c": "Close! This is true but you need to justify it (use integral or telescoping)."
+          "1": "That's not correct - each term has different denominator $k^2$, not constant $n^2$.",
+          "2": "Close! This is true but you need to justify it (use integral or telescoping)."
         }
+      },
+      "resultState": {
+        "description": "Bound the difference"
       }
     },
     {
       "id": "step-4",
-      "title": "Verify Cauchy condition",
+      "order": 4,
       "currentState": {
-        "expression": "$|a_m - a_n| \\leq \\frac{1}{n}$ for $m > n$",
         "description": "Show this satisfies the Cauchy condition."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Why is the sequence Cauchy?",
         "hint": "Given $\\epsilon > 0$, choose $N > \\frac{1}{\\epsilon}$. Then for $m,n > N$: $|a_m - a_n| \\leq \\frac{1}{n} < \\frac{1}{N} < \\epsilon$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Given $\\epsilon > 0$, choose $N = \\lceil 1/\\epsilon \\rceil$. Then $m,n > N \\implies |a_m - a_n| \\leq \\frac{1}{n} \\leq \\frac{1}{N} < \\epsilon$ ✓"
+          "text": "Given $\\epsilon > 0$, choose $N = \\lceil 1/\\epsilon \\rceil$. Then $m,n > N \\implies |a_m - a_n| \\leq \\frac{1}{n} \\leq \\frac{1}{N} < \\epsilon$ ✓"
         },
         {
           "id": "b",
-          "content": "The sequence is bounded, therefore Cauchy"
+          "text": "The sequence is bounded, therefore Cauchy"
         },
         {
           "id": "c",
-          "content": "We know the series converges, so it's Cauchy"
+          "text": "We know the series converges, so it's Cauchy"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! For any $\\epsilon > 0$, taking $N > 1/\\epsilon$ ensures $|a_m - a_n| \\leq 1/n < 1/N < \\epsilon$ whenever $m, n > N$.",
           "insight": "The tail of the series $\\sum 1/k^2$ goes to zero, making the partial sums get arbitrarily close."
         },
         "incorrect": {
-          "b": "Bounded doesn't imply Cauchy! Consider $a_n = (-1)^n$: bounded but not Cauchy.",
-          "c": "While true, we should prove it's Cauchy directly from the definition, not assume convergence."
+          "1": "Bounded doesn't imply Cauchy! Consider $a_n = (-1)^n$: bounded but not Cauchy.",
+          "2": "While true, we should prove it's Cauchy directly from the definition, not assume convergence."
         }
+      },
+      "resultState": {
+        "description": "Verify Cauchy condition"
       }
     }
   ],

@@ -5,7 +5,12 @@
   "topic": "Linear Algebra",
   "difficulty": 2,
   "estimatedTime": 12,
-  "tags": ["linear algebra", "systems of equations", "Gaussian elimination", "row operations"],
+  "tags": [
+    "linear algebra",
+    "systems of equations",
+    "Gaussian elimination",
+    "row operations"
+  ],
   "statement": {
     "text": "Use Gaussian elimination to solve the system: $\\begin{cases} x + 2y + z = 6 \\\\ 2x + y - z = 1 \\\\ x - y + 2z = 5 \\end{cases}$"
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Write augmented matrix",
+      "order": 1,
       "currentState": {
-        "expression": "$\\begin{cases} x + 2y + z = 6 \\\\ 2x + y - z = 1 \\\\ x - y + 2z = 5 \\end{cases}$",
         "description": "Convert system to matrix form."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the augmented matrix?",
         "hint": "Coefficients on left, constants on right after the vertical bar."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 2 & 1 & -1 & 1 \\\\ 1 & -1 & 2 & 5 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 2 & 1 & -1 & 1 \\\\ 1 & -1 & 2 & 5 \\end{array}\\right]$"
         },
         {
           "id": "b",
-          "content": "$\\left[\\begin{array}{ccc} 1 & 2 & 1 \\\\ 2 & 1 & -1 \\\\ 1 & -1 & 2 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc} 1 & 2 & 1 \\\\ 2 & 1 & -1 \\\\ 1 & -1 & 2 \\end{array}\\right]$"
         },
         {
           "id": "c",
-          "content": "$\\left[\\begin{array}{ccc|c} 6 & 1 & 2 & 1 \\\\ 1 & 2 & 1 & -1 \\\\ 5 & 1 & -1 & 2 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 6 & 1 & 2 & 1 \\\\ 1 & 2 & 1 & -1 \\\\ 5 & 1 & -1 & 2 \\end{array}\\right]$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Augmented matrix has coefficient matrix on left, constant vector on right after |.",
           "insight": "Each row represents one equation; columns represent variables $x, y, z$."
         },
         "incorrect": {
-          "b": "Missing the constant column! Need augmented matrix $[A|b]$.",
-          "c": "You've mixed up the coefficients and constants. Reorder properly."
+          "1": "Missing the constant column! Need augmented matrix $[A|b]$.",
+          "2": "You've mixed up the coefficients and constants. Reorder properly."
         }
+      },
+      "resultState": {
+        "description": "Write augmented matrix"
       }
     },
     {
       "id": "step-2",
-      "title": "Eliminate first column",
+      "order": 2,
       "currentState": {
-        "expression": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 2 & 1 & -1 & 1 \\\\ 1 & -1 & 2 & 5 \\end{array}\\right]$",
         "description": "Make zeros below the first pivot."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What row operations eliminate the first column?",
         "hint": "$R_2 \\to R_2 - 2R_1$ and $R_3 \\to R_3 - R_1$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & -3 & 1 & -1 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & -3 & 1 & -1 \\end{array}\\right]$"
         },
         {
           "id": "b",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 1 & 3 & 11 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 1 & 3 & 11 \\end{array}\\right]$"
         },
         {
           "id": "c",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & 2 \\\\ 0 & 1 & 0 & 1 \\\\ 0 & 0 & 1 & 3 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & 2 \\\\ 0 & 1 & 0 & 1 \\\\ 0 & 0 & 1 & 3 \\end{array}\\right]$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $R_2 - 2R_1 = [2,1,-1,1] - 2[1,2,1,6] = [0,-3,-3,-11]$. $R_3 - R_1 = [1,-1,2,5] - [1,2,1,6] = [0,-3,1,-1]$.",
           "insight": "Use the first pivot (1 in position (1,1)) to eliminate below it."
         },
         "incorrect": {
-          "b": "Check $R_3 - R_1$ carefully: $[1,-1,2,5] - [1,2,1,6] = [0,-3,1,-1]$, not $[0,1,3,11]$.",
-          "c": "That's the final reduced form - we're not there yet! Just eliminate first column for now."
+          "1": "Check $R_3 - R_1$ carefully: $[1,-1,2,5] - [1,2,1,6] = [0,-3,1,-1]$, not $[0,1,3,11]$.",
+          "2": "That's the final reduced form - we're not there yet! Just eliminate first column for now."
         }
+      },
+      "resultState": {
+        "description": "Eliminate first column"
       }
     },
     {
       "id": "step-3",
-      "title": "Eliminate second column",
+      "order": 3,
       "currentState": {
-        "expression": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & -3 & 1 & -1 \\end{array}\\right]$",
         "description": "Make zero below second pivot."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What operation eliminates position (3,2)?",
         "hint": "$R_3 \\to R_3 - R_2$ to eliminate the $-3$ in row 3."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 0 & 4 & 10 \\end{array}\\right]$ (row echelon form)"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 0 & 4 & 10 \\end{array}\\right]$ (row echelon form)"
         },
         {
           "id": "b",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 0 & -2 & -12 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 0 & -2 & -12 \\end{array}\\right]$"
         },
         {
           "id": "c",
-          "content": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & 1 & 1 & \\frac{11}{3} \\\\ 0 & 0 & 4 & 10 \\end{array}\\right]$"
+          "text": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & 1 & 1 & \\frac{11}{3} \\\\ 0 & 0 & 4 & 10 \\end{array}\\right]$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $R_3 - R_2 = [0,-3,1,-1] - [0,-3,-3,-11] = [0,0,4,10]$. This is now in row echelon form (upper triangular).",
           "insight": "Row echelon form has all zeros below each pivot - ready for back substitution!"
         },
         "incorrect": {
-          "b": "Check the arithmetic: $1 - (-3) = 4$, and $-1 - (-11) = 10$.",
-          "c": "While we could scale row 2, the operation $R_3 - R_2$ directly gives $[0,0,4,10]$."
+          "1": "Check the arithmetic: $1 - (-3) = 4$, and $-1 - (-11) = 10$.",
+          "2": "While we could scale row 2, the operation $R_3 - R_2$ directly gives $[0,0,4,10]$."
         }
+      },
+      "resultState": {
+        "description": "Eliminate second column"
       }
     },
     {
       "id": "step-4",
-      "title": "Back substitution",
+      "order": 4,
       "currentState": {
-        "expression": "$\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 6 \\\\ 0 & -3 & -3 & -11 \\\\ 0 & 0 & 4 & 10 \\end{array}\\right]$",
         "description": "Solve from bottom to top."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the solution $(x, y, z)$?",
         "hint": "Row 3: $4z = 10 \\to z = 2.5$. Row 2: $-3y - 3(2.5) = -11 \\to y = 1$. Row 1: $x + 2(1) + 2.5 = 6 \\to x = 1.5$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$(x, y, z) = (1.5, 1, 2.5)$ or $(\\frac{3}{2}, 1, \\frac{5}{2})$"
+          "text": "$(x, y, z) = (1.5, 1, 2.5)$ or $(\\frac{3}{2}, 1, \\frac{5}{2})$"
         },
         {
           "id": "b",
-          "content": "$(x, y, z) = (1, 1, 2)$"
+          "text": "$(x, y, z) = (1, 1, 2)$"
         },
         {
           "id": "c",
-          "content": "$(x, y, z) = (2, 1, 2.5)$"
+          "text": "$(x, y, z) = (2, 1, 2.5)$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! From row 3: $4z = 10 \\to z = 5/2$. Row 2: $-3y - 3z = -11 \\to y = (11-3z)/3 = 1$. Row 1: $x + 2y + z = 6 \\to x = 6 - 2 - 5/2 = 3/2$.",
           "insight": "Back substitution uses the triangular structure to solve one variable at a time."
         },
         "incorrect": {
-          "b": "Check row 3: $4z = 10$ gives $z = 2.5$, not 2.",
-          "c": "From row 1: $x + 2(1) + 2.5 = 6 \\to x = 1.5$, not 2."
+          "1": "Check row 3: $4z = 10$ gives $z = 2.5$, not 2.",
+          "2": "From row 1: $x + 2(1) + 2.5 = 6 \\to x = 1.5$, not 2."
         }
+      },
+      "resultState": {
+        "description": "Back substitution"
       }
     }
   ],

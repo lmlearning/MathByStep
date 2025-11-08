@@ -5,7 +5,12 @@
   "topic": "Topology",
   "difficulty": 2,
   "estimatedTime": 9,
-  "tags": ["topology", "open sets", "closed sets", "metric spaces"],
+  "tags": [
+    "topology",
+    "open sets",
+    "closed sets",
+    "metric spaces"
+  ],
   "statement": {
     "text": "Determine whether the following subsets of $\\mathbb{R}$ are open, closed, both, or neither: (a) $(0, 1)$, (b) $[0, 1]$, (c) $(0, 1]$, (d) $\\{0\\}$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall definitions",
+      "order": 1,
       "currentState": {
-        "expression": "Sets in $\\mathbb{R}$ with standard metric",
         "description": "What makes a set open or closed?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the definition of an open set in $\\mathbb{R}$?",
         "hint": "$A$ is open if every point has a neighborhood contained in $A$. Equivalently, $A$ contains none of its boundary points."
       },
       "options": [
         {
           "id": "a",
-          "content": "$A$ is open if every $x \\in A$ has $\\epsilon > 0$ such that $(x-\\epsilon, x+\\epsilon) \\subset A$"
+          "text": "$A$ is open if every $x \\in A$ has $\\epsilon > 0$ such that $(x-\\epsilon, x+\\epsilon) \\subset A$"
         },
         {
           "id": "b",
-          "content": "$A$ is open if it's an interval without endpoints"
+          "text": "$A$ is open if it's an interval without endpoints"
         },
         {
           "id": "c",
-          "content": "$A$ is open if it's bounded"
+          "text": "$A$ is open if it's bounded"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $A$ is open if each point has a small neighborhood (open ball) completely inside $A$.",
           "insight": "$A$ is closed if its complement is open, or equivalently, if $A$ contains all its limit points."
         },
         "incorrect": {
-          "b": "While true for intervals, this doesn't generalize. Need the $\\epsilon$-neighborhood definition.",
-          "c": "Boundedness is unrelated to openness. $(0,1)$ is bounded and open, but $\\mathbb{R}$ is unbounded and open!"
+          "1": "While true for intervals, this doesn't generalize. Need the $\\epsilon$-neighborhood definition.",
+          "2": "Boundedness is unrelated to openness. $(0,1)$ is bounded and open, but $\\mathbb{R}$ is unbounded and open!"
         }
+      },
+      "resultState": {
+        "description": "Recall definitions"
       }
     },
     {
       "id": "step-2",
-      "title": "Analyze (0,1)",
+      "order": 2,
       "currentState": {
-        "expression": "$(0, 1) = \\{x : 0 < x < 1\\}$",
         "description": "Open interval - what about boundary?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Is $(0,1)$ open, closed, both, or neither?",
         "hint": "Every point in $(0,1)$ has a neighborhood inside. Complement is $(-\\infty, 0] \\cup [1, \\infty)$ (also open). So $(0,1)$ is open but NOT closed."
       },
       "options": [
         {
           "id": "a",
-          "content": "Open (but not closed)"
+          "text": "Open (but not closed)"
         },
         {
           "id": "b",
-          "content": "Closed (but not open)"
+          "text": "Closed (but not open)"
         },
         {
           "id": "c",
-          "content": "Both open and closed"
+          "text": "Both open and closed"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $(0,1)$ is open: every point has a neighborhood inside. Not closed: boundary points 0 and 1 are limit points not in the set.",
           "insight": "Open intervals in $\\mathbb{R}$ are the basic open sets."
         },
         "incorrect": {
-          "b": "$(0,1)$ doesn't contain its limit points 0 and 1, so NOT closed.",
-          "c": "In $\\mathbb{R}$, only $\\emptyset$ and $\\mathbb{R}$ are both open and closed (clopen)!"
+          "1": "$(0,1)$ doesn't contain its limit points 0 and 1, so NOT closed.",
+          "2": "In $\\mathbb{R}$, only $\\emptyset$ and $\\mathbb{R}$ are both open and closed (clopen)!"
         }
+      },
+      "resultState": {
+        "description": "Analyze (0,1)"
       }
     },
     {
       "id": "step-3",
-      "title": "Analyze [0,1]",
+      "order": 3,
       "currentState": {
-        "expression": "$[0, 1] = \\{x : 0 \\leq x \\leq 1\\}$",
         "description": "Closed interval."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Is $[0,1]$ open, closed, both, or neither?",
         "hint": "$[0,1]$ contains all its limit points (including 0 and 1), so closed. Point 0 has no neighborhood inside $[0,1]$, so NOT open."
       },
       "options": [
         {
           "id": "a",
-          "content": "Closed (but not open)"
+          "text": "Closed (but not open)"
         },
         {
           "id": "b",
-          "content": "Open (but not closed)"
+          "text": "Open (but not closed)"
         },
         {
           "id": "c",
-          "content": "Both open and closed"
+          "text": "Both open and closed"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $[0,1]$ is closed: contains all limit points (0 and 1 included). Not open: 0 has no neighborhood $(0-\\epsilon, 0+\\epsilon) \\subset [0,1]$ (would need negative numbers).",
           "insight": "Closed intervals in $\\mathbb{R}$ are closed sets."
         },
         "incorrect": {
-          "b": "$[0,1]$ is definitely closed, not open. Endpoints prevent openness.",
-          "c": "In $\\mathbb{R}$, proper intervals can't be both open and closed!"
+          "1": "$[0,1]$ is definitely closed, not open. Endpoints prevent openness.",
+          "2": "In $\\mathbb{R}$, proper intervals can't be both open and closed!"
         }
+      },
+      "resultState": {
+        "description": "Analyze [0,1]"
       }
     },
     {
       "id": "step-4",
-      "title": "Analyze (0,1] and {0}",
+      "order": 4,
       "currentState": {
-        "expression": "Half-open interval $(0,1]$ and singleton $\\{0\\}$",
         "description": "More subtle cases."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $(0,1]$ and $\\{0\\}$?",
         "hint": "$(0,1]$: not open (1 has no neighborhood inside) and not closed (0 is limit point not in set) → neither! $\\{0\\}$: closed (contains all its limit points - none!) and not open → closed only."
       },
       "options": [
         {
           "id": "a",
-          "content": "$(0,1]$ is neither open nor closed. $\\{0\\}$ is closed (but not open)."
+          "text": "$(0,1]$ is neither open nor closed. $\\{0\\}$ is closed (but not open)."
         },
         {
           "id": "b",
-          "content": "$(0,1]$ is open. $\\{0\\}$ is closed."
+          "text": "$(0,1]$ is open. $\\{0\\}$ is closed."
         },
         {
           "id": "c",
-          "content": "$(0,1]$ is closed. $\\{0\\}$ is open."
+          "text": "$(0,1]$ is closed. $\\{0\\}$ is open."
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $(0,1]$: not closed (missing limit point 0), not open (endpoint 1) → neither. $\\{0\\}$: closed (trivially contains all limit points), not open (isolated point) → closed only.",
           "insight": "A set can be neither open nor closed! Singletons in $\\mathbb{R}$ are always closed."
         },
         "incorrect": {
-          "b": "$(0,1]$ is NOT open - point 1 has no neighborhood contained in $(0,1]$.",
-          "c": "$(0,1]$ is NOT closed - limit point 0 is not in the set. $\\{0\\}$ is NOT open!"
+          "1": "$(0,1]$ is NOT open - point 1 has no neighborhood contained in $(0,1]$.",
+          "2": "$(0,1]$ is NOT closed - limit point 0 is not in the set. $\\{0\\}$ is NOT open!"
         }
+      },
+      "resultState": {
+        "description": "Analyze (0,1] and {0}"
       }
     }
   ],

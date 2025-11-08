@@ -5,7 +5,12 @@
   "topic": "Discrete Mathematics",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["discrete math", "recurrence relations", "sequences", "characteristic equation"],
+  "tags": [
+    "discrete math",
+    "recurrence relations",
+    "sequences",
+    "characteristic equation"
+  ],
   "statement": {
     "text": "Solve the recurrence relation $a_n = 5a_{n-1} - 6a_{n-2}$ with initial conditions $a_0 = 1$, $a_1 = 4$."
   },
@@ -17,150 +22,158 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Write characteristic equation",
+      "order": 1,
       "currentState": {
-        "expression": "$a_n = 5a_{n-1} - 6a_{n-2}$",
         "description": "Linear homogeneous recurrence with constant coefficients."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the characteristic equation?",
         "hint": "Replace $a_n$ with $r^n$: $r^n = 5r^{n-1} - 6r^{n-2}$. Divide by $r^{n-2}$: $r^2 = 5r - 6$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$r^2 - 5r + 6 = 0$ (characteristic equation)"
+          "text": "$r^2 - 5r + 6 = 0$ (characteristic equation)"
         },
         {
           "id": "b",
-          "content": "$r^2 + 5r - 6 = 0$"
+          "text": "$r^2 + 5r - 6 = 0$"
         },
         {
           "id": "c",
-          "content": "$a^2 - 5a + 6 = 0$"
+          "text": "$a^2 - 5a + 6 = 0$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! From $a_n - 5a_{n-1} + 6a_{n-2} = 0$, replace $a_n$ with $r^n$ and divide by $r^{n-2}$: $r^2 - 5r + 6 = 0$.",
           "insight": "The characteristic equation transforms the recurrence into an algebraic equation."
         },
         "incorrect": {
-          "b": "Watch signs! $a_n = 5a_{n-1} - 6a_{n-2}$ becomes $r^2 - 5r + 6 = 0$.",
-          "c": "Use $r$ for the characteristic equation, not $a$ (which represents sequence terms)."
+          "1": "Watch signs! $a_n = 5a_{n-1} - 6a_{n-2}$ becomes $r^2 - 5r + 6 = 0$.",
+          "2": "Use $r$ for the characteristic equation, not $a$ (which represents sequence terms)."
         }
+      },
+      "resultState": {
+        "description": "Write characteristic equation"
       }
     },
     {
       "id": "step-2",
-      "title": "Find roots",
+      "order": 2,
       "currentState": {
-        "expression": "$r^2 - 5r + 6 = 0$",
         "description": "Factor or use quadratic formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are the roots?",
         "hint": "$(r-2)(r-3) = 0$, so $r = 2$ or $r = 3$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$r_1 = 2$, $r_2 = 3$ (distinct real roots)"
+          "text": "$r_1 = 2$, $r_2 = 3$ (distinct real roots)"
         },
         {
           "id": "b",
-          "content": "$r = 5$ (repeated root)"
+          "text": "$r = 5$ (repeated root)"
         },
         {
           "id": "c",
-          "content": "$r = \\frac{5 \\pm i\\sqrt{1}}{2}$ (complex roots)"
+          "text": "$r = \\frac{5 \\pm i\\sqrt{1}}{2}$ (complex roots)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $r^2 - 5r + 6 = (r-2)(r-3) = 0$, giving roots $r_1 = 2$ and $r_2 = 3$.",
           "insight": "Distinct roots lead to general solution $a_n = c_1(2)^n + c_2(3)^n$."
         },
         "incorrect": {
-          "b": "Solve the quadratic! The roots are 2 and 3, not 5.",
-          "c": "Discriminant: $25 - 24 = 1 > 0$, so roots are real, not complex!"
+          "1": "Solve the quadratic! The roots are 2 and 3, not 5.",
+          "2": "Discriminant: $25 - 24 = 1 > 0$, so roots are real, not complex!"
         }
+      },
+      "resultState": {
+        "description": "Find roots"
       }
     },
     {
       "id": "step-3",
-      "title": "Write general solution",
+      "order": 3,
       "currentState": {
-        "expression": "$r_1 = 2$, $r_2 = 3$",
         "description": "For distinct roots, $a_n = c_1 r_1^n + c_2 r_2^n$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the general form of $a_n$?",
         "hint": "$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$ where $c_1, c_2$ determined by initial conditions."
       },
       "options": [
         {
           "id": "a",
-          "content": "$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$"
+          "text": "$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$"
         },
         {
           "id": "b",
-          "content": "$a_n = (c_1 + c_2 n) \\cdot 2^n$ (repeated root form)"
+          "text": "$a_n = (c_1 + c_2 n) \\cdot 2^n$ (repeated root form)"
         },
         {
           "id": "c",
-          "content": "$a_n = c_1 \\cdot 5^n$"
+          "text": "$a_n = c_1 \\cdot 5^n$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! With distinct roots $r_1, r_2$, the general solution is $a_n = c_1 r_1^n + c_2 r_2^n$.",
           "insight": "This is analogous to the general solution of linear ODEs!"
         },
         "incorrect": {
-          "b": "That's the form for REPEATED roots. We have distinct roots 2 and 3.",
-          "c": "Need both roots! General solution is a linear combination of $2^n$ and $3^n$."
+          "1": "That's the form for REPEATED roots. We have distinct roots 2 and 3.",
+          "2": "Need both roots! General solution is a linear combination of $2^n$ and $3^n$."
         }
+      },
+      "resultState": {
+        "description": "Write general solution"
       }
     },
     {
       "id": "step-4",
-      "title": "Apply initial conditions",
+      "order": 4,
       "currentState": {
-        "expression": "$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$, $a_0 = 1$, $a_1 = 4$",
         "description": "Solve for $c_1$ and $c_2$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $c_1$ and $c_2$?",
         "hint": "$a_0 = 1$: $c_1 + c_2 = 1$. $a_1 = 4$: $2c_1 + 3c_2 = 4$. Solve: $c_1 = -1$, $c_2 = 2$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$c_1 + c_2 = 1$ and $2c_1 + 3c_2 = 4$ give $c_1 = -1$, $c_2 = 2$. So $a_n = -2^n + 2 \\cdot 3^n$."
+          "text": "$c_1 + c_2 = 1$ and $2c_1 + 3c_2 = 4$ give $c_1 = -1$, $c_2 = 2$. So $a_n = -2^n + 2 \\cdot 3^n$."
         },
         {
           "id": "b",
-          "content": "$c_1 = 1$, $c_2 = 3$, so $a_n = 2^n + 3 \\cdot 3^n$"
+          "text": "$c_1 = 1$, $c_2 = 3$, so $a_n = 2^n + 3 \\cdot 3^n$"
         },
         {
           "id": "c",
-          "content": "$c_1 = c_2 = 1$, so $a_n = 2^n + 3^n$"
+          "text": "$c_1 = c_2 = 1$, so $a_n = 2^n + 3^n$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! From $c_1 + c_2 = 1$ and $2c_1 + 3c_2 = 4$: subtract first from second: $c_1 + 2c_2 = 3$, so $c_2 = 2$, then $c_1 = -1$. Final answer: $a_n = -2^n + 2 \\cdot 3^n = 2(3^n - 2^{n-1})$.",
           "insight": "Initial conditions uniquely determine the constants in the general solution."
         },
         "incorrect": {
-          "b": "Check: $a_0 = 1 + 3 = 4 \\neq 1$. Must solve the system correctly!",
-          "c": "This gives $a_1 = 2 + 3 = 5 \\neq 4$. Solve the system: $c_1 = -1$, $c_2 = 2$."
+          "1": "Check: $a_0 = 1 + 3 = 4 \\neq 1$. Must solve the system correctly!",
+          "2": "This gives $a_1 = 2 + 3 = 5 \\neq 4$. Solve the system: $c_1 = -1$, $c_2 = 2$."
         }
+      },
+      "resultState": {
+        "description": "Apply initial conditions"
       }
     }
   ],

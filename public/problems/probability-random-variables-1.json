@@ -5,7 +5,12 @@
   "topic": "Probability & Statistics",
   "difficulty": 2,
   "estimatedTime": 9,
-  "tags": ["probability", "random variables", "expected value", "variance"],
+  "tags": [
+    "probability",
+    "random variables",
+    "expected value",
+    "variance"
+  ],
   "statement": {
     "text": "A fair six-sided die is rolled. Let $X$ be the number showing. Find $E[X]$ and $\\text{Var}(X)$."
   },
@@ -17,113 +22,119 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Find expected value",
+      "order": 1,
       "currentState": {
-        "expression": "$X \\in \\{1, 2, 3, 4, 5, 6\\}$ each with probability $\\frac{1}{6}$",
         "description": "Expected value: $E[X] = \\sum x \\cdot P(X=x)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $E[X]$?",
         "hint": "$E[X] = 1(\\frac{1}{6}) + 2(\\frac{1}{6}) + \\cdots + 6(\\frac{1}{6}) = \\frac{1+2+3+4+5+6}{6} = \\frac{21}{6} = 3.5$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$E[X] = \\frac{1+2+3+4+5+6}{6} = \\frac{21}{6} = 3.5$"
+          "text": "$E[X] = \\frac{1+2+3+4+5+6}{6} = \\frac{21}{6} = 3.5$"
         },
         {
           "id": "b",
-          "content": "$E[X] = \\frac{1+6}{2} = 3.5$"
+          "text": "$E[X] = \\frac{1+6}{2} = 3.5$"
         },
         {
           "id": "c",
-          "content": "$E[X] = 3$ (middle value)"
+          "text": "$E[X] = 3$ (middle value)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $E[X] = \\sum_{i=1}^{6} i \\cdot \\frac{1}{6} = \\frac{1}{6}(1+2+3+4+5+6) = \\frac{21}{6} = 3.5$.",
           "insight": "Expected value is the probability-weighted average of all possible outcomes."
         },
         "incorrect": {
-          "b": "While this gives the right answer, it's the formula for average of endpoints (works for uniform distributions).",
-          "c": "That's the median (middle value when $n$ is odd). Expected value is 3.5, between 3 and 4."
+          "1": "While this gives the right answer, it's the formula for average of endpoints (works for uniform distributions).",
+          "2": "That's the median (middle value when $n$ is odd). Expected value is 3.5, between 3 and 4."
         }
+      },
+      "resultState": {
+        "description": "Find expected value"
       }
     },
     {
       "id": "step-2",
-      "title": "Compute E[X²]",
+      "order": 2,
       "currentState": {
-        "expression": "Need $E[X^2]$ for variance formula",
         "description": "$E[X^2] = \\sum x^2 \\cdot P(X=x)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $E[X^2]$?",
         "hint": "$E[X^2] = \\frac{1^2+2^2+3^2+4^2+5^2+6^2}{6} = \\frac{1+4+9+16+25+36}{6} = \\frac{91}{6}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$E[X^2] = \\frac{1+4+9+16+25+36}{6} = \\frac{91}{6} \\approx 15.17$"
+          "text": "$E[X^2] = \\frac{1+4+9+16+25+36}{6} = \\frac{91}{6} \\approx 15.17$"
         },
         {
           "id": "b",
-          "content": "$E[X^2] = (E[X])^2 = (3.5)^2 = 12.25$"
+          "text": "$E[X^2] = (E[X])^2 = (3.5)^2 = 12.25$"
         },
         {
           "id": "c",
-          "content": "$E[X^2] = \\frac{6^2}{6} = 6$"
+          "text": "$E[X^2] = \\frac{6^2}{6} = 6$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $E[X^2] = \\sum_{i=1}^{6} i^2 \\cdot \\frac{1}{6} = \\frac{1+4+9+16+25+36}{6} = \\frac{91}{6}$.",
           "insight": "Note: $E[X^2] \\neq (E[X])^2$ in general!"
         },
         "incorrect": {
-          "b": "WRONG! $E[X^2] \\neq (E[X])^2$. Must square each outcome first, then average.",
-          "c": "Need to sum ALL squared values $1^2, 2^2, ..., 6^2$, not just $6^2$."
+          "1": "WRONG! $E[X^2] \\neq (E[X])^2$. Must square each outcome first, then average.",
+          "2": "Need to sum ALL squared values $1^2, 2^2, ..., 6^2$, not just $6^2$."
         }
+      },
+      "resultState": {
+        "description": "Compute E[X²]"
       }
     },
     {
       "id": "step-3",
-      "title": "Calculate variance",
+      "order": 3,
       "currentState": {
-        "expression": "$E[X] = 3.5$, $E[X^2] = \\frac{91}{6}$",
         "description": "Variance formula: $\\text{Var}(X) = E[X^2] - (E[X])^2$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\text{Var}(X)$?",
         "hint": "$\\text{Var}(X) = \\frac{91}{6} - (\\frac{7}{2})^2 = \\frac{91}{6} - \\frac{49}{4} = \\frac{182-147}{12} = \\frac{35}{12}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\text{Var}(X) = \\frac{91}{6} - (3.5)^2 = \\frac{91}{6} - \\frac{49}{4} = \\frac{35}{12} \\approx 2.92$"
+          "text": "$\\text{Var}(X) = \\frac{91}{6} - (3.5)^2 = \\frac{91}{6} - \\frac{49}{4} = \\frac{35}{12} \\approx 2.92$"
         },
         {
           "id": "b",
-          "content": "$\\text{Var}(X) = \\frac{91}{6} - 3.5 = 12.33$"
+          "text": "$\\text{Var}(X) = \\frac{91}{6} - 3.5 = 12.33$"
         },
         {
           "id": "c",
-          "content": "$\\text{Var}(X) = \\sqrt{\\frac{91}{6} - (3.5)^2} \\approx 1.71$"
+          "text": "$\\text{Var}(X) = \\sqrt{\\frac{91}{6} - (3.5)^2} \\approx 1.71$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\text{Var}(X) = E[X^2] - (E[X])^2 = \\frac{91}{6} - (\\frac{7}{2})^2 = \\frac{91}{6} - \\frac{49}{4}$. Common denominator 12: $\\frac{182}{12} - \\frac{147}{12} = \\frac{35}{12}$.",
           "insight": "Variance measures the average squared deviation from the mean."
         },
         "incorrect": {
-          "b": "Must SQUARE $E[X]$: it's $(E[X])^2 = 12.25$, not just $E[X] = 3.5$.",
-          "c": "That's the standard deviation $\\sigma = \\sqrt{\\text{Var}(X)}$, not variance itself."
+          "1": "Must SQUARE $E[X]$: it's $(E[X])^2 = 12.25$, not just $E[X] = 3.5$.",
+          "2": "That's the standard deviation $\\sigma = \\sqrt{\\text{Var}(X)}$, not variance itself."
         }
+      },
+      "resultState": {
+        "description": "Calculate variance"
       }
     }
   ],
