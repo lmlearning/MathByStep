@@ -109,6 +109,7 @@ import linearAlgebraSvdIntro1 from '@/public/problems/linear-algebra-svd-intro-1
 import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
 import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
 import multivariableStokesTheorem1 from '@/public/problems/multivariable-stokes-theorem-1.json';
+import multivariableJacobian1 from '@/public/problems/multivariable-jacobian-1.json';
 // Differential Equations (additional)
 import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
 import differentialEquationsBernoulli1 from '@/public/problems/differential-equations-bernoulli-1.json';
@@ -120,6 +121,7 @@ import realAnalysisUniformConvergence1 from '@/public/problems/real-analysis-uni
 import realAnalysisRiemannIntegration1 from '@/public/problems/real-analysis-riemann-integration-1.json';
 import realAnalysisContinuousFunctions1 from '@/public/problems/real-analysis-continuous-functions-1.json';
 import realAnalysisSeriesConvergence1 from '@/public/problems/real-analysis-series-convergence-1.json';
+import realAnalysisLimsupLiminf1 from '@/public/problems/real-analysis-limsup-liminf-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 import probabilityNormalDistribution1 from '@/public/problems/probability-normal-distribution-1.json';
@@ -134,6 +136,7 @@ import numericalAnalysisRungeKutta1 from '@/public/problems/numerical-analysis-r
 import numericalAnalysisLagrangeInterpolation1 from '@/public/problems/numerical-analysis-lagrange-interpolation-1.json';
 import numericalAnalysisSimpsonsRule1 from '@/public/problems/numerical-analysis-simpsons-rule-1.json';
 import numericalAnalysisBisectionMethod1 from '@/public/problems/numerical-analysis-bisection-method-1.json';
+import numericalAnalysisFiniteDifferences1 from '@/public/problems/numerical-analysis-finite-differences-1.json';
 // Abstract Algebra (more topics)
 import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
 import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-homomorphisms-1.json';
@@ -142,6 +145,7 @@ import abstractAlgebraGroupActions1 from '@/public/problems/abstract-algebra-gro
 import abstractAlgebraQuotientGroups1 from '@/public/problems/abstract-algebra-quotient-groups-1.json';
 import abstractAlgebraFieldExtensions1 from '@/public/problems/abstract-algebra-field-extensions-1.json';
 import abstractAlgebraPolynomialRings1 from '@/public/problems/abstract-algebra-polynomial-rings-1.json';
+import abstractAlgebraIdeals1 from '@/public/problems/abstract-algebra-ideals-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
@@ -157,6 +161,7 @@ import discreteMathGeneratingFunctions1 from '@/public/problems/discrete-math-ge
 import discreteMathRamseyTheory1 from '@/public/problems/discrete-math-ramsey-theory-1.json';
 import discreteMathInclusionExclusion1 from '@/public/problems/discrete-math-inclusion-exclusion-1.json';
 import graphTheoryEulersFormula1 from '@/public/problems/graph-theory-eulers-formula-1.json';
+import graphTheoryPlanarGraphs1 from '@/public/problems/graph-theory-planar-graphs-1.json';
 // Number Theory (additional)
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
@@ -283,6 +288,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
   'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
   'multivariable-stokes-theorem-1': multivariableStokesTheorem1 as any as Problem,
+  'multivariable-jacobian-1': multivariableJacobian1 as any as Problem,
   // Differential Equations (additional)
   'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
   'differential-equations-bernoulli-1': differentialEquationsBernoulli1 as any as Problem,
@@ -294,6 +300,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'real-analysis-riemann-integration-1': realAnalysisRiemannIntegration1 as any as Problem,
   'real-analysis-continuous-functions-1': realAnalysisContinuousFunctions1 as any as Problem,
   'real-analysis-series-convergence-1': realAnalysisSeriesConvergence1 as any as Problem,
+  'real-analysis-limsup-liminf-1': realAnalysisLimsupLiminf1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   'probability-normal-distribution-1': probabilityNormalDistribution1 as any as Problem,
@@ -308,6 +315,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'numerical-analysis-lagrange-interpolation-1': numericalAnalysisLagrangeInterpolation1 as any as Problem,
   'numerical-analysis-simpsons-rule-1': numericalAnalysisSimpsonsRule1 as any as Problem,
   'numerical-analysis-bisection-method-1': numericalAnalysisBisectionMethod1 as any as Problem,
+  'numerical-analysis-finite-differences-1': numericalAnalysisFiniteDifferences1 as any as Problem,
   // Abstract Algebra (more topics)
   'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
   'abstract-algebra-homomorphisms-1': abstractAlgebraHomomorphisms1 as any as Problem,
@@ -316,6 +324,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'abstract-algebra-quotient-groups-1': abstractAlgebraQuotientGroups1 as any as Problem,
   'abstract-algebra-field-extensions-1': abstractAlgebraFieldExtensions1 as any as Problem,
   'abstract-algebra-polynomial-rings-1': abstractAlgebraPolynomialRings1 as any as Problem,
+  'abstract-algebra-ideals-1': abstractAlgebraIdeals1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
@@ -331,6 +340,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'discrete-math-ramsey-theory-1': discreteMathRamseyTheory1 as any as Problem,
   'discrete-math-inclusion-exclusion-1': discreteMathInclusionExclusion1 as any as Problem,
   'graph-theory-eulers-formula-1': graphTheoryEulersFormula1 as any as Problem,
+  'graph-theory-planar-graphs-1': graphTheoryPlanarGraphs1 as any as Problem,
   // Number Theory (additional)
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,

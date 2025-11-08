@@ -1,0 +1,201 @@
+{
+  "id": "numerical-analysis-finite-differences-1",
+  "type": "problem",
+  "title": "Finite Difference Methods for Derivatives",
+  "topic": "Numerical Analysis",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "numerical-analysis",
+    "finite-differences",
+    "numerical-differentiation",
+    "taylor-series",
+    "approximation"
+  ],
+  "statement": {
+    "text": "Derive the forward difference approximation for $f'(x)$ and determine its error term using Taylor series. Then apply it to approximate $f'(1)$ for $f(x) = e^x$ with $h = 0.1$."
+  },
+  "objectives": [
+    "Understand finite difference formulas",
+    "Derive forward difference using Taylor series",
+    "Analyze truncation error",
+    "Apply numerical differentiation"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Derive forward difference formula."
+      },
+      "prompt": {
+        "question": "What is the Taylor expansion of $f(x+h)$ around $x$?",
+        "hint": "$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + O(h^3)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + O(h^3)$"
+        },
+        {
+          "id": "b",
+          "text": "$f(x+h) = f(x) + hf'(x)$"
+        },
+        {
+          "id": "c",
+          "text": "$f(x+h) = f(x) + f'(x) + f''(x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Taylor Series Expansion:**\n\nFor smooth function $f$ around $x$:\n\n$$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + \\frac{h^3}{6}f'''(x) + \\cdots$$\n\n$$= \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(x)}{n!} h^n$$\n\n**Leading terms:**\n$$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(\\xi)$$\n\nfor some $\\xi \\in (x, x+h)$ (by Taylor's theorem with remainder).\n\n**Big-O notation:**\n$$f(x+h) = f(x) + hf'(x) + O(h^2)$$",
+          "insight": "Taylor series is the foundation of numerical differentiation!"
+        },
+        "incorrect": {
+          "1": "Missing higher-order terms! Include at least $O(h^2)$.",
+          "2": "Missing the $h$ scaling! Derivatives are multiplied by powers of $h$."
+        }
+      },
+      "resultState": {
+        "description": "Taylor expansion",
+        "equations": ["f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + O(h^3)"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve for $f'(x)$."
+      },
+      "prompt": {
+        "question": "What is the forward difference formula for $f'(x)$?",
+        "hint": "From $f(x+h) = f(x) + hf'(x) + O(h^2)$, solve for $f'(x)$: $f'(x) = \\frac{f(x+h) - f(x)}{h} + O(h)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$ with error $O(h)$"
+        },
+        {
+          "id": "b",
+          "text": "$f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$ with error $O(h^2)$"
+        },
+        {
+          "id": "c",
+          "text": "$f'(x) \\approx f(x+h) - f(x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Forward Difference Formula:**\n\nFrom Taylor expansion:\n$$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(\\xi)$$\n\nRearrange:\n$$hf'(x) = f(x+h) - f(x) - \\frac{h^2}{2}f''(\\xi)$$\n\n$$f'(x) = \\frac{f(x+h) - f(x)}{h} - \\frac{h}{2}f''(\\xi)$$\n\n**Approximation:**\n$$f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$$\n\n**Truncation error:**\n$$E = \\left|f'(x) - \\frac{f(x+h) - f(x)}{h}\\right| = \\frac{h}{2}|f''(\\xi)| = O(h)$$\n\n**First-order accurate:** Error decreases linearly with $h$.",
+          "insight": "Forward difference is simple but only first-order accurate!"
+        },
+        "incorrect": {
+          "1": "Error is $O(h)$, not $O(h^2)$! Check the Taylor remainder term.",
+          "2": "Missing division by $h$! The derivative is the difference quotient."
+        }
+      },
+      "resultState": {
+        "description": "Forward difference formula",
+        "equations": ["f'(x) \\approx \\frac{f(x+h) - f(x)}{h}, \\quad \\text{error } O(h)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply to $f(x) = e^x$ at $x = 1$."
+      },
+      "prompt": {
+        "question": "What is the exact value of $f'(1)$ for $f(x) = e^x$?",
+        "hint": "$f'(x) = e^x$, so $f'(1) = e^1 = e \\approx 2.71828$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(1) = e \\approx 2.71828$"
+        },
+        {
+          "id": "b",
+          "text": "$f'(1) = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$f'(1) = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For $f(x) = e^x$:\n\n$$f'(x) = e^x$$\n\nAt $x = 1$:\n$$f'(1) = e^1 = e \\approx 2.718281828\\ldots$$\n\nThis is the **exact value** we'll compare our approximation against.",
+          "insight": "Exponential function is its own derivative!"
+        },
+        "incorrect": {
+          "1": "That's $f(0)$ or $f'(0)$! At $x=1$: $f'(1) = e$.",
+          "2": "Not quite! $f'(1) = e^1 = e \\approx 2.718$, not 2."
+        }
+      },
+      "resultState": {
+        "description": "Exact derivative",
+        "equations": ["f'(1) = e \\approx 2.71828"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Compute forward difference approximation."
+      },
+      "prompt": {
+        "question": "What is $\\frac{f(1+0.1) - f(1)}{0.1}$ for $f(x) = e^x$?",
+        "hint": "$f(1.1) = e^{1.1} \\approx 3.00417$, $f(1) = e \\approx 2.71828$. Difference quotient: $\\frac{3.00417 - 2.71828}{0.1} \\approx 2.8589$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{f(1.1) - f(1)}{0.1} \\approx 2.859$ (about 5% error)"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{f(1.1) - f(1)}{0.1} \\approx 2.718$ (exact)"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{f(1.1) - f(1)}{0.1} \\approx 3.004$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Forward Difference Calculation:**\n\n$$f'(1) \\approx \\frac{f(1+h) - f(1)}{h} = \\frac{f(1.1) - f(1)}{0.1}$$\n\n**Compute:**\n$$f(1) = e^1 = e \\approx 2.718282$$\n$$f(1.1) = e^{1.1} \\approx 3.004166$$\n\n$$\\frac{f(1.1) - f(1)}{0.1} = \\frac{3.004166 - 2.718282}{0.1} = \\frac{0.285884}{0.1} \\approx 2.859$$\n\n**Error:**\n$$\\text{Approximation} - \\text{Exact} = 2.859 - 2.718 \\approx 0.141$$\n$$\\text{Relative error} = \\frac{0.141}{2.718} \\approx 5.2\\%$$\n\n**Theoretical error:** $\\frac{h}{2}|f''(1)| = \\frac{0.1}{2} \\cdot e \\approx 0.136$ ✓\n\n**Improvement:** Smaller $h$ or higher-order methods (central difference) would reduce error.",
+          "insight": "Forward difference overestimates when function is concave up!"
+        },
+        "incorrect": {
+          "1": "That's too accurate! With $h=0.1$, we expect $O(h) \\approx O(0.1)$ error.",
+          "2": "That's $f(1.1)$, not the difference quotient! Divide by $h = 0.1$."
+        }
+      },
+      "resultState": {
+        "description": "Approximation computed",
+        "equations": ["f'(1) \\approx 2.859, \\quad \\text{error} \\approx 5\\%"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Forward difference: $f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$",
+      "Derived from Taylor series: $f(x+h) = f(x) + hf'(x) + O(h^2)$",
+      "Truncation error: $O(h)$ (first-order accurate)",
+      "For $f(x) = e^x$ at $x=1$ with $h=0.1$:",
+      "Exact: $f'(1) = e \\approx 2.718$",
+      "Approximation: $\\approx 2.859$ (5% error)"
+    ],
+    "fullSolution": "**Derive and apply forward difference formula**\n\n---\n\n**Step 1: Taylor Series**\n\n$$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(\\xi)$$\n\nfor some $\\xi \\in (x, x+h)$.\n\n---\n\n**Step 2: Forward Difference**\n\nSolve for $f'(x)$:\n$$f'(x) = \\frac{f(x+h) - f(x)}{h} - \\frac{h}{2}f''(\\xi)$$\n\n**Approximation:**\n$$f'(x) \\approx \\frac{f(x+h) - f(x)}{h}$$\n\n**Error:**\n$$E = \\frac{h}{2}|f''(\\xi)| = O(h)$$\n\n---\n\n**Step 3: Apply to $f(x) = e^x$**\n\nExact derivative:\n$$f'(1) = e \\approx 2.718282$$\n\n---\n\n**Step 4: Numerical Approximation**\n\nWith $h = 0.1$:\n$$f'(1) \\approx \\frac{e^{1.1} - e^1}{0.1} = \\frac{3.004166 - 2.718282}{0.1} \\approx 2.859$$\n\n**Error:**\n$$|2.859 - 2.718| \\approx 0.141 \\approx 5.2\\%$$\n\n**Theoretical error bound:**\n$$\\frac{h}{2}|f''(1)| = \\frac{0.1}{2} \\cdot e \\approx 0.136$$\n\n---\n\n**Other Methods:**\n- **Central difference:** $\\frac{f(x+h) - f(x-h)}{2h}$ gives $O(h^2)$ error\n- **Backward difference:** $\\frac{f(x) - f(x-h)}{h}$ also $O(h)$",
+    "relatedProblems": [
+      "numerical-analysis-newtons-method-1",
+      "calculus-taylor-series-1"
+    ]
+  }
+}

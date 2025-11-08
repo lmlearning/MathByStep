@@ -1,0 +1,201 @@
+{
+  "id": "graph-theory-planar-graphs-1",
+  "type": "problem",
+  "title": "Planar Graphs and Kuratowski's Theorem",
+  "topic": "Discrete Mathematics",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "graph-theory",
+    "planar-graphs",
+    "kuratowski",
+    "graph-minors",
+    "eulers-formula"
+  ],
+  "statement": {
+    "text": "Determine if the complete graph $K_5$ (5 vertices, all pairs connected) is planar. If not, explain why using Kuratowski's theorem."
+  },
+  "objectives": [
+    "Understand planar graphs",
+    "Apply Euler's formula $V - E + F = 2$",
+    "Use inequality $E \\leq 3V - 6$ for simple planar graphs",
+    "Understand Kuratowski's theorem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Graph $K_5$ (complete graph on 5 vertices)."
+      },
+      "prompt": {
+        "question": "How many edges does $K_5$ have?",
+        "hint": "Complete graph $K_n$ has $\\binom{n}{2} = \\frac{n(n-1)}{2}$ edges. For $n=5$: $\\frac{5 \\cdot 4}{2} = 10$ edges."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$K_5$ has 10 edges"
+        },
+        {
+          "id": "b",
+          "text": "$K_5$ has 5 edges"
+        },
+        {
+          "id": "c",
+          "text": "$K_5$ has 15 edges"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Complete Graph $K_n$:**\n\nA complete graph $K_n$ has:\n- $n$ vertices\n- Every pair of distinct vertices connected by an edge\n- Total edges: $\\binom{n}{2} = \\frac{n(n-1)}{2}$\n\n**For $K_5$:**\n- Vertices: $V = 5$\n- Edges: $E = \\binom{5}{2} = \\frac{5 \\cdot 4}{2} = 10$\n\n**Visual:** Each of 5 vertices connects to 4 others, giving $5 \\cdot 4 = 20$ directed edges, or $10$ undirected edges.",
+          "insight": "Complete graphs connect every pair of vertices!"
+        },
+        "incorrect": {
+          "1": "That's just the number of vertices! Count pairs: $\\binom{5}{2} = 10$.",
+          "2": "Too many! $\\binom{5}{2} = \\frac{5 \\cdot 4}{2} = 10$, not $\\frac{5 \\cdot 6}{2} = 15$."
+        }
+      },
+      "resultState": {
+        "description": "Graph properties",
+        "equations": ["V = 5, \\quad E = 10"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Test planarity using inequality."
+      },
+      "prompt": {
+        "question": "For simple planar graphs, what inequality must hold?",
+        "hint": "If a simple planar graph has $V \\geq 3$ vertices, then $E \\leq 3V - 6$. For $K_5$: $10 \\leq 3(5) - 6 = 9$? False!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E \\leq 3V - 6$ (and $K_5$ violates this)"
+        },
+        {
+          "id": "b",
+          "text": "$E \\leq V - 1$"
+        },
+        {
+          "id": "c",
+          "text": "$E = V$ for all planar graphs"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Planar Graph Inequality:**\n\nFor any simple planar graph with $V \\geq 3$ vertices:\n$$E \\leq 3V - 6$$\n\n**Proof idea:** Uses Euler's formula $V - E + F = 2$ and the fact that each face has $\\geq 3$ edges, with each edge bordering $\\leq 2$ faces.\n\n**For $K_5$:**\n$$V = 5, \\quad E = 10$$\n\nCheck inequality:\n$$E \\leq 3V - 6$$\n$$10 \\leq 3(5) - 6$$\n$$10 \\leq 15 - 6$$\n$$10 \\leq 9$$ ✗\n\n**Contradiction!** Since $K_5$ violates the inequality, it **cannot be planar**.",
+          "insight": "This inequality provides a quick planarity test!"
+        },
+        "incorrect": {
+          "1": "That's for trees! Planar graphs can have many more edges.",
+          "2": "Not all planar graphs satisfy $E = V$. The inequality is $E \\leq 3V - 6$."
+        }
+      },
+      "resultState": {
+        "description": "Planarity test failed",
+        "equations": ["E = 10 > 9 = 3V - 6"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Kuratowski's theorem."
+      },
+      "prompt": {
+        "question": "What does Kuratowski's theorem state?",
+        "hint": "A graph is planar if and only if it contains no subdivision of $K_5$ or $K_{3,3}$ as a subgraph."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A graph is planar iff it has no $K_5$ or $K_{3,3}$ minor"
+        },
+        {
+          "id": "b",
+          "text": "All graphs with $\\leq 4$ vertices are planar"
+        },
+        {
+          "id": "c",
+          "text": "A graph is planar iff $E \\leq 3V - 6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Kuratowski's Theorem (1930):**\n\nA finite graph is **planar** if and only if it contains no subgraph that is a **subdivision** of $K_5$ or $K_{3,3}$.\n\n**Equivalently (Wagner's theorem):** A graph is planar iff it has no $K_5$ or $K_{3,3}$ **minor**.\n\n**Two forbidden minors:**\n1. **$K_5$:** Complete graph on 5 vertices (10 edges)\n2. **$K_{3,3}$:** Complete bipartite graph with 3 vertices in each part (9 edges)\n\n**Subdivision:** Insert vertices along edges (doesn't change planarity)\n\n**Minor:** Contract edges and delete vertices/edges\n\n**For $K_5$:** It IS itself a forbidden minor, so it's definitely not planar!",
+          "insight": "Kuratowski characterized all non-planar graphs via two forbidden minors!"
+        },
+        "incorrect": {
+          "1": "Not quite! $K_5$ itself has 5 vertices and is not planar.",
+          "2": "That's a necessary but not sufficient condition for simple planar graphs."
+        }
+      },
+      "resultState": {
+        "description": "Kuratowski's theorem",
+        "equations": ["K_5 \\text{ is a forbidden minor}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Alternative: Euler's formula."
+      },
+      "prompt": {
+        "question": "If $K_5$ were planar, what would Euler's formula give for the number of faces $F$?",
+        "hint": "Euler's formula: $V - E + F = 2$. So $F = 2 - V + E = 2 - 5 + 10 = 7$. But each face needs $\\geq 3$ edges, and counting gives $3F \\leq 2E$, so $21 \\leq 20$. Contradiction!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F = 7$, but this leads to contradiction $3F \\leq 2E$"
+        },
+        {
+          "id": "b",
+          "text": "$F = 7$ and this is consistent"
+        },
+        {
+          "id": "c",
+          "text": "$F = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Contradiction via Euler's Formula:**\n\n**Assume** $K_5$ is planar. Then Euler's formula applies:\n$$V - E + F = 2$$\n$$5 - 10 + F = 2$$\n$$F = 7$$\n\n**Face-edge relationship:** Each face in a simple planar graph has $\\geq 3$ edges on its boundary (including the outer face).\n\nCounting edge-face incidences:\n$$\\sum_{\\text{faces}} (\\text{edges on boundary}) \\geq 3F$$\n\nBut each edge borders $\\leq 2$ faces, so:\n$$2E \\geq 3F$$\n\n**Check:**\n$$2E = 2(10) = 20$$\n$$3F = 3(7) = 21$$\n$$20 \\geq 21$$ ✗\n\n**Contradiction!** Therefore, $K_5$ is **not planar**.\n\n**Conclusion:** Multiple proofs show $K_5$ is non-planar:\n1. Violates $E \\leq 3V - 6$\n2. Is a forbidden minor (Kuratowski)\n3. Euler formula leads to contradiction",
+          "insight": "Euler's formula $V - E + F = 2$ is powerful for proving non-planarity!"
+        },
+        "incorrect": {
+          "1": "Not consistent! Check the inequality $2E \\geq 3F$: $20 \\not\\geq 21$.",
+          "2": "Use Euler's formula! $F = 2 - V + E = 2 - 5 + 10 = 7$, not 2."
+        }
+      },
+      "resultState": {
+        "description": "Non-planarity proved via Euler's formula",
+        "equations": ["2E = 20 < 21 = 3F \\text{ (contradiction)}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$K_5$: complete graph on 5 vertices, 10 edges",
+      "Planar graph inequality: $E \\leq 3V - 6$ (for $V \\geq 3$)",
+      "$K_5$: $10 > 9 = 3(5) - 6$, so not planar",
+      "Kuratowski's theorem: $K_5$ and $K_{3,3}$ are the two forbidden minors",
+      "Euler's formula: $V - E + F = 2$ leads to contradiction",
+      "$K_5$ is **not planar**"
+    ],
+    "fullSolution": "**Determine if $K_5$ is planar**\n\n---\n\n**Step 1: Graph Properties**\n\n$K_5$ is the complete graph on 5 vertices:\n- $V = 5$\n- $E = \\binom{5}{2} = 10$\n\n---\n\n**Step 2: Planar Graph Inequality**\n\nFor simple planar graphs with $V \\geq 3$:\n$$E \\leq 3V - 6$$\n\nCheck for $K_5$:\n$$10 \\leq 3(5) - 6 = 9$$\n\nThis is **false**, so $K_5$ is **not planar**.\n\n---\n\n**Step 3: Kuratowski's Theorem**\n\n**Theorem:** A graph is planar $\\iff$ it has no $K_5$ or $K_{3,3}$ minor.\n\nSince $K_5$ IS one of the forbidden minors, it is not planar.\n\n---\n\n**Step 4: Euler's Formula Proof**\n\nAssume $K_5$ is planar. Then:\n$$V - E + F = 2$$\n$$5 - 10 + F = 2$$\n$$F = 7$$\n\nEach face has $\\geq 3$ edges:\n$$2E \\geq 3F$$\n$$20 \\geq 21$$ ✗\n\nContradiction!\n\n---\n\n**Answer:** $\\boxed{K_5 \\text{ is NOT planar}}$\n\n---\n\n**Note:** Similarly, $K_{3,3}$ (complete bipartite graph with parts of size 3) is also not planar. These are the only two minimal non-planar graphs.",
+    "relatedProblems": [
+      "graph-theory-eulers-formula-1",
+      "graph-theory-euler-path-1"
+    ]
+  }
+}

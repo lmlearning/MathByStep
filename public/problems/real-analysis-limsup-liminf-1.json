@@ -1,0 +1,200 @@
+{
+  "id": "real-analysis-limsup-liminf-1",
+  "type": "problem",
+  "title": "Limit Superior and Limit Inferior",
+  "topic": "Real Analysis",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "real-analysis",
+    "limit-superior",
+    "limit-inferior",
+    "sequences",
+    "supremum",
+    "infimum"
+  ],
+  "statement": {
+    "text": "For the sequence $a_n = \\frac{(-1)^n}{n} + \\frac{1}{n^2}$, find $\\limsup_{n \\to \\infty} a_n$ and $\\liminf_{n \\to \\infty} a_n$. Does the sequence converge?"
+  },
+  "objectives": [
+    "Understand limit superior and inferior",
+    "Compute limsup and liminf",
+    "Relate convergence to equality of limsup and liminf"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Sequence: $a_n = \\frac{(-1)^n}{n} + \\frac{1}{n^2}$."
+      },
+      "prompt": {
+        "question": "What are $\\limsup$ and $\\liminf$?",
+        "hint": "$\\limsup_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\sup_{k \\geq n} a_k$ and $\\liminf_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\inf_{k \\geq n} a_k$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\limsup a_n = \\lim_{n \\to \\infty} (\\sup_{k \\geq n} a_k)$, $\\liminf a_n = \\lim_{n \\to \\infty} (\\inf_{k \\geq n} a_k)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\limsup a_n = \\sup_n a_n$, $\\liminf a_n = \\inf_n a_n$"
+        },
+        {
+          "id": "c",
+          "text": "$\\limsup a_n$ is the largest limit point, $\\liminf a_n$ is the smallest"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Definitions:**\n\n**Limit Superior:**\n$$\\limsup_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\left(\\sup_{k \\geq n} a_k\\right)$$\n\nLet $b_n = \\sup_{k \\geq n} a_k$ (supremum of tail). Then $\\limsup a_n = \\lim_{n \\to \\infty} b_n$.\n\n**Limit Inferior:**\n$$\\liminf_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\left(\\inf_{k \\geq n} a_k\\right)$$\n\nLet $c_n = \\inf_{k \\geq n} a_k$ (infimum of tail). Then $\\liminf a_n = \\lim_{n \\to \\infty} c_n$.\n\n**Properties:**\n- $b_n$ is decreasing: $b_1 \\geq b_2 \\geq b_3 \\geq \\cdots$\n- $c_n$ is increasing: $c_1 \\leq c_2 \\leq c_3 \\leq \\cdots$\n- Always: $\\liminf a_n \\leq \\limsup a_n$",
+          "insight": "Limsup and liminf capture the eventual behavior of bounded sequences!"
+        },
+        "incorrect": {
+          "1": "That's too simple! We need limits of suprema/infima of tails, not global sup/inf.",
+          "2": "That's the Bolzano-Weierstrass characterization, which is equivalent but not the definition."
+        }
+      },
+      "resultState": {
+        "description": "Definitions understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Analyze the sequence behavior."
+      },
+      "prompt": {
+        "question": "What are the values for even and odd $n$?",
+        "hint": "Even: $a_{2k} = \\frac{1}{2k} + \\frac{1}{4k^2} > 0$. Odd: $a_{2k+1} = -\\frac{1}{2k+1} + \\frac{1}{(2k+1)^2} < 0$ for large $k$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Even $n$: positive and $\\to 0^+$. Odd $n$: negative and $\\to 0^-$"
+        },
+        {
+          "id": "b",
+          "text": "All terms are positive"
+        },
+        {
+          "id": "c",
+          "text": "Sequence alternates randomly"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Even indices** ($n = 2k$):\n$$a_{2k} = \\frac{1}{2k} + \\frac{1}{4k^2} > 0$$\n\nBoth terms positive, so $a_{2k} > 0$. As $k \\to \\infty$:\n$$a_{2k} \\to 0^+$$\n\n**Odd indices** ($n = 2k+1$):\n$$a_{2k+1} = -\\frac{1}{2k+1} + \\frac{1}{(2k+1)^2}$$\n\nFor large $k$: $\\frac{1}{(2k+1)^2} \\ll \\frac{1}{2k+1}$, so the negative term dominates:\n$$a_{2k+1} < 0$$\n\nAs $k \\to \\infty$:\n$$a_{2k+1} \\to 0^-$$\n\n**Pattern:** Sequence oscillates around 0, approaching from both sides.",
+          "insight": "The alternating sign creates distinct subsequences!"
+        },
+        "incorrect": {
+          "1": "No! The $(-1)^n$ term makes odd indices negative.",
+          "2": "The sequence has a clear pattern based on even/odd indices."
+        }
+      },
+      "resultState": {
+        "description": "Behavior analyzed",
+        "equations": ["a_{2k} \\to 0^+, \\quad a_{2k+1} \\to 0^-"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find $\\limsup a_n$."
+      },
+      "prompt": {
+        "question": "What is $\\limsup_{n \\to \\infty} a_n$?",
+        "hint": "For $n$ large, $\\sup_{k \\geq n} a_k$ is achieved at the next even index. Since even terms $\\to 0^+$, we have $\\limsup a_n = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\limsup a_n = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$\\limsup a_n = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\limsup a_n$ does not exist"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Computing $\\limsup$:**\n\nFor any $n$, we need $\\sup_{k \\geq n} a_k$.\n\nSince even terms are positive and odd terms are negative (for large $k$):\n$$\\sup_{k \\geq n} a_k = \\text{largest even-indexed term} \\geq n$$\n\nThe even-indexed terms form a decreasing sequence approaching 0 from above:\n$$a_2 > a_4 > a_6 > \\cdots \\to 0^+$$\n\nTherefore:\n$$\\sup_{k \\geq n} a_k \\to 0 \\text{ as } n \\to \\infty$$\n\n$$\\limsup_{n \\to \\infty} a_n = 0$$",
+          "insight": "Limsup picks up the supremum of tails, which tracks the even subsequence!"
+        },
+        "incorrect": {
+          "1": "Too large! The supremum of each tail approaches 0, not 1.",
+          "2": "It does exist! Compute $\\lim_{n \\to \\infty} \\sup_{k \\geq n} a_k$."
+        }
+      },
+      "resultState": {
+        "description": "Limsup found",
+        "equations": ["\\limsup_{n \\to \\infty} a_n = 0"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Find $\\liminf a_n$."
+      },
+      "prompt": {
+        "question": "What is $\\liminf_{n \\to \\infty} a_n$?",
+        "hint": "For $n$ large, $\\inf_{k \\geq n} a_k$ is achieved at the next odd index. Since odd terms $\\to 0^-$, we have $\\liminf a_n = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\liminf a_n = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$\\liminf a_n = -1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\liminf a_n = -\\infty$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Computing $\\liminf$:**\n\nFor any $n$, we need $\\inf_{k \\geq n} a_k$.\n\nSince odd terms are negative and even terms are positive (for large $k$):\n$$\\inf_{k \\geq n} a_k = \\text{smallest odd-indexed term} \\geq n$$\n\nThe odd-indexed terms form an increasing sequence approaching 0 from below:\n$$a_1 < a_3 < a_5 < \\cdots \\to 0^-$$\n\nTherefore:\n$$\\inf_{k \\geq n} a_k \\to 0 \\text{ as } n \\to \\infty$$\n\n$$\\liminf_{n \\to \\infty} a_n = 0$$\n\n**Convergence:** Since $\\limsup a_n = \\liminf a_n = 0$, the sequence **converges to 0**!\n\n**Theorem:** $\\lim_{n \\to \\infty} a_n = L$ if and only if $\\limsup a_n = \\liminf a_n = L$.",
+          "insight": "When limsup = liminf, the sequence converges to that common value!"
+        },
+        "incorrect": {
+          "1": "The infimum approaches 0, not -1. Odd terms $\\to 0^-$.",
+          "2": "Bounded sequence! Terms approach 0, so liminf is finite."
+        }
+      },
+      "resultState": {
+        "description": "Liminf found and convergence established",
+        "equations": ["\\liminf_{n \\to \\infty} a_n = 0", "\\lim_{n \\to \\infty} a_n = 0"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Sequence: $a_n = \\frac{(-1)^n}{n} + \\frac{1}{n^2}$",
+      "Even terms: positive, $\\to 0^+$",
+      "Odd terms: negative, $\\to 0^-$",
+      "$\\limsup_{n \\to \\infty} a_n = 0$ (tracks even subsequence)",
+      "$\\liminf_{n \\to \\infty} a_n = 0$ (tracks odd subsequence)",
+      "Since limsup = liminf = 0, sequence converges to 0"
+    ],
+    "fullSolution": "**Find $\\limsup$ and $\\liminf$ of $a_n = \\frac{(-1)^n}{n} + \\frac{1}{n^2}$**\n\n---\n\n**Step 1: Analyze Subsequences**\n\n**Even indices** ($n = 2k$):\n$$a_{2k} = \\frac{1}{2k} + \\frac{1}{4k^2} > 0$$\n$$\\lim_{k \\to \\infty} a_{2k} = 0^+$$\n\n**Odd indices** ($n = 2k+1$):\n$$a_{2k+1} = -\\frac{1}{2k+1} + \\frac{1}{(2k+1)^2}$$\n\nFor large $k$: $a_{2k+1} < 0$ and $\\lim_{k \\to \\infty} a_{2k+1} = 0^-$\n\n---\n\n**Step 2: Find $\\limsup$**\n\n$$\\limsup_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\left(\\sup_{k \\geq n} a_k\\right)$$\n\nFor large $n$, supremum is achieved by even-indexed terms:\n$$\\sup_{k \\geq n} a_k \\approx a_{2\\lceil n/2 \\rceil} \\to 0^+$$\n\n$$\\limsup_{n \\to \\infty} a_n = 0$$\n\n---\n\n**Step 3: Find $\\liminf$**\n\n$$\\liminf_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\left(\\inf_{k \\geq n} a_k\\right)$$\n\nFor large $n$, infimum is achieved by odd-indexed terms:\n$$\\inf_{k \\geq n} a_k \\approx a_{2\\lceil n/2 \\rceil + 1} \\to 0^-$$\n\n$$\\liminf_{n \\to \\infty} a_n = 0$$\n\n---\n\n**Step 4: Convergence**\n\nSince $\\limsup a_n = \\liminf a_n = 0$:\n$$\\boxed{\\lim_{n \\to \\infty} a_n = 0}$$\n\nThe sequence **converges to 0**.\n\n---\n\n**Key Theorem:** A sequence converges if and only if its limsup and liminf are equal.",
+    "relatedProblems": [
+      "real-analysis-sequence-convergence-1",
+      "real-analysis-bolzano-weierstrass-1"
+    ]
+  }
+}

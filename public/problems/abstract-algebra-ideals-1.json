@@ -1,0 +1,200 @@
+{
+  "id": "abstract-algebra-ideals-1",
+  "type": "problem",
+  "title": "Ideals and Quotient Rings",
+  "topic": "Abstract Algebra",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "abstract-algebra",
+    "ideals",
+    "quotient-rings",
+    "ring-theory",
+    "principal-ideals"
+  ],
+  "statement": {
+    "text": "In the ring $\\mathbb{Z}$, consider the ideal $I = 6\\mathbb{Z} = \\{6k : k \\in \\mathbb{Z}\\}$. Describe the quotient ring $\\mathbb{Z}/I$ and determine if it is a field."
+  },
+  "objectives": [
+    "Understand ideals in rings",
+    "Compute quotient rings",
+    "Determine when quotient rings are fields",
+    "Apply Chinese Remainder Theorem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Ideal $I = 6\\mathbb{Z}$ in $\\mathbb{Z}$."
+      },
+      "prompt": {
+        "question": "What is an ideal in a ring?",
+        "hint": "A subset $I$ of ring $R$ is an ideal if: (1) $I$ is a subgroup of $(R, +)$, (2) $ra \\in I$ and $ar \\in I$ for all $r \\in R, a \\in I$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A subset closed under addition and absorption of ring multiplication"
+        },
+        {
+          "id": "b",
+          "text": "A subring"
+        },
+        {
+          "id": "c",
+          "text": "The zero element"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Ideal Definition:**\n\nA subset $I \\subseteq R$ is an **ideal** if:\n\n1. $(I, +)$ is a subgroup of $(R, +)$:\n   - $0 \\in I$\n   - If $a, b \\in I$, then $a + b \\in I$\n   - If $a \\in I$, then $-a \\in I$\n\n2. **Absorption property:** For all $r \\in R$ and $a \\in I$:\n   - $ra \\in I$ (left absorption)\n   - $ar \\in I$ (right absorption)\n\n**Example:** $6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, 18, \\ldots\\}$\n\n- Closed under addition: $6k + 6m = 6(k+m)$ ✓\n- Absorption: For any $n \\in \\mathbb{Z}$ and $6k \\in 6\\mathbb{Z}$: $n \\cdot 6k = 6(nk) \\in 6\\mathbb{Z}$ ✓",
+          "insight": "Ideals are 'sponges' that absorb multiplication from the whole ring!"
+        },
+        "incorrect": {
+          "1": "Not all subrings are ideals! Ideals need the absorption property.",
+          "2": "Too small! An ideal is a special subset, not just the zero."
+        }
+      },
+      "resultState": {
+        "description": "Ideal definition understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Quotient ring $\\mathbb{Z}/6\\mathbb{Z}$."
+      },
+      "prompt": {
+        "question": "What are the elements of $\\mathbb{Z}/6\\mathbb{Z}$?",
+        "hint": "Elements are cosets $\\overline{0}, \\overline{1}, \\overline{2}, \\overline{3}, \\overline{4}, \\overline{5}$ where $\\overline{a} = a + 6\\mathbb{Z}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{Z}/6\\mathbb{Z} = \\{\\overline{0}, \\overline{1}, \\overline{2}, \\overline{3}, \\overline{4}, \\overline{5}\\}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{Z}/6\\mathbb{Z} = \\mathbb{Z}$ (all integers)"
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{Z}/6\\mathbb{Z}$ has infinitely many elements"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Quotient Ring Construction:**\n\nElements of $\\mathbb{Z}/6\\mathbb{Z}$ are **cosets** of $6\\mathbb{Z}$:\n\n$$\\overline{a} = a + 6\\mathbb{Z} = \\{a + 6k : k \\in \\mathbb{Z}\\}$$\n\n**Distinct cosets:**\n- $\\overline{0} = \\{\\ldots, -12, -6, 0, 6, 12, \\ldots\\}$\n- $\\overline{1} = \\{\\ldots, -11, -5, 1, 7, 13, \\ldots\\}$\n- $\\overline{2} = \\{\\ldots, -10, -4, 2, 8, 14, \\ldots\\}$\n- $\\overline{3} = \\{\\ldots, -9, -3, 3, 9, 15, \\ldots\\}$\n- $\\overline{4} = \\{\\ldots, -8, -2, 4, 10, 16, \\ldots\\}$\n- $\\overline{5} = \\{\\ldots, -7, -1, 5, 11, 17, \\ldots\\}$\n\n**Total:** 6 elements\n\n$$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$$\n\n(integers modulo 6)",
+          "insight": "Quotient ring partitions $\\mathbb{Z}$ into equivalence classes!"
+        },
+        "incorrect": {
+          "1": "Too many! The quotient has exactly 6 cosets.",
+          "2": "Finite! There are only 6 distinct cosets modulo 6."
+        }
+      },
+      "resultState": {
+        "description": "Quotient ring elements",
+        "equations": ["\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Determine if $\\mathbb{Z}/6\\mathbb{Z}$ is a field."
+      },
+      "prompt": {
+        "question": "Is $\\mathbb{Z}/6\\mathbb{Z}$ a field?",
+        "hint": "A ring is a field if every nonzero element has a multiplicative inverse. Check if $\\overline{2}$ has an inverse. $\\overline{2} \\cdot \\overline{3} = \\overline{6} = \\overline{0}$, so $\\overline{2}$ is a zero divisor, not a unit!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No, it has zero divisors (e.g., $\\overline{2} \\cdot \\overline{3} = \\overline{0}$)"
+        },
+        {
+          "id": "b",
+          "text": "Yes, every nonzero element has an inverse"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Not a field because of zero divisors:**\n\n$$\\overline{2} \\cdot \\overline{3} = \\overline{6} = \\overline{0}$$\n\nSince $\\overline{2} \\neq \\overline{0}$ and $\\overline{3} \\neq \\overline{0}$, but their product is $\\overline{0}$, they are **zero divisors**.\n\nA field cannot have zero divisors! In a field, if $ab = 0$, then $a = 0$ or $b = 0$.\n\n**Which elements have inverses?**\n\nAn element $\\overline{a}$ has an inverse in $\\mathbb{Z}/6\\mathbb{Z}$ if and only if $\\gcd(a, 6) = 1$:\n\n- $\\overline{1}$: $\\gcd(1,6) = 1$ → inverse is $\\overline{1}$ ✓\n- $\\overline{2}$: $\\gcd(2,6) = 2 \\neq 1$ → no inverse ✗\n- $\\overline{3}$: $\\gcd(3,6) = 3 \\neq 1$ → no inverse ✗\n- $\\overline{4}$: $\\gcd(4,6) = 2 \\neq 1$ → no inverse ✗\n- $\\overline{5}$: $\\gcd(5,6) = 1$ → inverse is $\\overline{5}$ ✓\n\n**Units:** $\\{\\overline{1}, \\overline{5}\\}$ (only 2 out of 5 nonzero elements)\n\n**Theorem:** $\\mathbb{Z}/n\\mathbb{Z}$ is a field if and only if $n$ is prime.",
+          "insight": "Quotient by composite number ideal gives zero divisors, not a field!"
+        },
+        "incorrect": {
+          "1": "No! $\\overline{2}$ and $\\overline{3}$ don't have inverses. They're zero divisors.",
+          "2": "We can determine! Check for zero divisors."
+        }
+      },
+      "resultState": {
+        "description": "Not a field",
+        "equations": ["\\mathbb{Z}/6\\mathbb{Z} \\text{ is not a field}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Apply Chinese Remainder Theorem."
+      },
+      "prompt": {
+        "question": "What is $\\mathbb{Z}/6\\mathbb{Z}$ isomorphic to?",
+        "hint": "Since $6 = 2 \\times 3$ and $\\gcd(2,3) = 1$, Chinese Remainder Theorem gives: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}/2\\mathbb{Z} \\times \\mathbb{Z}/3\\mathbb{Z}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}/2\\mathbb{Z} \\times \\mathbb{Z}/3\\mathbb{Z}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{Z}/6\\mathbb{Z}$ is a simple ring"
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Chinese Remainder Theorem (CRT):**\n\nIf $\\gcd(m, n) = 1$, then:\n$$\\mathbb{Z}/mn\\mathbb{Z} \\cong \\mathbb{Z}/m\\mathbb{Z} \\times \\mathbb{Z}/n\\mathbb{Z}$$\n\nFor $6 = 2 \\times 3$ with $\\gcd(2,3) = 1$:\n$$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}/2\\mathbb{Z} \\times \\mathbb{Z}/3\\mathbb{Z}$$\n\n**Isomorphism:** $\\phi: \\mathbb{Z}/6\\mathbb{Z} \\to \\mathbb{Z}_2 \\times \\mathbb{Z}_3$\n$$\\phi(\\overline{a}) = (\\overline{a \\bmod 2}, \\overline{a \\bmod 3})$$\n\n**Examples:**\n- $\\phi(\\overline{0}) = (\\overline{0}, \\overline{0})$\n- $\\phi(\\overline{1}) = (\\overline{1}, \\overline{1})$\n- $\\phi(\\overline{2}) = (\\overline{0}, \\overline{2})$\n- $\\phi(\\overline{3}) = (\\overline{1}, \\overline{0})$\n- $\\phi(\\overline{4}) = (\\overline{0}, \\overline{1})$\n- $\\phi(\\overline{5}) = (\\overline{1}, \\overline{2})$\n\n**Structure:** Product of two fields is not a field (has zero divisors):\n$$(\\overline{1}, \\overline{0}) \\cdot (\\overline{0}, \\overline{1}) = (\\overline{0}, \\overline{0})$$",
+          "insight": "CRT decomposes quotient rings via coprime factorization!"
+        },
+        "incorrect": {
+          "1": "Not simple! It has nontrivial ideals.",
+          "2": "No! Quotient is finite, $\\mathbb{Z}$ is infinite."
+        }
+      },
+      "resultState": {
+        "description": "Ring structure via CRT",
+        "equations": ["\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_2 \\times \\mathbb{Z}_3"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Ideal: $I = 6\\mathbb{Z} = \\{6k : k \\in \\mathbb{Z}\\}$",
+      "Quotient ring: $\\mathbb{Z}/6\\mathbb{Z} = \\{\\overline{0}, \\ldots, \\overline{5}\\}$ (6 elements)",
+      "Has zero divisors: $\\overline{2} \\cdot \\overline{3} = \\overline{0}$",
+      "NOT a field (not all nonzero elements are units)",
+      "Units: $\\{\\overline{1}, \\overline{5}\\}$ ($\\gcd(a,6) = 1$)",
+      "CRT: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_2 \\times \\mathbb{Z}_3$"
+    ],
+    "fullSolution": "**Analyze quotient ring $\\mathbb{Z}/6\\mathbb{Z}$**\n\n---\n\n**Step 1: Ideal**\n\n$$I = 6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, \\ldots\\}$$\n\nThis is a **principal ideal** generated by 6.\n\n---\n\n**Step 2: Quotient Ring Elements**\n\n$$\\mathbb{Z}/6\\mathbb{Z} = \\{a + 6\\mathbb{Z} : a \\in \\mathbb{Z}\\}$$\n\nDistinct cosets:\n$$\\mathbb{Z}/6\\mathbb{Z} = \\{\\overline{0}, \\overline{1}, \\overline{2}, \\overline{3}, \\overline{4}, \\overline{5}\\}$$\n\nIsomorphic to $\\mathbb{Z}_6$ (integers mod 6).\n\n---\n\n**Step 3: Is it a Field?**\n\nCheck for zero divisors:\n$$\\overline{2} \\cdot \\overline{3} = \\overline{6} = \\overline{0}$$\n\nSince $\\overline{2}, \\overline{3} \\neq \\overline{0}$ but their product is $\\overline{0}$:\n$$\\boxed{\\mathbb{Z}/6\\mathbb{Z} \\text{ is NOT a field}}$$\n\n**Units (invertible elements):**\n$$U(\\mathbb{Z}/6\\mathbb{Z}) = \\{\\overline{a} : \\gcd(a,6) = 1\\} = \\{\\overline{1}, \\overline{5}\\}$$\n\n---\n\n**Step 4: Chinese Remainder Theorem**\n\nSince $6 = 2 \\cdot 3$ and $\\gcd(2,3) = 1$:\n$$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_2 \\times \\mathbb{Z}_3$$\n\n**Interpretation:** Elements correspond to pairs $(a \\bmod 2, a \\bmod 3)$.\n\n---\n\n**General Theorem:** $\\mathbb{Z}/n\\mathbb{Z}$ is a field $\\iff$ $n$ is prime.",
+    "relatedProblems": [
+      "abstract-algebra-rings-1",
+      "number-theory-chinese-remainder-1"
+    ]
+  }
+}

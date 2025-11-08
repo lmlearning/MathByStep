@@ -1,0 +1,200 @@
+{
+  "id": "multivariable-jacobian-1",
+  "type": "problem",
+  "title": "Jacobian Matrix and Change of Variables",
+  "topic": "Multivariable Calculus",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "multivariable-calculus",
+    "jacobian",
+    "change-of-variables",
+    "polar-coordinates",
+    "integration"
+  ],
+  "statement": {
+    "text": "Consider the transformation from polar to Cartesian coordinates: $x = r\\cos\\theta$, $y = r\\sin\\theta$. Find the Jacobian $\\frac{\\partial(x,y)}{\\partial(r,\\theta)}$ and use it to convert the double integral $\\iint_R dx\\, dy$ to polar coordinates."
+  },
+  "objectives": [
+    "Compute Jacobian matrix",
+    "Calculate Jacobian determinant",
+    "Apply change of variables formula for integration"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Transformation: $x = r\\cos\\theta$, $y = r\\sin\\theta$."
+      },
+      "prompt": {
+        "question": "What is the Jacobian matrix $J$?",
+        "hint": "$J = \\begin{pmatrix} \\frac{\\partial x}{\\partial r} & \\frac{\\partial x}{\\partial \\theta} \\\\ \\frac{\\partial y}{\\partial r} & \\frac{\\partial y}{\\partial \\theta} \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$J = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "text": "$J = \\begin{pmatrix} r\\cos\\theta & r\\sin\\theta \\\\ -\\sin\\theta & \\cos\\theta \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "text": "$J = \\begin{pmatrix} \\cos\\theta & \\sin\\theta \\\\ -\\sin\\theta & \\cos\\theta \\end{pmatrix}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Jacobian Matrix:**\n\nFor transformation $(r, \\theta) \\mapsto (x, y)$:\n\n$$J = \\begin{pmatrix} \\frac{\\partial x}{\\partial r} & \\frac{\\partial x}{\\partial \\theta} \\\\ \\frac{\\partial y}{\\partial r} & \\frac{\\partial y}{\\partial \\theta} \\end{pmatrix}$$\n\nCompute partial derivatives:\n$$x = r\\cos\\theta \\implies \\frac{\\partial x}{\\partial r} = \\cos\\theta, \\quad \\frac{\\partial x}{\\partial \\theta} = -r\\sin\\theta$$\n\n$$y = r\\sin\\theta \\implies \\frac{\\partial y}{\\partial r} = \\sin\\theta, \\quad \\frac{\\partial y}{\\partial \\theta} = r\\cos\\theta$$\n\n**Jacobian matrix:**\n$$J = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}$$",
+          "insight": "Jacobian matrix contains all first-order partial derivatives!"
+        },
+        "incorrect": {
+          "1": "Check derivatives! $\\frac{\\partial x}{\\partial \\theta} = \\frac{\\partial}{\\partial \\theta}(r\\cos\\theta) = -r\\sin\\theta$.",
+          "2": "Missing the $r$ factor! $\\frac{\\partial x}{\\partial \\theta} = -r\\sin\\theta$, not just $-\\sin\\theta$."
+        }
+      },
+      "resultState": {
+        "description": "Jacobian matrix computed",
+        "equations": ["J = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Compute Jacobian determinant."
+      },
+      "prompt": {
+        "question": "What is $\\det(J) = \\frac{\\partial(x,y)}{\\partial(r,\\theta)}$?",
+        "hint": "$\\det(J) = (\\cos\\theta)(r\\cos\\theta) - (-r\\sin\\theta)(\\sin\\theta) = r\\cos^2\\theta + r\\sin^2\\theta = r$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\det(J) = r$"
+        },
+        {
+          "id": "b",
+          "text": "$\\det(J) = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\det(J) = r^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Jacobian Determinant:**\n\n$$\\det(J) = \\begin{vmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{vmatrix}$$\n\n$$= (\\cos\\theta)(r\\cos\\theta) - (-r\\sin\\theta)(\\sin\\theta)$$\n\n$$= r\\cos^2\\theta + r\\sin^2\\theta$$\n\n$$= r(\\cos^2\\theta + \\sin^2\\theta)$$\n\n$$= r \\cdot 1 = r$$\n\n**Result:**\n$$\\frac{\\partial(x,y)}{\\partial(r,\\theta)} = r$$\n\nThis is the famous **polar coordinate Jacobian**!",
+          "insight": "The Jacobian determinant measures how the transformation stretches area!"
+        },
+        "incorrect": {
+          "1": "Compute the determinant! It's not constant - it depends on $r$.",
+          "2": "Too large! Simplify: $r\\cos^2\\theta + r\\sin^2\\theta = r$, not $r^2$."
+        }
+      },
+      "resultState": {
+        "description": "Jacobian determinant found",
+        "equations": ["\\frac{\\partial(x,y)}{\\partial(r,\\theta)} = r"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Change of variables formula."
+      },
+      "prompt": {
+        "question": "How do we convert $\\iint_R f(x,y)\\, dx\\, dy$ to polar coordinates?",
+        "hint": "$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta) \\left|\\frac{\\partial(x,y)}{\\partial(r,\\theta)}\\right| dr\\, d\\theta = \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta) \\cdot r\\, dr\\, d\\theta$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta) \\cdot r\\, dr\\, d\\theta$"
+        },
+        {
+          "id": "b",
+          "text": "$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta)\\, dr\\, d\\theta$"
+        },
+        {
+          "id": "c",
+          "text": "$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(r, \\theta)\\, dr\\, d\\theta$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Change of Variables Formula:**\n\nFor transformation $(u,v) \\mapsto (x,y)$:\n\n$$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(x(u,v), y(u,v)) \\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right| du\\, dv$$\n\n**For polar coordinates** $(r,\\theta) \\mapsto (x,y)$:\n\n$$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta) \\cdot |r|\\, dr\\, d\\theta$$\n\nSince $r > 0$ in typical polar coordinates:\n\n$$= \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta) \\cdot r\\, dr\\, d\\theta$$\n\n**Key point:** The factor $r$ comes from the Jacobian determinant!",
+          "insight": "The $r$ factor in polar integrals comes from the Jacobian!"
+        },
+        "incorrect": {
+          "1": "Missing the Jacobian! You need the factor $|\\det(J)| = r$.",
+          "2": "Must substitute for $x$ and $y$! Use $x = r\\cos\\theta, y = r\\sin\\theta$."
+        }
+      },
+      "resultState": {
+        "description": "Change of variables formula",
+        "equations": ["dx\\, dy = r\\, dr\\, d\\theta"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Apply to specific integral."
+      },
+      "prompt": {
+        "question": "Convert $\\iint_{x^2+y^2 \\leq 1} (x^2 + y^2)\\, dx\\, dy$ to polar coordinates.",
+        "hint": "Region: $r \\leq 1$, $0 \\leq \\theta < 2\\pi$. Integrand: $x^2 + y^2 = r^2$. Result: $\\int_0^{2\\pi} \\int_0^1 r^2 \\cdot r\\, dr\\, d\\theta = \\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta$"
+        },
+        {
+          "id": "b",
+          "text": "$\\int_0^{2\\pi} \\int_0^1 r^2\\, dr\\, d\\theta$"
+        },
+        {
+          "id": "c",
+          "text": "$\\int_0^{2\\pi} \\int_0^1 r\\, dr\\, d\\theta$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Step-by-step conversion:**\n\n**Original integral:**\n$$\\iint_{x^2+y^2 \\leq 1} (x^2 + y^2)\\, dx\\, dy$$\n\n**Region in polar coordinates:**\n$$x^2 + y^2 \\leq 1 \\implies r^2 \\leq 1 \\implies 0 \\leq r \\leq 1$$\n$$0 \\leq \\theta < 2\\pi$$\n\n**Integrand:**\n$$x^2 + y^2 = r^2$$\n\n**Jacobian:**\n$$dx\\, dy = r\\, dr\\, d\\theta$$\n\n**Polar integral:**\n$$\\int_0^{2\\pi} \\int_0^1 r^2 \\cdot r\\, dr\\, d\\theta = \\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta$$\n\n**Evaluate:**\n$$= \\int_0^{2\\pi} \\left[\\frac{r^4}{4}\\right]_0^1 d\\theta = \\int_0^{2\\pi} \\frac{1}{4}\\, d\\theta = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$$",
+          "insight": "Polar coordinates simplify integrals over circular regions!"
+        },
+        "incorrect": {
+          "1": "Don't forget the Jacobian factor! Integrand $r^2$ times Jacobian $r$ gives $r^3$.",
+          "2": "That's just the Jacobian! The full integrand is $r^2 \\cdot r = r^3$."
+        }
+      },
+      "resultState": {
+        "description": "Polar integral evaluated",
+        "equations": ["\\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta = \\frac{\\pi}{2}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Polar transformation: $x = r\\cos\\theta$, $y = r\\sin\\theta$",
+      "Jacobian matrix: $J = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}$",
+      "Jacobian determinant: $\\frac{\\partial(x,y)}{\\partial(r,\\theta)} = r$",
+      "Change of variables: $dx\\, dy = r\\, dr\\, d\\theta$",
+      "The $r$ factor in polar integrals comes from the Jacobian",
+      "Application: circular regions become rectangles in $(r,\\theta)$ space"
+    ],
+    "fullSolution": "**Find Jacobian for polar coordinates and apply to integration**\n\n---\n\n**Step 1: Jacobian Matrix**\n\nTransformation: $x = r\\cos\\theta$, $y = r\\sin\\theta$\n\n$$J = \\begin{pmatrix} \\frac{\\partial x}{\\partial r} & \\frac{\\partial x}{\\partial \\theta} \\\\ \\frac{\\partial y}{\\partial r} & \\frac{\\partial y}{\\partial \\theta} \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}$$\n\n---\n\n**Step 2: Jacobian Determinant**\n\n$$\\det(J) = (\\cos\\theta)(r\\cos\\theta) - (-r\\sin\\theta)(\\sin\\theta)$$\n$$= r\\cos^2\\theta + r\\sin^2\\theta = r$$\n\n---\n\n**Step 3: Change of Variables**\n\n$$\\iint_R f(x,y)\\, dx\\, dy = \\iint_{R'} f(r\\cos\\theta, r\\sin\\theta) \\cdot r\\, dr\\, d\\theta$$\n\n---\n\n**Step 4: Example**\n\n$$\\iint_{x^2+y^2 \\leq 1} (x^2+y^2)\\, dx\\, dy$$\n\n**Convert:**\n- Region: $0 \\leq r \\leq 1$, $0 \\leq \\theta < 2\\pi$\n- Integrand: $x^2 + y^2 = r^2$\n- Jacobian: $r$\n\n$$= \\int_0^{2\\pi} \\int_0^1 r^2 \\cdot r\\, dr\\, d\\theta = \\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta$$\n\n**Evaluate:**\n$$= \\int_0^{2\\pi} \\frac{1}{4}\\, d\\theta = \\frac{\\pi}{2}$$\n\n---\n\n**Key Formula:** $\\boxed{dx\\, dy = r\\, dr\\, d\\theta}$",
+    "relatedProblems": [
+      "multivariable-double-integral-1",
+      "multivariable-chain-rule-1"
+    ]
+  }
+}
