@@ -13,6 +13,7 @@ interface StepContainerProps {
   onOptionSelect: (index: number) => void;
   onContinue: () => void;
   isLastStep: boolean;
+  shuffledToOriginalMap?: number[];
 }
 
 export function StepContainer({
@@ -22,6 +23,7 @@ export function StepContainer({
   onOptionSelect,
   onContinue,
   isLastStep,
+  shuffledToOriginalMap,
 }: StepContainerProps) {
   return (
     <div className="space-y-6">
@@ -62,6 +64,7 @@ export function StepContainer({
           selectedOption={selectedOption}
           onContinue={onContinue}
           isLastStep={isLastStep}
+          shuffledToOriginalMap={shuffledToOriginalMap}
         />
       )}
     </div>

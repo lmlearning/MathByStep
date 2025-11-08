@@ -9,6 +9,7 @@ import { ProblemStatement } from '@/components/problem/ProblemStatement';
 import { StepContainer } from '@/components/problem/StepContainer';
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Button } from '@/components/shared/Button';
+import { shuffleOptions, ShuffledStep } from '@/lib/utils/shuffleOptions';
 
 export default function ProblemPage() {
   const params = useParams();
@@ -21,6 +22,7 @@ export default function ProblemPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [stepStartTime, setStepStartTime] = useState(Date.now());
+  const [shuffledStep, setShuffledStep] = useState<ShuffledStep | null>(null);
 
   const { startProblem, recordAttempt, nextStep, completeProblem, getProblemProgress } =
     useProgress();
@@ -48,14 +50,26 @@ export default function ProblemPage() {
     loadProblem();
   }, [problemId]);
 
+  // Shuffle options when step changes
+  useEffect(() => {
+    if (problem && problem.steps[currentStepIndex]) {
+      const currentStep = problem.steps[currentStepIndex];
+      const shuffled = shuffleOptions(
+        currentStep.options,
+        currentStep.correctOptionIndex
+      );
+      setShuffledStep(shuffled);
+    }
+  }, [problem, currentStepIndex]);
+
   const handleOptionSelect = (optionIndex: number) => {
-    if (showFeedback || !problem) return;
+    if (showFeedback || !problem || !shuffledStep) return;
 
     setSelectedOption(optionIndex);
     setShowFeedback(true);
 
     const currentStep = problem.steps[currentStepIndex];
-    const isCorrect = optionIndex === currentStep.correctOptionIndex;
+    const isCorrect = optionIndex === shuffledStep.shuffledCorrectIndex;
     const timeSpent = Math.floor((Date.now() - stepStartTime) / 1000);
 
     recordAttempt(problemId, currentStep.id, optionIndex, isCorrect, timeSpent);
@@ -103,6 +117,15 @@ export default function ProblemPage() {
   const currentStep = problem.steps[currentStepIndex];
   const isLastStep = currentStepIndex >= problem.steps.length - 1;
 
+  // Create a modified step with shuffled options
+  const stepWithShuffledOptions = shuffledStep
+    ? {
+        ...currentStep,
+        options: shuffledStep.shuffledOptions,
+        correctOptionIndex: shuffledStep.shuffledCorrectIndex,
+      }
+    : currentStep;
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-3xl mx-auto px-4 py-6 md:py-8">
@@ -129,12 +152,13 @@ export default function ProblemPage() {
 
         {/* Current Step */}
         <StepContainer
-          step={currentStep}
+          step={stepWithShuffledOptions}
           selectedOption={selectedOption}
           showFeedback={showFeedback}
           onOptionSelect={handleOptionSelect}
           onContinue={handleContinue}
           isLastStep={isLastStep}
+          shuffledToOriginalMap={shuffledStep?.shuffledToOriginalMap}
         />
       </div>
     </div>

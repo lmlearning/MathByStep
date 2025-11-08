@@ -8,6 +8,7 @@ interface FeedbackDisplayProps {
   selectedOption: number;
   onContinue: () => void;
   isLastStep: boolean;
+  shuffledToOriginalMap?: number[];
 }
 
 export function FeedbackDisplay({
@@ -15,11 +16,18 @@ export function FeedbackDisplay({
   selectedOption,
   onContinue,
   isLastStep,
+  shuffledToOriginalMap,
 }: FeedbackDisplayProps) {
   const isCorrect = selectedOption === step.correctOptionIndex;
+
+  // Map shuffled index back to original index for feedback lookup
+  const originalIndex = shuffledToOriginalMap
+    ? shuffledToOriginalMap[selectedOption]
+    : selectedOption;
+
   const feedbackText = isCorrect
     ? step.feedback.correct.explanation
-    : step.feedback.incorrect[selectedOption];
+    : step.feedback.incorrect[originalIndex];
 
   return (
     <div className="space-y-4">
