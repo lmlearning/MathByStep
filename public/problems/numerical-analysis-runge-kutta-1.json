@@ -1,0 +1,197 @@
+{
+  "id": "numerical-analysis-runge-kutta-1",
+  "type": "problem",
+  "title": "Runge-Kutta Method (RK4)",
+  "topic": "Numerical Analysis",
+  "difficulty": 4,
+  "estimatedTime": 15,
+  "tags": [
+    "numerical analysis",
+    "differential equations",
+    "Runge-Kutta",
+    "RK4",
+    "numerical methods"
+  ],
+  "statement": {
+    "text": "Use the fourth-order Runge-Kutta method (RK4) with step size $h = 0.5$ to approximate $y(0.5)$ for the IVP $y' = y$, $y(0) = 1$. Compare with the exact solution $y = e^x$."
+  },
+  "objectives": [
+    "Understand RK4 method",
+    "Calculate intermediate slopes",
+    "Compare with exact solution"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What is the RK4 method?"
+      },
+      "prompt": {
+        "question": "What are the RK4 formulas?",
+        "hint": "RK4 uses 4 slopes: $k_1 = hf(x_n, y_n)$, $k_2 = hf(x_n + h/2, y_n + k_1/2)$, $k_3 = hf(x_n + h/2, y_n + k_2/2)$, $k_4 = hf(x_n + h, y_n + k_3)$. Then: $y_{n+1} = y_n + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Weighted average of 4 slopes: $y_{n+1} = y_n + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$"
+        },
+        {
+          "id": "b",
+          "text": "$y_{n+1} = y_n + hf(x_n, y_n)$ (Euler's method)"
+        },
+        {
+          "id": "c",
+          "text": "$y_{n+1} = y_n + \\frac{h}{2}(k_1 + k_2)$ (2nd order only)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! RK4 combines 4 slope estimates with weights 1, 2, 2, 1 (normalized by 1/6). This gives 4th-order accuracy: error $\\propto h^5$ (vs. $h^2$ for Euler).",
+          "insight": "RK4 is the workhorse of numerical ODE solving - excellent balance of accuracy and computational cost."
+        },
+        "incorrect": {
+          "1": "That's Euler's method (first-order). RK4 uses 4 intermediate slopes!",
+          "2": "That's RK2 (second-order). RK4 needs all 4 slopes $k_1, k_2, k_3, k_4$."
+        }
+      },
+      "resultState": {
+        "description": "RK4 formula"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate the 4 slopes at intermediate points."
+      },
+      "prompt": {
+        "question": "What are $k_1, k_2, k_3, k_4$ for the first step?",
+        "hint": "$f(x,y) = y$, $h = 0.5$, $(x_0, y_0) = (0, 1)$. $k_1 = 0.5(1) = 0.5$. $k_2 = 0.5(1 + 0.5/2) = 0.5(1.25) = 0.625$. $k_3 = 0.5(1 + 0.625/2) = 0.5(1.3125) \\approx 0.6563$. $k_4 = 0.5(1 + 0.6563) \\approx 0.8281$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$k_1 = 0.5$, $k_2 \\approx 0.625$, $k_3 \\approx 0.6563$, $k_4 \\approx 0.8281$"
+        },
+        {
+          "id": "b",
+          "text": "$k_1 = k_2 = k_3 = k_4 = 0.5$ (all equal)"
+        },
+        {
+          "id": "c",
+          "text": "$k_1 = 1$, $k_2 = 1$, $k_3 = 1$, $k_4 = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Each $k_i$ samples the slope at a different point: $k_1$ at start, $k_2$ and $k_3$ at midpoint (with different estimates), $k_4$ at endpoint. For $y' = y$: $k_1 = hf(0, 1) = 0.5(1) = 0.5$. $k_2 = hf(0.25, 1.25) = 0.5(1.25) = 0.625$. $k_3 = hf(0.25, 1.3125) \\approx 0.6563$. $k_4 = hf(0.5, 1.6563) \\approx 0.8281$.",
+          "insight": "The slopes increase because $y' = y$ grows as $y$ increases!"
+        },
+        "incorrect": {
+          "1": "Slopes vary! Each uses the updated estimate from the previous slope.",
+          "2": "Missing factor of $h = 0.5$! And slopes should use updated $y$ values."
+        }
+      },
+      "resultState": {
+        "description": "Calculate k1, k2, k3, k4"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Combine slopes with RK4 weights."
+      },
+      "prompt": {
+        "question": "What is $y(0.5)$ using RK4?",
+        "hint": "$y_1 = y_0 + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4) = 1 + \\frac{1}{6}(0.5 + 2(0.625) + 2(0.6563) + 0.8281) = 1 + \\frac{1}{6}(4.1406) \\approx 1 + 0.6901 = 1.6901$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y(0.5) \\approx 1 + \\frac{1}{6}(4.1406) \\approx 1.6901$"
+        },
+        {
+          "id": "b",
+          "text": "$y(0.5) \\approx 1.5$ (Euler's method)"
+        },
+        {
+          "id": "c",
+          "text": "$y(0.5) \\approx 2.0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! RK4 gives: $y_1 = 1 + \\frac{1}{6}(0.5 + 1.25 + 1.3126 + 0.8281) = 1 + \\frac{4.1407}{6} \\approx 1.6901$. Compare to Euler ($1 + 0.5 = 1.5$) - RK4 is much more accurate!",
+          "insight": "RK4 weighted average: central estimates ($k_2, k_3$) count double, endpoints count once."
+        },
+        "incorrect": {
+          "1": "That's Euler's method result. RK4 uses all 4 slopes with specific weights!",
+          "2": "Too large! Check the calculation of the weighted average."
+        }
+      },
+      "resultState": {
+        "description": "Apply RK4 formula"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Compare with exact solution."
+      },
+      "prompt": {
+        "question": "How does RK4 compare to the exact solution?",
+        "hint": "Exact: $y = e^x$, so $y(0.5) = e^{0.5} \\approx 1.6487$. RK4: $\\approx 1.6901$. Error: $|1.6901 - 1.6487| \\approx 0.0414$ or about 2.5%."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Exact: $e^{0.5} \\approx 1.6487$. RK4: $1.6901$. Error $\\approx 0.04$ or 2.5%"
+        },
+        {
+          "id": "b",
+          "text": "RK4 gives exact solution (error = 0)"
+        },
+        {
+          "id": "c",
+          "text": "Euler more accurate than RK4"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Exact solution: $y(0.5) = e^{0.5} \\approx 1.6487$. RK4: $\\approx 1.6901$. Small error (2.5%) with just ONE step! With smaller $h$ or more steps, error would decrease dramatically (as $h^5$). Compare to Euler error: $|1.5 - 1.6487| \\approx 0.15$ or 9%.",
+          "insight": "RK4 is 4th-order accurate. For this problem, RK4 error is ~3× smaller than Euler despite using same step size!"
+        },
+        "incorrect": {
+          "1": "No numerical method gives exact values (except special cases)!",
+          "2": "RK4 is much more accurate! Euler error ~9%, RK4 error ~2.5%."
+        }
+      },
+      "resultState": {
+        "description": "Error analysis"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "RK4: $y_{n+1} = y_n + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$",
+      "For $y' = y$, $y(0) = 1$, $h = 0.5$:",
+      "$k_1 = 0.5$, $k_2 \\approx 0.625$, $k_3 \\approx 0.6563$, $k_4 \\approx 0.8281$",
+      "RK4 result: $y(0.5) \\approx 1.6901$",
+      "Exact: $e^{0.5} \\approx 1.6487$",
+      "Error: ~2.5% (vs. 9% for Euler)",
+      "RK4 is 4th-order: error $\\propto h^5$"
+    ],
+    "fullSolution": "**Use RK4 to approximate $y(0.5)$ for $y' = y$, $y(0) = 1$ with $h = 0.5$**\n\n**Setup:**\n- $f(x, y) = y$\n- $(x_0, y_0) = (0, 1)$\n- $h = 0.5$\n- Want: $y(0.5) = y_1$\n\n---\n\n**RK4 Method:**\n\n**Step 1: Calculate $k_1$** (slope at start)\n$$k_1 = h f(x_0, y_0) = 0.5 \\cdot f(0, 1) = 0.5 \\cdot 1 = 0.5$$\n\n**Step 2: Calculate $k_2$** (slope at midpoint, using $k_1$)\n$$k_2 = h f\\left(x_0 + \\frac{h}{2}, y_0 + \\frac{k_1}{2}\\right)$$\n$$= 0.5 \\cdot f\\left(0 + 0.25, 1 + 0.25\\right)$$\n$$= 0.5 \\cdot f(0.25, 1.25)$$\n$$= 0.5 \\cdot 1.25 = 0.625$$\n\n**Step 3: Calculate $k_3$** (slope at midpoint, using $k_2$)\n$$k_3 = h f\\left(x_0 + \\frac{h}{2}, y_0 + \\frac{k_2}{2}\\right)$$\n$$= 0.5 \\cdot f\\left(0.25, 1 + 0.3125\\right)$$\n$$= 0.5 \\cdot 1.3125 = 0.65625$$\n\n**Step 4: Calculate $k_4$** (slope at end, using $k_3$)\n$$k_4 = h f(x_0 + h, y_0 + k_3)$$\n$$= 0.5 \\cdot f(0.5, 1 + 0.65625)$$\n$$= 0.5 \\cdot 1.65625 = 0.828125$$\n\n**Step 5: Weighted average**\n$$y_1 = y_0 + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$\n$$= 1 + \\frac{1}{6}(0.5 + 2(0.625) + 2(0.65625) + 0.828125)$$\n$$= 1 + \\frac{1}{6}(0.5 + 1.25 + 1.3125 + 0.828125)$$\n$$= 1 + \\frac{3.890625}{6}$$\n$$= 1 + 0.6484375$$\n$$\\approx 1.6484$$\n\n**Answer:** $\\boxed{y(0.5) \\approx 1.6484}$\n\n---\n\n**Comparison with Exact Solution:**\n\nExact solution: $y = e^x$\n$$y(0.5) = e^{0.5} \\approx 1.6487$$\n\n**Error Analysis:**\n- RK4: $\\approx 1.6484$\n- Exact: $\\approx 1.6487$\n- Absolute error: $|1.6487 - 1.6484| \\approx 0.0003$ or 0.02%\n\nFor comparison, Euler's method:\n- $y_1 = 1 + 0.5(1) = 1.5$\n- Error: $|1.6487 - 1.5| \\approx 0.15$ or 9%\n\n**RK4 is ~500× more accurate than Euler for this problem!**",
+    "relatedProblems": [
+      "numerical-analysis-euler-method-1",
+      "differential-equations-first-order-linear-1"
+    ]
+  }
+}

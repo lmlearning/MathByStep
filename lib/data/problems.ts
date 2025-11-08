@@ -116,6 +116,7 @@ import probabilityBayesNetwork1 from '@/public/problems/probability-bayes-networ
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 import numericalAnalysisEulerMethod1 from '@/public/problems/numerical-analysis-euler-method-1.json';
+import numericalAnalysisRungeKutta1 from '@/public/problems/numerical-analysis-runge-kutta-1.json';
 // Abstract Algebra (more topics)
 import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
 import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-homomorphisms-1.json';
@@ -130,6 +131,7 @@ import complexAnalysisConformalMapping1 from '@/public/problems/complex-analysis
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
 import discreteMathCombinatoricsPigeonhole1 from '@/public/problems/discrete-math-combinatorics-pigeonhole-1.json';
+import discreteMathGeneratingFunctions1 from '@/public/problems/discrete-math-generating-functions-1.json';
 // Number Theory (additional)
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
@@ -139,6 +141,7 @@ import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logi
 import topologyOpenClosedSets1 from '@/public/problems/topology-open-closed-sets-1.json';
 import topologyCompactness1 from '@/public/problems/topology-compactness-1.json';
 import topologyConnectedness1 from '@/public/problems/topology-connectedness-1.json';
+import topologyHausdorffSpaces1 from '@/public/problems/topology-hausdorff-spaces-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -257,6 +260,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   'numerical-analysis-euler-method-1': numericalAnalysisEulerMethod1 as any as Problem,
+  'numerical-analysis-runge-kutta-1': numericalAnalysisRungeKutta1 as any as Problem,
   // Abstract Algebra (more topics)
   'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
   'abstract-algebra-homomorphisms-1': abstractAlgebraHomomorphisms1 as any as Problem,
@@ -271,6 +275,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,
   'discrete-math-combinatorics-pigeonhole-1': discreteMathCombinatoricsPigeonhole1 as any as Problem,
+  'discrete-math-generating-functions-1': discreteMathGeneratingFunctions1 as any as Problem,
   // Number Theory (additional)
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,
@@ -280,6 +285,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'topology-open-closed-sets-1': topologyOpenClosedSets1 as any as Problem,
   'topology-compactness-1': topologyCompactness1 as any as Problem,
   'topology-connectedness-1': topologyConnectedness1 as any as Problem,
+  'topology-hausdorff-spaces-1': topologyHausdorffSpaces1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

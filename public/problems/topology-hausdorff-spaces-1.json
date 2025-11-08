@@ -1,0 +1,195 @@
+{
+  "id": "topology-hausdorff-spaces-1",
+  "type": "problem",
+  "title": "Hausdorff Spaces and Separation Axioms",
+  "topic": "Topology",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "topology",
+    "Hausdorff",
+    "separation axioms",
+    "T2 space"
+  ],
+  "statement": {
+    "text": "Prove that every metric space is a Hausdorff space. Then show that the cofinite topology on an infinite set is not Hausdorff."
+  },
+  "objectives": [
+    "Understand Hausdorff property",
+    "Prove metric spaces are Hausdorff",
+    "Find non-Hausdorff example"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What is a Hausdorff space?"
+      },
+      "prompt": {
+        "question": "What is the definition of Hausdorff (T2)?",
+        "hint": "A topological space $X$ is Hausdorff if for any two distinct points $x, y \\in X$, there exist disjoint open sets $U, V$ with $x \\in U$ and $y \\in V$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "For distinct $x, y$: $\\exists$ disjoint open $U, V$ with $x \\in U$, $y \\in V$"
+        },
+        {
+          "id": "b",
+          "text": "Every singleton set is open"
+        },
+        {
+          "id": "c",
+          "text": "Every point has a neighborhood base of open sets"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Hausdorff (T2) property: distinct points can be separated by disjoint open neighborhoods. This ensures limits are unique and prevents weird topological behavior.",
+          "insight": "Hausdorff is one of several separation axioms (T0, T1, T2, T3, T4). Most familiar spaces (metric, Euclidean) are Hausdorff."
+        },
+        "incorrect": {
+          "1": "That's T1, not T2! Hausdorff is stronger - requires DISJOINT neighborhoods.",
+          "2": "That's just a basic property, not specific to Hausdorff!"
+        }
+      },
+      "resultState": {
+        "description": "Definition of Hausdorff"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Prove metric spaces are Hausdorff."
+      },
+      "prompt": {
+        "question": "How do we construct disjoint open sets in a metric space?",
+        "hint": "Let $d(x,y) = r > 0$. Choose $\\epsilon < r/2$. Then $B(x, \\epsilon)$ and $B(y, \\epsilon)$ are disjoint open balls containing $x$ and $y$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Use open balls $B(x, \\epsilon)$ and $B(y, \\epsilon)$ with $\\epsilon < \\frac{d(x,y)}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "Use $B(x, 1)$ and $B(y, 1)$ (always disjoint)"
+        },
+        {
+          "id": "c",
+          "text": "Cannot construct disjoint sets in metric spaces"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Let $x \\neq y$, so $d(x,y) = r > 0$. Set $\\epsilon = r/2$. Then $B(x, \\epsilon) \\cap B(y, \\epsilon) = \\emptyset$ (triangle inequality!). If $z \\in B(x, \\epsilon)$, then $d(y,z) \\geq d(x,y) - d(x,z) > r - \\epsilon = r/2 = \\epsilon$, so $z \\notin B(y, \\epsilon)$.",
+          "insight": "Key: use distance between points to choose radius. Triangle inequality ensures disjointness."
+        },
+        "incorrect": {
+          "1": "Not always! If $d(x,y) < 2$, these balls could overlap.",
+          "2": "We can! That's exactly what the proof shows."
+        }
+      },
+      "resultState": {
+        "description": "Metric spaces are Hausdorff"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Cofinite topology on infinite set $X$: open sets are $\\emptyset$ and sets with finite complement."
+      },
+      "prompt": {
+        "question": "Can we separate two distinct points in cofinite topology?",
+        "hint": "Let $x \\neq y$ in infinite $X$. Any open set containing $x$ has finite complement (so is 'almost all of $X$'). Similarly for $y$. Two 'almost all' sets must overlap!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No! Any two non-empty open sets must intersect (both are cofinite)"
+        },
+        {
+          "id": "b",
+          "text": "Yes, use $\\{x\\}$ and $\\{y\\}$ (open sets)"
+        },
+        {
+          "id": "c",
+          "text": "Yes, use complements"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Let $U, V$ be non-empty open sets. Then $X \\setminus U$ and $X \\setminus V$ are finite. So $X \\setminus (U \\cap V) = (X \\setminus U) \\cup (X \\setminus V)$ is finite (finite union of finite sets). Thus $U \\cap V$ is cofinite, hence non-empty (since $X$ is infinite). So $U$ and $V$ cannot be disjoint!",
+          "insight": "Cofinite topology is T1 (singletons are closed) but not Hausdorff (can't separate points)."
+        },
+        "incorrect": {
+          "1": "Singletons are NOT open in cofinite topology! (Their complements are infinite.)",
+          "2": "Complements of what? Any two non-empty open sets must intersect!"
+        }
+      },
+      "resultState": {
+        "description": "Cofinite topology not Hausdorff"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Summarize findings."
+      },
+      "prompt": {
+        "question": "What have we proven?",
+        "hint": "Every metric space is Hausdorff (use open balls with radius < distance/2). Cofinite topology on infinite set is NOT Hausdorff (non-empty open sets always intersect)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Metric spaces ⊆ Hausdorff spaces. Cofinite topology is non-Hausdorff example."
+        },
+        {
+          "id": "b",
+          "text": "All topological spaces are Hausdorff"
+        },
+        {
+          "id": "c",
+          "text": "Metric spaces are not Hausdorff"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! We proved: (1) Every metric space is Hausdorff - use balls of radius $< d(x,y)/2$. (2) Cofinite topology on infinite set is NOT Hausdorff - any two non-empty open sets intersect. This shows Hausdorff is a genuine restriction!",
+          "insight": "Many important spaces are Hausdorff (Euclidean, metric), but exotic topologies can violate it. Hausdorff ensures limits are unique!"
+        },
+        "incorrect": {
+          "1": "False! Cofinite topology is a counterexample.",
+          "2": "Wrong! We proved the opposite - metric spaces ARE Hausdorff."
+        }
+      },
+      "resultState": {
+        "description": "Summary of results"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Hausdorff (T2): distinct points have disjoint open neighborhoods",
+      "Every metric space is Hausdorff",
+      "Proof: use balls $B(x, \\epsilon), B(y, \\epsilon)$ with $\\epsilon < d(x,y)/2$",
+      "Cofinite topology on infinite set: open = empty or finite complement",
+      "Cofinite is NOT Hausdorff: any two non-empty opens intersect",
+      "Hausdorff ensures: limits unique, sequences converge to at most one point"
+    ],
+    "fullSolution": "**Part 1: Prove every metric space is Hausdorff**\n\nLet $(X, d)$ be a metric space. Let $x, y \\in X$ with $x \\neq y$.\n\n**Goal:** Find disjoint open sets $U, V$ with $x \\in U$, $y \\in V$.\n\n**Construction:**\n\nSince $x \\neq y$:\n$$r := d(x, y) > 0$$\n\nChoose:\n$$\\epsilon = \\frac{r}{2}$$\n\nDefine open balls:\n$$U = B(x, \\epsilon) = \\{z \\in X : d(x, z) < \\epsilon\\}$$\n$$V = B(y, \\epsilon) = \\{z \\in X : d(y, z) < \\epsilon\\}$$\n\n**Verify:**\n1. $U, V$ are open (by definition of metric topology)\n2. $x \\in U$ and $y \\in V$ (since $d(x,x) = d(y,y) = 0 < \\epsilon$)\n3. $U \\cap V = \\emptyset$?\n\n**Claim:** $U \\cap V = \\emptyset$\n\n**Proof by contradiction:** Suppose $z \\in U \\cap V$. Then:\n- $d(x, z) < \\epsilon = r/2$\n- $d(y, z) < \\epsilon = r/2$\n\nBy triangle inequality:\n$$d(x, y) \\leq d(x, z) + d(z, y) < \\frac{r}{2} + \\frac{r}{2} = r$$\n\nBut $d(x, y) = r$, contradicting $d(x,y) < r$.\n\nTherefore $U \\cap V = \\emptyset$. $\\square$\n\n---\n\n**Part 2: Cofinite topology is NOT Hausdorff**\n\nLet $X$ be an infinite set. Cofinite topology:\n$$\\tau = \\{\\emptyset\\} \\cup \\{U \\subseteq X : X \\setminus U \\text{ is finite}\\}$$\n\n**Claim:** $(X, \\tau)$ is not Hausdorff.\n\n**Proof:** Let $x, y \\in X$ with $x \\neq y$. Let $U, V \\in \\tau$ be non-empty open sets with $x \\in U$ and $y \\in V$.\n\nSince $U, V$ are non-empty and open:\n- $X \\setminus U$ is finite\n- $X \\setminus V$ is finite\n\nTherefore:\n$$X \\setminus (U \\cap V) = (X \\setminus U) \\cup (X \\setminus V)$$\n\nis finite (finite union of finite sets).\n\nSince $X$ is infinite and $X \\setminus (U \\cap V)$ is finite:\n$$U \\cap V \\neq \\emptyset$$\n\nThus $U$ and $V$ are not disjoint.\n\n**Conclusion:** No two distinct points in $(X, \\tau)$ can be separated by disjoint open sets. Therefore $(X, \\tau)$ is NOT Hausdorff. $\\square$\n\n---\n\n**Summary:**\n- **Metric spaces** → **Hausdorff** ✓\n- **Cofinite on infinite set** → **NOT Hausdorff** ✗\n\nThis shows Hausdorff is a genuine restriction that not all topologies satisfy!",
+    "relatedProblems": [
+      "topology-metric-spaces-1",
+      "topology-compactness-1"
+    ]
+  }
+}
