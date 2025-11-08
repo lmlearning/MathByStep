@@ -1,0 +1,181 @@
+{
+  "id": "calculus-arc-length-1",
+  "type": "problem",
+  "title": "Arc Length of a Curve",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": ["calculus", "integration", "arc length", "applications"],
+  "statement": {
+    "text": "Find the arc length of $y = \\frac{2}{3}x^{3/2}$ from $x = 0$ to $x = 3$."
+  },
+  "objectives": [
+    "Use arc length formula",
+    "Compute derivative and simplify",
+    "Evaluate arc length integral"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Recall the formula",
+      "currentState": {
+        "expression": "$y = \\frac{2}{3}x^{3/2}$ from $x=0$ to $x=3$",
+        "description": "Arc length formula for $y = f(x)$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the arc length formula?",
+        "hint": "$L = \\int_a^b \\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2}\\, dx$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$L = \\int_a^b \\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2}\\, dx$"
+        },
+        {
+          "id": "b",
+          "content": "$L = \\int_a^b \\left|\\frac{dy}{dx}\\right|\\, dx$"
+        },
+        {
+          "id": "c",
+          "content": "$L = \\int_a^b (1 + y')\\, dx$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Arc length: $L = \\int_a^b \\sqrt{1 + (y')^2}\\, dx$ comes from the Pythagorean theorem on infinitesimal segments.",
+          "insight": "The formula integrates the hypotenuse of tiny right triangles along the curve."
+        },
+        "incorrect": {
+          "b": "That would be total variation, not arc length. Need the square root of $1 + (y')^2$.",
+          "c": "Missing the square on $y'$ and the square root."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Find the derivative",
+      "currentState": {
+        "expression": "$y = \\frac{2}{3}x^{3/2}$",
+        "description": "Compute $\\frac{dy}{dx}$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{dy}{dx}$?",
+        "hint": "$\\frac{d}{dx}\\left[\\frac{2}{3}x^{3/2}\\right] = \\frac{2}{3} \\cdot \\frac{3}{2}x^{1/2} = x^{1/2}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dy}{dx} = x^{1/2} = \\sqrt{x}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{dy}{dx} = \\frac{3}{2}x^{1/2}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{dy}{dx} = \\frac{2}{3}x^{-1/2}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{d}{dx}\\left[\\frac{2}{3}x^{3/2}\\right] = \\frac{2}{3} \\cdot \\frac{3}{2}x^{1/2} = x^{1/2} = \\sqrt{x}$.",
+          "insight": "Power rule: $\\frac{d}{dx}[x^n] = nx^{n-1}$."
+        },
+        "incorrect": {
+          "b": "Don't forget the coefficient: $\\frac{2}{3} \\cdot \\frac{3}{2} = 1$.",
+          "c": "Exponent decreases by 1: $\\frac{3}{2} - 1 = \\frac{1}{2}$, not negative."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Set up the integral",
+      "currentState": {
+        "expression": "$L = \\int_0^3 \\sqrt{1 + (\\sqrt{x})^2}\\, dx$",
+        "description": "Simplify the integrand."
+      },
+      "reflectionPrompt": {
+        "question": "What does the integral simplify to?",
+        "hint": "$1 + (\\sqrt{x})^2 = 1 + x$, so $L = \\int_0^3 \\sqrt{1+x}\\, dx$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$L = \\int_0^3 \\sqrt{1 + x}\\, dx$"
+        },
+        {
+          "id": "b",
+          "content": "$L = \\int_0^3 (1 + \\sqrt{x})\\, dx$"
+        },
+        {
+          "id": "c",
+          "content": "$L = \\int_0^3 \\sqrt{1 + 2x}\\, dx$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $(\\sqrt{x})^2 = x$, so $\\sqrt{1 + (y')^2} = \\sqrt{1 + x}$.",
+          "insight": "Often the hardest part of arc length is simplifying the integrand."
+        },
+        "incorrect": {
+          "b": "Need square root over the entire expression: $\\sqrt{1 + x}$, not $1 + \\sqrt{x}$.",
+          "c": "$(\\sqrt{x})^2 = x$, not $2x$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Evaluate the integral",
+      "currentState": {
+        "expression": "$L = \\int_0^3 \\sqrt{1+x}\\, dx$",
+        "description": "Use substitution $u = 1 + x$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the arc length?",
+        "hint": "$\\int \\sqrt{1+x}\\, dx = \\frac{2}{3}(1+x)^{3/2}$. Evaluate from 0 to 3."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$L = \\left[\\frac{2}{3}(1+x)^{3/2}\\right]_0^3 = \\frac{2}{3}(4^{3/2} - 1) = \\frac{2}{3}(8-1) = \\frac{14}{3}$ units"
+        },
+        {
+          "id": "b",
+          "content": "$L = \\left[\\frac{2}{3}(1+x)^{3/2}\\right]_0^3 = \\frac{2}{3}(3^{3/2}) = 2\\sqrt{3}$ units"
+        },
+        {
+          "id": "c",
+          "content": "$L = \\left[(1+x)^{1/2}\\right]_0^3 = 2 - 1 = 1$ unit"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int (1+x)^{1/2}\\, dx = \\frac{(1+x)^{3/2}}{3/2} = \\frac{2}{3}(1+x)^{3/2}$. At $x=3$: $\\frac{2}{3}(4)^{3/2} = \\frac{2}{3}(8) = \\frac{16}{3}$. At $x=0$: $\\frac{2}{3}(1) = \\frac{2}{3}$. Difference: $\\frac{16}{3} - \\frac{2}{3} = \\frac{14}{3}$.",
+          "insight": "Arc length is typically longer than the straight-line distance between endpoints."
+        },
+        "incorrect": {
+          "b": "Upper limit is $x=3$, so evaluate at $1+3=4$, not at $3$.",
+          "c": "Missing the coefficient $\\frac{2}{3}$ from integration. Also check bounds carefully."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Arc length formula: $L = \\int_a^b \\sqrt{1 + (y')^2}\\, dx$",
+      "For $y = \\frac{2}{3}x^{3/2}$: $y' = \\sqrt{x}$",
+      "Integral: $L = \\int_0^3 \\sqrt{1+x}\\, dx$",
+      "Antiderivative: $\\frac{2}{3}(1+x)^{3/2}$",
+      "Answer: $L = \\frac{14}{3}$ units"
+    ],
+    "fullSolution": "**Find arc length of $y = \\frac{2}{3}x^{3/2}$ from $x=0$ to $x=3$**\n\n**Formula:** $L = \\int_a^b \\sqrt{1 + (y')^2}\\, dx$\n\n**Step 1: Find derivative**\n$$\\frac{dy}{dx} = \\frac{2}{3} \\cdot \\frac{3}{2}x^{1/2} = \\sqrt{x}$$\n\n**Step 2: Set up integral**\n$$L = \\int_0^3 \\sqrt{1 + (\\sqrt{x})^2}\\, dx = \\int_0^3 \\sqrt{1+x}\\, dx$$\n\n**Step 3: Integrate**\n$$\\int (1+x)^{1/2}\\, dx = \\frac{2}{3}(1+x)^{3/2} + C$$\n\n**Step 4: Evaluate**\n$$L = \\left[\\frac{2}{3}(1+x)^{3/2}\\right]_0^3 = \\frac{2}{3}\\left(4^{3/2} - 1^{3/2}\\right) = \\frac{2}{3}(8-1) = \\frac{14}{3}$$\n\n**Answer:** $\\displaystyle\\frac{14}{3}$ units",
+    "relatedProblems": [
+      "calculus-integration-substitution-1",
+      "calculus-volumes-revolution-1"
+    ]
+  }
+}

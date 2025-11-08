@@ -72,6 +72,20 @@ import abstractAlgebraCyclicGroups1 from '@/public/problems/abstract-algebra-cyc
 import statisticsHypothesisTesting1 from '@/public/problems/statistics-hypothesis-testing-1.json';
 // Complex Analysis (additional)
 import complexAnalysisContourIntegration1 from '@/public/problems/complex-analysis-contour-integration-1.json';
+// Calculus (additional topics)
+import calculusLimitLaws1 from '@/public/problems/calculus-limit-laws-1.json';
+import calculusProductQuotientRule1 from '@/public/problems/calculus-product-quotient-rule-1.json';
+import calculusOptimization1 from '@/public/problems/calculus-optimization-1.json';
+import calculusLhopitalRule1 from '@/public/problems/calculus-lhopital-rule-1.json';
+import calculusVolumesRevolution1 from '@/public/problems/calculus-volumes-revolution-1.json';
+import calculusImplicitDifferentiation1 from '@/public/problems/calculus-implicit-differentiation-1.json';
+import calculusRelatedRates1 from '@/public/problems/calculus-related-rates-1.json';
+import calculusTrigSubstitution1 from '@/public/problems/calculus-trig-substitution-1.json';
+import calculusAreaBetweenCurves1 from '@/public/problems/calculus-area-between-curves-1.json';
+import calculusArcLength1 from '@/public/problems/calculus-arc-length-1.json';
+import calculusPowerSeries1 from '@/public/problems/calculus-power-series-1.json';
+import calculusTaylorSeries1 from '@/public/problems/calculus-taylor-series-1.json';
+import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-comparison-test-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -146,6 +160,20 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'statistics-hypothesis-testing-1': statisticsHypothesisTesting1 as any as Problem,
   // Complex Analysis (additional)
   'complex-analysis-contour-integration-1': complexAnalysisContourIntegration1 as any as Problem,
+  // Calculus (additional topics)
+  'calculus-limit-laws-1': calculusLimitLaws1 as any as Problem,
+  'calculus-product-quotient-rule-1': calculusProductQuotientRule1 as any as Problem,
+  'calculus-optimization-1': calculusOptimization1 as any as Problem,
+  'calculus-lhopital-rule-1': calculusLhopitalRule1 as any as Problem,
+  'calculus-volumes-revolution-1': calculusVolumesRevolution1 as any as Problem,
+  'calculus-implicit-differentiation-1': calculusImplicitDifferentiation1 as any as Problem,
+  'calculus-related-rates-1': calculusRelatedRates1 as any as Problem,
+  'calculus-trig-substitution-1': calculusTrigSubstitution1 as any as Problem,
+  'calculus-area-between-curves-1': calculusAreaBetweenCurves1 as any as Problem,
+  'calculus-arc-length-1': calculusArcLength1 as any as Problem,
+  'calculus-power-series-1': calculusPowerSeries1 as any as Problem,
+  'calculus-taylor-series-1': calculusTaylorSeries1 as any as Problem,
+  'calculus-series-comparison-test-1': calculusSeriesComparisonTest1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

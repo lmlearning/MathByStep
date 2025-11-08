@@ -1,0 +1,218 @@
+{
+  "id": "calculus-optimization-1",
+  "type": "problem",
+  "title": "Optimization: Maximize Area with Fixed Perimeter",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["calculus", "optimization", "applications", "max/min"],
+  "statement": {
+    "text": "A farmer has 200 feet of fencing to enclose a rectangular field along a river. No fence is needed along the river. What dimensions maximize the area?"
+  },
+  "objectives": [
+    "Set up an optimization problem",
+    "Express area as a function of one variable",
+    "Use derivatives to find maximum"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Draw and label",
+      "currentState": {
+        "expression": "Rectangle with one side along river",
+        "description": "Let $x$ = width (perpendicular to river), $y$ = length (parallel to river)."
+      },
+      "reflectionPrompt": {
+        "question": "What is the constraint?",
+        "hint": "Fence needed for: two widths and one length. $2x + y = 200$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Constraint: $2x + y = 200$ (fence three sides)"
+        },
+        {
+          "id": "b",
+          "content": "Constraint: $2x + 2y = 200$ (fence all four sides)"
+        },
+        {
+          "id": "c",
+          "content": "Constraint: $x + y = 200$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! River provides one long side, so we fence: left width, right width, and back. Total: $2x + y = 200$.",
+          "insight": "Always identify what's being optimized (area) and what's constrained (fence length)."
+        },
+        "incorrect": {
+          "b": "No fence needed along the river! We only fence three sides: $2x + y = 200$.",
+          "c": "We need two widths: $2x + y = 200$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Express area as function of one variable",
+      "currentState": {
+        "expression": "$A = xy$, constraint: $2x + y = 200$",
+        "description": "Eliminate $y$ using the constraint."
+      },
+      "reflectionPrompt": {
+        "question": "Express $A$ in terms of $x$ only",
+        "hint": "From $2x+y=200$: $y=200-2x$. So $A(x) = x(200-2x)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$A(x) = x(200-2x) = 200x - 2x^2$"
+        },
+        {
+          "id": "b",
+          "content": "$A(x) = x(200-x) = 200x - x^2$"
+        },
+        {
+          "id": "c",
+          "content": "$A(x) = 200x$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! From $y=200-2x$: $A = xy = x(200-2x) = 200x-2x^2$.",
+          "insight": "Using the constraint reduces the problem to single-variable optimization."
+        },
+        "incorrect": {
+          "b": "The constraint is $y=200-2x$, not $y=200-x$.",
+          "c": "Don't forget the $y$ factor in area: $A = xy$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Find critical points",
+      "currentState": {
+        "expression": "$A(x) = 200x - 2x^2$",
+        "description": "Set $A'(x) = 0$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $A'(x)$, and where does it equal zero?",
+        "hint": "$A'(x) = 200 - 4x = 0 \\Rightarrow x = 50$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$A'(x) = 200 - 4x = 0 \\Rightarrow x = 50$"
+        },
+        {
+          "id": "b",
+          "content": "$A'(x) = 200 - 2x = 0 \\Rightarrow x = 100$"
+        },
+        {
+          "id": "c",
+          "content": "$A'(x) = 200x - x^2 = 0 \\Rightarrow x = 200$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $A'(x) = 200 - 4x$. Setting equal to zero: $200 - 4x = 0 \\Rightarrow x = 50$.",
+          "insight": "Critical points occur where the derivative is zero or undefined."
+        },
+        "incorrect": {
+          "b": "Be careful differentiating $2x^2$: the derivative is $4x$, not $2x$.",
+          "c": "That's not the derivative. $A'(x) = \\frac{d}{dx}(200x-2x^2) = 200-4x$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Verify it's a maximum",
+      "currentState": {
+        "expression": "$x = 50$ (critical point)",
+        "description": "Use second derivative test."
+      },
+      "reflectionPrompt": {
+        "question": "Is $x=50$ a maximum?",
+        "hint": "$A''(x) = -4 < 0$, so it's a maximum."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$A''(x) = -4 < 0$ at all points, so $x=50$ gives a maximum"
+        },
+        {
+          "id": "b",
+          "content": "$A''(x) = -4 < 0$, so $x=50$ gives a minimum"
+        },
+        {
+          "id": "c",
+          "content": "Need to check endpoints"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Second derivative test: $A''(x) = -4 < 0$ means the function is concave down, so $x=50$ is a maximum.",
+          "insight": "$A''<0$ means maximum; $A''>0$ means minimum."
+        },
+        "incorrect": {
+          "b": "$A''<0$ indicates a maximum, not a minimum.",
+          "c": "Since $A''<0$ everywhere, we know it's a maximum. Also, endpoints ($x=0$ or $x=100$) give zero area."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Find dimensions",
+      "currentState": {
+        "expression": "$x = 50$ ft",
+        "description": "Find $y$ and the maximum area."
+      },
+      "reflectionPrompt": {
+        "question": "What are the optimal dimensions?",
+        "hint": "$x=50$, $y=200-2(50)=100$. Area = $50 \\times 100 = 5000$ ft²."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Width: 50 ft, Length: 100 ft, Max area: 5000 ft²"
+        },
+        {
+          "id": "b",
+          "content": "Width: 100 ft, Length: 50 ft, Max area: 5000 ft²"
+        },
+        {
+          "id": "c",
+          "content": "Width: 50 ft, Length: 50 ft, Max area: 2500 ft²"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $x=50$ ft (width), $y=200-2(50)=100$ ft (length), Area = $50 \\times 100 = 5000$ ft².",
+          "insight": "The optimal rectangle is twice as long as it is wide when one side is unfenced."
+        },
+        "incorrect": {
+          "b": "We defined $x$ as width (perpendicular to river), which is 50 ft.",
+          "c": "$y = 200-2x = 200-100 = 100$, not 50."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Optimization: identify objective function (area) and constraints (fence)",
+      "Use constraint to express objective as function of one variable",
+      "Find critical points: set $f'(x) = 0$",
+      "Second derivative test: $f''<0$ is max, $f''>0$ is min",
+      "Answer: 50 ft × 100 ft rectangle, max area = 5000 ft²"
+    ],
+    "fullSolution": "**Setup:** Width $x$ (perpendicular to river), length $y$ (parallel to river)\\n\\n**Constraint:** $2x + y = 200$ (fence three sides)\\n\\n**Objective:** Maximize $A = xy$\\n\\n**Express as one variable:**\\n$y = 200-2x$, so $A(x) = x(200-2x) = 200x-2x^2$\\n\\n**Find critical points:**\\n$A'(x) = 200-4x = 0 \\Rightarrow x = 50$\\n\\n**Verify maximum:**\\n$A''(x) = -4 < 0$ ✓ (maximum)\\n\\n**Find dimensions:**\\n- $x = 50$ ft\\n- $y = 200-2(50) = 100$ ft\\n- Max area = $50 \\times 100 = 5000$ ft²\\n\\n**Answer: 50 ft × 100 ft**",
+    "relatedProblems": [
+      "calculus-mvt-1",
+      "multivariable-lagrange-multipliers-1"
+    ]
+  }
+}

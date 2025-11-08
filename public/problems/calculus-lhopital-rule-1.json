@@ -1,0 +1,77 @@
+{
+  "id": "calculus-lhopital-rule-1",
+  "type": "problem",
+  "title": "L'Hôpital's Rule: Evaluate Indeterminate Limits",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": ["calculus", "limits", "L'Hôpital's rule", "indeterminate forms"],
+  "statement": {
+    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$ using L'Hôpital's rule."
+  },
+  "objectives": [
+    "Identify indeterminate forms",
+    "Apply L'Hôpital's rule",
+    "Evaluate limits of trigonometric functions"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Verify indeterminate form",
+      "currentState": {"expression": "$\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$", "description": "Check if L'Hôpital's rule applies."},
+      "reflectionPrompt": {"question": "What form does this limit have?", "hint": "As $x \\to 0$: numerator $\\to \\sin(0) = 0$, denominator $\\to 0$. Form: $\\frac{0}{0}$."},
+      "options": [
+        {"id": "a", "content": "$\\frac{0}{0}$ (indeterminate - L'Hôpital's rule applies)"},
+        {"id": "b", "content": "$\\frac{3}{2}$ (determinate)"},
+        {"id": "c", "content": "$\\frac{\\infty}{\\infty}$"}
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {"explanation": "Correct! $\\frac{\\sin(0)}{0} = \\frac{0}{0}$ is indeterminate. L'Hôpital's rule: if $\\lim \\frac{f}{g} = \\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$, then $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$ (if this limit exists).", "insight": "L'Hôpital's rule is powerful for $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ forms."},
+        "incorrect": {"b": "Direct substitution gives $\\frac{0}{0}$, not $\\frac{3}{2}$.", "c": "Both go to 0, not infinity."}
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Differentiate numerator and denominator",
+      "currentState": {"expression": "Need derivatives of $\\sin(3x)$ and $2x$", "description": "Apply L'Hôpital's rule."},
+      "reflectionPrompt": {"question": "What are the derivatives?", "hint": "$\\frac{d}{dx}\\sin(3x) = 3\\cos(3x)$ and $\\frac{d}{dx}(2x) = 2$."},
+      "options": [
+        {"id": "a", "content": "$\\frac{d}{dx}[\\sin(3x)] = 3\\cos(3x)$ and $\\frac{d}{dx}[2x] = 2$"},
+        {"id": "b", "content": "$\\frac{d}{dx}[\\sin(3x)] = \\cos(3x)$ and $\\frac{d}{dx}[2x] = 2$"},
+        {"id": "c", "content": "$\\frac{d}{dx}[\\sin(3x)] = 3\\cos(x)$ and $\\frac{d}{dx}[2x] = 2x$"}
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {"explanation": "Perfect! Chain rule: $\\frac{d}{dx}\\sin(3x) = \\cos(3x) \\cdot 3 = 3\\cos(3x)$. Power rule: $\\frac{d}{dx}(2x) = 2$.", "insight": "Don't forget the chain rule when differentiating $\\sin(3x)$!"},
+        "incorrect": {"b": "Chain rule! $\\frac{d}{dx}\\sin(3x) = 3\\cos(3x)$, not just $\\cos(3x)$.", "c": "Check both: derivative of $\\sin(3x)$ is $3\\cos(3x)$, and derivative of $2x$ is 2."}
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Evaluate the new limit",
+      "currentState": {"expression": "$\\lim_{x \\to 0} \\frac{3\\cos(3x)}{2}$", "description": "Now direct substitution works."},
+      "reflectionPrompt": {"question": "What is the limit?", "hint": "$\\cos(0) = 1$, so $\\frac{3\\cos(0)}{2} = \\frac{3(1)}{2} = \\frac{3}{2}$."},
+      "options": [
+        {"id": "a", "content": "$\\lim_{x \\to 0} \\frac{3\\cos(3x)}{2} = \\frac{3(1)}{2} = \\frac{3}{2}$"},
+        {"id": "b", "content": "$\\lim_{x \\to 0} \\frac{3\\cos(3x)}{2} = \\frac{3}{0} = \\infty$"},
+        {"id": "c", "content": "$\\lim_{x \\to 0} \\frac{3\\cos(3x)}{2} = 0$"}
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {"explanation": "Excellent! $\\cos(3 \\cdot 0) = \\cos(0) = 1$, so $\\frac{3(1)}{2} = \\frac{3}{2}$.", "insight": "After applying L'Hôpital's rule, always check if you can evaluate directly."},
+        "incorrect": {"b": "The denominator is 2, not 0.", "c": "$3\\cos(0)/2 = 3(1)/2 = 3/2$, not 0."}
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "L'Hôpital's rule: $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$ for $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$ forms",
+      "Always verify indeterminate form first",
+      "Differentiate top and bottom separately (not as a quotient!)",
+      "Answer: $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x} = \\frac{3}{2}$"
+    ],
+    "fullSolution": "**Evaluate:** $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$\\n\\n**Check form:** $\\frac{\\sin(0)}{0} = \\frac{0}{0}$ ✓ (indeterminate)\\n\\n**Apply L'Hôpital's rule:**\\n$$\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x} = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}[\\sin(3x)]}{\\frac{d}{dx}[2x]} = \\lim_{x \\to 0} \\frac{3\\cos(3x)}{2}$$\\n\\n**Evaluate:**\\n$$= \\frac{3\\cos(0)}{2} = \\frac{3(1)}{2} = \\frac{3}{2}$$\\n\\n**Answer: $\\frac{3}{2}$**",
+    "relatedProblems": ["calculus-limit-laws-1", "calculus-limit-epsilon-delta-1"]
+  }
+}

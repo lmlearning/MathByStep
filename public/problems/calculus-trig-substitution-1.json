@@ -1,0 +1,181 @@
+{
+  "id": "calculus-trig-substitution-1",
+  "type": "problem",
+  "title": "Integration: Trigonometric Substitution",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["calculus", "integration", "trigonometric substitution"],
+  "statement": {
+    "text": "Evaluate $\\int \\frac{dx}{\\sqrt{9 - x^2}}$ using trigonometric substitution."
+  },
+  "objectives": [
+    "Identify the appropriate substitution",
+    "Transform the integral using substitution",
+    "Evaluate and back-substitute"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Choose the substitution",
+      "currentState": {
+        "expression": "$\\int \\frac{dx}{\\sqrt{9 - x^2}}$",
+        "description": "Form $\\sqrt{a^2 - x^2}$ suggests a sine substitution."
+      },
+      "reflectionPrompt": {
+        "question": "What substitution should we use?",
+        "hint": "For $\\sqrt{a^2 - x^2}$, use $x = a\\sin\\theta$. Here $a = 3$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$x = 3\\sin\\theta$, so $dx = 3\\cos\\theta\\, d\\theta$"
+        },
+        {
+          "id": "b",
+          "content": "$x = 3\\tan\\theta$, so $dx = 3\\sec^2\\theta\\, d\\theta$"
+        },
+        {
+          "id": "c",
+          "content": "$x = 3\\sec\\theta$, so $dx = 3\\sec\\theta\\tan\\theta\\, d\\theta$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For $\\sqrt{9 - x^2} = \\sqrt{3^2 - x^2}$, use $x = 3\\sin\\theta$, giving $dx = 3\\cos\\theta\\, d\\theta$.",
+          "insight": "Pattern: $\\sqrt{a^2 - x^2} \\to x = a\\sin\\theta$, $\\sqrt{a^2 + x^2} \\to x = a\\tan\\theta$, $\\sqrt{x^2 - a^2} \\to x = a\\sec\\theta$."
+        },
+        "incorrect": {
+          "b": "Tangent substitution is for $\\sqrt{a^2 + x^2}$, not $\\sqrt{a^2 - x^2}$.",
+          "c": "Secant substitution is for $\\sqrt{x^2 - a^2}$, not $\\sqrt{a^2 - x^2}$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Simplify the square root",
+      "currentState": {
+        "expression": "$x = 3\\sin\\theta$, so $9 - x^2 = 9 - 9\\sin^2\\theta$",
+        "description": "Use Pythagorean identity."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\sqrt{9 - x^2}$ in terms of $\\theta$?",
+        "hint": "$9 - 9\\sin^2\\theta = 9(1 - \\sin^2\\theta) = 9\\cos^2\\theta$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\sqrt{9 - x^2} = \\sqrt{9\\cos^2\\theta} = 3\\cos\\theta$ (assuming $\\cos\\theta \\geq 0$)"
+        },
+        {
+          "id": "b",
+          "content": "$\\sqrt{9 - x^2} = 3\\sin\\theta$"
+        },
+        {
+          "id": "c",
+          "content": "$\\sqrt{9 - x^2} = 9\\cos\\theta$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $9 - x^2 = 9 - 9\\sin^2\\theta = 9(1-\\sin^2\\theta) = 9\\cos^2\\theta$, so $\\sqrt{9-x^2} = 3|\\cos\\theta| = 3\\cos\\theta$ (for $-\\pi/2 \\leq \\theta \\leq \\pi/2$).",
+          "insight": "The Pythagorean identity $\\sin^2\\theta + \\cos^2\\theta = 1$ is key to trig substitution."
+        },
+        "incorrect": {
+          "b": "Use the identity: $1 - \\sin^2\\theta = \\cos^2\\theta$, not $\\sin^2\\theta$.",
+          "c": "Missing the square root: $\\sqrt{9\\cos^2\\theta} = 3\\cos\\theta$, not $9\\cos\\theta$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Transform the integral",
+      "currentState": {
+        "expression": "$\\int \\frac{dx}{\\sqrt{9-x^2}} = \\int \\frac{3\\cos\\theta\\, d\\theta}{3\\cos\\theta}$",
+        "description": "Substitute $dx = 3\\cos\\theta\\, d\\theta$ and $\\sqrt{9-x^2} = 3\\cos\\theta$."
+      },
+      "reflectionPrompt": {
+        "question": "What does the integral simplify to?",
+        "hint": "The $3\\cos\\theta$ terms cancel!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\int d\\theta = \\theta + C$"
+        },
+        {
+          "id": "b",
+          "content": "$\\int 3\\cos\\theta\\, d\\theta = 3\\sin\\theta + C$"
+        },
+        {
+          "id": "c",
+          "content": "$\\int \\frac{1}{\\cos\\theta}\\, d\\theta = \\ln|\\sec\\theta + \\tan\\theta| + C$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\int \\frac{3\\cos\\theta\\, d\\theta}{3\\cos\\theta} = \\int 1\\, d\\theta = \\theta + C$.",
+          "insight": "Trig substitution often simplifies complex expressions to basic integrals."
+        },
+        "incorrect": {
+          "b": "The $3\\cos\\theta$ cancels between numerator and denominator first.",
+          "c": "After cancellation, we just have $\\int d\\theta$, not $\\int \\sec\\theta\\, d\\theta$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Back-substitute",
+      "currentState": {
+        "expression": "$\\theta + C$ where $x = 3\\sin\\theta$",
+        "description": "Express $\\theta$ in terms of $x$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\theta$ in terms of $x$?",
+        "hint": "If $x = 3\\sin\\theta$, then $\\sin\\theta = \\frac{x}{3}$, so $\\theta = \\arcsin\\left(\\frac{x}{3}\\right)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\theta = \\arcsin\\left(\\frac{x}{3}\\right)$, so answer is $\\arcsin\\left(\\frac{x}{3}\\right) + C$"
+        },
+        {
+          "id": "b",
+          "content": "$\\theta = \\arctan\\left(\\frac{x}{3}\\right) + C$"
+        },
+        {
+          "id": "c",
+          "content": "$\\theta = \\frac{x}{3} + C$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since $x = 3\\sin\\theta$, we have $\\theta = \\arcsin(x/3)$. Final answer: $\\arcsin(x/3) + C$.",
+          "insight": "This is actually the derivative of $\\arcsin(x/a)$ is $\\frac{1}{\\sqrt{a^2-x^2}}$ - we've verified it!"
+        },
+        "incorrect": {
+          "b": "We used $x = 3\\sin\\theta$, not $x = 3\\tan\\theta$, so we need arcsin, not arctan.",
+          "c": "That's the value of $\\sin\\theta$, not $\\theta$ itself. Need to apply arcsin."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "For $\\sqrt{a^2 - x^2}$, use substitution $x = a\\sin\\theta$",
+      "Pythagorean identity: $1 - \\sin^2\\theta = \\cos^2\\theta$",
+      "Integral simplifies: $\\int \\frac{dx}{\\sqrt{9-x^2}} = \\int d\\theta = \\theta + C$",
+      "Back-substitute: $\\theta = \\arcsin(x/3)$",
+      "Answer: $\\arcsin(x/3) + C$"
+    ],
+    "fullSolution": "**Evaluate $\\int \\frac{dx}{\\sqrt{9-x^2}}$**\n\n**Step 1: Substitution**\n$x = 3\\sin\\theta$, so $dx = 3\\cos\\theta\\, d\\theta$\n\n**Step 2: Simplify the radical**\n$$9 - x^2 = 9 - 9\\sin^2\\theta = 9(1-\\sin^2\\theta) = 9\\cos^2\\theta$$\n$$\\sqrt{9-x^2} = 3\\cos\\theta$$\n\n**Step 3: Transform integral**\n$$\\int \\frac{dx}{\\sqrt{9-x^2}} = \\int \\frac{3\\cos\\theta\\, d\\theta}{3\\cos\\theta} = \\int d\\theta = \\theta + C$$\n\n**Step 4: Back-substitute**\n$$x = 3\\sin\\theta \\implies \\theta = \\arcsin\\left(\\frac{x}{3}\\right)$$\n\n**Answer:** $\\displaystyle \\arcsin\\left(\\frac{x}{3}\\right) + C$",
+    "relatedProblems": [
+      "calculus-integration-substitution-1",
+      "calculus-integration-by-parts-1"
+    ]
+  }
+}

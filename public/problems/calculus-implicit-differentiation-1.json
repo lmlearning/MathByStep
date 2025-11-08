@@ -1,0 +1,144 @@
+{
+  "id": "calculus-implicit-differentiation-1",
+  "type": "problem",
+  "title": "Implicit Differentiation",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": ["calculus", "derivatives", "implicit differentiation"],
+  "statement": {
+    "text": "Find $\\frac{dy}{dx}$ for the curve defined by $x^2 + xy + y^2 = 7$."
+  },
+  "objectives": [
+    "Differentiate both sides with respect to x",
+    "Apply product rule to mixed terms",
+    "Solve for dy/dx"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Differentiate both sides",
+      "currentState": {
+        "expression": "$x^2 + xy + y^2 = 7$",
+        "description": "Differentiate implicitly with respect to $x$, remembering $y$ is a function of $x$."
+      },
+      "reflectionPrompt": {
+        "question": "What do we get when differentiating each term?",
+        "hint": "Use chain rule on $y$ terms: $\\frac{d}{dx}[y^2] = 2y\\frac{dy}{dx}$, and product rule on $xy$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$2x + y + x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$2x + y + 2y = 0$"
+        },
+        {
+          "id": "c",
+          "content": "$2x + xy' + y^2 = 7$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{d}{dx}[x^2] = 2x$, $\\frac{d}{dx}[xy] = y + x\\frac{dy}{dx}$ (product rule), $\\frac{d}{dx}[y^2] = 2y\\frac{dy}{dx}$ (chain rule), $\\frac{d}{dx}[7] = 0$.",
+          "insight": "When $y$ is implicit, use chain rule: multiply by $\\frac{dy}{dx}$ when differentiating $y$ terms."
+        },
+        "incorrect": {
+          "b": "Don't forget to apply chain rule to $y$ terms - they produce $\\frac{dy}{dx}$ factors.",
+          "c": "The right side derivative is 0, not 7. Also need product rule on $xy$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Collect dy/dx terms",
+      "currentState": {
+        "expression": "$2x + y + x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = 0$",
+        "description": "Isolate all terms with $\\frac{dy}{dx}$ on one side."
+      },
+      "reflectionPrompt": {
+        "question": "How do we isolate $\\frac{dy}{dx}$?",
+        "hint": "Factor out $\\frac{dy}{dx}$ from the terms containing it."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dy}{dx}(x + 2y) = -2x - y$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{dy}{dx} = -2x - y - x - 2y$"
+        },
+        {
+          "id": "c",
+          "content": "$x\\frac{dy}{dx} = -2x - y - 2y\\frac{dy}{dx}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Move terms without $\\frac{dy}{dx}$ to the right: $x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = -2x - y$. Then factor: $\\frac{dy}{dx}(x + 2y) = -2x - y$.",
+          "insight": "Factoring is key to isolating the derivative in implicit differentiation."
+        },
+        "incorrect": {
+          "b": "You need to factor out $\\frac{dy}{dx}$ first before dividing.",
+          "c": "Almost! Now move the $2y\\frac{dy}{dx}$ term to the left side too, then factor."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Solve for dy/dx",
+      "currentState": {
+        "expression": "$\\frac{dy}{dx}(x + 2y) = -2x - y$",
+        "description": "Divide both sides by $(x + 2y)$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\frac{dy}{dx}$?",
+        "hint": "Divide both sides by the coefficient of $\\frac{dy}{dx}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{dy}{dx} = \\frac{-2x - y}{x + 2y} = -\\frac{2x + y}{x + 2y}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{dy}{dx} = -2x - y - x - 2y$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{dy}{dx} = \\frac{x + 2y}{-2x - y}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Dividing both sides by $(x + 2y)$ gives $\\frac{dy}{dx} = \\frac{-2x - y}{x + 2y}$.",
+          "insight": "The derivative is expressed in terms of both $x$ and $y$ - this is typical for implicit functions."
+        },
+        "incorrect": {
+          "b": "Don't distribute - divide the entire right side by $(x + 2y)$.",
+          "c": "You flipped the fraction! The numerator should be $-2x - y$."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Implicit differentiation: differentiate both sides with respect to $x$",
+      "Use chain rule on $y$ terms: $\\frac{d}{dx}[f(y)] = f'(y)\\frac{dy}{dx}$",
+      "Use product rule on mixed terms like $xy$",
+      "Collect and factor all $\\frac{dy}{dx}$ terms",
+      "Answer: $\\frac{dy}{dx} = -\\frac{2x + y}{x + 2y}$"
+    ],
+    "fullSolution": "**Find $\\frac{dy}{dx}$ for $x^2 + xy + y^2 = 7$**\n\n**Step 1: Differentiate both sides**\n$$\\frac{d}{dx}[x^2 + xy + y^2] = \\frac{d}{dx}[7]$$\n$$2x + \\left(y + x\\frac{dy}{dx}\\right) + 2y\\frac{dy}{dx} = 0$$\n\n**Step 2: Collect $\\frac{dy}{dx}$ terms**\n$$x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = -2x - y$$\n$$\\frac{dy}{dx}(x + 2y) = -2x - y$$\n\n**Step 3: Solve**\n$$\\frac{dy}{dx} = \\frac{-2x - y}{x + 2y} = -\\frac{2x + y}{x + 2y}$$\n\n**Answer:** $\\displaystyle\\frac{dy}{dx} = -\\frac{2x + y}{x + 2y}$",
+    "relatedProblems": [
+      "calc-derivative-chain-rule-1",
+      "calculus-product-quotient-rule-1"
+    ]
+  }
+}
