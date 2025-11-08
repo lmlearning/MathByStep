@@ -107,23 +107,29 @@ import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-
 import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bolzano-weierstrass-1.json';
 import realAnalysisUniformConvergence1 from '@/public/problems/real-analysis-uniform-convergence-1.json';
 import realAnalysisRiemannIntegration1 from '@/public/problems/real-analysis-riemann-integration-1.json';
+import realAnalysisContinuousFunctions1 from '@/public/problems/real-analysis-continuous-functions-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 import probabilityNormalDistribution1 from '@/public/problems/probability-normal-distribution-1.json';
 import probabilityConditionalProbability1 from '@/public/problems/probability-conditional-probability-1.json';
+import probabilityBayesNetwork1 from '@/public/problems/probability-bayes-network-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
+import numericalAnalysisEulerMethod1 from '@/public/problems/numerical-analysis-euler-method-1.json';
 // Abstract Algebra (more topics)
 import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
 import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-homomorphisms-1.json';
 import abstractAlgebraRings1 from '@/public/problems/abstract-algebra-rings-1.json';
+import abstractAlgebraGroupActions1 from '@/public/problems/abstract-algebra-group-actions-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
 import complexAnalysisCauchyTheorem1 from '@/public/problems/complex-analysis-cauchy-theorem-1.json';
+import complexAnalysisConformalMapping1 from '@/public/problems/complex-analysis-conformal-mapping-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
+import discreteMathCombinatoricsPigeonhole1 from '@/public/problems/discrete-math-combinatorics-pigeonhole-1.json';
 // Number Theory (additional)
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
@@ -242,23 +248,29 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'real-analysis-bolzano-weierstrass-1': realAnalysisBolzanoWeierstrass1 as any as Problem,
   'real-analysis-uniform-convergence-1': realAnalysisUniformConvergence1 as any as Problem,
   'real-analysis-riemann-integration-1': realAnalysisRiemannIntegration1 as any as Problem,
+  'real-analysis-continuous-functions-1': realAnalysisContinuousFunctions1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   'probability-normal-distribution-1': probabilityNormalDistribution1 as any as Problem,
   'probability-conditional-probability-1': probabilityConditionalProbability1 as any as Problem,
+  'probability-bayes-network-1': probabilityBayesNetwork1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
+  'numerical-analysis-euler-method-1': numericalAnalysisEulerMethod1 as any as Problem,
   // Abstract Algebra (more topics)
   'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
   'abstract-algebra-homomorphisms-1': abstractAlgebraHomomorphisms1 as any as Problem,
   'abstract-algebra-rings-1': abstractAlgebraRings1 as any as Problem,
+  'abstract-algebra-group-actions-1': abstractAlgebraGroupActions1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
   'complex-analysis-cauchy-theorem-1': complexAnalysisCauchyTheorem1 as any as Problem,
+  'complex-analysis-conformal-mapping-1': complexAnalysisConformalMapping1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,
+  'discrete-math-combinatorics-pigeonhole-1': discreteMathCombinatoricsPigeonhole1 as any as Problem,
   // Number Theory (additional)
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,

@@ -1,0 +1,196 @@
+{
+  "id": "complex-analysis-conformal-mapping-1",
+  "type": "problem",
+  "title": "Conformal Mappings and Möbius Transformations",
+  "topic": "Complex Analysis",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "complex analysis",
+    "conformal mapping",
+    "Möbius transformation",
+    "analytic functions"
+  ],
+  "statement": {
+    "text": "Find the Möbius transformation that maps the points $0, 1, \\infty$ to $1, i, -1$ respectively."
+  },
+  "objectives": [
+    "Understand Möbius transformations",
+    "Set up equations from point mappings",
+    "Solve for transformation coefficients"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What is a Möbius transformation?"
+      },
+      "prompt": {
+        "question": "What is the general form?",
+        "hint": "Möbius transformation: $f(z) = \\frac{az + b}{cz + d}$ where $ad - bc \\neq 0$ (else degenerate)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(z) = \\frac{az + b}{cz + d}$ with $ad - bc \\neq 0$ (fractional linear transformation)"
+        },
+        {
+          "id": "b",
+          "text": "$f(z) = az^2 + bz + c$"
+        },
+        {
+          "id": "c",
+          "text": "$f(z) = ae^{bz}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Möbius transformations $f(z) = \\frac{az+b}{cz+d}$ are the most general conformal maps (angle-preserving) of the extended complex plane $\\mathbb{C} \\cup \\{\\infty\\}$ to itself.",
+          "insight": "Möbius transformations map circles/lines to circles/lines. They're determined uniquely by 3 point mappings."
+        },
+        "incorrect": {
+          "1": "That's a polynomial, not a Möbius transformation!",
+          "2": "That's an exponential function, not a fractional linear transformation!"
+        }
+      },
+      "resultState": {
+        "description": "Definition of Möbius transformation"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Use $f(0) = 1$."
+      },
+      "prompt": {
+        "question": "What does $f(0) = 1$ give us?",
+        "hint": "$f(0) = \\frac{a(0) + b}{c(0) + d} = \\frac{b}{d} = 1$, so $b = d$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(0) = \\frac{b}{d} = 1 \\implies b = d$"
+        },
+        {
+          "id": "b",
+          "text": "$f(0) = a + b = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$f(0) = 0$ always"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! At $z = 0$: $f(0) = \\frac{b}{d} = 1$. So $b = d$. We can normalize by setting $d = 1$ (scaling doesn't change the map), giving $b = 1$.",
+          "insight": "Möbius transformations are defined up to scaling: $\\frac{az+b}{cz+d} = \\frac{\\lambda(az+b)}{\\lambda(cz+d)}$ for any $\\lambda \\neq 0$."
+        },
+        "incorrect": {
+          "1": "For rational functions, evaluate by substitution: $f(0) = \\frac{b}{d}$.",
+          "2": "Möbius maps of 0 depend on $b/d$, not always 0!"
+        }
+      },
+      "resultState": {
+        "description": "First equation: b = d"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Use $f(1) = i$ with $b = d = 1$."
+      },
+      "prompt": {
+        "question": "What does $f(1) = i$ give us?",
+        "hint": "$f(1) = \\frac{a + 1}{c + 1} = i$. So $a + 1 = i(c + 1) = ic + i$, giving $a = ic + i - 1 = i(c + 1) - 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{a + 1}{c + 1} = i \\implies a + 1 = i(c + 1) \\implies a = ic + (i - 1)$"
+        },
+        {
+          "id": "b",
+          "text": "$a + 1 = i \\implies a = i - 1$"
+        },
+        {
+          "id": "c",
+          "text": "$a = i$ and $c = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! From $\\frac{a+1}{c+1} = i$, cross-multiply: $a + 1 = i(c + 1) = ic + i$. So $a = ic + i - 1$. This relates $a$ to $c$.",
+          "insight": "We have 2 equations, 2 unknowns ($a$ and $c$). Need one more condition!"
+        },
+        "incorrect": {
+          "1": "Can't ignore $c$! The denominator matters.",
+          "2": "These don't satisfy the equation. Need to relate $a$ and $c$ properly."
+        }
+      },
+      "resultState": {
+        "description": "Second equation: a = ic + (i-1)"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Use $f(\\infty) = -1$."
+      },
+      "prompt": {
+        "question": "What does $f(\\infty) = -1$ give us?",
+        "hint": "$f(\\infty) = \\lim_{z \\to \\infty} \\frac{az + b}{cz + d} = \\frac{a}{c} = -1$, so $a = -c$. Combined with $a = ic + (i-1)$: $-c = ic + (i-1)$. Solve: $c(-1 - i) = i - 1$, so $c = \\frac{i-1}{-1-i} = \\frac{-(1-i)}{-1-i} = \\frac{1-i}{1+i}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(\\infty) = \\frac{a}{c} = -1 \\implies a = -c$. Solving: $c = \\frac{1-i}{1+i} = -i$, $a = i$"
+        },
+        {
+          "id": "b",
+          "text": "$f(\\infty) = \\infty$ always"
+        },
+        {
+          "id": "c",
+          "text": "$f(\\infty) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! At $\\infty$: $f(\\infty) = a/c = -1$, so $a = -c$. From earlier: $a = ic + (i-1)$. Substitute: $-c = ic + (i-1)$, giving $c = \\frac{1-i}{1+i} = \\frac{(1-i)(1-i)}{(1+i)(1-i)} = \\frac{1-2i+i^2}{1-i^2} = \\frac{-2i}{2} = -i$. Then $a = -c = i$.",
+          "insight": "Final answer: $f(z) = \\frac{iz + 1}{-iz + 1} = \\frac{iz + 1}{1 - iz}$."
+        },
+        "incorrect": {
+          "1": "$f(\\infty) = a/c$ for Möbius transformations (ratio of leading coefficients).",
+          "2": "Only when $c = 0$, which isn't the case here!"
+        }
+      },
+      "resultState": {
+        "description": "Solve for all coefficients"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Möbius transformation: $f(z) = \\frac{az+b}{cz+d}$ with $ad - bc \\neq 0$",
+      "3 points determine a unique Möbius transformation",
+      "From $f(0) = 1$: $b = d = 1$ (normalized)",
+      "From $f(1) = i$: $a = ic + (i-1)$",
+      "From $f(\\infty) = -1$: $a = -c$",
+      "Solving: $c = -i$, $a = i$, $b = d = 1$",
+      "Answer: $f(z) = \\frac{iz + 1}{1 - iz}$"
+    ],
+    "fullSolution": "**Find Möbius transformation mapping $0 \\to 1$, $1 \\to i$, $\\infty \\to -1$**\n\n**Setup:** Möbius transformation has form:\n$$f(z) = \\frac{az + b}{cz + d}$$\nwith $ad - bc \\neq 0$ (non-degeneracy condition).\n\n---\n\n**Condition 1:** $f(0) = 1$\n\n$$f(0) = \\frac{a(0) + b}{c(0) + d} = \\frac{b}{d} = 1$$\n\nTherefore $b = d$.\n\n**Normalization:** Set $d = 1$ (scaling doesn't affect the map). Then $b = 1$.\n\nNow: $f(z) = \\frac{az + 1}{cz + 1}$\n\n---\n\n**Condition 2:** $f(1) = i$\n\n$$f(1) = \\frac{a + 1}{c + 1} = i$$\n\nCross-multiply:\n$$a + 1 = i(c + 1)$$\n$$a = ic + i - 1 \\quad (*)$$\n\n---\n\n**Condition 3:** $f(\\infty) = -1$\n\nFor Möbius transformations:\n$$f(\\infty) = \\lim_{z \\to \\infty} \\frac{az + 1}{cz + 1} = \\lim_{z \\to \\infty} \\frac{a + 1/z}{c + 1/z} = \\frac{a}{c}$$\n\nSo:\n$$\\frac{a}{c} = -1$$\n$$a = -c \\quad (**)$$\n\n---\n\n**Solve for $a$ and $c$:**\n\nFrom $(*)$ and $(**)$:\n$$-c = ic + i - 1$$\n$$-c - ic = i - 1$$\n$$c(-1 - i) = i - 1$$\n$$c = \\frac{i - 1}{-1 - i}$$\n\nRationalize:\n$$c = \\frac{i - 1}{-1 - i} \\cdot \\frac{-1 + i}{-1 + i} = \\frac{(i-1)(-1+i)}{(-1-i)(-1+i)}$$\n$$= \\frac{-i + i^2 + 1 - i}{1 - i^2} = \\frac{1 - 2i - 1}{1 + 1} = \\frac{-2i}{2} = -i$$\n\nThen:\n$$a = -c = -(-i) = i$$\n\n---\n\n**Final Answer:**\n\n$$f(z) = \\frac{iz + 1}{-iz + 1} = \\frac{iz + 1}{1 - iz}$$\n\n**Verification:**\n- $f(0) = \\frac{0 + 1}{1 - 0} = 1$ ✓\n- $f(1) = \\frac{i + 1}{1 - i} = \\frac{(i+1)(1+i)}{(1-i)(1+i)} = \\frac{i + i^2 + 1 + i}{2} = \\frac{2i}{2} = i$ ✓\n- $f(\\infty) = \\frac{i}{-i} = -1$ ✓\n\n$$\\boxed{f(z) = \\frac{iz + 1}{1 - iz}}$$",
+    "relatedProblems": [
+      "complex-analysis-cauchy-theorem-1",
+      "complex-analysis-residue-theorem-1"
+    ]
+  }
+}

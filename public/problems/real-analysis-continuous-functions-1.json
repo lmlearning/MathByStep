@@ -1,0 +1,195 @@
+{
+  "id": "real-analysis-continuous-functions-1",
+  "type": "problem",
+  "title": "Continuity and the Epsilon-Delta Definition",
+  "topic": "Real Analysis",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": [
+    "real analysis",
+    "continuity",
+    "epsilon-delta",
+    "limits"
+  ],
+  "statement": {
+    "text": "Prove that $f(x) = x^2$ is continuous at $x = 3$ using the $\\epsilon$-$\\delta$ definition."
+  },
+  "objectives": [
+    "Understand epsilon-delta definition",
+    "Manipulate inequalities",
+    "Prove continuity"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What does continuity mean?"
+      },
+      "prompt": {
+        "question": "What is the $\\epsilon$-$\\delta$ definition of continuity at $x = a$?",
+        "hint": "$f$ is continuous at $a$ if: $\\forall \\epsilon > 0, \\exists \\delta > 0$ such that $|x - a| < \\delta \\implies |f(x) - f(a)| < \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\forall \\epsilon > 0, \\exists \\delta > 0: |x - a| < \\delta \\implies |f(x) - f(a)| < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "text": "$\\exists \\epsilon > 0, \\forall \\delta > 0: |x - a| < \\delta \\implies |f(x) - f(a)| < \\epsilon$"
+        },
+        {
+          "id": "c",
+          "text": "$|f(x) - f(a)| = 0$ for all $x$ near $a$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For ANY $\\epsilon > 0$ (however small), we can find $\\delta > 0$ such that inputs within $\\delta$ of $a$ map to outputs within $\\epsilon$ of $f(a)$.",
+          "insight": "Order of quantifiers matters! $\\forall \\epsilon \\exists \\delta$ means: given any tolerance $\\epsilon$, we can respond with appropriate $\\delta$."
+        },
+        "incorrect": {
+          "1": "Quantifiers are backwards! We must find $\\delta$ FOR EACH given $\\epsilon$.",
+          "2": "Too strong! Function values can differ, just need to be within $\\epsilon$."
+        }
+      },
+      "resultState": {
+        "description": "Understand definition"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Setup: want to show $f(x) = x^2$ is continuous at $a = 3$."
+      },
+      "prompt": {
+        "question": "What inequality must we control?",
+        "hint": "Need to show: given $\\epsilon > 0$, can find $\\delta$ such that $|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "text": "$|x^2 - 9| < \\delta \\implies |x - 3| < \\epsilon$"
+        },
+        {
+          "id": "c",
+          "text": "$|x - 3| = |x^2 - 9|$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! We control the input difference $|x - 3|$ (make it $< \\delta$) to ensure the output difference $|x^2 - 9|$ stays small ($< \\epsilon$).",
+          "insight": "Goal: relate $|x^2 - 9|$ to $|x - 3|$ to find how small $\\delta$ must be."
+        },
+        "incorrect": {
+          "1": "Backwards! We control inputs to constrain outputs, not vice versa.",
+          "2": "Not an equality - these are different quantities!"
+        }
+      },
+      "resultState": {
+        "description": "Setup inequality"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Factor and bound."
+      },
+      "prompt": {
+        "question": "How can we relate $|x^2 - 9|$ to $|x - 3|$?",
+        "hint": "$|x^2 - 9| = |x - 3||x + 3|$. If $|x - 3| < 1$, then $2 < x < 4$, so $5 < x + 3 < 7$. Thus $|x + 3| < 7$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$|x^2 - 9| = |x - 3||x + 3|$ and if $|x - 3| < 1$, then $|x + 3| < 7$"
+        },
+        {
+          "id": "b",
+          "text": "$|x^2 - 9| = |x - 3|^2$"
+        },
+        {
+          "id": "c",
+          "text": "$|x^2 - 9| \\leq |x - 3|$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Factoring: $x^2 - 9 = (x-3)(x+3)$, so $|x^2 - 9| = |x-3||x+3|$. To bound $|x+3|$: if we require $|x-3| < 1$ (i.e., $2 < x < 4$), then $5 < x+3 < 7$, giving $|x+3| < 7$.",
+          "insight": "Key technique: factor to isolate $|x - a|$, then bound the other factor by restricting $\\delta$."
+        },
+        "incorrect": {
+          "1": "Difference of squares: $(x-3)(x+3)$, not $(x-3)^2$!",
+          "2": "Not true! $|x+3|$ is not necessarily $\\leq 1$."
+        }
+      },
+      "resultState": {
+        "description": "Factor and bound"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Find $\\delta$ in terms of $\\epsilon$."
+      },
+      "prompt": {
+        "question": "What $\\delta$ works?",
+        "hint": "$|x^2 - 9| = |x-3||x+3| < 7|x-3|$ when $|x-3| < 1$. Want $7|x-3| < \\epsilon$, so $|x-3| < \\epsilon/7$. Choose $\\delta = \\min(1, \\epsilon/7)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\delta = \\min(1, \\epsilon/7)$ ensures $|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$"
+        },
+        {
+          "id": "b",
+          "text": "$\\delta = \\epsilon$"
+        },
+        {
+          "id": "c",
+          "text": "$\\delta = \\epsilon/3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! If $|x-3| < \\delta = \\min(1, \\epsilon/7)$, then: (1) $|x-3| < 1 \\implies |x+3| < 7$, and (2) $|x-3| < \\epsilon/7$. Therefore: $|x^2-9| = |x-3||x+3| < (\\epsilon/7)(7) = \\epsilon$. QED!",
+          "insight": "Two-part $\\delta$: restrict neighborhood (1) to bound auxiliary terms, and restrict further ($\\epsilon/7$) to meet $\\epsilon$ requirement."
+        },
+        "incorrect": {
+          "1": "Too simple! Need to account for the factor $|x+3|$ which can be as large as 7.",
+          "2": "Close, but need to bound $|x+3|$ first by restricting $|x-3| < 1$."
+        }
+      },
+      "resultState": {
+        "description": "Complete proof"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Continuity at $a$: $\\forall \\epsilon > 0, \\exists \\delta > 0: |x - a| < \\delta \\implies |f(x) - f(a)| < \\epsilon$",
+      "For $f(x) = x^2$ at $a = 3$: need $|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$",
+      "Factor: $|x^2 - 9| = |x - 3||x + 3|$",
+      "Bound: if $|x - 3| < 1$, then $|x + 3| < 7$",
+      "Choose: $\\delta = \\min(1, \\epsilon/7)$",
+      "Therefore: $|x^2 - 9| < 7|x - 3| < 7(\\epsilon/7) = \\epsilon$ ✓"
+    ],
+    "fullSolution": "**Prove: $f(x) = x^2$ is continuous at $x = 3$ using $\\epsilon$-$\\delta$ definition**\n\n**Definition:** $f$ is continuous at $a = 3$ if:\n$$\\forall \\epsilon > 0, \\exists \\delta > 0 \\text{ such that } |x - 3| < \\delta \\implies |f(x) - f(3)| < \\epsilon$$\n\nSince $f(3) = 9$, we need:\n$$|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$$\n\n---\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\n**Step 1: Relate output difference to input difference**\n\nFactor using difference of squares:\n$$|x^2 - 9| = |(x - 3)(x + 3)| = |x - 3| \\cdot |x + 3|$$\n\n**Step 2: Bound the factor $|x + 3|$**\n\nTo control $|x + 3|$, we first restrict $x$ to be close to 3.\n\nSuppose $|x - 3| < 1$. Then:\n$$-1 < x - 3 < 1$$\n$$2 < x < 4$$\n$$5 < x + 3 < 7$$\n$$|x + 3| < 7$$\n\n**Step 3: Ensure $|x^2 - 9| < \\epsilon$**\n\nWe have:\n$$|x^2 - 9| = |x - 3| \\cdot |x + 3| < |x - 3| \\cdot 7$$\n\nWe want:\n$$|x - 3| \\cdot 7 < \\epsilon$$\n$$|x - 3| < \\frac{\\epsilon}{7}$$\n\n**Step 4: Choose $\\delta$**\n\nWe need BOTH conditions:\n1. $|x - 3| < 1$ (to ensure $|x + 3| < 7$)\n2. $|x - 3| < \\epsilon/7$ (to ensure $|x^2 - 9| < \\epsilon$)\n\nChoose:\n$$\\delta = \\min\\left(1, \\frac{\\epsilon}{7}\\right)$$\n\n**Step 5: Verification**\n\nNow suppose $|x - 3| < \\delta$.\n\nThen:\n- $|x - 3| < 1 \\implies |x + 3| < 7$ (from our bound)\n- $|x - 3| < \\epsilon/7$ (by choice of $\\delta$)\n\nTherefore:\n$$|x^2 - 9| = |x - 3| \\cdot |x + 3| < \\frac{\\epsilon}{7} \\cdot 7 = \\epsilon$$\n\n**Conclusion:** For any $\\epsilon > 0$, we found $\\delta = \\min(1, \\epsilon/7) > 0$ such that:\n$$|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$$\n\nTherefore, **$f(x) = x^2$ is continuous at $x = 3$**. $\\square$",
+    "relatedProblems": [
+      "real-analysis-sequence-convergence-1",
+      "calculus-limit-epsilon-delta-1"
+    ]
+  }
+}

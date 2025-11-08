@@ -1,0 +1,194 @@
+{
+  "id": "discrete-math-combinatorics-pigeonhole-1",
+  "type": "problem",
+  "title": "Pigeonhole Principle",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "discrete math",
+    "combinatorics",
+    "pigeonhole principle",
+    "counting"
+  ],
+  "statement": {
+    "text": "Show that among any 13 people, at least 2 were born in the same month."
+  },
+  "objectives": [
+    "Understand pigeonhole principle",
+    "Apply counting argument",
+    "Prove existence result"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What is the pigeonhole principle?"
+      },
+      "prompt": {
+        "question": "What does the pigeonhole principle state?",
+        "hint": "If $n$ items are placed into $m$ containers with $n > m$, then at least one container has more than one item."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "If $n$ items go into $m < n$ containers, at least one container has $\\geq 2$ items"
+        },
+        {
+          "id": "b",
+          "text": "Every container must have exactly one item"
+        },
+        {
+          "id": "c",
+          "text": "Items distribute evenly across containers"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Pigeonhole principle: if $n > m$, you can't put $n$ items into $m$ boxes with each box having at most 1 item. At least one box must contain $\\geq 2$ items.",
+          "insight": "Also called Dirichlet's box principle. It's a simple but powerful counting argument!"
+        },
+        "incorrect": {
+          "1": "Not possible when $n > m$! Some container must have multiple items.",
+          "2": "Not always! Only when $n = m$ can distribution be even with 1 per container."
+        }
+      },
+      "resultState": {
+        "description": "Understand pigeonhole principle"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Identify pigeons and pigeonholes."
+      },
+      "prompt": {
+        "question": "What are the 'pigeons' and 'holes' in our problem?",
+        "hint": "Pigeons = 13 people. Pigeonholes = 12 months."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Pigeons: 13 people, Holes: 12 months (Jan-Dec)"
+        },
+        {
+          "id": "b",
+          "text": "Pigeons: 12 months, Holes: 13 people"
+        },
+        {
+          "id": "c",
+          "text": "Pigeons: 365 days, Holes: 12 months"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Pigeons (items to place) = 13 people. Pigeonholes (containers) = 12 months. We have 13 > 12, so the pigeonhole principle applies!",
+          "insight": "Key: identify what you're distributing (pigeons) vs. what you're distributing into (holes)."
+        },
+        "incorrect": {
+          "1": "You have it backwards! People are distributed into months, not months into people.",
+          "2": "Wrong level of granularity - we care about months, not individual days."
+        }
+      },
+      "resultState": {
+        "description": "Identify pigeons and holes"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply the principle: 13 people, 12 months."
+      },
+      "prompt": {
+        "question": "What can we conclude?",
+        "hint": "Since $13 > 12$, at least one month must contain $\\geq 2$ birthdays."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "At least one month has $\\geq 2$ people born in it (since $13 > 12$)"
+        },
+        {
+          "id": "b",
+          "text": "Each month has exactly 1 person born in it"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine - depends on specific birthdays"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! By pigeonhole principle with $n = 13$ people and $m = 12$ months: at least one month contains at least $\\lceil 13/12 \\rceil = \\lceil 1.08... \\rceil = 2$ people.",
+          "insight": "This is an existence proof - we prove something exists without constructing it explicitly!"
+        },
+        "incorrect": {
+          "1": "Impossible! 13 people can't each have a unique month with only 12 months available.",
+          "2": "We can determine it! The principle guarantees a collision regardless of specific dates."
+        }
+      },
+      "resultState": {
+        "description": "Apply pigeonhole principle"
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Proof by contradiction alternative."
+      },
+      "prompt": {
+        "question": "How would you prove this by contradiction?",
+        "hint": "Assume each month has $\\leq 1$ person. Then total people $\\leq 12$. But we have 13 people! Contradiction."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Assume all months have $\\leq 1$ person. Then total $\\leq 12 < 13$. Contradiction!"
+        },
+        {
+          "id": "b",
+          "text": "Assume all months have $\\geq 2$ people. Then total $\\geq 24 > 13$. Contradiction!"
+        },
+        {
+          "id": "c",
+          "text": "Cannot prove by contradiction"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Contradiction proof: Suppose no month has $\\geq 2$ people. Then each month has $\\leq 1$ person. Maximum total: $12 \\times 1 = 12$ people. But we have 13 people! Contradiction. Therefore, at least one month has $\\geq 2$ people.",
+          "insight": "Pigeonhole principle can be proven by contradiction. Both approaches are valid!"
+        },
+        "incorrect": {
+          "1": "Wrong assumption! We want to assume the OPPOSITE of what we're trying to prove.",
+          "2": "We can! See the correct approach using contradiction."
+        }
+      },
+      "resultState": {
+        "description": "Alternative proof method"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Pigeonhole principle: $n$ items into $m < n$ containers $\\implies$ at least one container has $\\geq 2$ items",
+      "Generalized: at least one container has $\\geq \\lceil n/m \\rceil$ items",
+      "Problem: 13 people (pigeons), 12 months (holes)",
+      "Since $13 > 12$, at least one month has $\\geq 2$ birthdays",
+      "Can also prove by contradiction: if all months had $\\leq 1$ person, total $\\leq 12 < 13$"
+    ],
+    "fullSolution": "**Prove: Among 13 people, at least 2 share a birth month**\n\n**Method 1: Direct application of Pigeonhole Principle**\n\n**Setup:**\n- Pigeons (items): 13 people\n- Pigeonholes (containers): 12 months (January through December)\n\n**Pigeonhole Principle:** If $n$ items are distributed into $m$ containers with $n > m$, then at least one container contains at least $\\lceil n/m \\rceil$ items.\n\n**Application:**\nHere $n = 13$ and $m = 12$, so $n > m$.\n\nTherefore, at least one month contains at least:\n$$\\left\\lceil \\frac{13}{12} \\right\\rceil = \\lceil 1.083... \\rceil = 2 \\text{ people}$$\n\n**Conclusion:** At least 2 people were born in the same month. $\\square$\n\n---\n\n**Method 2: Proof by Contradiction**\n\n**Assumption:** Suppose no two people share a birth month.\n\nThen each month contains at most 1 person.\n\n**Count:** Maximum number of people:\n$$\\text{(number of months)} \\times \\text{(max people per month)} = 12 \\times 1 = 12$$\n\nBut we have **13 people**, and $13 > 12$.\n\n**Contradiction!** Our assumption must be false.\n\n**Conclusion:** At least 2 people were born in the same month. $\\square$\n\n---\n\n**Generalization:** Among $n$ people:\n- If $n \\leq 12$: might all have different birth months\n- If $n \\geq 13$: guaranteed at least 2 share a month\n- If $n \\geq 25$: guaranteed at least 3 share a month (since $\\lceil 25/12 \\rceil = 3$)",
+    "relatedProblems": [
+      "discrete-math-combinatorics-1",
+      "discrete-math-graph-coloring-1"
+    ]
+  }
+}
