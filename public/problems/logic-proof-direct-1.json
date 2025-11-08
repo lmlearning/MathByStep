@@ -5,7 +5,11 @@
   "topic": "Logic & Proofs",
   "difficulty": 2,
   "estimatedTime": 8,
-  "tags": ["direct proof", "parity", "logic"],
+  "tags": [
+    "direct proof",
+    "parity",
+    "logic"
+  ],
   "statement": {
     "text": "Prove that the sum of any two odd integers is even."
   },
@@ -17,261 +21,282 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall definitions",
+      "order": 1,
       "currentState": {
         "expression": "We need to prove: odd + odd = even",
         "description": "First, let's recall the formal definitions."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the formal definition of an odd integer?",
         "hint": "An odd number leaves remainder 1 when divided by 2."
       },
       "options": [
         {
           "id": "a",
-          "content": "An integer $n$ is odd if $n = 2k + 1$ for some integer $k$"
+          "text": "An integer $n$ is odd if $n = 2k + 1$ for some integer $k$"
         },
         {
           "id": "b",
-          "content": "An integer $n$ is odd if $n = 2k$ for some integer $k$"
+          "text": "An integer $n$ is odd if $n = 2k$ for some integer $k$"
         },
         {
           "id": "c",
-          "content": "An integer $n$ is odd if it ends in 1, 3, 5, 7, or 9"
+          "text": "An integer $n$ is odd if it ends in 1, 3, 5, 7, or 9"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! An odd integer can be written as $2k+1$ where $k$ is some integer. This captures 'one more than an even number'.",
           "insight": "Using formal definitions is crucial in proofs. It translates intuitive concepts into manipulable algebraic expressions."
         },
         "incorrect": {
-          "b": "That's the definition of an even number, not odd. Even numbers are multiples of 2.",
-          "c": "While true in base 10, this isn't a rigorous mathematical definition. We need $n = 2k+1$ for proofs."
+          "1": "That's the definition of an even number, not odd. Even numbers are multiples of 2.",
+          "2": "While true in base 10, this isn't a rigorous mathematical definition. We need $n = 2k+1$ for proofs."
         }
+      },
+      "resultState": {
+        "description": "Recall definitions"
       }
     },
     {
       "id": "step-2",
-      "title": "Define even numbers",
+      "order": 2,
       "currentState": {
         "expression": "Odd: $n = 2k + 1$ for some integer $k$",
         "description": "Now we need the definition of even."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the formal definition of an even integer?",
         "hint": "An even number is divisible by 2 with no remainder."
       },
       "options": [
         {
           "id": "a",
-          "content": "An integer $n$ is even if $n = 2m$ for some integer $m$"
+          "text": "An integer $n$ is even if $n = 2m$ for some integer $m$"
         },
         {
           "id": "b",
-          "content": "An integer $n$ is even if $n = 2m + 1$ for some integer $m$"
+          "text": "An integer $n$ is even if $n = 2m + 1$ for some integer $m$"
         },
         {
           "id": "c",
-          "content": "An integer $n$ is even if $n > 0$"
+          "text": "An integer $n$ is even if $n > 0$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! An even integer is a multiple of 2, so it can be written as $2m$ for some integer $m$.",
           "insight": "To prove a number is even, we need to show it can be expressed in the form $2m$."
         },
         "incorrect": {
-          "b": "That's the definition of odd, not even. Even means divisible by 2: $n = 2m$.",
-          "c": "Many positive numbers are odd. Even means divisible by 2, which we write as $n = 2m$."
+          "1": "That's the definition of odd, not even. Even means divisible by 2: $n = 2m$.",
+          "2": "Many positive numbers are odd. Even means divisible by 2, which we write as $n = 2m$."
         }
+      },
+      "resultState": {
+        "description": "Define even numbers"
       }
     },
     {
       "id": "step-3",
-      "title": "Set up the proof",
+      "order": 3,
       "currentState": {
         "expression": "Odd: $2k+1$, Even: $2m$",
         "description": "In a direct proof, we start with what we know and work toward what we want to prove."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How should we begin the proof?",
         "hint": "Start by letting the two odd numbers be written in their formal form."
       },
       "options": [
         {
           "id": "a",
-          "content": "Let $a = 2k+1$ and $b = 2j+1$ be arbitrary odd integers"
+          "text": "Let $a = 2k+1$ and $b = 2j+1$ be arbitrary odd integers"
         },
         {
           "id": "b",
-          "content": "Assume the sum is even, then show the numbers are odd"
+          "text": "Assume the sum is even, then show the numbers are odd"
         },
         {
           "id": "c",
-          "content": "Check examples: $3 + 5 = 8$, $7 + 9 = 16$"
+          "text": "Check examples: $3 + 5 = 8$, $7 + 9 = 16$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! We represent two arbitrary odd integers using different variables ($k$ and $j$) since they might be different numbers.",
           "insight": "Starting with arbitrary elements in their formal definition form is a key technique in direct proofs."
         },
         "incorrect": {
-          "b": "That's working backwards. In a direct proof, we start with assumptions (the numbers are odd) and derive the conclusion (sum is even).",
-          "c": "Examples don't constitute a proof. We need to prove it for all odd integers, not just specific cases."
+          "1": "That's working backwards. In a direct proof, we start with assumptions (the numbers are odd) and derive the conclusion (sum is even).",
+          "2": "Examples don't constitute a proof. We need to prove it for all odd integers, not just specific cases."
         }
+      },
+      "resultState": {
+        "description": "Set up the proof"
       }
     },
     {
       "id": "step-4",
-      "title": "Compute the sum",
+      "order": 4,
       "currentState": {
         "expression": "Let $a = 2k+1$ and $b = 2j+1$ (odd integers)",
         "description": "Now let's add them together."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $a + b$?",
         "hint": "Substitute and combine like terms: $(2k+1) + (2j+1)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$a + b = 2k + 2j + 2$"
+          "text": "$a + b = 2k + 2j + 2$"
         },
         {
           "id": "b",
-          "content": "$a + b = 2k + 2j + 1$"
+          "text": "$a + b = 2k + 2j + 1$"
         },
         {
           "id": "c",
-          "content": "$a + b = 4kj + 2$"
+          "text": "$a + b = 4kj + 2$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $(2k+1) + (2j+1) = 2k + 2j + 1 + 1 = 2k + 2j + 2$.",
           "insight": "Algebraic manipulation is straightforward once we have the formal definitions."
         },
         "incorrect": {
-          "b": "Check the addition: $1 + 1 = 2$ (not 1). We have $2k + 2j + 2$.",
-          "c": "We're adding, not multiplying. $(2k+1) + (2j+1) = 2k + 2j + 2$."
+          "1": "Check the addition: $1 + 1 = 2$ (not 1). We have $2k + 2j + 2$.",
+          "2": "We're adding, not multiplying. $(2k+1) + (2j+1) = 2k + 2j + 2$."
         }
+      },
+      "resultState": {
+        "description": "Compute the sum"
       }
     },
     {
       "id": "step-5",
-      "title": "Factor the sum",
+      "order": 5,
       "currentState": {
         "expression": "$a + b = 2k + 2j + 2$",
         "description": "To show this is even, we need to write it in the form $2m$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How can we rewrite $2k + 2j + 2$ to show it's even?",
         "hint": "Factor out the common factor of 2."
       },
       "options": [
         {
           "id": "a",
-          "content": "$2k + 2j + 2 = 2(k + j + 1)$"
+          "text": "$2k + 2j + 2 = 2(k + j + 1)$"
         },
         {
           "id": "b",
-          "content": "$2k + 2j + 2 = 2(k + j) + 1$"
+          "text": "$2k + 2j + 2 = 2(k + j) + 1$"
         },
         {
           "id": "c",
-          "content": "$2k + 2j + 2 = 2kj + 2$"
+          "text": "$2k + 2j + 2 = 2kj + 2$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Factoring out 2: $2k + 2j + 2 = 2(k + j + 1)$. This is in the form $2m$ where $m = k+j+1$.",
           "insight": "Factoring reveals the structure we need. The sum is clearly a multiple of 2."
         },
         "incorrect": {
-          "b": "Factor out 2 from all three terms: $2(k + j + 1)$, not $2(k+j) + 1$.",
-          "c": "We're not multiplying $k$ and $j$. Factor out 2: $2k + 2j + 2 = 2(k+j+1)$."
+          "1": "Factor out 2 from all three terms: $2(k + j + 1)$, not $2(k+j) + 1$.",
+          "2": "We're not multiplying $k$ and $j$. Factor out 2: $2k + 2j + 2 = 2(k+j+1)$."
         }
+      },
+      "resultState": {
+        "description": "Factor the sum"
       }
     },
     {
       "id": "step-6",
-      "title": "Verify the form",
+      "order": 6,
       "currentState": {
         "expression": "$a + b = 2(k + j + 1)$",
         "description": "Is this in the right form to conclude the sum is even?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Why does $a + b = 2(k+j+1)$ prove that $a+b$ is even?",
         "hint": "Compare to the definition of even: $n = 2m$ for some integer $m$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Because $k+j+1$ is an integer, so $a+b = 2m$ where $m = k+j+1$"
+          "text": "Because $k+j+1$ is an integer, so $a+b = 2m$ where $m = k+j+1$"
         },
         {
           "id": "b",
-          "content": "Because it has a 2 in it"
+          "text": "Because it has a 2 in it"
         },
         {
           "id": "c",
-          "content": "Because k and j are even"
+          "text": "Because k and j are even"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Since $k$ and $j$ are integers, $k+j+1$ is also an integer. Therefore, $a+b = 2(k+j+1)$ matches the form $2m$ where $m = k+j+1$, proving $a+b$ is even.",
           "insight": "The closure property of integers (sums of integers are integers) is essential here."
         },
         "incorrect": {
-          "b": "Not quite rigorous enough. We need to show it's a multiple of 2, which means writing it as $2m$ for some integer $m$.",
-          "c": "We don't know if $k$ and $j$ are even. They could be any integers. But $k+j+1$ is definitely an integer."
+          "1": "Not quite rigorous enough. We need to show it's a multiple of 2, which means writing it as $2m$ for some integer $m$.",
+          "2": "We don't know if $k$ and $j$ are even. They could be any integers. But $k+j+1$ is definitely an integer."
         }
+      },
+      "resultState": {
+        "description": "Verify the form"
       }
     },
     {
       "id": "step-7",
-      "title": "Conclude the proof",
+      "order": 7,
       "currentState": {
         "expression": "$a + b = 2(k+j+1)$ where $k+j+1 \\in \\mathbb{Z}$",
         "description": "We've shown the sum has the form required for an even number."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What can we conclude?",
         "hint": "We started with arbitrary odd integers and showed their sum is even."
       },
       "options": [
         {
           "id": "a",
-          "content": "Therefore, the sum of any two odd integers is even. ∎"
+          "text": "Therefore, the sum of any two odd integers is even. ∎"
         },
         {
           "id": "b",
-          "content": "Therefore, all integers are even."
+          "text": "Therefore, all integers are even."
         },
         {
           "id": "c",
-          "content": "Therefore, we need to check more examples."
+          "text": "Therefore, we need to check more examples."
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! We proved that for any two odd integers $a$ and $b$, their sum $a+b$ is even. The proof is complete! ∎",
           "insight": "Direct proofs are elegant: start with definitions, manipulate algebraically, arrive at the desired form. This logical chain establishes the result for all cases at once."
         },
         "incorrect": {
-          "b": "Too broad! We only proved something about sums of odd integers, not about all integers.",
-          "c": "No need for examples. Our proof covers all possible odd integers since we used arbitrary $k$ and $j$."
+          "1": "Too broad! We only proved something about sums of odd integers, not about all integers.",
+          "2": "No need for examples. Our proof covers all possible odd integers since we used arbitrary $k$ and $j$."
         }
+      },
+      "resultState": {
+        "description": "Conclude the proof"
       }
     }
   ],

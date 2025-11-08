@@ -5,7 +5,12 @@
   "topic": "Complex Analysis",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["complex analysis", "contour integration", "Cauchy theorem", "residues"],
+  "tags": [
+    "complex analysis",
+    "contour integration",
+    "Cauchy theorem",
+    "residues"
+  ],
   "statement": {
     "text": "Evaluate $\\oint_C \\frac{1}{z} \\, dz$ where $C$ is the circle $|z|=1$ traversed counterclockwise."
   },
@@ -17,187 +22,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify the function and contour",
+      "order": 1,
       "currentState": {
         "expression": "$f(z) = \\frac{1}{z}$, $C: |z| = 1$ (unit circle)",
         "description": "What kind of integral is this?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Where is $f(z) = 1/z$ analytic?",
         "hint": "$1/z$ is analytic everywhere except at $z=0$ (a singularity)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f(z) = 1/z$ is analytic on $\\mathbb{C} \\setminus \\{0\\}$ (has singularity at $z=0$)"
+          "text": "$f(z) = 1/z$ is analytic on $\\mathbb{C} \\setminus \\{0\\}$ (has singularity at $z=0$)"
         },
         {
           "id": "b",
-          "content": "$f(z) = 1/z$ is analytic everywhere"
+          "text": "$f(z) = 1/z$ is analytic everywhere"
         },
         {
           "id": "c",
-          "content": "$f(z) = 1/z$ is not analytic anywhere"
+          "text": "$f(z) = 1/z$ is not analytic anywhere"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $f(z) = 1/z$ is undefined at $z=0$, so it has a singularity there. It's analytic everywhere else.",
           "insight": "The singularity at $z=0$ is enclosed by the contour $|z|=1$, which affects the integral."
         },
         "incorrect": {
-          "b": "$f(z) = 1/z$ is undefined at $z=0$, so it's not analytic there.",
-          "c": "$1/z$ is analytic everywhere except $z=0$. It satisfies the Cauchy-Riemann equations away from the origin."
+          "1": "$f(z) = 1/z$ is undefined at $z=0$, so it's not analytic there.",
+          "2": "$1/z$ is analytic everywhere except $z=0$. It satisfies the Cauchy-Riemann equations away from the origin."
         }
+      },
+      "resultState": {
+        "description": "Identify the function and contour"
       }
     },
     {
       "id": "step-2",
-      "title": "Parametrize the contour",
+      "order": 2,
       "currentState": {
         "expression": "$C: |z| = 1$ counterclockwise",
         "description": "Use $z = e^{i\\theta}$ for $\\theta \\in [0, 2\\pi]$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $dz$ in terms of $\\theta$?",
         "hint": "If $z = e^{i\\theta}$, then $dz = ie^{i\\theta} d\\theta = iz \\, d\\theta$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$z = e^{i\\theta}$, $dz = ie^{i\\theta} d\\theta$"
+          "text": "$z = e^{i\\theta}$, $dz = ie^{i\\theta} d\\theta$"
         },
         {
           "id": "b",
-          "content": "$z = e^{i\\theta}$, $dz = e^{i\\theta} d\\theta$"
+          "text": "$z = e^{i\\theta}$, $dz = e^{i\\theta} d\\theta$"
         },
         {
           "id": "c",
-          "content": "$z = \\cos\\theta + i\\sin\\theta$, $dz = d\\theta$"
+          "text": "$z = \\cos\\theta + i\\sin\\theta$, $dz = d\\theta$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $z(\\theta) = e^{i\\theta}$ gives $dz = \\frac{dz}{d\\theta} d\\theta = ie^{i\\theta} d\\theta$.",
           "insight": "This parametrization is standard for circles centered at the origin."
         },
         "incorrect": {
-          "b": "Don't forget the factor of $i$: $\\frac{d}{d\\theta}(e^{i\\theta}) = ie^{i\\theta}$.",
-          "c": "$dz = \\frac{dz}{d\\theta} d\\theta = (-\\sin\\theta + i\\cos\\theta) d\\theta = ie^{i\\theta} d\\theta$, not just $d\\theta$."
+          "1": "Don't forget the factor of $i$: $\\frac{d}{d\\theta}(e^{i\\theta}) = ie^{i\\theta}$.",
+          "2": "$dz = \\frac{dz}{d\\theta} d\\theta = (-\\sin\\theta + i\\cos\\theta) d\\theta = ie^{i\\theta} d\\theta$, not just $d\\theta$."
         }
+      },
+      "resultState": {
+        "description": "Parametrize the contour"
       }
     },
     {
       "id": "step-3",
-      "title": "Substitute into the integral",
+      "order": 3,
       "currentState": {
         "expression": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} \\frac{1}{e^{i\\theta}} \\cdot ie^{i\\theta} d\\theta$",
         "description": "Simplify the integrand."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does the integrand simplify to?",
         "hint": "$\\frac{1}{e^{i\\theta}} \\cdot ie^{i\\theta} = i$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} i \\, d\\theta = i \\cdot 2\\pi = 2\\pi i$"
+          "text": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} i \\, d\\theta = i \\cdot 2\\pi = 2\\pi i$"
         },
         {
           "id": "b",
-          "content": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} 1 \\, d\\theta = 2\\pi$"
+          "text": "$\\oint_C \\frac{1}{z} dz = \\int_0^{2\\pi} 1 \\, d\\theta = 2\\pi$"
         },
         {
           "id": "c",
-          "content": "$\\oint_C \\frac{1}{z} dz = 0$ (by Cauchy's theorem)"
+          "text": "$\\oint_C \\frac{1}{z} dz = 0$ (by Cauchy's theorem)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\frac{ie^{i\\theta}}{e^{i\\theta}} = i$, so $\\int_0^{2\\pi} i \\, d\\theta = i[\\theta]_0^{2\\pi} = 2\\pi i$.",
           "insight": "This is a fundamental result: $\\oint_{|z|=r} \\frac{1}{z} dz = 2\\pi i$ for any circle around the origin."
         },
         "incorrect": {
-          "b": "Don't forget the factor of $i$ in $dz = ie^{i\\theta} d\\theta$.",
-          "c": "Cauchy's theorem requires the function to be analytic inside the contour. Here $1/z$ has a singularity at $z=0$ inside $C$."
+          "1": "Don't forget the factor of $i$ in $dz = ie^{i\\theta} d\\theta$.",
+          "2": "Cauchy's theorem requires the function to be analytic inside the contour. Here $1/z$ has a singularity at $z=0$ inside $C$."
         }
+      },
+      "resultState": {
+        "description": "Substitute into the integral"
       }
     },
     {
       "id": "step-4",
-      "title": "Relate to Cauchy's integral formula",
+      "order": 4,
       "currentState": {
         "expression": "$\\oint_C \\frac{1}{z} dz = 2\\pi i$",
         "description": "This is a special case of Cauchy's integral formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How does this relate to Cauchy's formula?",
         "hint": "Cauchy: $\\oint_C \\frac{f(z)}{z-a} dz = 2\\pi i \\cdot f(a)$ for $a$ inside $C$."
       },
       "options": [
         {
           "id": "a",
-          "content": "This is Cauchy's formula with $f(z) = 1$ and $a = 0$: $2\\pi i \\cdot f(0) = 2\\pi i$"
+          "text": "This is Cauchy's formula with $f(z) = 1$ and $a = 0$: $2\\pi i \\cdot f(0) = 2\\pi i$"
         },
         {
           "id": "b",
-          "content": "This contradicts Cauchy's theorem since the integral is nonzero"
+          "text": "This contradicts Cauchy's theorem since the integral is nonzero"
         },
         {
           "id": "c",
-          "content": "This result is unrelated to Cauchy's formulas"
+          "text": "This result is unrelated to Cauchy's formulas"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! This is Cauchy's integral formula: $\\oint_C \\frac{f(z)}{z-z_0} dz = 2\\pi i \\cdot f(z_0)$ with $f(z)=1$ and $z_0=0$.",
           "insight": "Cauchy's formula generalizes this: $\\oint \\frac{f(z)}{z-a} dz = 2\\pi i f(a)$ for analytic $f$ and $a$ inside $C$."
         },
         "incorrect": {
-          "b": "It doesn't contradict Cauchy's theorem - that requires analyticity inside $C$. Here we have a singularity at $z=0$.",
-          "c": "This is exactly an instance of Cauchy's integral formula!"
+          "1": "It doesn't contradict Cauchy's theorem - that requires analyticity inside $C$. Here we have a singularity at $z=0$.",
+          "2": "This is exactly an instance of Cauchy's integral formula!"
         }
+      },
+      "resultState": {
+        "description": "Relate to Cauchy's integral formula"
       }
     },
     {
       "id": "step-5",
-      "title": "Generalize the result",
+      "order": 5,
       "currentState": {
         "expression": "$\\oint_{|z|=1} \\frac{1}{z} dz = 2\\pi i$",
         "description": "What if we integrate $1/z^n$ for other values of $n$?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\oint_{|z|=1} z^n dz$ for integer $n$?",
         "hint": "For $n \\neq -1$: the result is 0 (analytic inside). For $n = -1$: $2\\pi i$ (singularity at origin)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\oint_{|z|=1} z^n dz = \\begin{cases} 2\\pi i & n = -1 \\\\ 0 & n \\neq -1 \\end{cases}$"
+          "text": "$\\oint_{|z|=1} z^n dz = \\begin{cases} 2\\pi i & n = -1 \\\\ 0 & n \\neq -1 \\end{cases}$"
         },
         {
           "id": "b",
-          "content": "$\\oint_{|z|=1} z^n dz = 2\\pi i$ for all $n$"
+          "text": "$\\oint_{|z|=1} z^n dz = 2\\pi i$ for all $n$"
         },
         {
           "id": "c",
-          "content": "$\\oint_{|z|=1} z^n dz = 0$ for all $n$"
+          "text": "$\\oint_{|z|=1} z^n dz = 0$ for all $n$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! For $n \\neq -1$, $z^n$ is analytic inside $|z|=1$, so integral is 0 (Cauchy). For $n=-1$, singularity at origin gives $2\\pi i$.",
           "insight": "This forms the basis of residue theory: only the $1/z$ term (residue) contributes to the integral around a closed contour."
         },
         "incorrect": {
-          "b": "Only $n=-1$ gives $2\\pi i$. For other $n$, the function is analytic inside, giving 0 by Cauchy's theorem.",
-          "c": "$n=-1$ is special because $1/z$ has a singularity at the origin. The integral equals $2\\pi i$."
+          "1": "Only $n=-1$ gives $2\\pi i$. For other $n$, the function is analytic inside, giving 0 by Cauchy's theorem.",
+          "2": "$n=-1$ is special because $1/z$ has a singularity at the origin. The integral equals $2\\pi i$."
         }
+      },
+      "resultState": {
+        "description": "Generalize the result"
       }
     }
   ],

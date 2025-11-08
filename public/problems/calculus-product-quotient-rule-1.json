@@ -5,7 +5,12 @@
   "topic": "Calculus",
   "difficulty": 2,
   "estimatedTime": 8,
-  "tags": ["calculus", "derivatives", "product rule", "quotient rule"],
+  "tags": [
+    "calculus",
+    "derivatives",
+    "product rule",
+    "quotient rule"
+  ],
   "statement": {
     "text": "Find the derivative of $f(x) = \\frac{x^2 \\sin(x)}{e^x}$ using the product and quotient rules."
   },
@@ -17,187 +22,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Choose the strategy",
+      "order": 1,
       "currentState": {
         "expression": "$f(x) = \\frac{x^2\\sin(x)}{e^x}$",
         "description": "We can use quotient rule, or rewrite and use product rule."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Which approach is best?",
         "hint": "Quotient rule: $\\left(\\frac{u}{v}\\right)' = \\frac{u'v-uv'}{v^2}$ where $u=x^2\\sin(x)$, $v=e^x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Use quotient rule with $u = x^2\\sin(x)$, $v = e^x$"
+          "text": "Use quotient rule with $u = x^2\\sin(x)$, $v = e^x$"
         },
         {
           "id": "b",
-          "content": "Rewrite as $x^2\\sin(x)e^{-x}$ and use product rule"
+          "text": "Rewrite as $x^2\\sin(x)e^{-x}$ and use product rule"
         },
         {
           "id": "c",
-          "content": "Both work - quotient rule is more direct here"
+          "text": "Both work - quotient rule is more direct here"
         }
       ],
-      "correctOption": "c",
+      "correctOptionIndex": 2,
       "feedback": {
         "correct": {
           "explanation": "Correct! Both methods work. Quotient rule is more direct, but product rule with $e^{-x}$ also works.",
           "insight": "Choosing the most efficient method comes with practice."
         },
         "incorrect": {
-          "b": "This works too, but quotient rule is more straightforward here.",
-          "c": "Both approaches are valid!"
+          "1": "This works too, but quotient rule is more straightforward here.",
+          "2": "Both approaches are valid!"
         }
+      },
+      "resultState": {
+        "description": "Choose the strategy"
       }
     },
     {
       "id": "step-2",
-      "title": "Find u' using product rule",
+      "order": 2,
       "currentState": {
         "expression": "$u = x^2\\sin(x)$, need $u'$",
         "description": "Product rule: $(fg)' = f'g + fg'$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\frac{d}{dx}(x^2\\sin x)$?",
         "hint": "$f=x^2, g=\\sin x$. So $u' = 2x\\sin x + x^2\\cos x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$u' = 2x\\sin x + x^2\\cos x$"
+          "text": "$u' = 2x\\sin x + x^2\\cos x$"
         },
         {
           "id": "b",
-          "content": "$u' = 2x\\cos x$"
+          "text": "$u' = 2x\\cos x$"
         },
         {
           "id": "c",
-          "content": "$u' = 2x\\sin x$"
+          "text": "$u' = 2x\\sin x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Product rule: $(x^2)'\\sin x + x^2(\\sin x)' = 2x\\sin x + x^2\\cos x$.",
           "insight": "Product rule: differentiate first, keep second; keep first, differentiate second; add."
         },
         "incorrect": {
-          "b": "You need both terms: $2x\\sin x$ (from $(x^2)'\\sin x$) AND $x^2\\cos x$ (from $x^2(\\sin x)'$).",
-          "c": "Don't forget the second term from the product rule: $x^2\\cos x$."
+          "1": "You need both terms: $2x\\sin x$ (from $(x^2)'\\sin x$) AND $x^2\\cos x$ (from $x^2(\\sin x)'$).",
+          "2": "Don't forget the second term from the product rule: $x^2\\cos x$."
         }
+      },
+      "resultState": {
+        "description": "Find u' using product rule"
       }
     },
     {
       "id": "step-3",
-      "title": "Find v'",
+      "order": 3,
       "currentState": {
         "expression": "$v = e^x$",
         "description": "What is $v'$?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\frac{d}{dx}(e^x)$?",
         "hint": "$e^x$ is its own derivative."
       },
       "options": [
         {
           "id": "a",
-          "content": "$v' = e^x$"
+          "text": "$v' = e^x$"
         },
         {
           "id": "b",
-          "content": "$v' = xe^{x-1}$"
+          "text": "$v' = xe^{x-1}$"
         },
         {
           "id": "c",
-          "content": "$v' = 1$"
+          "text": "$v' = 1$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! The derivative of $e^x$ is $e^x$.",
           "insight": "This special property makes $e^x$ particularly important in calculus."
         },
         "incorrect": {
-          "b": "That's the derivative of $x^x$, not $e^x$.",
-          "c": "The derivative of $e^x$ is $e^x$, not 1."
+          "1": "That's the derivative of $x^x$, not $e^x$.",
+          "2": "The derivative of $e^x$ is $e^x$, not 1."
         }
+      },
+      "resultState": {
+        "description": "Find v'"
       }
     },
     {
       "id": "step-4",
-      "title": "Apply quotient rule",
+      "order": 4,
       "currentState": {
         "expression": "$u' = 2x\\sin x + x^2\\cos x$, $v' = e^x$",
         "description": "Quotient rule: $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $f'(x)$?",
         "hint": "$\\frac{(2x\\sin x + x^2\\cos x)e^x - x^2\\sin x \\cdot e^x}{(e^x)^2}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f'(x) = \\frac{(2x\\sin x + x^2\\cos x)e^x - x^2\\sin x \\cdot e^x}{e^{2x}}$"
+          "text": "$f'(x) = \\frac{(2x\\sin x + x^2\\cos x)e^x - x^2\\sin x \\cdot e^x}{e^{2x}}$"
         },
         {
           "id": "b",
-          "content": "$f'(x) = \\frac{2x\\sin x + x^2\\cos x}{e^x}$"
+          "text": "$f'(x) = \\frac{2x\\sin x + x^2\\cos x}{e^x}$"
         },
         {
           "id": "c",
-          "content": "$f'(x) = 2x\\sin x + x^2\\cos x - x^2\\sin x$"
+          "text": "$f'(x) = 2x\\sin x + x^2\\cos x - x^2\\sin x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Quotient rule: $\\frac{u'v - uv'}{v^2} = \\frac{(2x\\sin x+x^2\\cos x)e^x - x^2\\sin x \\cdot e^x}{e^{2x}}$.",
           "insight": "We can simplify this further by factoring out $e^x$ from the numerator."
         },
         "incorrect": {
-          "b": "You forgot to subtract $uv'$ in the numerator.",
-          "c": "Don't forget the $v^2 = e^{2x}$ in the denominator!"
+          "1": "You forgot to subtract $uv'$ in the numerator.",
+          "2": "Don't forget the $v^2 = e^{2x}$ in the denominator!"
         }
+      },
+      "resultState": {
+        "description": "Apply quotient rule"
       }
     },
     {
       "id": "step-5",
-      "title": "Simplify",
+      "order": 5,
       "currentState": {
         "expression": "$\\frac{(2x\\sin x+x^2\\cos x)e^x - x^2\\sin x \\cdot e^x}{e^{2x}}$",
         "description": "Factor and cancel."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Can we simplify?",
         "hint": "Factor $e^x$ from numerator, then cancel with denominator."
       },
       "options": [
         {
           "id": "a",
-          "content": "$f'(x) = \\frac{2x\\sin x + x^2\\cos x - x^2\\sin x}{e^x} = \\frac{x(2\\sin x - x\\sin x + x\\cos x)}{e^x}$"
+          "text": "$f'(x) = \\frac{2x\\sin x + x^2\\cos x - x^2\\sin x}{e^x} = \\frac{x(2\\sin x - x\\sin x + x\\cos x)}{e^x}$"
         },
         {
           "id": "b",
-          "content": "$f'(x) = 2x\\sin x + x^2\\cos x - x^2\\sin x$"
+          "text": "$f'(x) = 2x\\sin x + x^2\\cos x - x^2\\sin x$"
         },
         {
           "id": "c",
-          "content": "$f'(x) = \\frac{2x\\sin x + x^2\\cos x}{e^x}$"
+          "text": "$f'(x) = \\frac{2x\\sin x + x^2\\cos x}{e^x}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Factor $e^x$: $\\frac{e^x(2x\\sin x+x^2\\cos x-x^2\\sin x)}{e^{2x}} = \\frac{2x\\sin x+x^2\\cos x-x^2\\sin x}{e^x}$. Can factor further as $\\frac{x(2-x)\\sin x + x^2\\cos x}{e^x}$.",
           "insight": "Always simplify derivatives to their cleanest form."
         },
         "incorrect": {
-          "b": "Don't forget the $e^x$ in the denominator!",
-          "c": "You forgot to subtract the $uv' = x^2\\sin x \\cdot e^x$ term."
+          "1": "Don't forget the $e^x$ in the denominator!",
+          "2": "You forgot to subtract the $uv' = x^2\\sin x \\cdot e^x$ term."
         }
+      },
+      "resultState": {
+        "description": "Simplify"
       }
     }
   ],

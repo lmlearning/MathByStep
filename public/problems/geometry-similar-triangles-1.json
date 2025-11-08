@@ -5,7 +5,11 @@
   "topic": "Geometry",
   "difficulty": 2,
   "estimatedTime": 10,
-  "tags": ["similar triangles", "proportions", "geometry"],
+  "tags": [
+    "similar triangles",
+    "proportions",
+    "geometry"
+  ],
   "statement": {
     "text": "Triangle ABC is similar to triangle DEF. In triangle ABC, AB = 6 cm, BC = 8 cm, and AC = 10 cm. In triangle DEF, DE = 9 cm. Find the length of side EF."
   },
@@ -17,224 +21,242 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Understand similarity",
+      "order": 1,
       "currentState": {
         "expression": "$\\triangle ABC \\sim \\triangle DEF$",
         "description": "When triangles are similar, their corresponding sides are proportional."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does it mean for two triangles to be similar?",
         "hint": "Similar triangles have the same shape but may differ in size."
       },
       "options": [
         {
           "id": "a",
-          "content": "Corresponding angles are equal and corresponding sides are proportional"
+          "text": "Corresponding angles are equal and corresponding sides are proportional"
         },
         {
           "id": "b",
-          "content": "All sides have the same length"
+          "text": "All sides have the same length"
         },
         {
           "id": "c",
-          "content": "Corresponding sides are equal"
+          "text": "Corresponding sides are equal"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Similar triangles have congruent angles and proportional sides. The ratio of corresponding sides is constant (called the scale factor).",
           "insight": "Similarity preserves shape but allows for scaling. Congruence is a special case where the scale factor is 1."
         },
         "incorrect": {
-          "b": "That would make them congruent, not just similar. Similar triangles can be different sizes.",
-          "c": "That's congruence, not similarity. Similar triangles have proportional (not necessarily equal) sides."
+          "1": "That would make them congruent, not just similar. Similar triangles can be different sizes.",
+          "2": "That's congruence, not similarity. Similar triangles have proportional (not necessarily equal) sides."
         }
+      },
+      "resultState": {
+        "description": "Understand similarity"
       }
     },
     {
       "id": "step-2",
-      "title": "Identify corresponding sides",
+      "order": 2,
       "currentState": {
         "expression": "Given: AB = 6, BC = 8, AC = 10, DE = 9",
         "description": "Since $\\triangle ABC \\sim \\triangle DEF$, we need to match corresponding sides."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Which side in triangle ABC corresponds to side DE in triangle DEF?",
         "hint": "The notation $\\triangle ABC \\sim \\triangle DEF$ tells us the vertex correspondence."
       },
       "options": [
         {
           "id": "a",
-          "content": "AB corresponds to DE"
+          "text": "AB corresponds to DE"
         },
         {
           "id": "b",
-          "content": "BC corresponds to DE"
+          "text": "BC corresponds to DE"
         },
         {
           "id": "c",
-          "content": "AC corresponds to DE"
+          "text": "AC corresponds to DE"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! The order of vertices matters: A↔D, B↔E, C↔F. Therefore AB↔DE, BC↔EF, AC↔DF.",
           "insight": "The similarity statement gives us the vertex correspondence. $\\triangle ABC \\sim \\triangle DEF$ means the vertices match in order."
         },
         "incorrect": {
-          "b": "Not quite. In $\\triangle ABC \\sim \\triangle DEF$, vertex B corresponds to E, but BC connects B to C, while DE connects D to E.",
-          "c": "No. AB corresponds to DE because A↔D and B↔E in the similarity statement."
+          "1": "Not quite. In $\\triangle ABC \\sim \\triangle DEF$, vertex B corresponds to E, but BC connects B to C, while DE connects D to E.",
+          "2": "No. AB corresponds to DE because A↔D and B↔E in the similarity statement."
         }
+      },
+      "resultState": {
+        "description": "Identify corresponding sides"
       }
     },
     {
       "id": "step-3",
-      "title": "Find the scale factor",
+      "order": 3,
       "currentState": {
         "expression": "$\\frac{DE}{AB} = \\frac{9}{6}$",
         "description": "The ratio of corresponding sides gives us the scale factor."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the scale factor from triangle ABC to triangle DEF?",
         "hint": "Divide: $\\frac{DE}{AB} = \\frac{9}{6}$. Simplify the fraction."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{3}{2}$ or 1.5"
+          "text": "$\\frac{3}{2}$ or 1.5"
         },
         {
           "id": "b",
-          "content": "$\\frac{2}{3}$ or 0.67"
+          "text": "$\\frac{2}{3}$ or 0.67"
         },
         {
           "id": "c",
-          "content": "$3$"
+          "text": "$3$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\frac{9}{6} = \\frac{3}{2} = 1.5$. Triangle DEF is 1.5 times larger than triangle ABC.",
           "insight": "The scale factor tells us how much larger (or smaller) one figure is compared to another."
         },
         "incorrect": {
-          "b": "You inverted the fraction. We want $\\frac{DE}{AB} = \\frac{9}{6} = \\frac{3}{2}$, not $\\frac{6}{9}$.",
-          "c": "Not quite. $\\frac{9}{6}$ simplifies to $\\frac{3}{2}$ (or 1.5), not 3."
+          "1": "You inverted the fraction. We want $\\frac{DE}{AB} = \\frac{9}{6} = \\frac{3}{2}$, not $\\frac{6}{9}$.",
+          "2": "Not quite. $\\frac{9}{6}$ simplifies to $\\frac{3}{2}$ (or 1.5), not 3."
         }
+      },
+      "resultState": {
+        "description": "Find the scale factor"
       }
     },
     {
       "id": "step-4",
-      "title": "Set up the proportion",
+      "order": 4,
       "currentState": {
         "expression": "Scale factor = $\\frac{3}{2}$",
         "description": "Now we use this scale factor to find EF, which corresponds to BC."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Which proportion should we use to find EF?",
         "hint": "EF corresponds to BC, and we know the scale factor is $\\frac{3}{2}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{EF}{BC} = \\frac{3}{2}$"
+          "text": "$\\frac{EF}{BC} = \\frac{3}{2}$"
         },
         {
           "id": "b",
-          "content": "$\\frac{EF}{AC} = \\frac{3}{2}$"
+          "text": "$\\frac{EF}{AC} = \\frac{3}{2}$"
         },
         {
           "id": "c",
-          "content": "$\\frac{BC}{EF} = \\frac{3}{2}$"
+          "text": "$\\frac{BC}{EF} = \\frac{3}{2}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Since EF and BC are corresponding sides, and the scale factor is $\\frac{3}{2}$, we have $\\frac{EF}{BC} = \\frac{3}{2}$.",
           "insight": "The scale factor applies to all pairs of corresponding sides in similar figures."
         },
         "incorrect": {
-          "b": "EF corresponds to BC (not AC). Check the vertex correspondence: B↔E and C↔F, so BC↔EF.",
-          "c": "The scale factor goes from ABC to DEF, so we want $\\frac{EF}{BC}$, not the reciprocal."
+          "1": "EF corresponds to BC (not AC). Check the vertex correspondence: B↔E and C↔F, so BC↔EF.",
+          "2": "The scale factor goes from ABC to DEF, so we want $\\frac{EF}{BC}$, not the reciprocal."
         }
+      },
+      "resultState": {
+        "description": "Set up the proportion"
       }
     },
     {
       "id": "step-5",
-      "title": "Solve for EF",
+      "order": 5,
       "currentState": {
         "expression": "$\\frac{EF}{8} = \\frac{3}{2}$",
         "description": "We know BC = 8 cm. Solve for EF."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the length of EF?",
         "hint": "Multiply both sides by 8: $EF = 8 \\times \\frac{3}{2}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "12 cm"
+          "text": "12 cm"
         },
         {
           "id": "b",
-          "content": "16 cm"
+          "text": "16 cm"
         },
         {
           "id": "c",
-          "content": "10.67 cm"
+          "text": "10.67 cm"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $EF = 8 \\times \\frac{3}{2} = \\frac{24}{2} = 12$ cm.",
           "insight": "Multiplying by the scale factor gives us the corresponding length in the similar figure."
         },
         "incorrect": {
-          "b": "Check your multiplication. $8 \\times \\frac{3}{2} = 12$, not 16.",
-          "c": "Be careful with the arithmetic. $8 \\times 1.5 = 12$ cm."
+          "1": "Check your multiplication. $8 \\times \\frac{3}{2} = 12$, not 16.",
+          "2": "Be careful with the arithmetic. $8 \\times 1.5 = 12$ cm."
         }
+      },
+      "resultState": {
+        "description": "Solve for EF"
       }
     },
     {
       "id": "step-6",
-      "title": "Verify the solution",
+      "order": 6,
       "currentState": {
         "expression": "EF = 12 cm",
         "description": "Let's verify our answer makes sense."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How can we verify that EF = 12 cm is correct?",
         "hint": "Check if all corresponding sides have the same ratio."
       },
       "options": [
         {
           "id": "a",
-          "content": "Verify that $\\frac{DE}{AB} = \\frac{EF}{BC} = \\frac{3}{2}$"
+          "text": "Verify that $\\frac{DE}{AB} = \\frac{EF}{BC} = \\frac{3}{2}$"
         },
         {
           "id": "b",
-          "content": "Check if EF + DE = 21"
+          "text": "Check if EF + DE = 21"
         },
         {
           "id": "c",
-          "content": "Verify that EF is larger than BC"
+          "text": "Verify that EF is larger than BC"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\frac{9}{6} = \\frac{12}{8} = \\frac{3}{2}$ ✓. All corresponding sides have the same ratio, confirming our answer.",
           "insight": "In similar figures, all corresponding linear measurements (sides, altitudes, medians, etc.) have the same scale factor."
         },
         "incorrect": {
-          "b": "Adding sides doesn't verify similarity. We need to check that ratios of corresponding sides are equal.",
-          "c": "While true, this doesn't fully verify the answer. We need to check the specific ratio $\\frac{EF}{BC} = \\frac{3}{2}$."
+          "1": "Adding sides doesn't verify similarity. We need to check that ratios of corresponding sides are equal.",
+          "2": "While true, this doesn't fully verify the answer. We need to check the specific ratio $\\frac{EF}{BC} = \\frac{3}{2}$."
         }
+      },
+      "resultState": {
+        "description": "Verify the solution"
       }
     }
   ],

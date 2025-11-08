@@ -5,7 +5,11 @@
   "topic": "Calculus",
   "difficulty": 4,
   "estimatedTime": 16,
-  "tags": ["fundamental theorem", "integration", "differentiation"],
+  "tags": [
+    "fundamental theorem",
+    "integration",
+    "differentiation"
+  ],
   "statement": {
     "text": "Prove that if $f$ is continuous on $[a,b]$, and $F(x) = \\int_a^x f(t) \\, dt$, then $F'(x) = f(x)$ for all $x \\in [a,b]$."
   },
@@ -17,224 +21,242 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Set up the derivative definition",
+      "order": 1,
       "currentState": {
         "expression": "$F(x) = \\int_a^x f(t) \\, dt$",
         "description": "To prove $F'(x) = f(x)$, use the limit definition of derivative."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $F'(x)$ by definition?",
         "hint": "The derivative is the limit of the difference quotient."
       },
       "options": [
         {
           "id": "a",
-          "content": "$F'(x) = \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h}$"
+          "text": "$F'(x) = \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h}$"
         },
         {
           "id": "b",
-          "content": "$F'(x) = \\int_a^x f'(t) \\, dt$"
+          "text": "$F'(x) = \\int_a^x f'(t) \\, dt$"
         },
         {
           "id": "c",
-          "content": "$F'(x) = f(x)$ by assumption"
+          "text": "$F'(x) = f(x)$ by assumption"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! We start with the definition: $F'(x) = \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h}$.",
           "insight": "Always return to definitions when proving fundamental theorems."
         },
         "incorrect": {
-          "b": "That's circular reasoning. We need to derive this from the definition of derivative.",
-          "c": "That's what we're trying to prove, not an assumption we can use!"
+          "1": "That's circular reasoning. We need to derive this from the definition of derivative.",
+          "2": "That's what we're trying to prove, not an assumption we can use!"
         }
+      },
+      "resultState": {
+        "description": "Set up the derivative definition"
       }
     },
     {
       "id": "step-2",
-      "title": "Express F(x+h) and F(x)",
+      "order": 2,
       "currentState": {
         "expression": "$F'(x) = \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h}$",
         "description": "Substitute the integral definitions."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $F(x+h) - F(x)$?",
         "hint": "Use $F(x) = \\int_a^x f(t)dt$ and $F(x+h) = \\int_a^{x+h} f(t)dt$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$F(x+h) - F(x) = \\int_a^{x+h} f(t)dt - \\int_a^x f(t)dt = \\int_x^{x+h} f(t)dt$"
+          "text": "$F(x+h) - F(x) = \\int_a^{x+h} f(t)dt - \\int_a^x f(t)dt = \\int_x^{x+h} f(t)dt$"
         },
         {
           "id": "b",
-          "content": "$F(x+h) - F(x) = h \\cdot f(x)$"
+          "text": "$F(x+h) - F(x) = h \\cdot f(x)$"
         },
         {
           "id": "c",
-          "content": "$F(x+h) - F(x) = \\int_a^h f(t)dt$"
+          "text": "$F(x+h) - F(x) = \\int_a^h f(t)dt$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! By the interval additivity property: $\\int_a^{x+h} f = \\int_a^x f + \\int_x^{x+h} f$, so $F(x+h) - F(x) = \\int_x^{x+h} f(t)dt$.",
           "insight": "The integral from $a$ to $x+h$ minus the integral from $a$ to $x$ equals the integral from $x$ to $x+h$."
         },
         "incorrect": {
-          "b": "That's what we'll eventually show in the limit, but it's not exactly equal for finite $h$.",
-          "c": "The limits of integration are wrong. We need the integral from $x$ to $x+h$."
+          "1": "That's what we'll eventually show in the limit, but it's not exactly equal for finite $h$.",
+          "2": "The limits of integration are wrong. We need the integral from $x$ to $x+h$."
         }
+      },
+      "resultState": {
+        "description": "Express F(x+h) and F(x)"
       }
     },
     {
       "id": "step-3",
-      "title": "Rewrite the difference quotient",
+      "order": 3,
       "currentState": {
         "expression": "$F(x+h) - F(x) = \\int_x^{x+h} f(t)dt$",
         "description": "Substitute into the difference quotient."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does $F'(x)$ become?",
         "hint": "Substitute $\\int_x^{x+h} f(t)dt$ into $\\frac{F(x+h)-F(x)}{h}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$F'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_x^{x+h} f(t)dt$"
+          "text": "$F'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_x^{x+h} f(t)dt$"
         },
         {
           "id": "b",
-          "content": "$F'(x) = \\int_x^{x+h} \\frac{f(t)}{h} dt$"
+          "text": "$F'(x) = \\int_x^{x+h} \\frac{f(t)}{h} dt$"
         },
         {
           "id": "c",
-          "content": "$F'(x) = f(x+h) - f(x)$"
+          "text": "$F'(x) = f(x+h) - f(x)$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Right! $F'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_x^{x+h} f(t)dt$. Now we need to evaluate this limit.",
           "insight": "We've transformed the problem into evaluating a limit involving an integral."
         },
         "incorrect": {
-          "b": "The $h$ doesn't go inside the integral. We have $\\frac{1}{h}$ times the integral.",
-          "c": "That's the derivative of $f$, not the derivative of $F$."
+          "1": "The $h$ doesn't go inside the integral. We have $\\frac{1}{h}$ times the integral.",
+          "2": "That's the derivative of $f$, not the derivative of $F$."
         }
+      },
+      "resultState": {
+        "description": "Rewrite the difference quotient"
       }
     },
     {
       "id": "step-4",
-      "title": "Apply continuity of f",
+      "order": 4,
       "currentState": {
         "expression": "$F'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_x^{x+h} f(t)dt$",
         "description": "Since $f$ is continuous, we can approximate it on small intervals."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "For small $h$, how does $f(t)$ behave on $[x, x+h]$?",
         "hint": "Continuity means $f(t) \\approx f(x)$ when $t$ is close to $x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "By continuity, $f(t) \\to f(x)$ as $t \\to x$, so $f(t) \\approx f(x)$ on $[x, x+h]$ for small $h$"
+          "text": "By continuity, $f(t) \\to f(x)$ as $t \\to x$, so $f(t) \\approx f(x)$ on $[x, x+h]$ for small $h$"
         },
         {
           "id": "b",
-          "content": "$f(t) = f(x)$ exactly on $[x, x+h]$"
+          "text": "$f(t) = f(x)$ exactly on $[x, x+h]$"
         },
         {
           "id": "c",
-          "content": "Continuity doesn't help here"
+          "text": "Continuity doesn't help here"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! Continuity at $x$ means: $\\forall \\epsilon > 0, \\exists \\delta > 0$ such that $|t-x| < \\delta \\Rightarrow |f(t)-f(x)| < \\epsilon$.",
           "insight": "Continuity allows us to approximate $f(t)$ by the constant $f(x)$ on small intervals."
         },
         "incorrect": {
-          "b": "Unless $f$ is constant, $f(t)$ won't exactly equal $f(x)$ for all $t$. But it's approximately equal for small $h$.",
-          "c": "Continuity is crucial! It allows us to replace $f(t)$ with $f(x)$ in the limit."
+          "1": "Unless $f$ is constant, $f(t)$ won't exactly equal $f(x)$ for all $t$. But it's approximately equal for small $h$.",
+          "2": "Continuity is crucial! It allows us to replace $f(t)$ with $f(x)$ in the limit."
         }
+      },
+      "resultState": {
+        "description": "Apply continuity of f"
       }
     },
     {
       "id": "step-5",
-      "title": "Use the approximation",
+      "order": 5,
       "currentState": {
         "expression": "$\\int_x^{x+h} f(t)dt \\approx \\int_x^{x+h} f(x)dt$ for small $h$",
         "description": "Evaluate the integral of the constant $f(x)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\int_x^{x+h} f(x)dt$?",
         "hint": "$f(x)$ is constant with respect to $t$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\int_x^{x+h} f(x)dt = f(x) \\cdot h$"
+          "text": "$\\int_x^{x+h} f(x)dt = f(x) \\cdot h$"
         },
         {
           "id": "b",
-          "content": "$\\int_x^{x+h} f(x)dt = f(x) \\cdot (x+h-x)^2 = f(x)h^2$"
+          "text": "$\\int_x^{x+h} f(x)dt = f(x) \\cdot (x+h-x)^2 = f(x)h^2$"
         },
         {
           "id": "c",
-          "content": "$\\int_x^{x+h} f(x)dt = \\frac{f(x)h}{2}$"
+          "text": "$\\int_x^{x+h} f(x)dt = \\frac{f(x)h}{2}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\int_x^{x+h} f(x)dt = f(x) \\int_x^{x+h} dt = f(x) \\cdot [(x+h) - x] = f(x) \\cdot h$.",
           "insight": "The integral of a constant over an interval is the constant times the length of the interval."
         },
         "incorrect": {
-          "b": "The interval length is $h$, not $h^2$. We have $\\int_x^{x+h} f(x)dt = f(x) \\cdot h$.",
-          "c": "No division by 2. The integral of a constant $c$ from $a$ to $b$ is $c(b-a)$."
+          "1": "The interval length is $h$, not $h^2$. We have $\\int_x^{x+h} f(x)dt = f(x) \\cdot h$.",
+          "2": "No division by 2. The integral of a constant $c$ from $a$ to $b$ is $c(b-a)$."
         }
+      },
+      "resultState": {
+        "description": "Use the approximation"
       }
     },
     {
       "id": "step-6",
-      "title": "Evaluate the limit",
+      "order": 6,
       "currentState": {
         "expression": "$F'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_x^{x+h} f(t)dt = \\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h}$",
         "description": "Simplify and take the limit."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h}$?",
         "hint": "Cancel the $h$ terms."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = f(x)$"
+          "text": "$\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = f(x)$"
         },
         {
           "id": "b",
-          "content": "$\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = 0$"
+          "text": "$\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = 0$"
         },
         {
           "id": "c",
-          "content": "$\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = \\infty$"
+          "text": "$\\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = \\infty$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\frac{f(x) \\cdot h}{h} = f(x)$ for $h \\neq 0$, and $f(x)$ doesn't depend on $h$, so the limit is $f(x)$. Therefore, $F'(x) = f(x)$! ∎",
           "insight": "The Fundamental Theorem of Calculus Part 1 shows that differentiation and integration are inverse operations."
         },
         "incorrect": {
-          "b": "The $h$ cancels: $\\frac{f(x) \\cdot h}{h} = f(x)$, which doesn't go to 0.",
-          "c": "After canceling, we get $f(x)$, which is finite (since $f$ is continuous)."
+          "1": "The $h$ cancels: $\\frac{f(x) \\cdot h}{h} = f(x)$, which doesn't go to 0.",
+          "2": "After canceling, we get $f(x)$, which is finite (since $f$ is continuous)."
         }
+      },
+      "resultState": {
+        "description": "Evaluate the limit"
       }
     }
   ],

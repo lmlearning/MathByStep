@@ -5,7 +5,11 @@
   "topic": "Logic & Proofs",
   "difficulty": 3,
   "estimatedTime": 13,
-  "tags": ["set theory", "De Morgan", "proof"],
+  "tags": [
+    "set theory",
+    "De Morgan",
+    "proof"
+  ],
   "statement": {
     "text": "Prove De Morgan's Law: $(A \\cup B)^c = A^c \\cap B^c$ where $A^c$ denotes the complement of $A$."
   },
@@ -17,187 +21,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Strategy for proving set equality",
+      "order": 1,
       "currentState": {
         "expression": "Want to prove: $(A \\cup B)^c = A^c \\cap B^c$",
         "description": "To prove two sets are equal, show each is a subset of the other."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How do we prove $X = Y$ for sets?",
         "hint": "Show $X \\subseteq Y$ and $Y \\subseteq X$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Prove $X \\subseteq Y$ and $Y \\subseteq X$"
+          "text": "Prove $X \\subseteq Y$ and $Y \\subseteq X$"
         },
         {
           "id": "b",
-          "content": "Show they have the same number of elements"
+          "text": "Show they have the same number of elements"
         },
         {
           "id": "c",
-          "content": "Prove they're both subsets of the universal set"
+          "text": "Prove they're both subsets of the universal set"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! To prove $X = Y$, show $X \\subseteq Y$ (every element of $X$ is in $Y$) and $Y \\subseteq X$ (every element of $Y$ is in $X$).",
           "insight": "This double-inclusion method is standard for proving set equality."
         },
         "incorrect": {
-          "b": "Equal cardinality doesn't imply equal sets (e.g., $\\{1,2\\}$ and $\\{3,4\\}$).",
-          "c": "All sets are subsets of the universal set, but that doesn't prove two specific sets are equal."
+          "1": "Equal cardinality doesn't imply equal sets (e.g., $\\{1,2\\}$ and $\\{3,4\\}$).",
+          "2": "All sets are subsets of the universal set, but that doesn't prove two specific sets are equal."
         }
+      },
+      "resultState": {
+        "description": "Strategy for proving set equality"
       }
     },
     {
       "id": "step-2",
-      "title": "Prove first inclusion",
+      "order": 2,
       "currentState": {
         "expression": "Show: $(A \\cup B)^c \\subseteq A^c \\cap B^c$",
         "description": "Take an arbitrary $x \\in (A \\cup B)^c$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "If $x \\in (A \\cup B)^c$, what does that mean?",
         "hint": "$x \\in S^c$ means $x \\notin S$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x \\notin A \\cup B$, which means $x \\notin A$ and $x \\notin B$"
+          "text": "$x \\notin A \\cup B$, which means $x \\notin A$ and $x \\notin B$"
         },
         {
           "id": "b",
-          "content": "$x \\in A$ or $x \\in B$"
+          "text": "$x \\in A$ or $x \\in B$"
         },
         {
           "id": "c",
-          "content": "$x \\notin A$ or $x \\notin B$"
+          "text": "$x \\notin A$ or $x \\notin B$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! $x \\in (A \\cup B)^c \\Rightarrow x \\notin A \\cup B \\Rightarrow$ $x$ is not in $A$ AND not in $B$ (negating 'or' gives 'and').",
           "insight": "Negating a union: $\\neg(A \\lor B) \\equiv \\neg A \\land \\neg B$."
         },
         "incorrect": {
-          "b": "That would mean $x \\in A \\cup B$, not $x \\in (A \\cup B)^c$.",
-          "c": "Careful with negation. $x \\notin A \\cup B$ means $x$ is in neither $A$ nor $B$, so $x \\notin A$ AND $x \\notin B$."
+          "1": "That would mean $x \\in A \\cup B$, not $x \\in (A \\cup B)^c$.",
+          "2": "Careful with negation. $x \\notin A \\cup B$ means $x$ is in neither $A$ nor $B$, so $x \\notin A$ AND $x \\notin B$."
         }
+      },
+      "resultState": {
+        "description": "Prove first inclusion"
       }
     },
     {
       "id": "step-3",
-      "title": "Continue first inclusion",
+      "order": 3,
       "currentState": {
         "expression": "$x \\notin A$ and $x \\notin B$",
         "description": "This means $x \\in A^c$ and $x \\in B^c$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "If $x \\in A^c$ and $x \\in B^c$, where is $x$?",
         "hint": "Use the definition of intersection."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x \\in A^c \\cap B^c$"
+          "text": "$x \\in A^c \\cap B^c$"
         },
         {
           "id": "b",
-          "content": "$x \\in A^c \\cup B^c$"
+          "text": "$x \\in A^c \\cup B^c$"
         },
         {
           "id": "c",
-          "content": "$x \\in (A \\cap B)^c$"
+          "text": "$x \\in (A \\cap B)^c$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $x \\in A^c$ AND $x \\in B^c$ means $x \\in A^c \\cap B^c$ by definition of intersection. Thus $(A \\cup B)^c \\subseteq A^c \\cap B^c$ ✓",
           "insight": "We've proven the first inclusion!"
         },
         "incorrect": {
-          "b": "Intersection, not union. $x \\in S \\cap T$ means $x \\in S$ AND $x \\in T$.",
-          "c": "That's the other De Morgan law. We need $A^c \\cap B^c$."
+          "1": "Intersection, not union. $x \\in S \\cap T$ means $x \\in S$ AND $x \\in T$.",
+          "2": "That's the other De Morgan law. We need $A^c \\cap B^c$."
         }
+      },
+      "resultState": {
+        "description": "Continue first inclusion"
       }
     },
     {
       "id": "step-4",
-      "title": "Prove second inclusion",
+      "order": 4,
       "currentState": {
         "expression": "Show: $A^c \\cap B^c \\subseteq (A \\cup B)^c$",
         "description": "Take an arbitrary $x \\in A^c \\cap B^c$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "If $x \\in A^c \\cap B^c$, what does that mean?",
         "hint": "$x \\in S \\cap T$ means $x \\in S$ and $x \\in T$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x \\in A^c$ and $x \\in B^c$, so $x \\notin A$ and $x \\notin B$"
+          "text": "$x \\in A^c$ and $x \\in B^c$, so $x \\notin A$ and $x \\notin B$"
         },
         {
           "id": "b",
-          "content": "$x \\in A^c$ or $x \\in B^c$"
+          "text": "$x \\in A^c$ or $x \\in B^c$"
         },
         {
           "id": "c",
-          "content": "$x \\in A$ and $x \\in B$"
+          "text": "$x \\in A$ and $x \\in B$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $x \\in A^c \\cap B^c$ means $x$ is in both $A^c$ and $B^c$, so $x \\notin A$ and $x \\notin B$.",
           "insight": "Unpacking definitions carefully is key to set proofs."
         },
         "incorrect": {
-          "b": "Intersection means 'and', not 'or'. $x \\in A^c \\cap B^c$ means $x \\in A^c$ AND $x \\in B^c$.",
-          "c": "$x \\in A^c$ means $x \\notin A$, not $x \\in A$."
+          "1": "Intersection means 'and', not 'or'. $x \\in A^c \\cap B^c$ means $x \\in A^c$ AND $x \\in B^c$.",
+          "2": "$x \\in A^c$ means $x \\notin A$, not $x \\in A$."
         }
+      },
+      "resultState": {
+        "description": "Prove second inclusion"
       }
     },
     {
       "id": "step-5",
-      "title": "Complete second inclusion",
+      "order": 5,
       "currentState": {
         "expression": "$x \\notin A$ and $x \\notin B$",
         "description": "Therefore $x$ is not in $A \\cup B$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "If $x \\notin A$ and $x \\notin B$, where is $x$?",
         "hint": "$x$ is in neither set, so it's not in their union."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x \\notin A \\cup B$, which means $x \\in (A \\cup B)^c$"
+          "text": "$x \\notin A \\cup B$, which means $x \\in (A \\cup B)^c$"
         },
         {
           "id": "b",
-          "content": "$x \\in A \\cup B$"
+          "text": "$x \\in A \\cup B$"
         },
         {
           "id": "c",
-          "content": "$x \\in A \\cap B$"
+          "text": "$x \\in A \\cap B$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! If $x \\notin A$ and $x \\notin B$, then $x$ is not in $A$ or $B$, so $x \\notin A \\cup B$, thus $x \\in (A \\cup B)^c$. We've shown $A^c \\cap B^c \\subseteq (A \\cup B)^c$ ✓",
           "insight": "We've proven the second inclusion, completing the proof!"
         },
         "incorrect": {
-          "b": "$x \\in A \\cup B$ means $x \\in A$ or $x \\in B$. But we have $x \\notin A$ and $x \\notin B$.",
-          "c": "If $x \\notin A$, then certainly $x \\notin A \\cap B$."
+          "1": "$x \\in A \\cup B$ means $x \\in A$ or $x \\in B$. But we have $x \\notin A$ and $x \\notin B$.",
+          "2": "If $x \\notin A$, then certainly $x \\notin A \\cap B$."
         }
+      },
+      "resultState": {
+        "description": "Complete second inclusion"
       }
     }
   ],

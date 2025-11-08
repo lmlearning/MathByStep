@@ -5,7 +5,12 @@
   "topic": "Calculus",
   "difficulty": 2,
   "estimatedTime": 9,
-  "tags": ["calculus", "series", "convergence", "ratio test"],
+  "tags": [
+    "calculus",
+    "series",
+    "convergence",
+    "ratio test"
+  ],
   "statement": {
     "text": "Determine whether the series $\\sum_{n=1}^{\\infty} \\frac{2^n}{n!}$ converges or diverges using the ratio test."
   },
@@ -17,187 +22,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall the ratio test",
+      "order": 1,
       "currentState": {
         "expression": "$\\sum a_n$ where $a_n = \\frac{2^n}{n!}$",
         "description": "The ratio test examines $L = \\lim_{n \\to \\infty} \\left|\\frac{a_{n+1}}{a_n}\\right|$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does the ratio test tell us?",
         "hint": "If $L < 1$, the series converges. If $L > 1$, it diverges. If $L = 1$, the test is inconclusive."
       },
       "options": [
         {
           "id": "a",
-          "content": "$L < 1 \\Rightarrow$ converges; $L > 1 \\Rightarrow$ diverges; $L = 1 \\Rightarrow$ inconclusive"
+          "text": "$L < 1 \\Rightarrow$ converges; $L > 1 \\Rightarrow$ diverges; $L = 1 \\Rightarrow$ inconclusive"
         },
         {
           "id": "b",
-          "content": "$L < 1 \\Rightarrow$ diverges; $L > 1 \\Rightarrow$ converges"
+          "text": "$L < 1 \\Rightarrow$ diverges; $L > 1 \\Rightarrow$ converges"
         },
         {
           "id": "c",
-          "content": "The ratio test only works for alternating series"
+          "text": "The ratio test only works for alternating series"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! The ratio test: if $\\lim \\left|\\frac{a_{n+1}}{a_n}\\right| < 1$, the series converges absolutely.",
           "insight": "The ratio test is particularly useful for series involving factorials or exponentials."
         },
         "incorrect": {
-          "b": "You have it backwards! $L < 1$ means convergence.",
-          "c": "The ratio test works for any series, not just alternating ones."
+          "1": "You have it backwards! $L < 1$ means convergence.",
+          "2": "The ratio test works for any series, not just alternating ones."
         }
+      },
+      "resultState": {
+        "description": "Recall the ratio test"
       }
     },
     {
       "id": "step-2",
-      "title": "Find a_{n+1}",
+      "order": 2,
       "currentState": {
         "expression": "$a_n = \\frac{2^n}{n!}$",
         "description": "Substitute $n+1$ for $n$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $a_{n+1}$?",
         "hint": "$a_{n+1} = \\frac{2^{n+1}}{(n+1)!}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$a_{n+1} = \\frac{2^{n+1}}{(n+1)!}$"
+          "text": "$a_{n+1} = \\frac{2^{n+1}}{(n+1)!}$"
         },
         {
           "id": "b",
-          "content": "$a_{n+1} = \\frac{2^{n}}{(n+1)!}$"
+          "text": "$a_{n+1} = \\frac{2^{n}}{(n+1)!}$"
         },
         {
           "id": "c",
-          "content": "$a_{n+1} = \\frac{2^{n+1}}{n! + 1}$"
+          "text": "$a_{n+1} = \\frac{2^{n+1}}{n! + 1}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $a_{n+1} = \\frac{2^{n+1}}{(n+1)!} = \\frac{2 \\cdot 2^n}{(n+1) \\cdot n!}$.",
           "insight": "Remember: $(n+1)! = (n+1) \\cdot n!$ and $2^{n+1} = 2 \\cdot 2^n$."
         },
         "incorrect": {
-          "b": "Don't forget to increase the exponent: $2^{n+1}$, not $2^n$.",
-          "c": "$(n+1)!$ is not the same as $n! + 1$. It's $(n+1) \\times n!$."
+          "1": "Don't forget to increase the exponent: $2^{n+1}$, not $2^n$.",
+          "2": "$(n+1)!$ is not the same as $n! + 1$. It's $(n+1) \\times n!$."
         }
+      },
+      "resultState": {
+        "description": "Find a_{n+1}"
       }
     },
     {
       "id": "step-3",
-      "title": "Compute the ratio",
+      "order": 3,
       "currentState": {
         "expression": "$\\frac{a_{n+1}}{a_n} = \\frac{2^{n+1}/(n+1)!}{2^n/n!}$",
         "description": "Simplify the fraction."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\frac{a_{n+1}}{a_n}$?",
         "hint": "$\\frac{2^{n+1}}{(n+1)!} \\cdot \\frac{n!}{2^n} = \\frac{2 \\cdot 2^n}{2^n} \\cdot \\frac{n!}{(n+1) \\cdot n!} = \\frac{2}{n+1}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{a_{n+1}}{a_n} = \\frac{2}{n+1}$"
+          "text": "$\\frac{a_{n+1}}{a_n} = \\frac{2}{n+1}$"
         },
         {
           "id": "b",
-          "content": "$\\frac{a_{n+1}}{a_n} = \\frac{2n}{n+1}$"
+          "text": "$\\frac{a_{n+1}}{a_n} = \\frac{2n}{n+1}$"
         },
         {
           "id": "c",
-          "content": "$\\frac{a_{n+1}}{a_n} = 2(n+1)$"
+          "text": "$\\frac{a_{n+1}}{a_n} = 2(n+1)$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\frac{a_{n+1}}{a_n} = \\frac{2^{n+1}}{(n+1)!} \\cdot \\frac{n!}{2^n} = \\frac{2}{n+1}$.",
           "insight": "When simplifying, $2^{n+1}/2^n = 2$ and $n!/(n+1)! = 1/(n+1)$."
         },
         "incorrect": {
-          "b": "Check your algebra: $\\frac{2^{n+1}}{2^n} = 2$, not $2n$.",
-          "c": "The factorial in the denominator grows faster, giving $\\frac{2}{n+1}$, not $2(n+1)$."
+          "1": "Check your algebra: $\\frac{2^{n+1}}{2^n} = 2$, not $2n$.",
+          "2": "The factorial in the denominator grows faster, giving $\\frac{2}{n+1}$, not $2(n+1)$."
         }
+      },
+      "resultState": {
+        "description": "Compute the ratio"
       }
     },
     {
       "id": "step-4",
-      "title": "Take the limit",
+      "order": 4,
       "currentState": {
         "expression": "$L = \\lim_{n \\to \\infty} \\frac{2}{n+1}$",
         "description": "Evaluate the limit."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $L$?",
         "hint": "As $n \\to \\infty$, $\\frac{2}{n+1} \\to 0$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$L = 0$"
+          "text": "$L = 0$"
         },
         {
           "id": "b",
-          "content": "$L = 2$"
+          "text": "$L = 2$"
         },
         {
           "id": "c",
-          "content": "$L = \\infty$"
+          "text": "$L = \\infty$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\lim_{n \\to \\infty} \\frac{2}{n+1} = 0$ since the numerator is constant and the denominator grows without bound.",
           "insight": "Since $L = 0 < 1$, the ratio test tells us the series converges!"
         },
         "incorrect": {
-          "b": "That's the numerator, but we need the limit of the whole fraction: $\\frac{2}{n+1} \\to 0$ as $n \\to \\infty$.",
-          "c": "The fraction approaches 0, not infinity. The denominator is what grows."
+          "1": "That's the numerator, but we need the limit of the whole fraction: $\\frac{2}{n+1} \\to 0$ as $n \\to \\infty$.",
+          "2": "The fraction approaches 0, not infinity. The denominator is what grows."
         }
+      },
+      "resultState": {
+        "description": "Take the limit"
       }
     },
     {
       "id": "step-5",
-      "title": "Conclusion",
+      "order": 5,
       "currentState": {
         "expression": "$L = 0 < 1$",
         "description": "Apply the ratio test conclusion."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Does the series converge or diverge?",
         "hint": "Since $L < 1$, the series converges."
       },
       "options": [
         {
           "id": "a",
-          "content": "The series converges (by the ratio test)"
+          "text": "The series converges (by the ratio test)"
         },
         {
           "id": "b",
-          "content": "The series diverges"
+          "text": "The series diverges"
         },
         {
           "id": "c",
-          "content": "The test is inconclusive"
+          "text": "The test is inconclusive"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Since $L = 0 < 1$, the ratio test confirms that $\\sum_{n=1}^{\\infty} \\frac{2^n}{n!}$ converges.",
           "insight": "This is related to the Taylor series for $e^2$: $e^x = \\sum \\frac{x^n}{n!}$, which converges for all $x$."
         },
         "incorrect": {
-          "b": "$L < 1$ means convergence, not divergence.",
-          "c": "The test is only inconclusive when $L = 1$. Here $L = 0$."
+          "1": "$L < 1$ means convergence, not divergence.",
+          "2": "The test is only inconclusive when $L = 1$. Here $L = 0$."
         }
+      },
+      "resultState": {
+        "description": "Conclusion"
       }
     }
   ],

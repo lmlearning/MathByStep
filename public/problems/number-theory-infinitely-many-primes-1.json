@@ -5,7 +5,12 @@
   "topic": "Number Theory",
   "difficulty": 4,
   "estimatedTime": 15,
-  "tags": ["primes", "proof by contradiction", "number theory", "Euclid"],
+  "tags": [
+    "primes",
+    "proof by contradiction",
+    "number theory",
+    "Euclid"
+  ],
   "statement": {
     "text": "Prove that there are infinitely many prime numbers."
   },
@@ -17,261 +22,282 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Choose proof strategy",
+      "order": 1,
       "currentState": {
         "expression": "We want to prove: There are infinitely many primes.",
         "description": "How should we approach this proof?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Which proof technique is most suitable for this theorem?",
         "hint": "It's hard to construct all infinitely many primes directly. What if we assume there are only finitely many?"
       },
       "options": [
         {
           "id": "a",
-          "content": "Proof by contradiction: Assume there are finitely many primes"
+          "text": "Proof by contradiction: Assume there are finitely many primes"
         },
         {
           "id": "b",
-          "content": "Direct proof: List all the primes"
+          "text": "Direct proof: List all the primes"
         },
         {
           "id": "c",
-          "content": "Proof by induction on the number of primes"
+          "text": "Proof by induction on the number of primes"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! We'll assume there are only finitely many primes and derive a contradiction. This is Euclid's classical approach from around 300 BCE.",
           "insight": "Proof by contradiction is often powerful for proving existence of infinite sets."
         },
         "incorrect": {
-          "b": "We can't list infinitely many primes directly. This approach won't work for proving infinitude.",
-          "c": "Induction works for statements indexed by natural numbers, but 'infinitely many' isn't structured that way."
+          "1": "We can't list infinitely many primes directly. This approach won't work for proving infinitude.",
+          "2": "Induction works for statements indexed by natural numbers, but 'infinitely many' isn't structured that way."
         }
+      },
+      "resultState": {
+        "description": "Choose proof strategy"
       }
     },
     {
       "id": "step-2",
-      "title": "State the assumption",
+      "order": 2,
       "currentState": {
         "expression": "Assume for contradiction that there are finitely many primes.",
         "description": "If there are finitely many, we can list them all."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "If there are finitely many primes, how can we denote them?",
         "hint": "We can list them in a finite sequence."
       },
       "options": [
         {
           "id": "a",
-          "content": "Let $p_1, p_2, p_3, \\ldots, p_n$ be all the prime numbers"
+          "text": "Let $p_1, p_2, p_3, \\ldots, p_n$ be all the prime numbers"
         },
         {
           "id": "b",
-          "content": "Let $p$ be the largest prime number"
+          "text": "Let $p$ be the largest prime number"
         },
         {
           "id": "c",
-          "content": "Let $2, 3, 5, 7$ be all the primes"
+          "text": "Let $2, 3, 5, 7$ be all the primes"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! We assume there are exactly $n$ primes and list them all. This notation allows us to work with the complete set.",
           "insight": "A finite set can always be enumerated as $p_1, p_2, \\ldots, p_n$."
         },
         "incorrect": {
-          "b": "While there might be a largest prime in our assumption, listing all of them gives us more to work with.",
-          "c": "We don't want to specify which primes they are. We want a general argument that works for any finite list."
+          "1": "While there might be a largest prime in our assumption, listing all of them gives us more to work with.",
+          "2": "We don't want to specify which primes they are. We want a general argument that works for any finite list."
         }
+      },
+      "resultState": {
+        "description": "State the assumption"
       }
     },
     {
       "id": "step-3",
-      "title": "Construct a new number",
+      "order": 3,
       "currentState": {
         "expression": "We have all primes: $p_1, p_2, \\ldots, p_n$",
         "description": "Euclid's clever idea: construct a new number using these primes."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Consider the number $N = p_1 \\cdot p_2 \\cdot p_3 \\cdots p_n + 1$. What can we say about N?",
         "hint": "Think about what happens when you divide N by any of the primes $p_i$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$N$ is not divisible by any of $p_1, p_2, \\ldots, p_n$"
+          "text": "$N$ is not divisible by any of $p_1, p_2, \\ldots, p_n$"
         },
         {
           "id": "b",
-          "content": "$N$ is divisible by $p_1$"
+          "text": "$N$ is divisible by $p_1$"
         },
         {
           "id": "c",
-          "content": "$N$ is equal to one of the primes"
+          "text": "$N$ is equal to one of the primes"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! When we divide $N$ by any $p_i$, we get remainder 1 (since $N = (p_1 \\cdots p_n) + 1$). So no $p_i$ divides $N$.",
           "insight": "This is the key insight: N is constructed to leave remainder 1 when divided by each prime in our list."
         },
         "incorrect": {
-          "b": "Not quite. If $p_1 | N$, then $p_1 | (N - p_1 \\cdot p_2 \\cdots p_n) = 1$, which is impossible.",
-          "c": "N is much larger than all the primes in our list (it's their product plus 1)."
+          "1": "Not quite. If $p_1 | N$, then $p_1 | (N - p_1 \\cdot p_2 \\cdots p_n) = 1$, which is impossible.",
+          "2": "N is much larger than all the primes in our list (it's their product plus 1)."
         }
+      },
+      "resultState": {
+        "description": "Construct a new number"
       }
     },
     {
       "id": "step-4",
-      "title": "Apply the Fundamental Theorem",
+      "order": 4,
       "currentState": {
         "expression": "$N = p_1 \\cdot p_2 \\cdot p_3 \\cdots p_n + 1 > 1$",
         "description": "Every integer greater than 1 has at least one prime divisor."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does the Fundamental Theorem of Arithmetic tell us about N?",
         "hint": "Every integer $n > 1$ is either prime or has a prime divisor."
       },
       "options": [
         {
           "id": "a",
-          "content": "$N$ is either prime itself, or has a prime divisor"
+          "text": "$N$ is either prime itself, or has a prime divisor"
         },
         {
           "id": "b",
-          "content": "$N$ must be composite"
+          "text": "$N$ must be composite"
         },
         {
           "id": "c",
-          "content": "$N$ has no prime divisors"
+          "text": "$N$ has no prime divisors"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! By the Fundamental Theorem of Arithmetic, $N$ must be prime or have a prime divisor. This is true for every integer greater than 1.",
           "insight": "The Fundamental Theorem of Arithmetic guarantees that prime factorization exists for every integer > 1."
         },
         "incorrect": {
-          "b": "N might be prime or composite. We can't determine which yet, but it must have some prime in its factorization.",
-          "c": "That's impossible. Every integer > 1 has at least one prime divisor (or is prime itself)."
+          "1": "N might be prime or composite. We can't determine which yet, but it must have some prime in its factorization.",
+          "2": "That's impossible. Every integer > 1 has at least one prime divisor (or is prime itself)."
         }
+      },
+      "resultState": {
+        "description": "Apply the Fundamental Theorem"
       }
     },
     {
       "id": "step-5",
-      "title": "Find the contradiction",
+      "order": 5,
       "currentState": {
         "expression": "Case 1: $N$ is prime. Case 2: $N$ has a prime divisor $q$.",
         "description": "In either case, we'll reach a contradiction."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Why does this lead to a contradiction?",
         "hint": "If N is prime, it's not in our complete list. If N has a prime divisor q, is q in our list?"
       },
       "options": [
         {
           "id": "a",
-          "content": "Either N is a new prime, or N has a prime divisor not in our list—both contradict our assumption"
+          "text": "Either N is a new prime, or N has a prime divisor not in our list—both contradict our assumption"
         },
         {
           "id": "b",
-          "content": "N must equal one of the primes in our list"
+          "text": "N must equal one of the primes in our list"
         },
         {
           "id": "c",
-          "content": "N is both even and odd"
+          "text": "N is both even and odd"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! If $N$ is prime, it's not in our list (since $N > p_i$ for all $i$). If $N$ has prime divisor $q$, then $q$ can't be any $p_i$ (we showed $p_i \\nmid N$). Either way, there's a prime not in our 'complete' list!",
           "insight": "This is the heart of the contradiction: we found a prime (N or its divisor) outside our supposedly complete list."
         },
         "incorrect": {
-          "b": "No, N is larger than all primes in our list, and none of them divide N.",
-          "c": "This isn't about parity. The contradiction is that we found a prime not in our supposedly complete list."
+          "1": "No, N is larger than all primes in our list, and none of them divide N.",
+          "2": "This isn't about parity. The contradiction is that we found a prime not in our supposedly complete list."
         }
+      },
+      "resultState": {
+        "description": "Find the contradiction"
       }
     },
     {
       "id": "step-6",
-      "title": "Conclude the proof",
+      "order": 6,
       "currentState": {
         "expression": "Contradiction: Our 'complete' list is missing a prime.",
         "description": "What assumption led to this contradiction?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What can we conclude from this contradiction?",
         "hint": "Our assumption that there are finitely many primes led to the contradiction."
       },
       "options": [
         {
           "id": "a",
-          "content": "There cannot be finitely many primes. Therefore, there are infinitely many primes."
+          "text": "There cannot be finitely many primes. Therefore, there are infinitely many primes."
         },
         {
           "id": "b",
-          "content": "The number N must be the largest prime"
+          "text": "The number N must be the largest prime"
         },
         {
           "id": "c",
-          "content": "Prime numbers don't exist"
+          "text": "Prime numbers don't exist"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Our assumption (finitely many primes) led to a contradiction, so it must be false. Therefore, there are infinitely many prime numbers. ∎",
           "insight": "This proof is elegant: no matter what finite list of primes you give me, I can construct a number that reveals another prime not on your list."
         },
         "incorrect": {
-          "b": "N isn't necessarily prime, and even if it were, we could apply the same construction again to find an even larger prime!",
-          "c": "We know primes exist (2, 3, 5, 7, ...). The contradiction proves there can't be a finite number of them."
+          "1": "N isn't necessarily prime, and even if it were, we could apply the same construction again to find an even larger prime!",
+          "2": "We know primes exist (2, 3, 5, 7, ...). The contradiction proves there can't be a finite number of them."
         }
+      },
+      "resultState": {
+        "description": "Conclude the proof"
       }
     },
     {
       "id": "step-7",
-      "title": "Understand the beauty",
+      "order": 7,
       "currentState": {
         "expression": "Proven: There are infinitely many primes.",
         "description": "This proof is over 2000 years old and still beautiful."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What makes this proof particularly elegant?",
         "hint": "Think about what the proof does and doesn't require."
       },
       "options": [
         {
           "id": "a",
-          "content": "It doesn't construct all primes, but shows any finite list is incomplete"
+          "text": "It doesn't construct all primes, but shows any finite list is incomplete"
         },
         {
           "id": "b",
-          "content": "It finds the largest prime number"
+          "text": "It finds the largest prime number"
         },
         {
           "id": "c",
-          "content": "It provides a formula for generating all primes"
+          "text": "It provides a formula for generating all primes"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! The proof's beauty is in its simplicity: given any finite list, Euclid's construction $(p_1 \\cdots p_n + 1)$ guarantees we can find another prime. We don't need to know what the primes are or have a formula—we just prove the list never ends.",
           "insight": "This proof technique (assuming finitude, then constructing a counterexample) is powerful and appears throughout mathematics."
         },
         "incorrect": {
-          "b": "The proof shows there is no largest prime—that's the point! Any candidate for 'largest' can be used to find a larger one.",
-          "c": "Note that $p_1 \\cdots p_n + 1$ doesn't always give a prime (e.g., $2 \\cdot 3 \\cdot 5 \\cdot 7 \\cdot 11 \\cdot 13 + 1 = 30031 = 59 \\times 509$). It just has a prime divisor not in the original list."
+          "1": "The proof shows there is no largest prime—that's the point! Any candidate for 'largest' can be used to find a larger one.",
+          "2": "Note that $p_1 \\cdots p_n + 1$ doesn't always give a prime (e.g., $2 \\cdot 3 \\cdot 5 \\cdot 7 \\cdot 11 \\cdot 13 + 1 = 30031 = 59 \\times 509$). It just has a prime divisor not in the original list."
         }
+      },
+      "resultState": {
+        "description": "Understand the beauty"
       }
     }
   ],

@@ -5,7 +5,11 @@
   "topic": "Differential Equations",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["differential equations", "non-homogeneous", "undetermined coefficients"],
+  "tags": [
+    "differential equations",
+    "non-homogeneous",
+    "undetermined coefficients"
+  ],
   "statement": {
     "text": "Solve $y'' + 4y = 8\\sin(2x)$ using the method of undetermined coefficients."
   },
@@ -17,187 +21,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Find the complementary solution",
+      "order": 1,
       "currentState": {
         "expression": "$y'' + 4y = 0$ (associated homogeneous equation)",
         "description": "Solve using the characteristic equation."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the complementary solution $y_c$?",
         "hint": "Characteristic equation: $r^2 + 4 = 0 \\Rightarrow r = \\pm 2i$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$y_c = c_1\\cos(2x) + c_2\\sin(2x)$"
+          "text": "$y_c = c_1\\cos(2x) + c_2\\sin(2x)$"
         },
         {
           "id": "b",
-          "content": "$y_c = c_1e^{2x} + c_2e^{-2x}$"
+          "text": "$y_c = c_1e^{2x} + c_2e^{-2x}$"
         },
         {
           "id": "c",
-          "content": "$y_c = (c_1 + c_2x)e^{2x}$"
+          "text": "$y_c = (c_1 + c_2x)e^{2x}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $r^2 + 4 = 0$ gives $r = \\pm 2i$ (complex roots: $0 \\pm 2i$). Solution: $y_c = e^{0}(c_1\\cos 2x + c_2\\sin 2x) = c_1\\cos 2x + c_2\\sin 2x$.",
           "insight": "Complex roots $\\alpha \\pm i\\beta$ give solutions $e^{\\alpha x}(c_1\\cos\\beta x + c_2\\sin\\beta x)$."
         },
         "incorrect": {
-          "b": "Those are solutions for real roots $\\pm 2$. We have imaginary roots $\\pm 2i$, giving trigonometric solutions.",
-          "c": "That's for a repeated real root. We have complex roots, giving $c_1\\cos 2x + c_2\\sin 2x$."
+          "1": "Those are solutions for real roots $\\pm 2$. We have imaginary roots $\\pm 2i$, giving trigonometric solutions.",
+          "2": "That's for a repeated real root. We have complex roots, giving $c_1\\cos 2x + c_2\\sin 2x$."
         }
+      },
+      "resultState": {
+        "description": "Find the complementary solution"
       }
     },
     {
       "id": "step-2",
-      "title": "Determine the form of particular solution",
+      "order": 2,
       "currentState": {
         "expression": "Right-hand side: $8\\sin(2x)$",
         "description": "Normally we'd try $y_p = A\\cos(2x) + B\\sin(2x)$..."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What's the problem with $y_p = A\\cos(2x) + B\\sin(2x)$?",
         "hint": "This form is already in the complementary solution!"
       },
       "options": [
         {
           "id": "a",
-          "content": "It duplicates $y_c$, so multiply by $x$: $y_p = x(A\\cos 2x + B\\sin 2x)$"
+          "text": "It duplicates $y_c$, so multiply by $x$: $y_p = x(A\\cos 2x + B\\sin 2x)$"
         },
         {
           "id": "b",
-          "content": "It's fine to use $y_p = A\\cos(2x) + B\\sin(2x)$"
+          "text": "It's fine to use $y_p = A\\cos(2x) + B\\sin(2x)$"
         },
         {
           "id": "c",
-          "content": "We need $y_p = Ae^{2x}\\sin(2x)$"
+          "text": "We need $y_p = Ae^{2x}\\sin(2x)$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! Since $\\cos 2x$ and $\\sin 2x$ are in $y_c$, we must multiply by $x$ to avoid duplication: $y_p = x(A\\cos 2x + B\\sin 2x)$.",
           "insight": "This is the resonance case - when the forcing term matches the complementary solution."
         },
         "incorrect": {
-          "b": "That form is already a solution to the homogeneous equation, so it won't work. We need to multiply by $x$.",
-          "c": "We don't need the exponential - just multiply the usual form by $x$."
+          "1": "That form is already a solution to the homogeneous equation, so it won't work. We need to multiply by $x$.",
+          "2": "We don't need the exponential - just multiply the usual form by $x$."
         }
+      },
+      "resultState": {
+        "description": "Determine the form of particular solution"
       }
     },
     {
       "id": "step-3",
-      "title": "Compute derivatives of y_p",
+      "order": 3,
       "currentState": {
         "expression": "$y_p = Ax\\cos 2x + Bx\\sin 2x$",
         "description": "Find $y_p'$ and $y_p''$ using the product rule."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $y_p'$?",
         "hint": "Use product rule: $(uv)' = u'v + uv'$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$y_p' = A\\cos 2x - 2Ax\\sin 2x + B\\sin 2x + 2Bx\\cos 2x$"
+          "text": "$y_p' = A\\cos 2x - 2Ax\\sin 2x + B\\sin 2x + 2Bx\\cos 2x$"
         },
         {
           "id": "b",
-          "content": "$y_p' = -2Ax\\sin 2x + 2Bx\\cos 2x$"
+          "text": "$y_p' = -2Ax\\sin 2x + 2Bx\\cos 2x$"
         },
         {
           "id": "c",
-          "content": "$y_p' = A\\cos 2x + B\\sin 2x$"
+          "text": "$y_p' = A\\cos 2x + B\\sin 2x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Using product rule on each term: $(Ax\\cos 2x)' = A\\cos 2x - 2Ax\\sin 2x$ and $(Bx\\sin 2x)' = B\\sin 2x + 2Bx\\cos 2x$.",
           "insight": "Now we need $y_p''$ to substitute into the original equation."
         },
         "incorrect": {
-          "b": "Don't forget the derivative of $x$ is 1, giving extra $A\\cos 2x$ and $B\\sin 2x$ terms.",
-          "c": "You forgot to apply the product rule. Each term $x\\cos 2x$ and $x\\sin 2x$ needs the full product rule treatment."
+          "1": "Don't forget the derivative of $x$ is 1, giving extra $A\\cos 2x$ and $B\\sin 2x$ terms.",
+          "2": "You forgot to apply the product rule. Each term $x\\cos 2x$ and $x\\sin 2x$ needs the full product rule treatment."
         }
+      },
+      "resultState": {
+        "description": "Compute derivatives of y_p"
       }
     },
     {
       "id": "step-4",
-      "title": "Substitute and solve for coefficients",
+      "order": 4,
       "currentState": {
         "expression": "$y_p'' + 4y_p = 8\\sin 2x$",
         "description": "After computing $y_p''$ and substituting, collect terms."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What do we get after substitution?",
         "hint": "Many terms cancel! We get $-4A\\sin 2x + 4B\\cos 2x = 8\\sin 2x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$-4A\\sin 2x + 4B\\cos 2x = 8\\sin 2x$, giving $A = -2$, $B = 0$"
+          "text": "$-4A\\sin 2x + 4B\\cos 2x = 8\\sin 2x$, giving $A = -2$, $B = 0$"
         },
         {
           "id": "b",
-          "content": "$4A\\cos 2x + 4B\\sin 2x = 8\\sin 2x$, giving $A = 0$, $B = 2$"
+          "text": "$4A\\cos 2x + 4B\\sin 2x = 8\\sin 2x$, giving $A = 0$, $B = 2$"
         },
         {
           "id": "c",
-          "content": "$Ax\\cos 2x + Bx\\sin 2x = 8\\sin 2x$"
+          "text": "$Ax\\cos 2x + Bx\\sin 2x = 8\\sin 2x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! After substituting and simplifying (the $x$ terms cancel), we get $-4A\\sin 2x + 4B\\cos 2x = 8\\sin 2x$. Matching coefficients: $-4A = 8$ and $4B = 0$, so $A = -2$ and $B = 0$.",
           "insight": "The particular solution is $y_p = -2x\\cos 2x$."
         },
         "incorrect": {
-          "b": "Check your $y_p''$ calculation carefully. The result should have $-4A$ for $\\sin 2x$, not $+4B$.",
-          "c": "After substitution, the $x$ terms actually cancel out, leaving only coefficient terms."
+          "1": "Check your $y_p''$ calculation carefully. The result should have $-4A$ for $\\sin 2x$, not $+4B$.",
+          "2": "After substitution, the $x$ terms actually cancel out, leaving only coefficient terms."
         }
+      },
+      "resultState": {
+        "description": "Substitute and solve for coefficients"
       }
     },
     {
       "id": "step-5",
-      "title": "Write the general solution",
+      "order": 5,
       "currentState": {
         "expression": "$y_c = c_1\\cos 2x + c_2\\sin 2x$, $y_p = -2x\\cos 2x$",
         "description": "The general solution is $y = y_c + y_p$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the complete solution?",
         "hint": "$y = y_c + y_p = c_1\\cos 2x + c_2\\sin 2x - 2x\\cos 2x$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$y = c_1\\cos 2x + c_2\\sin 2x - 2x\\cos 2x$"
+          "text": "$y = c_1\\cos 2x + c_2\\sin 2x - 2x\\cos 2x$"
         },
         {
           "id": "b",
-          "content": "$y = c_1\\cos 2x + c_2\\sin 2x + 2x\\sin 2x$"
+          "text": "$y = c_1\\cos 2x + c_2\\sin 2x + 2x\\sin 2x$"
         },
         {
           "id": "c",
-          "content": "$y = -2x\\cos 2x$"
+          "text": "$y = -2x\\cos 2x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $y = y_c + y_p = c_1\\cos 2x + c_2\\sin 2x - 2x\\cos 2x$.",
           "insight": "The $-2x\\cos 2x$ term represents the particular solution due to the forcing term $8\\sin 2x$."
         },
         "incorrect": {
-          "b": "$y_p = -2x\\cos 2x$, not $+2x\\sin 2x$. Check your coefficients $A$ and $B$.",
-          "c": "Don't forget the complementary solution! The general solution is $y = y_c + y_p$."
+          "1": "$y_p = -2x\\cos 2x$, not $+2x\\sin 2x$. Check your coefficients $A$ and $B$.",
+          "2": "Don't forget the complementary solution! The general solution is $y = y_c + y_p$."
         }
+      },
+      "resultState": {
+        "description": "Write the general solution"
       }
     }
   ],

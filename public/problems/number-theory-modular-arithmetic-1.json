@@ -5,7 +5,11 @@
   "topic": "Number Theory",
   "difficulty": 3,
   "estimatedTime": 11,
-  "tags": ["modular arithmetic", "exponentiation", "number theory"],
+  "tags": [
+    "modular arithmetic",
+    "exponentiation",
+    "number theory"
+  ],
   "statement": {
     "text": "Find $7^{100} \\pmod{13}$ using properties of modular arithmetic."
   },
@@ -17,187 +21,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recognize Fermat's Little Theorem applies",
+      "order": 1,
       "currentState": {
         "expression": "$7^{100} \\pmod{13}$",
         "description": "Since 13 is prime and $\\gcd(7, 13) = 1$, we can use Fermat's Little Theorem."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does Fermat's Little Theorem state?",
         "hint": "For prime $p$ and $\\gcd(a,p) = 1$, what is $a^{p-1} \\pmod{p}$?"
       },
       "options": [
         {
           "id": "a",
-          "content": "$a^{p-1} \\equiv 1 \\pmod{p}$"
+          "text": "$a^{p-1} \\equiv 1 \\pmod{p}$"
         },
         {
           "id": "b",
-          "content": "$a^p \\equiv 0 \\pmod{p}$"
+          "text": "$a^p \\equiv 0 \\pmod{p}$"
         },
         {
           "id": "c",
-          "content": "$a^p \\equiv a \\pmod{p}$"
+          "text": "$a^p \\equiv a \\pmod{p}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Fermat's Little Theorem: If $p$ is prime and $\\gcd(a,p) = 1$, then $a^{p-1} \\equiv 1 \\pmod{p}$.",
           "insight": "This theorem dramatically simplifies modular exponentiation."
         },
         "incorrect": {
-          "b": "That's not FLT. The correct statement is $a^{p-1} \\equiv 1 \\pmod{p}$ when $\\gcd(a,p) = 1$.",
-          "c": "That's true for all $a$ (even divisible by $p$), but FLT specifically says $a^{p-1} \\equiv 1 \\pmod{p}$ when $\\gcd(a,p) = 1$."
+          "1": "That's not FLT. The correct statement is $a^{p-1} \\equiv 1 \\pmod{p}$ when $\\gcd(a,p) = 1$.",
+          "2": "That's true for all $a$ (even divisible by $p$), but FLT specifically says $a^{p-1} \\equiv 1 \\pmod{p}$ when $\\gcd(a,p) = 1$."
         }
+      },
+      "resultState": {
+        "description": "Recognize Fermat's Little Theorem applies"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply FLT",
+      "order": 2,
       "currentState": {
         "expression": "$p = 13$, $a = 7$",
         "description": "Since 13 is prime and $\\gcd(7,13) = 1$, we have $7^{12} \\equiv 1 \\pmod{13}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $7^{12} \\pmod{13}$?",
         "hint": "Use Fermat's Little Theorem with $p-1 = 13-1 = 12$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$7^{12} \\equiv 1 \\pmod{13}$"
+          "text": "$7^{12} \\equiv 1 \\pmod{13}$"
         },
         {
           "id": "b",
-          "content": "$7^{12} \\equiv 7 \\pmod{13}$"
+          "text": "$7^{12} \\equiv 7 \\pmod{13}$"
         },
         {
           "id": "c",
-          "content": "$7^{12} \\equiv 0 \\pmod{13}$"
+          "text": "$7^{12} \\equiv 0 \\pmod{13}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! By Fermat's Little Theorem, $7^{12} \\equiv 1 \\pmod{13}$.",
           "insight": "This reduces the problem dramatically by giving us a power that equals 1."
         },
         "incorrect": {
-          "b": "FLT says $a^{p-1} \\equiv 1 \\pmod{p}$, so $7^{12} \\equiv 1 \\pmod{13}$.",
-          "c": "$7$ and $13$ are coprime, so $7^{12} \\not\\equiv 0$. By FLT, $7^{12} \\equiv 1 \\pmod{13}$."
+          "1": "FLT says $a^{p-1} \\equiv 1 \\pmod{p}$, so $7^{12} \\equiv 1 \\pmod{13}$.",
+          "2": "$7$ and $13$ are coprime, so $7^{12} \\not\\equiv 0$. By FLT, $7^{12} \\equiv 1 \\pmod{13}$."
         }
+      },
+      "resultState": {
+        "description": "Apply FLT"
       }
     },
     {
       "id": "step-3",
-      "title": "Rewrite the exponent",
+      "order": 3,
       "currentState": {
         "expression": "$7^{100} \\pmod{13}$ and $7^{12} \\equiv 1 \\pmod{13}$",
         "description": "Express 100 in terms of 12."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How can we write $100$ in terms of $12$?",
         "hint": "Divide: $100 = 12q + r$ where $0 \\leq r < 12$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$100 = 12 \\times 8 + 4$"
+          "text": "$100 = 12 \\times 8 + 4$"
         },
         {
           "id": "b",
-          "content": "$100 = 12 \\times 10$"
+          "text": "$100 = 12 \\times 10$"
         },
         {
           "id": "c",
-          "content": "$100 = 12 \\times 9 + 8$"
+          "text": "$100 = 12 \\times 9 + 8$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $100 = 12 \\times 8 + 4 = 96 + 4$. So $7^{100} = 7^{96+4} = 7^{96} \\cdot 7^4$.",
           "insight": "Writing the exponent as a multiple of $(p-1)$ plus a remainder simplifies the calculation."
         },
         "incorrect": {
-          "b": "$12 \\times 10 = 120 \\neq 100$. We have $100 = 12 \\times 8 + 4$.",
-          "c": "$12 \\times 9 + 8 = 108 + 8 = 116 \\neq 100$. The correct division is $100 = 12 \\times 8 + 4$."
+          "1": "$12 \\times 10 = 120 \\neq 100$. We have $100 = 12 \\times 8 + 4$.",
+          "2": "$12 \\times 9 + 8 = 108 + 8 = 116 \\neq 100$. The correct division is $100 = 12 \\times 8 + 4$."
         }
+      },
+      "resultState": {
+        "description": "Rewrite the exponent"
       }
     },
     {
       "id": "step-4",
-      "title": "Simplify using FLT",
+      "order": 4,
       "currentState": {
         "expression": "$7^{100} = 7^{96} \\cdot 7^4 = (7^{12})^8 \\cdot 7^4$",
         "description": "Use $7^{12} \\equiv 1 \\pmod{13}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $7^{100} \\pmod{13}$?",
         "hint": "$(7^{12})^8 \\equiv 1^8 \\equiv 1 \\pmod{13}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$7^{100} \\equiv (7^{12})^8 \\cdot 7^4 \\equiv 1 \\cdot 7^4 \\equiv 7^4 \\pmod{13}$"
+          "text": "$7^{100} \\equiv (7^{12})^8 \\cdot 7^4 \\equiv 1 \\cdot 7^4 \\equiv 7^4 \\pmod{13}$"
         },
         {
           "id": "b",
-          "content": "$7^{100} \\equiv 7^{96} \\cdot 7^4 \\equiv 0 \\pmod{13}$"
+          "text": "$7^{100} \\equiv 7^{96} \\cdot 7^4 \\equiv 0 \\pmod{13}$"
         },
         {
           "id": "c",
-          "content": "$7^{100} \\equiv 8 \\cdot 7^4 \\pmod{13}$"
+          "text": "$7^{100} \\equiv 8 \\cdot 7^4 \\pmod{13}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $(7^{12})^8 \\equiv 1^8 = 1 \\pmod{13}$, so $7^{100} \\equiv 7^4 \\pmod{13}$.",
           "insight": "Fermat's Little Theorem reduces large exponents to manageable ones."
         },
         "incorrect": {
-          "b": "Since $\\gcd(7,13) = 1$, the result is not 0. Use $(7^{12})^8 \\equiv 1 \\pmod{13}$.",
-          "c": "$(7^{12})^8 \\equiv 1 \\pmod{13}$, not $8$. So $7^{100} \\equiv 1 \\cdot 7^4 \\pmod{13}$."
+          "1": "Since $\\gcd(7,13) = 1$, the result is not 0. Use $(7^{12})^8 \\equiv 1 \\pmod{13}$.",
+          "2": "$(7^{12})^8 \\equiv 1 \\pmod{13}$, not $8$. So $7^{100} \\equiv 1 \\cdot 7^4 \\pmod{13}$."
         }
+      },
+      "resultState": {
+        "description": "Simplify using FLT"
       }
     },
     {
       "id": "step-5",
-      "title": "Compute the final answer",
+      "order": 5,
       "currentState": {
         "expression": "$7^{100} \\equiv 7^4 \\pmod{13}$",
         "description": "Calculate $7^4$ and reduce modulo 13."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $7^4 \\pmod{13}$?",
         "hint": "$7^2 = 49$, then square that: $(7^2)^2 = 49^2$. Reduce modulo 13 at each step."
       },
       "options": [
         {
           "id": "a",
-          "content": "$7^4 = 2401 \\equiv 2 \\pmod{13}$ (since $2401 = 184 \\times 13 + 9$... actually let me recalculate)"
+          "text": "$7^4 = 2401 \\equiv 2 \\pmod{13}$ (since $2401 = 184 \\times 13 + 9$... actually let me recalculate)"
         },
         {
           "id": "b",
-          "content": "$7^4 \\equiv 9 \\pmod{13}$"
+          "text": "$7^4 \\equiv 9 \\pmod{13}$"
         },
         {
           "id": "c",
-          "content": "$7^4 \\equiv 4 \\pmod{13}$"
+          "text": "$7^4 \\equiv 4 \\pmod{13}$"
         }
       ],
-      "correctOption": "b",
+      "correctOptionIndex": 1,
       "feedback": {
         "correct": {
           "explanation": "Correct! $7^2 = 49 \\equiv 10 \\pmod{13}$ (since $49 = 3 \\times 13 + 10$). Then $7^4 = (7^2)^2 \\equiv 10^2 = 100 \\equiv 9 \\pmod{13}$ (since $100 = 7 \\times 13 + 9$).",
           "insight": "Breaking exponentiation into steps and reducing modulo at each step keeps numbers small."
         },
         "incorrect": {
-          "a": "Calculate step-by-step: $7^2 = 49 \\equiv 10 \\pmod{13}$, then $10^2 = 100 \\equiv 9 \\pmod{13}$.",
-          "c": "$7^4 = 2401$. Dividing: $2401 = 184 \\times 13 + 9$, so $7^4 \\equiv 9 \\pmod{13}$."
+          "0": "Calculate step-by-step: $7^2 = 49 \\equiv 10 \\pmod{13}$, then $10^2 = 100 \\equiv 9 \\pmod{13}$.",
+          "2": "$7^4 = 2401$. Dividing: $2401 = 184 \\times 13 + 9$, so $7^4 \\equiv 9 \\pmod{13}$."
         }
+      },
+      "resultState": {
+        "description": "Compute the final answer"
       }
     }
   ],

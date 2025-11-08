@@ -5,7 +5,12 @@
   "topic": "Differential Equations",
   "difficulty": 2,
   "estimatedTime": 10,
-  "tags": ["differential equations", "first-order", "linear", "integrating factor"],
+  "tags": [
+    "differential equations",
+    "first-order",
+    "linear",
+    "integrating factor"
+  ],
   "statement": {
     "text": "Solve the initial value problem $\\frac{dy}{dx} + 2y = e^{-x}$, $y(0) = 1$ using an integrating factor."
   },
@@ -17,187 +22,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify the standard form",
+      "order": 1,
       "currentState": {
         "expression": "$\\frac{dy}{dx} + 2y = e^{-x}$",
         "description": "This is in the form $y' + P(x)y = Q(x)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $P(x)$ and $Q(x)$?",
         "hint": "Compare to $y' + P(x)y = Q(x)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$P(x) = 2$ and $Q(x) = e^{-x}$"
+          "text": "$P(x) = 2$ and $Q(x) = e^{-x}$"
         },
         {
           "id": "b",
-          "content": "$P(x) = e^{-x}$ and $Q(x) = 2$"
+          "text": "$P(x) = e^{-x}$ and $Q(x) = 2$"
         },
         {
           "id": "c",
-          "content": "$P(x) = 2y$ and $Q(x) = e^{-x}$"
+          "text": "$P(x) = 2y$ and $Q(x) = e^{-x}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $P(x) = 2$ (coefficient of $y$) and $Q(x) = e^{-x}$ (right-hand side).",
           "insight": "First-order linear ODEs have the form $y' + P(x)y = Q(x)$."
         },
         "incorrect": {
-          "b": "$P(x)$ is the coefficient of $y$, which is 2, not $e^{-x}$.",
-          "c": "$P(x) = 2$, not $2y$. The $y$ is separate from the coefficient."
+          "1": "$P(x)$ is the coefficient of $y$, which is 2, not $e^{-x}$.",
+          "2": "$P(x) = 2$, not $2y$. The $y$ is separate from the coefficient."
         }
+      },
+      "resultState": {
+        "description": "Identify the standard form"
       }
     },
     {
       "id": "step-2",
-      "title": "Find the integrating factor",
+      "order": 2,
       "currentState": {
         "expression": "$P(x) = 2$",
         "description": "The integrating factor is $\\mu(x) = e^{\\int P(x) dx}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the integrating factor $\\mu(x)$?",
         "hint": "$\\mu(x) = e^{\\int 2 \\, dx} = e^{2x}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\mu(x) = e^{2x}$"
+          "text": "$\\mu(x) = e^{2x}$"
         },
         {
           "id": "b",
-          "content": "$\\mu(x) = e^x$"
+          "text": "$\\mu(x) = e^x$"
         },
         {
           "id": "c",
-          "content": "$\\mu(x) = 2x$"
+          "text": "$\\mu(x) = 2x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\mu(x) = e^{\\int 2 dx} = e^{2x}$.",
           "insight": "The integrating factor makes the left side a perfect derivative."
         },
         "incorrect": {
-          "b": "$\\int 2 \\, dx = 2x$, so $\\mu = e^{2x}$, not $e^x$.",
-          "c": "We need $e^{\\int P dx}$, not just $\\int P dx$. So $\\mu = e^{2x}$."
+          "1": "$\\int 2 \\, dx = 2x$, so $\\mu = e^{2x}$, not $e^x$.",
+          "2": "We need $e^{\\int P dx}$, not just $\\int P dx$. So $\\mu = e^{2x}$."
         }
+      },
+      "resultState": {
+        "description": "Find the integrating factor"
       }
     },
     {
       "id": "step-3",
-      "title": "Multiply by integrating factor",
+      "order": 3,
       "currentState": {
         "expression": "$e^{2x}(y' + 2y) = e^{2x} \\cdot e^{-x}$",
         "description": "Multiply both sides by $\\mu(x) = e^{2x}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does the left side become?",
         "hint": "$e^{2x}y' + 2e^{2x}y = \\frac{d}{dx}(e^{2x}y)$ (product rule!)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{d}{dx}(e^{2x}y) = e^x$"
+          "text": "$\\frac{d}{dx}(e^{2x}y) = e^x$"
         },
         {
           "id": "b",
-          "content": "$e^{2x}y' = e^x$"
+          "text": "$e^{2x}y' = e^x$"
         },
         {
           "id": "c",
-          "content": "$\\frac{d}{dx}(y) = e^{-x}$"
+          "text": "$\\frac{d}{dx}(y) = e^{-x}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! The left side becomes $\\frac{d}{dx}(e^{2x}y)$ and the right side is $e^{2x} \\cdot e^{-x} = e^x$.",
           "insight": "This is why we use an integrating factor - it creates a perfect derivative!"
         },
         "incorrect": {
-          "b": "The left side is the full derivative $\\frac{d}{dx}(e^{2x}y)$, not just $e^{2x}y'$.",
-          "c": "After multiplying by $e^{2x}$, we get $\\frac{d}{dx}(e^{2x}y) = e^x$."
+          "1": "The left side is the full derivative $\\frac{d}{dx}(e^{2x}y)$, not just $e^{2x}y'$.",
+          "2": "After multiplying by $e^{2x}$, we get $\\frac{d}{dx}(e^{2x}y) = e^x$."
         }
+      },
+      "resultState": {
+        "description": "Multiply by integrating factor"
       }
     },
     {
       "id": "step-4",
-      "title": "Integrate both sides",
+      "order": 4,
       "currentState": {
         "expression": "$\\frac{d}{dx}(e^{2x}y) = e^x$",
         "description": "Integrate to find $e^{2x}y$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $e^{2x}y$?",
         "hint": "$\\int e^x dx = e^x + C$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$e^{2x}y = e^x + C$"
+          "text": "$e^{2x}y = e^x + C$"
         },
         {
           "id": "b",
-          "content": "$e^{2x}y = \\frac{e^x}{2} + C$"
+          "text": "$e^{2x}y = \\frac{e^x}{2} + C$"
         },
         {
           "id": "c",
-          "content": "$e^{2x}y = x e^x + C$"
+          "text": "$e^{2x}y = x e^x + C$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\int e^x dx = e^x + C$, so $e^{2x}y = e^x + C$.",
           "insight": "Now we just need to solve for $y$ and apply the initial condition."
         },
         "incorrect": {
-          "b": "$\\int e^x dx = e^x$, not $\\frac{e^x}{2}$. Don't confuse with $\\int e^{2x} dx$.",
-          "c": "$\\int e^x dx = e^x + C$, not $xe^x + C$."
+          "1": "$\\int e^x dx = e^x$, not $\\frac{e^x}{2}$. Don't confuse with $\\int e^{2x} dx$.",
+          "2": "$\\int e^x dx = e^x + C$, not $xe^x + C$."
         }
+      },
+      "resultState": {
+        "description": "Integrate both sides"
       }
     },
     {
       "id": "step-5",
-      "title": "Solve for y and apply initial condition",
+      "order": 5,
       "currentState": {
         "expression": "$e^{2x}y = e^x + C$",
         "description": "Divide by $e^{2x}$ and use $y(0) = 1$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the solution $y(x)$?",
         "hint": "$y = e^{-x} + Ce^{-2x}$. Use $y(0) = 1$ to find $C = 0$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$y = e^{-x}$ (after finding $C = 0$)"
+          "text": "$y = e^{-x}$ (after finding $C = 0$)"
         },
         {
           "id": "b",
-          "content": "$y = e^{-x} + e^{-2x}$"
+          "text": "$y = e^{-x} + e^{-2x}$"
         },
         {
           "id": "c",
-          "content": "$y = e^x$"
+          "text": "$y = e^x$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $y = \\frac{e^x + C}{e^{2x}} = e^{-x} + Ce^{-2x}$. Using $y(0) = 1$: $1 = 1 + C \\Rightarrow C = 0$. So $y = e^{-x}$.",
           "insight": "The initial condition uniquely determines the constant of integration."
         },
         "incorrect": {
-          "b": "Apply the initial condition: at $x=0$, $y = 1 + C$. Since $y(0) = 1$, we get $C = 0$.",
-          "c": "$y = e^{-x}$, not $e^x$. Check your algebra when solving for $y$."
+          "1": "Apply the initial condition: at $x=0$, $y = 1 + C$. Since $y(0) = 1$, we get $C = 0$.",
+          "2": "$y = e^{-x}$, not $e^x$. Check your algebra when solving for $y$."
         }
+      },
+      "resultState": {
+        "description": "Solve for y and apply initial condition"
       }
     }
   ],

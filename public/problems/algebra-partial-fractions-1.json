@@ -5,7 +5,11 @@
   "topic": "Algebra",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["partial fractions", "rational functions", "algebra"],
+  "tags": [
+    "partial fractions",
+    "rational functions",
+    "algebra"
+  ],
   "statement": {
     "text": "Decompose $\\frac{3x + 5}{(x+1)(x+2)}$ into partial fractions."
   },
@@ -17,224 +21,242 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Set up the form",
+      "order": 1,
       "currentState": {
         "expression": "$\\frac{3x + 5}{(x+1)(x+2)}$",
         "description": "Linear factors in the denominator lead to constants in the numerators."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What form should the partial fraction decomposition take?",
         "hint": "Each distinct linear factor gets its own fraction with a constant numerator."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{A}{x+1} + \\frac{B}{x+2}$"
+          "text": "$\\frac{A}{x+1} + \\frac{B}{x+2}$"
         },
         {
           "id": "b",
-          "content": "$\\frac{Ax + B}{x+1} + \\frac{C}{x+2}$"
+          "text": "$\\frac{Ax + B}{x+1} + \\frac{C}{x+2}$"
         },
         {
           "id": "c",
-          "content": "$\\frac{A}{(x+1)(x+2)}$"
+          "text": "$\\frac{A}{(x+1)(x+2)}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! With distinct linear factors, use $\\frac{A}{x+1} + \\frac{B}{x+2}$ where A and B are constants to be determined.",
           "insight": "The form of partial fractions depends on the factorization of the denominator."
         },
         "incorrect": {
-          "b": "For simple linear factors, we only need constants in the numerators, not linear expressions.",
-          "c": "We need to separate the fraction, not keep it as one. Each factor gets its own term."
+          "1": "For simple linear factors, we only need constants in the numerators, not linear expressions.",
+          "2": "We need to separate the fraction, not keep it as one. Each factor gets its own term."
         }
+      },
+      "resultState": {
+        "description": "Set up the form"
       }
     },
     {
       "id": "step-2",
-      "title": "Clear denominators",
+      "order": 2,
       "currentState": {
         "expression": "$\\frac{3x + 5}{(x+1)(x+2)} = \\frac{A}{x+1} + \\frac{B}{x+2}$",
         "description": "Multiply both sides by $(x+1)(x+2)$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "After multiplying by $(x+1)(x+2)$, what equation do we get?",
         "hint": "The denominators cancel on both sides."
       },
       "options": [
         {
           "id": "a",
-          "content": "$3x + 5 = A(x+2) + B(x+1)$"
+          "text": "$3x + 5 = A(x+2) + B(x+1)$"
         },
         {
           "id": "b",
-          "content": "$3x + 5 = A + B$"
+          "text": "$3x + 5 = A + B$"
         },
         {
           "id": "c",
-          "content": "$3x + 5 = AB$"
+          "text": "$3x + 5 = AB$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Exactly! Multiplying through: $3x + 5 = A(x+2) + B(x+1)$. Now we need to find A and B.",
           "insight": "Clearing denominators gives us a polynomial equation we can solve."
         },
         "incorrect": {
-          "b": "When we multiply $\\frac{A}{x+1}$ by $(x+1)(x+2)$, we get $A(x+2)$, not just A.",
-          "c": "We add the fractions, not multiply. The right side becomes $A(x+2) + B(x+1)$."
+          "1": "When we multiply $\\frac{A}{x+1}$ by $(x+1)(x+2)$, we get $A(x+2)$, not just A.",
+          "2": "We add the fractions, not multiply. The right side becomes $A(x+2) + B(x+1)$."
         }
+      },
+      "resultState": {
+        "description": "Clear denominators"
       }
     },
     {
       "id": "step-3",
-      "title": "Use substitution method: x = -1",
+      "order": 3,
       "currentState": {
         "expression": "$3x + 5 = A(x+2) + B(x+1)$",
         "description": "Choose x = -1 to eliminate B."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Substitute $x = -1$. What is A?",
         "hint": "When $x = -1$, the term $B(x+1) = B(0) = 0$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$A = 2$"
+          "text": "$A = 2$"
         },
         {
           "id": "b",
-          "content": "$A = -2$"
+          "text": "$A = -2$"
         },
         {
           "id": "c",
-          "content": "$A = 5$"
+          "text": "$A = 5$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! At $x = -1$: $3(-1) + 5 = A(-1+2) + B(0)$, so $2 = A(1)$, giving $A = 2$.",
           "insight": "Choosing values that zero out coefficients is an efficient solving technique."
         },
         "incorrect": {
-          "b": "Check your arithmetic: $3(-1) + 5 = -3 + 5 = 2$ (positive).",
-          "c": "$3(-1) + 5 = 2$, and this equals $A(1)$, so $A = 2$."
+          "1": "Check your arithmetic: $3(-1) + 5 = -3 + 5 = 2$ (positive).",
+          "2": "$3(-1) + 5 = 2$, and this equals $A(1)$, so $A = 2$."
         }
+      },
+      "resultState": {
+        "description": "Use substitution method: x = -1"
       }
     },
     {
       "id": "step-4",
-      "title": "Use substitution method: x = -2",
+      "order": 4,
       "currentState": {
         "expression": "$3x + 5 = A(x+2) + B(x+1)$ with $A = 2$",
         "description": "Choose x = -2 to eliminate A."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Substitute $x = -2$. What is B?",
         "hint": "When $x = -2$, the term $A(x+2) = A(0) = 0$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$B = 1$"
+          "text": "$B = 1$"
         },
         {
           "id": "b",
-          "content": "$B = -1$"
+          "text": "$B = -1$"
         },
         {
           "id": "c",
-          "content": "$B = 3$"
+          "text": "$B = 3$"
         }
       ],
-      "correctOption": "b",
+      "correctOptionIndex": 1,
       "feedback": {
         "correct": {
           "explanation": "Correct! At $x = -2$: $3(-2) + 5 = A(0) + B(-2+1)$, so $-1 = B(-1)$, giving $B = 1$. Wait, let me recalculate: $-1 = -B$, so $B = 1$. Actually: $-6 + 5 = -1$ and $B(-1) = -1$ so $B = 1$. Hmm, the correct answer should be B=1, not -1. Let me mark this correctly.",
           "insight": "Using strategic substitutions makes solving for coefficients straightforward."
         },
         "incorrect": {
-          "b": "Check: $3(-2) + 5 = -6 + 5 = -1$, and $B(-2+1) = -B = -1$, so $B = 1$.",
-          "c": "$3(-2) + 5 = -1$, and this equals $B(-1) = -B$, so $B = 1$."
+          "1": "Check: $3(-2) + 5 = -6 + 5 = -1$, and $B(-2+1) = -B = -1$, so $B = 1$.",
+          "2": "$3(-2) + 5 = -1$, and this equals $B(-1) = -B$, so $B = 1$."
         }
+      },
+      "resultState": {
+        "description": "Use substitution method: x = -2"
       }
     },
     {
       "id": "step-5",
-      "title": "Write the decomposition",
+      "order": 5,
       "currentState": {
         "expression": "$A = 2$, $B = 1$",
         "description": "Substitute back into the partial fraction form."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the complete partial fraction decomposition?",
         "hint": "Replace A and B with their values."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{2}{x+1} + \\frac{1}{x+2}$"
+          "text": "$\\frac{2}{x+1} + \\frac{1}{x+2}$"
         },
         {
           "id": "b",
-          "content": "$\\frac{1}{x+1} + \\frac{2}{x+2}$"
+          "text": "$\\frac{1}{x+1} + \\frac{2}{x+2}$"
         },
         {
           "id": "c",
-          "content": "$\\frac{2}{x+1} - \\frac{1}{x+2}$"
+          "text": "$\\frac{2}{x+1} - \\frac{1}{x+2}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\frac{3x+5}{(x+1)(x+2)} = \\frac{2}{x+1} + \\frac{1}{x+2}$.",
           "insight": "Partial fractions decompose complex rational functions into simpler pieces."
         },
         "incorrect": {
-          "b": "We found $A = 2$ and $B = 1$, so it's $\\frac{2}{x+1} + \\frac{1}{x+2}$.",
-          "c": "B is positive: $B = 1$, not $-1$."
+          "1": "We found $A = 2$ and $B = 1$, so it's $\\frac{2}{x+1} + \\frac{1}{x+2}$.",
+          "2": "B is positive: $B = 1$, not $-1$."
         }
+      },
+      "resultState": {
+        "description": "Write the decomposition"
       }
     },
     {
       "id": "step-6",
-      "title": "Verify the answer",
+      "order": 6,
       "currentState": {
         "expression": "$\\frac{2}{x+1} + \\frac{1}{x+2}$",
         "description": "Combine over a common denominator to verify."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Does $\\frac{2}{x+1} + \\frac{1}{x+2}$ simplify back to $\\frac{3x+5}{(x+1)(x+2)}$?",
         "hint": "Find common denominator and add: $\\frac{2(x+2) + 1(x+1)}{(x+1)(x+2)}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Yes: $\\frac{2(x+2) + 1(x+1)}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ ✓"
+          "text": "Yes: $\\frac{2(x+2) + 1(x+1)}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ ✓"
         },
         {
           "id": "b",
-          "content": "No, we made an error"
+          "text": "No, we made an error"
         },
         {
           "id": "c",
-          "content": "Cannot verify without numerical values"
+          "text": "Cannot verify without numerical values"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\frac{2(x+2) + (x+1)}{(x+1)(x+2)} = \\frac{2x+4+x+1}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ ✓",
           "insight": "Always verify your partial fraction decomposition by recombining the fractions."
         },
         "incorrect": {
-          "b": "The answer is correct. Expand and check: $2(x+2) + (x+1) = 2x + 4 + x + 1 = 3x + 5$.",
-          "c": "We can verify algebraically by combining the fractions over a common denominator."
+          "1": "The answer is correct. Expand and check: $2(x+2) + (x+1) = 2x + 4 + x + 1 = 3x + 5$.",
+          "2": "We can verify algebraically by combining the fractions over a common denominator."
         }
+      },
+      "resultState": {
+        "description": "Verify the answer"
       }
     }
   ],

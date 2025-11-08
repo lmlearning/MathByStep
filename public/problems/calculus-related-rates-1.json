@@ -5,7 +5,12 @@
   "topic": "Calculus",
   "difficulty": 3,
   "estimatedTime": 10,
-  "tags": ["calculus", "derivatives", "related rates", "applications"],
+  "tags": [
+    "calculus",
+    "derivatives",
+    "related rates",
+    "applications"
+  ],
   "statement": {
     "text": "A circular oil slick expands such that its radius increases at 2 m/min. How fast is the area increasing when the radius is 10 meters?"
   },
@@ -17,113 +22,122 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify the rates",
+      "order": 1,
       "currentState": {
         "expression": "Given: $\\frac{dr}{dt} = 2$ m/min when $r = 10$ m",
         "description": "What rate are we looking for?"
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the target rate?",
         "hint": "We want to find how fast the area is changing: $\\frac{dA}{dt}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "Find $\\frac{dA}{dt}$ (rate of change of area)"
+          "text": "Find $\\frac{dA}{dt}$ (rate of change of area)"
         },
         {
           "id": "b",
-          "content": "Find $\\frac{dr}{dt}$ (rate of change of radius)"
+          "text": "Find $\\frac{dr}{dt}$ (rate of change of radius)"
         },
         {
           "id": "c",
-          "content": "Find $A$ (the area itself)"
+          "text": "Find $A$ (the area itself)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! We're given $\\frac{dr}{dt} = 2$ m/min and need to find $\\frac{dA}{dt}$ when $r = 10$ m.",
           "insight": "Related rates problems connect two rates of change through their relationship equation."
         },
         "incorrect": {
-          "b": "That's the given rate (2 m/min), not what we're looking for.",
-          "c": "We need a rate (change per time), not just the area value."
+          "1": "That's the given rate (2 m/min), not what we're looking for.",
+          "2": "We need a rate (change per time), not just the area value."
         }
+      },
+      "resultState": {
+        "description": "Identify the rates"
       }
     },
     {
       "id": "step-2",
-      "title": "Write the relationship",
+      "order": 2,
       "currentState": {
         "expression": "Area of circle: $A = \\pi r^2$",
         "description": "This relates $A$ and $r$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How do we connect the rates $\\frac{dA}{dt}$ and $\\frac{dr}{dt}$?",
         "hint": "Differentiate both sides with respect to time $t$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$ (using chain rule)"
+          "text": "$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$ (using chain rule)"
         },
         {
           "id": "b",
-          "content": "$\\frac{dA}{dt} = \\pi r^2$"
+          "text": "$\\frac{dA}{dt} = \\pi r^2$"
         },
         {
           "id": "c",
-          "content": "$\\frac{dA}{dt} = 2\\pi r$"
+          "text": "$\\frac{dA}{dt} = 2\\pi r$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Differentiating $A = \\pi r^2$ with respect to $t$: $\\frac{dA}{dt} = \\pi \\cdot 2r \\cdot \\frac{dr}{dt} = 2\\pi r \\frac{dr}{dt}$.",
           "insight": "The chain rule connects the two rates through their relationship."
         },
         "incorrect": {
-          "b": "You forgot to differentiate! We need $\\frac{dA}{dt}$, not just $A$.",
-          "c": "Missing the $\\frac{dr}{dt}$ factor from the chain rule."
+          "1": "You forgot to differentiate! We need $\\frac{dA}{dt}$, not just $A$.",
+          "2": "Missing the $\\frac{dr}{dt}$ factor from the chain rule."
         }
+      },
+      "resultState": {
+        "description": "Write the relationship"
       }
     },
     {
       "id": "step-3",
-      "title": "Substitute values",
+      "order": 3,
       "currentState": {
         "expression": "$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$",
         "description": "Plug in $r = 10$ and $\\frac{dr}{dt} = 2$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\frac{dA}{dt}$ when $r = 10$ m and $\\frac{dr}{dt} = 2$ m/min?",
         "hint": "$\\frac{dA}{dt} = 2\\pi (10)(2) = 40\\pi$ m²/min."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{dA}{dt} = 2\\pi(10)(2) = 40\\pi$ m²/min $\\approx 125.7$ m²/min"
+          "text": "$\\frac{dA}{dt} = 2\\pi(10)(2) = 40\\pi$ m²/min $\\approx 125.7$ m²/min"
         },
         {
           "id": "b",
-          "content": "$\\frac{dA}{dt} = 2\\pi(10) = 20\\pi$ m²/min"
+          "text": "$\\frac{dA}{dt} = 2\\pi(10) = 20\\pi$ m²/min"
         },
         {
           "id": "c",
-          "content": "$\\frac{dA}{dt} = \\pi(10)^2 = 100\\pi$ m²/min"
+          "text": "$\\frac{dA}{dt} = \\pi(10)^2 = 100\\pi$ m²/min"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt} = 2\\pi (10)(2) = 40\\pi \\approx 125.7$ m²/min.",
           "insight": "When the radius is 10m and growing at 2 m/min, the area grows at about 126 m²/min."
         },
         "incorrect": {
-          "b": "Don't forget to multiply by $\\frac{dr}{dt} = 2$ m/min!",
-          "c": "That's the area itself, not its rate of change. You need to use the differentiated formula."
+          "1": "Don't forget to multiply by $\\frac{dr}{dt} = 2$ m/min!",
+          "2": "That's the area itself, not its rate of change. You need to use the differentiated formula."
         }
+      },
+      "resultState": {
+        "description": "Substitute values"
       }
     }
   ],

@@ -5,7 +5,11 @@
   "topic": "Differential Equations",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["differential equations", "Laplace transform", "inverse Laplace"],
+  "tags": [
+    "differential equations",
+    "Laplace transform",
+    "inverse Laplace"
+  ],
   "statement": {
     "text": "Use Laplace transforms to solve $y'' + 4y' + 3y = 0$ with $y(0) = 2$ and $y'(0) = -1$."
   },
@@ -17,187 +21,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Recall Laplace transform formulas",
+      "order": 1,
       "currentState": {
         "expression": "$\\mathcal{L}\\{y\\} = Y(s)$",
         "description": "We need formulas for derivatives."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $\\mathcal{L}\\{y'\\}$ and $\\mathcal{L}\\{y''\\}$?",
         "hint": "$\\mathcal{L}\\{y'\\} = sY(s) - y(0)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s) - sy(0) - y'(0)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\mathcal{L}\\{y'\\} = sY(s) - y(0)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s) - sy(0) - y'(0)$"
+          "text": "$\\mathcal{L}\\{y'\\} = sY(s) - y(0)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s) - sy(0) - y'(0)$"
         },
         {
           "id": "b",
-          "content": "$\\mathcal{L}\\{y'\\} = Y'(s)$ and $\\mathcal{L}\\{y''\\} = Y''(s)$"
+          "text": "$\\mathcal{L}\\{y'\\} = Y'(s)$ and $\\mathcal{L}\\{y''\\} = Y''(s)$"
         },
         {
           "id": "c",
-          "content": "$\\mathcal{L}\\{y'\\} = sY(s)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s)$"
+          "text": "$\\mathcal{L}\\{y'\\} = sY(s)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s)$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\mathcal{L}\\{y'\\} = sY(s) - y(0)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s) - sy(0) - y'(0)$. These formulas incorporate the initial conditions.",
           "insight": "The Laplace transform converts derivatives to algebra, bringing in initial conditions automatically."
         },
         "incorrect": {
-          "b": "The Laplace transform doesn't just give the derivative of $Y(s)$. It involves $s$ and initial conditions.",
-          "c": "Don't forget the initial condition terms! $\\mathcal{L}\\{y'\\} = sY(s) - y(0)$."
+          "1": "The Laplace transform doesn't just give the derivative of $Y(s)$. It involves $s$ and initial conditions.",
+          "2": "Don't forget the initial condition terms! $\\mathcal{L}\\{y'\\} = sY(s) - y(0)$."
         }
+      },
+      "resultState": {
+        "description": "Recall Laplace transform formulas"
       }
     },
     {
       "id": "step-2",
-      "title": "Apply Laplace transform to the equation",
+      "order": 2,
       "currentState": {
         "expression": "$y'' + 4y' + 3y = 0$ with $y(0) = 2$, $y'(0) = -1$",
         "description": "Transform each term."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What equation do we get in terms of $Y(s)$?",
         "hint": "$[s^2Y - 2s - (-1)] + 4[sY - 2] + 3Y = 0$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$(s^2 + 4s + 3)Y(s) - 2s - 1 - 8 = 0$, i.e., $(s^2 + 4s + 3)Y(s) = 2s + 9$"
+          "text": "$(s^2 + 4s + 3)Y(s) - 2s - 1 - 8 = 0$, i.e., $(s^2 + 4s + 3)Y(s) = 2s + 9$"
         },
         {
           "id": "b",
-          "content": "$(s^2 + 4s + 3)Y(s) = 2s - 1$"
+          "text": "$(s^2 + 4s + 3)Y(s) = 2s - 1$"
         },
         {
           "id": "c",
-          "content": "$Y''(s) + 4Y'(s) + 3Y(s) = 0$"
+          "text": "$Y''(s) + 4Y'(s) + 3Y(s) = 0$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\mathcal{L}\\{y''\\} + 4\\mathcal{L}\\{y'\\} + 3\\mathcal{L}\\{y\\} = [s^2Y - 2s + 1] + 4[sY - 2] + 3Y = (s^2 + 4s + 3)Y - 2s + 1 - 8 = 0$. So $(s^2 + 4s + 3)Y = 2s + 9$.",
           "insight": "The DE becomes an algebraic equation in $Y(s)$!"
         },
         "incorrect": {
-          "b": "Don't forget the initial condition terms: from $y''$, we get $-sy(0) - y'(0) = -2s + 1$, and from $4y'$, we get $-4y(0) = -8$.",
-          "c": "The Laplace transform converts the DE to an algebraic equation in $Y(s)$, not another DE."
+          "1": "Don't forget the initial condition terms: from $y''$, we get $-sy(0) - y'(0) = -2s + 1$, and from $4y'$, we get $-4y(0) = -8$.",
+          "2": "The Laplace transform converts the DE to an algebraic equation in $Y(s)$, not another DE."
         }
+      },
+      "resultState": {
+        "description": "Apply Laplace transform to the equation"
       }
     },
     {
       "id": "step-3",
-      "title": "Solve for Y(s)",
+      "order": 3,
       "currentState": {
         "expression": "$(s^2 + 4s + 3)Y(s) = 2s + 9$",
         "description": "Factor the denominator and use partial fractions."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $Y(s)$?",
         "hint": "$Y(s) = \\frac{2s + 9}{s^2 + 4s + 3} = \\frac{2s + 9}{(s+1)(s+3)}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$Y(s) = \\frac{2s + 9}{(s+1)(s+3)}$"
+          "text": "$Y(s) = \\frac{2s + 9}{(s+1)(s+3)}$"
         },
         {
           "id": "b",
-          "content": "$Y(s) = \\frac{2s + 9}{s^2 + 4s + 3}$ (cannot factor)"
+          "text": "$Y(s) = \\frac{2s + 9}{s^2 + 4s + 3}$ (cannot factor)"
         },
         {
           "id": "c",
-          "content": "$Y(s) = \\frac{2s + 9}{(s+2)^2 - 1}$"
+          "text": "$Y(s) = \\frac{2s + 9}{(s+2)^2 - 1}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $s^2 + 4s + 3 = (s+1)(s+3)$, so $Y(s) = \\frac{2s + 9}{(s+1)(s+3)}$.",
           "insight": "Now we can use partial fractions to prepare for the inverse Laplace transform."
         },
         "incorrect": {
-          "b": "$s^2 + 4s + 3$ does factor: $(s+1)(s+3)$.",
-          "c": "While $s^2 + 4s + 3 = (s+2)^2 - 1$ is true, the factored form $(s+1)(s+3)$ is more useful for partial fractions."
+          "1": "$s^2 + 4s + 3$ does factor: $(s+1)(s+3)$.",
+          "2": "While $s^2 + 4s + 3 = (s+2)^2 - 1$ is true, the factored form $(s+1)(s+3)$ is more useful for partial fractions."
         }
+      },
+      "resultState": {
+        "description": "Solve for Y(s)"
       }
     },
     {
       "id": "step-4",
-      "title": "Use partial fractions",
+      "order": 4,
       "currentState": {
         "expression": "$Y(s) = \\frac{2s + 9}{(s+1)(s+3)}$",
         "description": "Write as $\\frac{A}{s+1} + \\frac{B}{s+3}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are $A$ and $B$?",
         "hint": "$2s + 9 = A(s+3) + B(s+1)$. Set $s = -1$: $7 = 2A$, so $A = 7/2$. Set $s = -3$: $3 = -2B$, so $B = -3/2$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$A = \\frac{7}{2}$, $B = -\\frac{3}{2}$, so $Y(s) = \\frac{7/2}{s+1} - \\frac{3/2}{s+3}$"
+          "text": "$A = \\frac{7}{2}$, $B = -\\frac{3}{2}$, so $Y(s) = \\frac{7/2}{s+1} - \\frac{3/2}{s+3}$"
         },
         {
           "id": "b",
-          "content": "$A = 1$, $B = 1$, so $Y(s) = \\frac{1}{s+1} + \\frac{1}{s+3}$"
+          "text": "$A = 1$, $B = 1$, so $Y(s) = \\frac{1}{s+1} + \\frac{1}{s+3}$"
         },
         {
           "id": "c",
-          "content": "$A = 2$, $B = 9$"
+          "text": "$A = 2$, $B = 9$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $2s + 9 = A(s+3) + B(s+1)$. At $s=-1$: $7 = 2A \\Rightarrow A = 7/2$. At $s=-3$: $3 = -2B \\Rightarrow B = -3/2$.",
           "insight": "Partial fractions decomposes the expression into forms we can easily inverse transform."
         },
         "incorrect": {
-          "b": "Check: $(1)(s+3) + (1)(s+1) = 2s + 4 \\neq 2s + 9$. Use the cover-up method to find $A$ and $B$.",
-          "c": "Those aren't the coefficients for the partial fractions. Solve $2s + 9 = A(s+3) + B(s+1)$."
+          "1": "Check: $(1)(s+3) + (1)(s+1) = 2s + 4 \\neq 2s + 9$. Use the cover-up method to find $A$ and $B$.",
+          "2": "Those aren't the coefficients for the partial fractions. Solve $2s + 9 = A(s+3) + B(s+1)$."
         }
+      },
+      "resultState": {
+        "description": "Use partial fractions"
       }
     },
     {
       "id": "step-5",
-      "title": "Inverse Laplace transform",
+      "order": 5,
       "currentState": {
         "expression": "$Y(s) = \\frac{7/2}{s+1} - \\frac{3/2}{s+3}$",
         "description": "Use $\\mathcal{L}^{-1}\\{\\frac{1}{s+a}\\} = e^{-at}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $y(t) = \\mathcal{L}^{-1}\\{Y(s)\\}$?",
         "hint": "$y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$"
+          "text": "$y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$"
         },
         {
           "id": "b",
-          "content": "$y(t) = \\frac{7}{2}e^t - \\frac{3}{2}e^{3t}$"
+          "text": "$y(t) = \\frac{7}{2}e^t - \\frac{3}{2}e^{3t}$"
         },
         {
           "id": "c",
-          "content": "$y(t) = 7e^{-t} - 3e^{-3t}$"
+          "text": "$y(t) = 7e^{-t} - 3e^{-3t}$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $y(t) = \\mathcal{L}^{-1}\\left\\{\\frac{7/2}{s+1}\\right\\} - \\mathcal{L}^{-1}\\left\\{\\frac{3/2}{s+3}\\right\\} = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$.",
           "insight": "We can verify: $y(0) = 7/2 - 3/2 = 2$ ✓ and $y'(0) = -7/2 + 9/2 = 1$... wait, that should be -1. Let me recalculate."
         },
         "incorrect": {
-          "b": "$\\mathcal{L}^{-1}\\{\\frac{1}{s+a}\\} = e^{-at}$, not $e^{at}$. The signs in the exponents should be negative.",
-          "c": "Don't forget the fractional coefficients: $\\frac{7}{2}$ and $\\frac{3}{2}$, not 7 and 3."
+          "1": "$\\mathcal{L}^{-1}\\{\\frac{1}{s+a}\\} = e^{-at}$, not $e^{at}$. The signs in the exponents should be negative.",
+          "2": "Don't forget the fractional coefficients: $\\frac{7}{2}$ and $\\frac{3}{2}$, not 7 and 3."
         }
+      },
+      "resultState": {
+        "description": "Inverse Laplace transform"
       }
     }
   ],

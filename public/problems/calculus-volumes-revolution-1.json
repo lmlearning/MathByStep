@@ -5,40 +5,98 @@
   "topic": "Calculus",
   "difficulty": 2,
   "estimatedTime": 9,
-  "tags": ["calculus", "integration", "volumes", "solids of revolution"],
-  "statement": {"text": "Find the volume when the region under $y = \\sqrt{x}$ from $x=0$ to $x=4$ is revolved around the $x$-axis."},
-  "objectives": ["Set up disk method integral", "Evaluate volume integral"],
+  "tags": [
+    "calculus",
+    "integration",
+    "volumes",
+    "solids of revolution"
+  ],
+  "statement": {
+    "text": "Find the volume when the region under $y = \\sqrt{x}$ from $x=0$ to $x=4$ is revolved around the $x$-axis."
+  },
+  "objectives": [
+    "Set up disk method integral",
+    "Evaluate volume integral"
+  ],
   "steps": [
     {
       "id": "step-1",
-      "title": "Set up the integral",
-      "currentState": {"expression": "Revolve $y=\\sqrt{x}$ around $x$-axis", "description": "Disk method: $V = \\pi\\int_a^b [R(x)]^2 dx$ where $R(x)$ is radius."},
-      "reflectionPrompt": {"question": "What is $R(x)$?", "hint": "Distance from $x$-axis to curve: $R(x) = \\sqrt{x}$."},
+      "order": 1,
+      "currentState": {
+        "expression": "Revolve $y=\\sqrt{x}$ around $x$-axis",
+        "description": "Disk method: $V = \\pi\\int_a^b [R(x)]^2 dx$ where $R(x)$ is radius."
+      },
+      "prompt": {
+        "question": "What is $R(x)$?",
+        "hint": "Distance from $x$-axis to curve: $R(x) = \\sqrt{x}$."
+      },
       "options": [
-        {"id": "a", "content": "$V = \\pi\\int_0^4 (\\sqrt{x})^2 dx = \\pi\\int_0^4 x\\, dx$"},
-        {"id": "b", "content": "$V = \\pi\\int_0^4 \\sqrt{x}\\, dx$"},
-        {"id": "c", "content": "$V = \\int_0^4 x\\, dx$"}
+        {
+          "id": "a",
+          "text": "$V = \\pi\\int_0^4 (\\sqrt{x})^2 dx = \\pi\\int_0^4 x\\, dx$"
+        },
+        {
+          "id": "b",
+          "text": "$V = \\pi\\int_0^4 \\sqrt{x}\\, dx$"
+        },
+        {
+          "id": "c",
+          "text": "$V = \\int_0^4 x\\, dx$"
+        }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
-        "correct": {"explanation": "Perfect! Disk method: $V = \\pi\\int_a^b [R(x)]^2dx$. Here $R(x)=\\sqrt{x}$, so $V = \\pi\\int_0^4 x\\, dx$.", "insight": "Don't forget to square the radius and multiply by $\\pi$!"},
-        "incorrect": {"b": "You forgot to square the radius! Disk area is $\\pi R^2$.", "c": "Missing the $\\pi$ factor."}
+        "correct": {
+          "explanation": "Perfect! Disk method: $V = \\pi\\int_a^b [R(x)]^2dx$. Here $R(x)=\\sqrt{x}$, so $V = \\pi\\int_0^4 x\\, dx$.",
+          "insight": "Don't forget to square the radius and multiply by $\\pi$!"
+        },
+        "incorrect": {
+          "1": "You forgot to square the radius! Disk area is $\\pi R^2$.",
+          "2": "Missing the $\\pi$ factor."
+        }
+      },
+      "resultState": {
+        "description": "Set up the integral"
       }
     },
     {
       "id": "step-2",
-      "title": "Evaluate the integral",
-      "currentState": {"expression": "$V = \\pi\\int_0^4 x\\, dx$", "description": "Basic power rule."},
-      "reflectionPrompt": {"question": "What is the volume?", "hint": "$\\int x\\, dx = \\frac{x^2}{2}$. Evaluate from 0 to 4."},
+      "order": 2,
+      "currentState": {
+        "expression": "$V = \\pi\\int_0^4 x\\, dx$",
+        "description": "Basic power rule."
+      },
+      "prompt": {
+        "question": "What is the volume?",
+        "hint": "$\\int x\\, dx = \\frac{x^2}{2}$. Evaluate from 0 to 4."
+      },
       "options": [
-        {"id": "a", "content": "$V = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi(8-0) = 8\\pi$ cubic units"},
-        {"id": "b", "content": "$V = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi(16) = 16\\pi$ cubic units"},
-        {"id": "c", "content": "$V = \\left[\\frac{x^2}{2}\\right]_0^4 = 8$ cubic units"}
+        {
+          "id": "a",
+          "text": "$V = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi(8-0) = 8\\pi$ cubic units"
+        },
+        {
+          "id": "b",
+          "text": "$V = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi(16) = 16\\pi$ cubic units"
+        },
+        {
+          "id": "c",
+          "text": "$V = \\left[\\frac{x^2}{2}\\right]_0^4 = 8$ cubic units"
+        }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
-        "correct": {"explanation": "Correct! $\\pi\\int_0^4 x\\, dx = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi\\left(\\frac{16}{2}-0\\right) = 8\\pi$ cubic units.", "insight": "Volumes of revolution create 3D solids from 2D regions."},
-        "incorrect": {"b": "$\\frac{4^2}{2} = \\frac{16}{2} = 8$, not 16.", "c": "Don't forget the $\\pi$ factor!"}
+        "correct": {
+          "explanation": "Correct! $\\pi\\int_0^4 x\\, dx = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi\\left(\\frac{16}{2}-0\\right) = 8\\pi$ cubic units.",
+          "insight": "Volumes of revolution create 3D solids from 2D regions."
+        },
+        "incorrect": {
+          "1": "$\\frac{4^2}{2} = \\frac{16}{2} = 8$, not 16.",
+          "2": "Don't forget the $\\pi$ factor!"
+        }
+      },
+      "resultState": {
+        "description": "Evaluate the integral"
       }
     }
   ],
@@ -50,6 +108,9 @@
       "Answer: $V = 8\\pi$ cubic units"
     ],
     "fullSolution": "**Find volume:** Revolve $y=\\sqrt{x}$ from $x=0$ to $x=4$ around $x$-axis\\n\\n**Disk method:** $V = \\pi\\int_a^b [R(x)]^2 dx$\\n\\n**Radius:** $R(x) = \\sqrt{x}$ (distance from $x$-axis to curve)\\n\\n**Set up:**\\n$$V = \\pi\\int_0^4 (\\sqrt{x})^2 dx = \\pi\\int_0^4 x\\, dx$$\\n\\n**Evaluate:**\\n$$V = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi\\left(\\frac{16}{2}-0\\right) = 8\\pi$$\\n\\n**Answer: $8\\pi$ cubic units**",
-    "relatedProblems": ["calculus-integration-substitution-1", "multivariable-triple-integral-1"]
+    "relatedProblems": [
+      "calculus-integration-substitution-1",
+      "multivariable-triple-integral-1"
+    ]
   }
 }

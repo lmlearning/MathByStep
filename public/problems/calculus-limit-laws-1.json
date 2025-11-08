@@ -5,7 +5,11 @@
   "topic": "Calculus",
   "difficulty": 1,
   "estimatedTime": 7,
-  "tags": ["calculus", "limits", "limit laws"],
+  "tags": [
+    "calculus",
+    "limits",
+    "limit laws"
+  ],
   "statement": {
     "text": "Evaluate $\\lim_{x \\to 2} \\frac{x^3 - 8}{x - 2}$ using limit laws."
   },
@@ -17,150 +21,162 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Identify the form",
+      "order": 1,
       "currentState": {
         "expression": "$\\lim_{x \\to 2} \\frac{x^3 - 8}{x - 2}$",
         "description": "Direct substitution gives an indeterminate form."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What happens if we substitute $x = 2$ directly?",
         "hint": "Numerator: $2^3 - 8 = 0$. Denominator: $2 - 2 = 0$. This is $\\frac{0}{0}$ (indeterminate)."
       },
       "options": [
         {
           "id": "a",
-          "content": "We get $\\frac{0}{0}$ (indeterminate form) - need to simplify first"
+          "text": "We get $\\frac{0}{0}$ (indeterminate form) - need to simplify first"
         },
         {
           "id": "b",
-          "content": "We get 0"
+          "text": "We get 0"
         },
         {
           "id": "c",
-          "content": "The limit does not exist"
+          "text": "The limit does not exist"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! Direct substitution gives $\\frac{0}{0}$, which is indeterminate. We must factor and simplify.",
           "insight": "Indeterminate forms require algebraic manipulation before evaluation."
         },
         "incorrect": {
-          "b": "While both numerator and denominator equal 0 at $x=2$, we can't conclude the limit is 0.",
-          "c": "The limit exists, but we need to simplify first to find it."
+          "1": "While both numerator and denominator equal 0 at $x=2$, we can't conclude the limit is 0.",
+          "2": "The limit exists, but we need to simplify first to find it."
         }
+      },
+      "resultState": {
+        "description": "Identify the form"
       }
     },
     {
       "id": "step-2",
-      "title": "Factor the numerator",
+      "order": 2,
       "currentState": {
         "expression": "$x^3 - 8 = x^3 - 2^3$",
         "description": "Use difference of cubes formula."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "How do we factor $x^3 - 8$?",
         "hint": "$a^3 - b^3 = (a-b)(a^2 + ab + b^2)$. Here: $(x-2)(x^2 + 2x + 4)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x^3 - 8 = (x-2)(x^2 + 2x + 4)$"
+          "text": "$x^3 - 8 = (x-2)(x^2 + 2x + 4)$"
         },
         {
           "id": "b",
-          "content": "$x^3 - 8 = (x-2)(x^2 + 4)$"
+          "text": "$x^3 - 8 = (x-2)(x^2 + 4)$"
         },
         {
           "id": "c",
-          "content": "$x^3 - 8 = (x-2)^3$"
+          "text": "$x^3 - 8 = (x-2)^3$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! Using $a^3 - b^3 = (a-b)(a^2+ab+b^2)$ with $a=x, b=2$: $x^3-8 = (x-2)(x^2+2x+4)$.",
           "insight": "Difference of cubes is a key factoring pattern for limits."
         },
         "incorrect": {
-          "b": "Don't forget the middle term: $x^2 + 2x + 4$, not just $x^2 + 4$.",
-          "c": "That would expand to $x^3 - 6x^2 + 12x - 8$, not $x^3 - 8$."
+          "1": "Don't forget the middle term: $x^2 + 2x + 4$, not just $x^2 + 4$.",
+          "2": "That would expand to $x^3 - 6x^2 + 12x - 8$, not $x^3 - 8$."
         }
+      },
+      "resultState": {
+        "description": "Factor the numerator"
       }
     },
     {
       "id": "step-3",
-      "title": "Cancel common factors",
+      "order": 3,
       "currentState": {
         "expression": "$\\frac{(x-2)(x^2+2x+4)}{x-2}$",
         "description": "Simplify for $x \\neq 2$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What does the expression simplify to?",
         "hint": "Cancel $(x-2)$ from numerator and denominator (valid for $x \\neq 2$)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$x^2 + 2x + 4$ (for $x \\neq 2$)"
+          "text": "$x^2 + 2x + 4$ (for $x \\neq 2$)"
         },
         {
           "id": "b",
-          "content": "$x^2 + 4$"
+          "text": "$x^2 + 4$"
         },
         {
           "id": "c",
-          "content": "$1$"
+          "text": "$1$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\frac{(x-2)(x^2+2x+4)}{x-2} = x^2+2x+4$ for all $x \\neq 2$.",
           "insight": "When taking limits, we care about values near (but not at) the point, so canceling is valid."
         },
         "incorrect": {
-          "b": "After canceling $(x-2)$, we're left with $x^2+2x+4$, not $x^2+4$.",
-          "c": "We cancel $(x-2)/(x-2) = 1$, but the $x^2+2x+4$ factor remains."
+          "1": "After canceling $(x-2)$, we're left with $x^2+2x+4$, not $x^2+4$.",
+          "2": "We cancel $(x-2)/(x-2) = 1$, but the $x^2+2x+4$ factor remains."
         }
+      },
+      "resultState": {
+        "description": "Cancel common factors"
       }
     },
     {
       "id": "step-4",
-      "title": "Evaluate the limit",
+      "order": 4,
       "currentState": {
         "expression": "$\\lim_{x \\to 2} (x^2 + 2x + 4)$",
         "description": "Now direct substitution works."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the limit?",
         "hint": "Substitute $x = 2$: $2^2 + 2(2) + 4$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\lim_{x \\to 2} (x^2+2x+4) = 4 + 4 + 4 = 12$"
+          "text": "$\\lim_{x \\to 2} (x^2+2x+4) = 4 + 4 + 4 = 12$"
         },
         {
           "id": "b",
-          "content": "$\\lim_{x \\to 2} (x^2+2x+4) = 8$"
+          "text": "$\\lim_{x \\to 2} (x^2+2x+4) = 8$"
         },
         {
           "id": "c",
-          "content": "$\\lim_{x \\to 2} (x^2+2x+4) = 0$"
+          "text": "$\\lim_{x \\to 2} (x^2+2x+4) = 0$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $x^2+2x+4$ is continuous, so $\\lim_{x\\to 2}(x^2+2x+4) = 2^2+2(2)+4 = 12$.",
           "insight": "After simplifying to remove the indeterminate form, we can use direct substitution."
         },
         "incorrect": {
-          "b": "Check arithmetic: $4 + 4 + 4 = 12$, not 8.",
-          "c": "The limit is 12, not 0. We resolved the $0/0$ form by factoring."
+          "1": "Check arithmetic: $4 + 4 + 4 = 12$, not 8.",
+          "2": "The limit is 12, not 0. We resolved the $0/0$ form by factoring."
         }
+      },
+      "resultState": {
+        "description": "Evaluate the limit"
       }
     }
   ],

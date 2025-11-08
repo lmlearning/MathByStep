@@ -5,7 +5,12 @@
   "topic": "Multivariable Calculus",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["multivariable calculus", "line integrals", "vector fields", "parametrization"],
+  "tags": [
+    "multivariable calculus",
+    "line integrals",
+    "vector fields",
+    "parametrization"
+  ],
   "statement": {
     "text": "Compute the line integral $\\int_C \\vec{F} \\cdot d\\vec{r}$ where $\\vec{F}(x,y) = \\langle y, x \\rangle$ and $C$ is the line segment from $(0,0)$ to $(1,2)$."
   },
@@ -17,187 +22,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "Parametrize the curve",
+      "order": 1,
       "currentState": {
         "expression": "$C$: line segment from $(0,0)$ to $(1,2)$",
         "description": "Find a vector function $\\vec{r}(t)$ that traces the curve."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is a parametrization of the line segment?",
         "hint": "$\\vec{r}(t) = (1-t)\\vec{r}_0 + t\\vec{r}_1$ for $t \\in [0,1]$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\vec{r}(t) = \\langle t, 2t \\rangle$ for $t \\in [0,1]$"
+          "text": "$\\vec{r}(t) = \\langle t, 2t \\rangle$ for $t \\in [0,1]$"
         },
         {
           "id": "b",
-          "content": "$\\vec{r}(t) = \\langle t, t \\rangle$ for $t \\in [0,2]$"
+          "text": "$\\vec{r}(t) = \\langle t, t \\rangle$ for $t \\in [0,2]$"
         },
         {
           "id": "c",
-          "content": "$\\vec{r}(t) = \\langle 2t, t \\rangle$ for $t \\in [0,1]$"
+          "text": "$\\vec{r}(t) = \\langle 2t, t \\rangle$ for $t \\in [0,1]$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\vec{r}(t) = \\langle t, 2t \\rangle$ for $t \\in [0,1]$ gives $(0,0)$ at $t=0$ and $(1,2)$ at $t=1$.",
           "insight": "For a line segment from $\\vec{a}$ to $\\vec{b}$: $\\vec{r}(t) = \\vec{a} + t(\\vec{b} - \\vec{a})$ for $t \\in [0,1]$."
         },
         "incorrect": {
-          "b": "At $t=0$: $(0,0)$ ✓, but at $t=2$: $(2,2) \\neq (1,2)$.",
-          "c": "At $t=1$: $(2,1) \\neq (1,2)$. The correct parametrization is $\\langle t, 2t \\rangle$."
+          "1": "At $t=0$: $(0,0)$ ✓, but at $t=2$: $(2,2) \\neq (1,2)$.",
+          "2": "At $t=1$: $(2,1) \\neq (1,2)$. The correct parametrization is $\\langle t, 2t \\rangle$."
         }
+      },
+      "resultState": {
+        "description": "Parametrize the curve"
       }
     },
     {
       "id": "step-2",
-      "title": "Compute d𝐫/dt",
+      "order": 2,
       "currentState": {
         "expression": "$\\vec{r}(t) = \\langle t, 2t \\rangle$",
         "description": "Find the derivative $\\frac{d\\vec{r}}{dt}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\frac{d\\vec{r}}{dt}$?",
         "hint": "Differentiate each component: $\\langle \\frac{d}{dt}(t), \\frac{d}{dt}(2t) \\rangle$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\frac{d\\vec{r}}{dt} = \\langle 1, 2 \\rangle$"
+          "text": "$\\frac{d\\vec{r}}{dt} = \\langle 1, 2 \\rangle$"
         },
         {
           "id": "b",
-          "content": "$\\frac{d\\vec{r}}{dt} = \\langle 2, 1 \\rangle$"
+          "text": "$\\frac{d\\vec{r}}{dt} = \\langle 2, 1 \\rangle$"
         },
         {
           "id": "c",
-          "content": "$\\frac{d\\vec{r}}{dt} = \\langle t, 2t \\rangle$"
+          "text": "$\\frac{d\\vec{r}}{dt} = \\langle t, 2t \\rangle$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\frac{d\\vec{r}}{dt} = \\langle 1, 2 \\rangle$ (derivative of each component).",
           "insight": "This vector is tangent to the curve and represents the velocity."
         },
         "incorrect": {
-          "b": "Check the order: $\\frac{d}{dt}(t) = 1$ and $\\frac{d}{dt}(2t) = 2$, so $\\langle 1, 2 \\rangle$.",
-          "c": "Take the derivative, don't just copy $\\vec{r}(t)$. We get $\\langle 1, 2 \\rangle$."
+          "1": "Check the order: $\\frac{d}{dt}(t) = 1$ and $\\frac{d}{dt}(2t) = 2$, so $\\langle 1, 2 \\rangle$.",
+          "2": "Take the derivative, don't just copy $\\vec{r}(t)$. We get $\\langle 1, 2 \\rangle$."
         }
+      },
+      "resultState": {
+        "description": "Compute d𝐫/dt"
       }
     },
     {
       "id": "step-3",
-      "title": "Express F along the curve",
+      "order": 3,
       "currentState": {
         "expression": "$\\vec{F}(x,y) = \\langle y, x \\rangle$ and $\\vec{r}(t) = \\langle t, 2t \\rangle$",
         "description": "Substitute the parametrization into $\\vec{F}$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\vec{F}(\\vec{r}(t))$?",
         "hint": "$\\vec{F}(t, 2t) = \\langle 2t, t \\rangle$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\vec{F}(\\vec{r}(t)) = \\langle 2t, t \\rangle$"
+          "text": "$\\vec{F}(\\vec{r}(t)) = \\langle 2t, t \\rangle$"
         },
         {
           "id": "b",
-          "content": "$\\vec{F}(\\vec{r}(t)) = \\langle t, 2t \\rangle$"
+          "text": "$\\vec{F}(\\vec{r}(t)) = \\langle t, 2t \\rangle$"
         },
         {
           "id": "c",
-          "content": "$\\vec{F}(\\vec{r}(t)) = \\langle 1, 2 \\rangle$"
+          "text": "$\\vec{F}(\\vec{r}(t)) = \\langle 1, 2 \\rangle$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $\\vec{F}(x,y) = \\langle y, x \\rangle$, so $\\vec{F}(t, 2t) = \\langle 2t, t \\rangle$.",
           "insight": "We substitute $x = t$ and $y = 2t$ into the vector field components."
         },
         "incorrect": {
-          "b": "Remember: $\\vec{F} = \\langle y, x \\rangle$, so the components are swapped from $(x,y)$.",
-          "c": "That's $\\frac{d\\vec{r}}{dt}$, not $\\vec{F}(\\vec{r}(t))$."
+          "1": "Remember: $\\vec{F} = \\langle y, x \\rangle$, so the components are swapped from $(x,y)$.",
+          "2": "That's $\\frac{d\\vec{r}}{dt}$, not $\\vec{F}(\\vec{r}(t))$."
         }
+      },
+      "resultState": {
+        "description": "Express F along the curve"
       }
     },
     {
       "id": "step-4",
-      "title": "Compute F⋅(dr/dt)",
+      "order": 4,
       "currentState": {
         "expression": "$\\vec{F}(\\vec{r}(t)) = \\langle 2t, t \\rangle$ and $\\frac{d\\vec{r}}{dt} = \\langle 1, 2 \\rangle$",
         "description": "Take the dot product."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\vec{F} \\cdot \\frac{d\\vec{r}}{dt}$?",
         "hint": "$\\langle 2t, t \\rangle \\cdot \\langle 1, 2 \\rangle = 2t(1) + t(2)$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\vec{F} \\cdot \\frac{d\\vec{r}}{dt} = 2t + 2t = 4t$"
+          "text": "$\\vec{F} \\cdot \\frac{d\\vec{r}}{dt} = 2t + 2t = 4t$"
         },
         {
           "id": "b",
-          "content": "$\\vec{F} \\cdot \\frac{d\\vec{r}}{dt} = 2t + t = 3t$"
+          "text": "$\\vec{F} \\cdot \\frac{d\\vec{r}}{dt} = 2t + t = 3t$"
         },
         {
           "id": "c",
-          "content": "$\\vec{F} \\cdot \\frac{d\\vec{r}}{dt} = 2t \\cdot 2 = 4t$"
+          "text": "$\\vec{F} \\cdot \\frac{d\\vec{r}}{dt} = 2t \\cdot 2 = 4t$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\langle 2t, t \\rangle \\cdot \\langle 1, 2 \\rangle = (2t)(1) + (t)(2) = 2t + 2t = 4t$.",
           "insight": "The dot product combines the force field with the velocity along the curve."
         },
         "incorrect": {
-          "b": "Don't forget to multiply: $(t)(2) = 2t$, not just $t$.",
-          "c": "Use the full dot product formula: $(2t)(1) + (t)(2) = 2t + 2t = 4t$."
+          "1": "Don't forget to multiply: $(t)(2) = 2t$, not just $t$.",
+          "2": "Use the full dot product formula: $(2t)(1) + (t)(2) = 2t + 2t = 4t$."
         }
+      },
+      "resultState": {
+        "description": "Compute F⋅(dr/dt)"
       }
     },
     {
       "id": "step-5",
-      "title": "Integrate",
+      "order": 5,
       "currentState": {
         "expression": "$\\int_C \\vec{F} \\cdot d\\vec{r} = \\int_0^1 4t \\, dt$",
         "description": "Evaluate the definite integral."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is $\\int_0^1 4t \\, dt$?",
         "hint": "$\\int 4t \\, dt = 2t^2 + C$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$\\int_0^1 4t \\, dt = [2t^2]_0^1 = 2$"
+          "text": "$\\int_0^1 4t \\, dt = [2t^2]_0^1 = 2$"
         },
         {
           "id": "b",
-          "content": "$\\int_0^1 4t \\, dt = [4t^2]_0^1 = 4$"
+          "text": "$\\int_0^1 4t \\, dt = [4t^2]_0^1 = 4$"
         },
         {
           "id": "c",
-          "content": "$\\int_0^1 4t \\, dt = [t^2]_0^1 = 1$"
+          "text": "$\\int_0^1 4t \\, dt = [t^2]_0^1 = 1$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $\\int_0^1 4t \\, dt = [2t^2]_0^1 = 2(1)^2 - 2(0)^2 = 2 - 0 = 2$.",
           "insight": "This represents the work done by the force field $\\vec{F}$ along the path $C$."
         },
         "incorrect": {
-          "b": "$\\int 4t \\, dt = 2t^2$, not $4t^2$.",
-          "c": "$\\int 4t \\, dt = 2t^2$, not $t^2$. The coefficient 4 matters!"
+          "1": "$\\int 4t \\, dt = 2t^2$, not $4t^2$.",
+          "2": "$\\int 4t \\, dt = 2t^2$, not $t^2$. The coefficient 4 matters!"
         }
+      },
+      "resultState": {
+        "description": "Integrate"
       }
     }
   ],

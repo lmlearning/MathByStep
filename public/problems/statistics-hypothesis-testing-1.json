@@ -5,7 +5,12 @@
   "topic": "Probability & Statistics",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["statistics", "hypothesis testing", "t-test", "inference"],
+  "tags": [
+    "statistics",
+    "hypothesis testing",
+    "t-test",
+    "inference"
+  ],
   "statement": {
     "text": "A coffee shop claims their average serving time is 5 minutes. A sample of 16 customers shows mean time 5.8 minutes with standard deviation 1.2 minutes. Test at $\\alpha = 0.05$ whether the true mean is greater than 5 minutes."
   },
@@ -17,187 +22,202 @@
   "steps": [
     {
       "id": "step-1",
-      "title": "State the hypotheses",
+      "order": 1,
       "currentState": {
         "expression": "Claim: $\\mu > 5$ (one-sided test)",
         "description": "Set up $H_0$ and $H_a$."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What are the null and alternative hypotheses?",
         "hint": "$H_0$: status quo ($\\mu = 5$). $H_a$: what we're testing ($\\mu > 5$)."
       },
       "options": [
         {
           "id": "a",
-          "content": "$H_0: \\mu = 5$ vs $H_a: \\mu > 5$ (right-tailed test)"
+          "text": "$H_0: \\mu = 5$ vs $H_a: \\mu > 5$ (right-tailed test)"
         },
         {
           "id": "b",
-          "content": "$H_0: \\mu > 5$ vs $H_a: \\mu = 5$"
+          "text": "$H_0: \\mu > 5$ vs $H_a: \\mu = 5$"
         },
         {
           "id": "c",
-          "content": "$H_0: \\mu = 5$ vs $H_a: \\mu \\neq 5$ (two-tailed test)"
+          "text": "$H_0: \\mu = 5$ vs $H_a: \\mu \\neq 5$ (two-tailed test)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! $H_0: \\mu = 5$ (null hypothesis: claim is false) vs $H_a: \\mu > 5$ (alternative: serving time is longer).",
           "insight": "Null hypothesis represents the status quo or no effect. Alternative is what we're trying to prove."
         },
         "incorrect": {
-          "b": "The null hypothesis is always the equality statement. Alternative is what we test.",
-          "c": "The question asks if mean is greater than 5, so use one-sided test ($>$), not two-sided ($\\neq$)."
+          "1": "The null hypothesis is always the equality statement. Alternative is what we test.",
+          "2": "The question asks if mean is greater than 5, so use one-sided test ($>$), not two-sided ($\\neq$)."
         }
+      },
+      "resultState": {
+        "description": "State the hypotheses"
       }
     },
     {
       "id": "step-2",
-      "title": "Check conditions and choose test",
+      "order": 2,
       "currentState": {
         "expression": "Sample: $n=16$, $\\bar{x}=5.8$, $s=1.2$",
         "description": "Population standard deviation unknown, small sample."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "Which test should we use?",
         "hint": "Unknown $\\sigma$, small sample $\\to$ use t-test with df = n-1 = 15."
       },
       "options": [
         {
           "id": "a",
-          "content": "Use t-test with df = 15 (unknown $\\sigma$, small sample)"
+          "text": "Use t-test with df = 15 (unknown $\\sigma$, small sample)"
         },
         {
           "id": "b",
-          "content": "Use z-test (we have sample standard deviation)"
+          "text": "Use z-test (we have sample standard deviation)"
         },
         {
           "id": "c",
-          "content": "Use chi-square test"
+          "text": "Use chi-square test"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! When population $\\sigma$ is unknown and $n < 30$, use t-test with degrees of freedom = $n - 1 = 15$.",
           "insight": "The t-distribution accounts for extra uncertainty from estimating $\\sigma$ with $s$."
         },
         "incorrect": {
-          "b": "Z-test requires known population $\\sigma$. Here we only have sample $s$.",
-          "c": "Chi-square is for variance testing or categorical data, not mean testing."
+          "1": "Z-test requires known population $\\sigma$. Here we only have sample $s$.",
+          "2": "Chi-square is for variance testing or categorical data, not mean testing."
         }
+      },
+      "resultState": {
+        "description": "Check conditions and choose test"
       }
     },
     {
       "id": "step-3",
-      "title": "Compute the test statistic",
+      "order": 3,
       "currentState": {
         "expression": "$t = \\frac{\\bar{x} - \\mu_0}{s/\\sqrt{n}}$",
         "description": "Standardize the sample mean."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the t-statistic?",
         "hint": "$t = \\frac{5.8 - 5}{1.2/\\sqrt{16}} = \\frac{0.8}{0.3}$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$t = \\frac{5.8-5}{1.2/4} = \\frac{0.8}{0.3} = 2.67$"
+          "text": "$t = \\frac{5.8-5}{1.2/4} = \\frac{0.8}{0.3} = 2.67$"
         },
         {
           "id": "b",
-          "content": "$t = \\frac{5.8-5}{1.2} = 0.67$"
+          "text": "$t = \\frac{5.8-5}{1.2} = 0.67$"
         },
         {
           "id": "c",
-          "content": "$t = \\frac{5.8-5}{1.2/16} = 10.67$"
+          "text": "$t = \\frac{5.8-5}{1.2/16} = 10.67$"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! $t = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}} = \\frac{5.8-5}{1.2/\\sqrt{16}} = \\frac{0.8}{0.3} \\approx 2.67$.",
           "insight": "The test statistic measures how many standard errors the sample mean is from the hypothesized value."
         },
         "incorrect": {
-          "b": "Don't forget to divide by $\\sqrt{n}$: standard error is $s/\\sqrt{n}$, not just $s$.",
-          "c": "Use $\\sqrt{16} = 4$ in the denominator, not 16."
+          "1": "Don't forget to divide by $\\sqrt{n}$: standard error is $s/\\sqrt{n}$, not just $s$.",
+          "2": "Use $\\sqrt{16} = 4$ in the denominator, not 16."
         }
+      },
+      "resultState": {
+        "description": "Compute the test statistic"
       }
     },
     {
       "id": "step-4",
-      "title": "Find the critical value",
+      "order": 4,
       "currentState": {
         "expression": "$\\alpha = 0.05$, df = 15, right-tailed test",
         "description": "Look up $t_{0.05,15}$ in t-table."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the critical value $t_{\\alpha,df}$?",
         "hint": "For df=15, right-tail, $\\alpha=0.05$: $t_{0.05,15} \\approx 1.753$."
       },
       "options": [
         {
           "id": "a",
-          "content": "$t_{critical} = 1.753$ (from t-table with df=15, $\\alpha=0.05$)"
+          "text": "$t_{critical} = 1.753$ (from t-table with df=15, $\\alpha=0.05$)"
         },
         {
           "id": "b",
-          "content": "$t_{critical} = 1.96$ (z-value)"
+          "text": "$t_{critical} = 1.96$ (z-value)"
         },
         {
           "id": "c",
-          "content": "$t_{critical} = 2.131$ (two-tailed value)"
+          "text": "$t_{critical} = 2.131$ (two-tailed value)"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Correct! For a right-tailed test with df=15 and $\\alpha=0.05$, $t_{critical} = 1.753$.",
           "insight": "If $t_{statistic} > t_{critical}$, we reject $H_0$."
         },
         "incorrect": {
-          "b": "1.96 is the z-value. For small samples, t-distribution has heavier tails, so $t_{critical} < z_{critical}$ here.",
-          "c": "2.131 is for a two-tailed test. For one-tailed, use 1.753."
+          "1": "1.96 is the z-value. For small samples, t-distribution has heavier tails, so $t_{critical} < z_{critical}$ here.",
+          "2": "2.131 is for a two-tailed test. For one-tailed, use 1.753."
         }
+      },
+      "resultState": {
+        "description": "Find the critical value"
       }
     },
     {
       "id": "step-5",
-      "title": "Make decision",
+      "order": 5,
       "currentState": {
         "expression": "$t = 2.67 > 1.753 = t_{critical}$",
         "description": "Compare test statistic to critical value."
       },
-      "reflectionPrompt": {
+      "prompt": {
         "question": "What is the conclusion?",
         "hint": "Since $2.67 > 1.753$, the result falls in the rejection region."
       },
       "options": [
         {
           "id": "a",
-          "content": "Reject $H_0$. Evidence suggests mean serving time > 5 minutes (at $\\alpha=0.05$)"
+          "text": "Reject $H_0$. Evidence suggests mean serving time > 5 minutes (at $\\alpha=0.05$)"
         },
         {
           "id": "b",
-          "content": "Fail to reject $H_0$. No evidence that mean > 5 minutes"
+          "text": "Fail to reject $H_0$. No evidence that mean > 5 minutes"
         },
         {
           "id": "c",
-          "content": "Accept $H_0$. Mean equals exactly 5 minutes"
+          "text": "Accept $H_0$. Mean equals exactly 5 minutes"
         }
       ],
-      "correctOption": "a",
+      "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Excellent! Since $t=2.67 > 1.753$, we reject $H_0$ at the 0.05 significance level. The data supports that average serving time exceeds 5 minutes.",
           "insight": "p-value would be $P(t_{15} > 2.67) < 0.01$, which is less than $\\alpha = 0.05$, confirming rejection."
         },
         "incorrect": {
-          "b": "The test statistic exceeds the critical value, so we DO reject $H_0$.",
-          "c": "We never 'accept' $H_0$. We either reject it or fail to reject it. Here we reject it."
+          "1": "The test statistic exceeds the critical value, so we DO reject $H_0$.",
+          "2": "We never 'accept' $H_0$. We either reject it or fail to reject it. Here we reject it."
         }
+      },
+      "resultState": {
+        "description": "Make decision"
       }
     }
   ],
