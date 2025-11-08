@@ -1,0 +1,291 @@
+{
+  "id": "algebra-polynomial-division-1",
+  "type": "problem",
+  "title": "Polynomial Long Division: $(2x^3 + 5x^2 - 3x + 1) \\div (x + 2)$",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": ["polynomials", "division", "algebra"],
+  "statement": {
+    "text": "Divide $2x^3 + 5x^2 - 3x + 1$ by $x + 2$ using polynomial long division. Express your answer in the form: quotient + (remainder)/(divisor)."
+  },
+  "objectives": [
+    "Apply polynomial long division systematically",
+    "Understand the relationship between dividend, divisor, quotient, and remainder",
+    "Verify the division algorithm: dividend = divisor × quotient + remainder"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Divide the leading terms",
+      "currentState": {
+        "expression": "$\\frac{2x^3 + 5x^2 - 3x + 1}{x + 2}$",
+        "description": "Set up polynomial long division. What should we divide first?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the first term of the quotient?",
+        "hint": "Divide the leading term of the dividend ($2x^3$) by the leading term of the divisor ($x$)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$2x^2$"
+        },
+        {
+          "id": "b",
+          "content": "$2x^3$"
+        },
+        {
+          "id": "c",
+          "content": "$x^2$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $2x^3 \\div x = 2x^2$. This is the first term of our quotient.",
+          "insight": "In polynomial long division, we always divide the leading terms first."
+        },
+        "incorrect": {
+          "b": "Not quite. We divide $2x^3$ by $x$ (not by the entire divisor). Think: what times $x$ gives $2x^3$?",
+          "c": "Close, but don't forget the coefficient. $2x^3 \\div x = 2x^2$, not just $x^2$."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Multiply and subtract",
+      "currentState": {
+        "expression": "$2x^2 \\cdot (x + 2) = 2x^3 + 4x^2$",
+        "description": "We multiply $2x^2$ by the divisor and subtract from the dividend."
+      },
+      "reflectionPrompt": {
+        "question": "After subtracting $(2x^3 + 4x^2)$ from $(2x^3 + 5x^2 - 3x + 1)$, what remains?",
+        "hint": "Subtract term by term: $(2x^3 + 5x^2 - 3x + 1) - (2x^3 + 4x^2)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$x^2 - 3x + 1$"
+        },
+        {
+          "id": "b",
+          "content": "$9x^2 - 3x + 1$"
+        },
+        {
+          "id": "c",
+          "content": "$x^2 + 3x + 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $(5x^2 - 4x^2) = x^2$, and we bring down $-3x + 1$, giving us $x^2 - 3x + 1$.",
+          "insight": "Subtraction in polynomial division works just like in regular long division."
+        },
+        "incorrect": {
+          "b": "Be careful with signs. We're subtracting $4x^2$ from $5x^2$, which gives $x^2$ (not $9x^2$).",
+          "c": "Watch the sign on the middle term. We have $-3x$ from the original polynomial."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Continue division",
+      "currentState": {
+        "expression": "$x^2 - 3x + 1$ remaining",
+        "description": "Now divide the new leading term by the divisor's leading term."
+      },
+      "reflectionPrompt": {
+        "question": "What is the next term of the quotient?",
+        "hint": "Divide $x^2$ by $x$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$x$"
+        },
+        {
+          "id": "b",
+          "content": "$2x$"
+        },
+        {
+          "id": "c",
+          "content": "$-x$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $x^2 \\div x = x$. This is the second term of our quotient.",
+          "insight": "We repeat the same process: divide leading terms, multiply, subtract."
+        },
+        "incorrect": {
+          "b": "Not quite. $x^2 \\div x = x$ (the coefficient is 1, not 2).",
+          "c": "The sign should be positive. $x^2 \\div x = +x$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Multiply and subtract again",
+      "currentState": {
+        "expression": "$x \\cdot (x + 2) = x^2 + 2x$",
+        "description": "Multiply $x$ by the divisor and subtract."
+      },
+      "reflectionPrompt": {
+        "question": "After subtracting $(x^2 + 2x)$ from $(x^2 - 3x + 1)$, what remains?",
+        "hint": "Focus on the coefficients: $-3x - 2x = -5x$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$-5x + 1$"
+        },
+        {
+          "id": "b",
+          "content": "$-x + 1$"
+        },
+        {
+          "id": "c",
+          "content": "$5x + 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $-3x - 2x = -5x$, and we bring down the constant $+1$.",
+          "insight": "Always align like terms when subtracting polynomials."
+        },
+        "incorrect": {
+          "b": "Check your arithmetic. $-3x - 2x = -5x$ (not $-x$).",
+          "c": "Watch the sign. We have $-3x - 2x = -5x$ (negative, not positive)."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Final division step",
+      "currentState": {
+        "expression": "$-5x + 1$ remaining",
+        "description": "One more step: divide $-5x$ by $x$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the final term of the quotient?",
+        "hint": "Divide $-5x$ by $x$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$-5$"
+        },
+        {
+          "id": "b",
+          "content": "$5$"
+        },
+        {
+          "id": "c",
+          "content": "$-5x$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $-5x \\div x = -5$. So our quotient so far is $2x^2 + x - 5$.",
+          "insight": "The quotient builds up term by term as we work through the division."
+        },
+        "incorrect": {
+          "b": "Don't forget the negative sign. $-5x \\div x = -5$ (not $+5$).",
+          "c": "We divide to get a constant term. $-5x \\div x = -5$ (the $x$ cancels)."
+        }
+      }
+    },
+    {
+      "id": "step-6",
+      "title": "Find the remainder",
+      "currentState": {
+        "expression": "$-5 \\cdot (x + 2) = -5x - 10$",
+        "description": "Multiply $-5$ by the divisor and subtract to find the remainder."
+      },
+      "reflectionPrompt": {
+        "question": "After subtracting $(-5x - 10)$ from $(-5x + 1)$, what is the remainder?",
+        "hint": "The constant terms: $1 - (-10) = 1 + 10 = 11$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$11$"
+        },
+        {
+          "id": "b",
+          "content": "$-9$"
+        },
+        {
+          "id": "c",
+          "content": "$9$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The remainder is $11$. The complete answer is: $2x^2 + x - 5 + \\frac{11}{x + 2}$.",
+          "insight": "When the remainder's degree is less than the divisor's, we stop and express it as a fraction."
+        },
+        "incorrect": {
+          "b": "Watch the signs carefully. $1 - (-10) = 1 + 10 = 11$ (not $-9$).",
+          "c": "Close, but check your arithmetic. $1 + 10 = 11$ (not $9$)."
+        }
+      }
+    },
+    {
+      "id": "step-7",
+      "title": "Verify the result",
+      "currentState": {
+        "expression": "$2x^2 + x - 5 + \\frac{11}{x + 2}$",
+        "description": "We should verify: $(x + 2)(2x^2 + x - 5) + 11 = 2x^3 + 5x^2 - 3x + 1$"
+      },
+      "reflectionPrompt": {
+        "question": "Which polynomial identity does this division demonstrate?",
+        "hint": "Think about the relationship between dividend, divisor, quotient, and remainder."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Dividend = Divisor × Quotient + Remainder"
+        },
+        {
+          "id": "b",
+          "content": "Dividend = Divisor + Quotient × Remainder"
+        },
+        {
+          "id": "c",
+          "content": "Dividend × Divisor = Quotient + Remainder"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The division algorithm states: $P(x) = D(x) \\cdot Q(x) + R(x)$. This fundamental relationship applies to all polynomial division.",
+          "insight": "This is analogous to integer division: $17 = 5 \\times 3 + 2$ (dividend = divisor × quotient + remainder)."
+        },
+        "incorrect": {
+          "b": "The operations are mixed up. We multiply the divisor by the quotient, then add the remainder.",
+          "c": "We don't multiply dividend and divisor. The correct form is: dividend = divisor × quotient + remainder."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Polynomial long division follows the same algorithm as integer long division",
+      "The division algorithm: $P(x) = D(x) \\cdot Q(x) + R(x)$ where degree of $R(x)$ < degree of $D(x)$",
+      "Each step: divide leading terms, multiply back, subtract, bring down next term",
+      "The remainder can always be verified by multiplying back and adding"
+    ],
+    "fullSolution": "$(2x^3 + 5x^2 - 3x + 1) \\div (x + 2) = 2x^2 + x - 5 + \\frac{11}{x + 2}$\n\nVerification: $(x + 2)(2x^2 + x - 5) + 11$\n$= 2x^3 + 4x^2 + x^2 + 2x - 5x - 10 + 11$\n$= 2x^3 + 5x^2 - 3x + 1$ ✓",
+    "relatedProblems": [
+      "algebra-quadratic-1",
+      "algebra-systems-linear-1"
+    ]
+  }
+}

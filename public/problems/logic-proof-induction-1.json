@@ -1,0 +1,291 @@
+{
+  "id": "logic-proof-induction-1",
+  "type": "proof",
+  "title": "Proof by Induction: Sum Formula $1 + 2 + 3 + \\cdots + n = \\frac{n(n+1)}{2}$",
+  "topic": "Logic & Proofs",
+  "difficulty": 3,
+  "estimatedTime": 14,
+  "tags": ["induction", "proof techniques", "sequences"],
+  "statement": {
+    "text": "Prove that for all positive integers $n$, the sum $1 + 2 + 3 + \\cdots + n = \\frac{n(n+1)}{2}$."
+  },
+  "objectives": [
+    "Apply the principle of mathematical induction",
+    "Understand the base case and inductive step structure",
+    "Use the inductive hypothesis correctly"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Understand induction",
+      "currentState": {
+        "expression": "We want to prove: $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$ for all $n \\geq 1$",
+        "description": "Mathematical induction is like climbing an infinite ladder."
+      },
+      "reflectionPrompt": {
+        "question": "What are the two essential components of a proof by induction?",
+        "hint": "Think about the ladder analogy: showing you can get on the first rung, and showing you can climb from any rung to the next."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Base case (prove for n=1) and Inductive step (prove if true for n=k, then true for n=k+1)"
+        },
+        {
+          "id": "b",
+          "content": "Assume it's true, then prove it's false"
+        },
+        {
+          "id": "c",
+          "content": "Prove for n=1 and n=2"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Induction has two parts: (1) Base case proves the first domino falls, (2) Inductive step proves each domino knocks over the next. Together, they prove all dominoes fall.",
+          "insight": "The principle of mathematical induction is a fundamental proof technique for statements about natural numbers."
+        },
+        "incorrect": {
+          "b": "That's proof by contradiction, not induction. Induction builds truth step-by-step from a base case.",
+          "c": "Proving two cases isn't enough. We need to prove infinitely many cases, which induction accomplishes via the inductive step."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Prove the base case",
+      "currentState": {
+        "expression": "Base case: $n = 1$",
+        "description": "We need to verify the formula works for the smallest value."
+      },
+      "reflectionPrompt": {
+        "question": "Does the formula hold when $n = 1$?",
+        "hint": "Left side: $\\sum_{i=1}^{1} i = 1$. Right side: $\\frac{1(1+1)}{2} = ?$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes: $1 = \\frac{1(2)}{2} = 1$ ✓"
+        },
+        {
+          "id": "b",
+          "content": "No: $1 \\neq \\frac{1(2)}{2}$"
+        },
+        {
+          "id": "c",
+          "content": "We need to check n=2 first"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! When $n=1$: Left side = 1, Right side = $\\frac{1 \\cdot 2}{2} = 1$. The base case holds!",
+          "insight": "The base case establishes that our first domino falls. Now we need the inductive step."
+        },
+        "incorrect": {
+          "b": "Check your arithmetic: $\\frac{1(2)}{2} = \\frac{2}{2} = 1$. The base case does hold.",
+          "c": "We start with $n=1$ since the statement claims to be true for all positive integers $n \\geq 1$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "State the inductive hypothesis",
+      "currentState": {
+        "expression": "Base case proven ✓",
+        "description": "Now for the inductive step. We assume the formula is true for some arbitrary $k$."
+      },
+      "reflectionPrompt": {
+        "question": "What should we assume in the inductive hypothesis?",
+        "hint": "Assume the formula works for some value k. This is what we'll use to prove the k+1 case."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Assume: $1 + 2 + 3 + \\cdots + k = \\frac{k(k+1)}{2}$ for some $k \\geq 1$"
+        },
+        {
+          "id": "b",
+          "content": "Assume: the formula is true for all $n$"
+        },
+        {
+          "id": "c",
+          "content": "Assume: $1 + 2 + 3 + \\cdots + (k+1) = \\frac{(k+1)(k+2)}{2}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! This is the inductive hypothesis (IH). We assume it's true for an arbitrary $k$ and will use this to prove it for $k+1$.",
+          "insight": "The inductive hypothesis is our assumption—it's what we get to use in proving the next case."
+        },
+        "incorrect": {
+          "b": "That's what we're trying to prove! We can only assume it for a single arbitrary value k.",
+          "c": "That's what we need to prove (the k+1 case), not what we assume. We assume the k case."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "State what we need to prove",
+      "currentState": {
+        "expression": "IH: $1 + 2 + \\cdots + k = \\frac{k(k+1)}{2}$",
+        "description": "Using this assumption, we must prove the formula holds for $k+1$."
+      },
+      "reflectionPrompt": {
+        "question": "What do we need to prove in the inductive step?",
+        "hint": "We need to show the formula works for the next integer after k."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Prove: $1 + 2 + 3 + \\cdots + k + (k+1) = \\frac{(k+1)(k+2)}{2}$"
+        },
+        {
+          "id": "b",
+          "content": "Prove: $1 + 2 + 3 + \\cdots + k = \\frac{k(k+1)}{2}$"
+        },
+        {
+          "id": "c",
+          "content": "Prove: the formula works for n=100"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! We need to prove the formula holds for $n = k+1$. Substituting: $\\frac{n(n+1)}{2}$ becomes $\\frac{(k+1)(k+2)}{2}$.",
+          "insight": "This is the goal of the inductive step. Once proven, it shows each case implies the next."
+        },
+        "incorrect": {
+          "b": "That's our assumption (the IH), not what we need to prove. We prove the k+1 case using the k case.",
+          "c": "We prove it for an arbitrary k+1, which (combined with the base case) covers all positive integers."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "Start with the left side",
+      "currentState": {
+        "expression": "Want to show: $1 + 2 + \\cdots + k + (k+1) = \\frac{(k+1)(k+2)}{2}$",
+        "description": "Let's manipulate the left side using our inductive hypothesis."
+      },
+      "reflectionPrompt": {
+        "question": "How should we rewrite $1 + 2 + \\cdots + k + (k+1)$ using the IH?",
+        "hint": "The part $1 + 2 + \\cdots + k$ appears in our inductive hypothesis."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$(1 + 2 + \\cdots + k) + (k+1) = \\frac{k(k+1)}{2} + (k+1)$"
+        },
+        {
+          "id": "b",
+          "content": "$1 + 2 + \\cdots + k + (k+1) = \\frac{(k+1)^2}{2}$"
+        },
+        {
+          "id": "c",
+          "content": "$k + (k+1) = 2k+1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! We separated the first $k$ terms (which equal $\\frac{k(k+1)}{2}$ by IH) from the last term $(k+1)$.",
+          "insight": "This is the key move: recognizing where to apply the inductive hypothesis."
+        },
+        "incorrect": {
+          "b": "We can't jump to that form. We need to use the IH: $1 + 2 + \\cdots + k = \\frac{k(k+1)}{2}$.",
+          "c": "Don't ignore the earlier terms! We need to use the sum $1 + 2 + \\cdots + k$."
+        }
+      }
+    },
+    {
+      "id": "step-6",
+      "title": "Simplify the expression",
+      "currentState": {
+        "expression": "$\\frac{k(k+1)}{2} + (k+1)$",
+        "description": "Now we need to combine these terms algebraically."
+      },
+      "reflectionPrompt": {
+        "question": "How do we simplify $\\frac{k(k+1)}{2} + (k+1)$?",
+        "hint": "Factor out $(k+1)$, or write $(k+1)$ as $\\frac{2(k+1)}{2}$ to get a common denominator."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{k(k+1) + (k+1)}{2} = \\frac{k^2+2k+1}{2}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{k^2+k+2}{2}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{k(k+1)}{2} + \\frac{2(k+1)}{2} = \\frac{(k+1)(k+2)}{2}$. This is exactly what we wanted to prove!",
+          "insight": "Factoring out $(k+1)$ shows the pattern: $k(k+1) + 2(k+1) = (k+1)(k+2)$."
+        },
+        "incorrect": {
+          "b": "You need a common denominator. Write $(k+1)$ as $\\frac{2(k+1)}{2}$, then factor.",
+          "c": "Be careful with the algebra. We have $\\frac{k(k+1)}{2} + (k+1)$, not $\\frac{k^2+k}{2} + \\frac{2}{2}$."
+        }
+      }
+    },
+    {
+      "id": "step-7",
+      "title": "Conclude the proof",
+      "currentState": {
+        "expression": "$1 + 2 + \\cdots + k + (k+1) = \\frac{(k+1)(k+2)}{2}$ ✓",
+        "description": "We've proven the inductive step!"
+      },
+      "reflectionPrompt": {
+        "question": "What can we now conclude?",
+        "hint": "We proved the base case and the inductive step. What does that mean?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "By mathematical induction, the formula holds for all positive integers $n$"
+        },
+        {
+          "id": "b",
+          "content": "The formula works for n=1 and n=2 only"
+        },
+        {
+          "id": "c",
+          "content": "We need to check more cases"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! We proved: (1) it works for $n=1$, and (2) if it works for $n=k$, it works for $n=k+1$. Therefore, it works for all $n \\geq 1$. ∎",
+          "insight": "This is the power of induction: two finite proofs (base case + inductive step) establish infinitely many cases!"
+        },
+        "incorrect": {
+          "b": "Induction proves much more! The inductive step shows 1→2, 2→3, 3→4, ... covering all positive integers.",
+          "c": "No need! The inductive step proves the implication $P(k) \\Rightarrow P(k+1)$ for all k, which (with the base case) covers all cases."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Mathematical induction proves infinitely many cases via: base case + inductive step",
+      "The inductive hypothesis assumes the statement for $n=k$ (this is allowed!)",
+      "The inductive step uses the IH to prove the statement for $n=k+1$",
+      "Together, base case and inductive step establish truth for all $n \\geq 1$"
+    ],
+    "fullSolution": "**Theorem:** For all positive integers $n$, $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$.\n\n**Proof by induction:**\n\n**Base case** ($n=1$): \n$\\sum_{i=1}^{1} i = 1$ and $\\frac{1(1+1)}{2} = 1$. ✓\n\n**Inductive step:** \nAssume (IH) that $\\sum_{i=1}^{k} i = \\frac{k(k+1)}{2}$ for some $k \\geq 1$.\n\nWe must prove: $\\sum_{i=1}^{k+1} i = \\frac{(k+1)(k+2)}{2}$.\n\nStarting with the left side:\n$$\\sum_{i=1}^{k+1} i = \\left(\\sum_{i=1}^{k} i\\right) + (k+1)$$\n$$= \\frac{k(k+1)}{2} + (k+1)$$ (by IH)\n$$= \\frac{k(k+1) + 2(k+1)}{2}$$\n$$= \\frac{(k+1)(k+2)}{2}$$ ✓\n\nBy mathematical induction, the formula holds for all $n \\geq 1$. ∎",
+    "relatedProblems": [
+      "logic-proof-contradiction-1",
+      "number-theory-infinitely-many-primes-1"
+    ]
+  }
+}

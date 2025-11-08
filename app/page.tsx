@@ -1,23 +1,57 @@
 import Link from 'next/link';
 import { getAllProblemMetadata } from '@/lib/data/problems';
 import { Card } from '@/components/shared/Card';
-import { TextWithMath } from '@/components/shared/MathRenderer';
+
+// Category configuration
+const CATEGORIES = [
+  {
+    name: 'Algebra',
+    slug: 'algebra',
+    description: 'Equations, polynomials, and algebraic structures',
+    icon: '𝑥',
+    color: 'from-blue-500 to-cyan-500',
+  },
+  {
+    name: 'Calculus',
+    slug: 'calculus',
+    description: 'Limits, derivatives, integrals, and infinite series',
+    icon: '∫',
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    name: 'Geometry',
+    slug: 'geometry',
+    description: 'Shapes, angles, proofs, and spatial reasoning',
+    icon: '△',
+    color: 'from-green-500 to-emerald-500',
+  },
+  {
+    name: 'Number Theory',
+    slug: 'number-theory',
+    description: 'Primes, divisibility, modular arithmetic, and more',
+    icon: '#',
+    color: 'from-orange-500 to-red-500',
+  },
+  {
+    name: 'Logic & Proofs',
+    slug: 'logic-proofs',
+    description: 'Proof techniques, reasoning, and mathematical logic',
+    icon: '∴',
+    color: 'from-indigo-500 to-violet-500',
+  },
+];
 
 export default async function Home() {
   const problems = await getAllProblemMetadata();
 
-  // Group problems by topic
-  const problemsByTopic = problems.reduce((acc, problem) => {
-    const topic = problem.topic;
-    if (!acc[topic]) {
-      acc[topic] = [];
+  // Count problems per category
+  const categoryCounts = problems.reduce((acc, problem) => {
+    const category = CATEGORIES.find(c => c.name === problem.topic);
+    if (category) {
+      acc[category.slug] = (acc[category.slug] || 0) + 1;
     }
-    acc[topic].push(problem);
     return acc;
-  }, {} as Record<string, typeof problems>);
-
-  // Define category order
-  const categoryOrder = ['Algebra', 'Calculus', 'Geometry', 'Number Theory', 'Logic & Proofs'];
+  }, {} as Record<string, number>);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -32,92 +66,58 @@ export default async function Home() {
           </p>
         </header>
 
-        {/* Categorized Problem List */}
-        <div className="space-y-8">
-          {categoryOrder.map((topic) => {
-            const topicProblems = problemsByTopic[topic];
-            if (!topicProblems || topicProblems.length === 0) return null;
+        {/* Categories */}
+        <div className="mb-8">
+          <h2 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+            Explore by Topic
+          </h2>
 
-            return (
-              <div key={topic} className="space-y-4">
-                <h2 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-                  {topic}
-                </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {CATEGORIES.map((category) => {
+              const count = categoryCounts[category.slug] || 0;
 
-                <div className="grid gap-4">
-                  {topicProblems.map((problem) => (
-                    <Link key={problem.id} href={`/problems/${problem.id}`}>
-                      <Card className="hover:shadow-xl transition-all cursor-pointer">
-                        <div className="space-y-3">
-                          {/* Header */}
-                          <div className="flex items-start justify-between gap-3">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-2">
-                                <span className="text-xs font-bold uppercase tracking-wide text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-2 py-1 rounded">
-                                  {problem.type}
-                                </span>
-                              </div>
-                              <TextWithMath text={problem.title} className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100" />
-                            </div>
+              return (
+                <Link key={category.slug} href={`/category/${category.slug}`}>
+                  <Card className="hover:shadow-xl transition-all cursor-pointer h-full">
+                    <div className="flex items-start gap-4">
+                      {/* Icon */}
+                      <div className={`flex-shrink-0 w-14 h-14 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center text-white text-2xl font-bold`}>
+                        {category.icon}
+                      </div>
 
-                            {/* Difficulty Badge */}
-                            <div className="flex items-center gap-1">
-                              {Array.from({ length: 5 }).map((_, idx) => (
-                                <div
-                                  key={idx}
-                                  className={`w-2 h-6 rounded-sm ${
-                                    idx < problem.difficulty
-                                      ? 'bg-blue-600'
-                                      : 'bg-gray-300 dark:bg-gray-700'
-                                  }`}
-                                />
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Meta Info */}
-                          <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                            <span className="flex items-center gap-1">
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                              </svg>
-                              {problem.estimatedTime} min
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-                                />
-                              </svg>
-                              {problem.tags.slice(0, 2).join(', ')}
-                            </span>
-                          </div>
+                      {/* Content */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                          {category.name}
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                          {category.description}
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                            {count} problem{count !== 1 ? 's' : ''}
+                          </span>
+                          <svg
+                            className="w-4 h-4 text-blue-600 dark:text-blue-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
                         </div>
-                      </Card>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
         {/* Info Section */}
