@@ -17,6 +17,7 @@ import geometryTriangleAngles1 from '@/public/problems/geometry-triangle-angles-
 import geometryPythagoreanProof1 from '@/public/problems/geometry-pythagorean-proof-1.json';
 import geometrySimilarTriangles1 from '@/public/problems/geometry-similar-triangles-1.json';
 import geometryInscribedAngle1 from '@/public/problems/geometry-inscribed-angle-1.json';
+import geometryCoordinateGeometry1 from '@/public/problems/geometry-coordinate-geometry-1.json';
 import numberTheoryDivisibility1 from '@/public/problems/number-theory-divisibility-1.json';
 import numberTheoryGcd1 from '@/public/problems/number-theory-gcd-1.json';
 import numberTheoryInfinitelyManyPrimes1 from '@/public/problems/number-theory-infinitely-many-primes-1.json';
@@ -97,15 +98,18 @@ import multivariableDirectionalDerivative1 from '@/public/problems/multivariable
 import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
 // Differential Equations (additional)
 import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
+import differentialEquationsBernoulli1 from '@/public/problems/differential-equations-bernoulli-1.json';
 // Real Analysis (additional)
 import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-sequence-1.json';
 import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bolzano-weierstrass-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
+import probabilityNormalDistribution1 from '@/public/problems/probability-normal-distribution-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 // Abstract Algebra (more topics)
 import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
+import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-homomorphisms-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 // Discrete Math (additional)
@@ -135,6 +139,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'geometry-pythagorean-proof-1': geometryPythagoreanProof1 as Problem,
   'geometry-similar-triangles-1': geometrySimilarTriangles1 as any as Problem,
   'geometry-inscribed-angle-1': geometryInscribedAngle1 as any as Problem,
+  'geometry-coordinate-geometry-1': geometryCoordinateGeometry1 as any as Problem,
   'number-theory-divisibility-1': numberTheoryDivisibility1 as Problem,
   'number-theory-gcd-1': numberTheoryGcd1 as Problem,
   'number-theory-infinitely-many-primes-1': numberTheoryInfinitelyManyPrimes1 as any as Problem,
@@ -215,15 +220,18 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
   // Differential Equations (additional)
   'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
+  'differential-equations-bernoulli-1': differentialEquationsBernoulli1 as any as Problem,
   // Real Analysis (additional)
   'real-analysis-cauchy-sequence-1': realAnalysisCauchySequence1 as any as Problem,
   'real-analysis-bolzano-weierstrass-1': realAnalysisBolzanoWeierstrass1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
+  'probability-normal-distribution-1': probabilityNormalDistribution1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   // Abstract Algebra (more topics)
   'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
+  'abstract-algebra-homomorphisms-1': abstractAlgebraHomomorphisms1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   // Discrete Math (additional)
