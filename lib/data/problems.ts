@@ -55,6 +55,7 @@ import differentialEquationsUndeterminedCoefficients1 from '@/public/problems/di
 import differentialEquationsSystems1 from '@/public/problems/differential-equations-systems-1.json';
 import differentialEquationsLaplaceTransform1 from '@/public/problems/differential-equations-laplace-transform-1.json';
 import differentialEquationsVariationParameters1 from '@/public/problems/differential-equations-variation-parameters-1.json';
+import differentialEquationsBoundaryValue1 from '@/public/problems/differential-equations-boundary-value-1.json';
 // Real Analysis
 import realAnalysisSequenceConvergence1 from '@/public/problems/real-analysis-sequence-convergence-1.json';
 import realAnalysisContinuityUniform1 from '@/public/problems/real-analysis-continuity-uniform-1.json';
@@ -94,6 +95,7 @@ import calculusPowerSeries1 from '@/public/problems/calculus-power-series-1.json
 import calculusTaylorSeries1 from '@/public/problems/calculus-taylor-series-1.json';
 import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-comparison-test-1.json';
 import calculusMeanValueTheoremIntegrals1 from '@/public/problems/calculus-mean-value-theorem-integrals-1.json';
+import calculusInverseFunctions1 from '@/public/problems/calculus-inverse-functions-1.json';
 // Linear Algebra (additional)
 import linearAlgebraGaussianElimination1 from '@/public/problems/linear-algebra-gaussian-elimination-1.json';
 import linearAlgebraMatrixInverse1 from '@/public/problems/linear-algebra-matrix-inverse-1.json';
@@ -123,6 +125,7 @@ import probabilityNormalDistribution1 from '@/public/problems/probability-normal
 import probabilityConditionalProbability1 from '@/public/problems/probability-conditional-probability-1.json';
 import probabilityBayesNetwork1 from '@/public/problems/probability-bayes-network-1.json';
 import probabilityContinuousDistributions1 from '@/public/problems/probability-continuous-distributions-1.json';
+import probabilityMarkovChains1 from '@/public/problems/probability-markov-chains-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 import numericalAnalysisEulerMethod1 from '@/public/problems/numerical-analysis-euler-method-1.json';
@@ -137,6 +140,7 @@ import abstractAlgebraRings1 from '@/public/problems/abstract-algebra-rings-1.js
 import abstractAlgebraGroupActions1 from '@/public/problems/abstract-algebra-group-actions-1.json';
 import abstractAlgebraQuotientGroups1 from '@/public/problems/abstract-algebra-quotient-groups-1.json';
 import abstractAlgebraFieldExtensions1 from '@/public/problems/abstract-algebra-field-extensions-1.json';
+import abstractAlgebraPolynomialRings1 from '@/public/problems/abstract-algebra-polynomial-rings-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
@@ -224,6 +228,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'differential-equations-systems-1': differentialEquationsSystems1 as any as Problem,
   'differential-equations-laplace-transform-1': differentialEquationsLaplaceTransform1 as any as Problem,
   'differential-equations-variation-parameters-1': differentialEquationsVariationParameters1 as any as Problem,
+  'differential-equations-boundary-value-1': differentialEquationsBoundaryValue1 as any as Problem,
   // Real Analysis
   'real-analysis-sequence-convergence-1': realAnalysisSequenceConvergence1 as any as Problem,
   'real-analysis-continuity-uniform-1': realAnalysisContinuityUniform1 as any as Problem,
@@ -263,6 +268,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'calculus-taylor-series-1': calculusTaylorSeries1 as any as Problem,
   'calculus-series-comparison-test-1': calculusSeriesComparisonTest1 as any as Problem,
   'calculus-mean-value-theorem-integrals-1': calculusMeanValueTheoremIntegrals1 as any as Problem,
+  'calculus-inverse-functions-1': calculusInverseFunctions1 as any as Problem,
   // Linear Algebra (additional)
   'linear-algebra-gaussian-elimination-1': linearAlgebraGaussianElimination1 as any as Problem,
   'linear-algebra-matrix-inverse-1': linearAlgebraMatrixInverse1 as any as Problem,
@@ -292,6 +298,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'probability-conditional-probability-1': probabilityConditionalProbability1 as any as Problem,
   'probability-bayes-network-1': probabilityBayesNetwork1 as any as Problem,
   'probability-continuous-distributions-1': probabilityContinuousDistributions1 as any as Problem,
+  'probability-markov-chains-1': probabilityMarkovChains1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   'numerical-analysis-euler-method-1': numericalAnalysisEulerMethod1 as any as Problem,
@@ -306,6 +313,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'abstract-algebra-group-actions-1': abstractAlgebraGroupActions1 as any as Problem,
   'abstract-algebra-quotient-groups-1': abstractAlgebraQuotientGroups1 as any as Problem,
   'abstract-algebra-field-extensions-1': abstractAlgebraFieldExtensions1 as any as Problem,
+  'abstract-algebra-polynomial-rings-1': abstractAlgebraPolynomialRings1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,

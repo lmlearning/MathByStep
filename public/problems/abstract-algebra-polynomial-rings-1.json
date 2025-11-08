@@ -1,0 +1,199 @@
+{
+  "id": "abstract-algebra-polynomial-rings-1",
+  "type": "problem",
+  "title": "Polynomial Rings and Irreducibility",
+  "topic": "Abstract Algebra",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "abstract-algebra",
+    "polynomial-rings",
+    "irreducible-polynomials",
+    "eisenstein-criterion",
+    "factorization"
+  ],
+  "statement": {
+    "text": "Determine whether $p(x) = x^3 - 2$ is irreducible over $\\mathbb{Q}$ (the rational numbers). If irreducible, what is $[\\mathbb{Q}[x]/(p(x)) : \\mathbb{Q}]$?"
+  },
+  "objectives": [
+    "Apply Eisenstein's criterion",
+    "Understand irreducibility over rationals",
+    "Compute degree of field extension"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Polynomial $p(x) = x^3 - 2$ over $\\mathbb{Q}$."
+      },
+      "prompt": {
+        "question": "What does it mean for a polynomial to be irreducible over $\\mathbb{Q}$?",
+        "hint": "Irreducible means it cannot be factored as a product of two non-constant polynomials with rational coefficients."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Cannot be factored into non-constant polynomials in $\\mathbb{Q}[x]$"
+        },
+        {
+          "id": "b",
+          "text": "Has no roots in $\\mathbb{Q}$"
+        },
+        {
+          "id": "c",
+          "text": "Has degree 1"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Irreducibility over $\\mathbb{Q}$:**\n\nA polynomial $p(x) \\in \\mathbb{Q}[x]$ is **irreducible** over $\\mathbb{Q}$ if:\n- $p(x)$ is non-constant, AND\n- $p(x)$ cannot be written as $p(x) = f(x)g(x)$ where $f, g \\in \\mathbb{Q}[x]$ are both non-constant\n\n**Equivalently:** The only divisors of $p(x)$ in $\\mathbb{Q}[x]$ are constants and constant multiples of $p(x)$ itself.\n\n**Note:** Having no rational roots is necessary but NOT sufficient for irreducibility! For example, $x^4 + 4 = (x^2 + 2x + 2)(x^2 - 2x + 2)$ has no rational roots but is reducible over $\\mathbb{Q}$.",
+          "insight": "Irreducible polynomials are the 'primes' of polynomial rings!"
+        },
+        "incorrect": {
+          "1": "That's necessary for degree 2 or 3, but not sufficient in general! Irreducibility means no non-trivial factorization.",
+          "2": "Linear polynomials are irreducible, but not all irreducibles have degree 1!"
+        }
+      },
+      "resultState": {
+        "description": "Irreducibility definition understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply Eisenstein's criterion."
+      },
+      "prompt": {
+        "question": "Does $p(x) = x^3 - 2$ satisfy Eisenstein's criterion for prime $p = 2$?",
+        "hint": "Eisenstein: If $p$ divides all coefficients except the leading one, $p^2$ doesn't divide the constant term, then $p(x)$ is irreducible. Here: $2 | -2$ ✓, $2 \\nmid 1$ ✓, $4 \\nmid -2$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, with prime $p = 2$"
+        },
+        {
+          "id": "b",
+          "text": "No, Eisenstein doesn't apply"
+        },
+        {
+          "id": "c",
+          "text": "Yes, with prime $p = 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Eisenstein's Criterion:**\n\nA polynomial $f(x) = a_n x^n + \\cdots + a_1 x + a_0 \\in \\mathbb{Z}[x]$ is irreducible over $\\mathbb{Q}$ if there exists a prime $p$ such that:\n1. $p \\nmid a_n$ (doesn't divide leading coefficient)\n2. $p | a_i$ for all $i < n$ (divides all other coefficients)\n3. $p^2 \\nmid a_0$ (doesn't divide constant term twice)\n\n**For $p(x) = x^3 - 2$ with prime $p = 2$:**\n\n1. $2 \\nmid 1$ ✓ (leading coefficient is 1)\n2. Coefficients of $x^2, x$: both are 0, so $2 | 0$ ✓\n   Constant term: $2 | -2$ ✓\n3. $p^2 = 4 \\nmid -2$ ✓\n\n**Conclusion:** By Eisenstein's criterion, $x^3 - 2$ is **irreducible over $\\mathbb{Q}$**!",
+          "insight": "Eisenstein's criterion is a powerful tool for proving irreducibility!"
+        },
+        "incorrect": {
+          "1": "Eisenstein DOES apply! Check with prime $p = 2$.",
+          "2": "$3 | -2$? No! $-2$ is not divisible by 3. Use $p = 2$."
+        }
+      },
+      "resultState": {
+        "description": "Irreducibility proved",
+        "equations": ["x^3 - 2 \\text{ is irreducible over } \\mathbb{Q}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find degree of quotient ring."
+      },
+      "prompt": {
+        "question": "What is the dimension $[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}]$?",
+        "hint": "The quotient ring $\\mathbb{Q}[x]/(p(x))$ is a field (since $p$ is irreducible) with dimension equal to $\\deg(p) = 3$ over $\\mathbb{Q}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3$"
+        },
+        {
+          "id": "b",
+          "text": "$[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 9$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Quotient Ring Structure:**\n\nSince $p(x) = x^3 - 2$ is irreducible over $\\mathbb{Q}$, the quotient ring:\n$$K = \\mathbb{Q}[x]/(x^3 - 2)$$\nis a **field** (quotient by maximal ideal).\n\n**Basis over $\\mathbb{Q}$:**\nElements of $K$ can be written uniquely as:\n$$a_0 + a_1 \\overline{x} + a_2 \\overline{x}^2$$\nwhere $a_i \\in \\mathbb{Q}$ and $\\overline{x} = x + (x^3 - 2)$ (the image of $x$ in the quotient).\n\n**Why?** In $K$, we have $\\overline{x}^3 = 2$, so powers $\\overline{x}^k$ for $k \\geq 3$ can be reduced.\n\n**Dimension:** The set $\\{1, \\overline{x}, \\overline{x}^2\\}$ forms a basis, so:\n$$[K : \\mathbb{Q}] = 3$$\n\n**Isomorphism:** $K \\cong \\mathbb{Q}(\\sqrt[3]{2})$ (adjoining cube root of 2).",
+          "insight": "Degree of field extension equals degree of minimal polynomial!"
+        },
+        "incorrect": {
+          "1": "That would mean $K = \\mathbb{Q}$, but we've extended by $\\sqrt[3]{2}$!",
+          "2": "Not $3^2$! The dimension is $\\deg(p) = 3$."
+        }
+      },
+      "resultState": {
+        "description": "Field extension degree",
+        "equations": ["[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Interpretation as field extension."
+      },
+      "prompt": {
+        "question": "What field is $\\mathbb{Q}[x]/(x^3 - 2)$ isomorphic to?",
+        "hint": "$\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2}) = \\{a + b\\sqrt[3]{2} + c(\\sqrt[3]{2})^2 : a,b,c \\in \\mathbb{Q}\\}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{Q}(\\sqrt[3]{2})$ (rationals with cube root of 2)"
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{Q}(\\sqrt{2})$ (rationals with square root of 2)"
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{R}$ (all real numbers)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Field Extension Interpretation:**\n\nThe quotient ring $\\mathbb{Q}[x]/(x^3 - 2)$ is isomorphic to the field:\n$$\\mathbb{Q}(\\sqrt[3]{2}) = \\left\\{a + b\\sqrt[3]{2} + c\\left(\\sqrt[3]{2}\\right)^2 : a, b, c \\in \\mathbb{Q}\\right\\}$$\n\n**Isomorphism:** The map $\\phi: \\mathbb{Q}[x]/(x^3 - 2) \\to \\mathbb{Q}(\\sqrt[3]{2})$ defined by:\n$$\\phi(\\overline{x}) = \\sqrt[3]{2}$$\nextends to a field isomorphism.\n\n**Why?** Both are:\n- 3-dimensional vector spaces over $\\mathbb{Q}$\n- Fields containing $\\mathbb{Q}$\n- Generated by an element $\\alpha$ with $\\alpha^3 = 2$\n\n**Example elements:**\n- $\\overline{x} + 1$ corresponds to $\\sqrt[3]{2} + 1$\n- $\\overline{x}^2 - 3\\overline{x}$ corresponds to $(\\sqrt[3]{2})^2 - 3\\sqrt[3]{2}$\n\n**Note:** $\\mathbb{Q}(\\sqrt[3]{2}) \\neq \\mathbb{Q}(\\sqrt{2})$ since $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2 \\neq 3$.",
+          "insight": "Quotient by irreducible polynomial gives field extension by root of that polynomial!"
+        },
+        "incorrect": {
+          "1": "That's a degree 2 extension! Our polynomial has degree 3.",
+          "2": "Too large! $[\\mathbb{R} : \\mathbb{Q}]$ is infinite, not 3."
+        }
+      },
+      "resultState": {
+        "description": "Field isomorphism",
+        "equations": ["\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Polynomial: $p(x) = x^3 - 2$ over $\\mathbb{Q}$",
+      "Eisenstein's criterion (with $p=2$) proves irreducibility",
+      "$x^3 - 2$ is irreducible over $\\mathbb{Q}$",
+      "Quotient ring $\\mathbb{Q}[x]/(x^3 - 2)$ is a field",
+      "Dimension: $[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3$",
+      "Isomorphism: $\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})$"
+    ],
+    "fullSolution": "**Determine irreducibility of $p(x) = x^3 - 2$ over $\\mathbb{Q}$**\n\n---\n\n**Step 1: Eisenstein's Criterion**\n\nFor polynomial $f(x) = a_n x^n + \\cdots + a_0 \\in \\mathbb{Z}[x]$, if $\\exists$ prime $p$ with:\n1. $p \\nmid a_n$\n2. $p | a_i$ for all $i < n$\n3. $p^2 \\nmid a_0$\n\nthen $f(x)$ is irreducible over $\\mathbb{Q}$.\n\n**Apply with $p = 2$:**\n\n$p(x) = 1 \\cdot x^3 + 0 \\cdot x^2 + 0 \\cdot x + (-2)$\n\n1. $2 \\nmid 1$ ✓\n2. $2 | 0$ and $2 | -2$ ✓\n3. $4 \\nmid -2$ ✓\n\n**Conclusion:** $x^3 - 2$ is **irreducible over $\\mathbb{Q}$**.\n\n---\n\n**Step 2: Degree of Field Extension**\n\nSince $p(x)$ is irreducible, $\\mathbb{Q}[x]/(p(x))$ is a field.\n\nElements have form:\n$$a_0 + a_1\\overline{x} + a_2\\overline{x}^2, \\quad a_i \\in \\mathbb{Q}$$\n\nwhere $\\overline{x}^3 = 2$ in the quotient.\n\nBasis: $\\{1, \\overline{x}, \\overline{x}^2\\}$\n\n$$[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = \\deg(p) = 3$$\n\n---\n\n**Step 3: Field Isomorphism**\n\n$$\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})$$\n\nThe quotient is isomorphic to the field obtained by adjoining $\\sqrt[3]{2}$ to $\\mathbb{Q}$.\n\n---\n\n**Answer:** \n- $\\boxed{x^3 - 2 \\text{ is irreducible over } \\mathbb{Q}}$\n- $\\boxed{[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3}$",
+    "relatedProblems": [
+      "abstract-algebra-field-extensions-1",
+      "abstract-algebra-rings-1"
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "id": "probability-markov-chains-1",
+  "type": "problem",
+  "title": "Introduction to Markov Chains",
+  "topic": "Probability & Statistics",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "probability",
+    "markov-chains",
+    "transition-matrix",
+    "stationary-distribution",
+    "stochastic-processes"
+  ],
+  "statement": {
+    "text": "A weather model has two states: Sunny (S) and Rainy (R). The transition probabilities are: $P(S|S) = 0.7$, $P(R|S) = 0.3$, $P(S|R) = 0.4$, $P(R|R) = 0.6$. Find the stationary distribution (long-run probabilities)."
+  },
+  "objectives": [
+    "Understand Markov chain transition matrices",
+    "Set up stationary distribution equations",
+    "Solve for equilibrium probabilities"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Weather Markov chain with states S, R."
+      },
+      "prompt": {
+        "question": "What is the transition matrix $P$?",
+        "hint": "Rows represent current state, columns represent next state. $P = \\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}$ where row 1 is S, row 2 is R."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P = \\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "text": "$P = \\begin{pmatrix} 0.7 & 0.4 \\\\ 0.3 & 0.6 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "text": "$P = \\begin{pmatrix} 0.3 & 0.7 \\\\ 0.6 & 0.4 \\end{pmatrix}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Transition matrix** $P$:\n\n$$P = \\begin{pmatrix} P(S|S) & P(R|S) \\\\ P(S|R) & P(R|R) \\end{pmatrix} = \\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}$$\n\n**Convention:** Row $i$ represents current state $i$, column $j$ represents next state $j$. Entry $P_{ij}$ is the probability of transitioning from state $i$ to state $j$.\n\n**Row sums:** Each row sums to 1 (probabilities must sum to 1):\n- Row 1: $0.7 + 0.3 = 1$ ✓\n- Row 2: $0.4 + 0.6 = 1$ ✓\n\n**Interpretation:**\n- If currently Sunny, tomorrow is Sunny with probability 0.7, Rainy with probability 0.3\n- If currently Rainy, tomorrow is Sunny with probability 0.4, Rainy with probability 0.6",
+          "insight": "Transition matrix rows must sum to 1 - this is a stochastic matrix!"
+        },
+        "incorrect": {
+          "1": "Check the convention! $P_{ij}$ is probability from state $i$ (row) to state $j$ (column).",
+          "2": "That's the transpose! Use row = current state, column = next state."
+        }
+      },
+      "resultState": {
+        "description": "Transition matrix",
+        "equations": ["P = \\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find stationary distribution $\\pi$."
+      },
+      "prompt": {
+        "question": "What equation defines the stationary distribution $\\pi = (\\pi_S, \\pi_R)$?",
+        "hint": "Stationary means $\\pi P = \\pi$ (distribution unchanged by one transition). Also $\\pi_S + \\pi_R = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\pi P = \\pi$ and $\\pi_S + \\pi_R = 1$"
+        },
+        {
+          "id": "b",
+          "text": "$P\\pi = \\pi$ and $\\pi_S + \\pi_R = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\pi P = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Stationary distribution** $\\pi$ satisfies:\n\n$$\\pi P = \\pi$$\n\nThis means the distribution is unchanged after one time step.\n\n**Why $\\pi P$ not $P\\pi$?** We represent $\\pi$ as a row vector: $\\pi = (\\pi_S, \\pi_R)$. Then:\n\n$$\\pi P = (\\pi_S, \\pi_R)\\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}$$\n\nThis gives the distribution after one transition.\n\n**Additional constraint:** Probabilities sum to 1:\n$$\\pi_S + \\pi_R = 1$$\n\n**Expanded equations:**\n$$\\begin{cases}\n0.7\\pi_S + 0.4\\pi_R = \\pi_S \\\\\n0.3\\pi_S + 0.6\\pi_R = \\pi_R \\\\\n\\pi_S + \\pi_R = 1\n\\end{cases}$$",
+          "insight": "Stationary distribution is the eigenvector of $P^T$ with eigenvalue 1!"
+        },
+        "incorrect": {
+          "1": "Convention is row vector! Use $\\pi P = \\pi$, not $P\\pi = \\pi$.",
+          "2": "Stationary means unchanged: $\\pi P = \\pi$, not zero!"
+        }
+      },
+      "resultState": {
+        "description": "Stationary equations",
+        "equations": ["\\pi P = \\pi, \\quad \\pi_S + \\pi_R = 1"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve for $\\pi_S$ and $\\pi_R$."
+      },
+      "prompt": {
+        "question": "Solve the system: $0.7\\pi_S + 0.4\\pi_R = \\pi_S$ and $\\pi_S + \\pi_R = 1$.",
+        "hint": "From first equation: $-0.3\\pi_S + 0.4\\pi_R = 0$, so $0.4\\pi_R = 0.3\\pi_S$, giving $\\pi_R = \\frac{3}{4}\\pi_S$. Substitute into $\\pi_S + \\pi_R = 1$ to get $\\pi_S = \\frac{4}{7}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\pi_S = \\frac{4}{7}, \\pi_R = \\frac{3}{7}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\pi_S = \\frac{1}{2}, \\pi_R = \\frac{1}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\pi_S = \\frac{3}{7}, \\pi_R = \\frac{4}{7}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Solve the system:**\n\n**From $\\pi P = \\pi$:**\n$$0.7\\pi_S + 0.4\\pi_R = \\pi_S$$\n$$-0.3\\pi_S + 0.4\\pi_R = 0$$\n$$0.4\\pi_R = 0.3\\pi_S$$\n$$\\pi_R = \\frac{3}{4}\\pi_S$$\n\n**Substitute into $\\pi_S + \\pi_R = 1$:**\n$$\\pi_S + \\frac{3}{4}\\pi_S = 1$$\n$$\\frac{7}{4}\\pi_S = 1$$\n$$\\pi_S = \\frac{4}{7}$$\n\n**Then:**\n$$\\pi_R = 1 - \\pi_S = 1 - \\frac{4}{7} = \\frac{3}{7}$$\n\n**Verification:** Check $\\pi P = \\pi$:\n$$\\left(\\frac{4}{7}, \\frac{3}{7}\\right)\\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix} = \\left(\\frac{4}{7} \\cdot 0.7 + \\frac{3}{7} \\cdot 0.4, \\frac{4}{7} \\cdot 0.3 + \\frac{3}{7} \\cdot 0.6\\right)$$\n$$= \\left(\\frac{2.8 + 1.2}{7}, \\frac{1.2 + 1.8}{7}\\right) = \\left(\\frac{4}{7}, \\frac{3}{7}\\right)$$ ✓",
+          "insight": "In the long run, it's sunny 4/7 ≈ 57% of days, rainy 3/7 ≈ 43% of days!"
+        },
+        "incorrect": {
+          "1": "Not symmetric! Solve $-0.3\\pi_S + 0.4\\pi_R = 0$ to find the ratio.",
+          "2": "Close but reversed! $\\pi_S = 4/7$ (more sunny days than rainy)."
+        }
+      },
+      "resultState": {
+        "description": "Stationary distribution found",
+        "equations": ["\\pi = \\left(\\frac{4}{7}, \\frac{3}{7}\\right)"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Interpret the result."
+      },
+      "prompt": {
+        "question": "What does the stationary distribution mean?",
+        "hint": "In the long run, regardless of initial weather, approximately 4/7 of days are sunny and 3/7 are rainy."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Long-run proportion: ~57% sunny days, ~43% rainy days"
+        },
+        {
+          "id": "b",
+          "text": "Tomorrow will definitely be sunny"
+        },
+        {
+          "id": "c",
+          "text": "The weather alternates between S and R every day"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Interpretation of stationary distribution:**\n\n$$\\pi = \\left(\\frac{4}{7}, \\frac{3}{7}\\right) \\approx (0.571, 0.429)$$\n\n**Long-run behavior:**\n- Over a long period, approximately **57% of days are sunny**\n- Over a long period, approximately **43% of days are rainy**\n- This is true regardless of whether we start with a sunny or rainy day\n\n**Convergence:** For any initial distribution $\\pi_0$, we have:\n$$\\lim_{n \\to \\infty} \\pi_0 P^n = \\pi$$\n\nThe distribution converges to the stationary distribution as $n \\to \\infty$.\n\n**Example:** If today is sunny, what's the distribution in 100 days?\n$$\\pi_{100} \\approx (0.571, 0.429)$$\n\nThe initial state becomes irrelevant!",
+          "insight": "Stationary distribution is the equilibrium - where the chain 'settles' in the long run!"
+        },
+        "incorrect": {
+          "1": "Not deterministic! The stationary distribution gives long-run probabilities, not certainties.",
+          "2": "Not periodic! The chain stays at the stationary distribution, with random transitions according to $P$."
+        }
+      },
+      "resultState": {
+        "description": "Interpretation complete",
+        "equations": ["\\text{Long-run: } 57\\% \\text{ sunny, } 43\\% \\text{ rainy}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Markov chain with states: Sunny (S), Rainy (R)",
+      "Transition matrix: $P = \\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}$",
+      "Stationary distribution satisfies: $\\pi P = \\pi$ and $\\pi_S + \\pi_R = 1$",
+      "Solution: $\\pi = (\\frac{4}{7}, \\frac{3}{7}) \\approx (0.571, 0.429)$",
+      "Long-run: 57% sunny days, 43% rainy days",
+      "Stationary distribution is independent of initial state"
+    ],
+    "fullSolution": "**Find stationary distribution of weather Markov chain**\n\n---\n\n**Given Transition Probabilities:**\n- $P(S|S) = 0.7$, $P(R|S) = 0.3$\n- $P(S|R) = 0.4$, $P(R|R) = 0.6$\n\n---\n\n**Step 1: Transition Matrix**\n\n$$P = \\begin{pmatrix} 0.7 & 0.3 \\\\ 0.4 & 0.6 \\end{pmatrix}$$\n\nRows sum to 1 (stochastic matrix) ✓\n\n---\n\n**Step 2: Stationary Distribution Equations**\n\nFind $\\pi = (\\pi_S, \\pi_R)$ satisfying:\n$$\\pi P = \\pi$$\n$$\\pi_S + \\pi_R = 1$$\n\nExpanded:\n$$\\begin{cases}\n0.7\\pi_S + 0.4\\pi_R = \\pi_S \\\\\n0.3\\pi_S + 0.6\\pi_R = \\pi_R \\\\\n\\pi_S + \\pi_R = 1\n\\end{cases}$$\n\n---\n\n**Step 3: Solve**\n\nFrom first equation:\n$$-0.3\\pi_S + 0.4\\pi_R = 0$$\n$$\\pi_R = \\frac{3}{4}\\pi_S$$\n\nSubstitute into normalization:\n$$\\pi_S + \\frac{3}{4}\\pi_S = 1$$\n$$\\frac{7}{4}\\pi_S = 1$$\n$$\\pi_S = \\frac{4}{7}$$\n\n$$\\pi_R = 1 - \\frac{4}{7} = \\frac{3}{7}$$\n\n---\n\n**Answer:** $\\boxed{\\pi = \\left(\\frac{4}{7}, \\frac{3}{7}\\right) \\approx (0.571, 0.429)}$\n\n---\n\n**Interpretation:** In the long run, 57% of days are sunny and 43% are rainy, regardless of initial conditions.",
+    "relatedProblems": [
+      "probability-conditional-probability-1",
+      "linear-algebra-eigenvalues-1"
+    ]
+  }
+}

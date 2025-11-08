@@ -1,0 +1,201 @@
+{
+  "id": "differential-equations-boundary-value-1",
+  "type": "problem",
+  "title": "Boundary Value Problems",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "differential-equations",
+    "boundary-value-problems",
+    "second-order-ode",
+    "eigenvalue-problems"
+  ],
+  "statement": {
+    "text": "Solve the boundary value problem: $y'' + \\lambda y = 0$ on $[0, \\pi]$ with $y(0) = 0$ and $y(\\pi) = 0$. Find all eigenvalues $\\lambda$ and corresponding eigenfunctions."
+  },
+  "objectives": [
+    "Understand boundary value problems",
+    "Solve second-order linear ODE",
+    "Find eigenvalues and eigenfunctions",
+    "Understand solution structure for different $\\lambda$ values"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "BVP: $y'' + \\lambda y = 0$ with $y(0) = y(\\pi) = 0$."
+      },
+      "prompt": {
+        "question": "What is the general solution to $y'' + \\lambda y = 0$ for $\\lambda > 0$?",
+        "hint": "For $\\lambda > 0$, let $\\omega = \\sqrt{\\lambda}$. Then $y(x) = A\\cos(\\omega x) + B\\sin(\\omega x)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y(x) = A\\cos(\\sqrt{\\lambda}\\, x) + B\\sin(\\sqrt{\\lambda}\\, x)$"
+        },
+        {
+          "id": "b",
+          "text": "$y(x) = Ae^{\\sqrt{\\lambda}\\, x} + Be^{-\\sqrt{\\lambda}\\, x}$"
+        },
+        {
+          "id": "c",
+          "text": "$y(x) = Ax + B$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **General solution for $\\lambda > 0$:**\n\nThe characteristic equation is:\n$$r^2 + \\lambda = 0$$\n$$r = \\pm i\\sqrt{\\lambda}$$\n\nComplex roots $r = \\pm i\\omega$ (where $\\omega = \\sqrt{\\lambda}$) give:\n$$y(x) = A\\cos(\\omega x) + B\\sin(\\omega x)$$\n\n**Alternative forms:**\n- $y(x) = C e^{i\\omega x} + D e^{-i\\omega x}$ (complex form)\n- $y(x) = R\\cos(\\omega x + \\phi)$ (amplitude-phase form)\n\n**Cases to consider:**\n- $\\lambda > 0$: Oscillatory solutions (sin/cos)\n- $\\lambda = 0$: $y(x) = Ax + B$ (linear)\n- $\\lambda < 0$: $y(x) = Ae^{\\sqrt{-\\lambda}\\, x} + Be^{-\\sqrt{-\\lambda}\\, x}$ (exponential)",
+          "insight": "Sign of $\\lambda$ determines solution type: oscillatory vs exponential!"
+        },
+        "incorrect": {
+          "1": "That's for $\\lambda < 0$ (negative eigenvalue)! For $\\lambda > 0$, we get oscillatory solutions.",
+          "2": "That's for $\\lambda = 0$ only! We need the general case for $\\lambda > 0$."
+        }
+      },
+      "resultState": {
+        "description": "General solution for $\\lambda > 0$",
+        "equations": ["y(x) = A\\cos(\\sqrt{\\lambda}\\, x) + B\\sin(\\sqrt{\\lambda}\\, x)"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply boundary condition $y(0) = 0$."
+      },
+      "prompt": {
+        "question": "What does $y(0) = 0$ tell us about $A$ and $B$?",
+        "hint": "$y(0) = A\\cos(0) + B\\sin(0) = A \\cdot 1 + B \\cdot 0 = A$. So $A = 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$A = 0$, so $y(x) = B\\sin(\\sqrt{\\lambda}\\, x)$"
+        },
+        {
+          "id": "b",
+          "text": "$B = 0$, so $y(x) = A\\cos(\\sqrt{\\lambda}\\, x)$"
+        },
+        {
+          "id": "c",
+          "text": "$A = B$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Apply first boundary condition:\n\n$$y(0) = A\\cos(0) + B\\sin(0) = A \\cdot 1 + B \\cdot 0 = A$$\n\nSince $y(0) = 0$:\n$$A = 0$$\n\nSo the solution simplifies to:\n$$y(x) = B\\sin(\\sqrt{\\lambda}\\, x)$$\n\nwhere $B$ and $\\lambda$ are still to be determined from the second boundary condition.",
+          "insight": "Boundary conditions eliminate constants and constrain eigenvalues!"
+        },
+        "incorrect": {
+          "1": "$\\cos(0) = 1 \\neq 0$, so $B = 0$ would give $y(0) = A \\neq 0$. We need $A = 0$.",
+          "2": "Not quite! Plugging in: $y(0) = A$, so $A = 0$ specifically."
+        }
+      },
+      "resultState": {
+        "description": "After first BC",
+        "equations": ["y(x) = B\\sin(\\sqrt{\\lambda}\\, x)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply boundary condition $y(\\pi) = 0$."
+      },
+      "prompt": {
+        "question": "What values of $\\lambda$ satisfy $y(\\pi) = B\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$ with $B \\neq 0$?",
+        "hint": "For non-trivial solution ($B \\neq 0$), need $\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$, so $\\sqrt{\\lambda}\\, \\pi = n\\pi$ for $n = 1, 2, 3, \\ldots$ Thus $\\lambda = n^2$ for $n \\in \\mathbb{Z}^+$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lambda_n = n^2$ for $n = 1, 2, 3, \\ldots$"
+        },
+        {
+          "id": "b",
+          "text": "$\\lambda = \\pi^2$"
+        },
+        {
+          "id": "c",
+          "text": "$\\lambda = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Apply second boundary condition:\n\n$$y(\\pi) = B\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n\n**Two cases:**\n1. $B = 0$ → trivial solution $y \\equiv 0$ (not interesting)\n2. $B \\neq 0$ → $\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$\n\n**For case 2:**\n$$\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n$$\\sqrt{\\lambda}\\, \\pi = n\\pi \\quad (n \\in \\mathbb{Z})$$\n$$\\sqrt{\\lambda} = n$$\n$$\\lambda = n^2$$\n\nSince $\\lambda > 0$, we need $n > 0$:\n$$\\boxed{\\lambda_n = n^2 \\quad \\text{for } n = 1, 2, 3, \\ldots}$$\n\n**Eigenvalues:** $\\lambda_1 = 1, \\lambda_2 = 4, \\lambda_3 = 9, \\lambda_4 = 16, \\ldots$",
+          "insight": "Boundary conditions quantize the eigenvalues - only discrete values work!"
+        },
+        "incorrect": {
+          "1": "That's just ONE eigenvalue! There are infinitely many: $\\lambda_n = n^2$ for all positive integers $n$.",
+          "2": "$\\lambda = 0$ gives $y(x) = Bx$, which doesn't satisfy both boundary conditions."
+        }
+      },
+      "resultState": {
+        "description": "Eigenvalues found",
+        "equations": ["\\lambda_n = n^2, \\quad n = 1, 2, 3, \\ldots"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Find eigenfunctions."
+      },
+      "prompt": {
+        "question": "What are the eigenfunctions $y_n(x)$ corresponding to $\\lambda_n = n^2$?",
+        "hint": "$y_n(x) = B_n \\sin(nx)$ for each $n = 1, 2, 3, \\ldots$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_n(x) = \\sin(nx)$ for $n = 1, 2, 3, \\ldots$"
+        },
+        {
+          "id": "b",
+          "text": "$y_n(x) = \\cos(nx)$ for $n = 1, 2, 3, \\ldots$"
+        },
+        {
+          "id": "c",
+          "text": "$y(x) = \\sin(x)$ (only one eigenfunction)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Eigenfunctions:**\n\nFor each eigenvalue $\\lambda_n = n^2$, the corresponding eigenfunction is:\n$$y_n(x) = \\sin(nx)$$\n\n(We can set $B_n = 1$ by convention, or normalize differently.)\n\n**First few eigenfunctions:**\n- $n = 1$: $\\lambda_1 = 1$, $y_1(x) = \\sin(x)$\n- $n = 2$: $\\lambda_2 = 4$, $y_2(x) = \\sin(2x)$\n- $n = 3$: $\\lambda_3 = 9$, $y_3(x) = \\sin(3x)$\n- $n = 4$: $\\lambda_4 = 16$, $y_4(x) = \\sin(4x)$\n\n**Properties:**\n- All satisfy $y_n(0) = y_n(\\pi) = 0$ ✓\n- Orthogonal: $\\int_0^\\pi \\sin(mx)\\sin(nx)\\, dx = 0$ for $m \\neq n$\n- Complete: Any function satisfying BCs can be expanded in this basis (Fourier sine series)\n\n**Application:** These form the basis for Fourier sine series on $[0, \\pi]$!",
+          "insight": "Eigenfunctions of BVPs form orthogonal bases for function spaces!"
+        },
+        "incorrect": {
+          "1": "$\\cos(nx)$ doesn't satisfy $y(0) = 0$ since $\\cos(0) = 1 \\neq 0$!",
+          "2": "There are infinitely many eigenfunctions! One for each $n = 1, 2, 3, \\ldots$"
+        }
+      },
+      "resultState": {
+        "description": "Eigenfunctions found",
+        "equations": ["y_n(x) = \\sin(nx), \\quad n = 1, 2, 3, \\ldots"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "BVP: $y'' + \\lambda y = 0$ with $y(0) = y(\\pi) = 0$",
+      "General solution for $\\lambda > 0$: $y = A\\cos(\\sqrt{\\lambda}\\, x) + B\\sin(\\sqrt{\\lambda}\\, x)$",
+      "First BC: $y(0) = 0$ gives $A = 0$",
+      "Second BC: $y(\\pi) = 0$ gives $\\lambda_n = n^2$ for $n = 1, 2, 3, \\ldots$",
+      "Eigenvalues: $1, 4, 9, 16, 25, \\ldots$",
+      "Eigenfunctions: $y_n(x) = \\sin(nx)$",
+      "These form orthogonal basis for Fourier sine series"
+    ],
+    "fullSolution": "**Solve BVP: $y'' + \\lambda y = 0$ on $[0, \\pi]$ with $y(0) = y(\\pi) = 0$**\n\n---\n\n**Step 1: General Solution**\n\nFor $\\lambda > 0$, characteristic equation:\n$$r^2 + \\lambda = 0 \\implies r = \\pm i\\sqrt{\\lambda}$$\n\nGeneral solution:\n$$y(x) = A\\cos(\\sqrt{\\lambda}\\, x) + B\\sin(\\sqrt{\\lambda}\\, x)$$\n\n---\n\n**Step 2: Apply $y(0) = 0$**\n\n$$y(0) = A\\cos(0) + B\\sin(0) = A = 0$$\n\nSo:\n$$y(x) = B\\sin(\\sqrt{\\lambda}\\, x)$$\n\n---\n\n**Step 3: Apply $y(\\pi) = 0$**\n\n$$y(\\pi) = B\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n\nFor non-trivial solution ($B \\neq 0$):\n$$\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n$$\\sqrt{\\lambda}\\, \\pi = n\\pi, \\quad n = 1, 2, 3, \\ldots$$\n$$\\sqrt{\\lambda} = n$$\n$$\\lambda_n = n^2$$\n\n---\n\n**Step 4: Eigenfunctions**\n\nFor each $\\lambda_n = n^2$:\n$$y_n(x) = \\sin(nx)$$\n\n---\n\n**Answer:**\n\n**Eigenvalues:** $\\boxed{\\lambda_n = n^2 \\text{ for } n = 1, 2, 3, \\ldots}$\n\n**Eigenfunctions:** $\\boxed{y_n(x) = \\sin(nx) \\text{ for } n = 1, 2, 3, \\ldots}$\n\n---\n\n**First few:**\n- $\\lambda_1 = 1$: $y_1(x) = \\sin(x)$\n- $\\lambda_2 = 4$: $y_2(x) = \\sin(2x)$\n- $\\lambda_3 = 9$: $y_3(x) = \\sin(3x)$\n\n**Note:** For $\\lambda \\leq 0$, only the trivial solution $y \\equiv 0$ satisfies the boundary conditions.",
+    "relatedProblems": [
+      "differential-equations-second-order-homogeneous-1",
+      "calculus-power-series-1"
+    ]
+  }
+}
