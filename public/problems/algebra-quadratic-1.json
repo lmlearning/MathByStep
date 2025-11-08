@@ -1,0 +1,193 @@
+{
+  "id": "algebra-quadratic-1",
+  "type": "problem",
+  "title": "Solving a Quadratic Equation",
+  "topic": "Algebra",
+  "difficulty": 1,
+  "estimatedTime": 5,
+  "tags": ["quadratic", "factoring", "algebra"],
+  "statement": {
+    "text": "Solve the equation: x² - 5x + 6 = 0"
+  },
+  "objectives": [
+    "Factor a quadratic expression",
+    "Apply the zero product property",
+    "Find solutions to quadratic equations"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We need to solve:",
+        "equations": ["x² - 5x + 6 = 0"]
+      },
+      "prompt": {
+        "question": "What's the best approach to solve this quadratic equation?",
+        "hint": "Look at the coefficients. Can this be factored easily?"
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Try to factor the quadratic into (x + a)(x + b) form"
+        },
+        {
+          "id": "opt-2",
+          "text": "Use the quadratic formula immediately"
+        },
+        {
+          "id": "opt-3",
+          "text": "Complete the square"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent choice! This quadratic has integer coefficients and can be factored nicely. Factoring is often the quickest method when it works.",
+          "insight": "Always check if a quadratic can be factored before using more complex methods."
+        },
+        "incorrect": {
+          "1": "While the quadratic formula always works, it's more work than necessary here. This equation factors nicely.",
+          "2": "Completing the square works, but factoring is simpler for this equation."
+        }
+      },
+      "resultState": {
+        "description": "We'll factor the quadratic. We need to find two numbers that:",
+        "equations": ["Multiply to give: 6", "Add to give: -5"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Looking for two numbers that multiply to 6 and add to -5:",
+        "equations": ["Product: a × b = 6", "Sum: a + b = -5"]
+      },
+      "prompt": {
+        "question": "Which pair of numbers satisfies these conditions?",
+        "hint": "List the factor pairs of 6 and check which pair adds to -5."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "-2 and -3 (multiply to 6, add to -5)"
+        },
+        {
+          "id": "opt-2",
+          "text": "2 and 3 (multiply to 6, add to 5)"
+        },
+        {
+          "id": "opt-3",
+          "text": "-1 and -6 (multiply to 6, add to -7)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! -2 × -3 = 6 and -2 + (-3) = -5. These are our magic numbers.",
+          "insight": "When the constant term is positive and the linear coefficient is negative, both factors must be negative."
+        },
+        "incorrect": {
+          "1": "Close! These multiply to 6, but they add to +5, not -5. We need negative numbers.",
+          "2": "These do multiply to 6, but -1 + (-6) = -7, not -5."
+        }
+      },
+      "resultState": {
+        "description": "Found the factors! We can write:",
+        "equations": ["x² - 5x + 6 = (x - 2)(x - 3)"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "We have factored the equation:",
+        "equations": ["(x - 2)(x - 3) = 0"]
+      },
+      "prompt": {
+        "question": "Now that we have the factored form, how do we find the solutions?",
+        "hint": "If a product equals zero, what can we say about the factors?"
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Use the zero product property: if (x - 2)(x - 3) = 0, then x - 2 = 0 or x - 3 = 0"
+        },
+        {
+          "id": "opt-2",
+          "text": "Expand (x - 2)(x - 3) back to verify"
+        },
+        {
+          "id": "opt-3",
+          "text": "Set x - 2 = x - 3 and solve"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! The zero product property states: if ab = 0, then a = 0 or b = 0. We apply this to our factors.",
+          "insight": "The zero product property is the key to solving factored equations."
+        },
+        "incorrect": {
+          "1": "Expanding would just take us back to the original equation. We need to move forward to find solutions.",
+          "2": "This doesn't make sense. The factors don't need to equal each other; they need to equal zero."
+        }
+      },
+      "resultState": {
+        "description": "Applying zero product property:",
+        "equations": ["x - 2 = 0  or  x - 3 = 0"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "We have two simple equations to solve:",
+        "equations": ["x - 2 = 0", "x - 3 = 0"]
+      },
+      "prompt": {
+        "question": "What are the solutions?",
+        "hint": "Solve each equation for x."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "x = 2 or x = 3"
+        },
+        {
+          "id": "opt-2",
+          "text": "x = -2 or x = -3"
+        },
+        {
+          "id": "opt-3",
+          "text": "x = 5 (since 2 + 3 = 5)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! From x - 2 = 0, we get x = 2. From x - 3 = 0, we get x = 3. These are the two solutions!",
+          "insight": "A quadratic equation can have up to two solutions."
+        },
+        "incorrect": {
+          "1": "Be careful with signs! If x - 2 = 0, then x = +2, not -2.",
+          "2": "We don't add the factors. Each equation x - 2 = 0 and x - 3 = 0 gives a separate solution."
+        }
+      },
+      "resultState": {
+        "description": "Solution found!",
+        "equations": ["x = 2  or  x = 3"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Factoring is efficient when the quadratic has integer roots",
+      "Find two numbers that multiply to c and add to b in x² + bx + c",
+      "Zero product property: if ab = 0, then a = 0 or b = 0",
+      "Always verify solutions by substituting back into original equation"
+    ],
+    "fullSolution": "x² - 5x + 6 = (x - 2)(x - 3) = 0, therefore x = 2 or x = 3",
+    "relatedProblems": []
+  }
+}
