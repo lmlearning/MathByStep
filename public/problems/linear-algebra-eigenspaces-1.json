@@ -1,0 +1,200 @@
+{
+  "id": "linear-algebra-eigenspaces-1",
+  "type": "problem",
+  "title": "Eigenspaces and Geometric Multiplicity",
+  "topic": "Linear Algebra",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "linear-algebra",
+    "eigenvalues",
+    "eigenspaces",
+    "geometric-multiplicity",
+    "null-space"
+  ],
+  "statement": {
+    "text": "For matrix $A = \\begin{pmatrix} 3 & 1 \\\\ 0 & 3 \\end{pmatrix}$, find all eigenvalues and their corresponding eigenspaces. Determine the geometric and algebraic multiplicities."
+  },
+  "objectives": [
+    "Find eigenvalues from characteristic polynomial",
+    "Compute eigenspaces as null spaces",
+    "Understand geometric vs algebraic multiplicity"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Matrix $A = \\begin{pmatrix} 3 & 1 \\\\ 0 & 3 \\end{pmatrix}$."
+      },
+      "prompt": {
+        "question": "What is the characteristic polynomial of $A$?",
+        "hint": "$\\det(A - \\lambda I) = \\det\\begin{pmatrix} 3-\\lambda & 1 \\\\ 0 & 3-\\lambda \\end{pmatrix} = (3-\\lambda)^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$p(\\lambda) = (3-\\lambda)^2 = \\lambda^2 - 6\\lambda + 9$"
+        },
+        {
+          "id": "b",
+          "text": "$p(\\lambda) = \\lambda^2 - 9$"
+        },
+        {
+          "id": "c",
+          "text": "$p(\\lambda) = (\\lambda - 3)(\\lambda + 3)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The characteristic polynomial is:\n\n$$p(\\lambda) = \\det(A - \\lambda I) = \\det\\begin{pmatrix} 3-\\lambda & 1 \\\\ 0 & 3-\\lambda \\end{pmatrix}$$\n\nFor upper triangular matrix, determinant is product of diagonal entries:\n$$p(\\lambda) = (3-\\lambda)(3-\\lambda) = (3-\\lambda)^2$$\n\nExpanding:\n$$p(\\lambda) = \\lambda^2 - 6\\lambda + 9$$",
+          "insight": "For triangular matrices, eigenvalues are the diagonal entries!"
+        },
+        "incorrect": {
+          "1": "Missing the off-diagonal 1! The determinant is $(3-\\lambda)^2$, not $9 - \\lambda^2$.",
+          "2": "That would give eigenvalues $\\pm 3$, but our matrix has repeated eigenvalue 3."
+        }
+      },
+      "resultState": {
+        "description": "Characteristic polynomial found",
+        "equations": ["p(\\lambda) = (3-\\lambda)^2"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Characteristic polynomial: $(3-\\lambda)^2 = 0$."
+      },
+      "prompt": {
+        "question": "What are the eigenvalues and their algebraic multiplicities?",
+        "hint": "$(3-\\lambda)^2 = 0$ gives $\\lambda = 3$ with multiplicity 2 (appears twice as a root)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lambda = 3$ with algebraic multiplicity 2"
+        },
+        {
+          "id": "b",
+          "text": "$\\lambda_1 = 3, \\lambda_2 = -3$ each with multiplicity 1"
+        },
+        {
+          "id": "c",
+          "text": "$\\lambda = 3$ with algebraic multiplicity 1"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Solve $(3-\\lambda)^2 = 0$:\n\n$$\\lambda = 3 \\quad \\text{(repeated root)}$$\n\n**Algebraic multiplicity:** The number of times an eigenvalue appears as a root of the characteristic polynomial. Here, $\\lambda = 3$ has algebraic multiplicity $2$.",
+          "insight": "Algebraic multiplicity counts how many times $\\lambda$ appears as a root!"
+        },
+        "incorrect": {
+          "1": "No negative eigenvalue! $(3-\\lambda)^2 = 0$ gives only $\\lambda = 3$.",
+          "2": "It's a REPEATED root! $(3-\\lambda)^2$ means $\\lambda = 3$ appears twice."
+        }
+      },
+      "resultState": {
+        "description": "Eigenvalue: $\\lambda = 3$ (algebraic mult. = 2)",
+        "equations": ["\\lambda = 3, \\quad \\text{alg. mult.} = 2"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find eigenspace for $\\lambda = 3$."
+      },
+      "prompt": {
+        "question": "What is the eigenspace $E_3 = \\text{null}(A - 3I)$?",
+        "hint": "$A - 3I = \\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}$. Null space: $\\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$ gives $y = 0$. So $E_3 = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E_3 = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$ (1-dimensional)"
+        },
+        {
+          "id": "b",
+          "text": "$E_3 = \\mathbb{R}^2$ (2-dimensional)"
+        },
+        {
+          "id": "c",
+          "text": "$E_3 = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}, \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\\right\\}$ (2-dimensional)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The eigenspace for $\\lambda = 3$ is:\n\n$$E_3 = \\text{null}(A - 3I) = \\text{null}\\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}$$\n\nSolve $(A - 3I)\\mathbf{v} = \\mathbf{0}$:\n$$\\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$$\n\nThis gives $y = 0$, $x$ free. So:\n$$E_3 = \\left\\{\\begin{pmatrix} x \\\\ 0 \\end{pmatrix} : x \\in \\mathbb{R}\\right\\} = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$$\n\n**Geometric multiplicity** = $\\dim(E_3) = 1$.",
+          "insight": "Geometric multiplicity is the dimension of the eigenspace - it can be LESS than algebraic multiplicity!"
+        },
+        "incorrect": {
+          "1": "Too large! Solve the system carefully: $y = 0$ is required.",
+          "2": "The eigenspace has dimension 1, not 2. Only one independent eigenvector!"
+        }
+      },
+      "resultState": {
+        "description": "Eigenspace computed",
+        "equations": ["E_3 = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}, \\quad \\dim(E_3) = 1"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Compare multiplicities."
+      },
+      "prompt": {
+        "question": "Is $A$ diagonalizable?",
+        "hint": "A matrix is diagonalizable iff geometric multiplicity = algebraic multiplicity for all eigenvalues. Here: geom = 1, alg = 2. So NO!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No, because geometric multiplicity (1) $<$ algebraic multiplicity (2)"
+        },
+        {
+          "id": "b",
+          "text": "Yes, all $2 \\times 2$ matrices are diagonalizable"
+        },
+        {
+          "id": "c",
+          "text": "Yes, because it has an eigenvalue"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Diagonalizability criterion:**\n\nA matrix is diagonalizable if and only if, for each eigenvalue $\\lambda$:\n$$\\text{geometric multiplicity}(\\lambda) = \\text{algebraic multiplicity}(\\lambda)$$\n\nFor our matrix:\n- Eigenvalue $\\lambda = 3$\n- Algebraic multiplicity = 2 (from characteristic polynomial)\n- Geometric multiplicity = 1 (from $\\dim(E_3) = 1$)\n\nSince $1 < 2$, the matrix is **not diagonalizable**.\n\n**Why:** We can't find 2 linearly independent eigenvectors for $\\lambda = 3$, so we can't form a basis of eigenvectors for $\\mathbb{R}^2$.",
+          "insight": "This matrix is defective (geometric < algebraic). It requires Jordan normal form instead of diagonalization!"
+        },
+        "incorrect": {
+          "1": "False! Not all matrices are diagonalizable. This one isn't!",
+          "2": "Having an eigenvalue isn't enough - need enough independent eigenvectors!"
+        }
+      },
+      "resultState": {
+        "description": "Matrix is not diagonalizable",
+        "equations": ["\\text{geom. mult.} = 1 < 2 = \\text{alg. mult.}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Eigenvalue: $\\lambda = 3$ (only one distinct eigenvalue)",
+      "Algebraic multiplicity: 2 (appears twice in characteristic polynomial)",
+      "Eigenspace: $E_3 = \\text{span}\\{(1,0)^T\\}$",
+      "Geometric multiplicity: 1 (dimension of eigenspace)",
+      "Matrix is NOT diagonalizable (geometric < algebraic)",
+      "Defective matrix requires Jordan form"
+    ],
+    "fullSolution": "**Analyze eigenvalues and eigenspaces of $A = \\begin{pmatrix} 3 & 1 \\\\ 0 & 3 \\end{pmatrix}$**\n\n---\n\n**Step 1: Eigenvalues**\n\nCharacteristic polynomial:\n$$\\det(A - \\lambda I) = \\det\\begin{pmatrix} 3-\\lambda & 1 \\\\ 0 & 3-\\lambda \\end{pmatrix} = (3-\\lambda)^2$$\n\nEigenvalues:\n$$(3-\\lambda)^2 = 0 \\implies \\lambda = 3 \\text{ (algebraic multiplicity 2)}$$\n\n---\n\n**Step 2: Eigenspace for $\\lambda = 3$**\n\n$$A - 3I = \\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}$$\n\nSolve $(A - 3I)\\mathbf{v} = \\mathbf{0}$:\n$$\\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}$$\n\nThis gives $y = 0$, $x$ arbitrary.\n\n$$E_3 = \\left\\{\\begin{pmatrix} x \\\\ 0 \\end{pmatrix} : x \\in \\mathbb{R}\\right\\} = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}$$\n\n**Geometric multiplicity** = $\\dim(E_3) = 1$\n\n---\n\n**Step 3: Diagonalizability**\n\nFor $\\lambda = 3$:\n- Algebraic multiplicity: 2\n- Geometric multiplicity: 1\n\nSince geometric $<$ algebraic, **$A$ is NOT diagonalizable**.\n\n---\n\n**Summary:**\n\n| Eigenvalue | Alg. Mult. | Eigenspace | Geom. Mult. |\n|------------|------------|------------|-------------|\n| $\\lambda = 3$ | 2 | $\\text{span}\\{(1,0)^T\\}$ | 1 |\n\n**Conclusion:** Defective matrix (not enough eigenvectors to form a basis).",
+    "relatedProblems": [
+      "linear-algebra-eigenvalues-1",
+      "linear-algebra-diagonalization-1"
+    ]
+  }
+}

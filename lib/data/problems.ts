@@ -91,12 +91,14 @@ import calculusArcLength1 from '@/public/problems/calculus-arc-length-1.json';
 import calculusPowerSeries1 from '@/public/problems/calculus-power-series-1.json';
 import calculusTaylorSeries1 from '@/public/problems/calculus-taylor-series-1.json';
 import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-comparison-test-1.json';
+import calculusMeanValueTheoremIntegrals1 from '@/public/problems/calculus-mean-value-theorem-integrals-1.json';
 // Linear Algebra (additional)
 import linearAlgebraGaussianElimination1 from '@/public/problems/linear-algebra-gaussian-elimination-1.json';
 import linearAlgebraMatrixInverse1 from '@/public/problems/linear-algebra-matrix-inverse-1.json';
 import linearAlgebraOrthogonalProjection1 from '@/public/problems/linear-algebra-orthogonal-projection-1.json';
 import linearAlgebraLeastSquares1 from '@/public/problems/linear-algebra-least-squares-1.json';
 import linearAlgebraQrDecomposition1 from '@/public/problems/linear-algebra-qr-decomposition-1.json';
+import linearAlgebraEigenspaces1 from '@/public/problems/linear-algebra-eigenspaces-1.json';
 // Multivariable Calculus (additional)
 import multivariableDirectionalDerivative1 from '@/public/problems/multivariable-directional-derivative-1.json';
 import multivariableConservativeFields1 from '@/public/problems/multivariable-conservative-fields-1.json';
@@ -110,11 +112,13 @@ import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bol
 import realAnalysisUniformConvergence1 from '@/public/problems/real-analysis-uniform-convergence-1.json';
 import realAnalysisRiemannIntegration1 from '@/public/problems/real-analysis-riemann-integration-1.json';
 import realAnalysisContinuousFunctions1 from '@/public/problems/real-analysis-continuous-functions-1.json';
+import realAnalysisSeriesConvergence1 from '@/public/problems/real-analysis-series-convergence-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 import probabilityNormalDistribution1 from '@/public/problems/probability-normal-distribution-1.json';
 import probabilityConditionalProbability1 from '@/public/problems/probability-conditional-probability-1.json';
 import probabilityBayesNetwork1 from '@/public/problems/probability-bayes-network-1.json';
+import probabilityContinuousDistributions1 from '@/public/problems/probability-continuous-distributions-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 import numericalAnalysisEulerMethod1 from '@/public/problems/numerical-analysis-euler-method-1.json';
@@ -248,12 +252,14 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'calculus-power-series-1': calculusPowerSeries1 as any as Problem,
   'calculus-taylor-series-1': calculusTaylorSeries1 as any as Problem,
   'calculus-series-comparison-test-1': calculusSeriesComparisonTest1 as any as Problem,
+  'calculus-mean-value-theorem-integrals-1': calculusMeanValueTheoremIntegrals1 as any as Problem,
   // Linear Algebra (additional)
   'linear-algebra-gaussian-elimination-1': linearAlgebraGaussianElimination1 as any as Problem,
   'linear-algebra-matrix-inverse-1': linearAlgebraMatrixInverse1 as any as Problem,
   'linear-algebra-orthogonal-projection-1': linearAlgebraOrthogonalProjection1 as any as Problem,
   'linear-algebra-least-squares-1': linearAlgebraLeastSquares1 as any as Problem,
   'linear-algebra-qr-decomposition-1': linearAlgebraQrDecomposition1 as any as Problem,
+  'linear-algebra-eigenspaces-1': linearAlgebraEigenspaces1 as any as Problem,
   // Multivariable Calculus (additional)
   'multivariable-directional-derivative-1': multivariableDirectionalDerivative1 as any as Problem,
   'multivariable-conservative-fields-1': multivariableConservativeFields1 as any as Problem,
@@ -267,11 +273,13 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'real-analysis-uniform-convergence-1': realAnalysisUniformConvergence1 as any as Problem,
   'real-analysis-riemann-integration-1': realAnalysisRiemannIntegration1 as any as Problem,
   'real-analysis-continuous-functions-1': realAnalysisContinuousFunctions1 as any as Problem,
+  'real-analysis-series-convergence-1': realAnalysisSeriesConvergence1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   'probability-normal-distribution-1': probabilityNormalDistribution1 as any as Problem,
   'probability-conditional-probability-1': probabilityConditionalProbability1 as any as Problem,
   'probability-bayes-network-1': probabilityBayesNetwork1 as any as Problem,
+  'probability-continuous-distributions-1': probabilityContinuousDistributions1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   'numerical-analysis-euler-method-1': numericalAnalysisEulerMethod1 as any as Problem,

@@ -1,0 +1,199 @@
+{
+  "id": "real-analysis-series-convergence-1",
+  "type": "problem",
+  "title": "Absolute vs Conditional Convergence",
+  "topic": "Real Analysis",
+  "difficulty": 4,
+  "estimatedTime": 13,
+  "tags": [
+    "real-analysis",
+    "series",
+    "convergence",
+    "absolute-convergence",
+    "alternating-series"
+  ],
+  "statement": {
+    "text": "Determine whether the series $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$ converges absolutely, converges conditionally, or diverges."
+  },
+  "objectives": [
+    "Understand absolute vs conditional convergence",
+    "Apply alternating series test",
+    "Use p-series test"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Series: $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$."
+      },
+      "prompt": {
+        "question": "What is absolute convergence?",
+        "hint": "$\\sum a_n$ converges absolutely if $\\sum |a_n|$ converges. Absolute convergence implies convergence."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sum a_n$ converges absolutely if $\\sum |a_n|$ converges"
+        },
+        {
+          "id": "b",
+          "text": "$\\sum a_n$ converges absolutely if all terms $a_n > 0$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sum a_n$ converges absolutely if it converges"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Definitions:**\n\n- $\\sum a_n$ **converges absolutely** if $\\sum |a_n|$ converges\n- $\\sum a_n$ **converges conditionally** if $\\sum a_n$ converges but $\\sum |a_n|$ diverges\n\n**Key theorem:** Absolute convergence implies convergence (but not vice versa)!",
+          "insight": "Absolute convergence is stronger than ordinary convergence!"
+        },
+        "incorrect": {
+          "1": "No! Series with negative terms can still converge absolutely if $\\sum |a_n|$ converges.",
+          "2": "Not all convergent series converge absolutely! Example: alternating harmonic series."
+        }
+      },
+      "resultState": {
+        "description": "Definitions understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Test for absolute convergence."
+      },
+      "prompt": {
+        "question": "Does $\\sum_{n=1}^{\\infty} \\left|\\frac{(-1)^n}{n}\\right| = \\sum_{n=1}^{\\infty} \\frac{1}{n}$ converge?",
+        "hint": "$\\sum_{n=1}^{\\infty} \\frac{1}{n}$ is the harmonic series, which DIVERGES. So no absolute convergence!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No, $\\sum \\frac{1}{n}$ is the harmonic series and diverges"
+        },
+        {
+          "id": "b",
+          "text": "Yes, $\\sum \\frac{1}{n}$ converges by comparison test"
+        },
+        {
+          "id": "c",
+          "text": "Yes, $\\sum \\frac{1}{n} = 1$ (finite sum)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Test absolute convergence:\n\n$$\\sum_{n=1}^{\\infty} \\left|\\frac{(-1)^n}{n}\\right| = \\sum_{n=1}^{\\infty} \\frac{1}{n}$$\n\nThis is the **harmonic series**, which is famous for diverging:\n$$1 + \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} + \\cdots = \\infty$$\n\nSince $\\sum |a_n|$ diverges, the series does **NOT converge absolutely**.",
+          "insight": "The harmonic series diverges even though $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$!"
+        },
+        "incorrect": {
+          "1": "No! The harmonic series diverges. It's a p-series with $p = 1 \\leq 1$.",
+          "2": "The harmonic series DIVERGES to infinity, it doesn't equal 1!"
+        }
+      },
+      "resultState": {
+        "description": "No absolute convergence",
+        "equations": ["\\sum \\frac{1}{n} \\text{ diverges}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Series doesn't converge absolutely. Test for ordinary convergence."
+      },
+      "prompt": {
+        "question": "Does the original series $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$ converge?",
+        "hint": "Use Alternating Series Test: if $b_n > 0$, $b_n \\searrow 0$, then $\\sum (-1)^n b_n$ converges. Here $b_n = \\frac{1}{n} \\searrow 0$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, by Alternating Series Test: $\\frac{1}{n}$ is decreasing and $\\to 0$"
+        },
+        {
+          "id": "b",
+          "text": "No, it diverges because $\\sum \\frac{1}{n}$ diverges"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Alternating Series Test (Leibniz):**\n\nIf $b_n > 0$, $b_n$ is decreasing, and $\\lim_{n \\to \\infty} b_n = 0$, then $\\sum_{n=1}^{\\infty} (-1)^n b_n$ converges.\n\nFor our series $\\sum \\frac{(-1)^n}{n}$, let $b_n = \\frac{1}{n}$:\n1. $b_n = \\frac{1}{n} > 0$ ✓\n2. $b_n$ is decreasing: $\\frac{1}{n+1} < \\frac{1}{n}$ ✓\n3. $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$ ✓\n\nBy Alternating Series Test: $\\sum \\frac{(-1)^n}{n}$ **converges**!",
+          "insight": "Alternating signs can cause a divergent series to converge through cancellation!"
+        },
+        "incorrect": {
+          "1": "The ALTERNATING series can still converge even though the absolute series diverges!",
+          "2": "We can determine it using the Alternating Series Test!"
+        }
+      },
+      "resultState": {
+        "description": "Series converges",
+        "equations": ["\\sum \\frac{(-1)^n}{n} \\text{ converges}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Series converges but not absolutely."
+      },
+      "prompt": {
+        "question": "What type of convergence does $\\sum \\frac{(-1)^n}{n}$ have?",
+        "hint": "Converges + doesn't converge absolutely = conditional convergence!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Conditional convergence"
+        },
+        {
+          "id": "b",
+          "text": "Absolute convergence"
+        },
+        {
+          "id": "c",
+          "text": "Divergence"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Summary:**\n\n1. $\\sum \\frac{(-1)^n}{n}$ converges (by Alternating Series Test)\n2. $\\sum \\left|\\frac{(-1)^n}{n}\\right| = \\sum \\frac{1}{n}$ diverges (harmonic series)\n\nSince the series converges but not absolutely, it has **conditional convergence**.\n\n**Fun fact:** This series converges to $-\\ln 2$:\n$$\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n} = -1 + \\frac{1}{2} - \\frac{1}{3} + \\frac{1}{4} - \\cdots = -\\ln 2 \\approx -0.693$$",
+          "insight": "Conditionally convergent series are sensitive to rearrangement - Riemann showed you can rearrange terms to converge to ANY value!"
+        },
+        "incorrect": {
+          "1": "Not absolute! $\\sum |a_n| = \\sum \\frac{1}{n}$ diverges.",
+          "2": "It does converge! The alternating signs create cancellation."
+        }
+      },
+      "resultState": {
+        "description": "Conditional convergence established",
+        "equations": ["\\text{Conditional convergence: } \\sum \\frac{(-1)^n}{n} = -\\ln 2"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Series: $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$ (alternating harmonic series)",
+      "Absolute series: $\\sum \\frac{1}{n}$ diverges (harmonic series)",
+      "Original series converges by Alternating Series Test",
+      "Conclusion: **Conditional convergence**",
+      "Series value: $-\\ln 2$",
+      "Conditionally convergent series can be rearranged to any value!"
+    ],
+    "fullSolution": "**Determine convergence type of $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$**\n\n---\n\n**Step 1: Test Absolute Convergence**\n\n$$\\sum_{n=1}^{\\infty} \\left|\\frac{(-1)^n}{n}\\right| = \\sum_{n=1}^{\\infty} \\frac{1}{n}$$\n\nThis is the **harmonic series**. By p-series test with $p = 1$:\n$$\\sum_{n=1}^{\\infty} \\frac{1}{n^p} \\text{ converges} \\iff p > 1$$\n\nSince $p = 1 \\not> 1$, the harmonic series **diverges**.\n\n$$\\therefore \\sum \\frac{(-1)^n}{n} \\text{ does NOT converge absolutely}$$\n\n---\n\n**Step 2: Test Ordinary Convergence**\n\nUse **Alternating Series Test**:\n\nFor $\\sum_{n=1}^{\\infty} (-1)^n b_n$ with $b_n = \\frac{1}{n}$:\n\n1. $b_n > 0$ for all $n$ ✓\n2. $b_{n+1} = \\frac{1}{n+1} < \\frac{1}{n} = b_n$ (decreasing) ✓\n3. $\\lim_{n \\to \\infty} b_n = \\lim_{n \\to \\infty} \\frac{1}{n} = 0$ ✓\n\nBy Alternating Series Test: $\\sum \\frac{(-1)^n}{n}$ **converges**.\n\n---\n\n**Step 3: Classification**\n\nSince:\n- $\\sum \\frac{(-1)^n}{n}$ converges\n- $\\sum \\left|\\frac{(-1)^n}{n}\\right|$ diverges\n\nThe series has **conditional convergence**.\n\n---\n\n**Answer:** $\\boxed{\\text{Conditional convergence}}$\n\n---\n\n**Value:** The series converges to $-\\ln 2$:\n$$\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n} = -\\ln 2 \\approx -0.693$$\n\n**Riemann Rearrangement Theorem:** Since this series is conditionally (not absolutely) convergent, rearranging its terms can make it converge to ANY real number or diverge!",
+    "relatedProblems": [
+      "calculus-series-ratio-test-1",
+      "real-analysis-sequence-convergence-1"
+    ]
+  }
+}

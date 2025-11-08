@@ -1,0 +1,199 @@
+{
+  "id": "probability-continuous-distributions-1",
+  "type": "problem",
+  "title": "Continuous Probability Distributions",
+  "topic": "Probability & Statistics",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "probability",
+    "continuous-distributions",
+    "pdf",
+    "cdf",
+    "expectation"
+  ],
+  "statement": {
+    "text": "A random variable $X$ has probability density function $f(x) = \\begin{cases} 2x & 0 \\leq x \\leq 1 \\\\ 0 & \\text{otherwise} \\end{cases}$. Find $P(X > 0.5)$ and $E[X]$."
+  },
+  "objectives": [
+    "Understand PDF and its properties",
+    "Calculate probabilities using integration",
+    "Find expected value"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "PDF: $f(x) = 2x$ for $0 \\leq x \\leq 1$."
+      },
+      "prompt": {
+        "question": "Verify this is a valid PDF.",
+        "hint": "Check: $f(x) \\geq 0$ and $\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1$. Here: $\\int_0^1 2x \\, dx = [x^2]_0^1 = 1$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Valid: $f(x) \\geq 0$ and $\\int_0^1 2x \\, dx = 1$"
+        },
+        {
+          "id": "b",
+          "text": "Invalid: integral equals 2, not 1"
+        },
+        {
+          "id": "c",
+          "text": "Invalid: $f(x)$ is negative for some $x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For a valid PDF:\n1. $f(x) \\geq 0$ for all $x$ ✓ (since $2x \\geq 0$ on $[0,1]$)\n2. $\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1$\n\nCheck condition 2:\n$$\\int_{-\\infty}^{\\infty} f(x) \\, dx = \\int_0^1 2x \\, dx = [x^2]_0^1 = 1 - 0 = 1$$ ✓\n\nThis is a valid PDF!",
+          "insight": "This is a triangular distribution on $[0,1]$ with density increasing linearly!"
+        },
+        "incorrect": {
+          "1": "Check your integration! $\\int_0^1 2x \\, dx = [x^2]_0^1 = 1$, not 2.",
+          "2": "$f(x) = 2x \\geq 0$ for all $x \\in [0,1]$. It's always non-negative!"
+        }
+      },
+      "resultState": {
+        "description": "Valid PDF confirmed"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate $P(X > 0.5)$."
+      },
+      "prompt": {
+        "question": "What is $P(X > 0.5)$?",
+        "hint": "$P(X > 0.5) = \\int_{0.5}^1 2x \\, dx = [x^2]_{0.5}^1 = 1 - 0.25 = 0.75$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(X > 0.5) = 0.75$"
+        },
+        {
+          "id": "b",
+          "text": "$P(X > 0.5) = 0.5$"
+        },
+        {
+          "id": "c",
+          "text": "$P(X > 0.5) = 0.25$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! For continuous random variables:\n$$P(X > a) = \\int_a^{\\infty} f(x) \\, dx$$\n\nHere:\n$$P(X > 0.5) = \\int_{0.5}^1 2x \\, dx$$\n\nEvaluate:\n$$= [x^2]_{0.5}^1 = 1^2 - (0.5)^2 = 1 - 0.25 = 0.75$$\n\nThere's a 75% chance $X > 0.5$!",
+          "insight": "Since the PDF is increasing, higher values are more likely - so $P(X > 0.5) > 0.5$!"
+        },
+        "incorrect": {
+          "1": "That would be true for uniform distribution, but our PDF is $2x$ (not constant)!",
+          "2": "That's $P(X \\leq 0.5)$! You want $P(X > 0.5) = 1 - 0.25 = 0.75$."
+        }
+      },
+      "resultState": {
+        "description": "Probability calculated",
+        "equations": ["P(X > 0.5) = 0.75"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find expected value $E[X]$."
+      },
+      "prompt": {
+        "question": "What is $E[X] = \\int_{-\\infty}^{\\infty} x f(x) \\, dx$?",
+        "hint": "$E[X] = \\int_0^1 x \\cdot 2x \\, dx = \\int_0^1 2x^2 \\, dx = \\left[\\frac{2x^3}{3}\\right]_0^1 = \\frac{2}{3}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E[X] = \\frac{2}{3}$"
+        },
+        {
+          "id": "b",
+          "text": "$E[X] = \\frac{1}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$E[X] = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The expected value is:\n$$E[X] = \\int_{-\\infty}^{\\infty} x f(x) \\, dx = \\int_0^1 x \\cdot 2x \\, dx$$\n\n$$= \\int_0^1 2x^2 \\, dx = \\left[\\frac{2x^3}{3}\\right]_0^1 = \\frac{2}{3} - 0 = \\frac{2}{3}$$\n\nThe average value is $E[X] = \\frac{2}{3} \\approx 0.667$.\n\nNote: $E[X] > 0.5$ because the distribution is weighted toward higher values (increasing PDF)!",
+          "insight": "Expected value is the 'center of mass' of the distribution!"
+        },
+        "incorrect": {
+          "1": "That's for uniform distribution! With PDF $2x$, higher values are more likely, so $E[X] > 0.5$.",
+          "2": "That's the maximum, not the expectation! Integrate $x f(x)$."
+        }
+      },
+      "resultState": {
+        "description": "Expected value found",
+        "equations": ["E[X] = \\frac{2}{3}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Found $P(X > 0.5) = 0.75$ and $E[X] = \\frac{2}{3}$."
+      },
+      "prompt": {
+        "question": "Optional: What is the CDF $F(x) = P(X \\leq x)$?",
+        "hint": "$F(x) = \\int_0^x 2t \\, dt = [t^2]_0^x = x^2$ for $0 \\leq x \\leq 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x) = \\begin{cases} 0 & x < 0 \\\\ x^2 & 0 \\leq x \\leq 1 \\\\ 1 & x > 1 \\end{cases}$"
+        },
+        {
+          "id": "b",
+          "text": "$F(x) = 2x$ for all $x$"
+        },
+        {
+          "id": "c",
+          "text": "$F(x) = x$ for $0 \\leq x \\leq 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The CDF is:\n\n$$F(x) = P(X \\leq x) = \\int_{-\\infty}^x f(t) \\, dt$$\n\nFor $0 \\leq x \\leq 1$:\n$$F(x) = \\int_0^x 2t \\, dt = [t^2]_0^x = x^2$$\n\nComplete CDF:\n$$F(x) = \\begin{cases} 0 & x < 0 \\\\ x^2 & 0 \\leq x \\leq 1 \\\\ 1 & x > 1 \\end{cases}$$\n\n**Verification:** $F(0.5) = (0.5)^2 = 0.25 = P(X \\leq 0.5)$ ✓",
+          "insight": "CDF is continuous and increasing from 0 to 1. Its derivative is the PDF!"
+        },
+        "incorrect": {
+          "1": "That's the PDF, not the CDF! The CDF is the integral of the PDF.",
+          "2": "That's for uniform distribution. Our CDF is $x^2$ on $[0,1]$."
+        }
+      },
+      "resultState": {
+        "description": "CDF determined",
+        "equations": ["F(x) = x^2 \\text{ for } 0 \\leq x \\leq 1"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "PDF: $f(x) = 2x$ for $0 \\leq x \\leq 1$ (triangular distribution)",
+      "Valid PDF: $\\int_0^1 2x \\, dx = 1$ ✓",
+      "$P(X > 0.5) = 0.75$ (75% probability)",
+      "$E[X] = \\frac{2}{3} \\approx 0.667$ (expected value)",
+      "CDF: $F(x) = x^2$ for $0 \\leq x \\leq 1$",
+      "Distribution weighted toward higher values"
+    ],
+    "fullSolution": "**Analyze continuous distribution with PDF $f(x) = 2x$ on $[0,1]$**\n\n---\n\n**Step 1: Verify Valid PDF**\n\n1. $f(x) = 2x \\geq 0$ for $x \\in [0,1]$ ✓\n\n2. $\\int_0^1 2x \\, dx = [x^2]_0^1 = 1$ ✓\n\nValid PDF confirmed.\n\n---\n\n**Step 2: Find $P(X > 0.5)$**\n\n$$P(X > 0.5) = \\int_{0.5}^1 2x \\, dx$$\n\n$$= [x^2]_{0.5}^1 = 1 - 0.25 = 0.75$$\n\n$$\\boxed{P(X > 0.5) = 0.75}$$\n\n---\n\n**Step 3: Find $E[X]$**\n\n$$E[X] = \\int_0^1 x \\cdot f(x) \\, dx = \\int_0^1 x \\cdot 2x \\, dx$$\n\n$$= \\int_0^1 2x^2 \\, dx = \\left[\\frac{2x^3}{3}\\right]_0^1$$\n\n$$= \\frac{2}{3}$$\n\n$$\\boxed{E[X] = \\frac{2}{3}}$$\n\n---\n\n**Step 4: CDF (Bonus)**\n\n$$F(x) = P(X \\leq x) = \\int_0^x 2t \\, dt = [t^2]_0^x = x^2$$\n\nfor $0 \\leq x \\leq 1$.\n\nComplete CDF:\n$$F(x) = \\begin{cases} 0 & x < 0 \\\\ x^2 & 0 \\leq x \\leq 1 \\\\ 1 & x > 1 \\end{cases}$$\n\n---\n\n**Interpretation:**\n\nThis is a triangular distribution with density increasing linearly from 0 to 2. Higher values are more likely, which is why $E[X] = 2/3 > 1/2$.",
+    "relatedProblems": [
+      "probability-random-variables-1",
+      "probability-normal-distribution-1"
+    ]
+  }
+}
