@@ -19,6 +19,7 @@ import geometryPythagoreanProof1 from '@/public/problems/geometry-pythagorean-pr
 import geometrySimilarTriangles1 from '@/public/problems/geometry-similar-triangles-1.json';
 import geometryInscribedAngle1 from '@/public/problems/geometry-inscribed-angle-1.json';
 import geometryCoordinateGeometry1 from '@/public/problems/geometry-coordinate-geometry-1.json';
+import geometryPowerOfAPoint1 from '@/public/problems/geometry-power-of-a-point-1.json';
 import numberTheoryDivisibility1 from '@/public/problems/number-theory-divisibility-1.json';
 import numberTheoryGcd1 from '@/public/problems/number-theory-gcd-1.json';
 import numberTheoryInfinitelyManyPrimes1 from '@/public/problems/number-theory-infinitely-many-primes-1.json';
@@ -144,6 +145,7 @@ import graphTheoryEulersFormula1 from '@/public/problems/graph-theory-eulers-for
 // Number Theory (additional)
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
 import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
+import numberTheoryBezoutsIdentity1 from '@/public/problems/number-theory-bezouts-identity-1.json';
 // Mathematical Logic
 import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logic-1.json';
 // Topology (additional)
@@ -174,6 +176,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'geometry-similar-triangles-1': geometrySimilarTriangles1 as any as Problem,
   'geometry-inscribed-angle-1': geometryInscribedAngle1 as any as Problem,
   'geometry-coordinate-geometry-1': geometryCoordinateGeometry1 as any as Problem,
+  'geometry-power-of-a-point-1': geometryPowerOfAPoint1 as any as Problem,
   'number-theory-divisibility-1': numberTheoryDivisibility1 as Problem,
   'number-theory-gcd-1': numberTheoryGcd1 as Problem,
   'number-theory-infinitely-many-primes-1': numberTheoryInfinitelyManyPrimes1 as any as Problem,
@@ -299,6 +302,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Number Theory (additional)
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
   'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,
+  'number-theory-bezouts-identity-1': numberTheoryBezoutsIdentity1 as any as Problem,
   // Mathematical Logic
   'logic-propositional-logic-1': logicPropositionalLogic1 as any as Problem,
   // Topology (additional)

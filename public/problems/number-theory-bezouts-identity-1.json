@@ -1,0 +1,199 @@
+{
+  "id": "number-theory-bezouts-identity-1",
+  "type": "problem",
+  "title": "Bézout's Identity",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "number-theory",
+    "bezout-identity",
+    "gcd",
+    "linear-combination",
+    "extended-euclidean"
+  ],
+  "statement": {
+    "text": "Find integers $x$ and $y$ such that $45x + 18y = \\gcd(45, 18)$."
+  },
+  "objectives": [
+    "Understand Bézout's identity",
+    "Apply extended Euclidean algorithm",
+    "Find linear combination representation of GCD"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find $x, y$ such that $45x + 18y = \\gcd(45, 18)$."
+      },
+      "prompt": {
+        "question": "What does Bézout's Identity state?",
+        "hint": "For any integers $a$ and $b$ (not both zero), there exist integers $x$ and $y$ such that $ax + by = \\gcd(a, b)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "For any integers $a, b$: $\\exists$ integers $x, y$ with $ax + by = \\gcd(a, b)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\gcd(a, b)$ is always a prime number"
+        },
+        {
+          "id": "c",
+          "text": "$ax + by = 1$ for all integers $a, b, x, y$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Bézout's Identity:**\n\nFor any integers $a$ and $b$ (not both zero), there exist integers $x$ and $y$ such that:\n$$ax + by = \\gcd(a, b)$$\n\nFurthermore, $\\gcd(a, b)$ is the **smallest positive integer** that can be expressed as $ax + by$ for integer coefficients $x$ and $y$.",
+          "insight": "Bézout coefficients $x$ and $y$ can be found using the Extended Euclidean Algorithm!"
+        },
+        "incorrect": {
+          "1": "$\\gcd(a, b)$ can be composite! For example, $\\gcd(6, 9) = 3$.",
+          "2": "Not always 1! Only when $\\gcd(a, b) = 1$. For example, $45x + 18y = 9 \\neq 1$ in our problem."
+        }
+      },
+      "resultState": {
+        "description": "Bézout's identity: $ax + by = \\gcd(a, b)$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find $\\gcd(45, 18)$ using Euclidean algorithm."
+      },
+      "prompt": {
+        "question": "What is $\\gcd(45, 18)$?",
+        "hint": "Apply Euclidean algorithm: $45 = 2 \\cdot 18 + 9$, $18 = 2 \\cdot 9 + 0$. So $\\gcd(45, 18) = 9$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\gcd(45, 18) = 9$"
+        },
+        {
+          "id": "b",
+          "text": "$\\gcd(45, 18) = 3$"
+        },
+        {
+          "id": "c",
+          "text": "$\\gcd(45, 18) = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Euclidean Algorithm:**\n\n$$45 = 2 \\cdot 18 + 9$$\n$$18 = 2 \\cdot 9 + 0$$\n\nThe last nonzero remainder is $9$, so $\\gcd(45, 18) = 9$.\n\nWe can verify: $45 = 9 \\cdot 5$ and $18 = 9 \\cdot 2$, so 9 is a common divisor. Since $\\gcd(5, 2) = 1$, it's the greatest common divisor.",
+          "insight": "The Euclidean algorithm always terminates and finds $\\gcd(a, b)$!"
+        },
+        "incorrect": {
+          "1": "3 divides both, but it's not the GREATEST common divisor. Check: $45 = 9 \\cdot 5$, $18 = 9 \\cdot 2$.",
+          "2": "45 and 18 are both divisible by 9, so $\\gcd(45, 18) > 1$!"
+        }
+      },
+      "resultState": {
+        "description": "$\\gcd(45, 18) = 9$",
+        "equations": ["\\gcd(45, 18) = 9"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Use Extended Euclidean Algorithm to express $9 = 45x + 18y$."
+      },
+      "prompt": {
+        "question": "Work backwards from Euclidean algorithm to express 9 as a linear combination.",
+        "hint": "From $45 = 2 \\cdot 18 + 9$, we get $9 = 45 - 2 \\cdot 18 = 45(1) + 18(-2)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$9 = 45(1) + 18(-2)$, so $x = 1, y = -2$"
+        },
+        {
+          "id": "b",
+          "text": "$9 = 45(-1) + 18(3)$"
+        },
+        {
+          "id": "c",
+          "text": "$9 = 45(0) + 18(0.5)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Extended Euclidean Algorithm:**\n\nFrom the division $45 = 2 \\cdot 18 + 9$, isolate the remainder:\n\n$$9 = 45 - 2 \\cdot 18$$\n$$9 = 45(1) + 18(-2)$$\n\nSo Bézout coefficients are $x = 1$ and $y = -2$.\n\n**Verification:**\n$$45(1) + 18(-2) = 45 - 36 = 9$$ ✓",
+          "insight": "The Extended Euclidean Algorithm systematically works backwards through the division steps to find Bézout coefficients!"
+        },
+        "incorrect": {
+          "1": "Check: $45(-1) + 18(3) = -45 + 54 = 9$ ✓ This works too! But the simplest from working backwards is $x=1, y=-2$.",
+          "2": "Bézout coefficients must be INTEGERS! 0.5 is not an integer."
+        }
+      },
+      "resultState": {
+        "description": "Bézout coefficients found",
+        "equations": ["9 = 45(1) + 18(-2)"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Solution: $x = 1, y = -2$."
+      },
+      "prompt": {
+        "question": "Are the Bézout coefficients unique?",
+        "hint": "No! If $45x_0 + 18y_0 = 9$, then $45(x_0 + 18k/\\gcd) + 18(y_0 - 45k/\\gcd) = 9$ for any integer $k$. Here: $45(x_0 + 2k) + 18(y_0 - 5k) = 9$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No, infinitely many solutions: $x = 1 + 2k, y = -2 - 5k$ for any integer $k$"
+        },
+        {
+          "id": "b",
+          "text": "Yes, $(x, y) = (1, -2)$ is the unique solution"
+        },
+        {
+          "id": "c",
+          "text": "There are exactly two solutions"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Bézout coefficients are **not unique**.\n\n**General solution:**\n\nIf $45x_0 + 18y_0 = 9$ (one particular solution), then:\n$$x = x_0 + \\frac{18}{\\gcd(45,18)}k = x_0 + \\frac{18}{9}k = x_0 + 2k$$\n$$y = y_0 - \\frac{45}{\\gcd(45,18)}k = y_0 - \\frac{45}{9}k = y_0 - 5k$$\n\nfor any integer $k$.\n\nWith $(x_0, y_0) = (1, -2)$:\n$$x = 1 + 2k, \\quad y = -2 - 5k$$\n\n**Examples:**\n- $k = 0$: $(x, y) = (1, -2)$ → $45(1) + 18(-2) = 9$ ✓\n- $k = 1$: $(x, y) = (3, -7)$ → $45(3) + 18(-7) = 135 - 126 = 9$ ✓\n- $k = -1$: $(x, y) = (-1, 3)$ → $45(-1) + 18(3) = -45 + 54 = 9$ ✓",
+          "insight": "While Bézout coefficients aren't unique, the Extended Euclidean Algorithm finds one specific (often small) solution!"
+        },
+        "incorrect": {
+          "1": "Not unique! For example, $(x, y) = (3, -7)$ also works: $45(3) + 18(-7) = 9$.",
+          "2": "Infinitely many! The general form is $x = 1 + 2k, y = -2 - 5k$ for any integer $k$."
+        }
+      },
+      "resultState": {
+        "description": "General solution: $x = 1 + 2k, y = -2 - 5k$",
+        "equations": ["x = 1 + 2k, \\quad y = -2 - 5k, \\quad k \\in \\mathbb{Z}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Bézout's Identity: $ax + by = \\gcd(a, b)$ has integer solutions",
+      "Extended Euclidean Algorithm finds Bézout coefficients",
+      "$\\gcd(45, 18) = 9$ via Euclidean algorithm",
+      "One solution: $9 = 45(1) + 18(-2)$",
+      "General solution: $x = 1 + 2k, y = -2 - 5k$ for any integer $k$",
+      "Bézout coefficients are not unique!"
+    ],
+    "fullSolution": "**Find integers $x, y$ such that $45x + 18y = \\gcd(45, 18)$**\n\n---\n\n**Step 1: Find $\\gcd(45, 18)$**\n\nEuclidean Algorithm:\n$$45 = 2 \\cdot 18 + 9$$\n$$18 = 2 \\cdot 9 + 0$$\n\nTherefore: $\\gcd(45, 18) = 9$\n\n---\n\n**Step 2: Extended Euclidean Algorithm**\n\nWork backwards from the divisions:\n\nFrom $45 = 2 \\cdot 18 + 9$:\n$$9 = 45 - 2 \\cdot 18$$\n$$9 = 45(1) + 18(-2)$$\n\n---\n\n**One Solution:**\n$$\\boxed{x = 1, \\quad y = -2}$$\n\n**Verification:**\n$$45(1) + 18(-2) = 45 - 36 = 9 = \\gcd(45, 18)$$ ✓\n\n---\n\n**General Solution:**\n\nIf $(x_0, y_0) = (1, -2)$ is one solution, then all solutions are:\n$$x = 1 + \\frac{18}{9}k = 1 + 2k$$\n$$y = -2 - \\frac{45}{9}k = -2 - 5k$$\n\nfor any integer $k \\in \\mathbb{Z}$.\n\n**Other solutions:**\n- $k = 1$: $(x, y) = (3, -7)$ → $45(3) + 18(-7) = 135 - 126 = 9$ ✓\n- $k = -1$: $(x, y) = (-1, 3)$ → $45(-1) + 18(3) = -45 + 54 = 9$ ✓\n\n---\n\n**Bézout's Identity Theorem:**\n\nFor any integers $a, b$ (not both zero), the equation $ax + by = d$ has integer solutions $(x, y)$ if and only if $\\gcd(a, b) | d$.\n\nIn particular, $ax + by = \\gcd(a, b)$ always has integer solutions.",
+    "relatedProblems": [
+      "number-theory-gcd-1",
+      "number-theory-chinese-remainder-1"
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "id": "geometry-power-of-a-point-1",
+  "type": "problem",
+  "title": "Power of a Point Theorem",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "geometry",
+    "circles",
+    "power-of-point",
+    "secants",
+    "tangents"
+  ],
+  "statement": {
+    "text": "Two chords $AB$ and $CD$ of a circle intersect at point $P$ inside the circle. If $AP = 3$, $PB = 4$, and $CP = 2$, find $PD$."
+  },
+  "objectives": [
+    "Understand Power of a Point theorem",
+    "Apply theorem to intersecting chords",
+    "Solve for unknown segment"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Two chords $AB$ and $CD$ intersect at $P$ inside circle."
+      },
+      "prompt": {
+        "question": "What does the Power of a Point theorem state for two chords intersecting inside a circle?",
+        "hint": "If two chords intersect at point $P$, then $AP \\cdot PB = CP \\cdot PD$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$AP \\cdot PB = CP \\cdot PD$ (products of segments are equal)"
+        },
+        {
+          "id": "b",
+          "text": "$AP + PB = CP + PD$ (sums of segments are equal)"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{AP}{PB} = \\frac{CP}{PD}$ (ratios are equal)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Power of a Point Theorem (Intersecting Chords):**\n\nIf two chords $AB$ and $CD$ of a circle intersect at point $P$ inside the circle, then:\n$$AP \\cdot PB = CP \\cdot PD$$\n\nThis product is called the \"power\" of point $P$ with respect to the circle.",
+          "insight": "This theorem has three cases: chords intersecting inside, secants from outside, and secant-tangent from outside. All involve product relationships!"
+        },
+        "incorrect": {
+          "1": "Not sums! The theorem relates PRODUCTS: $AP \\cdot PB = CP \\cdot PD$.",
+          "2": "Not quite! The correct relationship is $AP \\cdot PB = CP \\cdot PD$, which is different from equal ratios."
+        }
+      },
+      "resultState": {
+        "description": "Power of Point theorem: $AP \\cdot PB = CP \\cdot PD$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply theorem with given values.",
+        "equations": ["AP = 3, \\quad PB = 4, \\quad CP = 2"]
+      },
+      "prompt": {
+        "question": "Set up the equation using the Power of a Point theorem.",
+        "hint": "Substitute: $3 \\cdot 4 = 2 \\cdot PD$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3 \\cdot 4 = 2 \\cdot PD$"
+        },
+        {
+          "id": "b",
+          "text": "$3 + 4 = 2 + PD$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{4} = \\frac{2}{PD}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Using $AP \\cdot PB = CP \\cdot PD$ with the given values:\n\n$$AP \\cdot PB = CP \\cdot PD$$\n$$3 \\cdot 4 = 2 \\cdot PD$$\n$$12 = 2 \\cdot PD$$",
+          "insight": "The Power of a Point theorem turns geometric relationships into algebraic equations!"
+        },
+        "incorrect": {
+          "1": "Use the PRODUCT formula, not sum: $AP \\cdot PB = CP \\cdot PD$.",
+          "2": "Not quite the right formula! Use $AP \\cdot PB = CP \\cdot PD$, not ratios."
+        }
+      },
+      "resultState": {
+        "description": "Equation setup",
+        "equations": ["12 = 2 \\cdot PD"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve for $PD$.",
+        "equations": ["12 = 2 \\cdot PD"]
+      },
+      "prompt": {
+        "question": "What is $PD$?",
+        "hint": "$PD = \\frac{12}{2} = 6$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$PD = 6$"
+        },
+        {
+          "id": "b",
+          "text": "$PD = 8$"
+        },
+        {
+          "id": "c",
+          "text": "$PD = 24$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Solve for $PD$:\n\n$$12 = 2 \\cdot PD$$\n$$PD = \\frac{12}{2} = 6$$\n\n**Verification:** Check that $AP \\cdot PB = CP \\cdot PD$:\n- Left side: $3 \\cdot 4 = 12$\n- Right side: $2 \\cdot 6 = 12$ ✓\n\nThe answer is $PD = 6$.",
+          "insight": "The Power of a Point theorem provides a powerful tool for finding unknown lengths in circle problems!"
+        },
+        "incorrect": {
+          "1": "Division error! $PD = \\frac{12}{2} = 6$, not 8.",
+          "2": "Multiplication error! You should DIVIDE by 2: $PD = \\frac{12}{2} = 6$, not multiply."
+        }
+      },
+      "resultState": {
+        "description": "Solution: $PD = 6$",
+        "equations": ["PD = 6"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Found $PD = 6$."
+      },
+      "prompt": {
+        "question": "Why does the Power of a Point theorem work?",
+        "hint": "Similar triangles! Triangles $\\triangle APC$ and $\\triangle DPB$ are similar because they share angle $\\angle APD$ and both subtend equal inscribed angles on the same arc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Similar triangles: $\\triangle APC \\sim \\triangle DPB$ leads to proportional sides"
+        },
+        {
+          "id": "b",
+          "text": "Pythagorean theorem applied to the circle"
+        },
+        {
+          "id": "c",
+          "text": "Circle circumference formula"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The Power of a Point theorem follows from **similar triangles**.\n\n**Proof sketch:**\n\nConsider triangles $\\triangle APC$ and $\\triangle DPB$:\n- $\\angle APC = \\angle DPB$ (vertical angles)\n- $\\angle CAP = \\angle BDP$ (inscribed angles subtending same arc $BC$)\n\nBy AA similarity: $\\triangle APC \\sim \\triangle DPB$\n\nFrom similar triangles:\n$$\\frac{AP}{DP} = \\frac{CP}{BP}$$\n\nCross-multiply:\n$$AP \\cdot PB = CP \\cdot PD$$\n\nThis is the Power of a Point theorem!",
+          "insight": "Most circle theorems ultimately rely on similar triangles and inscribed angle relationships!"
+        },
+        "incorrect": {
+          "1": "Pythagorean theorem applies to right triangles, not general chords in circles.",
+          "2": "Circumference doesn't directly relate to chord intersections. The key is similar triangles!"
+        }
+      },
+      "resultState": {
+        "description": "Proof via similar triangles understood"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Power of a Point (intersecting chords): $AP \\cdot PB = CP \\cdot PD$",
+      "Given: $AP = 3, PB = 4, CP = 2$",
+      "Equation: $3 \\cdot 4 = 2 \\cdot PD$",
+      "Solution: $PD = 6$",
+      "Theorem follows from similar triangles",
+      "Product $AP \\cdot PB$ is the \"power\" of point $P$"
+    ],
+    "fullSolution": "**Find $PD$ using Power of a Point**\n\n---\n\n**Given:**\n- Chords $AB$ and $CD$ intersect at $P$ inside circle\n- $AP = 3$, $PB = 4$, $CP = 2$\n- Find: $PD$\n\n---\n\n**Power of a Point Theorem:**\n\nFor two chords intersecting at point $P$ inside a circle:\n$$AP \\cdot PB = CP \\cdot PD$$\n\n---\n\n**Solution:**\n\nSubstitute given values:\n$$3 \\cdot 4 = 2 \\cdot PD$$\n$$12 = 2 \\cdot PD$$\n$$PD = 6$$\n\n---\n\n**Verification:**\n$$AP \\cdot PB = 3 \\cdot 4 = 12$$\n$$CP \\cdot PD = 2 \\cdot 6 = 12$$ ✓\n\n---\n\n**Answer:** $\\boxed{PD = 6}$\n\n---\n\n**Why It Works (Proof Sketch):**\n\nConnect points to form triangles $\\triangle APC$ and $\\triangle DPB$.\n\n**Similar triangles:**\n- $\\angle APC = \\angle DPB$ (vertical angles)\n- $\\angle CAP = \\angle BDP$ (inscribed angles on same arc)\n\nBy AA: $\\triangle APC \\sim \\triangle DPB$\n\nProportional sides:\n$$\\frac{AP}{DP} = \\frac{CP}{BP}$$\n\nCross-multiply:\n$$AP \\cdot PB = CP \\cdot PD$$ $\\square$\n\n---\n\n**General Power of a Point:**\n\nFor any point $P$ and circle with center $O$ and radius $r$:\n$$\\text{Power}(P) = |OP|^2 - r^2$$\n\nFor chords through $P$: $AP \\cdot PB = |\\text{Power}(P)|$",
+    "relatedProblems": [
+      "geometry-inscribed-angle-1",
+      "geometry-similar-triangles-1"
+    ]
+  }
+}
