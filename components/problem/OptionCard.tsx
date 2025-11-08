@@ -1,7 +1,7 @@
 'use client';
 
 import { Option } from '@/lib/types/problem.types';
-import { Card } from '../shared/Card';
+import { TextWithMath } from '../shared/MathRenderer';
 
 interface OptionCardProps {
   option: Option;
@@ -59,9 +59,7 @@ export function OptionCard({
         >
           {letters[index]}
         </div>
-        <p className="flex-1 text-gray-900 dark:text-gray-100 leading-relaxed pt-1">
-          {option.text}
-        </p>
+        <TextWithMath text={option.text} className="flex-1 text-gray-900 dark:text-gray-100 leading-relaxed pt-1" />
       </div>
     </div>
   );

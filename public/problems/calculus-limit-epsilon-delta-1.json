@@ -1,0 +1,199 @@
+{
+  "id": "calculus-limit-epsilon-delta-1",
+  "type": "proof",
+  "title": "Epsilon-Delta Proof: Limit of a Linear Function",
+  "topic": "Calculus",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": ["limits", "epsilon-delta", "proofs", "calculus"],
+  "statement": {
+    "text": "Using the $\\epsilon$-$\\delta$ definition of a limit, prove that $\\lim_{x \\to 2} (3x + 1) = 7$."
+  },
+  "objectives": [
+    "Apply the formal $\\epsilon$-$\\delta$ definition of a limit",
+    "Work with absolute value inequalities",
+    "Choose an appropriate $\\delta$ based on $\\epsilon$"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We need to prove: For every $\\epsilon > 0$, there exists $\\delta > 0$ such that if $0 < |x - 2| < \\delta$, then $|(3x + 1) - 7| < \\epsilon$.",
+        "equations": ["\\lim_{x \\to 2} (3x + 1) = 7"]
+      },
+      "prompt": {
+        "question": "What should be our first step in this proof?",
+        "hint": "Start by assuming $\\epsilon > 0$ is given, then analyze the expression $|(3x + 1) - 7|$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Simplify $|(3x + 1) - 7|$ to see what we're working with"
+        },
+        {
+          "id": "opt-2",
+          "text": "Immediately set $\\delta = \\epsilon$ and prove it works"
+        },
+        {
+          "id": "opt-3",
+          "text": "Substitute $x = 2$ to verify the limit value"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! We should simplify $|(3x + 1) - 7|$ first. This will reveal the relationship between $x - 2$ and the expression, which guides our choice of $\\delta$.",
+          "insight": "Always simplify the target inequality to reveal the relationship with $|x - a|$."
+        },
+        "incorrect": {
+          "1": "Setting $\\delta = \\epsilon$ might work for some functions, but we need to first understand how $|(3x + 1) - 7|$ relates to $|x - 2|$.",
+          "2": "Substituting $x = 2$ just confirms the limit value is 7, but doesn't prove the limit exists using the $\\epsilon$-$\\delta$ definition."
+        }
+      },
+      "resultState": {
+        "description": "Let's simplify the expression:",
+        "equations": [
+          "|(3x + 1) - 7| = |3x - 6| = |3(x - 2)| = 3|x - 2|"
+        ]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "We've simplified to:",
+        "equations": ["|(3x + 1) - 7| = 3|x - 2|"]
+      },
+      "prompt": {
+        "question": "Now that we have $|(3x + 1) - 7| = 3|x - 2|$, what inequality do we need to satisfy?",
+        "hint": "We want this to be less than $\\epsilon$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "We need $3|x - 2| < \\epsilon$, which means $|x - 2| < \\frac{\\epsilon}{3}$"
+        },
+        {
+          "id": "opt-2",
+          "text": "We need $3|x - 2| < \\epsilon$, which means $|x - 2| < 3\\epsilon$"
+        },
+        {
+          "id": "opt-3",
+          "text": "We need $|x - 2| < \\epsilon$, which means $3|x - 2| < 3\\epsilon$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since we need $3|x - 2| < \\epsilon$, dividing both sides by 3 gives us $|x - 2| < \\frac{\\epsilon}{3}$. This tells us exactly how to choose $\\delta$.",
+          "insight": "Isolate $|x - a|$ to determine the relationship between $\\delta$ and $\\epsilon$."
+        },
+        "incorrect": {
+          "1": "Be careful with inequalities! Dividing by 3 makes the bound smaller, not larger. We get $\\frac{\\epsilon}{3}$, not $3\\epsilon$.",
+          "2": "We need to start with what we want: $3|x - 2| < \\epsilon$. Then we manipulate it to find the bound on $|x - 2|$."
+        }
+      },
+      "resultState": {
+        "description": "We discovered the key relationship:",
+        "equations": [
+          "3|x - 2| < \\epsilon \\iff |x - 2| < \\frac{\\epsilon}{3}"
+        ]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "We know that if $|x - 2| < \\frac{\\epsilon}{3}$, then $3|x - 2| < \\epsilon$, which is what we need.",
+        "equations": ["|x - 2| < \\frac{\\epsilon}{3} \\implies 3|x - 2| < \\epsilon"]
+      },
+      "prompt": {
+        "question": "Based on our analysis, how should we choose $\\delta$?",
+        "hint": "We need $0 < |x - 2| < \\delta$ to guarantee $|(3x + 1) - 7| < \\epsilon$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Choose $\\delta = \\frac{\\epsilon}{3}$"
+        },
+        {
+          "id": "opt-2",
+          "text": "Choose $\\delta = 3\\epsilon$"
+        },
+        {
+          "id": "opt-3",
+          "text": "Choose $\\delta = \\epsilon$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! By choosing $\\delta = \\frac{\\epsilon}{3}$, whenever $0 < |x - 2| < \\delta$, we have $|x - 2| < \\frac{\\epsilon}{3}$, which guarantees $3|x - 2| < \\epsilon$.",
+          "insight": "The choice of $\\delta$ directly follows from the algebraic relationship we discovered."
+        },
+        "incorrect": {
+          "1": "This choice is too large. If $|x - 2| < 3\\epsilon$, then $3|x - 2| < 9\\epsilon$, not $< \\epsilon$.",
+          "2": "This doesn't account for the coefficient 3 in our function. We need a smaller $\\delta$ to compensate."
+        }
+      },
+      "resultState": {
+        "description": "We choose:",
+        "equations": ["\\delta = \\frac{\\epsilon}{3}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "We've chosen $\\delta = \\frac{\\epsilon}{3}$. Now we verify the proof works.",
+        "equations": ["\\delta = \\frac{\\epsilon}{3}"]
+      },
+      "prompt": {
+        "question": "How do we complete the proof?",
+        "hint": "Show that our choice of $\\delta$ satisfies the definition."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Show: If $0 < |x - 2| < \\delta = \\frac{\\epsilon}{3}$, then $|(3x + 1) - 7| = 3|x - 2| < 3 \\cdot \\frac{\\epsilon}{3} = \\epsilon$ ✓"
+        },
+        {
+          "id": "opt-2",
+          "text": "Verify by plugging in $x = 2 + \\delta$ to check the inequality"
+        },
+        {
+          "id": "opt-3",
+          "text": "Graph the function to visually confirm the limit"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! We've shown that for any $\\epsilon > 0$, by choosing $\\delta = \\frac{\\epsilon}{3}$, if $0 < |x - 2| < \\delta$, then $|(3x + 1) - 7| < \\epsilon$. This completes the $\\epsilon$-$\\delta$ proof!",
+          "insight": "A complete $\\epsilon$-$\\delta$ proof shows the logical chain: given $\\epsilon$, choose $\\delta$, then verify the implication."
+        },
+        "incorrect": {
+          "1": "Testing specific values doesn't constitute a proof for all $x$ near 2. We need to show it works for ALL $x$ in the range.",
+          "2": "Graphical verification isn't rigorous. The $\\epsilon$-$\\delta$ definition requires an algebraic proof."
+        }
+      },
+      "resultState": {
+        "description": "Proof complete! Q.E.D.",
+        "equations": [
+          "\\forall \\epsilon > 0, \\exists \\delta = \\frac{\\epsilon}{3} : 0 < |x - 2| < \\delta \\implies |(3x + 1) - 7| < \\epsilon"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "The $\\epsilon$-$\\delta$ definition formalizes the intuitive notion of limits",
+      "Simplifying $|f(x) - L|$ reveals the relationship between $\\delta$ and $\\epsilon$",
+      "For linear functions $f(x) = mx + b$, we typically choose $\\delta = \\frac{\\epsilon}{|m|}$",
+      "The proof is constructive: we explicitly construct $\\delta$ from $\\epsilon$"
+    ],
+    "fullSolution": "Given $\\epsilon > 0$, choose $\\delta = \\frac{\\epsilon}{3}$. Then if $0 < |x - 2| < \\delta$, we have:\n$|(3x + 1) - 7| = |3x - 6| = 3|x - 2| < 3\\delta = 3 \\cdot \\frac{\\epsilon}{3} = \\epsilon$\nTherefore, $\\lim_{x \\to 2} (3x + 1) = 7$.",
+    "relatedProblems": []
+  }
+}

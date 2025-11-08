@@ -4,12 +4,16 @@ import { Problem } from '../types/problem.types';
 import algebraQuadratic1 from '@/public/problems/algebra-quadratic-1.json';
 import calcDerivativeChainRule1 from '@/public/problems/calc-derivative-chain-rule-1.json';
 import geometryTriangleAngles1 from '@/public/problems/geometry-triangle-angles-1.json';
+import calculusLimitEpsilonDelta1 from '@/public/problems/calculus-limit-epsilon-delta-1.json';
+import numberTheoryDivisibility1 from '@/public/problems/number-theory-divisibility-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
   'algebra-quadratic-1': algebraQuadratic1 as Problem,
   'calc-derivative-chain-rule-1': calcDerivativeChainRule1 as Problem,
   'geometry-triangle-angles-1': geometryTriangleAngles1 as Problem,
+  'calculus-limit-epsilon-delta-1': calculusLimitEpsilonDelta1 as Problem,
+  'number-theory-divisibility-1': numberTheoryDivisibility1 as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);

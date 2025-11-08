@@ -1,6 +1,7 @@
 import { Step } from '@/lib/types/problem.types';
 import { Card } from '../shared/Card';
 import { Button } from '../shared/Button';
+import { TextWithMath, MathRenderer } from '../shared/MathRenderer';
 
 interface FeedbackDisplayProps {
   step: Step;
@@ -38,17 +39,16 @@ export function FeedbackDisplay({
               <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2">
                 {isCorrect ? 'Correct!' : "Let's think about this..."}
               </h3>
-              <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-                {feedbackText}
-              </p>
+              <TextWithMath text={feedbackText} className="text-gray-800 dark:text-gray-200 leading-relaxed" />
             </div>
           </div>
 
           {isCorrect && step.feedback.correct.insight && (
             <div className="mt-3 p-3 bg-green-100 dark:bg-green-900/30 rounded border border-green-200 dark:border-green-700">
-              <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                💡 Key Insight: {step.feedback.correct.insight}
-              </p>
+              <TextWithMath
+                text={`💡 Key Insight: ${step.feedback.correct.insight}`}
+                className="text-sm font-medium text-gray-800 dark:text-gray-200"
+              />
             </div>
           )}
         </div>
@@ -58,19 +58,15 @@ export function FeedbackDisplay({
       {step.resultState && (
         <Card padding="md" className="bg-blue-50 dark:bg-blue-900/10 border-blue-200 dark:border-blue-800">
           <div className="space-y-3">
-            <p className="text-gray-800 dark:text-gray-200 font-medium">
-              {step.resultState.description}
-            </p>
+            <TextWithMath text={step.resultState.description} className="text-gray-800 dark:text-gray-200 font-medium" />
             {step.resultState.equations && step.resultState.equations.length > 0 && (
               <div className="space-y-2">
                 {step.resultState.equations.map((eq, idx) => (
                   <div
                     key={idx}
-                    className="bg-white dark:bg-gray-800 px-4 py-2 rounded border border-blue-200 dark:border-blue-700"
+                    className="bg-white dark:bg-gray-800 px-4 py-3 rounded border border-blue-200 dark:border-blue-700"
                   >
-                    <p className="text-gray-900 dark:text-gray-100 font-mono text-sm md:text-base">
-                      {eq}
-                    </p>
+                    <MathRenderer math={eq} block={false} className="text-gray-900 dark:text-gray-100" />
                   </div>
                 ))}
               </div>

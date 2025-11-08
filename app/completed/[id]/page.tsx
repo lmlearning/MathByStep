@@ -7,6 +7,7 @@ import { getProblem } from '@/lib/data/problems';
 import { useProgress } from '@/lib/hooks/useProgress';
 import { Card } from '@/components/shared/Card';
 import { Button } from '@/components/shared/Button';
+import { TextWithMath } from '@/components/shared/MathRenderer';
 
 export default function CompletionPage() {
   const params = useParams();
@@ -102,7 +103,7 @@ export default function CompletionPage() {
                 <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
                   {idx + 1}
                 </span>
-                <span className="text-gray-700 dark:text-gray-300 pt-0.5">{insight}</span>
+                <TextWithMath text={insight} className="text-gray-700 dark:text-gray-300 pt-0.5" />
               </li>
             ))}
           </ul>
@@ -114,9 +115,7 @@ export default function CompletionPage() {
             Complete Solution
           </h2>
           <div className="bg-white dark:bg-gray-800 p-4 rounded border border-blue-200 dark:border-blue-700">
-            <p className="text-gray-900 dark:text-gray-100 font-mono text-sm md:text-base whitespace-pre-wrap">
-              {problem.summary.fullSolution}
-            </p>
+            <TextWithMath text={problem.summary.fullSolution} className="text-gray-900 dark:text-gray-100 text-sm md:text-base whitespace-pre-wrap" />
           </div>
         </Card>
 
@@ -129,7 +128,7 @@ export default function CompletionPage() {
             {problem.objectives.map((objective, idx) => (
               <li key={idx} className="flex gap-2">
                 <span className="text-green-600 dark:text-green-400 flex-shrink-0">✓</span>
-                <span className="text-gray-700 dark:text-gray-300">{objective}</span>
+                <TextWithMath text={objective} className="text-gray-700 dark:text-gray-300" />
               </li>
             ))}
           </ul>

@@ -1,0 +1,193 @@
+{
+  "id": "number-theory-divisibility-1",
+  "type": "proof",
+  "title": "Divisibility Proof: If $n^2$ is even, then $n$ is even",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": ["number-theory", "divisibility", "proof-by-contrapositive", "parity"],
+  "statement": {
+    "text": "Prove that if $n^2$ is even, then $n$ must be even (where $n \\in \\mathbb{Z}$)."
+  },
+  "objectives": [
+    "Apply proof by contrapositive",
+    "Understand parity arguments",
+    "Work with divisibility and remainders"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "We want to prove: If $n^2$ is even, then $n$ is even.",
+        "equations": ["n^2 \\text{ even} \\implies n \\text{ even}"]
+      },
+      "prompt": {
+        "question": "What proof technique should we use?",
+        "hint": "Direct proof can be tricky. Consider the contrapositive."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Proof by contrapositive: prove if $n$ is odd, then $n^2$ is odd"
+        },
+        {
+          "id": "opt-2",
+          "text": "Direct proof: assume $n^2$ is even and derive that $n$ is even"
+        },
+        {
+          "id": "opt-3",
+          "text": "Proof by contradiction: assume $n^2$ is even and $n$ is odd"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent choice! The contrapositive of 'if $P$ then $Q$' is 'if not $Q$ then not $P$', and they're logically equivalent. Proving 'if $n$ is odd then $n^2$ is odd' is much more straightforward.",
+          "insight": "Contrapositive proofs are often cleaner when the implication direction is difficult to work with directly."
+        },
+        "incorrect": {
+          "1": "Direct proof is possible but requires working backwards from $n^2$ being even, which is less natural. The contrapositive is more straightforward.",
+          "2": "Contradiction is valid but adds unnecessary complexity. Contrapositive is more direct and elegant."
+        }
+      },
+      "resultState": {
+        "description": "We'll prove the contrapositive:",
+        "equations": ["n \\text{ odd} \\implies n^2 \\text{ odd}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "We're proving: if $n$ is odd, then $n^2$ is odd.",
+        "equations": ["n \\text{ odd} \\implies n^2 \\text{ odd}"]
+      },
+      "prompt": {
+        "question": "How do we express that $n$ is odd?",
+        "hint": "An odd number leaves remainder 1 when divided by 2."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "If $n$ is odd, then $n = 2k + 1$ for some integer $k$"
+        },
+        {
+          "id": "opt-2",
+          "text": "If $n$ is odd, then $n = 2k$ for some integer $k$"
+        },
+        {
+          "id": "opt-3",
+          "text": "If $n$ is odd, then $n = k + 1$ for some even integer $k$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! An odd number is always one more than an even number, so we can write it as $n = 2k + 1$ where $k \\in \\mathbb{Z}$. This is the standard form for odd integers.",
+          "insight": "Even numbers have the form $2k$, odd numbers have the form $2k + 1$ for $k \\in \\mathbb{Z}$."
+        },
+        "incorrect": {
+          "1": "That's the form for even numbers! $n = 2k$ means $n$ is divisible by 2.",
+          "2": "This doesn't guarantee $n$ is odd. If $k = 4$, then $k + 1 = 5$ works, but if $k = 3$, then $k + 1 = 4$ is even."
+        }
+      },
+      "resultState": {
+        "description": "We express $n$ as odd:",
+        "equations": ["n = 2k + 1 \\text{ for some } k \\in \\mathbb{Z}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "We have $n = 2k + 1$ for some integer $k$.",
+        "equations": ["n = 2k + 1, \\quad k \\in \\mathbb{Z}"]
+      },
+      "prompt": {
+        "question": "Now we need to find $n^2$. What is $(2k + 1)^2$?",
+        "hint": "Expand using $(a + b)^2 = a^2 + 2ab + b^2$."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "$n^2 = (2k + 1)^2 = 4k^2 + 4k + 1$"
+        },
+        {
+          "id": "opt-2",
+          "text": "$n^2 = (2k + 1)^2 = 4k^2 + 1$"
+        },
+        {
+          "id": "opt-3",
+          "text": "$n^2 = (2k + 1)^2 = 2k^2 + 2k + 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly right! Using $(a + b)^2 = a^2 + 2ab + b^2$ with $a = 2k$ and $b = 1$:\n$n^2 = (2k)^2 + 2(2k)(1) + 1^2 = 4k^2 + 4k + 1$",
+          "insight": "Always expand binomials carefully, keeping track of all terms."
+        },
+        "incorrect": {
+          "1": "You forgot the middle term! $(a + b)^2 = a^2 + 2ab + b^2$, so we need the $2(2k)(1) = 4k$ term.",
+          "2": "Be careful! $(2k)^2 = 4k^2$, not $2k^2$. And we need the middle term $4k$ as well."
+        }
+      },
+      "resultState": {
+        "description": "We've expanded $n^2$:",
+        "equations": ["n^2 = 4k^2 + 4k + 1"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "We have:",
+        "equations": ["n^2 = 4k^2 + 4k + 1"]
+      },
+      "prompt": {
+        "question": "How can we show that $n^2 = 4k^2 + 4k + 1$ is odd?",
+        "hint": "Factor out 2 from the first two terms."
+      },
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Rewrite as $n^2 = 2(2k^2 + 2k) + 1 = 2m + 1$ where $m = 2k^2 + 2k$, showing $n^2$ is odd"
+        },
+        {
+          "id": "opt-2",
+          "text": "Since $4k^2 + 4k$ is even and $1$ is odd, their sum must be even"
+        },
+        {
+          "id": "opt-3",
+          "text": "Divide by 2 to check if there's a remainder"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! By factoring: $n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$. Since $m = 2k^2 + 2k$ is an integer, $n^2$ has the form $2m + 1$, which is exactly the definition of an odd number!",
+          "insight": "To prove a number is odd, express it in the form $2m + 1$ for some integer $m$."
+        },
+        "incorrect": {
+          "1": "Actually, even + odd = odd! Since $4k^2 + 4k$ is even (it's $2(2k^2 + 2k)$) and $1$ is odd, the sum is odd.",
+          "2": "That's not a rigorous proof. We need to show it has the form $2m + 1$ for some integer $m$."
+        }
+      },
+      "resultState": {
+        "description": "Proof complete!",
+        "equations": ["n^2 = 2(2k^2 + 2k) + 1 \\text{, so } n^2 \\text{ is odd}", "\\text{Therefore, by contrapositive: } n^2 \\text{ even} \\implies n \\text{ even } \\square"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Contrapositive proofs can be more natural than direct proofs",
+      "Odd integers have the form $2k + 1$, even integers have the form $2k$",
+      "The contrapositive of '$P \\implies Q$' is '$\\neg Q \\implies \\neg P$', and they're logically equivalent",
+      "Parity (even/odd) is preserved under squaring: odd$^2$ = odd, even$^2$ = even"
+    ],
+    "fullSolution": "**Proof by contrapositive**: We prove if $n$ is odd, then $n^2$ is odd.\n\nSuppose $n$ is odd. Then $n = 2k + 1$ for some $k \\in \\mathbb{Z}$.\nThen: $n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$\n\nLetting $m = 2k^2 + 2k \\in \\mathbb{Z}$, we have $n^2 = 2m + 1$, so $n^2$ is odd.\n\nBy contrapositive, if $n^2$ is even, then $n$ is even. $\\square$",
+    "relatedProblems": []
+  }
+}

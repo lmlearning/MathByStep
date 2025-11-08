@@ -1,4 +1,5 @@
 import { Card } from '../shared/Card';
+import { TextWithMath } from '../shared/MathRenderer';
 
 interface ProblemStatementProps {
   title: string;
@@ -18,9 +19,7 @@ export function ProblemStatement({ title, statement, type }: ProblemStatementPro
         <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
           {title}
         </h2>
-        <p className="text-base md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-          {statement}
-        </p>
+        <TextWithMath text={statement} className="text-base md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed" />
       </div>
     </Card>
   );

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* KaTeX styles */
+@import 'katex/dist/katex.min.css';
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -69,4 +72,40 @@ body {
 
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+/* Math rendering styles */
+.math-renderer {
+  font-size: inherit;
+}
+
+.math-block {
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.math-inline {
+  display: inline;
+  margin: 0 0.2em;
+}
+
+/* Dark mode adjustments for KaTeX */
+@media (prefers-color-scheme: dark) {
+  .katex {
+    color: #ededed;
+  }
+
+  .katex .mord,
+  .katex .mbin,
+  .katex .mrel,
+  .katex .mop,
+  .katex .mopen,
+  .katex .mclose,
+  .katex .mpunct,
+  .katex .minner {
+    color: #ededed;
+  }
 }
