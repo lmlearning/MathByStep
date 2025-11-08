@@ -1,0 +1,181 @@
+{
+  "id": "real-analysis-uniform-convergence-1",
+  "type": "problem",
+  "title": "Uniform Convergence of Function Sequence",
+  "topic": "Real Analysis",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": ["real analysis", "uniform convergence", "function sequences", "supremum norm"],
+  "statement": {
+    "text": "Consider the sequence of functions $f_n(x) = \\frac{x}{1 + nx^2}$ on $[0, 1]$. Determine if $\\{f_n\\}$ converges pointwise and/or uniformly on $[0, 1]$."
+  },
+  "objectives": [
+    "Find pointwise limit",
+    "Compute supremum of difference",
+    "Determine uniform convergence"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Find pointwise limit",
+      "currentState": {
+        "expression": "$f_n(x) = \\frac{x}{1 + nx^2}$ on $[0, 1]$",
+        "description": "What is $\\lim_{n \\to \\infty} f_n(x)$ for each $x \\in [0, 1]$?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the pointwise limit?",
+        "hint": "For $x = 0$: $f_n(0) = 0$. For $x > 0$: $f_n(x) = \\frac{x}{1 + nx^2} = \\frac{x/n}{1/n + x^2} \\to \\frac{0}{0 + x^2} = 0$ as $n \\to \\infty$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Pointwise limit: $f(x) = 0$ for all $x \\in [0, 1]$"
+        },
+        {
+          "id": "b",
+          "content": "Pointwise limit: $f(x) = x$"
+        },
+        {
+          "id": "c",
+          "content": "No pointwise limit exists"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For $x = 0$: $f_n(0) = 0 \\to 0$. For $x > 0$: $f_n(x) = \\frac{x}{1 + nx^2} \\sim \\frac{x}{nx^2} = \\frac{1}{nx} \\to 0$.",
+          "insight": "Each function converges to the zero function pointwise. But is this convergence uniform?"
+        },
+        "incorrect": {
+          "b": "The denominator $1 + nx^2$ grows like $nx^2$ for fixed $x > 0$, so $f_n(x) \\to 0$, not $x$.",
+          "c": "The limit exists at every point and equals 0!"
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Find maximum of $f_n$",
+      "currentState": {
+        "expression": "Pointwise limit is $f(x) = 0$",
+        "description": "To test uniform convergence, find $\\sup_{x \\in [0,1]} |f_n(x) - 0|$."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\max_{x \\in [0,1]} f_n(x)$?",
+        "hint": "Use calculus: $f_n'(x) = \\frac{(1+nx^2) - x(2nx)}{(1+nx^2)^2} = \\frac{1-nx^2}{(1+nx^2)^2}$. Set to 0: $1 - nx^2 = 0 \\implies x = \\frac{1}{\\sqrt{n}}$. Then $f_n(1/\\sqrt{n}) = \\frac{1/\\sqrt{n}}{1 + n \\cdot 1/n} = \\frac{1/\\sqrt{n}}{2} = \\frac{1}{2\\sqrt{n}}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\max_{x \\in [0,1]} f_n(x) = \\frac{1}{2\\sqrt{n}}$ (achieved at $x = \\frac{1}{\\sqrt{n}}$)"
+        },
+        {
+          "id": "b",
+          "content": "$\\max_{x \\in [0,1]} f_n(x) = \\frac{1}{n}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\max_{x \\in [0,1]} f_n(x) = 1$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Taking derivative: $f_n'(x) = \\frac{1-nx^2}{(1+nx^2)^2} = 0$ when $x = 1/\\sqrt{n}$. Evaluating: $f_n(1/\\sqrt{n}) = \\frac{1}{2\\sqrt{n}}$.",
+          "insight": "The maximum value depends on $n$ and decreases as $n \\to \\infty$."
+        },
+        "incorrect": {
+          "b": "Check the calculation: $f_n(1/\\sqrt{n}) = \\frac{1/\\sqrt{n}}{1 + 1} = \\frac{1}{2\\sqrt{n}}$, not $1/n$.",
+          "c": "The maximum is not constant in $n$. Find the critical point using calculus!"
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Compute supremum norm",
+      "currentState": {
+        "expression": "$\\sup_{x \\in [0,1]} |f_n(x) - f(x)| = \\sup_{x \\in [0,1]} f_n(x) = \\frac{1}{2\\sqrt{n}}$",
+        "description": "Does this go to 0 as $n \\to \\infty$?"
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\lim_{n \\to \\infty} \\sup_{x \\in [0,1]} |f_n(x) - f(x)|$?",
+        "hint": "$\\sup_{x \\in [0,1]} |f_n(x) - 0| = \\frac{1}{2\\sqrt{n}} \\to 0$ as $n \\to \\infty$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\lim_{n \\to \\infty} \\sup_{x \\in [0,1]} |f_n(x) - f(x)| = \\lim_{n \\to \\infty} \\frac{1}{2\\sqrt{n}} = 0$"
+        },
+        {
+          "id": "b",
+          "content": "$\\sup_{x \\in [0,1]} |f_n(x) - f(x)| = 1$ for all $n$"
+        },
+        {
+          "id": "c",
+          "content": "The supremum does not converge to 0"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\sup_{x \\in [0,1]} |f_n(x)| = \\frac{1}{2\\sqrt{n}} \\to 0$ as $n \\to \\infty$. This means convergence is uniform!",
+          "insight": "Since the supremum norm $\\|f_n - f\\|_\\infty \\to 0$, we have uniform convergence."
+        },
+        "incorrect": {
+          "b": "We computed the supremum to be $\\frac{1}{2\\sqrt{n}}$, not 1.",
+          "c": "The supremum $\\frac{1}{2\\sqrt{n}} \\to 0$ as $n \\to \\infty$."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Conclusion",
+      "currentState": {
+        "expression": "$\\|f_n - f\\|_\\infty = \\frac{1}{2\\sqrt{n}} \\to 0$",
+        "description": "What type of convergence do we have?"
+      },
+      "reflectionPrompt": {
+        "question": "Does $\\{f_n\\}$ converge uniformly on $[0, 1]$?",
+        "hint": "Yes! $\\|f_n - f\\|_\\infty \\to 0 \\implies$ uniform convergence."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes, $\\{f_n\\}$ converges uniformly to $f(x) = 0$ on $[0, 1]$"
+        },
+        {
+          "id": "b",
+          "content": "No, only pointwise convergence (not uniform)"
+        },
+        {
+          "id": "c",
+          "content": "Converges uniformly on $(0, 1)$ but not on $[0, 1]$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Since $\\sup_{x \\in [0,1]} |f_n(x) - f(x)| = \\frac{1}{2\\sqrt{n}} \\to 0$, the convergence is uniform on $[0, 1]$.",
+          "insight": "Uniform convergence: $\\forall \\epsilon > 0, \\exists N: n > N \\implies \\|f_n - f\\|_\\infty < \\epsilon$ (same $N$ works for all $x$)."
+        },
+        "incorrect": {
+          "b": "We showed the supremum norm goes to 0, which is the definition of uniform convergence!",
+          "c": "The supremum is achieved in the interior and goes to 0, so convergence is uniform on the whole interval."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Pointwise limit: $f_n(x) \\to f(x) = 0$ for all $x \\in [0, 1]$",
+      "Maximum of $f_n$: $\\max f_n(x) = \\frac{1}{2\\sqrt{n}}$ at $x = \\frac{1}{\\sqrt{n}}$",
+      "Supremum norm: $\\|f_n - f\\|_\\infty = \\frac{1}{2\\sqrt{n}} \\to 0$",
+      "Conclusion: Uniform convergence on $[0, 1]$",
+      "Key difference: Uniform convergence means same $N$ works for all $x$"
+    ],
+    "fullSolution": "**Determine convergence of $f_n(x) = \\frac{x}{1 + nx^2}$ on $[0, 1]$**\n\n**Step 1: Pointwise limit**\nFor $x = 0$: $f_n(0) = 0 \\to 0$\n\nFor $x > 0$:\n$$f_n(x) = \\frac{x}{1 + nx^2} = \\frac{x/n}{1/n + x^2} \\to \\frac{0}{x^2} = 0$$\n\n**Pointwise limit:** $f(x) = 0$ for all $x \\in [0, 1]$\n\n**Step 2: Find maximum of $f_n$**\n$$f_n'(x) = \\frac{(1+nx^2) - x(2nx)}{(1+nx^2)^2} = \\frac{1-nx^2}{(1+nx^2)^2}$$\n\nCritical point: $1 - nx^2 = 0 \\implies x = \\frac{1}{\\sqrt{n}}$\n\n$$f_n\\left(\\frac{1}{\\sqrt{n}}\\right) = \\frac{1/\\sqrt{n}}{1 + n \\cdot 1/n} = \\frac{1/\\sqrt{n}}{2} = \\frac{1}{2\\sqrt{n}}$$\n\n**Step 3: Supremum norm**\n$$\\|f_n - f\\|_\\infty = \\sup_{x \\in [0,1]} |f_n(x) - 0| = \\frac{1}{2\\sqrt{n}}$$\n\n$$\\lim_{n \\to \\infty} \\|f_n - f\\|_\\infty = \\lim_{n \\to \\infty} \\frac{1}{2\\sqrt{n}} = 0$$\n\n**Conclusion:** $\\{f_n\\}$ **converges uniformly** to $f(x) = 0$ on $[0, 1]$",
+    "relatedProblems": [
+      "real-analysis-pointwise-convergence-1",
+      "real-analysis-continuous-functions-1"
+    ]
+  }
+}

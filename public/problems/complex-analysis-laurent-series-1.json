@@ -1,0 +1,181 @@
+{
+  "id": "complex-analysis-laurent-series-1",
+  "type": "problem",
+  "title": "Laurent Series Expansion",
+  "topic": "Complex Analysis",
+  "difficulty": 4,
+  "estimatedTime": 15,
+  "tags": ["complex analysis", "Laurent series", "residues", "singularities"],
+  "statement": {
+    "text": "Find the Laurent series expansion of $f(z) = \\frac{1}{z(z-1)}$ in the annular region $0 < |z| < 1$."
+  },
+  "objectives": [
+    "Use partial fraction decomposition",
+    "Expand each term as power series",
+    "Identify principal and analytic parts"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Partial fraction decomposition",
+      "currentState": {
+        "expression": "$f(z) = \\frac{1}{z(z-1)}$",
+        "description": "Break into simpler fractions."
+      },
+      "reflectionPrompt": {
+        "question": "What is the partial fraction form?",
+        "hint": "$\\frac{1}{z(z-1)} = \\frac{A}{z} + \\frac{B}{z-1}$. Solve: $1 = A(z-1) + Bz$. Set $z=0$: $A = -1$. Set $z=1$: $B = 1$. Thus $\\frac{1}{z(z-1)} = -\\frac{1}{z} + \\frac{1}{z-1}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{1}{z(z-1)} = -\\frac{1}{z} + \\frac{1}{z-1}$"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{1}{z(z-1)} = \\frac{1}{z} - \\frac{1}{z-1}$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{1}{z(z-1)} = \\frac{1}{z} + \\frac{1}{z-1}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Using partial fractions: $\\frac{1}{z(z-1)} = \\frac{A}{z} + \\frac{B}{z-1}$. Solving gives $A = -1$, $B = 1$.",
+          "insight": "Partial fractions separate the singularities at $z = 0$ and $z = 1$."
+        },
+        "incorrect": {
+          "b": "Check signs: $A(z-1) + Bz = 1$ gives $A = -1$, $B = 1$.",
+          "c": "The coefficient of $1/z$ should be negative. Verify by combining fractions!"
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Expand $1/(z-1)$ for $|z| < 1$",
+      "currentState": {
+        "expression": "$f(z) = -\\frac{1}{z} + \\frac{1}{z-1}$",
+        "description": "Expand the second term."
+      },
+      "reflectionPrompt": {
+        "question": "What is the series for $\\frac{1}{z-1}$ when $|z| < 1$?",
+        "hint": "$\\frac{1}{z-1} = -\\frac{1}{1-z} = -\\sum_{n=0}^\\infty z^n$ (geometric series for $|z| < 1$)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\frac{1}{z-1} = -\\sum_{n=0}^\\infty z^n = -1 - z - z^2 - z^3 - \\cdots$ (for $|z| < 1$)"
+        },
+        {
+          "id": "b",
+          "content": "$\\frac{1}{z-1} = \\sum_{n=0}^\\infty z^n$"
+        },
+        {
+          "id": "c",
+          "content": "$\\frac{1}{z-1} = \\sum_{n=1}^\\infty \\frac{1}{z^n}$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{1}{z-1} = -\\frac{1}{1-z} = -\\sum_{n=0}^\\infty z^n$ for $|z| < 1$ (geometric series).",
+          "insight": "This is the analytic part of the Laurent series (non-negative powers of $z$)."
+        },
+        "incorrect": {
+          "b": "Need factor of $-1$: $\\frac{1}{z-1} = -\\frac{1}{1-z}$.",
+          "c": "For $|z| < 1$, expand in powers of $z$, not $1/z$."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Combine terms",
+      "currentState": {
+        "expression": "$f(z) = -\\frac{1}{z} - \\sum_{n=0}^\\infty z^n$",
+        "description": "Write full Laurent series."
+      },
+      "reflectionPrompt": {
+        "question": "What is the complete Laurent series?",
+        "hint": "$f(z) = -\\frac{1}{z} - 1 - z - z^2 - z^3 - \\cdots = -\\frac{1}{z} + \\sum_{n=0}^\\infty (-1)z^n$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$f(z) = -\\frac{1}{z} - 1 - z - z^2 - z^3 - \\cdots$ (Laurent series in $0 < |z| < 1$)"
+        },
+        {
+          "id": "b",
+          "content": "$f(z) = \\frac{1}{z} + 1 + z + z^2 + \\cdots$"
+        },
+        {
+          "id": "c",
+          "content": "$f(z) = -\\frac{1}{z} + 1 + z + z^2 + \\cdots$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $f(z) = -\\frac{1}{z} + \\frac{1}{z-1} = -\\frac{1}{z} - 1 - z - z^2 - \\cdots$ for $0 < |z| < 1$.",
+          "insight": "Principal part: $-\\frac{1}{z}$ (negative powers). Analytic part: $-1 - z - z^2 - \\cdots$ (non-negative powers)."
+        },
+        "incorrect": {
+          "b": "Check signs! Both terms should be negative.",
+          "c": "The constant term is $-1$, not $+1$. Check the geometric series expansion!"
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Identify residue",
+      "currentState": {
+        "expression": "$f(z) = -\\frac{1}{z} - 1 - z - z^2 - \\cdots$",
+        "description": "Find coefficient of $1/z$."
+      },
+      "reflectionPrompt": {
+        "question": "What is the residue at $z = 0$?",
+        "hint": "Residue = coefficient of $\\frac{1}{z}$ in Laurent series = $-1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\text{Res}(f, 0) = -1$ (coefficient of $z^{-1}$ term)"
+        },
+        {
+          "id": "b",
+          "content": "$\\text{Res}(f, 0) = 1$"
+        },
+        {
+          "id": "c",
+          "content": "$\\text{Res}(f, 0) = 0$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! The residue at $z = 0$ is the coefficient of $\\frac{1}{z}$ in the Laurent series, which is $-1$.",
+          "insight": "Residue Theorem: $\\oint_C f(z)\\,dz = 2\\pi i \\sum \\text{residues}$ for simple closed curve $C$."
+        },
+        "incorrect": {
+          "b": "The term is $-\\frac{1}{z}$, so the residue is $-1$, not $+1$.",
+          "c": "There is a $\\frac{1}{z}$ term in the expansion!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Laurent series allows negative powers (unlike Taylor series)",
+      "Partial fractions: $\\frac{1}{z(z-1)} = -\\frac{1}{z} + \\frac{1}{z-1}$",
+      "Geometric series: $\\frac{1}{z-1} = -\\sum_{n=0}^\\infty z^n$ for $|z| < 1$",
+      "Laurent series: $f(z) = -\\frac{1}{z} - 1 - z - z^2 - \\cdots$ in $0 < |z| < 1$",
+      "Residue at $z = 0$: $\\text{Res}(f, 0) = -1$"
+    ],
+    "fullSolution": "**Find Laurent series of $f(z) = \\frac{1}{z(z-1)}$ in $0 < |z| < 1$**\n\n**Step 1: Partial fraction decomposition**\n$$\\frac{1}{z(z-1)} = \\frac{A}{z} + \\frac{B}{z-1}$$\n\nMultiply by $z(z-1)$:\n$$1 = A(z-1) + Bz$$\n\nSet $z = 0$: $1 = -A \\implies A = -1$\n\nSet $z = 1$: $1 = B \\implies B = 1$\n\n$$\\frac{1}{z(z-1)} = -\\frac{1}{z} + \\frac{1}{z-1}$$\n\n**Step 2: Expand $\\frac{1}{z-1}$ for $|z| < 1$**\n$$\\frac{1}{z-1} = -\\frac{1}{1-z} = -\\sum_{n=0}^\\infty z^n$$\n\n(Geometric series: $|z| < 1$)\n\n**Step 3: Laurent series**\n$$f(z) = -\\frac{1}{z} + \\frac{1}{z-1} = -\\frac{1}{z} - \\sum_{n=0}^\\infty z^n$$\n\n$$= -\\frac{1}{z} - 1 - z - z^2 - z^3 - \\cdots$$\n\n**Principal part:** $-\\frac{1}{z}$ (negative powers)\n\n**Analytic part:** $-1 - z - z^2 - \\cdots$ (non-negative powers)\n\n**Step 4: Residue**\n$$\\text{Res}(f, 0) = \\text{coefficient of } z^{-1} = -1$$",
+    "relatedProblems": [
+      "complex-analysis-residue-theorem-1",
+      "complex-analysis-cauchy-theorem-1"
+    ]
+  }
+}

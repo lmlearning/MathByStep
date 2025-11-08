@@ -102,6 +102,7 @@ import differentialEquationsBernoulli1 from '@/public/problems/differential-equa
 // Real Analysis (additional)
 import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-sequence-1.json';
 import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bolzano-weierstrass-1.json';
+import realAnalysisUniformConvergence1 from '@/public/problems/real-analysis-uniform-convergence-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 import probabilityNormalDistribution1 from '@/public/problems/probability-normal-distribution-1.json';
@@ -110,8 +111,10 @@ import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysi
 // Abstract Algebra (more topics)
 import abstractAlgebraSubgroups1 from '@/public/problems/abstract-algebra-subgroups-1.json';
 import abstractAlgebraHomomorphisms1 from '@/public/problems/abstract-algebra-homomorphisms-1.json';
+import abstractAlgebraRings1 from '@/public/problems/abstract-algebra-rings-1.json';
 // Complex Analysis (more topics)
 import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-residue-theorem-1.json';
+import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
 // Number Theory (additional)
@@ -120,6 +123,7 @@ import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-f
 import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logic-1.json';
 // Topology (additional)
 import topologyOpenClosedSets1 from '@/public/problems/topology-open-closed-sets-1.json';
+import topologyCompactness1 from '@/public/problems/topology-compactness-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -224,6 +228,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Real Analysis (additional)
   'real-analysis-cauchy-sequence-1': realAnalysisCauchySequence1 as any as Problem,
   'real-analysis-bolzano-weierstrass-1': realAnalysisBolzanoWeierstrass1 as any as Problem,
+  'real-analysis-uniform-convergence-1': realAnalysisUniformConvergence1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   'probability-normal-distribution-1': probabilityNormalDistribution1 as any as Problem,
@@ -232,8 +237,10 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Abstract Algebra (more topics)
   'abstract-algebra-subgroups-1': abstractAlgebraSubgroups1 as any as Problem,
   'abstract-algebra-homomorphisms-1': abstractAlgebraHomomorphisms1 as any as Problem,
+  'abstract-algebra-rings-1': abstractAlgebraRings1 as any as Problem,
   // Complex Analysis (more topics)
   'complex-analysis-residue-theorem-1': complexAnalysisResidueTheorem1 as any as Problem,
+  'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
   // Number Theory (additional)
@@ -242,6 +249,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'logic-propositional-logic-1': logicPropositionalLogic1 as any as Problem,
   // Topology (additional)
   'topology-open-closed-sets-1': topologyOpenClosedSets1 as any as Problem,
+  'topology-compactness-1': topologyCompactness1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);
