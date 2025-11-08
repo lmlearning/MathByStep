@@ -14,6 +14,7 @@ import calculusIntegrationSubstitution1 from '@/public/problems/calculus-integra
 import calculusMvt1 from '@/public/problems/calculus-mvt-1.json';
 import calculusFtc1 from '@/public/problems/calculus-ftc-1.json';
 import calculusIntegrationByParts1 from '@/public/problems/calculus-integration-by-parts-1.json';
+import calculusLhopitalsRule1 from '@/public/problems/calculus-lhopitals-rule-1.json';
 import geometryTriangleAngles1 from '@/public/problems/geometry-triangle-angles-1.json';
 import geometryPythagoreanProof1 from '@/public/problems/geometry-pythagorean-proof-1.json';
 import geometrySimilarTriangles1 from '@/public/problems/geometry-similar-triangles-1.json';
@@ -39,6 +40,7 @@ import linearAlgebraNullSpace1 from '@/public/problems/linear-algebra-null-space
 import linearAlgebraLinearTransformation1 from '@/public/problems/linear-algebra-linear-transformation-1.json';
 import linearAlgebraGramSchmidt1 from '@/public/problems/linear-algebra-gram-schmidt-1.json';
 import linearAlgebraDiagonalization1 from '@/public/problems/linear-algebra-diagonalization-1.json';
+import linearAlgebraOrthogonalMatrices1 from '@/public/problems/linear-algebra-orthogonal-matrices-1.json';
 // Multivariable Calculus
 import multivariablePartialDerivatives1 from '@/public/problems/multivariable-partial-derivatives-1.json';
 import multivariableDoubleIntegral1 from '@/public/problems/multivariable-double-integral-1.json';
@@ -197,6 +199,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'calculus-mvt-1': calculusMvt1 as any as Problem,
   'calculus-ftc-1': calculusFtc1 as any as Problem,
   'calculus-integration-by-parts-1': calculusIntegrationByParts1 as any as Problem,
+  'calculus-lhopitals-rule-1': calculusLhopitalsRule1 as any as Problem,
   'geometry-triangle-angles-1': geometryTriangleAngles1 as Problem,
   'geometry-pythagorean-proof-1': geometryPythagoreanProof1 as Problem,
   'geometry-similar-triangles-1': geometrySimilarTriangles1 as any as Problem,
@@ -222,6 +225,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'linear-algebra-linear-transformation-1': linearAlgebraLinearTransformation1 as any as Problem,
   'linear-algebra-gram-schmidt-1': linearAlgebraGramSchmidt1 as any as Problem,
   'linear-algebra-diagonalization-1': linearAlgebraDiagonalization1 as any as Problem,
+  'linear-algebra-orthogonal-matrices-1': linearAlgebraOrthogonalMatrices1 as any as Problem,
   // Multivariable Calculus
   'multivariable-partial-derivatives-1': multivariablePartialDerivatives1 as any as Problem,
   'multivariable-double-integral-1': multivariableDoubleIntegral1 as any as Problem,

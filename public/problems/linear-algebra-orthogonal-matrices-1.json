@@ -1,0 +1,201 @@
+{
+  "id": "linear-algebra-orthogonal-matrices-1",
+  "type": "problem",
+  "title": "Orthogonal Matrices and Properties",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "linear-algebra",
+    "orthogonal-matrices",
+    "matrix-transpose",
+    "matrix-inverse",
+    "length-preservation"
+  ],
+  "statement": {
+    "text": "Let $Q$ be an orthogonal matrix. Prove that $Q^T Q = I$ and show that orthogonal matrices preserve vector lengths: $\\|Qx\\| = \\|x\\|$ for all vectors $x$."
+  },
+  "objectives": [
+    "Understand orthogonal matrix definition",
+    "Relate columns to orthonormality",
+    "Prove $Q^T Q = I$",
+    "Show length preservation property"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "$Q$ is an orthogonal matrix."
+      },
+      "prompt": {
+        "question": "What is the definition of an orthogonal matrix?",
+        "hint": "$Q$ is orthogonal if its columns form an orthonormal set: $q_i^T q_j = \\delta_{ij}$ (where $\\delta_{ij}$ is Kronecker delta)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Columns are orthonormal vectors: $q_i \\cdot q_j = \\delta_{ij}$"
+        },
+        {
+          "id": "b",
+          "text": "$Q$ is symmetric: $Q = Q^T$"
+        },
+        {
+          "id": "c",
+          "text": "$\\det(Q) = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Orthogonal matrix definition:**\n\nAn $n \\times n$ matrix $Q$ is **orthogonal** if its columns $q_1, q_2, \\ldots, q_n$ form an **orthonormal set**.\n\n**Orthonormality conditions:**\n$$q_i^T q_j = \\begin{cases}\n1 & \\text{if } i = j \\text{ (unit length)} \\\\\n0 & \\text{if } i \\neq j \\text{ (orthogonal)}\n\\end{cases}$$\n\n**Kronecker delta notation:**\n$$q_i^T q_j = \\delta_{ij}$$\n\n**Matrix form:** If $Q = [q_1 \\,|\\, q_2 \\,|\\, \\cdots \\,|\\, q_n]$, then:\n$$Q^T Q = I$$\n\n(We'll prove this in the next step!)\n\n**Equivalent characterizations:**\n- $Q^T Q = I$\n- $Q^{-1} = Q^T$ (inverse equals transpose)\n- Rows also form an orthonormal set\n- $QQ^T = I$\n\n**Examples:**\n- Identity: $I$\n- Rotation matrices: $\\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$\n- Reflection matrices\n- Permutation matrices",
+          "insight": "Orthogonal = columns are orthonormal!"
+        },
+        "incorrect": {
+          "1": "That's a symmetric matrix! Orthogonal is about column orthonormality.",
+          "2": "Determinant is $\\pm 1$, not necessarily 1! Orthogonal means orthonormal columns."
+        }
+      },
+      "resultState": {
+        "description": "Definition understood"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Prove $Q^T Q = I$."
+      },
+      "prompt": {
+        "question": "What is the $(i,j)$ entry of $Q^T Q$?",
+        "hint": "$(Q^T Q)_{ij} = (i\\text{-th row of } Q^T) \\cdot (j\\text{-th column of } Q) = q_i^T q_j = \\delta_{ij}$. So $Q^T Q = I$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(Q^T Q)_{ij} = q_i^T q_j = \\delta_{ij}$, so $Q^T Q = I$"
+        },
+        {
+          "id": "b",
+          "text": "$(Q^T Q)_{ij} = q_i q_j^T$"
+        },
+        {
+          "id": "c",
+          "text": "$Q^T Q = Q Q^T$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Prove $Q^T Q = I$:**\n\n**Setup:** Let $Q = [q_1 \\,|\\, q_2 \\,|\\, \\cdots \\,|\\, q_n]$ where $q_i$ are column vectors.\n\n**Transpose:**\n$$Q^T = \\begin{bmatrix} q_1^T \\\\ q_2^T \\\\ \\vdots \\\\ q_n^T \\end{bmatrix}$$\n\n(rows of $Q^T$ are columns of $Q$)\n\n**Compute $(i,j)$ entry of $Q^T Q$:**\n$$(Q^T Q)_{ij} = (\\text{row } i \\text{ of } Q^T) \\cdot (\\text{column } j \\text{ of } Q)$$\n$$= q_i^T \\cdot q_j$$\n$$= q_i^T q_j$$\n\n**By orthonormality:**\n$$q_i^T q_j = \\delta_{ij} = \\begin{cases}\n1 & i = j \\\\\n0 & i \\neq j\n\\end{cases}$$\n\n**Therefore:**\n$$Q^T Q = \\begin{bmatrix}\n1 & 0 & \\cdots & 0 \\\\\n0 & 1 & \\cdots & 0 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n0 & 0 & \\cdots & 1\n\\end{bmatrix} = I$$\n\n$$\\boxed{Q^T Q = I}$$ ✓\n\n**Consequence:** $Q^{-1} = Q^T$ (inverse is just the transpose!)",
+          "insight": "Orthogonal matrices have $Q^T = Q^{-1}$ - transpose is inverse!"
+        },
+        "incorrect": {
+          "1": "That's the outer product! We need matrix multiplication.",
+          "2": "Not always! $Q^T Q = I$ doesn't imply $Q$ symmetric."
+        }
+      },
+      "resultState": {
+        "description": "Proved $Q^T Q = I$",
+        "equations": ["Q^T Q = I"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Show orthogonal matrices preserve length."
+      },
+      "prompt": {
+        "question": "Compute $\\|Qx\\|^2$ in terms of $\\|x\\|^2$.",
+        "hint": "$\\|Qx\\|^2 = (Qx)^T (Qx) = x^T Q^T Q x = x^T I x = x^T x = \\|x\\|^2$. So $\\|Qx\\| = \\|x\\|$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\|Qx\\|^2 = x^T Q^T Q x = x^T x = \\|x\\|^2$, so $\\|Qx\\| = \\|x\\|$"
+        },
+        {
+          "id": "b",
+          "text": "$\\|Qx\\|^2 = \\|Q\\|^2 \\|x\\|^2$"
+        },
+        {
+          "id": "c",
+          "text": "$\\|Qx\\| = |\\det(Q)| \\|x\\|$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Length preservation:**\n\nFor any vector $x \\in \\mathbb{R}^n$:\n\n**Compute $\\|Qx\\|^2$:**\n$$\\|Qx\\|^2 = (Qx) \\cdot (Qx)$$\n$$= (Qx)^T (Qx)$$\n$$= x^T Q^T Q x$$\n\n**Use $Q^T Q = I$:**\n$$= x^T I x$$\n$$= x^T x$$\n$$= \\|x\\|^2$$\n\n**Take square root:**\n$$\\|Qx\\| = \\|x\\|$$\n\n$$\\boxed{\\text{Orthogonal matrices preserve vector lengths!}}$$ ✓\n\n**Geometric interpretation:**\nOrthogonal transformations are:\n- **Rotations** (when $\\det(Q) = +1$)\n- **Reflections** (when $\\det(Q) = -1$)\n- Combinations thereof\n\nThese preserve distances and angles.\n\n**Additional properties preserved:**\n- Dot products: $(Qx) \\cdot (Qy) = x \\cdot y$\n- Angles: $\\cos\\theta = \\frac{x \\cdot y}{\\|x\\|\\|y\\|}$ preserved\n- Volumes: $|\\det(Q)| = 1$",
+          "insight": "Orthogonal transformations are isometries - preserve all geometric structure!"
+        },
+        "incorrect": {
+          "1": "Not quite! For orthogonal matrices, the special property is $\\|Q\\| = 1$ in operator norm.",
+          "2": "That's for volume! For length, use $Q^T Q = I$."
+        }
+      },
+      "resultState": {
+        "description": "Length preservation proven",
+        "equations": ["\\|Qx\\| = \\|x\\|"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Additional properties."
+      },
+      "prompt": {
+        "question": "What is $\\det(Q)$ for an orthogonal matrix $Q$?",
+        "hint": "From $Q^T Q = I$, take determinant: $\\det(Q^T) \\det(Q) = 1$. Since $\\det(Q^T) = \\det(Q)$, we get $(\\det(Q))^2 = 1$, so $\\det(Q) = \\pm 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\det(Q) = \\pm 1$"
+        },
+        {
+          "id": "b",
+          "text": "$\\det(Q) = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$\\det(Q) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Determinant of orthogonal matrix:**\n\nFrom $Q^T Q = I$:\n\n**Take determinant of both sides:**\n$$\\det(Q^T Q) = \\det(I)$$\n\n**Use multiplicativity:**\n$$\\det(Q^T) \\cdot \\det(Q) = 1$$\n\n**Use $\\det(Q^T) = \\det(Q)$:**\n$$(\\det(Q))^2 = 1$$\n\n**Solve:**\n$$\\det(Q) = \\pm 1$$\n\n**Classification:**\n- **$\\det(Q) = +1$:** $Q$ is a **rotation** (proper orthogonal, preserves orientation)\n  - Set of these forms $SO(n)$ (Special Orthogonal group)\n  \n- **$\\det(Q) = -1$:** $Q$ is a **reflection** or improper rotation (reverses orientation)\n\n**Examples:**\n- Rotation by $\\theta$: $\\det = 1$\n- Reflection across line: $\\det = -1$\n\n**Group structure:**\nOrthogonal matrices form a group $O(n)$ under multiplication:\n- Closure: $Q_1, Q_2$ orthogonal $\\implies Q_1 Q_2$ orthogonal\n- Identity: $I \\in O(n)$\n- Inverses: $Q^{-1} = Q^T \\in O(n)$\n- Associativity: matrix multiplication is associative",
+          "insight": "Orthogonal matrices are rotations ($\\det = +1$) or reflections ($\\det = -1$)!"
+        },
+        "incorrect": {
+          "1": "Could also be $-1$! Reflections have $\\det = -1$.",
+          "2": "$\\det = 0$ means singular! Orthogonal matrices are always invertible."
+        }
+      },
+      "resultState": {
+        "description": "Determinant property",
+        "equations": ["\\det(Q) = \\pm 1"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Orthogonal matrix: columns form orthonormal set",
+      "Orthonormality: $q_i^T q_j = \\delta_{ij}$",
+      "Key property: $Q^T Q = I$, so $Q^{-1} = Q^T$",
+      "Length preservation: $\\|Qx\\| = \\|x\\|$ for all $x$",
+      "Determinant: $\\det(Q) = \\pm 1$",
+      "Geometric: rotations ($\\det = +1$) and reflections ($\\det = -1$)",
+      "Orthogonal transformations preserve angles and distances"
+    ],
+    "fullSolution": "**Prove properties of orthogonal matrices**\n\n---\n\n**Definition:** $Q$ is orthogonal if columns $q_1, \\ldots, q_n$ are orthonormal:\n$$q_i^T q_j = \\delta_{ij}$$\n\n---\n\n**Part 1: Prove $Q^T Q = I$**\n\n**Setup:** $Q = [q_1 \\,|\\, \\cdots \\,|\\, q_n]$\n\n**Compute $(i,j)$ entry of $Q^T Q$:**\n$$(Q^T Q)_{ij} = q_i^T q_j = \\delta_{ij}$$\n\n**Therefore:**\n$$Q^T Q = I$$ ✓\n\n**Consequence:** $Q^{-1} = Q^T$ (transpose equals inverse)\n\n---\n\n**Part 2: Length Preservation**\n\nFor any $x \\in \\mathbb{R}^n$:\n\n$$\\|Qx\\|^2 = (Qx)^T (Qx)$$\n$$= x^T Q^T Q x$$\n$$= x^T I x$$\n$$= x^T x$$\n$$= \\|x\\|^2$$\n\n**Take square root:**\n$$\\|Qx\\| = \\|x\\|$$ ✓\n\n---\n\n**Part 3: Determinant**\n\nFrom $Q^T Q = I$:\n\n$$\\det(Q^T Q) = 1$$\n$$\\det(Q^T) \\det(Q) = 1$$\n$$(\\det(Q))^2 = 1$$\n$$\\det(Q) = \\pm 1$$ ✓\n\n---\n\n**Summary:**\n- $\\boxed{Q^T Q = I}$\n- $\\boxed{\\|Qx\\| = \\|x\\| \\text{ for all } x}$\n- $\\boxed{\\det(Q) = \\pm 1}$\n\nOrthogonal matrices represent rotations and reflections!",
+    "relatedProblems": [
+      "linear-algebra-gram-schmidt-1",
+      "linear-algebra-eigenvalues-1"
+    ]
+  }
+}
