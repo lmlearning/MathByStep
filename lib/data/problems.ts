@@ -96,6 +96,7 @@ import calculusTaylorSeries1 from '@/public/problems/calculus-taylor-series-1.js
 import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-comparison-test-1.json';
 import calculusMeanValueTheoremIntegrals1 from '@/public/problems/calculus-mean-value-theorem-integrals-1.json';
 import calculusInverseFunctions1 from '@/public/problems/calculus-inverse-functions-1.json';
+import calculusParametricEquations1 from '@/public/problems/calculus-parametric-equations-1.json';
 // Linear Algebra (additional)
 import linearAlgebraGaussianElimination1 from '@/public/problems/linear-algebra-gaussian-elimination-1.json';
 import linearAlgebraMatrixInverse1 from '@/public/problems/linear-algebra-matrix-inverse-1.json';
@@ -269,6 +270,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'calculus-series-comparison-test-1': calculusSeriesComparisonTest1 as any as Problem,
   'calculus-mean-value-theorem-integrals-1': calculusMeanValueTheoremIntegrals1 as any as Problem,
   'calculus-inverse-functions-1': calculusInverseFunctions1 as any as Problem,
+  'calculus-parametric-equations-1': calculusParametricEquations1 as any as Problem,
   // Linear Algebra (additional)
   'linear-algebra-gaussian-elimination-1': linearAlgebraGaussianElimination1 as any as Problem,
   'linear-algebra-matrix-inverse-1': linearAlgebraMatrixInverse1 as any as Problem,

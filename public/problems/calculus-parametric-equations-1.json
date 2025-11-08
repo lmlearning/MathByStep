@@ -1,0 +1,199 @@
+{
+  "id": "calculus-parametric-equations-1",
+  "type": "problem",
+  "title": "Parametric Equations and Calculus",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "calculus",
+    "parametric-equations",
+    "derivatives",
+    "tangent-lines",
+    "arc-length"
+  ],
+  "statement": {
+    "text": "A curve is defined parametrically by $x = t^2$, $y = t^3$ for $t \\in \\mathbb{R}$. Find $\\frac{dy}{dx}$ at $t = 2$ and the equation of the tangent line at that point."
+  },
+  "objectives": [
+    "Understand parametric equations",
+    "Apply chain rule: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$",
+    "Find tangent line to parametric curve"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Parametric curve: $x = t^2$, $y = t^3$."
+      },
+      "prompt": {
+        "question": "What is the formula for $\\frac{dy}{dx}$ in terms of $t$?",
+        "hint": "$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3t^2}{2t} = \\frac{3t}{2}$ for $t \\neq 0$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{dx} = \\frac{3t}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dy}{dx} = \\frac{2t}{3}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dy}{dx} = \\frac{3t^2}{2t^2} = \\frac{3}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Parametric derivative formula:**\n\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$$\n\nCompute each derivative:\n$$\\frac{dx}{dt} = \\frac{d}{dt}(t^2) = 2t$$\n$$\\frac{dy}{dt} = \\frac{d}{dt}(t^3) = 3t^2$$\n\nTherefore:\n$$\\frac{dy}{dx} = \\frac{3t^2}{2t} = \\frac{3t}{2} \\quad (t \\neq 0)$$\n\n**Why this works:** By chain rule:\n$$\\frac{dy}{dx} = \\frac{dy}{dt} \\cdot \\frac{dt}{dx} = \\frac{dy/dt}{dx/dt}$$",
+          "insight": "The slope of a parametric curve is the ratio of the parameter derivatives!"
+        },
+        "incorrect": {
+          "1": "You have it inverted! It's $\\frac{dy/dt}{dx/dt}$, not $\\frac{dx/dt}{dy/dt}$.",
+          "2": "Don't cancel the $t$ terms separately! Simplify $\\frac{3t^2}{2t} = \\frac{3t}{2}$, not $\\frac{3}{2}$."
+        }
+      },
+      "resultState": {
+        "description": "Derivative formula found",
+        "equations": ["\\frac{dy}{dx} = \\frac{3t}{2}"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Evaluate slope at $t = 2$."
+      },
+      "prompt": {
+        "question": "What is $\\frac{dy}{dx}$ at $t = 2$?",
+        "hint": "$\\frac{dy}{dx}\\bigg|_{t=2} = \\frac{3 \\cdot 2}{2} = 3$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{dx}\\bigg|_{t=2} = 3$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dy}{dx}\\bigg|_{t=2} = \\frac{3}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dy}{dx}\\bigg|_{t=2} = 6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Substitute $t = 2$:\n\n$$\\frac{dy}{dx}\\bigg|_{t=2} = \\frac{3 \\cdot 2}{2} = \\frac{6}{2} = 3$$\n\nThe slope of the tangent line at $t = 2$ is **3**.",
+          "insight": "The parameter value determines the point and the slope!"
+        },
+        "incorrect": {
+          "1": "That's the slope for $t = 1$! Substitute $t = 2$: $\\frac{3(2)}{2} = 3$.",
+          "2": "That's $\\frac{dy}{dt}$ at $t=2$, not $\\frac{dy}{dx}$! Use $\\frac{dy}{dx} = \\frac{3t}{2}$."
+        }
+      },
+      "resultState": {
+        "description": "Slope at $t=2$",
+        "equations": ["\\left.\\frac{dy}{dx}\\right|_{t=2} = 3"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find point on curve at $t = 2$."
+      },
+      "prompt": {
+        "question": "What are the $(x, y)$ coordinates at $t = 2$?",
+        "hint": "$x = 2^2 = 4$ and $y = 2^3 = 8$, so the point is $(4, 8)$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x, y) = (4, 8)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x, y) = (2, 2)$"
+        },
+        {
+          "id": "c",
+          "text": "$(x, y) = (8, 4)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! At $t = 2$:\n\n$$x = t^2 = 2^2 = 4$$\n$$y = t^3 = 2^3 = 8$$\n\nThe point on the curve is $(4, 8)$.",
+          "insight": "Parametric equations give both coordinates from the parameter!"
+        },
+        "incorrect": {
+          "1": "That's just $(t, t)$! Use the parametric equations: $x = t^2 = 4$, $y = t^3 = 8$.",
+          "2": "You swapped them! $x = t^2 = 4$ and $y = t^3 = 8$, not the reverse."
+        }
+      },
+      "resultState": {
+        "description": "Point found",
+        "equations": ["(x, y) = (4, 8)"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Find tangent line equation."
+      },
+      "prompt": {
+        "question": "What is the equation of the tangent line at $(4, 8)$ with slope $3$?",
+        "hint": "Point-slope form: $y - 8 = 3(x - 4)$, which simplifies to $y = 3x - 4$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 3x - 4$"
+        },
+        {
+          "id": "b",
+          "text": "$y = 3x + 8$"
+        },
+        {
+          "id": "c",
+          "text": "$y = 3x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Tangent line equation:**\n\nUse point-slope form with point $(4, 8)$ and slope $m = 3$:\n\n$$y - y_0 = m(x - x_0)$$\n$$y - 8 = 3(x - 4)$$\n$$y - 8 = 3x - 12$$\n$$y = 3x - 4$$\n\n**Verification:** Does the line pass through $(4, 8)$?\n$$y = 3(4) - 4 = 12 - 4 = 8$$ ✓\n\n**Slope:** $m = 3$ ✓",
+          "insight": "Tangent line at a point uses that point and the derivative as slope!"
+        },
+        "incorrect": {
+          "1": "Check your algebra! $y - 8 = 3(x - 4) = 3x - 12$, so $y = 3x - 4$.",
+          "2": "That doesn't pass through $(4, 8)$! Use point-slope form: $y - 8 = 3(x - 4)$."
+        }
+      },
+      "resultState": {
+        "description": "Tangent line found",
+        "equations": ["y = 3x - 4"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Parametric curve: $x = t^2$, $y = t^3$",
+      "Derivative: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3t^2}{2t} = \\frac{3t}{2}$",
+      "At $t = 2$: slope = 3, point = $(4, 8)$",
+      "Tangent line: $y = 3x - 4$",
+      "Parametric equations separate $x$ and $y$ as functions of parameter $t$"
+    ],
+    "fullSolution": "**Find $\\frac{dy}{dx}$ and tangent line for parametric curve at $t=2$**\n\n---\n\n**Given:** $x = t^2$, $y = t^3$\n\n---\n\n**Step 1: Find $\\frac{dy}{dx}$**\n\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$$\n\n$$\\frac{dx}{dt} = 2t, \\quad \\frac{dy}{dt} = 3t^2$$\n\n$$\\frac{dy}{dx} = \\frac{3t^2}{2t} = \\frac{3t}{2}$$\n\n---\n\n**Step 2: Evaluate at $t = 2$**\n\n$$\\frac{dy}{dx}\\bigg|_{t=2} = \\frac{3(2)}{2} = 3$$\n\n---\n\n**Step 3: Find Point**\n\n$$x = 2^2 = 4$$\n$$y = 2^3 = 8$$\n\nPoint: $(4, 8)$\n\n---\n\n**Step 4: Tangent Line**\n\nPoint-slope form with $(4, 8)$ and $m = 3$:\n\n$$y - 8 = 3(x - 4)$$\n$$y = 3x - 4$$\n\n---\n\n**Answer:**\n- $\\boxed{\\frac{dy}{dx}\\bigg|_{t=2} = 3}$\n- $\\boxed{\\text{Tangent line: } y = 3x - 4}$",
+    "relatedProblems": [
+      "calculus-implicit-differentiation-1",
+      "calculus-arc-length-1"
+    ]
+  }
+}
