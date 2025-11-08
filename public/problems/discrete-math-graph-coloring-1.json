@@ -1,0 +1,182 @@
+{
+  "id": "discrete-math-graph-coloring-1",
+  "type": "problem",
+  "title": "Graph Coloring and Chromatic Number",
+  "topic": "Discrete Math",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["discrete math", "graph theory", "graph coloring", "chromatic number"],
+  "statement": {
+    "text": "Determine the chromatic number of the complete bipartite graph $K_{3,4}$ and the cycle graph $C_5$."
+  },
+  "objectives": [
+    "Understand chromatic number definition",
+    "Analyze bipartite graphs",
+    "Determine coloring for cycles"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Definition of chromatic number",
+      "currentState": {
+        "expression": "Graph $G = (V, E)$",
+        "description": "What is the chromatic number?"
+      },
+      "reflectionPrompt": {
+        "question": "What does chromatic number $\\chi(G)$ mean?",
+        "hint": "$\\chi(G)$ is the minimum number of colors needed to color vertices so that no two adjacent vertices have the same color."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\chi(G)$ = minimum colors needed so adjacent vertices have different colors"
+        },
+        {
+          "id": "b",
+          "content": "$\\chi(G)$ = number of vertices in $G$"
+        },
+        {
+          "id": "c",
+          "content": "$\\chi(G)$ = number of edges in $G$"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Chromatic number is the smallest $k$ such that we can assign one of $k$ colors to each vertex with no edge connecting same-colored vertices.",
+          "insight": "Graph coloring has applications in scheduling, register allocation, and map coloring."
+        },
+        "incorrect": {
+          "b": "Not related to vertex count directly! A graph with $n$ vertices might need anywhere from 1 to $n$ colors.",
+          "c": "Edge count doesn't determine chromatic number. Structure matters!"
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Chromatic number of bipartite graphs",
+      "currentState": {
+        "expression": "$K_{3,4}$ is complete bipartite graph",
+        "description": "$K_{m,n}$ has two parts: one with $m$ vertices, one with $n$, with all possible edges between parts."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\chi(K_{3,4})$?",
+        "hint": "Bipartite means vertices split into two sets with edges only between sets. Color one part red, other part blue. Only 2 colors needed!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\chi(K_{3,4}) = 2$ (all bipartite graphs have chromatic number 2)"
+        },
+        {
+          "id": "b",
+          "content": "$\\chi(K_{3,4}) = 7$ (need one color per vertex)"
+        },
+        {
+          "id": "c",
+          "content": "$\\chi(K_{3,4}) = 12$ (number of edges)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Every bipartite graph has $\\chi(G) = 2$. Color the two parts with different colors - no edges within parts, so no conflicts!",
+          "insight": "Fundamental theorem: $\\chi(G) \\leq 2$ iff $G$ is bipartite (no odd cycles)."
+        },
+        "incorrect": {
+          "b": "Can do much better! Since no edges within each part, vertices in same part can share colors.",
+          "c": "Chromatic number is about vertex coloring, not edges!"
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Chromatic number of odd cycles",
+      "currentState": {
+        "expression": "$C_5$: cycle with 5 vertices",
+        "description": "Vertices $v_1, v_2, v_3, v_4, v_5$ with edges forming a cycle."
+      },
+      "reflectionPrompt": {
+        "question": "What is $\\chi(C_5)$?",
+        "hint": "Try 2 colors: $v_1$ red, $v_2$ blue, $v_3$ red, $v_4$ blue, $v_5$ red. But $v_5$ is adjacent to both $v_1$ (red) and $v_4$ (blue)! Contradiction. Need 3 colors."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\chi(C_5) = 3$ (odd cycles need 3 colors; even cycles need 2)"
+        },
+        {
+          "id": "b",
+          "content": "$\\chi(C_5) = 2$ (like all cycles)"
+        },
+        {
+          "id": "c",
+          "content": "$\\chi(C_5) = 5$ (one color per vertex)"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Odd cycles require 3 colors. Try alternating 2 colors - doesn't work because odd number of vertices means last vertex adjacent to two of same color. 3 colors suffice: e.g., R-B-R-B-G.",
+          "insight": "General rule: $\\chi(C_n) = 2$ if $n$ even, $\\chi(C_n) = 3$ if $n$ odd."
+        },
+        "incorrect": {
+          "b": "Even cycles can use 2 colors (alternating). But odd cycles need 3!",
+          "c": "Can do better! Don't need a unique color for each vertex."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Verify the colorings",
+      "currentState": {
+        "expression": "$\\chi(K_{3,4}) = 2$, $\\chi(C_5) = 3$",
+        "description": "Provide explicit colorings."
+      },
+      "reflectionPrompt": {
+        "question": "Can you give explicit colorings?",
+        "hint": "$K_{3,4}$: Part A (3 vertices) all red, Part B (4 vertices) all blue. $C_5$: vertices $v_1, v_2, v_3, v_4, v_5$ get colors Red, Blue, Red, Blue, Green."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$K_{3,4}$: {R,R,R,B,B,B,B}. $C_5$: {R,B,R,B,G} (or similar)"
+        },
+        {
+          "id": "b",
+          "content": "Cannot provide explicit coloring"
+        },
+        {
+          "id": "c",
+          "content": "$K_{3,4}$ needs 3+ colors"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $K_{3,4}$: two-color the bipartition. $C_5$: use 3 colors (e.g., RBRBG going around the cycle).",
+          "insight": "Showing a valid $k$-coloring proves $\\chi(G) \\leq k$. Proving no $(k-1)$-coloring exists shows $\\chi(G) \\geq k$."
+        },
+        "incorrect": {
+          "b": "We can! See the explicit colorings.",
+          "c": "$K_{3,4}$ is bipartite, so 2 colors suffice!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Chromatic number $\\chi(G)$ = minimum colors for proper vertex coloring",
+      "Bipartite graphs have $\\chi(G) = 2$ (two-colorable)",
+      "$K_{3,4}$ is bipartite $\\implies$ $\\chi(K_{3,4}) = 2$",
+      "Odd cycles have $\\chi(C_n) = 3$ for odd $n$",
+      "Even cycles have $\\chi(C_n) = 2$ for even $n$",
+      "$\\chi(C_5) = 3$"
+    ],
+    "fullSolution": "**Determine $\\chi(K_{3,4})$ and $\\chi(C_5)$**\n\n**Part 1: $K_{3,4}$ (complete bipartite graph)**\n\n$K_{3,4}$ has:\n- Part $A$: 3 vertices\n- Part $B$: 4 vertices  \n- Edges: all possible edges between $A$ and $B$ (none within $A$ or $B$)\n\n**Coloring:**\n- Color all vertices in $A$ red\n- Color all vertices in $B$ blue\n\nThis is a valid 2-coloring:\n- Vertices in $A$ have no edges between them (all red, no conflicts)\n- Vertices in $B$ have no edges between them (all blue, no conflicts)\n- Edges only go between $A$ and $B$ (red-blue, different colors ✓)\n\n**Upper bound:** $\\chi(K_{3,4}) \\leq 2$\n\n**Lower bound:** $K_{3,4}$ has edges, so $\\chi(K_{3,4}) \\geq 2$\n\n**Answer:** $\\chi(K_{3,4}) = 2$\n\n**Part 2: $C_5$ (5-cycle)**\n\n$C_5$ has vertices $v_1, v_2, v_3, v_4, v_5$ with edges:\n$$v_1\\!-\\!v_2\\!-\\!v_3\\!-\\!v_4\\!-\\!v_5\\!-\\!v_1$$\n\n**Try 2 colors:** R-B-R-B-?\n- $v_1$: Red\n- $v_2$: Blue (adjacent to $v_1$)\n- $v_3$: Red (adjacent to $v_2$)\n- $v_4$: Blue (adjacent to $v_3$)\n- $v_5$: adjacent to $v_4$ (blue) AND $v_1$ (red) - need a third color!\n\n**3-coloring:** R-B-R-B-G ✓\n- $v_1$: Red\n- $v_2$: Blue\n- $v_3$: Red\n- $v_4$: Blue  \n- $v_5$: Green\n\nAll adjacent pairs have different colors ✓\n\n**Answer:** $\\chi(C_5) = 3$\n\n**General rule:** For cycle $C_n$:\n$$\\chi(C_n) = \\begin{cases} 2 & \\text{if } n \\text{ even} \\\\\\ 3 & \\text{if } n \\text{ odd} \\end{cases}$$",
+    "relatedProblems": [
+      "graph-theory-euler-path-1",
+      "discrete-math-combinatorics-1"
+    ]
+  }
+}

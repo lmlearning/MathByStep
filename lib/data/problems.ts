@@ -99,6 +99,7 @@ import multivariableConservativeFields1 from '@/public/problems/multivariable-co
 // Differential Equations (additional)
 import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
 import differentialEquationsBernoulli1 from '@/public/problems/differential-equations-bernoulli-1.json';
+import differentialEquationsPde1 from '@/public/problems/differential-equations-pde-1.json';
 // Real Analysis (additional)
 import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-sequence-1.json';
 import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bolzano-weierstrass-1.json';
@@ -117,13 +118,16 @@ import complexAnalysisResidueTheorem1 from '@/public/problems/complex-analysis-r
 import complexAnalysisLaurentSeries1 from '@/public/problems/complex-analysis-laurent-series-1.json';
 // Discrete Math (additional)
 import discreteMathRecurrenceRelations1 from '@/public/problems/discrete-math-recurrence-relations-1.json';
+import discreteMathGraphColoring1 from '@/public/problems/discrete-math-graph-coloring-1.json';
 // Number Theory (additional)
 import numberTheoryFermatsLittleTheorem1 from '@/public/problems/number-theory-fermats-little-theorem-1.json';
+import numberTheoryChineseRemainder1 from '@/public/problems/number-theory-chinese-remainder-1.json';
 // Mathematical Logic
 import logicPropositionalLogic1 from '@/public/problems/logic-propositional-logic-1.json';
 // Topology (additional)
 import topologyOpenClosedSets1 from '@/public/problems/topology-open-closed-sets-1.json';
 import topologyCompactness1 from '@/public/problems/topology-compactness-1.json';
+import topologyConnectedness1 from '@/public/problems/topology-connectedness-1.json';
 
 // Problem database
 const PROBLEM_DB: { [key: string]: Problem } = {
@@ -225,6 +229,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   // Differential Equations (additional)
   'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
   'differential-equations-bernoulli-1': differentialEquationsBernoulli1 as any as Problem,
+  'differential-equations-pde-1': differentialEquationsPde1 as any as Problem,
   // Real Analysis (additional)
   'real-analysis-cauchy-sequence-1': realAnalysisCauchySequence1 as any as Problem,
   'real-analysis-bolzano-weierstrass-1': realAnalysisBolzanoWeierstrass1 as any as Problem,
@@ -243,13 +248,16 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'complex-analysis-laurent-series-1': complexAnalysisLaurentSeries1 as any as Problem,
   // Discrete Math (additional)
   'discrete-math-recurrence-relations-1': discreteMathRecurrenceRelations1 as any as Problem,
+  'discrete-math-graph-coloring-1': discreteMathGraphColoring1 as any as Problem,
   // Number Theory (additional)
   'number-theory-fermats-little-theorem-1': numberTheoryFermatsLittleTheorem1 as any as Problem,
+  'number-theory-chinese-remainder-1': numberTheoryChineseRemainder1 as any as Problem,
   // Mathematical Logic
   'logic-propositional-logic-1': logicPropositionalLogic1 as any as Problem,
   // Topology (additional)
   'topology-open-closed-sets-1': topologyOpenClosedSets1 as any as Problem,
   'topology-compactness-1': topologyCompactness1 as any as Problem,
+  'topology-connectedness-1': topologyConnectedness1 as any as Problem,
 };
 
 const PROBLEM_IDS = Object.keys(PROBLEM_DB);
