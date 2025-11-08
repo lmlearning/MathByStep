@@ -96,6 +96,7 @@ import multivariableDirectionalDerivative1 from '@/public/problems/multivariable
 import differentialEquationsExact1 from '@/public/problems/differential-equations-exact-1.json';
 // Real Analysis (additional)
 import realAnalysisCauchySequence1 from '@/public/problems/real-analysis-cauchy-sequence-1.json';
+import realAnalysisBolzanoWeierstrass1 from '@/public/problems/real-analysis-bolzano-weierstrass-1.json';
 // Probability (additional)
 import probabilityRandomVariables1 from '@/public/problems/probability-random-variables-1.json';
 // Numerical Analysis
@@ -210,6 +211,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'differential-equations-exact-1': differentialEquationsExact1 as any as Problem,
   // Real Analysis (additional)
   'real-analysis-cauchy-sequence-1': realAnalysisCauchySequence1 as any as Problem,
+  'real-analysis-bolzano-weierstrass-1': realAnalysisBolzanoWeierstrass1 as any as Problem,
   // Probability (additional)
   'probability-random-variables-1': probabilityRandomVariables1 as any as Problem,
   // Numerical Analysis

@@ -1,0 +1,181 @@
+{
+  "id": "real-analysis-bolzano-weierstrass-1",
+  "type": "problem",
+  "title": "Bolzano-Weierstrass Theorem",
+  "topic": "Real Analysis",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": ["real analysis", "sequences", "subsequences", "Bolzano-Weierstrass theorem", "compactness"],
+  "statement": {
+    "text": "Use the Bolzano-Weierstrass Theorem to prove that the sequence $a_n = \\sin(n)$ has a convergent subsequence."
+  },
+  "objectives": [
+    "Verify sequence is bounded",
+    "Apply Bolzano-Weierstrass Theorem",
+    "Understand subsequential limits"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "State Bolzano-Weierstrass",
+      "currentState": {
+        "expression": "$a_n = \\sin(n)$",
+        "description": "What does the theorem say?"
+      },
+      "reflectionPrompt": {
+        "question": "What is the Bolzano-Weierstrass Theorem?",
+        "hint": "Every bounded sequence in $\\mathbb{R}$ has a convergent subsequence."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Every bounded sequence in $\\mathbb{R}$ has a convergent subsequence"
+        },
+        {
+          "id": "b",
+          "content": "Every convergent sequence is bounded"
+        },
+        {
+          "id": "c",
+          "content": "Every Cauchy sequence converges"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Bolzano-Weierstrass: Every bounded sequence in $\\mathbb{R}$ (or $\\mathbb{R}^n$) has a convergent subsequence.",
+          "insight": "This is a fundamental compactness result - bounded infinite sets have accumulation points."
+        },
+        "incorrect": {
+          "b": "True statement, but that's not Bolzano-Weierstrass. That's a basic property of convergent sequences.",
+          "c": "That's the Completeness Axiom of $\\mathbb{R}$, not Bolzano-Weierstrass."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Show sequence is bounded",
+      "currentState": {
+        "expression": "$a_n = \\sin(n)$ for $n \\in \\mathbb{N}$",
+        "description": "Check if the sequence satisfies the hypothesis."
+      },
+      "reflectionPrompt": {
+        "question": "Is $\\sin(n)$ bounded?",
+        "hint": "For all $x$: $-1 \\leq \\sin(x) \\leq 1$, so $|\\sin(n)| \\leq 1$ for all $n$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "Yes, bounded: $|\\sin(n)| \\leq 1$ for all $n$ (range of sine is $[-1, 1]$)"
+        },
+        {
+          "id": "b",
+          "content": "No, unbounded: $\\sin(n) \\to \\infty$ as $n \\to \\infty$"
+        },
+        {
+          "id": "c",
+          "content": "Cannot determine without computing all values"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since $-1 \\leq \\sin(x) \\leq 1$ for ALL real $x$, we have $|a_n| = |\\sin(n)| \\leq 1 < \\infty$. The sequence is bounded.",
+          "insight": "Boundedness comes from the range of the sine function."
+        },
+        "incorrect": {
+          "b": "Sine is a bounded function! $\\sin(x) \\in [-1,1]$ always.",
+          "c": "We can determine it from the properties of sine: it's always between -1 and 1."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Apply the theorem",
+      "currentState": {
+        "expression": "$(a_n)$ is bounded",
+        "description": "What can we conclude?"
+      },
+      "reflectionPrompt": {
+        "question": "What does Bolzano-Weierstrass guarantee?",
+        "hint": "Since $(\\sin(n))$ is bounded, it must have a convergent subsequence $(\\sin(n_k))$ for some indices $n_1 < n_2 < n_3 < \\cdots$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$a_n = \\sin(n)$ has a convergent subsequence (though the full sequence doesn't converge)"
+        },
+        {
+          "id": "b",
+          "content": "The sequence $\\sin(n)$ itself converges to some limit"
+        },
+        {
+          "id": "c",
+          "content": "Cannot apply the theorem to trigonometric sequences"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Exactly! By Bolzano-Weierstrass, there exists a subsequence $(\\sin(n_k))_{k=1}^{\\infty}$ that converges to some limit $L \\in [-1,1]$.",
+          "insight": "Note: $\\sin(n)$ itself does NOT converge (it oscillates), but some subsequence does!"
+        },
+        "incorrect": {
+          "b": "The full sequence doesn't converge (it oscillates). Only a SUBsequence is guaranteed to converge.",
+          "c": "The theorem applies to ANY bounded sequence in $\\mathbb{R}$, including trigonometric ones!"
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Understand the result",
+      "currentState": {
+        "expression": "Subsequence $(\\sin(n_k))$ converges to some $L$",
+        "description": "Why doesn't the full sequence converge?"
+      },
+      "reflectionPrompt": {
+        "question": "Why doesn't $\\sin(n)$ converge even though it's bounded?",
+        "hint": "$\\sin(n)$ oscillates quasi-periodically (since $\\pi$ is irrational). No single limit, but infinitely many subsequential limits!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "content": "$\\sin(n)$ oscillates without settling to a single value (dense range of outputs)"
+        },
+        {
+          "id": "b",
+          "content": "$\\sin(n)$ does converge to 0"
+        },
+        {
+          "id": "c",
+          "content": "The sequence diverges to infinity"
+        }
+      ],
+      "correctOption": "a",
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Since $\\pi$ is irrational, $\\{\\sin(n)\\}$ is equidistributed in $[-1,1]$, meaning it visits every interval infinitely often. No convergence, but many convergent subsequences!",
+          "insight": "Bolzano-Weierstrass guarantees SOME subsequence converges, not that the original sequence does."
+        },
+        "incorrect": {
+          "b": "$\\sin(n)$ doesn't approach any single value - it keeps oscillating.",
+          "c": "The sequence is bounded, so can't diverge to infinity!"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Bolzano-Weierstrass: Every bounded sequence has a convergent subsequence",
+      "$\\sin(n)$ is bounded: $|\\sin(n)| \\leq 1$ for all $n$",
+      "By B-W: There exists subsequence $(\\sin(n_k))$ converging to some $L \\in [-1,1]$",
+      "Original sequence $\\sin(n)$ does NOT converge (oscillates)",
+      "B-W is fundamental for proving existence of limits in analysis"
+    ],
+    "fullSolution": "**Prove $a_n = \\sin(n)$ has a convergent subsequence**\n\n**Bolzano-Weierstrass Theorem:** Every bounded sequence in $\\mathbb{R}$ has a convergent subsequence.\n\n**Step 1: Check boundedness**\nFor all $n \\in \\mathbb{N}$:\n$$|a_n| = |\\sin(n)| \\leq 1$$\nSince sine has range $[-1,1]$, the sequence is bounded.\n\n**Step 2: Apply Bolzano-Weierstrass**\nSince $(a_n)$ is bounded, by the Bolzano-Weierstrass Theorem, there exists a subsequence $(a_{n_k})_{k=1}^{\\infty}$ such that:\n$$a_{n_k} = \\sin(n_k) \\to L$$\nfor some $L \\in [-1,1]$.\n\n**Conclusion:** The sequence $\\sin(n)$ has a convergent subsequence. ✓\n\n**Note:** The original sequence does NOT converge (it oscillates due to irrationality of $\\pi$), but we've proven existence of a convergent subsequence.",
+    "relatedProblems": [
+      "real-analysis-sequence-convergence-1",
+      "real-analysis-cauchy-sequence-1"
+    ]
+  }
+}
