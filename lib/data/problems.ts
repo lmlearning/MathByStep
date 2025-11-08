@@ -132,6 +132,7 @@ import probabilityConditionalProbability1 from '@/public/problems/probability-co
 import probabilityBayesNetwork1 from '@/public/problems/probability-bayes-network-1.json';
 import probabilityContinuousDistributions1 from '@/public/problems/probability-continuous-distributions-1.json';
 import probabilityMarkovChains1 from '@/public/problems/probability-markov-chains-1.json';
+import probabilityLawLargeNumbers1 from '@/public/problems/probability-law-large-numbers-1.json';
 // Numerical Analysis
 import numericalAnalysisNewtonsMethod1 from '@/public/problems/numerical-analysis-newtons-method-1.json';
 import numericalAnalysisEulerMethod1 from '@/public/problems/numerical-analysis-euler-method-1.json';
@@ -317,6 +318,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'probability-bayes-network-1': probabilityBayesNetwork1 as any as Problem,
   'probability-continuous-distributions-1': probabilityContinuousDistributions1 as any as Problem,
   'probability-markov-chains-1': probabilityMarkovChains1 as any as Problem,
+  'probability-law-large-numbers-1': probabilityLawLargeNumbers1 as any as Problem,
   // Numerical Analysis
   'numerical-analysis-newtons-method-1': numericalAnalysisNewtonsMethod1 as any as Problem,
   'numerical-analysis-euler-method-1': numericalAnalysisEulerMethod1 as any as Problem,

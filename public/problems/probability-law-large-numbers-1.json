@@ -1,0 +1,202 @@
+{
+  "id": "probability-law-large-numbers-1",
+  "type": "problem",
+  "title": "Law of Large Numbers",
+  "topic": "Probability & Statistics",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "probability",
+    "law-of-large-numbers",
+    "expectation",
+    "convergence",
+    "sample-mean"
+  ],
+  "statement": {
+    "text": "Let $X_1, X_2, \\ldots, X_n$ be i.i.d. random variables with mean $\\mu$ and variance $\\sigma^2$. Define the sample mean $\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$. Use the Weak Law of Large Numbers to show that $\\bar{X}_n$ converges to $\\mu$ in probability as $n \\to \\infty$."
+  },
+  "objectives": [
+    "Understand sample mean",
+    "Compute expectation and variance of sample mean",
+    "Apply Chebyshev's inequality",
+    "Prove weak law of large numbers"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "i.i.d. random variables $X_i$ with mean $\\mu$ and variance $\\sigma^2$."
+      },
+      "prompt": {
+        "question": "What is the expectation $E[\\bar{X}_n]$ of the sample mean?",
+        "hint": "$E[\\bar{X}_n] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right] = \\frac{1}{n}\\sum_{i=1}^n E[X_i] = \\frac{1}{n} \\cdot n\\mu = \\mu$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E[\\bar{X}_n] = \\mu$"
+        },
+        {
+          "id": "b",
+          "text": "$E[\\bar{X}_n] = \\frac{\\mu}{n}$"
+        },
+        {
+          "id": "c",
+          "text": "$E[\\bar{X}_n] = n\\mu$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Expectation of sample mean:**\n\n$$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$$\n\n**Compute expectation:**\n$$E[\\bar{X}_n] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right]$$\n\n**Linearity of expectation:**\n$$= \\frac{1}{n}\\sum_{i=1}^n E[X_i]$$\n\n**Since $X_i$ identically distributed:**\n$$= \\frac{1}{n} \\sum_{i=1}^n \\mu$$\n$$= \\frac{1}{n} \\cdot n\\mu$$\n$$= \\mu$$\n\n**Result:** $E[\\bar{X}_n] = \\mu$ ✓\n\n**Interpretation:** The sample mean is an **unbiased estimator** of the population mean $\\mu$.",
+          "insight": "Sample mean has same expectation as individual observations!"
+        },
+        "incorrect": {
+          "1": "Don't forget to multiply! There are $n$ terms, each with expectation $\\mu$.",
+          "2": "The factor of $\\frac{1}{n}$ is outside the sum, not inside!"
+        }
+      },
+      "resultState": {
+        "description": "Expectation computed",
+        "equations": ["E[\\bar{X}_n] = \\mu"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Compute variance of sample mean."
+      },
+      "prompt": {
+        "question": "What is $\\text{Var}(\\bar{X}_n)$?",
+        "hint": "$\\text{Var}(\\bar{X}_n) = \\text{Var}\\left(\\frac{1}{n}\\sum X_i\\right) = \\frac{1}{n^2}\\sum \\text{Var}(X_i) = \\frac{1}{n^2} \\cdot n\\sigma^2 = \\frac{\\sigma^2}{n}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\text{Var}(\\bar{X}_n) = \\sigma^2$"
+        },
+        {
+          "id": "c",
+          "text": "$\\text{Var}(\\bar{X}_n) = n\\sigma^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Variance of sample mean:**\n\n$$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$$\n\n**Compute variance:**\n$$\\text{Var}(\\bar{X}_n) = \\text{Var}\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right)$$\n\n**Factor out constant:**\n$$= \\frac{1}{n^2} \\text{Var}\\left(\\sum_{i=1}^n X_i\\right)$$\n\n**Independence:** Since $X_i$ are independent:\n$$= \\frac{1}{n^2} \\sum_{i=1}^n \\text{Var}(X_i)$$\n\n**Identical distribution:**\n$$= \\frac{1}{n^2} \\sum_{i=1}^n \\sigma^2$$\n$$= \\frac{1}{n^2} \\cdot n\\sigma^2$$\n$$= \\frac{\\sigma^2}{n}$$\n\n**Result:** $\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}$ ✓\n\n**Key insight:** Variance decreases as $n$ increases! The sample mean becomes more concentrated around $\\mu$.",
+          "insight": "Variance of sample mean decreases as $1/n$ - averaging reduces variability!"
+        },
+        "incorrect": {
+          "1": "Don't forget the $\\frac{1}{n^2}$ factor from pulling $\\frac{1}{n}$ out of variance!",
+          "2": "That would mean variance grows with sample size - opposite of reality!"
+        }
+      },
+      "resultState": {
+        "description": "Variance computed",
+        "equations": ["\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply Chebyshev's inequality."
+      },
+      "prompt": {
+        "question": "What does Chebyshev's inequality say about $P(|\\bar{X}_n - \\mu| \\geq \\epsilon)$?",
+        "hint": "Chebyshev: $P(|Y - E[Y]| \\geq \\epsilon) \\leq \\frac{\\text{Var}(Y)}{\\epsilon^2}$. So $P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}$"
+        },
+        {
+          "id": "b",
+          "text": "$P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{\\epsilon^2}$"
+        },
+        {
+          "id": "c",
+          "text": "$P(|\\bar{X}_n - \\mu| \\geq \\epsilon) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Apply Chebyshev's inequality:**\n\n**Chebyshev's inequality:** For any random variable $Y$ with mean $\\mu_Y$ and variance $\\sigma_Y^2$:\n$$P(|Y - \\mu_Y| \\geq \\epsilon) \\leq \\frac{\\sigma_Y^2}{\\epsilon^2}$$\n\n**Apply to $\\bar{X}_n$:**\n- Mean: $E[\\bar{X}_n] = \\mu$\n- Variance: $\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}$\n\n**Therefore:**\n$$P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\text{Var}(\\bar{X}_n)}{\\epsilon^2}$$\n$$= \\frac{\\sigma^2/n}{\\epsilon^2}$$\n$$= \\frac{\\sigma^2}{n\\epsilon^2}$$\n\n**Interpretation:** The probability that $\\bar{X}_n$ deviates from $\\mu$ by at least $\\epsilon$ is bounded by $\\frac{\\sigma^2}{n\\epsilon^2}$, which decreases as $n$ increases!",
+          "insight": "Chebyshev quantifies how concentrated a random variable is around its mean!"
+        },
+        "incorrect": {
+          "1": "Missing the factor of $n$ in denominator! Variance is $\\frac{\\sigma^2}{n}$, not $\\sigma^2$.",
+          "2": "Not quite zero - just bounded by a quantity that goes to 0 as $n \\to \\infty$."
+        }
+      },
+      "resultState": {
+        "description": "Chebyshev applied",
+        "equations": ["P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Take limit as $n \\to \\infty$."
+      },
+      "prompt": {
+        "question": "What happens to $P(|\\bar{X}_n - \\mu| \\geq \\epsilon)$ as $n \\to \\infty$?",
+        "hint": "$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\lim_{n \\to \\infty} \\frac{\\sigma^2}{n\\epsilon^2} = 0$. So $\\bar{X}_n \\to \\mu$ in probability."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) = 0$ (convergence in probability)"
+        },
+        {
+          "id": "b",
+          "text": "$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) = 1$"
+        },
+        {
+          "id": "c",
+          "text": "Limit does not exist"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Weak Law of Large Numbers (WLLN):**\n\nFrom Chebyshev:\n$$P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}$$\n\n**Take limit as $n \\to \\infty$:**\n$$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\lim_{n \\to \\infty} \\frac{\\sigma^2}{n\\epsilon^2} = 0$$\n\nSince probability is non-negative:\n$$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) = 0$$\n\n**Definition:** $\\bar{X}_n$ **converges in probability** to $\\mu$:\n$$\\bar{X}_n \\xrightarrow{P} \\mu$$\n\n**Equivalently:**\n$$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| < \\epsilon) = 1$$\n\nfor any $\\epsilon > 0$.\n\n---\n\n**Weak Law of Large Numbers:** If $X_1, X_2, \\ldots$ are i.i.d. with mean $\\mu$ and finite variance, then:\n$$\\frac{1}{n}\\sum_{i=1}^n X_i \\xrightarrow{P} \\mu$$\n\n**Interpretation:** Sample averages converge to population mean!\n\n**Applications:**\n- Justifies using sample means to estimate population parameters\n- Foundation of statistical inference\n- Monte Carlo methods",
+          "insight": "Law of Large Numbers: sample averages converge to expected value!"
+        },
+        "incorrect": {
+          "1": "The upper bound goes to 0, so the probability must also go to 0!",
+          "2": "The limit exists and equals 0 by the squeeze theorem!"
+        }
+      },
+      "resultState": {
+        "description": "WLLN proven",
+        "equations": ["\\bar{X}_n \\xrightarrow{P} \\mu"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Sample mean: $\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$",
+      "$E[\\bar{X}_n] = \\mu$ (unbiased estimator)",
+      "$\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}$ (decreases with $n$)",
+      "Chebyshev: $P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}$",
+      "As $n \\to \\infty$: bound $\\to 0$",
+      "Weak Law of Large Numbers: $\\bar{X}_n \\xrightarrow{P} \\mu$",
+      "Sample averages converge to population mean"
+    ],
+    "fullSolution": "**Prove Weak Law of Large Numbers**\n\n---\n\n**Given:** $X_1, \\ldots, X_n$ i.i.d. with $E[X_i] = \\mu$, $\\text{Var}(X_i) = \\sigma^2$\n\n**Sample mean:** $\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$\n\n---\n\n**Step 1: Expectation**\n\n$$E[\\bar{X}_n] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right] = \\frac{1}{n}\\sum_{i=1}^n \\mu = \\mu$$\n\n---\n\n**Step 2: Variance**\n\n$$\\text{Var}(\\bar{X}_n) = \\text{Var}\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right)$$\n$$= \\frac{1}{n^2}\\sum_{i=1}^n \\text{Var}(X_i) \\quad \\text{(independence)}$$\n$$= \\frac{1}{n^2} \\cdot n\\sigma^2 = \\frac{\\sigma^2}{n}$$\n\n---\n\n**Step 3: Chebyshev's Inequality**\n\nFor any $\\epsilon > 0$:\n$$P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\text{Var}(\\bar{X}_n)}{\\epsilon^2} = \\frac{\\sigma^2}{n\\epsilon^2}$$\n\n---\n\n**Step 4: Take Limit**\n\n$$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\lim_{n \\to \\infty} \\frac{\\sigma^2}{n\\epsilon^2} = 0$$\n\nSince probability $\\geq 0$:\n$$\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| \\geq \\epsilon) = 0$$\n\n---\n\n**Conclusion:** $\\boxed{\\bar{X}_n \\xrightarrow{P} \\mu}$ (convergence in probability)\n\nThis is the **Weak Law of Large Numbers**.",
+    "relatedProblems": [
+      "probability-conditional-probability-1",
+      "probability-expectation-1"
+    ]
+  }
+}
