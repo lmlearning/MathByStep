@@ -1,0 +1,35 @@
+{
+  "id": "linear-algebra-projection-1",
+  "type": "problem",
+  "title": "Set Operations",
+  "topic": "Logic & Proofs",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": ["logic", "sets"],
+  "statement": {"text": "Find $A \\cup B$ where $A = \\{1,2,3\\}$ and $B = \\{3,4,5\\}$."},
+  "objectives": ["Understand union", "Apply set operations"],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {"description": "Union."},
+      "prompt": {"question": "What is $A \\cup B$?", "hint": "All elements in either set."},
+      "options": [
+        {"id": "a", "text": "$\\{1,2,3,4,5\\}$"},
+        {"id": "b", "text": "$\\{3\\}$"},
+        {"id": "c", "text": "$\\{1,2,4,5\\}$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {"explanation": "Union contains all elements from both sets.", "insight": "Combine all!"},
+        "incorrect": {"1": "That's intersection!", "2": "Include 3!"}
+      },
+      "resultState": {"equations": ["A \\cup B = \\{1,2,3,4,5\\}"]}
+    }
+  ],
+  "summary": {
+    "keyInsights": ["Union: $A \\cup B = \\{1,2,3,4,5\\}$"],
+    "fullSolution": "$A \\cup B = \\{1,2,3,4,5\\}$",
+    "relatedProblems": ["logic-set-theory-demorgans-1"]
+  }
+}

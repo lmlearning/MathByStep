@@ -1,0 +1,52 @@
+{
+  "id": "algebra-absolute-value-1",
+  "type": "problem",
+  "title": "Exponent Rules and Simplification",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": ["algebra", "exponents", "simplification"],
+  "statement": {"text": "Simplify: $(x^3)^2 \\cdot x^{-4}$"},
+  "objectives": ["Apply exponent rules", "Simplify expressions"],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {"description": "Apply power rule."},
+      "prompt": {"question": "What is $(x^3)^2$?", "hint": "$(x^3)^2 = x^6$"},
+      "options": [
+        {"id": "a", "text": "$x^6$"},
+        {"id": "b", "text": "$x^5$"},
+        {"id": "c", "text": "$x^9$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {"explanation": "$(x^m)^n = x^{mn}$, so $(x^3)^2 = x^6$", "insight": "Multiply exponents!"},
+        "incorrect": {"1": "Multiply exponents: $3 \\times 2 = 6$", "2": "Don't add: multiply!"}
+      },
+      "resultState": {"equations": ["x^6"]}
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {"description": "Multiply."},
+      "prompt": {"question": "What is $x^6 \\cdot x^{-4}$?", "hint": "$x^6 \\cdot x^{-4} = x^{6-4} = x^2$"},
+      "options": [
+        {"id": "a", "text": "$x^2$"},
+        {"id": "b", "text": "$x^{10}$"},
+        {"id": "c", "text": "$x^{-24}$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {"explanation": "$x^m \\cdot x^n = x^{m+n}$, so $x^6 \\cdot x^{-4} = x^2$", "insight": "Add exponents!"},
+        "incorrect": {"1": "Add exponents: $6 + (-4) = 2$", "2": "Don't multiply!"}
+      },
+      "resultState": {"equations": ["x^2"]}
+    }
+  ],
+  "summary": {
+    "keyInsights": ["$(x^3)^2 = x^6$", "$x^6 \\cdot x^{-4} = x^2$"],
+    "fullSolution": "$(x^3)^2 \\cdot x^{-4} = x^6 \\cdot x^{-4} = x^2$",
+    "relatedProblems": ["algebra-logarithm-properties-1"]
+  }
+}

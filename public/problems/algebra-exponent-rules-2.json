@@ -1,0 +1,35 @@
+{
+  "id": "algebra-exponent-rules-2",
+  "type": "problem",
+  "title": "Exponent Multiplication Rule",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": ["algebra", "exponents"],
+  "statement": {"text": "Simplify $x^3 \\cdot x^5$."},
+  "objectives": ["Apply exponent multiplication rule", "Simplify expressions with exponents"],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {"description": "Multiply powers with same base."},
+      "prompt": {"question": "What is $x^3 \\cdot x^5$?", "hint": "When multiplying powers with the same base, add exponents."},
+      "options": [
+        {"id": "a", "text": "$x^8$"},
+        {"id": "b", "text": "$x^{15}$"},
+        {"id": "c", "text": "$x^2$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {"explanation": "When multiplying powers with the same base, add the exponents: $x^3 \\cdot x^5 = x^{3+5} = x^8$.", "insight": "Add exponents when multiplying!"},
+        "incorrect": {"1": "That's multiplication of exponents, not addition!", "2": "Don't subtract exponents when multiplying!"}
+      },
+      "resultState": {"equations": ["x^3 \\cdot x^5 = x^8"]}
+    }
+  ],
+  "summary": {
+    "keyInsights": ["Exponent multiplication rule: $x^a \\cdot x^b = x^{a+b}$"],
+    "fullSolution": "$x^3 \\cdot x^5 = x^{3+5} = x^8$",
+    "relatedProblems": ["algebra-exponent-rules-1"]
+  }
+}
