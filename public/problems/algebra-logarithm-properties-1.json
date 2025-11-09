@@ -1,0 +1,201 @@
+{
+  "id": "algebra-logarithm-properties-1",
+  "type": "problem",
+  "title": "Logarithm Properties and Laws",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "algebra",
+    "logarithms",
+    "exponents",
+    "logarithm-laws",
+    "change-of-base"
+  ],
+  "statement": {
+    "text": "Simplify the expression $\\log_2(8) + \\log_2(4) - \\log_2(16)$ and express $\\log_5(100)$ in terms of $\\log_{10}$ using the change of base formula."
+  },
+  "objectives": [
+    "Apply logarithm product rule",
+    "Apply logarithm quotient rule",
+    "Use change of base formula",
+    "Simplify logarithmic expressions"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Expression: $\\log_2(8) + \\log_2(4) - \\log_2(16)$."
+      },
+      "prompt": {
+        "question": "What is the product rule for logarithms?",
+        "hint": "$\\log_b(x) + \\log_b(y) = \\log_b(xy)$ - logarithm of a product equals sum of logarithms."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_b(x) + \\log_b(y) = \\log_b(xy)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\log_b(x) + \\log_b(y) = \\log_b(x + y)$"
+        },
+        {
+          "id": "c",
+          "text": "$\\log_b(x) + \\log_b(y) = \\log_b(x) \\cdot \\log_b(y)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Logarithm product rule:**\n\n$$\\log_b(x) + \\log_b(y) = \\log_b(xy)$$\n\n**Why?** If $\\log_b(x) = m$ and $\\log_b(y) = n$, then:\n- $x = b^m$ and $y = b^n$\n- $xy = b^m \\cdot b^n = b^{m+n}$\n- $\\log_b(xy) = m + n = \\log_b(x) + \\log_b(y)$ ✓\n\n**Example:** $\\log_2(8) + \\log_2(4) = \\log_2(8 \\cdot 4) = \\log_2(32)$",
+          "insight": "Addition of logs = multiplication inside the log!"
+        },
+        "incorrect": {
+          "1": "Logs don't work that way! $\\log(x+y) \\neq \\log(x) + \\log(y)$.",
+          "2": "That's not a logarithm property! We add the logs, not multiply them."
+        }
+      },
+      "resultState": {
+        "description": "Product rule",
+        "equations": ["\\log_b(x) + \\log_b(y) = \\log_b(xy)"]
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply product and quotient rules."
+      },
+      "prompt": {
+        "question": "What is $\\log_2(8) + \\log_2(4) - \\log_2(16)$ using logarithm rules?",
+        "hint": "Combine: $\\log_2(8 \\cdot 4) - \\log_2(16) = \\log_2(32) - \\log_2(16) = \\log_2(\\frac{32}{16}) = \\log_2(2) = 1$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_2(\\frac{32}{16}) = \\log_2(2) = 1$"
+        },
+        {
+          "id": "b",
+          "text": "$\\log_2(8 + 4 - 16) = \\log_2(-4)$ (undefined)"
+        },
+        {
+          "id": "c",
+          "text": "$3 + 2 - 4 = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Simplification:**\n\n$$\\log_2(8) + \\log_2(4) - \\log_2(16)$$\n\n**Product rule:** $\\log_b(x) + \\log_b(y) = \\log_b(xy)$\n$$= \\log_2(8 \\cdot 4) - \\log_2(16)$$\n$$= \\log_2(32) - \\log_2(16)$$\n\n**Quotient rule:** $\\log_b(x) - \\log_b(y) = \\log_b(\\frac{x}{y})$\n$$= \\log_2\\left(\\frac{32}{16}\\right)$$\n$$= \\log_2(2)$$\n\n**Definition:** $\\log_2(2) = 1$ because $2^1 = 2$\n\n**Answer:** $1$ ✓\n\n**All logarithm rules:**\n1. Product: $\\log_b(xy) = \\log_b(x) + \\log_b(y)$\n2. Quotient: $\\log_b(\\frac{x}{y}) = \\log_b(x) - \\log_b(y)$\n3. Power: $\\log_b(x^n) = n\\log_b(x)$\n4. Base: $\\log_b(b) = 1$, $\\log_b(1) = 0$",
+          "insight": "Logarithm rules convert multiplication/division to addition/subtraction!"
+        },
+        "incorrect": {
+          "1": "Can't add arguments! Use $\\log(x) + \\log(y) = \\log(xy)$, not $\\log(x+y)$.",
+          "2": "While true, we should use logarithm properties to simplify!"
+        }
+      },
+      "resultState": {
+        "description": "Simplified to 1",
+        "equations": ["\\log_2(8) + \\log_2(4) - \\log_2(16) = 1"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Express $\\log_5(100)$ in terms of $\\log_{10}$."
+      },
+      "prompt": {
+        "question": "What is the change of base formula?",
+        "hint": "$\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}$ for any base $c$. So $\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\log_b(x) = \\frac{\\log_c(b)}{\\log_c(x)}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\log_b(x) = \\log_c(x) - \\log_c(b)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Change of base formula:**\n\n$$\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}$$\n\nfor any base $c > 0$, $c \\neq 1$.\n\n**Proof:** Let $y = \\log_b(x)$, so $b^y = x$.\n\nTake $\\log_c$ of both sides:\n$$\\log_c(b^y) = \\log_c(x)$$\n$$y \\cdot \\log_c(b) = \\log_c(x)$$\n$$y = \\frac{\\log_c(x)}{\\log_c(b)}$$\n\nSince $y = \\log_b(x)$:\n$$\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}$$ ✓\n\n**Common use:** Convert to base 10 or base $e$\n$$\\log_b(x) = \\frac{\\log(x)}{\\log(b)} = \\frac{\\ln(x)}{\\ln(b)}$$",
+          "insight": "Change of base lets us compute any logarithm using calculators!"
+        },
+        "incorrect": {
+          "1": "Flipped! Numerator is $\\log_c(x)$, denominator is $\\log_c(b)$.",
+          "2": "That's the quotient rule, not change of base!"
+        }
+      },
+      "resultState": {
+        "description": "Change of base formula",
+        "equations": ["\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Apply change of base to $\\log_5(100)$."
+      },
+      "prompt": {
+        "question": "What is $\\log_5(100)$ in terms of $\\log_{10}$?",
+        "hint": "$\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)} = \\frac{2}{\\log_{10}(5)}$ since $\\log_{10}(100) = 2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)} = \\frac{2}{\\log_{10}(5)}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\log_5(100) = \\frac{\\log_{10}(5)}{\\log_{10}(100)} = \\frac{\\log_{10}(5)}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\log_5(100) = \\log_{10}(100) - \\log_{10}(5) = 2 - \\log_{10}(5)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Apply change of base:**\n\n$$\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)}$$\n\n**Simplify numerator:**\n$$\\log_{10}(100) = \\log_{10}(10^2) = 2$$\n\n**Therefore:**\n$$\\log_5(100) = \\frac{2}{\\log_{10}(5)}$$\n\n**Alternative form using reciprocal:**\n$$= \\frac{2}{\\log_{10}(5)} = 2 \\cdot \\frac{1}{\\log_{10}(5)}$$\n\n**Reciprocal property:** $\\frac{1}{\\log_a(b)} = \\log_b(a)$\n\nSo:\n$$= 2 \\cdot \\log_5(10)$$\n\n**Numerical value:** Since $\\log_{10}(5) \\approx 0.699$:\n$$\\log_5(100) \\approx \\frac{2}{0.699} \\approx 2.861$$\n\n**Verification:** $5^{2.861} \\approx 100$ ✓",
+          "insight": "Change of base formula allows computing logs in any base!"
+        },
+        "incorrect": {
+          "1": "Fraction is upside down! It's $\\frac{\\log(x)}{\\log(b)}$, not $\\frac{\\log(b)}{\\log(x)}$.",
+          "2": "That's quotient rule! Change of base uses division, not subtraction."
+        }
+      },
+      "resultState": {
+        "description": "Final answer",
+        "equations": ["\\log_5(100) = \\frac{2}{\\log_{10}(5)}"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Product rule: $\\log_b(xy) = \\log_b(x) + \\log_b(y)$",
+      "Quotient rule: $\\log_b(\\frac{x}{y}) = \\log_b(x) - \\log_b(y)$",
+      "$\\log_2(8) + \\log_2(4) - \\log_2(16) = 1$",
+      "Change of base: $\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}$",
+      "$\\log_5(100) = \\frac{2}{\\log_{10}(5)}$",
+      "Logarithms convert multiplication to addition"
+    ],
+    "fullSolution": "**Part 1: Simplify $\\log_2(8) + \\log_2(4) - \\log_2(16)$**\n\n**Step 1: Product rule**\n$$\\log_2(8) + \\log_2(4) = \\log_2(8 \\cdot 4) = \\log_2(32)$$\n\n**Step 2: Quotient rule**\n$$\\log_2(32) - \\log_2(16) = \\log_2\\left(\\frac{32}{16}\\right) = \\log_2(2)$$\n\n**Step 3: Evaluate**\n$$\\log_2(2) = 1$$\n\n**Answer:** $\\boxed{1}$\n\n---\n\n**Part 2: Express $\\log_5(100)$ in terms of $\\log_{10}$**\n\n**Change of base formula:**\n$$\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)}$$\n\n**Simplify:**\n$$= \\frac{2}{\\log_{10}(5)}$$\n\n(since $\\log_{10}(100) = \\log_{10}(10^2) = 2$)\n\n**Answer:** $\\boxed{\\log_5(100) = \\frac{2}{\\log_{10}(5)}}$\n\n**Alternative form:** $2\\log_5(10)$",
+    "relatedProblems": [
+      "algebra-exponent-rules-1",
+      "algebra-exponential-equations-1"
+    ]
+  }
+}

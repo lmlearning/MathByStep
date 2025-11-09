@@ -7,6 +7,7 @@ import algebraPolynomialDivision1 from '@/public/problems/algebra-polynomial-div
 import algebraComplexNumbers1 from '@/public/problems/algebra-complex-numbers-1.json';
 import algebraMatrixMult1 from '@/public/problems/algebra-matrix-mult-1.json';
 import algebraPartialFractions1 from '@/public/problems/algebra-partial-fractions-1.json';
+import algebraLogarithmProperties1 from '@/public/problems/algebra-logarithm-properties-1.json';
 import algebraVietasFormulas1 from '@/public/problems/algebra-vietas-formulas-1.json';
 import calcDerivativeChainRule1 from '@/public/problems/calc-derivative-chain-rule-1.json';
 import calculusLimitEpsilonDelta1 from '@/public/problems/calculus-limit-epsilon-delta-1.json';
@@ -165,6 +166,7 @@ import discreteMathCombinatoricsPigeonhole1 from '@/public/problems/discrete-mat
 import discreteMathGeneratingFunctions1 from '@/public/problems/discrete-math-generating-functions-1.json';
 import discreteMathRamseyTheory1 from '@/public/problems/discrete-math-ramsey-theory-1.json';
 import discreteMathInclusionExclusion1 from '@/public/problems/discrete-math-inclusion-exclusion-1.json';
+import discreteMathBinomialTheorem1 from '@/public/problems/discrete-math-binomial-theorem-1.json';
 import graphTheoryEulersFormula1 from '@/public/problems/graph-theory-eulers-formula-1.json';
 import graphTheoryPlanarGraphs1 from '@/public/problems/graph-theory-planar-graphs-1.json';
 // Number Theory (additional)
@@ -193,6 +195,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'algebra-complex-numbers-1': algebraComplexNumbers1 as any as Problem,
   'algebra-matrix-mult-1': algebraMatrixMult1 as any as Problem,
   'algebra-partial-fractions-1': algebraPartialFractions1 as any as Problem,
+  'algebra-logarithm-properties-1': algebraLogarithmProperties1 as any as Problem,
   'algebra-vietas-formulas-1': algebraVietasFormulas1 as any as Problem,
   'calc-derivative-chain-rule-1': calcDerivativeChainRule1 as Problem,
   'calculus-limit-epsilon-delta-1': calculusLimitEpsilonDelta1 as Problem,
@@ -351,6 +354,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'discrete-math-generating-functions-1': discreteMathGeneratingFunctions1 as any as Problem,
   'discrete-math-ramsey-theory-1': discreteMathRamseyTheory1 as any as Problem,
   'discrete-math-inclusion-exclusion-1': discreteMathInclusionExclusion1 as any as Problem,
+  'discrete-math-binomial-theorem-1': discreteMathBinomialTheorem1 as any as Problem,
   'graph-theory-eulers-formula-1': graphTheoryEulersFormula1 as any as Problem,
   'graph-theory-planar-graphs-1': graphTheoryPlanarGraphs1 as any as Problem,
   // Number Theory (additional)

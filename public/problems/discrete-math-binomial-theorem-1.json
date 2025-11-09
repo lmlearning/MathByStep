@@ -1,0 +1,200 @@
+{
+  "id": "discrete-math-binomial-theorem-1",
+  "type": "problem",
+  "title": "Binomial Theorem and Expansions",
+  "topic": "Discrete Mathematics",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "discrete-math",
+    "binomial-theorem",
+    "binomial-coefficients",
+    "pascals-triangle",
+    "combinatorics"
+  ],
+  "statement": {
+    "text": "Use the Binomial Theorem to expand $(x + 2)^4$ and find the coefficient of $x^2$ in the expansion of $(2x - 1)^5$."
+  },
+  "objectives": [
+    "Understand binomial theorem",
+    "Compute binomial coefficients",
+    "Expand binomial expressions",
+    "Find specific term coefficients"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Expand $(x + 2)^4$ using binomial theorem."
+      },
+      "prompt": {
+        "question": "What is the Binomial Theorem for $(a + b)^n$?",
+        "hint": "$(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k$ where $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k$"
+        },
+        {
+          "id": "b",
+          "text": "$(a + b)^n = a^n + b^n$"
+        },
+        {
+          "id": "c",
+          "text": "$(a + b)^n = \\sum_{k=0}^{n} a^k b^{n-k}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Binomial Theorem:**\n\n$$(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k$$\n\nwhere $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$ is the binomial coefficient.\n\n**Expanded:**\n$$(a + b)^n = \\binom{n}{0}a^n + \\binom{n}{1}a^{n-1}b + \\binom{n}{2}a^{n-2}b^2 + \\cdots + \\binom{n}{n}b^n$$\n\n**For $(x + 2)^4$:**\n$$= \\binom{4}{0}x^4 + \\binom{4}{1}x^3(2) + \\binom{4}{2}x^2(2^2) + \\binom{4}{3}x(2^3) + \\binom{4}{4}(2^4)$$",
+          "insight": "Binomial coefficients are the weights in the expansion!"
+        },
+        "incorrect": {
+          "1": "That's only true for $n=1$! Need binomial coefficients.",
+          "2": "Missing coefficients! Need $\\binom{n}{k}$ factors."
+        }
+      },
+      "resultState": {
+        "description": "Binomial theorem stated"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Compute binomial coefficients for $n=4$."
+      },
+      "prompt": {
+        "question": "What is $(x + 2)^4$ expanded?",
+        "hint": "$= x^4 + 4x^3(2) + 6x^2(4) + 4x(8) + 16 = x^4 + 8x^3 + 24x^2 + 32x + 16$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^4 + 8x^3 + 24x^2 + 32x + 16$"
+        },
+        {
+          "id": "b",
+          "text": "$x^4 + 2^4$"
+        },
+        {
+          "id": "c",
+          "text": "$x^4 + 4x^3 + 6x^2 + 4x + 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **Expand $(x + 2)^4$:**\n\n**Binomial coefficients for $n=4$:** $\\binom{4}{0}=1, \\binom{4}{1}=4, \\binom{4}{2}=6, \\binom{4}{3}=4, \\binom{4}{4}=1$\n\n$$(x + 2)^4 = \\sum_{k=0}^{4} \\binom{4}{k} x^{4-k} 2^k$$\n\n**Term by term:**\n- $k=0$: $\\binom{4}{0}x^4(2^0) = 1 \\cdot x^4 \\cdot 1 = x^4$\n- $k=1$: $\\binom{4}{1}x^3(2^1) = 4 \\cdot x^3 \\cdot 2 = 8x^3$\n- $k=2$: $\\binom{4}{2}x^2(2^2) = 6 \\cdot x^2 \\cdot 4 = 24x^2$\n- $k=3$: $\\binom{4}{3}x^1(2^3) = 4 \\cdot x \\cdot 8 = 32x$\n- $k=4$: $\\binom{4}{4}x^0(2^4) = 1 \\cdot 1 \\cdot 16 = 16$\n\n**Sum:**\n$$(x + 2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16$$ ✓",
+          "insight": "Each term combines coefficient, power of $x$, and power of $2$!"
+        },
+        "incorrect": {
+          "1": "Can't just add! Need to use binomial theorem for the full expansion.",
+          "2": "That's $(x+1)^4$! We have $(x+2)^4$, so multiply by powers of 2."
+        }
+      },
+      "resultState": {
+        "description": "Expansion complete",
+        "equations": ["(x+2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16"]
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find coefficient of $x^2$ in $(2x - 1)^5$."
+      },
+      "prompt": {
+        "question": "Which term in $(2x - 1)^5$ contains $x^2$?",
+        "hint": "General term: $\\binom{5}{k}(2x)^{5-k}(-1)^k$. For $x^2$: need $5-k=2$, so $k=3$. Term: $\\binom{5}{3}(2x)^2(-1)^3 = 10(4)(-1)x^2 = -40x^2$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Coefficient is $-40$"
+        },
+        {
+          "id": "b",
+          "text": "Coefficient is $40$"
+        },
+        {
+          "id": "c",
+          "text": "Coefficient is $-10$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Find coefficient of $x^2$ in $(2x - 1)^5$:**\n\n**General term:**\n$$\\binom{5}{k}(2x)^{5-k}(-1)^k$$\n\n**For $x^2$ term:** Need power of $x$ to be 2:\n$$(2x)^{5-k} \\text{ has } x^{5-k}$$\n\nSo $5 - k = 2 \\implies k = 3$\n\n**The $x^2$ term:**\n$$\\binom{5}{3}(2x)^{2}(-1)^3$$\n\n**Evaluate each part:**\n- $\\binom{5}{3} = \\frac{5!}{3!2!} = \\frac{5 \\cdot 4}{2} = 10$\n- $(2x)^2 = 4x^2$\n- $(-1)^3 = -1$\n\n**Multiply:**\n$$10 \\cdot 4x^2 \\cdot (-1) = -40x^2$$\n\n**Coefficient:** $-40$ ✓",
+          "insight": "To find specific term, identify which $k$ gives desired power!"
+        },
+        "incorrect": {
+          "1": "Don't forget the negative sign! $(-1)^3 = -1$, so coefficient is $-40$.",
+          "2": "Missing factor of 4! $(2x)^2 = 4x^2$, so coefficient is $10 \\cdot 4 \\cdot (-1) = -40$."
+        }
+      },
+      "resultState": {
+        "description": "Coefficient found",
+        "equations": ["\\text{Coefficient of } x^2 \\text{ in } (2x-1)^5 = -40"]
+      }
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {
+        "description": "Verify understanding."
+      },
+      "prompt": {
+        "question": "What is $\\sum_{k=0}^{n} \\binom{n}{k}$ equal to?",
+        "hint": "Set $a=b=1$ in $(a+b)^n = \\sum \\binom{n}{k}a^{n-k}b^k$ to get $2^n = \\sum \\binom{n}{k}$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^n$"
+        },
+        {
+          "id": "b",
+          "text": "$n!$"
+        },
+        {
+          "id": "c",
+          "text": "$n^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Sum of binomial coefficients:**\n\n$$\\sum_{k=0}^{n} \\binom{n}{k} = 2^n$$\n\n**Proof:** Use binomial theorem with $a = b = 1$:\n$$(1 + 1)^n = \\sum_{k=0}^{n} \\binom{n}{k} 1^{n-k} 1^k$$\n$$2^n = \\sum_{k=0}^{n} \\binom{n}{k}$$ ✓\n\n**Example:** $n = 4$\n$$\\binom{4}{0} + \\binom{4}{1} + \\binom{4}{2} + \\binom{4}{3} + \\binom{4}{4}$$\n$$= 1 + 4 + 6 + 4 + 1 = 16 = 2^4$$ ✓\n\n**Interpretation:** The sum counts all subsets of an $n$-element set (each element either in or out: $2^n$ choices).",
+          "insight": "Binomial coefficients sum to $2^n$ - count all subsets!"
+        },
+        "incorrect": {
+          "1": "$n!$ is much larger! Try $n=4$: coefficients sum to 16, but $4!=24$.",
+          "2": "$n^2$ doesn't match! For $n=4$, sum is 16 but $4^2=16$ by coincidence only."
+        }
+      },
+      "resultState": {
+        "description": "Identity verified",
+        "equations": ["\\sum_{k=0}^{n} \\binom{n}{k} = 2^n"]
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Binomial Theorem: $(a+b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k$",
+      "$(x+2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16$",
+      "General term in $(2x-1)^5$: $\\binom{5}{k}(2x)^{5-k}(-1)^k$",
+      "Coefficient of $x^2$ in $(2x-1)^5$: $-40$",
+      "Sum of binomial coefficients: $\\sum \\binom{n}{k} = 2^n$",
+      "Binomial coefficients appear in Pascal's triangle"
+    ],
+    "fullSolution": "**Part 1: Expand $(x+2)^4$**\n\nUsing $(a+b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k$:\n\n$$(x+2)^4 = \\sum_{k=0}^{4} \\binom{4}{k} x^{4-k} 2^k$$\n$$= \\binom{4}{0}x^4 + \\binom{4}{1}x^3(2) + \\binom{4}{2}x^2(4) + \\binom{4}{3}x(8) + \\binom{4}{4}(16)$$\n$$= x^4 + 4(2x^3) + 6(4x^2) + 4(8x) + 16$$\n$$= \\boxed{x^4 + 8x^3 + 24x^2 + 32x + 16}$$\n\n---\n\n**Part 2: Coefficient of $x^2$ in $(2x-1)^5$**\n\nGeneral term: $\\binom{5}{k}(2x)^{5-k}(-1)^k$\n\nFor $x^2$: need $5-k=2$, so $k=3$\n\n$$\\binom{5}{3}(2x)^2(-1)^3 = 10 \\cdot 4x^2 \\cdot (-1) = -40x^2$$\n\n**Coefficient:** $\\boxed{-40}$",
+    "relatedProblems": [
+      "discrete-math-combinatorics-1",
+      "algebra-polynomial-expansion-1"
+    ]
+  }
+}
