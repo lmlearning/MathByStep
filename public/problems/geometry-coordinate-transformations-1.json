@@ -1,0 +1,130 @@
+{
+  "id": "geometry-coordinate-transformations-1",
+  "type": "problem",
+  "title": "Coordinate Transformations and Rotations",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": ["geometry", "transformations", "rotations", "matrices", "coordinates"],
+  "statement": {
+    "text": "Find the coordinates of point $P(3, 4)$ after rotating $90°$ counterclockwise about the origin. Then find the rotation matrix for a $45°$ counterclockwise rotation."
+  },
+  "objectives": ["Understand rotation transformations", "Apply rotation formulas", "Construct rotation matrices", "Verify results"],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {"description": "Point $P(3, 4)$, rotate $90°$ counterclockwise."},
+      "prompt": {
+        "question": "What is the rotation formula for $90°$ counterclockwise?",
+        "hint": "$(x, y) \\to (-y, x)$ for $90°$ counterclockwise rotation."
+      },
+      "options": [
+        {"id": "a", "text": "$(x, y) \\to (-y, x)$"},
+        {"id": "b", "text": "$(x, y) \\to (y, -x)$"},
+        {"id": "c", "text": "$(x, y) \\to (-x, -y)$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! **$90°$ counterclockwise rotation:**\n\n$$(x, y) \\to (-y, x)$$\n\n**Why?** Consider unit vectors:\n- $(1, 0) \\to (0, 1)$ (positive $x$-axis to positive $y$-axis)\n- $(0, 1) \\to (-1, 0)$ (positive $y$-axis to negative $x$-axis)\n\n**General pattern:** Swap coordinates and negate the first.\n\n**Special rotations:**\n- $90°$ CCW: $(x, y) \\to (-y, x)$\n- $180°$: $(x, y) \\to (-x, -y)$\n- $270°$ CCW (=$90°$ CW): $(x, y) \\to (y, -x)$",
+          "insight": "90° rotation swaps coordinates and flips one!"
+        },
+        "incorrect": {
+          "1": "That's $90°$ clockwise! For counterclockwise, use $(-y, x)$.",
+          "2": "That's $180°$ rotation! For $90°$, swap and negate one coordinate."
+        }
+      },
+      "resultState": {"description": "Rotation formula", "equations": ["(x,y) \\to (-y, x)"]}
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {"description": "Apply to $P(3, 4)$."},
+      "prompt": {
+        "question": "What are the coordinates of $P'$ after rotation?",
+        "hint": "$P(3, 4) \\to P'(-4, 3)$ using $(x, y) \\to (-y, x)$."
+      },
+      "options": [
+        {"id": "a", "text": "$P'(-4, 3)$"},
+        {"id": "b", "text": "$P'(4, -3)$"},
+        {"id": "c", "text": "$P'(-3, -4)$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Apply rotation:**\n\n$$P(3, 4) \\to P'(-y, x) = P'(-4, 3)$$\n\n**Verification:**\n- Distance from origin: $\\sqrt{3^2 + 4^2} = 5$\n- After rotation: $\\sqrt{(-4)^2 + 3^2} = 5$ ✓ (preserved)\n- Original angle: $\\tan^{-1}(4/3) \\approx 53.1°$\n- New angle: $\\tan^{-1}(3/(-4)) + 180° \\approx 143.1°$\n- Difference: $143.1° - 53.1° = 90°$ ✓\n\n**Visual:** Point moved from first quadrant to second quadrant.",
+          "insight": "Rotations preserve distance from origin!"
+        },
+        "incorrect": {
+          "1": "That's $90°$ clockwise! For counterclockwise, negate $y$ not $x$.",
+          "2": "That's a $180°$ rotation! For $90°$, use $(-y, x)$."
+        }
+      },
+      "resultState": {"description": "Rotated point", "equations": ["P'(-4, 3)"]}
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {"description": "Find $45°$ rotation matrix."},
+      "prompt": {
+        "question": "What is the rotation matrix $R_{45°}$ for $45°$ counterclockwise?",
+        "hint": "$R_\\theta = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$. For $\\theta = 45°$: $\\cos 45° = \\sin 45° = \\frac{\\sqrt{2}}{2}$."
+      },
+      "options": [
+        {"id": "a", "text": "$\\begin{pmatrix} \\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\end{pmatrix}$"},
+        {"id": "b", "text": "$\\begin{pmatrix} 1 & -1 \\\\ 1 & 1 \\end{pmatrix}$"},
+        {"id": "c", "text": "$\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! **Rotation matrix for angle $\\theta$:**\n\n$$R_\\theta = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$$\n\n**For $\\theta = 45°$:**\n- $\\cos 45° = \\frac{\\sqrt{2}}{2}$\n- $\\sin 45° = \\frac{\\sqrt{2}}{2}$\n\n$$R_{45°} = \\begin{pmatrix} \\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\end{pmatrix}$$\n\n**Application:** To rotate vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = R_{45°} \\begin{pmatrix} x \\\\ y \\end{pmatrix}$$\n\n**Example:** $(1, 0) \\to (\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2})$ ✓",
+          "insight": "Rotation matrices have orthonormal columns and determinant 1!"
+        },
+        "incorrect": {
+          "1": "Missing $\\frac{\\sqrt{2}}{2}$ factors! Use $\\cos 45° = \\frac{\\sqrt{2}}{2}$.",
+          "2": "That's for $90°$ rotation! For $45°$, use sine and cosine values."
+        }
+      },
+      "resultState": {"description": "Rotation matrix", "equations": ["R_{45°} = \\begin{pmatrix} \\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\end{pmatrix}"]}
+    },
+    {
+      "id": "step-4",
+      "order": 4,
+      "currentState": {"description": "Verify properties."},
+      "prompt": {
+        "question": "What is $\\det(R_{45°})$?",
+        "hint": "$\\det(R) = \\cos^2\\theta + \\sin^2\\theta = 1$ for any rotation matrix."
+      },
+      "options": [
+        {"id": "a", "text": "$\\det(R_{45°}) = 1$"},
+        {"id": "b", "text": "$\\det(R_{45°}) = \\frac{\\sqrt{2}}{2}$"},
+        {"id": "c", "text": "$\\det(R_{45°}) = 0$"}
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! **Determinant of rotation matrix:**\n\n$$\\det(R_\\theta) = \\begin{vmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{vmatrix}$$\n$$= \\cos\\theta \\cdot \\cos\\theta - (-\\sin\\theta) \\cdot \\sin\\theta$$\n$$= \\cos^2\\theta + \\sin^2\\theta$$\n$$= 1$$\n\n**For $\\theta = 45°$:**\n$$\\det(R_{45°}) = \\left(\\frac{\\sqrt{2}}{2}\\right)^2 + \\left(\\frac{\\sqrt{2}}{2}\\right)^2 = \\frac{1}{2} + \\frac{1}{2} = 1$$ ✓\n\n**Properties of rotation matrices:**\n1. $\\det(R) = 1$ (preserves area/orientation)\n2. $R^T R = I$ (orthogonal matrix)\n3. $R^{-1} = R^T$ (inverse is transpose)\n4. Columns are orthonormal vectors",
+          "insight": "Rotation matrices have determinant 1 - they preserve area and orientation!"
+        },
+        "incorrect": {
+          "1": "Check the formula! For rotation matrices, $\\det = \\cos^2\\theta + \\sin^2\\theta = 1$.",
+          "2": "Determinant 0 means singular! Rotation matrices are always invertible."
+        }
+      },
+      "resultState": {"description": "Properties verified", "equations": ["\\det(R_{45°}) = 1"]}
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$90°$ CCW rotation: $(x, y) \\to (-y, x)$",
+      "$P(3, 4) \\to P'(-4, 3)$ after $90°$ rotation",
+      "General rotation matrix: $R_\\theta = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$",
+      "$45°$ rotation: $R_{45°} = \\begin{pmatrix} \\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\end{pmatrix}$",
+      "Rotation matrices have $\\det = 1$ and preserve distances"
+    ],
+    "fullSolution": "**Part 1: Rotate $P(3,4)$ by $90°$ CCW**\n\nFormula: $(x, y) \\to (-y, x)$\n\n$$P(3, 4) \\to P'(-4, 3)$$\n\n**Answer:** $\\boxed{P'(-4, 3)}$\n\n---\n\n**Part 2: $45°$ Rotation Matrix**\n\n$$R_{45°} = \\begin{pmatrix} \\cos 45° & -\\sin 45° \\\\ \\sin 45° & \\cos 45° \\end{pmatrix}$$\n$$= \\begin{pmatrix} \\frac{\\sqrt{2}}{2} & -\\frac{\\sqrt{2}}{2} \\\\ \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{2}}{2} \\end{pmatrix}$$\n\n**Answer:** $\\boxed{R_{45°} = \\frac{1}{\\sqrt{2}}\\begin{pmatrix} 1 & -1 \\\\ 1 & 1 \\end{pmatrix}}$",
+    "relatedProblems": ["geometry-similar-triangles-1", "linear-algebra-linear-transformation-1"]
+  }
+}

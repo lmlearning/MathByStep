@@ -24,7 +24,9 @@ import geometryCoordinateGeometry1 from '@/public/problems/geometry-coordinate-g
 import geometryPowerOfAPoint1 from '@/public/problems/geometry-power-of-a-point-1.json';
 import geometryTriangleCenters1 from '@/public/problems/geometry-triangle-centers-1.json';
 import differentialGeometryCurvature1 from '@/public/problems/differential-geometry-curvature-1.json';
+import geometryCoordinateTransformations1 from '@/public/problems/geometry-coordinate-transformations-1.json';
 import numberTheoryDivisibility1 from '@/public/problems/number-theory-divisibility-1.json';
+import numberTheoryDivisibilityRules1 from '@/public/problems/number-theory-divisibility-rules-1.json';
 import numberTheoryGcd1 from '@/public/problems/number-theory-gcd-1.json';
 import numberTheoryInfinitelyManyPrimes1 from '@/public/problems/number-theory-infinitely-many-primes-1.json';
 import numberTheoryModularArithmetic1 from '@/public/problems/number-theory-modular-arithmetic-1.json';
@@ -95,6 +97,7 @@ import calculusRelatedRates1 from '@/public/problems/calculus-related-rates-1.js
 import calculusTrigSubstitution1 from '@/public/problems/calculus-trig-substitution-1.json';
 import calculusAreaBetweenCurves1 from '@/public/problems/calculus-area-between-curves-1.json';
 import calculusArcLength1 from '@/public/problems/calculus-arc-length-1.json';
+import calculusRiemannSums1 from '@/public/problems/calculus-riemann-sums-1.json';
 import calculusPowerSeries1 from '@/public/problems/calculus-power-series-1.json';
 import calculusTaylorSeries1 from '@/public/problems/calculus-taylor-series-1.json';
 import calculusSeriesComparisonTest1 from '@/public/problems/calculus-series-comparison-test-1.json';
@@ -212,7 +215,9 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'geometry-power-of-a-point-1': geometryPowerOfAPoint1 as any as Problem,
   'geometry-triangle-centers-1': geometryTriangleCenters1 as any as Problem,
   'differential-geometry-curvature-1': differentialGeometryCurvature1 as any as Problem,
+  'geometry-coordinate-transformations-1': geometryCoordinateTransformations1 as any as Problem,
   'number-theory-divisibility-1': numberTheoryDivisibility1 as Problem,
+  'number-theory-divisibility-rules-1': numberTheoryDivisibilityRules1 as any as Problem,
   'number-theory-gcd-1': numberTheoryGcd1 as Problem,
   'number-theory-infinitely-many-primes-1': numberTheoryInfinitelyManyPrimes1 as any as Problem,
   'number-theory-modular-arithmetic-1': numberTheoryModularArithmetic1 as any as Problem,
@@ -283,6 +288,7 @@ const PROBLEM_DB: { [key: string]: Problem } = {
   'calculus-trig-substitution-1': calculusTrigSubstitution1 as any as Problem,
   'calculus-area-between-curves-1': calculusAreaBetweenCurves1 as any as Problem,
   'calculus-arc-length-1': calculusArcLength1 as any as Problem,
+  'calculus-riemann-sums-1': calculusRiemannSums1 as any as Problem,
   'calculus-power-series-1': calculusPowerSeries1 as any as Problem,
   'calculus-taylor-series-1': calculusTaylorSeries1 as any as Problem,
   'calculus-series-comparison-test-1': calculusSeriesComparisonTest1 as any as Problem,
