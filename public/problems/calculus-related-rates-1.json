@@ -30,7 +30,7 @@
       },
       "prompt": {
         "question": "What is the relationship between area $A$ and radius $r$ for a circle?",
-        "hint": "$A = \\pi r^2$ is the formula for the area of a circle."
+        "hint": "What formula relates the area of a circle to its radius?"
       },
       "options": [
         {
@@ -59,7 +59,9 @@
       },
       "resultState": {
         "description": "Area formula",
-        "equations": ["A = \\pi r^2"]
+        "equations": [
+          "A = \\pi r^2"
+        ]
       }
     },
     {
@@ -89,7 +91,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Differentiate with respect to time:**\n\n$$A = \\pi r^2$$\n\n**Apply $\\frac{d}{dt}$ to both sides:**\n$$\\frac{dA}{dt} = \\frac{d}{dt}(\\pi r^2)$$\n\n**Chain rule:** $\\frac{d}{dt}(r^2) = 2r \\frac{dr}{dt}$\n\n$$\\frac{dA}{dt} = \\pi \\cdot 2r \\cdot \\frac{dr}{dt}$$\n$$= 2\\pi r \\frac{dr}{dt}$$\n\n**Interpretation:**\n- $\\frac{dA}{dt}$ = rate of change of area (m²/min)\n- $\\frac{dr}{dt}$ = rate of change of radius (m/min)\n- $2\\pi r$ = circumference (the \"edge\" where area grows)\n\n**Geometric insight:** Area increases at the circumference, so rate depends on current size!",
+          "explanation": "Perfect! **Differentiate with respect to time:**\n\n$$A = \\pi r^2$$\n\n**Apply $\\frac{d}{dt}$ to both sides:**\n$$\\frac{dA}{dt} = \\frac{d}{dt}(\\pi r^2)$$\n\n**Chain rule:** $\\frac{d}{dt}(r^2) = 2r \\frac{dr}{dt}$\n\n$$\\frac{dA}{dt} = \\pi \\cdot 2r \\cdot \\frac{dr}{dt}$$\n$$= 2\\pi r \\frac{dr}{dt}$$\n\n**Interpretation:**\n- $\\frac{dA}{dt}$ = rate of change of area (m\u00b2/min)\n- $\\frac{dr}{dt}$ = rate of change of radius (m/min)\n- $2\\pi r$ = circumference (the \"edge\" where area grows)\n\n**Geometric insight:** Area increases at the circumference, so rate depends on current size!",
           "insight": "Chain rule connects rates of related changing quantities!"
         },
         "incorrect": {
@@ -99,7 +101,9 @@
       },
       "resultState": {
         "description": "Rate equation",
-        "equations": ["\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}"]
+        "equations": [
+          "\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}"
+        ]
       }
     },
     {
@@ -110,20 +114,20 @@
       },
       "prompt": {
         "question": "Given $\\frac{dr}{dt} = 2$ m/min and $r = 10$ m, what is $\\frac{dA}{dt}$?",
-        "hint": "$\\frac{dA}{dt} = 2\\pi(10)(2) = 40\\pi$ m²/min $\\approx 125.66$ m²/min."
+        "hint": "$\\frac{dA}{dt} = 2\\pi(10)(2) = 40\\pi$ m\u00b2/min $\\approx 125.66$ m\u00b2/min."
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\frac{dA}{dt} = 40\\pi$ m²/min"
+          "text": "$\\frac{dA}{dt} = 40\\pi$ m\u00b2/min"
         },
         {
           "id": "b",
-          "text": "$\\frac{dA}{dt} = 20\\pi$ m²/min"
+          "text": "$\\frac{dA}{dt} = 20\\pi$ m\u00b2/min"
         },
         {
           "id": "c",
-          "text": "$\\frac{dA}{dt} = 4\\pi$ m²/min"
+          "text": "$\\frac{dA}{dt} = 4\\pi$ m\u00b2/min"
         }
       ],
       "correctOptionIndex": 0,
@@ -139,7 +143,9 @@
       },
       "resultState": {
         "description": "Final answer",
-        "equations": ["\\frac{dA}{dt} = 40\\pi \\text{ m}^2\\text{/min}"]
+        "equations": [
+          "\\frac{dA}{dt} = 40\\pi \\text{ m}^2\\text{/min}"
+        ]
       }
     },
     {
@@ -150,26 +156,26 @@
       },
       "prompt": {
         "question": "If the radius were 20 meters instead, what would $\\frac{dA}{dt}$ be?",
-        "hint": "$\\frac{dA}{dt} = 2\\pi(20)(2) = 80\\pi$ m²/min - twice as fast because radius doubled!"
+        "hint": "$\\frac{dA}{dt} = 2\\pi(20)(2) = 80\\pi$ m\u00b2/min - twice as fast because radius doubled!"
       },
       "options": [
         {
           "id": "a",
-          "text": "$80\\pi$ m²/min (twice as fast)"
+          "text": "$80\\pi$ m\u00b2/min (twice as fast)"
         },
         {
           "id": "b",
-          "text": "$40\\pi$ m²/min (same)"
+          "text": "$40\\pi$ m\u00b2/min (same)"
         },
         {
           "id": "c",
-          "text": "$160\\pi$ m²/min (four times as fast)"
+          "text": "$160\\pi$ m\u00b2/min (four times as fast)"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **At $r = 20$ m:**\n\n$$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$$\n$$= 2\\pi(20)(2)$$\n$$= 80\\pi \\text{ m}^2\\text{/min}$$\n\n**Comparison:**\n- At $r = 10$ m: $\\frac{dA}{dt} = 40\\pi$ m²/min\n- At $r = 20$ m: $\\frac{dA}{dt} = 80\\pi$ m²/min\n\n**Pattern:** When radius doubles, area growth rate also doubles (linear relationship).\n\n**General formula:** $\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$\n\nSo if $\\frac{dr}{dt}$ is constant, then $\\frac{dA}{dt}$ is proportional to $r$:\n$$\\frac{dA}{dt} \\propto r$$\n\n**Key insight:** Even with constant radius growth rate, the area grows increasingly fast as the circle expands!",
+          "explanation": "Correct! **At $r = 20$ m:**\n\n$$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$$\n$$= 2\\pi(20)(2)$$\n$$= 80\\pi \\text{ m}^2\\text{/min}$$\n\n**Comparison:**\n- At $r = 10$ m: $\\frac{dA}{dt} = 40\\pi$ m\u00b2/min\n- At $r = 20$ m: $\\frac{dA}{dt} = 80\\pi$ m\u00b2/min\n\n**Pattern:** When radius doubles, area growth rate also doubles (linear relationship).\n\n**General formula:** $\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$\n\nSo if $\\frac{dr}{dt}$ is constant, then $\\frac{dA}{dt}$ is proportional to $r$:\n$$\\frac{dA}{dt} \\propto r$$\n\n**Key insight:** Even with constant radius growth rate, the area grows increasingly fast as the circle expands!",
           "insight": "Area growth rate is proportional to current radius!"
         },
         "incorrect": {
@@ -179,7 +185,9 @@
       },
       "resultState": {
         "description": "Pattern understood",
-        "equations": ["\\frac{dA}{dt} \\propto r \\text{ when } \\frac{dr}{dt} \\text{ constant}"]
+        "equations": [
+          "\\frac{dA}{dt} \\propto r \\text{ when } \\frac{dr}{dt} \\text{ constant}"
+        ]
       }
     }
   ],
@@ -189,7 +197,7 @@
       "Area formula: $A = \\pi r^2$",
       "Differentiate with respect to time: $\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$",
       "Given: $\\frac{dr}{dt} = 2$ m/min, $r = 10$ m",
-      "Answer: $\\frac{dA}{dt} = 40\\pi \\approx 125.66$ m²/min",
+      "Answer: $\\frac{dA}{dt} = 40\\pi \\approx 125.66$ m\u00b2/min",
       "Area grows faster as circle expands (even with constant $\\frac{dr}{dt}$)"
     ],
     "fullSolution": "**Problem:** Circular oil spill with radius increasing at 2 m/min. Find area growth rate when $r = 10$ m.\n\n---\n\n**Step 1: Relationship**\n\n$$A = \\pi r^2$$\n\n---\n\n**Step 2: Differentiate with respect to time**\n\n$$\\frac{dA}{dt} = \\frac{d}{dt}(\\pi r^2)$$\n\n**Chain rule:**\n$$= \\pi \\cdot 2r \\cdot \\frac{dr}{dt}$$\n$$= 2\\pi r \\frac{dr}{dt}$$\n\n---\n\n**Step 3: Substitute values**\n\n**Given:**\n- $r = 10$ m\n- $\\frac{dr}{dt} = 2$ m/min\n\n**Calculate:**\n$$\\frac{dA}{dt} = 2\\pi(10)(2)$$\n$$= 40\\pi \\text{ m}^2\\text{/min}$$\n$$\\approx 125.66 \\text{ m}^2\\text{/min}$$\n\n---\n\n**Answer:** $\\boxed{\\frac{dA}{dt} = 40\\pi \\text{ m}^2\\text{/min}}$\n\nThe area is increasing at approximately **125.66 square meters per minute**.",

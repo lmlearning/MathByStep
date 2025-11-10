@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "What is the partial fraction form?",
-        "hint": "$\\frac{1}{z(z-1)} = \\frac{A}{z} + \\frac{B}{z-1}$. Solve: $1 = A(z-1) + Bz$. Set $z=0$: $A = -1$. Set $z=1$: $B = 1$. Thus $\\frac{1}{z(z-1)} = -\\frac{1}{z} + \\frac{1}{z-1}$."
+        "hint": "Use partial fractions to decompose $\\frac{1}{z(z-1)}$ into simpler terms."
       },
       "options": [
         {

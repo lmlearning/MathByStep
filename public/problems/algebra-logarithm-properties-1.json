@@ -30,7 +30,7 @@
       },
       "prompt": {
         "question": "What is the product rule for logarithms?",
-        "hint": "$\\log_b(x) + \\log_b(y) = \\log_b(xy)$ - logarithm of a product equals sum of logarithms."
+        "hint": "When adding logarithms with the same base, think about what happens to the arguments inside the log."
       },
       "options": [
         {
@@ -110,7 +110,7 @@
       },
       "prompt": {
         "question": "What is the change of base formula?",
-        "hint": "$\\log_b(x) = \\frac{\\log_c(x)}{\\log_c(b)}$ for any base $c$. So $\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)}$."
+        "hint": "To convert a logarithm to a different base, use a fraction with logs of the new base in both numerator and denominator."
       },
       "options": [
         {
@@ -150,7 +150,7 @@
       },
       "prompt": {
         "question": "What is $\\log_5(100)$ in terms of $\\log_{10}$?",
-        "hint": "$\\log_5(100) = \\frac{\\log_{10}(100)}{\\log_{10}(5)} = \\frac{2}{\\log_{10}(5)}$ since $\\log_{10}(100) = 2$."
+        "hint": "Apply the change of base formula with $c = 10$. Remember that $\\log_{10}(100) = 2$."
       },
       "options": [
         {

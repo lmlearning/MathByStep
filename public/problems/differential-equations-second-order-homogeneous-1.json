@@ -88,12 +88,12 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $(r-2)(r-3) = 0$ gives $r = 2$ and $r = 3$. We can verify: $2 + 3 = 5$ (sum) and $2 \\times 3 = 6$ (product) ✓",
+          "explanation": "Perfect! $(r-2)(r-3) = 0$ gives $r = 2$ and $r = 3$. We can verify: $2 + 3 = 5$ (sum) and $2 \\times 3 = 6$ (product) \u2713",
           "insight": "These are real and distinct roots, giving us two exponential solutions."
         },
         "incorrect": {
           "1": "Check the factorization: $(r-2)(r-3) = r^2 - 5r + 6$, giving positive roots 2 and 3.",
-          "2": "$1 + 6 = 7 \\neq 5$ and $1 \\times 6 = 6$ ✓ but the sum is wrong. The roots are 2 and 3."
+          "2": "$1 + 6 = 7 \\neq 5$ and $1 \\times 6 = 6$ \u2713 but the sum is wrong. The roots are 2 and 3."
         }
       },
       "resultState": {
@@ -109,7 +109,7 @@
       },
       "prompt": {
         "question": "What is the general solution?",
-        "hint": "$y = c_1e^{2x} + c_2e^{3x}$."
+        "hint": "Combine the two fundamental solutions using arbitrary constants."
       },
       "options": [
         {
@@ -168,11 +168,11 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! For $y = c_1e^{2x}$: $y'' - 5y' + 6y = (4 - 10 + 6)c_1e^{2x} = 0$ ✓. Similarly for $c_2e^{3x}$: $(9 - 15 + 6) = 0$ ✓.",
+          "explanation": "Perfect! For $y = c_1e^{2x}$: $y'' - 5y' + 6y = (4 - 10 + 6)c_1e^{2x} = 0$ \u2713. Similarly for $c_2e^{3x}$: $(9 - 15 + 6) = 0$ \u2713.",
           "insight": "Each exponential solution independently satisfies the differential equation."
         },
         "incorrect": {
-          "1": "It does satisfy! Check: for $e^{2x}$: $4 - 5(2) + 6 = 4 - 10 + 6 = 0$ ✓",
+          "1": "It does satisfy! Check: for $e^{2x}$: $4 - 5(2) + 6 = 4 - 10 + 6 = 0$ \u2713",
           "2": "We can verify the general solution works for any $c_1, c_2$ without specific initial conditions."
         }
       },
@@ -190,7 +190,7 @@
       "For complex roots $\\alpha \\pm i\\beta$: $y = e^{\\alpha x}(c_1\\cos\\beta x + c_2\\sin\\beta x)$",
       "Solution: $y = c_1e^{2x} + c_2e^{3x}$"
     ],
-    "fullSolution": "**Solve:** $y'' - 5y' + 6y = 0$\\n\\n**Characteristic equation:**\\nAssume $y = e^{rx}$:\\n$$r^2e^{rx} - 5re^{rx} + 6e^{rx} = 0$$\\n$$r^2 - 5r + 6 = 0$$\\n\\n**Factor:**\\n$$(r-2)(r-3) = 0$$\\n$$r = 2 \\text{ or } r = 3$$\\n\\n**General solution** (distinct real roots):\\n$$y = c_1e^{2x} + c_2e^{3x}$$\\n\\n**Verification:**\\n$y' = 2c_1e^{2x} + 3c_2e^{3x}$\\n$y'' = 4c_1e^{2x} + 9c_2e^{3x}$\\n\\n$y'' - 5y' + 6y = (4-10+6)c_1e^{2x} + (9-15+6)c_2e^{3x} = 0$ ✓",
+    "fullSolution": "**Solve:** $y'' - 5y' + 6y = 0$\\n\\n**Characteristic equation:**\\nAssume $y = e^{rx}$:\\n$$r^2e^{rx} - 5re^{rx} + 6e^{rx} = 0$$\\n$$r^2 - 5r + 6 = 0$$\\n\\n**Factor:**\\n$$(r-2)(r-3) = 0$$\\n$$r = 2 \\text{ or } r = 3$$\\n\\n**General solution** (distinct real roots):\\n$$y = c_1e^{2x} + c_2e^{3x}$$\\n\\n**Verification:**\\n$y' = 2c_1e^{2x} + 3c_2e^{3x}$\\n$y'' = 4c_1e^{2x} + 9c_2e^{3x}$\\n\\n$y'' - 5y' + 6y = (4-10+6)c_1e^{2x} + (9-15+6)c_2e^{3x} = 0$ \u2713",
     "relatedProblems": [
       "differential-equations-separable-1",
       "differential-equations-first-order-linear-1"

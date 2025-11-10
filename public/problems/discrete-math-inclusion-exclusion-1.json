@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "What is the inclusion-exclusion principle for three sets $A$, $B$, $C$?",
-        "hint": "$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |A \\cap C| - |B \\cap C| + |A \\cap B \\cap C|$"
+        "hint": "The inclusion-exclusion principle: add individual sets, subtract pairwise intersections, add back triple intersection."
       },
       "options": [
         {
@@ -96,7 +96,9 @@
       },
       "resultState": {
         "description": "Individual set sizes found",
-        "equations": ["|A| = 50, |B| = 33, |C| = 20"]
+        "equations": [
+          "|A| = 50, |B| = 33, |C| = 20"
+        ]
       }
     },
     {
@@ -136,7 +138,9 @@
       },
       "resultState": {
         "description": "Pairwise intersections found",
-        "equations": ["|A \\cap B| = 16, |A \\cap C| = 10, |B \\cap C| = 6"]
+        "equations": [
+          "|A \\cap B| = 16, |A \\cap C| = 10, |B \\cap C| = 6"
+        ]
       }
     },
     {
@@ -180,7 +184,9 @@
       },
       "resultState": {
         "description": "Answer: 74 integers divisible by 2, 3, or 5",
-        "equations": ["|A \\cup B \\cup C| = 74"]
+        "equations": [
+          "|A \\cup B \\cup C| = 74"
+        ]
       }
     }
   ],

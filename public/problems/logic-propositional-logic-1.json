@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "How many rows in the truth table?",
-        "hint": "3 variables → $2^3 = 8$ rows."
+        "hint": "3 variables \u2192 $2^3 = 8$ rows."
       },
       "options": [
         {
@@ -67,7 +67,7 @@
       },
       "prompt": {
         "question": "When is $P \\to Q$ false?",
-        "hint": "$P \\to Q$ is false only when $P=T$ and $Q=F$. Otherwise true."
+        "hint": "An implication is only false in one specific case. When is 'if P then Q' a lie?"
       },
       "options": [
         {
@@ -95,7 +95,7 @@
         }
       },
       "resultState": {
-        "description": "Evaluate P → Q and Q → R"
+        "description": "Evaluate P \u2192 Q and Q \u2192 R"
       }
     },
     {
@@ -164,7 +164,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! Example: $P=T, Q=F, R=T$: $(T \\to F) \\land (F \\to T) = F \\land T = F$, but $T \\to T = T$. Different values → not equivalent.",
+          "explanation": "Correct! Example: $P=T, Q=F, R=T$: $(T \\to F) \\land (F \\to T) = F \\land T = F$, but $T \\to T = T$. Different values \u2192 not equivalent.",
           "insight": "The converse would be true: $(P \\to Q) \\land (Q \\to R) \\implies (P \\to R)$ is valid (hypothetical syllogism), but not the equivalence!"
         },
         "incorrect": {
@@ -173,7 +173,7 @@
         }
       },
       "resultState": {
-        "description": "Compare with P → R"
+        "description": "Compare with P \u2192 R"
       }
     }
   ],

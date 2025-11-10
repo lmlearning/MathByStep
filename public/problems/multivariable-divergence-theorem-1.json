@@ -29,7 +29,7 @@
       },
       "prompt": {
         "question": "What is the divergence theorem?",
-        "hint": "$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E \\nabla \\cdot \\vec{F} \\, dV$ where $E$ is the solid enclosed by $S$."
+        "hint": "The Divergence Theorem relates a surface integral to a volume integral of the divergence."
       },
       "options": [
         {
@@ -188,7 +188,7 @@
       "Converts flux through closed surface to volume integral",
       "Flux of $\\vec{F} = \\langle x, y, z \\rangle$ through cube surface: **3**"
     ],
-    "fullSolution": "**Find flux of** $\\vec{F} = \\langle x, y, z \\rangle$ **through surface of** $[0,1]^3$\\n\\n**Divergence:**\\n$$\\nabla \\cdot \\vec{F} = \\frac{\\partial x}{\\partial x} + \\frac{\\partial y}{\\partial y} + \\frac{\\partial z}{\\partial z} = 1 + 1 + 1 = 3$$\\n\\n**Divergence theorem:**\\n$$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E 3 \\, dV$$\\n\\n**Volume integral:**\\n$$\\iiint_E 3 \\, dV = 3 \\cdot \\text{Volume}([0,1]^3) = 3 \\cdot 1 = 3$$\\n\\n**Answer: Flux = 3**\\n\\n**Verification:** Direct computation through 6 faces would give:\\n- Right ($x=1$): $\\iint 1 \\, dy\\,dz = 1$\\n- Left ($x=0$): $\\iint 0 \\, dy\\,dz = 0$ (outward normal is $-\\hat{i}$, flux is 0)\\n- Similarly for other faces, total = 3 ✓",
+    "fullSolution": "**Find flux of** $\\vec{F} = \\langle x, y, z \\rangle$ **through surface of** $[0,1]^3$\\n\\n**Divergence:**\\n$$\\nabla \\cdot \\vec{F} = \\frac{\\partial x}{\\partial x} + \\frac{\\partial y}{\\partial y} + \\frac{\\partial z}{\\partial z} = 1 + 1 + 1 = 3$$\\n\\n**Divergence theorem:**\\n$$\\iint_S \\vec{F} \\cdot \\hat{n} \\, dS = \\iiint_E 3 \\, dV$$\\n\\n**Volume integral:**\\n$$\\iiint_E 3 \\, dV = 3 \\cdot \\text{Volume}([0,1]^3) = 3 \\cdot 1 = 3$$\\n\\n**Answer: Flux = 3**\\n\\n**Verification:** Direct computation through 6 faces would give:\\n- Right ($x=1$): $\\iint 1 \\, dy\\,dz = 1$\\n- Left ($x=0$): $\\iint 0 \\, dy\\,dz = 0$ (outward normal is $-\\hat{i}$, flux is 0)\\n- Similarly for other faces, total = 3 \u2713",
     "relatedProblems": [
       "multivariable-greens-theorem-1",
       "multivariable-triple-integral-1"

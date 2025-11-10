@@ -69,7 +69,7 @@
       },
       "prompt": {
         "question": "What is $\\frac{d}{dx}(x^2\\sin x)$?",
-        "hint": "$f=x^2, g=\\sin x$. So $u' = 2x\\sin x + x^2\\cos x$."
+        "hint": "Use $(fg)' = f'g + fg'$. Here $f=x^2$ and $g=\\sin x$."
       },
       "options": [
         {

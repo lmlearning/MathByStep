@@ -106,7 +106,7 @@
       },
       "prompt": {
         "question": "How to use $7^{10} \\equiv 1$?",
-        "hint": "$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$."
+        "hint": "Use the result from step 2: $7^{10} \\equiv 1 \\pmod{11}$. How can you use this to simplify $7^{100}$?"
       },
       "options": [
         {
@@ -146,7 +146,7 @@
       "Remainder when $7^{100}$ divided by 11: **1**",
       "FLT is fundamental for modular exponentiation!"
     ],
-    "fullSolution": "**Find $7^{100} \\bmod 11$**\n\n**Fermat's Little Theorem:** If $p$ is prime and $\\gcd(a,p) = 1$:\n$$a^{p-1} \\equiv 1 \\pmod{p}$$\n\n**Apply to our problem:**\n- $p = 11$ (prime)\n- $a = 7$\n- $\\gcd(7, 11) = 1$ ✓\n\nTherefore:\n$$7^{11-1} = 7^{10} \\equiv 1 \\pmod{11}$$\n\n**Simplify $7^{100}$:**\n$$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$$\n\n**Answer:** The remainder is **1**.\n\n**Verification:** We can also write $7^{100} \\equiv 1 \\pmod{11}$, meaning $11 \\mid (7^{100} - 1)$.",
+    "fullSolution": "**Find $7^{100} \\bmod 11$**\n\n**Fermat's Little Theorem:** If $p$ is prime and $\\gcd(a,p) = 1$:\n$$a^{p-1} \\equiv 1 \\pmod{p}$$\n\n**Apply to our problem:**\n- $p = 11$ (prime)\n- $a = 7$\n- $\\gcd(7, 11) = 1$ \u2713\n\nTherefore:\n$$7^{11-1} = 7^{10} \\equiv 1 \\pmod{11}$$\n\n**Simplify $7^{100}$:**\n$$7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}$$\n\n**Answer:** The remainder is **1**.\n\n**Verification:** We can also write $7^{100} \\equiv 1 \\pmod{11}$, meaning $11 \\mid (7^{100} - 1)$.",
     "relatedProblems": [
       "number-theory-modular-arithmetic-1",
       "abstract-algebra-cyclic-groups-1"

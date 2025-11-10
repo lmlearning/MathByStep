@@ -29,7 +29,7 @@
       },
       "prompt": {
         "question": "What is the volume element in cylindrical coordinates?",
-        "hint": "$dV = r \\, dr \\, d\\theta \\, dz$ (note the extra $r$ factor)."
+        "hint": "In cylindrical coordinates, remember the Jacobian factor when converting the volume element."
       },
       "options": [
         {
@@ -97,7 +97,7 @@
         }
       },
       "resultState": {
-        "description": "Determine the r and θ bounds"
+        "description": "Determine the r and \u03b8 bounds"
       }
     },
     {

@@ -109,7 +109,7 @@
       },
       "prompt": {
         "question": "What is $A'(x)$, and where does it equal zero?",
-        "hint": "$A'(x) = 200 - 4x = 0 \\Rightarrow x = 50$."
+        "hint": "Differentiate $A(x) = 200x - 2x^2$ and set equal to zero. Solve for $x$."
       },
       "options": [
         {

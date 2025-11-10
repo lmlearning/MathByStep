@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "What are $\\mathcal{L}\\{y'\\}$ and $\\mathcal{L}\\{y''\\}$?",
-        "hint": "$\\mathcal{L}\\{y'\\} = sY(s) - y(0)$ and $\\mathcal{L}\\{y''\\} = s^2Y(s) - sy(0) - y'(0)$."
+        "hint": "Apply the Laplace transform to each term. Remember the formulas for derivatives."
       },
       "options": [
         {
@@ -188,7 +188,7 @@
       },
       "prompt": {
         "question": "What is $y(t) = \\mathcal{L}^{-1}\\{Y(s)\\}$?",
-        "hint": "$y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$."
+        "hint": "Use partial fractions to decompose $Y(s)$ and apply inverse Laplace transform."
       },
       "options": [
         {
@@ -208,7 +208,7 @@
       "feedback": {
         "correct": {
           "explanation": "Perfect! $y(t) = \\mathcal{L}^{-1}\\left\\{\\frac{7/2}{s+1}\\right\\} - \\mathcal{L}^{-1}\\left\\{\\frac{3/2}{s+3}\\right\\} = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$.",
-          "insight": "We can verify: $y(0) = 7/2 - 3/2 = 2$ ✓ and $y'(0) = -7/2 + 9/2 = 1$... wait, that should be -1. Let me recalculate."
+          "insight": "We can verify: $y(0) = 7/2 - 3/2 = 2$ \u2713 and $y'(0) = -7/2 + 9/2 = 1$... wait, that should be -1. Let me recalculate."
         },
         "incorrect": {
           "1": "$\\mathcal{L}^{-1}\\{\\frac{1}{s+a}\\} = e^{-at}$, not $e^{at}$. The signs in the exponents should be negative.",
@@ -228,7 +228,7 @@
       "Partial fractions helps break down complex expressions",
       "Solution: $y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$"
     ],
-    "fullSolution": "**Solve:** $y'' + 4y' + 3y = 0$, $y(0) = 2$, $y'(0) = -1$\\n\\n**Laplace transform:**\\n$$\\mathcal{L}\\{y''\\} + 4\\mathcal{L}\\{y'\\} + 3\\mathcal{L}\\{y\\} = 0$$\\n$$[s^2Y - sy(0) - y'(0)] + 4[sY - y(0)] + 3Y = 0$$\\n$$[s^2Y - 2s + 1] + 4[sY - 2] + 3Y = 0$$\\n$$(s^2 + 4s + 3)Y = 2s + 9$$\\n\\n**Solve for Y(s):**\\n$$Y(s) = \\frac{2s + 9}{s^2 + 4s + 3} = \\frac{2s + 9}{(s+1)(s+3)}$$\\n\\n**Partial fractions:** $Y = \\frac{A}{s+1} + \\frac{B}{s+3}$\\n\\n$2s + 9 = A(s+3) + B(s+1)$\\n- $s = -1$: $7 = 2A \\Rightarrow A = 7/2$\\n- $s = -3$: $3 = -2B \\Rightarrow B = -3/2$\\n\\n$$Y(s) = \\frac{7/2}{s+1} - \\frac{3/2}{s+3}$$\\n\\n**Inverse Laplace:**\\n$$y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$$\\n\\nVerify: $y(0) = 7/2 - 3/2 = 2$ ✓",
+    "fullSolution": "**Solve:** $y'' + 4y' + 3y = 0$, $y(0) = 2$, $y'(0) = -1$\\n\\n**Laplace transform:**\\n$$\\mathcal{L}\\{y''\\} + 4\\mathcal{L}\\{y'\\} + 3\\mathcal{L}\\{y\\} = 0$$\\n$$[s^2Y - sy(0) - y'(0)] + 4[sY - y(0)] + 3Y = 0$$\\n$$[s^2Y - 2s + 1] + 4[sY - 2] + 3Y = 0$$\\n$$(s^2 + 4s + 3)Y = 2s + 9$$\\n\\n**Solve for Y(s):**\\n$$Y(s) = \\frac{2s + 9}{s^2 + 4s + 3} = \\frac{2s + 9}{(s+1)(s+3)}$$\\n\\n**Partial fractions:** $Y = \\frac{A}{s+1} + \\frac{B}{s+3}$\\n\\n$2s + 9 = A(s+3) + B(s+1)$\\n- $s = -1$: $7 = 2A \\Rightarrow A = 7/2$\\n- $s = -3$: $3 = -2B \\Rightarrow B = -3/2$\\n\\n$$Y(s) = \\frac{7/2}{s+1} - \\frac{3/2}{s+3}$$\\n\\n**Inverse Laplace:**\\n$$y(t) = \\frac{7}{2}e^{-t} - \\frac{3}{2}e^{-3t}$$\\n\\nVerify: $y(0) = 7/2 - 3/2 = 2$ \u2713",
     "relatedProblems": [
       "differential-equations-second-order-homogeneous-1",
       "differential-equations-first-order-linear-1"

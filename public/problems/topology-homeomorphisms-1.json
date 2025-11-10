@@ -67,7 +67,7 @@
       },
       "prompt": {
         "question": "Which function maps $(0, 1)$ bijectively onto $\\mathbb{R}$?",
-        "hint": "Try $f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$. As $x \\to 0^+$, $f(x) \\to -\\infty$. As $x \\to 1^-$, $f(x) \\to +\\infty$."
+        "hint": "Use a function involving tangent that maps the interval to all real numbers."
       },
       "options": [
         {
@@ -96,7 +96,9 @@
       },
       "resultState": {
         "description": "Bijection constructed",
-        "equations": ["f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)"]
+        "equations": [
+          "f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)"
+        ]
       }
     },
     {
@@ -104,7 +106,9 @@
       "order": 3,
       "currentState": {
         "description": "Candidate homeomorphism: $f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$.",
-        "equations": ["f: (0, 1) \\to \\mathbb{R}"]
+        "equations": [
+          "f: (0, 1) \\to \\mathbb{R}"
+        ]
       },
       "prompt": {
         "question": "Is $f$ continuous on $(0, 1)$?",
@@ -144,7 +148,9 @@
       "order": 4,
       "currentState": {
         "description": "$f: (0, 1) \\to \\mathbb{R}$ is a continuous bijection.",
-        "equations": ["f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)"]
+        "equations": [
+          "f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)"
+        ]
       },
       "prompt": {
         "question": "What is the inverse function $f^{-1}: \\mathbb{R} \\to (0, 1)$, and is it continuous?",
@@ -193,7 +199,7 @@
       "Both $f$ and $f^{-1}$ are continuous",
       "Homeomorphisms preserve all topological properties"
     ],
-    "fullSolution": "**Show $(0, 1) \\cong \\mathbb{R}$ via explicit homeomorphism**\n\n---\n\n**Definition:** Homeomorphism $f: X \\to Y$ is a continuous bijection with continuous inverse.\n\n---\n\n**Construction:**\n\nDefine $f: (0, 1) \\to \\mathbb{R}$ by:\n$$f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\n---\n\n**Verify Bijection:**\n\nFor $x \\in (0, 1)$:\n$$\\pi\\left(x - \\frac{1}{2}\\right) \\in \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$$\n\nSince $\\tan: (-\\pi/2, \\pi/2) \\to \\mathbb{R}$ is a strictly increasing bijection, $f$ is a bijection.\n\n**Boundary behavior:**\n- $x \\to 0^+$: $f(x) \\to \\tan(-\\pi/2) = -\\infty$\n- $x \\to 1^-$: $f(x) \\to \\tan(\\pi/2) = +\\infty$\n- $x = 1/2$: $f(1/2) = \\tan(0) = 0$\n\n---\n\n**Verify Continuity of $f$:**\n\n$f$ is the composition:\n$$x \\xrightarrow{g} x - \\frac{1}{2} \\xrightarrow{h} \\pi\\left(x - \\frac{1}{2}\\right) \\xrightarrow{\\tan} \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\nEach component is continuous:\n- $g(x) = x - 1/2$ continuous\n- $h(t) = \\pi t$ continuous\n- $\\tan$ continuous on $(-\\pi/2, \\pi/2)$\n\nSo $f = \\tan \\circ h \\circ g$ is continuous on $(0, 1)$. ✓\n\n---\n\n**Find and Verify $f^{-1}$:**\n\nSolve $y = \\tan(\\pi(x - 1/2))$ for $x$:\n$$\\arctan(y) = \\pi\\left(x - \\frac{1}{2}\\right)$$\n$$x = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\nSo:\n$$f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\n$f^{-1}$ is continuous as composition of continuous functions:\n- $\\arctan: \\mathbb{R} \\to (-\\pi/2, \\pi/2)$ continuous\n- Multiplication by $1/\\pi$ continuous\n- Addition of $1/2$ continuous\n\nSo $f^{-1}$ is continuous on $\\mathbb{R}$. ✓\n\n---\n\n**Conclusion:**\n\n$f: (0, 1) \\to \\mathbb{R}$ is a homeomorphism.\n\nTherefore: $\\boxed{(0, 1) \\cong \\mathbb{R}}$\n\n---\n\n**Topological Interpretation:**\n\nDespite $(0, 1)$ being bounded and $\\mathbb{R}$ unbounded, they are **topologically indistinguishable** - they have the same topological structure!\n\nThis shows topology cares about properties preserved under continuous deformation, not metric properties like boundedness.",
+    "fullSolution": "**Show $(0, 1) \\cong \\mathbb{R}$ via explicit homeomorphism**\n\n---\n\n**Definition:** Homeomorphism $f: X \\to Y$ is a continuous bijection with continuous inverse.\n\n---\n\n**Construction:**\n\nDefine $f: (0, 1) \\to \\mathbb{R}$ by:\n$$f(x) = \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\n---\n\n**Verify Bijection:**\n\nFor $x \\in (0, 1)$:\n$$\\pi\\left(x - \\frac{1}{2}\\right) \\in \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$$\n\nSince $\\tan: (-\\pi/2, \\pi/2) \\to \\mathbb{R}$ is a strictly increasing bijection, $f$ is a bijection.\n\n**Boundary behavior:**\n- $x \\to 0^+$: $f(x) \\to \\tan(-\\pi/2) = -\\infty$\n- $x \\to 1^-$: $f(x) \\to \\tan(\\pi/2) = +\\infty$\n- $x = 1/2$: $f(1/2) = \\tan(0) = 0$\n\n---\n\n**Verify Continuity of $f$:**\n\n$f$ is the composition:\n$$x \\xrightarrow{g} x - \\frac{1}{2} \\xrightarrow{h} \\pi\\left(x - \\frac{1}{2}\\right) \\xrightarrow{\\tan} \\tan\\left(\\pi\\left(x - \\frac{1}{2}\\right)\\right)$$\n\nEach component is continuous:\n- $g(x) = x - 1/2$ continuous\n- $h(t) = \\pi t$ continuous\n- $\\tan$ continuous on $(-\\pi/2, \\pi/2)$\n\nSo $f = \\tan \\circ h \\circ g$ is continuous on $(0, 1)$. \u2713\n\n---\n\n**Find and Verify $f^{-1}$:**\n\nSolve $y = \\tan(\\pi(x - 1/2))$ for $x$:\n$$\\arctan(y) = \\pi\\left(x - \\frac{1}{2}\\right)$$\n$$x = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\nSo:\n$$f^{-1}(y) = \\frac{1}{\\pi}\\arctan(y) + \\frac{1}{2}$$\n\n$f^{-1}$ is continuous as composition of continuous functions:\n- $\\arctan: \\mathbb{R} \\to (-\\pi/2, \\pi/2)$ continuous\n- Multiplication by $1/\\pi$ continuous\n- Addition of $1/2$ continuous\n\nSo $f^{-1}$ is continuous on $\\mathbb{R}$. \u2713\n\n---\n\n**Conclusion:**\n\n$f: (0, 1) \\to \\mathbb{R}$ is a homeomorphism.\n\nTherefore: $\\boxed{(0, 1) \\cong \\mathbb{R}}$\n\n---\n\n**Topological Interpretation:**\n\nDespite $(0, 1)$ being bounded and $\\mathbb{R}$ unbounded, they are **topologically indistinguishable** - they have the same topological structure!\n\nThis shows topology cares about properties preserved under continuous deformation, not metric properties like boundedness.",
     "relatedProblems": [
       "topology-continuous-functions-1",
       "topology-compactness-1"

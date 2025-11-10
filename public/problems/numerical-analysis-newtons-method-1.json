@@ -67,7 +67,7 @@
       },
       "prompt": {
         "question": "What is $f'(x)$?",
-        "hint": "$f'(x) = 3x^2$."
+        "hint": "Differentiate $f(x) = x^3 - 2x - 5$ to find $f'(x)$."
       },
       "options": [
         {

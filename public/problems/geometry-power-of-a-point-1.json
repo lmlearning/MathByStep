@@ -65,11 +65,13 @@
       "order": 2,
       "currentState": {
         "description": "Apply theorem with given values.",
-        "equations": ["AP = 3, \\quad PB = 4, \\quad CP = 2"]
+        "equations": [
+          "AP = 3, \\quad PB = 4, \\quad CP = 2"
+        ]
       },
       "prompt": {
         "question": "Set up the equation using the Power of a Point theorem.",
-        "hint": "Substitute: $3 \\cdot 4 = 2 \\cdot PD$."
+        "hint": "Apply the Power of a Point theorem: $PA \\cdot PB = PC \\cdot PD$. You know PA, PB, and PC."
       },
       "options": [
         {
@@ -98,7 +100,9 @@
       },
       "resultState": {
         "description": "Equation setup",
-        "equations": ["12 = 2 \\cdot PD"]
+        "equations": [
+          "12 = 2 \\cdot PD"
+        ]
       }
     },
     {
@@ -106,7 +110,9 @@
       "order": 3,
       "currentState": {
         "description": "Solve for $PD$.",
-        "equations": ["12 = 2 \\cdot PD"]
+        "equations": [
+          "12 = 2 \\cdot PD"
+        ]
       },
       "prompt": {
         "question": "What is $PD$?",
@@ -129,7 +135,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! Solve for $PD$:\n\n$$12 = 2 \\cdot PD$$\n$$PD = \\frac{12}{2} = 6$$\n\n**Verification:** Check that $AP \\cdot PB = CP \\cdot PD$:\n- Left side: $3 \\cdot 4 = 12$\n- Right side: $2 \\cdot 6 = 12$ ✓\n\nThe answer is $PD = 6$.",
+          "explanation": "Excellent! Solve for $PD$:\n\n$$12 = 2 \\cdot PD$$\n$$PD = \\frac{12}{2} = 6$$\n\n**Verification:** Check that $AP \\cdot PB = CP \\cdot PD$:\n- Left side: $3 \\cdot 4 = 12$\n- Right side: $2 \\cdot 6 = 12$ \u2713\n\nThe answer is $PD = 6$.",
           "insight": "The Power of a Point theorem provides a powerful tool for finding unknown lengths in circle problems!"
         },
         "incorrect": {
@@ -139,7 +145,9 @@
       },
       "resultState": {
         "description": "Solution: $PD = 6$",
-        "equations": ["PD = 6"]
+        "equations": [
+          "PD = 6"
+        ]
       }
     },
     {
@@ -191,7 +199,7 @@
       "Theorem follows from similar triangles",
       "Product $AP \\cdot PB$ is the \"power\" of point $P$"
     ],
-    "fullSolution": "**Find $PD$ using Power of a Point**\n\n---\n\n**Given:**\n- Chords $AB$ and $CD$ intersect at $P$ inside circle\n- $AP = 3$, $PB = 4$, $CP = 2$\n- Find: $PD$\n\n---\n\n**Power of a Point Theorem:**\n\nFor two chords intersecting at point $P$ inside a circle:\n$$AP \\cdot PB = CP \\cdot PD$$\n\n---\n\n**Solution:**\n\nSubstitute given values:\n$$3 \\cdot 4 = 2 \\cdot PD$$\n$$12 = 2 \\cdot PD$$\n$$PD = 6$$\n\n---\n\n**Verification:**\n$$AP \\cdot PB = 3 \\cdot 4 = 12$$\n$$CP \\cdot PD = 2 \\cdot 6 = 12$$ ✓\n\n---\n\n**Answer:** $\\boxed{PD = 6}$\n\n---\n\n**Why It Works (Proof Sketch):**\n\nConnect points to form triangles $\\triangle APC$ and $\\triangle DPB$.\n\n**Similar triangles:**\n- $\\angle APC = \\angle DPB$ (vertical angles)\n- $\\angle CAP = \\angle BDP$ (inscribed angles on same arc)\n\nBy AA: $\\triangle APC \\sim \\triangle DPB$\n\nProportional sides:\n$$\\frac{AP}{DP} = \\frac{CP}{BP}$$\n\nCross-multiply:\n$$AP \\cdot PB = CP \\cdot PD$$ $\\square$\n\n---\n\n**General Power of a Point:**\n\nFor any point $P$ and circle with center $O$ and radius $r$:\n$$\\text{Power}(P) = |OP|^2 - r^2$$\n\nFor chords through $P$: $AP \\cdot PB = |\\text{Power}(P)|$",
+    "fullSolution": "**Find $PD$ using Power of a Point**\n\n---\n\n**Given:**\n- Chords $AB$ and $CD$ intersect at $P$ inside circle\n- $AP = 3$, $PB = 4$, $CP = 2$\n- Find: $PD$\n\n---\n\n**Power of a Point Theorem:**\n\nFor two chords intersecting at point $P$ inside a circle:\n$$AP \\cdot PB = CP \\cdot PD$$\n\n---\n\n**Solution:**\n\nSubstitute given values:\n$$3 \\cdot 4 = 2 \\cdot PD$$\n$$12 = 2 \\cdot PD$$\n$$PD = 6$$\n\n---\n\n**Verification:**\n$$AP \\cdot PB = 3 \\cdot 4 = 12$$\n$$CP \\cdot PD = 2 \\cdot 6 = 12$$ \u2713\n\n---\n\n**Answer:** $\\boxed{PD = 6}$\n\n---\n\n**Why It Works (Proof Sketch):**\n\nConnect points to form triangles $\\triangle APC$ and $\\triangle DPB$.\n\n**Similar triangles:**\n- $\\angle APC = \\angle DPB$ (vertical angles)\n- $\\angle CAP = \\angle BDP$ (inscribed angles on same arc)\n\nBy AA: $\\triangle APC \\sim \\triangle DPB$\n\nProportional sides:\n$$\\frac{AP}{DP} = \\frac{CP}{BP}$$\n\nCross-multiply:\n$$AP \\cdot PB = CP \\cdot PD$$ $\\square$\n\n---\n\n**General Power of a Point:**\n\nFor any point $P$ and circle with center $O$ and radius $r$:\n$$\\text{Power}(P) = |OP|^2 - r^2$$\n\nFor chords through $P$: $AP \\cdot PB = |\\text{Power}(P)|$",
     "relatedProblems": [
       "geometry-inscribed-angle-1",
       "geometry-similar-triangles-1"

@@ -88,7 +88,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Prove $Q^T Q = I$:**\n\n**Setup:** Let $Q = [q_1 \\,|\\, q_2 \\,|\\, \\cdots \\,|\\, q_n]$ where $q_i$ are column vectors.\n\n**Transpose:**\n$$Q^T = \\begin{bmatrix} q_1^T \\\\ q_2^T \\\\ \\vdots \\\\ q_n^T \\end{bmatrix}$$\n\n(rows of $Q^T$ are columns of $Q$)\n\n**Compute $(i,j)$ entry of $Q^T Q$:**\n$$(Q^T Q)_{ij} = (\\text{row } i \\text{ of } Q^T) \\cdot (\\text{column } j \\text{ of } Q)$$\n$$= q_i^T \\cdot q_j$$\n$$= q_i^T q_j$$\n\n**By orthonormality:**\n$$q_i^T q_j = \\delta_{ij} = \\begin{cases}\n1 & i = j \\\\\n0 & i \\neq j\n\\end{cases}$$\n\n**Therefore:**\n$$Q^T Q = \\begin{bmatrix}\n1 & 0 & \\cdots & 0 \\\\\n0 & 1 & \\cdots & 0 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n0 & 0 & \\cdots & 1\n\\end{bmatrix} = I$$\n\n$$\\boxed{Q^T Q = I}$$ ✓\n\n**Consequence:** $Q^{-1} = Q^T$ (inverse is just the transpose!)",
+          "explanation": "Excellent! **Prove $Q^T Q = I$:**\n\n**Setup:** Let $Q = [q_1 \\,|\\, q_2 \\,|\\, \\cdots \\,|\\, q_n]$ where $q_i$ are column vectors.\n\n**Transpose:**\n$$Q^T = \\begin{bmatrix} q_1^T \\\\ q_2^T \\\\ \\vdots \\\\ q_n^T \\end{bmatrix}$$\n\n(rows of $Q^T$ are columns of $Q$)\n\n**Compute $(i,j)$ entry of $Q^T Q$:**\n$$(Q^T Q)_{ij} = (\\text{row } i \\text{ of } Q^T) \\cdot (\\text{column } j \\text{ of } Q)$$\n$$= q_i^T \\cdot q_j$$\n$$= q_i^T q_j$$\n\n**By orthonormality:**\n$$q_i^T q_j = \\delta_{ij} = \\begin{cases}\n1 & i = j \\\\\n0 & i \\neq j\n\\end{cases}$$\n\n**Therefore:**\n$$Q^T Q = \\begin{bmatrix}\n1 & 0 & \\cdots & 0 \\\\\n0 & 1 & \\cdots & 0 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n0 & 0 & \\cdots & 1\n\\end{bmatrix} = I$$\n\n$$\\boxed{Q^T Q = I}$$ \u2713\n\n**Consequence:** $Q^{-1} = Q^T$ (inverse is just the transpose!)",
           "insight": "Orthogonal matrices have $Q^T = Q^{-1}$ - transpose is inverse!"
         },
         "incorrect": {
@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "Proved $Q^T Q = I$",
-        "equations": ["Q^T Q = I"]
+        "equations": [
+          "Q^T Q = I"
+        ]
       }
     },
     {
@@ -128,7 +130,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Length preservation:**\n\nFor any vector $x \\in \\mathbb{R}^n$:\n\n**Compute $\\|Qx\\|^2$:**\n$$\\|Qx\\|^2 = (Qx) \\cdot (Qx)$$\n$$= (Qx)^T (Qx)$$\n$$= x^T Q^T Q x$$\n\n**Use $Q^T Q = I$:**\n$$= x^T I x$$\n$$= x^T x$$\n$$= \\|x\\|^2$$\n\n**Take square root:**\n$$\\|Qx\\| = \\|x\\|$$\n\n$$\\boxed{\\text{Orthogonal matrices preserve vector lengths!}}$$ ✓\n\n**Geometric interpretation:**\nOrthogonal transformations are:\n- **Rotations** (when $\\det(Q) = +1$)\n- **Reflections** (when $\\det(Q) = -1$)\n- Combinations thereof\n\nThese preserve distances and angles.\n\n**Additional properties preserved:**\n- Dot products: $(Qx) \\cdot (Qy) = x \\cdot y$\n- Angles: $\\cos\\theta = \\frac{x \\cdot y}{\\|x\\|\\|y\\|}$ preserved\n- Volumes: $|\\det(Q)| = 1$",
+          "explanation": "Perfect! **Length preservation:**\n\nFor any vector $x \\in \\mathbb{R}^n$:\n\n**Compute $\\|Qx\\|^2$:**\n$$\\|Qx\\|^2 = (Qx) \\cdot (Qx)$$\n$$= (Qx)^T (Qx)$$\n$$= x^T Q^T Q x$$\n\n**Use $Q^T Q = I$:**\n$$= x^T I x$$\n$$= x^T x$$\n$$= \\|x\\|^2$$\n\n**Take square root:**\n$$\\|Qx\\| = \\|x\\|$$\n\n$$\\boxed{\\text{Orthogonal matrices preserve vector lengths!}}$$ \u2713\n\n**Geometric interpretation:**\nOrthogonal transformations are:\n- **Rotations** (when $\\det(Q) = +1$)\n- **Reflections** (when $\\det(Q) = -1$)\n- Combinations thereof\n\nThese preserve distances and angles.\n\n**Additional properties preserved:**\n- Dot products: $(Qx) \\cdot (Qy) = x \\cdot y$\n- Angles: $\\cos\\theta = \\frac{x \\cdot y}{\\|x\\|\\|y\\|}$ preserved\n- Volumes: $|\\det(Q)| = 1$",
           "insight": "Orthogonal transformations are isometries - preserve all geometric structure!"
         },
         "incorrect": {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "Length preservation proven",
-        "equations": ["\\|Qx\\| = \\|x\\|"]
+        "equations": [
+          "\\|Qx\\| = \\|x\\|"
+        ]
       }
     },
     {
@@ -149,7 +153,7 @@
       },
       "prompt": {
         "question": "What is $\\det(Q)$ for an orthogonal matrix $Q$?",
-        "hint": "From $Q^T Q = I$, take determinant: $\\det(Q^T) \\det(Q) = 1$. Since $\\det(Q^T) = \\det(Q)$, we get $(\\det(Q))^2 = 1$, so $\\det(Q) = \\pm 1$."
+        "hint": "Take the determinant of both sides of $Q^T Q = I$ and use properties of determinants."
       },
       "options": [
         {
@@ -178,7 +182,9 @@
       },
       "resultState": {
         "description": "Determinant property",
-        "equations": ["\\det(Q) = \\pm 1"]
+        "equations": [
+          "\\det(Q) = \\pm 1"
+        ]
       }
     }
   ],
@@ -192,7 +198,7 @@
       "Geometric: rotations ($\\det = +1$) and reflections ($\\det = -1$)",
       "Orthogonal transformations preserve angles and distances"
     ],
-    "fullSolution": "**Prove properties of orthogonal matrices**\n\n---\n\n**Definition:** $Q$ is orthogonal if columns $q_1, \\ldots, q_n$ are orthonormal:\n$$q_i^T q_j = \\delta_{ij}$$\n\n---\n\n**Part 1: Prove $Q^T Q = I$**\n\n**Setup:** $Q = [q_1 \\,|\\, \\cdots \\,|\\, q_n]$\n\n**Compute $(i,j)$ entry of $Q^T Q$:**\n$$(Q^T Q)_{ij} = q_i^T q_j = \\delta_{ij}$$\n\n**Therefore:**\n$$Q^T Q = I$$ ✓\n\n**Consequence:** $Q^{-1} = Q^T$ (transpose equals inverse)\n\n---\n\n**Part 2: Length Preservation**\n\nFor any $x \\in \\mathbb{R}^n$:\n\n$$\\|Qx\\|^2 = (Qx)^T (Qx)$$\n$$= x^T Q^T Q x$$\n$$= x^T I x$$\n$$= x^T x$$\n$$= \\|x\\|^2$$\n\n**Take square root:**\n$$\\|Qx\\| = \\|x\\|$$ ✓\n\n---\n\n**Part 3: Determinant**\n\nFrom $Q^T Q = I$:\n\n$$\\det(Q^T Q) = 1$$\n$$\\det(Q^T) \\det(Q) = 1$$\n$$(\\det(Q))^2 = 1$$\n$$\\det(Q) = \\pm 1$$ ✓\n\n---\n\n**Summary:**\n- $\\boxed{Q^T Q = I}$\n- $\\boxed{\\|Qx\\| = \\|x\\| \\text{ for all } x}$\n- $\\boxed{\\det(Q) = \\pm 1}$\n\nOrthogonal matrices represent rotations and reflections!",
+    "fullSolution": "**Prove properties of orthogonal matrices**\n\n---\n\n**Definition:** $Q$ is orthogonal if columns $q_1, \\ldots, q_n$ are orthonormal:\n$$q_i^T q_j = \\delta_{ij}$$\n\n---\n\n**Part 1: Prove $Q^T Q = I$**\n\n**Setup:** $Q = [q_1 \\,|\\, \\cdots \\,|\\, q_n]$\n\n**Compute $(i,j)$ entry of $Q^T Q$:**\n$$(Q^T Q)_{ij} = q_i^T q_j = \\delta_{ij}$$\n\n**Therefore:**\n$$Q^T Q = I$$ \u2713\n\n**Consequence:** $Q^{-1} = Q^T$ (transpose equals inverse)\n\n---\n\n**Part 2: Length Preservation**\n\nFor any $x \\in \\mathbb{R}^n$:\n\n$$\\|Qx\\|^2 = (Qx)^T (Qx)$$\n$$= x^T Q^T Q x$$\n$$= x^T I x$$\n$$= x^T x$$\n$$= \\|x\\|^2$$\n\n**Take square root:**\n$$\\|Qx\\| = \\|x\\|$$ \u2713\n\n---\n\n**Part 3: Determinant**\n\nFrom $Q^T Q = I$:\n\n$$\\det(Q^T Q) = 1$$\n$$\\det(Q^T) \\det(Q) = 1$$\n$$(\\det(Q))^2 = 1$$\n$$\\det(Q) = \\pm 1$$ \u2713\n\n---\n\n**Summary:**\n- $\\boxed{Q^T Q = I}$\n- $\\boxed{\\|Qx\\| = \\|x\\| \\text{ for all } x}$\n- $\\boxed{\\det(Q) = \\pm 1}$\n\nOrthogonal matrices represent rotations and reflections!",
     "relatedProblems": [
       "linear-algebra-gram-schmidt-1",
       "linear-algebra-eigenvalues-1"

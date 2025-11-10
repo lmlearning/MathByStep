@@ -29,7 +29,7 @@
       },
       "prompt": {
         "question": "What is the Bolzano-Weierstrass Theorem?",
-        "hint": "Every bounded sequence in $\\mathbb{R}$ has a convergent subsequence."
+        "hint": "What theorem guarantees that a bounded sequence has a convergent subsequence?"
       },
       "options": [
         {
@@ -186,7 +186,7 @@
       "Original sequence $\\sin(n)$ does NOT converge (oscillates)",
       "B-W is fundamental for proving existence of limits in analysis"
     ],
-    "fullSolution": "**Prove $a_n = \\sin(n)$ has a convergent subsequence**\n\n**Bolzano-Weierstrass Theorem:** Every bounded sequence in $\\mathbb{R}$ has a convergent subsequence.\n\n**Step 1: Check boundedness**\nFor all $n \\in \\mathbb{N}$:\n$$|a_n| = |\\sin(n)| \\leq 1$$\nSince sine has range $[-1,1]$, the sequence is bounded.\n\n**Step 2: Apply Bolzano-Weierstrass**\nSince $(a_n)$ is bounded, by the Bolzano-Weierstrass Theorem, there exists a subsequence $(a_{n_k})_{k=1}^{\\infty}$ such that:\n$$a_{n_k} = \\sin(n_k) \\to L$$\nfor some $L \\in [-1,1]$.\n\n**Conclusion:** The sequence $\\sin(n)$ has a convergent subsequence. ✓\n\n**Note:** The original sequence does NOT converge (it oscillates due to irrationality of $\\pi$), but we've proven existence of a convergent subsequence.",
+    "fullSolution": "**Prove $a_n = \\sin(n)$ has a convergent subsequence**\n\n**Bolzano-Weierstrass Theorem:** Every bounded sequence in $\\mathbb{R}$ has a convergent subsequence.\n\n**Step 1: Check boundedness**\nFor all $n \\in \\mathbb{N}$:\n$$|a_n| = |\\sin(n)| \\leq 1$$\nSince sine has range $[-1,1]$, the sequence is bounded.\n\n**Step 2: Apply Bolzano-Weierstrass**\nSince $(a_n)$ is bounded, by the Bolzano-Weierstrass Theorem, there exists a subsequence $(a_{n_k})_{k=1}^{\\infty}$ such that:\n$$a_{n_k} = \\sin(n_k) \\to L$$\nfor some $L \\in [-1,1]$.\n\n**Conclusion:** The sequence $\\sin(n)$ has a convergent subsequence. \u2713\n\n**Note:** The original sequence does NOT converge (it oscillates due to irrationality of $\\pi$), but we've proven existence of a convergent subsequence.",
     "relatedProblems": [
       "real-analysis-sequence-convergence-1",
       "real-analysis-cauchy-sequence-1"

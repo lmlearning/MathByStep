@@ -67,7 +67,7 @@
       },
       "prompt": {
         "question": "What inequality must we control?",
-        "hint": "Need to show: given $\\epsilon > 0$, can find $\\delta$ such that $|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$."
+        "hint": "Use the $\\epsilon$-$\\delta$ definition of continuity at $x = 3$."
       },
       "options": [
         {
@@ -184,7 +184,7 @@
       "Factor: $|x^2 - 9| = |x - 3||x + 3|$",
       "Bound: if $|x - 3| < 1$, then $|x + 3| < 7$",
       "Choose: $\\delta = \\min(1, \\epsilon/7)$",
-      "Therefore: $|x^2 - 9| < 7|x - 3| < 7(\\epsilon/7) = \\epsilon$ ✓"
+      "Therefore: $|x^2 - 9| < 7|x - 3| < 7(\\epsilon/7) = \\epsilon$ \u2713"
     ],
     "fullSolution": "**Prove: $f(x) = x^2$ is continuous at $x = 3$ using $\\epsilon$-$\\delta$ definition**\n\n**Definition:** $f$ is continuous at $a = 3$ if:\n$$\\forall \\epsilon > 0, \\exists \\delta > 0 \\text{ such that } |x - 3| < \\delta \\implies |f(x) - f(3)| < \\epsilon$$\n\nSince $f(3) = 9$, we need:\n$$|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$$\n\n---\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\n**Step 1: Relate output difference to input difference**\n\nFactor using difference of squares:\n$$|x^2 - 9| = |(x - 3)(x + 3)| = |x - 3| \\cdot |x + 3|$$\n\n**Step 2: Bound the factor $|x + 3|$**\n\nTo control $|x + 3|$, we first restrict $x$ to be close to 3.\n\nSuppose $|x - 3| < 1$. Then:\n$$-1 < x - 3 < 1$$\n$$2 < x < 4$$\n$$5 < x + 3 < 7$$\n$$|x + 3| < 7$$\n\n**Step 3: Ensure $|x^2 - 9| < \\epsilon$**\n\nWe have:\n$$|x^2 - 9| = |x - 3| \\cdot |x + 3| < |x - 3| \\cdot 7$$\n\nWe want:\n$$|x - 3| \\cdot 7 < \\epsilon$$\n$$|x - 3| < \\frac{\\epsilon}{7}$$\n\n**Step 4: Choose $\\delta$**\n\nWe need BOTH conditions:\n1. $|x - 3| < 1$ (to ensure $|x + 3| < 7$)\n2. $|x - 3| < \\epsilon/7$ (to ensure $|x^2 - 9| < \\epsilon$)\n\nChoose:\n$$\\delta = \\min\\left(1, \\frac{\\epsilon}{7}\\right)$$\n\n**Step 5: Verification**\n\nNow suppose $|x - 3| < \\delta$.\n\nThen:\n- $|x - 3| < 1 \\implies |x + 3| < 7$ (from our bound)\n- $|x - 3| < \\epsilon/7$ (by choice of $\\delta$)\n\nTherefore:\n$$|x^2 - 9| = |x - 3| \\cdot |x + 3| < \\frac{\\epsilon}{7} \\cdot 7 = \\epsilon$$\n\n**Conclusion:** For any $\\epsilon > 0$, we found $\\delta = \\min(1, \\epsilon/7) > 0$ such that:\n$$|x - 3| < \\delta \\implies |x^2 - 9| < \\epsilon$$\n\nTherefore, **$f(x) = x^2$ is continuous at $x = 3$**. $\\square$",
     "relatedProblems": [

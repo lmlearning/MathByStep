@@ -49,7 +49,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Ideal Definition:**\n\nA subset $I \\subseteq R$ is an **ideal** if:\n\n1. $(I, +)$ is a subgroup of $(R, +)$:\n   - $0 \\in I$\n   - If $a, b \\in I$, then $a + b \\in I$\n   - If $a \\in I$, then $-a \\in I$\n\n2. **Absorption property:** For all $r \\in R$ and $a \\in I$:\n   - $ra \\in I$ (left absorption)\n   - $ar \\in I$ (right absorption)\n\n**Example:** $6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, 18, \\ldots\\}$\n\n- Closed under addition: $6k + 6m = 6(k+m)$ ✓\n- Absorption: For any $n \\in \\mathbb{Z}$ and $6k \\in 6\\mathbb{Z}$: $n \\cdot 6k = 6(nk) \\in 6\\mathbb{Z}$ ✓",
+          "explanation": "Correct! **Ideal Definition:**\n\nA subset $I \\subseteq R$ is an **ideal** if:\n\n1. $(I, +)$ is a subgroup of $(R, +)$:\n   - $0 \\in I$\n   - If $a, b \\in I$, then $a + b \\in I$\n   - If $a \\in I$, then $-a \\in I$\n\n2. **Absorption property:** For all $r \\in R$ and $a \\in I$:\n   - $ra \\in I$ (left absorption)\n   - $ar \\in I$ (right absorption)\n\n**Example:** $6\\mathbb{Z} = \\{\\ldots, -12, -6, 0, 6, 12, 18, \\ldots\\}$\n\n- Closed under addition: $6k + 6m = 6(k+m)$ \u2713\n- Absorption: For any $n \\in \\mathbb{Z}$ and $6k \\in 6\\mathbb{Z}$: $n \\cdot 6k = 6(nk) \\in 6\\mathbb{Z}$ \u2713",
           "insight": "Ideals are 'sponges' that absorb multiplication from the whole ring!"
         },
         "incorrect": {
@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "Quotient ring elements",
-        "equations": ["\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6"]
+        "equations": [
+          "\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6"
+        ]
       }
     },
     {
@@ -128,7 +130,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Not a field because of zero divisors:**\n\n$$\\overline{2} \\cdot \\overline{3} = \\overline{6} = \\overline{0}$$\n\nSince $\\overline{2} \\neq \\overline{0}$ and $\\overline{3} \\neq \\overline{0}$, but their product is $\\overline{0}$, they are **zero divisors**.\n\nA field cannot have zero divisors! In a field, if $ab = 0$, then $a = 0$ or $b = 0$.\n\n**Which elements have inverses?**\n\nAn element $\\overline{a}$ has an inverse in $\\mathbb{Z}/6\\mathbb{Z}$ if and only if $\\gcd(a, 6) = 1$:\n\n- $\\overline{1}$: $\\gcd(1,6) = 1$ → inverse is $\\overline{1}$ ✓\n- $\\overline{2}$: $\\gcd(2,6) = 2 \\neq 1$ → no inverse ✗\n- $\\overline{3}$: $\\gcd(3,6) = 3 \\neq 1$ → no inverse ✗\n- $\\overline{4}$: $\\gcd(4,6) = 2 \\neq 1$ → no inverse ✗\n- $\\overline{5}$: $\\gcd(5,6) = 1$ → inverse is $\\overline{5}$ ✓\n\n**Units:** $\\{\\overline{1}, \\overline{5}\\}$ (only 2 out of 5 nonzero elements)\n\n**Theorem:** $\\mathbb{Z}/n\\mathbb{Z}$ is a field if and only if $n$ is prime.",
+          "explanation": "Correct! **Not a field because of zero divisors:**\n\n$$\\overline{2} \\cdot \\overline{3} = \\overline{6} = \\overline{0}$$\n\nSince $\\overline{2} \\neq \\overline{0}$ and $\\overline{3} \\neq \\overline{0}$, but their product is $\\overline{0}$, they are **zero divisors**.\n\nA field cannot have zero divisors! In a field, if $ab = 0$, then $a = 0$ or $b = 0$.\n\n**Which elements have inverses?**\n\nAn element $\\overline{a}$ has an inverse in $\\mathbb{Z}/6\\mathbb{Z}$ if and only if $\\gcd(a, 6) = 1$:\n\n- $\\overline{1}$: $\\gcd(1,6) = 1$ \u2192 inverse is $\\overline{1}$ \u2713\n- $\\overline{2}$: $\\gcd(2,6) = 2 \\neq 1$ \u2192 no inverse \u2717\n- $\\overline{3}$: $\\gcd(3,6) = 3 \\neq 1$ \u2192 no inverse \u2717\n- $\\overline{4}$: $\\gcd(4,6) = 2 \\neq 1$ \u2192 no inverse \u2717\n- $\\overline{5}$: $\\gcd(5,6) = 1$ \u2192 inverse is $\\overline{5}$ \u2713\n\n**Units:** $\\{\\overline{1}, \\overline{5}\\}$ (only 2 out of 5 nonzero elements)\n\n**Theorem:** $\\mathbb{Z}/n\\mathbb{Z}$ is a field if and only if $n$ is prime.",
           "insight": "Quotient by composite number ideal gives zero divisors, not a field!"
         },
         "incorrect": {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "Not a field",
-        "equations": ["\\mathbb{Z}/6\\mathbb{Z} \\text{ is not a field}"]
+        "equations": [
+          "\\mathbb{Z}/6\\mathbb{Z} \\text{ is not a field}"
+        ]
       }
     },
     {
@@ -149,7 +153,7 @@
       },
       "prompt": {
         "question": "What is $\\mathbb{Z}/6\\mathbb{Z}$ isomorphic to?",
-        "hint": "Since $6 = 2 \\times 3$ and $\\gcd(2,3) = 1$, Chinese Remainder Theorem gives: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}/2\\mathbb{Z} \\times \\mathbb{Z}/3\\mathbb{Z}$."
+        "hint": "Use the Chinese Remainder Theorem. Since $6 = 2 \\times 3$ and $\\gcd(2,3) = 1$, what does this tell us?"
       },
       "options": [
         {
@@ -178,7 +182,9 @@
       },
       "resultState": {
         "description": "Ring structure via CRT",
-        "equations": ["\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_2 \\times \\mathbb{Z}_3"]
+        "equations": [
+          "\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_2 \\times \\mathbb{Z}_3"
+        ]
       }
     }
   ],

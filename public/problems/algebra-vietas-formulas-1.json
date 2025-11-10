@@ -68,7 +68,7 @@
       },
       "prompt": {
         "question": "Identify the coefficients $a$, $b$, $c$ in standard form.",
-        "hint": "Write as $x^3 + ax^2 + bx + c = 0$. Comparing with $x^3 - 6x^2 + 11x - 6 = 0$: $a = -6$, $b = 11$, $c = -6$."
+        "hint": "Write the polynomial in standard form and identify the coefficients $a$, $b$, and $c$."
       },
       "options": [
         {
@@ -97,7 +97,9 @@
       },
       "resultState": {
         "description": "Coefficients identified",
-        "equations": ["a = -6, \\quad b = 11, \\quad c = -6"]
+        "equations": [
+          "a = -6, \\quad b = 11, \\quad c = -6"
+        ]
       }
     },
     {
@@ -137,7 +139,9 @@
       },
       "resultState": {
         "description": "Sum of roots found",
-        "equations": ["r + s + t = 6"]
+        "equations": [
+          "r + s + t = 6"
+        ]
       }
     },
     {
@@ -145,7 +149,9 @@
       "order": 4,
       "currentState": {
         "description": "Found $r + s + t = 6$.",
-        "equations": ["a = -6, \\quad b = 11, \\quad c = -6"]
+        "equations": [
+          "a = -6, \\quad b = 11, \\quad c = -6"
+        ]
       },
       "prompt": {
         "question": "What are $rs + rt + st$ and $rst$?",
@@ -168,7 +174,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! Applying Vieta's formulas:\n\n**Sum of products of pairs:**\n$$rs + rt + st = b = 11$$\n\n**Product of all roots:**\n$$rst = -c = -(-6) = 6$$\n\n**Summary:** For $x^3 - 6x^2 + 11x - 6 = 0$ with roots $r, s, t$:\n- $r + s + t = 6$\n- $rs + rt + st = 11$\n- $rst = 6$\n\nNote: The actual roots are $r = 1, s = 2, t = 3$. Verify: $1 + 2 + 3 = 6$ ✓, $1(2) + 1(3) + 2(3) = 2 + 3 + 6 = 11$ ✓, $1(2)(3) = 6$ ✓!",
+          "explanation": "Excellent! Applying Vieta's formulas:\n\n**Sum of products of pairs:**\n$$rs + rt + st = b = 11$$\n\n**Product of all roots:**\n$$rst = -c = -(-6) = 6$$\n\n**Summary:** For $x^3 - 6x^2 + 11x - 6 = 0$ with roots $r, s, t$:\n- $r + s + t = 6$\n- $rs + rt + st = 11$\n- $rst = 6$\n\nNote: The actual roots are $r = 1, s = 2, t = 3$. Verify: $1 + 2 + 3 = 6$ \u2713, $1(2) + 1(3) + 2(3) = 2 + 3 + 6 = 11$ \u2713, $1(2)(3) = 6$ \u2713!",
           "insight": "Vieta's formulas let us find symmetric functions of roots without solving the polynomial!"
         },
         "incorrect": {
@@ -195,7 +201,7 @@
       "For $x^3 - 6x^2 + 11x - 6 = 0$: $a = -6, b = 11, c = -6$",
       "Results: $r + s + t = 6$, $rs + rt + st = 11$, $rst = 6$"
     ],
-    "fullSolution": "**Find symmetric functions of roots using Vieta's formulas**\n\n---\n\n**Given:** $x^3 - 6x^2 + 11x - 6 = 0$ with roots $r, s, t$.\n\n---\n\n**Vieta's Formulas:**\n\nFor a monic cubic $x^3 + ax^2 + bx + c = 0$ with roots $r, s, t$:\n\n1. $r + s + t = -a$\n2. $rs + rt + st = b$\n3. $rst = -c$\n\n**Derivation:** Factor as $(x - r)(x - s)(x - t)$ and expand:\n\n$$(x - r)(x - s)(x - t) = x^3 - (r+s+t)x^2 + (rs+rt+st)x - rst$$\n\nComparing with $x^3 + ax^2 + bx + c$ gives Vieta's formulas.\n\n---\n\n**Step 1: Identify Coefficients**\n\nWrite in standard form: $x^3 + (-6)x^2 + 11x + (-6) = 0$\n\nSo:\n- $a = -6$\n- $b = 11$\n- $c = -6$\n\n---\n\n**Step 2: Apply Vieta's Formulas**\n\n**Sum of roots:**\n$$r + s + t = -a = -(-6) = 6$$\n\n**Sum of products of pairs:**\n$$rs + rt + st = b = 11$$\n\n**Product of all roots:**\n$$rst = -c = -(-6) = 6$$\n\n---\n\n**Answer:**\n$$\\boxed{r + s + t = 6, \\quad rs + rt + st = 11, \\quad rst = 6}$$\n\n---\n\n**Verification:**\n\nThe polynomial factors as $(x - 1)(x - 2)(x - 3) = 0$, so roots are $r = 1, s = 2, t = 3$.\n\nCheck:\n- $1 + 2 + 3 = 6$ ✓\n- $1(2) + 1(3) + 2(3) = 2 + 3 + 6 = 11$ ✓\n- $1(2)(3) = 6$ ✓",
+    "fullSolution": "**Find symmetric functions of roots using Vieta's formulas**\n\n---\n\n**Given:** $x^3 - 6x^2 + 11x - 6 = 0$ with roots $r, s, t$.\n\n---\n\n**Vieta's Formulas:**\n\nFor a monic cubic $x^3 + ax^2 + bx + c = 0$ with roots $r, s, t$:\n\n1. $r + s + t = -a$\n2. $rs + rt + st = b$\n3. $rst = -c$\n\n**Derivation:** Factor as $(x - r)(x - s)(x - t)$ and expand:\n\n$$(x - r)(x - s)(x - t) = x^3 - (r+s+t)x^2 + (rs+rt+st)x - rst$$\n\nComparing with $x^3 + ax^2 + bx + c$ gives Vieta's formulas.\n\n---\n\n**Step 1: Identify Coefficients**\n\nWrite in standard form: $x^3 + (-6)x^2 + 11x + (-6) = 0$\n\nSo:\n- $a = -6$\n- $b = 11$\n- $c = -6$\n\n---\n\n**Step 2: Apply Vieta's Formulas**\n\n**Sum of roots:**\n$$r + s + t = -a = -(-6) = 6$$\n\n**Sum of products of pairs:**\n$$rs + rt + st = b = 11$$\n\n**Product of all roots:**\n$$rst = -c = -(-6) = 6$$\n\n---\n\n**Answer:**\n$$\\boxed{r + s + t = 6, \\quad rs + rt + st = 11, \\quad rst = 6}$$\n\n---\n\n**Verification:**\n\nThe polynomial factors as $(x - 1)(x - 2)(x - 3) = 0$, so roots are $r = 1, s = 2, t = 3$.\n\nCheck:\n- $1 + 2 + 3 = 6$ \u2713\n- $1(2) + 1(3) + 2(3) = 2 + 3 + 6 = 11$ \u2713\n- $1(2)(3) = 6$ \u2713",
     "relatedProblems": [
       "algebra-quadratic-1",
       "algebra-polynomial-division-1"

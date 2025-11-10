@@ -96,7 +96,7 @@
         }
       },
       "resultState": {
-        "description": "Compute ∂z/∂x"
+        "description": "Compute \u2202z/\u2202x"
       }
     },
     {
@@ -108,7 +108,7 @@
       },
       "prompt": {
         "question": "What are $\\frac{\\partial z}{\\partial y}$, $\\frac{dx}{dt}$, and $\\frac{dy}{dt}$?",
-        "hint": "$\\frac{\\partial z}{\\partial y} = x^2$, $\\frac{dx}{dt} = 2t$, $\\frac{dy}{dt} = \\cos(t)$."
+        "hint": "Compute each partial derivative and parameter derivative, then substitute into the chain rule formula."
       },
       "options": [
         {
@@ -136,7 +136,7 @@
         }
       },
       "resultState": {
-        "description": "Compute ∂z/∂y and dx/dt, dy/dt"
+        "description": "Compute \u2202z/\u2202y and dx/dt, dy/dt"
       }
     },
     {
@@ -227,7 +227,7 @@
       "Can express answer in terms of intermediate variables or substitute back",
       "Answer: $\\frac{dz}{dt} = 4t^3\\sin(t) + t^4\\cos(t)$"
     ],
-    "fullSolution": "**Find** $\\frac{dz}{dt}$ **where** $z = x^2y$, $x = t^2$, $y = \\sin(t)$\\n\\n**Chain rule:**\\n$$\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$$\\n\\n**Compute derivatives:**\\n- $\\frac{\\partial z}{\\partial x} = 2xy$\\n- $\\frac{\\partial z}{\\partial y} = x^2$\\n- $\\frac{dx}{dt} = 2t$\\n- $\\frac{dy}{dt} = \\cos(t)$\\n\\n**Substitute:**\\n$$\\frac{dz}{dt} = (2xy)(2t) + (x^2)(\\cos t) = 4txy + x^2\\cos(t)$$\\n\\n**In terms of $t$:** (substitute $x = t^2$, $y = \\sin t$)\\n$$\\frac{dz}{dt} = 4t(t^2)(\\sin t) + (t^4)\\cos(t) = 4t^3\\sin(t) + t^4\\cos(t)$$\\n\\n**Verification:** $z = t^4\\sin(t) \\Rightarrow \\frac{dz}{dt} = 4t^3\\sin(t) + t^4\\cos(t)$ ✓",
+    "fullSolution": "**Find** $\\frac{dz}{dt}$ **where** $z = x^2y$, $x = t^2$, $y = \\sin(t)$\\n\\n**Chain rule:**\\n$$\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$$\\n\\n**Compute derivatives:**\\n- $\\frac{\\partial z}{\\partial x} = 2xy$\\n- $\\frac{\\partial z}{\\partial y} = x^2$\\n- $\\frac{dx}{dt} = 2t$\\n- $\\frac{dy}{dt} = \\cos(t)$\\n\\n**Substitute:**\\n$$\\frac{dz}{dt} = (2xy)(2t) + (x^2)(\\cos t) = 4txy + x^2\\cos(t)$$\\n\\n**In terms of $t$:** (substitute $x = t^2$, $y = \\sin t$)\\n$$\\frac{dz}{dt} = 4t(t^2)(\\sin t) + (t^4)\\cos(t) = 4t^3\\sin(t) + t^4\\cos(t)$$\\n\\n**Verification:** $z = t^4\\sin(t) \\Rightarrow \\frac{dz}{dt} = 4t^3\\sin(t) + t^4\\cos(t)$ \u2713",
     "relatedProblems": [
       "multivariable-partial-derivatives-1",
       "calc-derivative-chain-rule-1"

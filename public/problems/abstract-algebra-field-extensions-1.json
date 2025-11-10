@@ -68,7 +68,7 @@
       },
       "prompt": {
         "question": "What is $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$?",
-        "hint": "$\\sqrt{2}$ satisfies $x^2 - 2 = 0$ (irreducible over $\\mathbb{Q}$), so minimal polynomial has degree 2. Thus $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$."
+        "hint": "Find the minimal polynomial for $\\sqrt{2}$ over $\\mathbb{Q}$. What's its degree?"
       },
       "options": [
         {
@@ -97,7 +97,9 @@
       },
       "resultState": {
         "description": "First step computed",
-        "equations": ["[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2"]
+        "equations": [
+          "[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2"
+        ]
       }
     },
     {
@@ -127,7 +129,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! We need to check if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$.\n\nSuppose $\\sqrt{3} = a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.\n\nSquaring: $3 = a^2 + 2ab\\sqrt{2} + 2b^2$\n\nFor equality: $a^2 + 2b^2 = 3$ and $2ab = 0$.\n\nIf $a = 0$: $2b^2 = 3 \\implies b^2 = 3/2$, so $b \\notin \\mathbb{Q}$. ✗\n\nIf $b = 0$: $a^2 = 3 \\implies a \\notin \\mathbb{Q}$. ✗\n\nSo $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$, meaning $x^2 - 3$ is irreducible over $\\mathbb{Q}(\\sqrt{2})$.\n\nTherefore: $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$",
+          "explanation": "Excellent! We need to check if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$.\n\nSuppose $\\sqrt{3} = a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.\n\nSquaring: $3 = a^2 + 2ab\\sqrt{2} + 2b^2$\n\nFor equality: $a^2 + 2b^2 = 3$ and $2ab = 0$.\n\nIf $a = 0$: $2b^2 = 3 \\implies b^2 = 3/2$, so $b \\notin \\mathbb{Q}$. \u2717\n\nIf $b = 0$: $a^2 = 3 \\implies a \\notin \\mathbb{Q}$. \u2717\n\nSo $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$, meaning $x^2 - 3$ is irreducible over $\\mathbb{Q}(\\sqrt{2})$.\n\nTherefore: $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$",
           "insight": "$\\sqrt{3}$ can't be written in terms of $\\sqrt{2}$ and rationals!"
         },
         "incorrect": {
@@ -137,7 +139,9 @@
       },
       "resultState": {
         "description": "Second step computed",
-        "equations": ["[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2"]
+        "equations": [
+          "[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2"
+        ]
       }
     },
     {
@@ -177,7 +181,9 @@
       },
       "resultState": {
         "description": "Degree computed using Tower Law",
-        "equations": ["[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4"]
+        "equations": [
+          "[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4"
+        ]
       }
     }
   ],
@@ -190,7 +196,7 @@
       "Tower Law: $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 2 \\times 2 = 4$",
       "Basis: $\\{1, \\sqrt{2}, \\sqrt{3}, \\sqrt{6}\\}$"
     ],
-    "fullSolution": "**Find $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}]$**\n\n---\n\n**Strategy:** Use Tower Law with intermediate field $\\mathbb{Q}(\\sqrt{2})$.\n\n---\n\n**Step 1:** $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$\n\n$\\sqrt{2}$ is root of $x^2 - 2$, irreducible over $\\mathbb{Q}$ (no rational roots).\n\nDegree of minimal polynomial = degree of extension:\n$$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$$\n\nBasis: $\\{1, \\sqrt{2}\\}$\n\n---\n\n**Step 2:** $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})]$\n\nCheck if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$.\n\nSuppose $\\sqrt{3} = a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.\n\nSquare: $3 = a^2 + 2ab\\sqrt{2} + 2b^2$\n\nComparing rational and irrational parts:\n- $a^2 + 2b^2 = 3$\n- $2ab = 0$\n\nIf $a = 0$: $b^2 = 3/2 \\implies b \\notin \\mathbb{Q}$ ✗\n\nIf $b = 0$: $a^2 = 3 \\implies a \\notin \\mathbb{Q}$ ✗\n\nSo $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$.\n\nMinimal polynomial $x^2 - 3$ is irreducible over $\\mathbb{Q}(\\sqrt{2})$:\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$$\n\nBasis: $\\{1, \\sqrt{3}\\}$ over $\\mathbb{Q}(\\sqrt{2})$\n\n---\n\n**Step 3:** Tower Law\n\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = [\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] \\cdot [\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$$\n\n$$= 2 \\times 2 = 4$$\n\n---\n\n**Answer:** $\\boxed{[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4}$\n\n---\n\n**Basis over $\\mathbb{Q}$:** $\\{1, \\sqrt{2}, \\sqrt{3}, \\sqrt{6}\\}$\n\n**General element:** $a + b\\sqrt{2} + c\\sqrt{3} + d\\sqrt{6}$ for $a,b,c,d \\in \\mathbb{Q}$",
+    "fullSolution": "**Find $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}]$**\n\n---\n\n**Strategy:** Use Tower Law with intermediate field $\\mathbb{Q}(\\sqrt{2})$.\n\n---\n\n**Step 1:** $[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$\n\n$\\sqrt{2}$ is root of $x^2 - 2$, irreducible over $\\mathbb{Q}$ (no rational roots).\n\nDegree of minimal polynomial = degree of extension:\n$$[\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}] = 2$$\n\nBasis: $\\{1, \\sqrt{2}\\}$\n\n---\n\n**Step 2:** $[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})]$\n\nCheck if $\\sqrt{3} \\in \\mathbb{Q}(\\sqrt{2})$.\n\nSuppose $\\sqrt{3} = a + b\\sqrt{2}$ for $a, b \\in \\mathbb{Q}$.\n\nSquare: $3 = a^2 + 2ab\\sqrt{2} + 2b^2$\n\nComparing rational and irrational parts:\n- $a^2 + 2b^2 = 3$\n- $2ab = 0$\n\nIf $a = 0$: $b^2 = 3/2 \\implies b \\notin \\mathbb{Q}$ \u2717\n\nIf $b = 0$: $a^2 = 3 \\implies a \\notin \\mathbb{Q}$ \u2717\n\nSo $\\sqrt{3} \\notin \\mathbb{Q}(\\sqrt{2})$.\n\nMinimal polynomial $x^2 - 3$ is irreducible over $\\mathbb{Q}(\\sqrt{2})$:\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] = 2$$\n\nBasis: $\\{1, \\sqrt{3}\\}$ over $\\mathbb{Q}(\\sqrt{2})$\n\n---\n\n**Step 3:** Tower Law\n\n$$[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = [\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}(\\sqrt{2})] \\cdot [\\mathbb{Q}(\\sqrt{2}) : \\mathbb{Q}]$$\n\n$$= 2 \\times 2 = 4$$\n\n---\n\n**Answer:** $\\boxed{[\\mathbb{Q}(\\sqrt{2}, \\sqrt{3}) : \\mathbb{Q}] = 4}$\n\n---\n\n**Basis over $\\mathbb{Q}$:** $\\{1, \\sqrt{2}, \\sqrt{3}, \\sqrt{6}\\}$\n\n**General element:** $a + b\\sqrt{2} + c\\sqrt{3} + d\\sqrt{6}$ for $a,b,c,d \\in \\mathbb{Q}$",
     "relatedProblems": [
       "abstract-algebra-group-1",
       "abstract-algebra-rings-1"

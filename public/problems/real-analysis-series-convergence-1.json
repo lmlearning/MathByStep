@@ -29,7 +29,7 @@
       },
       "prompt": {
         "question": "What is absolute convergence?",
-        "hint": "$\\sum a_n$ converges absolutely if $\\sum |a_n|$ converges. Absolute convergence implies convergence."
+        "hint": "Consider whether $\\sum |a_n|$ converges. This determines absolute convergence."
       },
       "options": [
         {
@@ -97,7 +97,9 @@
       },
       "resultState": {
         "description": "No absolute convergence",
-        "equations": ["\\sum \\frac{1}{n} \\text{ diverges}"]
+        "equations": [
+          "\\sum \\frac{1}{n} \\text{ diverges}"
+        ]
       }
     },
     {
@@ -108,7 +110,7 @@
       },
       "prompt": {
         "question": "Does the original series $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$ converge?",
-        "hint": "Use Alternating Series Test: if $b_n > 0$, $b_n \\searrow 0$, then $\\sum (-1)^n b_n$ converges. Here $b_n = \\frac{1}{n} \\searrow 0$ ✓"
+        "hint": "Use Alternating Series Test: if $b_n > 0$, $b_n \\searrow 0$, then $\\sum (-1)^n b_n$ converges. Here $b_n = \\frac{1}{n} \\searrow 0$ \u2713"
       },
       "options": [
         {
@@ -127,7 +129,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Alternating Series Test (Leibniz):**\n\nIf $b_n > 0$, $b_n$ is decreasing, and $\\lim_{n \\to \\infty} b_n = 0$, then $\\sum_{n=1}^{\\infty} (-1)^n b_n$ converges.\n\nFor our series $\\sum \\frac{(-1)^n}{n}$, let $b_n = \\frac{1}{n}$:\n1. $b_n = \\frac{1}{n} > 0$ ✓\n2. $b_n$ is decreasing: $\\frac{1}{n+1} < \\frac{1}{n}$ ✓\n3. $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$ ✓\n\nBy Alternating Series Test: $\\sum \\frac{(-1)^n}{n}$ **converges**!",
+          "explanation": "Excellent! **Alternating Series Test (Leibniz):**\n\nIf $b_n > 0$, $b_n$ is decreasing, and $\\lim_{n \\to \\infty} b_n = 0$, then $\\sum_{n=1}^{\\infty} (-1)^n b_n$ converges.\n\nFor our series $\\sum \\frac{(-1)^n}{n}$, let $b_n = \\frac{1}{n}$:\n1. $b_n = \\frac{1}{n} > 0$ \u2713\n2. $b_n$ is decreasing: $\\frac{1}{n+1} < \\frac{1}{n}$ \u2713\n3. $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$ \u2713\n\nBy Alternating Series Test: $\\sum \\frac{(-1)^n}{n}$ **converges**!",
           "insight": "Alternating signs can cause a divergent series to converge through cancellation!"
         },
         "incorrect": {
@@ -137,7 +139,9 @@
       },
       "resultState": {
         "description": "Series converges",
-        "equations": ["\\sum \\frac{(-1)^n}{n} \\text{ converges}"]
+        "equations": [
+          "\\sum \\frac{(-1)^n}{n} \\text{ converges}"
+        ]
       }
     },
     {
@@ -148,7 +152,7 @@
       },
       "prompt": {
         "question": "What type of convergence does $\\sum \\frac{(-1)^n}{n}$ have?",
-        "hint": "Converges + doesn't converge absolutely = conditional convergence!"
+        "hint": "A series that converges but not absolutely has a special name. What is it?"
       },
       "options": [
         {
@@ -177,7 +181,9 @@
       },
       "resultState": {
         "description": "Conditional convergence established",
-        "equations": ["\\text{Conditional convergence: } \\sum \\frac{(-1)^n}{n} = -\\ln 2"]
+        "equations": [
+          "\\text{Conditional convergence: } \\sum \\frac{(-1)^n}{n} = -\\ln 2"
+        ]
       }
     }
   ],
@@ -190,7 +196,7 @@
       "Series value: $-\\ln 2$",
       "Conditionally convergent series can be rearranged to any value!"
     ],
-    "fullSolution": "**Determine convergence type of $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$**\n\n---\n\n**Step 1: Test Absolute Convergence**\n\n$$\\sum_{n=1}^{\\infty} \\left|\\frac{(-1)^n}{n}\\right| = \\sum_{n=1}^{\\infty} \\frac{1}{n}$$\n\nThis is the **harmonic series**. By p-series test with $p = 1$:\n$$\\sum_{n=1}^{\\infty} \\frac{1}{n^p} \\text{ converges} \\iff p > 1$$\n\nSince $p = 1 \\not> 1$, the harmonic series **diverges**.\n\n$$\\therefore \\sum \\frac{(-1)^n}{n} \\text{ does NOT converge absolutely}$$\n\n---\n\n**Step 2: Test Ordinary Convergence**\n\nUse **Alternating Series Test**:\n\nFor $\\sum_{n=1}^{\\infty} (-1)^n b_n$ with $b_n = \\frac{1}{n}$:\n\n1. $b_n > 0$ for all $n$ ✓\n2. $b_{n+1} = \\frac{1}{n+1} < \\frac{1}{n} = b_n$ (decreasing) ✓\n3. $\\lim_{n \\to \\infty} b_n = \\lim_{n \\to \\infty} \\frac{1}{n} = 0$ ✓\n\nBy Alternating Series Test: $\\sum \\frac{(-1)^n}{n}$ **converges**.\n\n---\n\n**Step 3: Classification**\n\nSince:\n- $\\sum \\frac{(-1)^n}{n}$ converges\n- $\\sum \\left|\\frac{(-1)^n}{n}\\right|$ diverges\n\nThe series has **conditional convergence**.\n\n---\n\n**Answer:** $\\boxed{\\text{Conditional convergence}}$\n\n---\n\n**Value:** The series converges to $-\\ln 2$:\n$$\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n} = -\\ln 2 \\approx -0.693$$\n\n**Riemann Rearrangement Theorem:** Since this series is conditionally (not absolutely) convergent, rearranging its terms can make it converge to ANY real number or diverge!",
+    "fullSolution": "**Determine convergence type of $\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n}$**\n\n---\n\n**Step 1: Test Absolute Convergence**\n\n$$\\sum_{n=1}^{\\infty} \\left|\\frac{(-1)^n}{n}\\right| = \\sum_{n=1}^{\\infty} \\frac{1}{n}$$\n\nThis is the **harmonic series**. By p-series test with $p = 1$:\n$$\\sum_{n=1}^{\\infty} \\frac{1}{n^p} \\text{ converges} \\iff p > 1$$\n\nSince $p = 1 \\not> 1$, the harmonic series **diverges**.\n\n$$\\therefore \\sum \\frac{(-1)^n}{n} \\text{ does NOT converge absolutely}$$\n\n---\n\n**Step 2: Test Ordinary Convergence**\n\nUse **Alternating Series Test**:\n\nFor $\\sum_{n=1}^{\\infty} (-1)^n b_n$ with $b_n = \\frac{1}{n}$:\n\n1. $b_n > 0$ for all $n$ \u2713\n2. $b_{n+1} = \\frac{1}{n+1} < \\frac{1}{n} = b_n$ (decreasing) \u2713\n3. $\\lim_{n \\to \\infty} b_n = \\lim_{n \\to \\infty} \\frac{1}{n} = 0$ \u2713\n\nBy Alternating Series Test: $\\sum \\frac{(-1)^n}{n}$ **converges**.\n\n---\n\n**Step 3: Classification**\n\nSince:\n- $\\sum \\frac{(-1)^n}{n}$ converges\n- $\\sum \\left|\\frac{(-1)^n}{n}\\right|$ diverges\n\nThe series has **conditional convergence**.\n\n---\n\n**Answer:** $\\boxed{\\text{Conditional convergence}}$\n\n---\n\n**Value:** The series converges to $-\\ln 2$:\n$$\\sum_{n=1}^{\\infty} \\frac{(-1)^n}{n} = -\\ln 2 \\approx -0.693$$\n\n**Riemann Rearrangement Theorem:** Since this series is conditionally (not absolutely) convergent, rearranging its terms can make it converge to ANY real number or diverge!",
     "relatedProblems": [
       "calculus-series-ratio-test-1",
       "real-analysis-sequence-convergence-1"

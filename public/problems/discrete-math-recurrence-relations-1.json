@@ -106,7 +106,7 @@
       },
       "prompt": {
         "question": "What is the general form of $a_n$?",
-        "hint": "$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$ where $c_1, c_2$ determined by initial conditions."
+        "hint": "Combine the two fundamental solutions using arbitrary constants determined by initial conditions."
       },
       "options": [
         {
@@ -179,13 +179,13 @@
   ],
   "summary": {
     "keyInsights": [
-      "Linear recurrence: $a_n = c_1 a_{n-1} + c_2 a_{n-2}$ → characteristic equation $r^2 - c_1 r - c_2 = 0$",
+      "Linear recurrence: $a_n = c_1 a_{n-1} + c_2 a_{n-2}$ \u2192 characteristic equation $r^2 - c_1 r - c_2 = 0$",
       "Characteristic equation: $r^2 - 5r + 6 = 0$ with roots $r = 2, 3$",
       "General solution: $a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$",
       "Initial conditions: $c_1 = -1$, $c_2 = 2$",
       "Closed form: $a_n = 2 \\cdot 3^n - 2^n$"
     ],
-    "fullSolution": "**Solve $a_n = 5a_{n-1} - 6a_{n-2}$ with $a_0 = 1$, $a_1 = 4$**\n\n**Step 1: Characteristic equation**\n$$a_n - 5a_{n-1} + 6a_{n-2} = 0 \\implies r^2 - 5r + 6 = 0$$\n\n**Step 2: Solve for roots**\n$$r^2 - 5r + 6 = (r-2)(r-3) = 0$$\n$$r_1 = 2, \\quad r_2 = 3$$\n\n**Step 3: General solution**\n$$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$$\n\n**Step 4: Apply initial conditions**\n$$a_0 = 1: \\quad c_1 \\cdot 2^0 + c_2 \\cdot 3^0 = c_1 + c_2 = 1$$\n$$a_1 = 4: \\quad c_1 \\cdot 2 + c_2 \\cdot 3 = 2c_1 + 3c_2 = 4$$\n\nSolving:\n$$c_2 = 2, \\quad c_1 = -1$$\n\n**Closed form:**\n$$a_n = -2^n + 2 \\cdot 3^n = 2(3^n - 2^{n-1})$$\n\n**Verification:** $a_0 = -1 + 2 = 1$ ✓, $a_1 = -2 + 6 = 4$ ✓",
+    "fullSolution": "**Solve $a_n = 5a_{n-1} - 6a_{n-2}$ with $a_0 = 1$, $a_1 = 4$**\n\n**Step 1: Characteristic equation**\n$$a_n - 5a_{n-1} + 6a_{n-2} = 0 \\implies r^2 - 5r + 6 = 0$$\n\n**Step 2: Solve for roots**\n$$r^2 - 5r + 6 = (r-2)(r-3) = 0$$\n$$r_1 = 2, \\quad r_2 = 3$$\n\n**Step 3: General solution**\n$$a_n = c_1 \\cdot 2^n + c_2 \\cdot 3^n$$\n\n**Step 4: Apply initial conditions**\n$$a_0 = 1: \\quad c_1 \\cdot 2^0 + c_2 \\cdot 3^0 = c_1 + c_2 = 1$$\n$$a_1 = 4: \\quad c_1 \\cdot 2 + c_2 \\cdot 3 = 2c_1 + 3c_2 = 4$$\n\nSolving:\n$$c_2 = 2, \\quad c_1 = -1$$\n\n**Closed form:**\n$$a_n = -2^n + 2 \\cdot 3^n = 2(3^n - 2^{n-1})$$\n\n**Verification:** $a_0 = -1 + 2 = 1$ \u2713, $a_1 = -2 + 6 = 4$ \u2713",
     "relatedProblems": [
       "discrete-math-combinatorics-1",
       "logic-proof-induction-1"

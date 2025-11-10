@@ -49,7 +49,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Expectation of sample mean:**\n\n$$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$$\n\n**Compute expectation:**\n$$E[\\bar{X}_n] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right]$$\n\n**Linearity of expectation:**\n$$= \\frac{1}{n}\\sum_{i=1}^n E[X_i]$$\n\n**Since $X_i$ identically distributed:**\n$$= \\frac{1}{n} \\sum_{i=1}^n \\mu$$\n$$= \\frac{1}{n} \\cdot n\\mu$$\n$$= \\mu$$\n\n**Result:** $E[\\bar{X}_n] = \\mu$ ✓\n\n**Interpretation:** The sample mean is an **unbiased estimator** of the population mean $\\mu$.",
+          "explanation": "Perfect! **Expectation of sample mean:**\n\n$$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$$\n\n**Compute expectation:**\n$$E[\\bar{X}_n] = E\\left[\\frac{1}{n}\\sum_{i=1}^n X_i\\right]$$\n\n**Linearity of expectation:**\n$$= \\frac{1}{n}\\sum_{i=1}^n E[X_i]$$\n\n**Since $X_i$ identically distributed:**\n$$= \\frac{1}{n} \\sum_{i=1}^n \\mu$$\n$$= \\frac{1}{n} \\cdot n\\mu$$\n$$= \\mu$$\n\n**Result:** $E[\\bar{X}_n] = \\mu$ \u2713\n\n**Interpretation:** The sample mean is an **unbiased estimator** of the population mean $\\mu$.",
           "insight": "Sample mean has same expectation as individual observations!"
         },
         "incorrect": {
@@ -59,7 +59,9 @@
       },
       "resultState": {
         "description": "Expectation computed",
-        "equations": ["E[\\bar{X}_n] = \\mu"]
+        "equations": [
+          "E[\\bar{X}_n] = \\mu"
+        ]
       }
     },
     {
@@ -89,7 +91,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Variance of sample mean:**\n\n$$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$$\n\n**Compute variance:**\n$$\\text{Var}(\\bar{X}_n) = \\text{Var}\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right)$$\n\n**Factor out constant:**\n$$= \\frac{1}{n^2} \\text{Var}\\left(\\sum_{i=1}^n X_i\\right)$$\n\n**Independence:** Since $X_i$ are independent:\n$$= \\frac{1}{n^2} \\sum_{i=1}^n \\text{Var}(X_i)$$\n\n**Identical distribution:**\n$$= \\frac{1}{n^2} \\sum_{i=1}^n \\sigma^2$$\n$$= \\frac{1}{n^2} \\cdot n\\sigma^2$$\n$$= \\frac{\\sigma^2}{n}$$\n\n**Result:** $\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}$ ✓\n\n**Key insight:** Variance decreases as $n$ increases! The sample mean becomes more concentrated around $\\mu$.",
+          "explanation": "Correct! **Variance of sample mean:**\n\n$$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$$\n\n**Compute variance:**\n$$\\text{Var}(\\bar{X}_n) = \\text{Var}\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right)$$\n\n**Factor out constant:**\n$$= \\frac{1}{n^2} \\text{Var}\\left(\\sum_{i=1}^n X_i\\right)$$\n\n**Independence:** Since $X_i$ are independent:\n$$= \\frac{1}{n^2} \\sum_{i=1}^n \\text{Var}(X_i)$$\n\n**Identical distribution:**\n$$= \\frac{1}{n^2} \\sum_{i=1}^n \\sigma^2$$\n$$= \\frac{1}{n^2} \\cdot n\\sigma^2$$\n$$= \\frac{\\sigma^2}{n}$$\n\n**Result:** $\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}$ \u2713\n\n**Key insight:** Variance decreases as $n$ increases! The sample mean becomes more concentrated around $\\mu$.",
           "insight": "Variance of sample mean decreases as $1/n$ - averaging reduces variability!"
         },
         "incorrect": {
@@ -99,7 +101,9 @@
       },
       "resultState": {
         "description": "Variance computed",
-        "equations": ["\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}"]
+        "equations": [
+          "\\text{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}"
+        ]
       }
     },
     {
@@ -110,7 +114,7 @@
       },
       "prompt": {
         "question": "What does Chebyshev's inequality say about $P(|\\bar{X}_n - \\mu| \\geq \\epsilon)$?",
-        "hint": "Chebyshev: $P(|Y - E[Y]| \\geq \\epsilon) \\leq \\frac{\\text{Var}(Y)}{\\epsilon^2}$. So $P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}$."
+        "hint": "Apply Chebyshev's inequality with the variance from step 2 and $\\epsilon = 0.2$."
       },
       "options": [
         {
@@ -139,7 +143,9 @@
       },
       "resultState": {
         "description": "Chebyshev applied",
-        "equations": ["P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}"]
+        "equations": [
+          "P(|\\bar{X}_n - \\mu| \\geq \\epsilon) \\leq \\frac{\\sigma^2}{n\\epsilon^2}"
+        ]
       }
     },
     {
@@ -179,7 +185,9 @@
       },
       "resultState": {
         "description": "WLLN proven",
-        "equations": ["\\bar{X}_n \\xrightarrow{P} \\mu"]
+        "equations": [
+          "\\bar{X}_n \\xrightarrow{P} \\mu"
+        ]
       }
     }
   ],

@@ -52,13 +52,15 @@
           "insight": "Prime factorization is the key to computing totient function efficiently!"
         },
         "incorrect": {
-          "1": "$72 = 8 \\times 9 = 2^3 \\times 3^2$. Check: $2^3 = 8, 3^2 = 9, 8 \\times 9 = 72$ ✓",
+          "1": "$72 = 8 \\times 9 = 2^3 \\times 3^2$. Check: $2^3 = 8, 3^2 = 9, 8 \\times 9 = 72$ \u2713",
           "2": "$2^4 = 16$ and $16 \\times 3 = 48 \\neq 72$. The correct factorization is $2^3 \\times 3^2$."
         }
       },
       "resultState": {
         "description": "Prime factorization found",
-        "equations": ["72 = 2^3 \\times 3^2"]
+        "equations": [
+          "72 = 2^3 \\times 3^2"
+        ]
       }
     },
     {
@@ -98,7 +100,9 @@
       },
       "resultState": {
         "description": "Totient formula for prime powers",
-        "equations": ["\\phi(p^k) = p^{k-1}(p - 1)"]
+        "equations": [
+          "\\phi(p^k) = p^{k-1}(p - 1)"
+        ]
       }
     },
     {
@@ -138,7 +142,9 @@
       },
       "resultState": {
         "description": "Totient computed",
-        "equations": ["\\phi(72) = 24"]
+        "equations": [
+          "\\phi(72) = 24"
+        ]
       }
     },
     {
@@ -149,7 +155,7 @@
       },
       "prompt": {
         "question": "What is the general formula for $\\phi(n)$ where $n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k}$?",
-        "hint": "$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$ where the product is over all prime divisors $p$ of $n$."
+        "hint": "Use the product formula for Euler's totient function with the prime factors you found."
       },
       "options": [
         {
@@ -168,7 +174,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **General Totient Formula:**\n\n$$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$$\n\nwhere the product is over all distinct prime divisors of $n$.\n\n**Verify for $n = 72 = 2^3 \\times 3^2$:**\n\nPrime divisors: $p = 2, 3$\n\n$$\\phi(72) = 72 \\times \\left(1 - \\frac{1}{2}\\right) \\times \\left(1 - \\frac{1}{3}\\right)$$\n\n$$= 72 \\times \\frac{1}{2} \\times \\frac{2}{3}$$\n\n$$= 72 \\times \\frac{2}{6} = 72 \\times \\frac{1}{3} = 24$$ ✓\n\n**Interpretation:** We remove fractions $\\frac{1}{p}$ for each prime $p$ dividing $n$.",
+          "explanation": "Perfect! **General Totient Formula:**\n\n$$\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)$$\n\nwhere the product is over all distinct prime divisors of $n$.\n\n**Verify for $n = 72 = 2^3 \\times 3^2$:**\n\nPrime divisors: $p = 2, 3$\n\n$$\\phi(72) = 72 \\times \\left(1 - \\frac{1}{2}\\right) \\times \\left(1 - \\frac{1}{3}\\right)$$\n\n$$= 72 \\times \\frac{1}{2} \\times \\frac{2}{3}$$\n\n$$= 72 \\times \\frac{2}{6} = 72 \\times \\frac{1}{3} = 24$$ \u2713\n\n**Interpretation:** We remove fractions $\\frac{1}{p}$ for each prime $p$ dividing $n$.",
           "insight": "This formula is elegant and makes the structure of $\\phi$ transparent!"
         },
         "incorrect": {
@@ -178,7 +184,9 @@
       },
       "resultState": {
         "description": "General formula verified",
-        "equations": ["\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)"]
+        "equations": [
+          "\\phi(n) = n \\prod_{p | n} \\left(1 - \\frac{1}{p}\\right)"
+        ]
       }
     }
   ],

@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "What is the Taylor series formula?",
-        "hint": "$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$."
+        "hint": "The Taylor series expands a function using its derivatives at a point."
       },
       "options": [
         {

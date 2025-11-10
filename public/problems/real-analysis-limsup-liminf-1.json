@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "Behavior analyzed",
-        "equations": ["a_{2k} \\to 0^+, \\quad a_{2k+1} \\to 0^-"]
+        "equations": [
+          "a_{2k} \\to 0^+, \\quad a_{2k+1} \\to 0^-"
+        ]
       }
     },
     {
@@ -109,7 +111,7 @@
       },
       "prompt": {
         "question": "What is $\\limsup_{n \\to \\infty} a_n$?",
-        "hint": "For $n$ large, $\\sup_{k \\geq n} a_k$ is achieved at the next even index. Since even terms $\\to 0^+$, we have $\\limsup a_n = 0$."
+        "hint": "For large $n$, what is the supremum of the sequence from index $n$ onwards? Look at the pattern."
       },
       "options": [
         {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "Limsup found",
-        "equations": ["\\limsup_{n \\to \\infty} a_n = 0"]
+        "equations": [
+          "\\limsup_{n \\to \\infty} a_n = 0"
+        ]
       }
     },
     {
@@ -149,7 +153,7 @@
       },
       "prompt": {
         "question": "What is $\\liminf_{n \\to \\infty} a_n$?",
-        "hint": "For $n$ large, $\\inf_{k \\geq n} a_k$ is achieved at the next odd index. Since odd terms $\\to 0^-$, we have $\\liminf a_n = 0$."
+        "hint": "For large $n$, what is the infimum of the sequence from index $n$ onwards? The sequence oscillates between two values."
       },
       "options": [
         {
@@ -178,7 +182,10 @@
       },
       "resultState": {
         "description": "Liminf found and convergence established",
-        "equations": ["\\liminf_{n \\to \\infty} a_n = 0", "\\lim_{n \\to \\infty} a_n = 0"]
+        "equations": [
+          "\\liminf_{n \\to \\infty} a_n = 0",
+          "\\lim_{n \\to \\infty} a_n = 0"
+        ]
       }
     }
   ],

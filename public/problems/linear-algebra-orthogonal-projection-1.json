@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "What is the formula for orthogonal projection?",
-        "hint": "$\\text{proj}_{\\mathbf{u}}\\mathbf{v} = \\frac{\\mathbf{v} \\cdot \\mathbf{u}}{\\mathbf{u} \\cdot \\mathbf{u}} \\mathbf{u}$."
+        "hint": "The projection formula involves the dot product of the vectors and the squared magnitude of the vector being projected onto."
       },
       "options": [
         {

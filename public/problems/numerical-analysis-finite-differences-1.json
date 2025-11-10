@@ -30,7 +30,7 @@
       },
       "prompt": {
         "question": "What is the Taylor expansion of $f(x+h)$ around $x$?",
-        "hint": "$f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + O(h^3)$."
+        "hint": "Use Taylor series expansion to relate $f(x+h)$ and $f(x-h)$ to derivatives at $x$."
       },
       "options": [
         {
@@ -59,7 +59,9 @@
       },
       "resultState": {
         "description": "Taylor expansion",
-        "equations": ["f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + O(h^3)"]
+        "equations": [
+          "f(x+h) = f(x) + hf'(x) + \\frac{h^2}{2}f''(x) + O(h^3)"
+        ]
       }
     },
     {
@@ -99,7 +101,9 @@
       },
       "resultState": {
         "description": "Forward difference formula",
-        "equations": ["f'(x) \\approx \\frac{f(x+h) - f(x)}{h}, \\quad \\text{error } O(h)"]
+        "equations": [
+          "f'(x) \\approx \\frac{f(x+h) - f(x)}{h}, \\quad \\text{error } O(h)"
+        ]
       }
     },
     {
@@ -139,7 +143,9 @@
       },
       "resultState": {
         "description": "Exact derivative",
-        "equations": ["f'(1) = e \\approx 2.71828"]
+        "equations": [
+          "f'(1) = e \\approx 2.71828"
+        ]
       }
     },
     {
@@ -169,7 +175,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Forward Difference Calculation:**\n\n$$f'(1) \\approx \\frac{f(1+h) - f(1)}{h} = \\frac{f(1.1) - f(1)}{0.1}$$\n\n**Compute:**\n$$f(1) = e^1 = e \\approx 2.718282$$\n$$f(1.1) = e^{1.1} \\approx 3.004166$$\n\n$$\\frac{f(1.1) - f(1)}{0.1} = \\frac{3.004166 - 2.718282}{0.1} = \\frac{0.285884}{0.1} \\approx 2.859$$\n\n**Error:**\n$$\\text{Approximation} - \\text{Exact} = 2.859 - 2.718 \\approx 0.141$$\n$$\\text{Relative error} = \\frac{0.141}{2.718} \\approx 5.2\\%$$\n\n**Theoretical error:** $\\frac{h}{2}|f''(1)| = \\frac{0.1}{2} \\cdot e \\approx 0.136$ ✓\n\n**Improvement:** Smaller $h$ or higher-order methods (central difference) would reduce error.",
+          "explanation": "Excellent! **Forward Difference Calculation:**\n\n$$f'(1) \\approx \\frac{f(1+h) - f(1)}{h} = \\frac{f(1.1) - f(1)}{0.1}$$\n\n**Compute:**\n$$f(1) = e^1 = e \\approx 2.718282$$\n$$f(1.1) = e^{1.1} \\approx 3.004166$$\n\n$$\\frac{f(1.1) - f(1)}{0.1} = \\frac{3.004166 - 2.718282}{0.1} = \\frac{0.285884}{0.1} \\approx 2.859$$\n\n**Error:**\n$$\\text{Approximation} - \\text{Exact} = 2.859 - 2.718 \\approx 0.141$$\n$$\\text{Relative error} = \\frac{0.141}{2.718} \\approx 5.2\\%$$\n\n**Theoretical error:** $\\frac{h}{2}|f''(1)| = \\frac{0.1}{2} \\cdot e \\approx 0.136$ \u2713\n\n**Improvement:** Smaller $h$ or higher-order methods (central difference) would reduce error.",
           "insight": "Forward difference overestimates when function is concave up!"
         },
         "incorrect": {
@@ -179,7 +185,9 @@
       },
       "resultState": {
         "description": "Approximation computed",
-        "equations": ["f'(1) \\approx 2.859, \\quad \\text{error} \\approx 5\\%"]
+        "equations": [
+          "f'(1) \\approx 2.859, \\quad \\text{error} \\approx 5\\%"
+        ]
       }
     }
   ],

@@ -30,7 +30,7 @@
       },
       "prompt": {
         "question": "What is the formula for curvature $\\kappa$ of a curve $y = f(x)$?",
-        "hint": "For $y = f(x)$: $\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}$"
+        "hint": "The curvature formula for $y=f(x)$ involves the second derivative in the numerator and first derivative in the denominator."
       },
       "options": [
         {
@@ -59,7 +59,9 @@
       },
       "resultState": {
         "description": "Curvature formula",
-        "equations": ["\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}"]
+        "equations": [
+          "\\kappa = \\frac{|f''(x)|}{(1 + (f'(x))^2)^{3/2}}"
+        ]
       }
     },
     {
@@ -99,7 +101,9 @@
       },
       "resultState": {
         "description": "Derivatives computed",
-        "equations": ["f'(1) = 2, \\quad f''(1) = 2"]
+        "equations": [
+          "f'(1) = 2, \\quad f''(1) = 2"
+        ]
       }
     },
     {
@@ -139,7 +143,9 @@
       },
       "resultState": {
         "description": "Curvature at $(1,1)$",
-        "equations": ["\\kappa = \\frac{2\\sqrt{5}}{25}"]
+        "equations": [
+          "\\kappa = \\frac{2\\sqrt{5}}{25}"
+        ]
       }
     },
     {
