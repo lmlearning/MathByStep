@@ -52,7 +52,7 @@
           "insight": "For a line segment from $\\vec{a}$ to $\\vec{b}$: $\\vec{r}(t) = \\vec{a} + t(\\vec{b} - \\vec{a})$ for $t \\in [0,1]$."
         },
         "incorrect": {
-          "1": "At $t=0$: $(0,0)$ ✓, but at $t=2$: $(2,2) \\neq (1,2)$.",
+          "1": "At $t=0$: $(0,0)$ \u2713, but at $t=2$: $(2,2) \\neq (1,2)$.",
           "2": "At $t=1$: $(2,1) \\neq (1,2)$. The correct parametrization is $\\langle t, 2t \\rangle$."
         }
       },
@@ -97,7 +97,7 @@
         }
       },
       "resultState": {
-        "description": "Compute d𝐫/dt"
+        "description": "Compute d\ud835\udc2b/dt"
       }
     },
     {
@@ -177,7 +177,7 @@
         }
       },
       "resultState": {
-        "description": "Compute F⋅(dr/dt)"
+        "description": "Compute F\u22c5(dr/dt)"
       }
     },
     {
@@ -233,5 +233,25 @@
       "multivariable-double-integral-1",
       "calculus-integration-substitution-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Multivariable Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Multivariable Calculus Course",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Calculus III",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

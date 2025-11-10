@@ -150,7 +150,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Given $\\epsilon > 0$, choose $N = \\lceil 1/\\epsilon \\rceil$. Then $m,n > N \\implies |a_m - a_n| \\leq \\frac{1}{n} \\leq \\frac{1}{N} < \\epsilon$ ✓"
+          "text": "Given $\\epsilon > 0$, choose $N = \\lceil 1/\\epsilon \\rceil$. Then $m,n > N \\implies |a_m - a_n| \\leq \\frac{1}{n} \\leq \\frac{1}{N} < \\epsilon$ \u2713"
         },
         {
           "id": "b",
@@ -185,10 +185,30 @@
       "For $\\epsilon > 0$, choose $N > 1/\\epsilon$: ensures $|a_m-a_n| < \\epsilon$",
       "Conclusion: Sequence is Cauchy (and converges to $\\pi^2/6$ by Euler!)"
     ],
-    "fullSolution": "**Prove $a_n = \\sum_{k=1}^{n} \\frac{1}{k^2}$ is Cauchy**\n\n**Cauchy definition:** $\\forall \\epsilon > 0, \\exists N: m,n > N \\implies |a_m - a_n| < \\epsilon$\n\n**Step 1: Express difference (assume $m > n$)**\n$$a_m - a_n = \\sum_{k=n+1}^{m} \\frac{1}{k^2}$$\n\n**Step 2: Bound the tail**\nUsing integral comparison:\n$$|a_m - a_n| = \\sum_{k=n+1}^{m} \\frac{1}{k^2} \\leq \\sum_{k=n+1}^{\\infty} \\frac{1}{k^2} \\leq \\int_n^{\\infty} \\frac{1}{x^2}\\,dx = \\left[-\\frac{1}{x}\\right]_n^{\\infty} = \\frac{1}{n}$$\n\n**Step 3: Verify Cauchy condition**\nGiven $\\epsilon > 0$, choose $N = \\left\\lceil \\frac{1}{\\epsilon} \\right\\rceil$.\n\nThen for all $m, n > N$ (assume WLOG $m \\geq n$):\n$$|a_m - a_n| \\leq \\frac{1}{n} \\leq \\frac{1}{N} < \\epsilon$$\n\n**Conclusion:** $(a_n)$ is Cauchy in $\\mathbb{R}$. ✓\n\nBy completeness of $\\mathbb{R}$, the sequence converges. (In fact, $\\lim a_n = \\frac{\\pi^2}{6}$!)",
+    "fullSolution": "**Prove $a_n = \\sum_{k=1}^{n} \\frac{1}{k^2}$ is Cauchy**\n\n**Cauchy definition:** $\\forall \\epsilon > 0, \\exists N: m,n > N \\implies |a_m - a_n| < \\epsilon$\n\n**Step 1: Express difference (assume $m > n$)**\n$$a_m - a_n = \\sum_{k=n+1}^{m} \\frac{1}{k^2}$$\n\n**Step 2: Bound the tail**\nUsing integral comparison:\n$$|a_m - a_n| = \\sum_{k=n+1}^{m} \\frac{1}{k^2} \\leq \\sum_{k=n+1}^{\\infty} \\frac{1}{k^2} \\leq \\int_n^{\\infty} \\frac{1}{x^2}\\,dx = \\left[-\\frac{1}{x}\\right]_n^{\\infty} = \\frac{1}{n}$$\n\n**Step 3: Verify Cauchy condition**\nGiven $\\epsilon > 0$, choose $N = \\left\\lceil \\frac{1}{\\epsilon} \\right\\rceil$.\n\nThen for all $m, n > N$ (assume WLOG $m \\geq n$):\n$$|a_m - a_n| \\leq \\frac{1}{n} \\leq \\frac{1}{N} < \\epsilon$$\n\n**Conclusion:** $(a_n)$ is Cauchy in $\\mathbb{R}$. \u2713\n\nBy completeness of $\\mathbb{R}$, the sequence converges. (In fact, $\\lim a_n = \\frac{\\pi^2}{6}$!)",
     "relatedProblems": [
       "real-analysis-sequence-convergence-1",
       "calculus-series-comparison-test-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Sequences and Series",
+      "url": "https://www.khanacademy.org/math/calculus-2/cs2-series",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Sequences",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/Sequences.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Real Analysis - Sequences",
+      "url": "https://www.youtube.com/watch?v=sqEyWLGvvdw",
+      "source": "Dr. Peyam"
+    }
+  ]
 }

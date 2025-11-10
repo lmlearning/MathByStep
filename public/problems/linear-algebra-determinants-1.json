@@ -15,7 +15,7 @@
   },
   "objectives": [
     "Apply cofactor expansion along a row or column",
-    "Compute 2×2 determinants",
+    "Compute 2\u00d72 determinants",
     "Understand the sign pattern in cofactor expansion"
   ],
   "steps": [
@@ -104,11 +104,11 @@
       "order": 3,
       "currentState": {
         "expression": "$M_{22} = \\begin{vmatrix} 2 & 3 \\\\ 1 & -2 \\end{vmatrix}$, $M_{23} = \\begin{vmatrix} 2 & 1 \\\\ 1 & 4 \\end{vmatrix}$",
-        "description": "These are 2×2 determinants obtained by deleting row 2 and the appropriate column."
+        "description": "These are 2\u00d72 determinants obtained by deleting row 2 and the appropriate column."
       },
       "prompt": {
         "question": "What are $M_{22}$ and $M_{23}$?",
-        "hint": "For 2×2: $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = ad - bc$."
+        "hint": "For 2\u00d72: $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = ad - bc$."
       },
       "options": [
         {
@@ -128,7 +128,7 @@
       "feedback": {
         "correct": {
           "explanation": "Perfect! $M_{22} = 2(-2) - 3(1) = -4 - 3 = -7$ and $M_{23} = 2(4) - 1(1) = 8 - 1 = 7$.",
-          "insight": "For 2×2 determinants, use $ad - bc$ (main diagonal minus antidiagonal)."
+          "insight": "For 2\u00d72 determinants, use $ad - bc$ (main diagonal minus antidiagonal)."
         },
         "incorrect": {
           "1": "The formula is $ad - bc$, not $ad + bc$. Check your signs.",
@@ -192,5 +192,25 @@
       "linear-algebra-eigenvalues-1",
       "linear-algebra-basis-dimension-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Linear Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Linear Algebra",
+      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Linear Algebra",
+      "url": "http://math.mit.edu/~gs/linearalgebra/",
+      "source": "MIT OCW"
+    }
+  ]
 }

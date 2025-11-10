@@ -191,5 +191,25 @@
       "topology-compactness-1",
       "calculus-intermediate-value-theorem-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Introduction to Topology",
+      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
+      "source": "Insights into Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Topology",
+      "url": "https://mathworld.wolfram.com/Topology.html",
+      "source": "Wolfram MathWorld"
+    },
+    {
+      "type": "video",
+      "title": "What is Topology?",
+      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
+      "source": "Brendan Fong"
+    }
+  ]
 }

@@ -153,5 +153,25 @@
       "calc-derivative-chain-rule-1",
       "calculus-product-quotient-rule-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Calculus - Derivatives",
+      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Derivatives Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Derivatives",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

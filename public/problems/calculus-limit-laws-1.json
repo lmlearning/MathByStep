@@ -193,5 +193,25 @@
       "calculus-limit-epsilon-delta-1",
       "calc-derivative-chain-rule-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Limits Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-limits-and-continuity/cs1-limits-intro/v/introduction-to-limits-hd",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Limits",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Limits.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "article",
+      "title": "An Intuitive Introduction to Limits",
+      "url": "https://betterexplained.com/articles/an-intuitive-introduction-to-limits/",
+      "source": "Better Explained"
+    }
+  ]
 }

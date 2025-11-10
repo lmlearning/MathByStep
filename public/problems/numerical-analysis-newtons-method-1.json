@@ -190,5 +190,25 @@
       "calculus-lhopital-rule-1",
       "calculus-optimization-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Numerical Methods",
+      "url": "https://www.youtube.com/playlist?list=PLMrJAkhIeNNQromC7gB8LHTRu2UGqOh0a",
+      "source": "Steve Brunton"
+    },
+    {
+      "type": "article",
+      "title": "Numerical Analysis",
+      "url": "https://www.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/",
+      "source": "University of Maryland"
+    },
+    {
+      "type": "video",
+      "title": "Numerical Computing",
+      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+      "source": "Khan Academy"
+    }
+  ]
 }

@@ -5,7 +5,13 @@
   "topic": "Logic & Proofs",
   "difficulty": 4,
   "estimatedTime": 12,
-  "tags": ["logic", "proofs", "contradiction", "irrationality", "number-theory"],
+  "tags": [
+    "logic",
+    "proofs",
+    "contradiction",
+    "irrationality",
+    "number-theory"
+  ],
   "statement": {
     "text": "Prove that $\\sqrt{2}$ is irrational using proof by contradiction."
   },
@@ -53,7 +59,9 @@
       },
       "resultState": {
         "description": "Assumption (seeking contradiction):",
-        "equations": ["\\sqrt{2} = \\frac{a}{b} \\text{ where } \\gcd(a,b) = 1"]
+        "equations": [
+          "\\sqrt{2} = \\frac{a}{b} \\text{ where } \\gcd(a,b) = 1"
+        ]
       }
     },
     {
@@ -94,7 +102,9 @@
       },
       "resultState": {
         "description": "After squaring and rearranging:",
-        "equations": ["2b^2 = a^2"]
+        "equations": [
+          "2b^2 = a^2"
+        ]
       }
     },
     {
@@ -135,7 +145,9 @@
       },
       "resultState": {
         "description": "Since $a^2$ is even:",
-        "equations": ["a \\text{ is even, so } a = 2k \\text{ for some } k \\in \\mathbb{Z}"]
+        "equations": [
+          "a \\text{ is even, so } a = 2k \\text{ for some } k \\in \\mathbb{Z}"
+        ]
       }
     },
     {
@@ -143,7 +155,9 @@
       "order": 4,
       "currentState": {
         "description": "We know $a = 2k$ for some integer $k$. We also have:",
-        "equations": ["2b^2 = a^2"]
+        "equations": [
+          "2b^2 = a^2"
+        ]
       },
       "prompt": {
         "question": "How do we continue?",
@@ -176,7 +190,9 @@
       },
       "resultState": {
         "description": "After substitution:",
-        "equations": ["b^2 = 2k^2"]
+        "equations": [
+          "b^2 = 2k^2"
+        ]
       }
     },
     {
@@ -193,7 +209,7 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Since $b^2$ is even, $b$ is even. But we showed $a$ is even too, contradicting $\\gcd(a,b) = 1$ ✗"
+          "text": "Since $b^2$ is even, $b$ is even. But we showed $a$ is even too, contradicting $\\gcd(a,b) = 1$ \u2717"
         },
         {
           "id": "opt-2",
@@ -217,7 +233,9 @@
       },
       "resultState": {
         "description": "Contradiction reached! Therefore:",
-        "equations": ["\\sqrt{2} \\text{ is irrational} \\quad \\square"]
+        "equations": [
+          "\\sqrt{2} \\text{ is irrational} \\quad \\square"
+        ]
       }
     }
   ],
@@ -230,5 +248,25 @@
     ],
     "fullSolution": "**Proof by contradiction**: Assume $\\sqrt{2} = \\frac{a}{b}$ where $\\gcd(a,b) = 1$.\n\nSquaring: $2 = \\frac{a^2}{b^2}$, so $a^2 = 2b^2$.\n\nThus $a^2$ is even, so $a$ is even: $a = 2k$.\n\nSubstituting: $(2k)^2 = 2b^2 \\Rightarrow 4k^2 = 2b^2 \\Rightarrow b^2 = 2k^2$.\n\nThus $b^2$ is even, so $b$ is even.\n\nBut if both $a$ and $b$ are even, then $\\gcd(a,b) \\geq 2$, contradicting $\\gcd(a,b) = 1$.\n\nTherefore, $\\sqrt{2}$ is irrational. $\\square$",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

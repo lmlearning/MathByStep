@@ -189,26 +189,26 @@
       },
       "prompt": {
         "question": "What are the optimal dimensions?",
-        "hint": "$x=50$, $y=200-2(50)=100$. Area = $50 \\times 100 = 5000$ ft²."
+        "hint": "$x=50$, $y=200-2(50)=100$. Area = $50 \\times 100 = 5000$ ft\u00b2."
       },
       "options": [
         {
           "id": "a",
-          "text": "Width: 50 ft, Length: 100 ft, Max area: 5000 ft²"
+          "text": "Width: 50 ft, Length: 100 ft, Max area: 5000 ft\u00b2"
         },
         {
           "id": "b",
-          "text": "Width: 100 ft, Length: 50 ft, Max area: 5000 ft²"
+          "text": "Width: 100 ft, Length: 50 ft, Max area: 5000 ft\u00b2"
         },
         {
           "id": "c",
-          "text": "Width: 50 ft, Length: 50 ft, Max area: 2500 ft²"
+          "text": "Width: 50 ft, Length: 50 ft, Max area: 2500 ft\u00b2"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $x=50$ ft (width), $y=200-2(50)=100$ ft (length), Area = $50 \\times 100 = 5000$ ft².",
+          "explanation": "Perfect! $x=50$ ft (width), $y=200-2(50)=100$ ft (length), Area = $50 \\times 100 = 5000$ ft\u00b2.",
           "insight": "The optimal rectangle is twice as long as it is wide when one side is unfenced."
         },
         "incorrect": {
@@ -227,12 +227,32 @@
       "Use constraint to express objective as function of one variable",
       "Find critical points: set $f'(x) = 0$",
       "Second derivative test: $f''<0$ is max, $f''>0$ is min",
-      "Answer: 50 ft × 100 ft rectangle, max area = 5000 ft²"
+      "Answer: 50 ft \u00d7 100 ft rectangle, max area = 5000 ft\u00b2"
     ],
-    "fullSolution": "**Setup:** Width $x$ (perpendicular to river), length $y$ (parallel to river)\\n\\n**Constraint:** $2x + y = 200$ (fence three sides)\\n\\n**Objective:** Maximize $A = xy$\\n\\n**Express as one variable:**\\n$y = 200-2x$, so $A(x) = x(200-2x) = 200x-2x^2$\\n\\n**Find critical points:**\\n$A'(x) = 200-4x = 0 \\Rightarrow x = 50$\\n\\n**Verify maximum:**\\n$A''(x) = -4 < 0$ ✓ (maximum)\\n\\n**Find dimensions:**\\n- $x = 50$ ft\\n- $y = 200-2(50) = 100$ ft\\n- Max area = $50 \\times 100 = 5000$ ft²\\n\\n**Answer: 50 ft × 100 ft**",
+    "fullSolution": "**Setup:** Width $x$ (perpendicular to river), length $y$ (parallel to river)\\n\\n**Constraint:** $2x + y = 200$ (fence three sides)\\n\\n**Objective:** Maximize $A = xy$\\n\\n**Express as one variable:**\\n$y = 200-2x$, so $A(x) = x(200-2x) = 200x-2x^2$\\n\\n**Find critical points:**\\n$A'(x) = 200-4x = 0 \\Rightarrow x = 50$\\n\\n**Verify maximum:**\\n$A''(x) = -4 < 0$ \u2713 (maximum)\\n\\n**Find dimensions:**\\n- $x = 50$ ft\\n- $y = 200-2(50) = 100$ ft\\n- Max area = $50 \\times 100 = 5000$ ft\u00b2\\n\\n**Answer: 50 ft \u00d7 100 ft**",
     "relatedProblems": [
       "calculus-mvt-1",
       "multivariable-lagrange-multipliers-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Optimization Problems",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-analyzing-functions/cs1-optimization-problems/v/optimization-fence-1",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Optimization",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Calculus Optimization",
+      "url": "https://www.youtube.com/watch?v=HjR9OKbRSYE",
+      "source": "Organic Chemistry Tutor"
+    }
+  ]
 }

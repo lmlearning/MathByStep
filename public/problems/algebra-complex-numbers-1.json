@@ -108,20 +108,20 @@
       },
       "prompt": {
         "question": "What is the reference angle $\\alpha$ where $\\tan(\\alpha) = \\sqrt{3}$?",
-        "hint": "Think of special angles: $30°$, $45°$, $60°$."
+        "hint": "Think of special angles: $30\u00b0$, $45\u00b0$, $60\u00b0$."
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\alpha = \\frac{\\pi}{3}$ (60°)"
+          "text": "$\\alpha = \\frac{\\pi}{3}$ (60\u00b0)"
         },
         {
           "id": "b",
-          "text": "$\\alpha = \\frac{\\pi}{4}$ (45°)"
+          "text": "$\\alpha = \\frac{\\pi}{4}$ (45\u00b0)"
         },
         {
           "id": "c",
-          "text": "$\\alpha = \\frac{\\pi}{6}$ (30°)"
+          "text": "$\\alpha = \\frac{\\pi}{6}$ (30\u00b0)"
         }
       ],
       "correctOptionIndex": 0,
@@ -207,7 +207,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $z = 2e^{i\\frac{2\\pi}{3}} = 2(\\cos \\frac{2\\pi}{3} + i\\sin \\frac{2\\pi}{3}) = 2(-\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}) = -1 + \\sqrt{3}i$ ✓",
+          "explanation": "Perfect! $z = 2e^{i\\frac{2\\pi}{3}} = 2(\\cos \\frac{2\\pi}{3} + i\\sin \\frac{2\\pi}{3}) = 2(-\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}) = -1 + \\sqrt{3}i$ \u2713",
           "insight": "Polar form elegantly represents complex numbers using magnitude and direction."
         },
         "incorrect": {
@@ -231,5 +231,25 @@
     "relatedProblems": [
       "algebra-quadratic-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Algebra Course",
+      "url": "https://www.khanacademy.org/math/algebra",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Algebra Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Algebra Basics",
+      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
+      "source": "Professor Leonard"
+    }
+  ]
 }

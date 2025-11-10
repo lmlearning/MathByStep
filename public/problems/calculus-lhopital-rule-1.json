@@ -1,22 +1,22 @@
 {
   "id": "calculus-lhopital-rule-1",
   "type": "problem",
-  "title": "L'Hôpital's Rule: Evaluate Indeterminate Limits",
+  "title": "L'H\u00f4pital's Rule: Evaluate Indeterminate Limits",
   "topic": "Calculus",
   "difficulty": 2,
   "estimatedTime": 8,
   "tags": [
     "calculus",
     "limits",
-    "L'Hôpital's rule",
+    "L'H\u00f4pital's rule",
     "indeterminate forms"
   ],
   "statement": {
-    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$ using L'Hôpital's rule."
+    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$ using L'H\u00f4pital's rule."
   },
   "objectives": [
     "Identify indeterminate forms",
-    "Apply L'Hôpital's rule",
+    "Apply L'H\u00f4pital's rule",
     "Evaluate limits of trigonometric functions"
   ],
   "steps": [
@@ -25,7 +25,7 @@
       "order": 1,
       "currentState": {
         "expression": "$\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$",
-        "description": "Check if L'Hôpital's rule applies."
+        "description": "Check if L'H\u00f4pital's rule applies."
       },
       "prompt": {
         "question": "What form does this limit have?",
@@ -34,7 +34,7 @@
       "options": [
         {
           "id": "a",
-          "text": "$\\frac{0}{0}$ (indeterminate - L'Hôpital's rule applies)"
+          "text": "$\\frac{0}{0}$ (indeterminate - L'H\u00f4pital's rule applies)"
         },
         {
           "id": "b",
@@ -48,8 +48,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! $\\frac{\\sin(0)}{0} = \\frac{0}{0}$ is indeterminate. L'Hôpital's rule: if $\\lim \\frac{f}{g} = \\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$, then $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$ (if this limit exists).",
-          "insight": "L'Hôpital's rule is powerful for $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ forms."
+          "explanation": "Correct! $\\frac{\\sin(0)}{0} = \\frac{0}{0}$ is indeterminate. L'H\u00f4pital's rule: if $\\lim \\frac{f}{g} = \\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$, then $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$ (if this limit exists).",
+          "insight": "L'H\u00f4pital's rule is powerful for $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ forms."
         },
         "incorrect": {
           "1": "Direct substitution gives $\\frac{0}{0}$, not $\\frac{3}{2}$.",
@@ -65,7 +65,7 @@
       "order": 2,
       "currentState": {
         "expression": "Need derivatives of $\\sin(3x)$ and $2x$",
-        "description": "Apply L'Hôpital's rule."
+        "description": "Apply L'H\u00f4pital's rule."
       },
       "prompt": {
         "question": "What are the derivatives?",
@@ -129,7 +129,7 @@
       "feedback": {
         "correct": {
           "explanation": "Excellent! $\\cos(3 \\cdot 0) = \\cos(0) = 1$, so $\\frac{3(1)}{2} = \\frac{3}{2}$.",
-          "insight": "After applying L'Hôpital's rule, always check if you can evaluate directly."
+          "insight": "After applying L'H\u00f4pital's rule, always check if you can evaluate directly."
         },
         "incorrect": {
           "1": "The denominator is 2, not 0.",
@@ -143,15 +143,35 @@
   ],
   "summary": {
     "keyInsights": [
-      "L'Hôpital's rule: $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$ for $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$ forms",
+      "L'H\u00f4pital's rule: $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$ for $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$ forms",
       "Always verify indeterminate form first",
       "Differentiate top and bottom separately (not as a quotient!)",
       "Answer: $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x} = \\frac{3}{2}$"
     ],
-    "fullSolution": "**Evaluate:** $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$\\n\\n**Check form:** $\\frac{\\sin(0)}{0} = \\frac{0}{0}$ ✓ (indeterminate)\\n\\n**Apply L'Hôpital's rule:**\\n$$\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x} = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}[\\sin(3x)]}{\\frac{d}{dx}[2x]} = \\lim_{x \\to 0} \\frac{3\\cos(3x)}{2}$$\\n\\n**Evaluate:**\\n$$= \\frac{3\\cos(0)}{2} = \\frac{3(1)}{2} = \\frac{3}{2}$$\\n\\n**Answer: $\\frac{3}{2}$**",
+    "fullSolution": "**Evaluate:** $\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x}$\\n\\n**Check form:** $\\frac{\\sin(0)}{0} = \\frac{0}{0}$ \u2713 (indeterminate)\\n\\n**Apply L'H\u00f4pital's rule:**\\n$$\\lim_{x \\to 0} \\frac{\\sin(3x)}{2x} = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}[\\sin(3x)]}{\\frac{d}{dx}[2x]} = \\lim_{x \\to 0} \\frac{3\\cos(3x)}{2}$$\\n\\n**Evaluate:**\\n$$= \\frac{3\\cos(0)}{2} = \\frac{3(1)}{2} = \\frac{3}{2}$$\\n\\n**Answer: $\\frac{3}{2}$**",
     "relatedProblems": [
       "calculus-limit-laws-1",
       "calculus-limit-epsilon-delta-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Limits Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-limits-and-continuity/cs1-limits-intro/v/introduction-to-limits-hd",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Limits",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Limits.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "article",
+      "title": "An Intuitive Introduction to Limits",
+      "url": "https://betterexplained.com/articles/an-intuitive-introduction-to-limits/",
+      "source": "Better Explained"
+    }
+  ]
 }

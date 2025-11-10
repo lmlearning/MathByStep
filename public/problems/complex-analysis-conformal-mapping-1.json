@@ -1,21 +1,21 @@
 {
   "id": "complex-analysis-conformal-mapping-1",
   "type": "problem",
-  "title": "Conformal Mappings and Möbius Transformations",
+  "title": "Conformal Mappings and M\u00f6bius Transformations",
   "topic": "Complex Analysis",
   "difficulty": 4,
   "estimatedTime": 13,
   "tags": [
     "complex analysis",
     "conformal mapping",
-    "Möbius transformation",
+    "M\u00f6bius transformation",
     "analytic functions"
   ],
   "statement": {
-    "text": "Find the Möbius transformation that maps the points $0, 1, \\infty$ to $1, i, -1$ respectively."
+    "text": "Find the M\u00f6bius transformation that maps the points $0, 1, \\infty$ to $1, i, -1$ respectively."
   },
   "objectives": [
-    "Understand Möbius transformations",
+    "Understand M\u00f6bius transformations",
     "Set up equations from point mappings",
     "Solve for transformation coefficients"
   ],
@@ -24,11 +24,11 @@
       "id": "step-1",
       "order": 1,
       "currentState": {
-        "description": "What is a Möbius transformation?"
+        "description": "What is a M\u00f6bius transformation?"
       },
       "prompt": {
         "question": "What is the general form?",
-        "hint": "Möbius transformation: $f(z) = \\frac{az + b}{cz + d}$ where $ad - bc \\neq 0$ (else degenerate)."
+        "hint": "M\u00f6bius transformation: $f(z) = \\frac{az + b}{cz + d}$ where $ad - bc \\neq 0$ (else degenerate)."
       },
       "options": [
         {
@@ -47,16 +47,16 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! Möbius transformations $f(z) = \\frac{az+b}{cz+d}$ are the most general conformal maps (angle-preserving) of the extended complex plane $\\mathbb{C} \\cup \\{\\infty\\}$ to itself.",
-          "insight": "Möbius transformations map circles/lines to circles/lines. They're determined uniquely by 3 point mappings."
+          "explanation": "Correct! M\u00f6bius transformations $f(z) = \\frac{az+b}{cz+d}$ are the most general conformal maps (angle-preserving) of the extended complex plane $\\mathbb{C} \\cup \\{\\infty\\}$ to itself.",
+          "insight": "M\u00f6bius transformations map circles/lines to circles/lines. They're determined uniquely by 3 point mappings."
         },
         "incorrect": {
-          "1": "That's a polynomial, not a Möbius transformation!",
+          "1": "That's a polynomial, not a M\u00f6bius transformation!",
           "2": "That's an exponential function, not a fractional linear transformation!"
         }
       },
       "resultState": {
-        "description": "Definition of Möbius transformation"
+        "description": "Definition of M\u00f6bius transformation"
       }
     },
     {
@@ -87,11 +87,11 @@
       "feedback": {
         "correct": {
           "explanation": "Perfect! At $z = 0$: $f(0) = \\frac{b}{d} = 1$. So $b = d$. We can normalize by setting $d = 1$ (scaling doesn't change the map), giving $b = 1$.",
-          "insight": "Möbius transformations are defined up to scaling: $\\frac{az+b}{cz+d} = \\frac{\\lambda(az+b)}{\\lambda(cz+d)}$ for any $\\lambda \\neq 0$."
+          "insight": "M\u00f6bius transformations are defined up to scaling: $\\frac{az+b}{cz+d} = \\frac{\\lambda(az+b)}{\\lambda(cz+d)}$ for any $\\lambda \\neq 0$."
         },
         "incorrect": {
           "1": "For rational functions, evaluate by substitution: $f(0) = \\frac{b}{d}$.",
-          "2": "Möbius maps of 0 depend on $b/d$, not always 0!"
+          "2": "M\u00f6bius maps of 0 depend on $b/d$, not always 0!"
         }
       },
       "resultState": {
@@ -168,7 +168,7 @@
           "insight": "Final answer: $f(z) = \\frac{iz + 1}{-iz + 1} = \\frac{iz + 1}{1 - iz}$."
         },
         "incorrect": {
-          "1": "$f(\\infty) = a/c$ for Möbius transformations (ratio of leading coefficients).",
+          "1": "$f(\\infty) = a/c$ for M\u00f6bius transformations (ratio of leading coefficients).",
           "2": "Only when $c = 0$, which isn't the case here!"
         }
       },
@@ -179,18 +179,38 @@
   ],
   "summary": {
     "keyInsights": [
-      "Möbius transformation: $f(z) = \\frac{az+b}{cz+d}$ with $ad - bc \\neq 0$",
-      "3 points determine a unique Möbius transformation",
+      "M\u00f6bius transformation: $f(z) = \\frac{az+b}{cz+d}$ with $ad - bc \\neq 0$",
+      "3 points determine a unique M\u00f6bius transformation",
       "From $f(0) = 1$: $b = d = 1$ (normalized)",
       "From $f(1) = i$: $a = ic + (i-1)$",
       "From $f(\\infty) = -1$: $a = -c$",
       "Solving: $c = -i$, $a = i$, $b = d = 1$",
       "Answer: $f(z) = \\frac{iz + 1}{1 - iz}$"
     ],
-    "fullSolution": "**Find Möbius transformation mapping $0 \\to 1$, $1 \\to i$, $\\infty \\to -1$**\n\n**Setup:** Möbius transformation has form:\n$$f(z) = \\frac{az + b}{cz + d}$$\nwith $ad - bc \\neq 0$ (non-degeneracy condition).\n\n---\n\n**Condition 1:** $f(0) = 1$\n\n$$f(0) = \\frac{a(0) + b}{c(0) + d} = \\frac{b}{d} = 1$$\n\nTherefore $b = d$.\n\n**Normalization:** Set $d = 1$ (scaling doesn't affect the map). Then $b = 1$.\n\nNow: $f(z) = \\frac{az + 1}{cz + 1}$\n\n---\n\n**Condition 2:** $f(1) = i$\n\n$$f(1) = \\frac{a + 1}{c + 1} = i$$\n\nCross-multiply:\n$$a + 1 = i(c + 1)$$\n$$a = ic + i - 1 \\quad (*)$$\n\n---\n\n**Condition 3:** $f(\\infty) = -1$\n\nFor Möbius transformations:\n$$f(\\infty) = \\lim_{z \\to \\infty} \\frac{az + 1}{cz + 1} = \\lim_{z \\to \\infty} \\frac{a + 1/z}{c + 1/z} = \\frac{a}{c}$$\n\nSo:\n$$\\frac{a}{c} = -1$$\n$$a = -c \\quad (**)$$\n\n---\n\n**Solve for $a$ and $c$:**\n\nFrom $(*)$ and $(**)$:\n$$-c = ic + i - 1$$\n$$-c - ic = i - 1$$\n$$c(-1 - i) = i - 1$$\n$$c = \\frac{i - 1}{-1 - i}$$\n\nRationalize:\n$$c = \\frac{i - 1}{-1 - i} \\cdot \\frac{-1 + i}{-1 + i} = \\frac{(i-1)(-1+i)}{(-1-i)(-1+i)}$$\n$$= \\frac{-i + i^2 + 1 - i}{1 - i^2} = \\frac{1 - 2i - 1}{1 + 1} = \\frac{-2i}{2} = -i$$\n\nThen:\n$$a = -c = -(-i) = i$$\n\n---\n\n**Final Answer:**\n\n$$f(z) = \\frac{iz + 1}{-iz + 1} = \\frac{iz + 1}{1 - iz}$$\n\n**Verification:**\n- $f(0) = \\frac{0 + 1}{1 - 0} = 1$ ✓\n- $f(1) = \\frac{i + 1}{1 - i} = \\frac{(i+1)(1+i)}{(1-i)(1+i)} = \\frac{i + i^2 + 1 + i}{2} = \\frac{2i}{2} = i$ ✓\n- $f(\\infty) = \\frac{i}{-i} = -1$ ✓\n\n$$\\boxed{f(z) = \\frac{iz + 1}{1 - iz}}$$",
+    "fullSolution": "**Find M\u00f6bius transformation mapping $0 \\to 1$, $1 \\to i$, $\\infty \\to -1$**\n\n**Setup:** M\u00f6bius transformation has form:\n$$f(z) = \\frac{az + b}{cz + d}$$\nwith $ad - bc \\neq 0$ (non-degeneracy condition).\n\n---\n\n**Condition 1:** $f(0) = 1$\n\n$$f(0) = \\frac{a(0) + b}{c(0) + d} = \\frac{b}{d} = 1$$\n\nTherefore $b = d$.\n\n**Normalization:** Set $d = 1$ (scaling doesn't affect the map). Then $b = 1$.\n\nNow: $f(z) = \\frac{az + 1}{cz + 1}$\n\n---\n\n**Condition 2:** $f(1) = i$\n\n$$f(1) = \\frac{a + 1}{c + 1} = i$$\n\nCross-multiply:\n$$a + 1 = i(c + 1)$$\n$$a = ic + i - 1 \\quad (*)$$\n\n---\n\n**Condition 3:** $f(\\infty) = -1$\n\nFor M\u00f6bius transformations:\n$$f(\\infty) = \\lim_{z \\to \\infty} \\frac{az + 1}{cz + 1} = \\lim_{z \\to \\infty} \\frac{a + 1/z}{c + 1/z} = \\frac{a}{c}$$\n\nSo:\n$$\\frac{a}{c} = -1$$\n$$a = -c \\quad (**)$$\n\n---\n\n**Solve for $a$ and $c$:**\n\nFrom $(*)$ and $(**)$:\n$$-c = ic + i - 1$$\n$$-c - ic = i - 1$$\n$$c(-1 - i) = i - 1$$\n$$c = \\frac{i - 1}{-1 - i}$$\n\nRationalize:\n$$c = \\frac{i - 1}{-1 - i} \\cdot \\frac{-1 + i}{-1 + i} = \\frac{(i-1)(-1+i)}{(-1-i)(-1+i)}$$\n$$= \\frac{-i + i^2 + 1 - i}{1 - i^2} = \\frac{1 - 2i - 1}{1 + 1} = \\frac{-2i}{2} = -i$$\n\nThen:\n$$a = -c = -(-i) = i$$\n\n---\n\n**Final Answer:**\n\n$$f(z) = \\frac{iz + 1}{-iz + 1} = \\frac{iz + 1}{1 - iz}$$\n\n**Verification:**\n- $f(0) = \\frac{0 + 1}{1 - 0} = 1$ \u2713\n- $f(1) = \\frac{i + 1}{1 - i} = \\frac{(i+1)(1+i)}{(1-i)(1+i)} = \\frac{i + i^2 + 1 + i}{2} = \\frac{2i}{2} = i$ \u2713\n- $f(\\infty) = \\frac{i}{-i} = -1$ \u2713\n\n$$\\boxed{f(z) = \\frac{iz + 1}{1 - iz}}$$",
     "relatedProblems": [
       "complex-analysis-cauchy-theorem-1",
       "complex-analysis-residue-theorem-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Analysis",
+      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
+      "source": "MathTheBeautiful"
+    },
+    {
+      "type": "article",
+      "title": "Complex Analysis",
+      "url": "https://complex-analysis.com/",
+      "source": "Complex Analysis Course"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

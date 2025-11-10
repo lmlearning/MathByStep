@@ -207,7 +207,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! Since $|G| = [G:H] \\cdot |H|$ where $[G:H]$ is a positive integer, $|H|$ divides $|G|$. This is Lagrange's Theorem! ∎",
+          "explanation": "Exactly! Since $|G| = [G:H] \\cdot |H|$ where $[G:H]$ is a positive integer, $|H|$ divides $|G|$. This is Lagrange's Theorem! \u220e",
           "insight": "Lagrange's Theorem has many consequences: the order of any element divides $|G|$, and groups of prime order are cyclic."
         },
         "incorrect": {
@@ -228,10 +228,30 @@
       "Corollary: For any $g \\in G$, the order of $g$ divides $|G|$",
       "Corollary: Groups of prime order are cyclic"
     ],
-    "fullSolution": "**Lagrange's Theorem:** If $H$ is a subgroup of finite group $G$, then $|H|$ divides $|G|$.\n\n**Proof:**\n\n1. Every left coset $gH$ has cardinality $|H|$ (via the bijection $h \\mapsto gh$).\n\n2. Cosets partition $G$: \n   - Every $g \\in G$ belongs to $gH$\n   - If $g_1H \\cap g_2H \\neq \\emptyset$, then $g_1H = g_2H$\n\n3. Let $[G:H]$ = number of distinct cosets.\n\n4. Since cosets partition $G$ into $[G:H]$ disjoint sets of size $|H|$:\n$$|G| = [G:H] \\cdot |H|$$\n\n5. Therefore $|H|$ divides $|G|$. ∎",
+    "fullSolution": "**Lagrange's Theorem:** If $H$ is a subgroup of finite group $G$, then $|H|$ divides $|G|$.\n\n**Proof:**\n\n1. Every left coset $gH$ has cardinality $|H|$ (via the bijection $h \\mapsto gh$).\n\n2. Cosets partition $G$: \n   - Every $g \\in G$ belongs to $gH$\n   - If $g_1H \\cap g_2H \\neq \\emptyset$, then $g_1H = g_2H$\n\n3. Let $[G:H]$ = number of distinct cosets.\n\n4. Since cosets partition $G$ into $[G:H]$ disjoint sets of size $|H|$:\n$$|G| = [G:H] \\cdot |H|$$\n\n5. Therefore $|H|$ divides $|G|$. \u220e",
     "relatedProblems": [
       "number-theory-modular-arithmetic-1",
       "logic-proof-direct-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Algebra Course",
+      "url": "https://www.khanacademy.org/math/algebra",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Algebra Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Algebra Basics",
+      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
+      "source": "Professor Leonard"
+    }
+  ]
 }

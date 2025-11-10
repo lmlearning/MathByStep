@@ -5,7 +5,12 @@
   "topic": "Number Theory",
   "difficulty": 2,
   "estimatedTime": 7,
-  "tags": ["number-theory", "gcd", "euclidean-algorithm", "divisibility"],
+  "tags": [
+    "number-theory",
+    "gcd",
+    "euclidean-algorithm",
+    "divisibility"
+  ],
   "statement": {
     "text": "Find $\\gcd(48, 18)$ using the Euclidean Algorithm."
   },
@@ -53,7 +58,9 @@
       },
       "resultState": {
         "description": "First division:",
-        "equations": ["48 = 18 \\cdot 2 + 12"]
+        "equations": [
+          "48 = 18 \\cdot 2 + 12"
+        ]
       }
     },
     {
@@ -61,7 +68,9 @@
       "order": 2,
       "currentState": {
         "description": "From $48 = 18 \\cdot 2 + 12$, we have remainder 12.",
-        "equations": ["\\gcd(48, 18) = \\gcd(18, 12)"]
+        "equations": [
+          "\\gcd(48, 18) = \\gcd(18, 12)"
+        ]
       },
       "prompt": {
         "question": "What do we do next?",
@@ -94,7 +103,10 @@
       },
       "resultState": {
         "description": "Second division:",
-        "equations": ["18 = 12 \\cdot 1 + 6", "\\gcd(18, 12) = \\gcd(12, 6)"]
+        "equations": [
+          "18 = 12 \\cdot 1 + 6",
+          "\\gcd(18, 12) = \\gcd(12, 6)"
+        ]
       }
     },
     {
@@ -135,7 +147,10 @@
       },
       "resultState": {
         "description": "Third division (final):",
-        "equations": ["12 = 6 \\cdot 2 + 0", "\\text{Remainder is 0, so algorithm terminates}"]
+        "equations": [
+          "12 = 6 \\cdot 2 + 0",
+          "\\text{Remainder is 0, so algorithm terminates}"
+        ]
       }
     },
     {
@@ -176,7 +191,9 @@
       },
       "resultState": {
         "description": "Solution:",
-        "equations": ["\\gcd(48, 18) = 6"]
+        "equations": [
+          "\\gcd(48, 18) = 6"
+        ]
       }
     }
   ],
@@ -189,5 +206,25 @@
     ],
     "fullSolution": "$48 = 18 \\cdot 2 + 12$\n$18 = 12 \\cdot 1 + 6$\n$12 = 6 \\cdot 2 + 0$\n\nLast non-zero remainder: $\\gcd(48, 18) = 6$",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Number Theory",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Elementary Number Theory",
+      "url": "https://www.math.brown.edu/johsilve/frintch1ch6.pdf",
+      "source": "Brown University"
+    },
+    {
+      "type": "video",
+      "title": "Numberphile",
+      "url": "https://www.youtube.com/user/numberphile",
+      "source": "Numberphile"
+    }
+  ]
 }

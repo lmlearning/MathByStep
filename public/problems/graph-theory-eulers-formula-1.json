@@ -136,7 +136,9 @@
       },
       "resultState": {
         "description": "Edge bound for planar graphs: $E \\leq 3V - 6$",
-        "equations": ["E \\leq 3V - 6 \\quad (V \\geq 3)"]
+        "equations": [
+          "E \\leq 3V - 6 \\quad (V \\geq 3)"
+        ]
       }
     },
     {
@@ -144,7 +146,9 @@
       "order": 4,
       "currentState": {
         "description": "Necessary condition for planarity: $E \\leq 3V - 6$.",
-        "equations": ["E \\leq 3V - 6"]
+        "equations": [
+          "E \\leq 3V - 6"
+        ]
       },
       "prompt": {
         "question": "Apply this bound to $K_5$ (complete graph on 5 vertices).",
@@ -177,7 +181,9 @@
       },
       "resultState": {
         "description": "Proven: $K_5$ is not planar",
-        "equations": ["K_5: V=5, E=10, \\quad 10 > 9 = 3(5)-6"]
+        "equations": [
+          "K_5: V=5, E=10, \\quad 10 > 9 = 3(5)-6"
+        ]
       }
     }
   ],
@@ -195,5 +201,25 @@
       "graph-theory-euler-path-1",
       "discrete-math-graph-coloring-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory",
+      "url": "https://www.youtube.com/playlist?list=PLoJC20gNfC2gmT_5WgwYwGMvgCjYVsIQg",
+      "source": "Sarada Herke"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Graph Theory",
+      "url": "https://www.mathsisfun.com/data/graph-theory.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Graph Theory Introduction",
+      "url": "https://www.youtube.com/watch?v=LFKZLXVO-Dg",
+      "source": "Trefor Bazett"
+    }
+  ]
 }

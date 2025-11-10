@@ -33,11 +33,11 @@
       "options": [
         {
           "id": "a",
-          "text": "(Ways to choose 3 aces) × (Ways to choose 2 non-aces)"
+          "text": "(Ways to choose 3 aces) \u00d7 (Ways to choose 2 non-aces)"
         },
         {
           "id": "b",
-          "text": "(Ways to choose 5 cards) − (Ways without aces)"
+          "text": "(Ways to choose 5 cards) \u2212 (Ways without aces)"
         },
         {
           "id": "c",
@@ -103,7 +103,7 @@
       "id": "step-3",
       "order": 3,
       "currentState": {
-        "expression": "48 non-ace cards (52−4), need to choose 2",
+        "expression": "48 non-ace cards (52\u22124), need to choose 2",
         "description": "How many ways to choose 2 cards from 48?"
       },
       "prompt": {
@@ -192,5 +192,25 @@
       "logic-proof-induction-1",
       "probability-bayes-theorem-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Combinatorics",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Combinatorics",
+      "url": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Counting and Combinations",
+      "url": "https://www.youtube.com/watch?v=XqQTXW7XfYA",
+      "source": "Eddie Woo"
+    }
+  ]
 }

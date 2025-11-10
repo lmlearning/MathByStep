@@ -192,5 +192,25 @@
       "real-analysis-sequence-convergence-1",
       "calculus-integration-substitution-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Real Analysis",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61O7HkcF7UImpM0cR_L2gSw",
+      "source": "MIT OCW"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Real Analysis",
+      "url": "https://www.math.ucdavis.edu/~hunter/intro_analysis_pdf/intro_analysis.html",
+      "source": "UC Davis"
+    },
+    {
+      "type": "video",
+      "title": "Real Analysis Lectures",
+      "url": "https://www.youtube.com/playlist?list=PLun8-Z_lTkC5Hf1gEJ5Qz7RR4-9_LdPZo",
+      "source": "Dr. Peyam"
+    }
+  ]
 }

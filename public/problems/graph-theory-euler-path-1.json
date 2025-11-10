@@ -194,21 +194,21 @@
       "options": [
         {
           "id": "a",
-          "text": "A → B → C → D → A → C (uses all 5 edges exactly once)"
+          "text": "A \u2192 B \u2192 C \u2192 D \u2192 A \u2192 C (uses all 5 edges exactly once)"
         },
         {
           "id": "b",
-          "text": "A → B → C → A → D → C (repeats edge AC)"
+          "text": "A \u2192 B \u2192 C \u2192 A \u2192 D \u2192 C (repeats edge AC)"
         },
         {
           "id": "c",
-          "text": "A → D → C → B → A (only uses 4 edges, misses AC)"
+          "text": "A \u2192 D \u2192 C \u2192 B \u2192 A (only uses 4 edges, misses AC)"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! A → B → C → D → A → C uses edges AB, BC, CD, DA, AC exactly once, starting at A and ending at C.",
+          "explanation": "Perfect! A \u2192 B \u2192 C \u2192 D \u2192 A \u2192 C uses edges AB, BC, CD, DA, AC exactly once, starting at A and ending at C.",
           "insight": "This is an Euler path (not circuit) since it doesn't return to the starting vertex."
         },
         "incorrect": {
@@ -226,12 +226,32 @@
       "Euler circuit: uses all edges once, returns to start (exists iff all degrees even)",
       "Euler path: uses all edges once (exists iff exactly 2 vertices have odd degree)",
       "The path starts and ends at the odd-degree vertices",
-      "This graph has Euler path A → B → C → D → A → C, but no Euler circuit"
+      "This graph has Euler path A \u2192 B \u2192 C \u2192 D \u2192 A \u2192 C, but no Euler circuit"
     ],
-    "fullSolution": "**Graph:** Vertices {A,B,C,D}, Edges {AB, BC, CD, DA, AC}\\n\\n**Degrees:**\\n- deg(A) = 3 (edges to B, D, C)\\n- deg(B) = 2 (edges to A, C)\\n- deg(C) = 3 (edges to B, D, A)\\n- deg(D) = 2 (edges to C, A)\\n\\n**Euler's Theorem:**\\n- Euler circuit: all degrees even → **NO** (A and C have odd degree)\\n- Euler path: exactly 2 odd degrees → **YES** (A and C)\\n\\n**Euler Path:** A → B → C → D → A → C\\n\\nEdges used: AB, BC, CD, DA, AC ✓ (all 5 edges exactly once)",
+    "fullSolution": "**Graph:** Vertices {A,B,C,D}, Edges {AB, BC, CD, DA, AC}\\n\\n**Degrees:**\\n- deg(A) = 3 (edges to B, D, C)\\n- deg(B) = 2 (edges to A, C)\\n- deg(C) = 3 (edges to B, D, A)\\n- deg(D) = 2 (edges to C, A)\\n\\n**Euler's Theorem:**\\n- Euler circuit: all degrees even \u2192 **NO** (A and C have odd degree)\\n- Euler path: exactly 2 odd degrees \u2192 **YES** (A and C)\\n\\n**Euler Path:** A \u2192 B \u2192 C \u2192 D \u2192 A \u2192 C\\n\\nEdges used: AB, BC, CD, DA, AC \u2713 (all 5 edges exactly once)",
     "relatedProblems": [
       "discrete-math-combinatorics-1",
       "logic-proof-induction-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Discrete Mathematics",
+      "url": "https://www.youtube.com/playlist?list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz",
+      "source": "Trefor Bazett"
+    },
+    {
+      "type": "article",
+      "title": "Discrete Math",
+      "url": "https://www.mathsisfun.com/sets/index.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Combinatorics",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb",
+      "source": "Khan Academy"
+    }
+  ]
 }

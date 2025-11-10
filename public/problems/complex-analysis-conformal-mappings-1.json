@@ -88,7 +88,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Holomorphicity of $f(z) = \\frac{1}{z}$:**\n\n**Domain:** $f$ is defined for $z \\in \\mathbb{C} \\setminus \\{0\\}$\n\n**Derivative:**\n$$f'(z) = \\frac{d}{dz}\\left(\\frac{1}{z}\\right) = \\frac{d}{dz}(z^{-1}) = -z^{-2} = -\\frac{1}{z^2}$$\n\nFor any $z \\neq 0$:\n- The limit $\\lim_{h \\to 0} \\frac{f(z+h) - f(z)}{h}$ exists\n- $f'(z) = -\\frac{1}{z^2}$ exists and is continuous\n\nTherefore, $f$ is **holomorphic on $\\mathbb{C} \\setminus \\{0\\}$** ✓\n\n**At $z = 0$:**\n- $f(0)$ is undefined\n- $z = 0$ is a **simple pole** of $f$\n- Not holomorphic at $z = 0$\n\n**Cauchy-Riemann equations:**\nWrite $f(z) = f(x + iy) = \\frac{1}{x+iy} = \\frac{x-iy}{x^2+y^2}$\n\n$u = \\frac{x}{x^2+y^2}$, $v = -\\frac{y}{x^2+y^2}$\n\nC-R equations $u_x = v_y$ and $u_y = -v_x$ hold for $(x,y) \\neq (0,0)$ ✓",
+          "explanation": "Correct! **Holomorphicity of $f(z) = \\frac{1}{z}$:**\n\n**Domain:** $f$ is defined for $z \\in \\mathbb{C} \\setminus \\{0\\}$\n\n**Derivative:**\n$$f'(z) = \\frac{d}{dz}\\left(\\frac{1}{z}\\right) = \\frac{d}{dz}(z^{-1}) = -z^{-2} = -\\frac{1}{z^2}$$\n\nFor any $z \\neq 0$:\n- The limit $\\lim_{h \\to 0} \\frac{f(z+h) - f(z)}{h}$ exists\n- $f'(z) = -\\frac{1}{z^2}$ exists and is continuous\n\nTherefore, $f$ is **holomorphic on $\\mathbb{C} \\setminus \\{0\\}$** \u2713\n\n**At $z = 0$:**\n- $f(0)$ is undefined\n- $z = 0$ is a **simple pole** of $f$\n- Not holomorphic at $z = 0$\n\n**Cauchy-Riemann equations:**\nWrite $f(z) = f(x + iy) = \\frac{1}{x+iy} = \\frac{x-iy}{x^2+y^2}$\n\n$u = \\frac{x}{x^2+y^2}$, $v = -\\frac{y}{x^2+y^2}$\n\nC-R equations $u_x = v_y$ and $u_y = -v_x$ hold for $(x,y) \\neq (0,0)$ \u2713",
           "insight": "Rational functions are holomorphic except at poles!"
         },
         "incorrect": {
@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "Holomorphic on $\\mathbb{C} \\setminus \\{0\\}$",
-        "equations": ["f'(z) = -\\frac{1}{z^2}"]
+        "equations": [
+          "f'(z) = -\\frac{1}{z^2}"
+        ]
       }
     },
     {
@@ -128,7 +130,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Non-vanishing derivative:**\n\n$$f'(z) = -\\frac{1}{z^2}$$\n\nFor $f'(z) = 0$:\n$$-\\frac{1}{z^2} = 0$$\n\nThis would require $z^2 = \\infty$, which is impossible for finite $z$.\n\nTherefore: **$f'(z) \\neq 0$ for all $z \\in \\mathbb{C} \\setminus \\{0\\}$** ✓\n\n**Conclusion:**\n- $f(z) = \\frac{1}{z}$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n- $f'(z) \\neq 0$ on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n\n**Therefore:** $f$ is **conformal on $\\mathbb{C} \\setminus \\{0\\}$** ✓\n\n**Geometric meaning:**\n- Angles are preserved at every point except $z = 0$\n- At $z = 0$, the mapping has a singularity (pole)\n\n**Example:** At $z = 1$:\n- $f'(1) = -1$ (rotation by $\\pi$ and no scaling)\n- Angles preserved, but orientation reversed by the negative sign",
+          "explanation": "Perfect! **Non-vanishing derivative:**\n\n$$f'(z) = -\\frac{1}{z^2}$$\n\nFor $f'(z) = 0$:\n$$-\\frac{1}{z^2} = 0$$\n\nThis would require $z^2 = \\infty$, which is impossible for finite $z$.\n\nTherefore: **$f'(z) \\neq 0$ for all $z \\in \\mathbb{C} \\setminus \\{0\\}$** \u2713\n\n**Conclusion:**\n- $f(z) = \\frac{1}{z}$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ \u2713\n- $f'(z) \\neq 0$ on $\\mathbb{C} \\setminus \\{0\\}$ \u2713\n\n**Therefore:** $f$ is **conformal on $\\mathbb{C} \\setminus \\{0\\}$** \u2713\n\n**Geometric meaning:**\n- Angles are preserved at every point except $z = 0$\n- At $z = 0$, the mapping has a singularity (pole)\n\n**Example:** At $z = 1$:\n- $f'(1) = -1$ (rotation by $\\pi$ and no scaling)\n- Angles preserved, but orientation reversed by the negative sign",
           "insight": "Non-zero derivative everywhere ensures angle preservation!"
         },
         "incorrect": {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "$f$ conformal on $\\mathbb{C} \\setminus \\{0\\}$",
-        "equations": ["f'(z) \\neq 0 \\text{ for } z \\neq 0"]
+        "equations": [
+          "f'(z) \\neq 0 \\text{ for } z \\neq 0"
+        ]
       }
     },
     {
@@ -168,7 +172,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Image of circle under inversion:**\n\n**Parametrization of $|z| = 2$:**\n$$z = 2e^{i\\theta}, \\quad \\theta \\in [0, 2\\pi)$$\n\n**Apply $f(z) = \\frac{1}{z}$:**\n$$w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2} e^{-i\\theta}$$\n\n**Modulus of $w$:**\n$$|w| = \\left|\\frac{1}{2} e^{-i\\theta}\\right| = \\frac{1}{2}|e^{-i\\theta}| = \\frac{1}{2}$$\n\n**Image:** The circle $|w| = \\frac{1}{2}$ ✓\n\n**General principle:**\n\nInversion $f(z) = \\frac{1}{z}$ maps:\n- Circle $|z| = r$ centered at origin $\\to$ Circle $|w| = \\frac{1}{r}$ centered at origin\n- **Radius reciprocal:** $r \\to \\frac{1}{r}$\n- **Orientation reversed:** clockwise $\\leftrightarrow$ counterclockwise\n\n**Additional properties:**\n- Lines through origin $\\to$ Lines through origin\n- Circles through origin $\\to$ Lines not through origin\n- Circles not through origin $\\to$ Circles not through origin (but possibly different center)\n\n**Example:**\n- $|z| = 1$ $\\to$ $|w| = 1$ (unit circle maps to itself!)\n- $|z| = 2$ $\\to$ $|w| = \\frac{1}{2}$\n- $|z| = \\frac{1}{3}$ $\\to$ $|w| = 3$",
+          "explanation": "Excellent! **Image of circle under inversion:**\n\n**Parametrization of $|z| = 2$:**\n$$z = 2e^{i\\theta}, \\quad \\theta \\in [0, 2\\pi)$$\n\n**Apply $f(z) = \\frac{1}{z}$:**\n$$w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2} e^{-i\\theta}$$\n\n**Modulus of $w$:**\n$$|w| = \\left|\\frac{1}{2} e^{-i\\theta}\\right| = \\frac{1}{2}|e^{-i\\theta}| = \\frac{1}{2}$$\n\n**Image:** The circle $|w| = \\frac{1}{2}$ \u2713\n\n**General principle:**\n\nInversion $f(z) = \\frac{1}{z}$ maps:\n- Circle $|z| = r$ centered at origin $\\to$ Circle $|w| = \\frac{1}{r}$ centered at origin\n- **Radius reciprocal:** $r \\to \\frac{1}{r}$\n- **Orientation reversed:** clockwise $\\leftrightarrow$ counterclockwise\n\n**Additional properties:**\n- Lines through origin $\\to$ Lines through origin\n- Circles through origin $\\to$ Lines not through origin\n- Circles not through origin $\\to$ Circles not through origin (but possibly different center)\n\n**Example:**\n- $|z| = 1$ $\\to$ $|w| = 1$ (unit circle maps to itself!)\n- $|z| = 2$ $\\to$ $|w| = \\frac{1}{2}$\n- $|z| = \\frac{1}{3}$ $\\to$ $|w| = 3$",
           "insight": "Inversion maps circles through origin to circles, with reciprocal radii!"
         },
         "incorrect": {
@@ -178,7 +182,9 @@
       },
       "resultState": {
         "description": "Image of circle",
-        "equations": ["|z| = 2 \\to |w| = \\frac{1}{2}"]
+        "equations": [
+          "|z| = 2 \\to |w| = \\frac{1}{2}"
+        ]
       }
     }
   ],
@@ -192,10 +198,30 @@
       "Image of $|z| = 2$ is $|w| = \\frac{1}{2}$",
       "Inversion reverses orientation and takes reciprocal of radii"
     ],
-    "fullSolution": "**Show $f(z) = \\frac{1}{z}$ is conformal and find image of $|z| = 2$**\n\n---\n\n**Step 1: Holomorphicity**\n\n$$f(z) = \\frac{1}{z} = z^{-1}$$\n\n**Derivative:**\n$$f'(z) = -z^{-2} = -\\frac{1}{z^2}$$\n\nThis exists for all $z \\in \\mathbb{C} \\setminus \\{0\\}$.\n\nSo $f$ is **holomorphic on $\\mathbb{C} \\setminus \\{0\\}$** ✓\n\n---\n\n**Step 2: Non-vanishing Derivative**\n\n$$f'(z) = -\\frac{1}{z^2}$$\n\nFor $z \\neq 0$:\n$$f'(z) = -\\frac{1}{z^2} \\neq 0$$\n\n(never zero for finite $z$)\n\n---\n\n**Step 3: Conformality**\n\nSince:\n- $f$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n- $f'(z) \\neq 0$ on $\\mathbb{C} \\setminus \\{0\\}$ ✓\n\n**Conclusion:** $\\boxed{f \\text{ is conformal on } \\mathbb{C} \\setminus \\{0\\}}$ ✓\n\nAt $z = 0$, $f$ has a simple pole, so not conformal there.\n\n---\n\n**Step 4: Image of Circle $|z| = 2$**\n\n**Parametrize:**\n$$z = 2e^{i\\theta}, \\quad \\theta \\in [0, 2\\pi)$$\n\n**Apply $f$:**\n$$w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2}e^{-i\\theta}$$\n\n**Modulus:**\n$$|w| = \\frac{1}{2}$$\n\n**Image:** Circle $|w| = \\frac{1}{2}$ ✓\n\n---\n\n**General Rule:**\n\nInversion $f(z) = \\frac{1}{z}$ maps circle $|z| = r$ to circle $|w| = \\frac{1}{r}$.\n\n---\n\n**Answer:**\n- $\\boxed{f(z) = \\frac{1}{z} \\text{ is conformal on } \\mathbb{C} \\setminus \\{0\\}}$\n- $\\boxed{|z| = 2 \\to |w| = \\frac{1}{2}}$",
+    "fullSolution": "**Show $f(z) = \\frac{1}{z}$ is conformal and find image of $|z| = 2$**\n\n---\n\n**Step 1: Holomorphicity**\n\n$$f(z) = \\frac{1}{z} = z^{-1}$$\n\n**Derivative:**\n$$f'(z) = -z^{-2} = -\\frac{1}{z^2}$$\n\nThis exists for all $z \\in \\mathbb{C} \\setminus \\{0\\}$.\n\nSo $f$ is **holomorphic on $\\mathbb{C} \\setminus \\{0\\}$** \u2713\n\n---\n\n**Step 2: Non-vanishing Derivative**\n\n$$f'(z) = -\\frac{1}{z^2}$$\n\nFor $z \\neq 0$:\n$$f'(z) = -\\frac{1}{z^2} \\neq 0$$\n\n(never zero for finite $z$)\n\n---\n\n**Step 3: Conformality**\n\nSince:\n- $f$ is holomorphic on $\\mathbb{C} \\setminus \\{0\\}$ \u2713\n- $f'(z) \\neq 0$ on $\\mathbb{C} \\setminus \\{0\\}$ \u2713\n\n**Conclusion:** $\\boxed{f \\text{ is conformal on } \\mathbb{C} \\setminus \\{0\\}}$ \u2713\n\nAt $z = 0$, $f$ has a simple pole, so not conformal there.\n\n---\n\n**Step 4: Image of Circle $|z| = 2$**\n\n**Parametrize:**\n$$z = 2e^{i\\theta}, \\quad \\theta \\in [0, 2\\pi)$$\n\n**Apply $f$:**\n$$w = f(z) = \\frac{1}{2e^{i\\theta}} = \\frac{1}{2}e^{-i\\theta}$$\n\n**Modulus:**\n$$|w| = \\frac{1}{2}$$\n\n**Image:** Circle $|w| = \\frac{1}{2}$ \u2713\n\n---\n\n**General Rule:**\n\nInversion $f(z) = \\frac{1}{z}$ maps circle $|z| = r$ to circle $|w| = \\frac{1}{r}$.\n\n---\n\n**Answer:**\n- $\\boxed{f(z) = \\frac{1}{z} \\text{ is conformal on } \\mathbb{C} \\setminus \\{0\\}}$\n- $\\boxed{|z| = 2 \\to |w| = \\frac{1}{2}}$",
     "relatedProblems": [
       "complex-analysis-mobius-transformations-1",
       "complex-analysis-holomorphic-functions-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Analysis",
+      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
+      "source": "MathTheBeautiful"
+    },
+    {
+      "type": "article",
+      "title": "Complex Analysis",
+      "url": "https://complex-analysis.com/",
+      "source": "Complex Analysis Course"
+    },
+    {
+      "type": "video",
+      "title": "Complex Analysis Fundamentals",
+      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

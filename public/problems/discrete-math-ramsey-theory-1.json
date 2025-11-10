@@ -96,7 +96,9 @@
       },
       "resultState": {
         "description": "WLOG, $v$ has 3 red edges to vertices $a, b, c$",
-        "equations": ["\\text{Red edges: } va, vb, vc"]
+        "equations": [
+          "\\text{Red edges: } va, vb, vc"
+        ]
       }
     },
     {
@@ -104,7 +106,9 @@
       "order": 3,
       "currentState": {
         "description": "Vertex $v$ connects to $a, b, c$ via red edges.",
-        "equations": ["\\text{Red edges: } va, vb, vc"]
+        "equations": [
+          "\\text{Red edges: } va, vb, vc"
+        ]
       },
       "prompt": {
         "question": "Now consider edges among $a, b, c$. What can we conclude?",
@@ -187,10 +191,30 @@
       "Either find red triangle with original vertex, or blue triangle among endpoints",
       "Ramsey's theorem: $R(3, 3) = 6$ - complete disorder is impossible!"
     ],
-    "fullSolution": "**Prove: In any party of 6 people, $\\exists$ 3 mutual friends or 3 mutual strangers**\n\n---\n\n**Model:** Represent as complete graph $K_6$ with edges colored:\n- Red edge: two people are friends\n- Blue edge: two people are strangers\n\n**Goal:** Prove existence of monochromatic triangle (3 vertices with all edges same color).\n\n---\n\n**Proof:**\n\nLet $v$ be any person. Person $v$ is connected to 5 others.\n\nEach of the 5 edges from $v$ is red or blue.\n\nBy **pigeonhole principle**: at least $\\lceil 5/2 \\rceil = 3$ edges have the same color.\n\nWLOG, assume at least 3 edges from $v$ are red. Call the endpoints $a, b, c$.\n\nSo we have red edges: $va$, $vb$, $vc$.\n\nNow consider edges among $\\{a, b, c\\}$:\n\n**Case 1:** At least one edge among $\\{a, b, c\\}$ is red.\n\nWLOG, say $ab$ is red.\n\nThen triangle $vab$ has all red edges: $va$, $vb$, $ab$.\n\nWe found 3 mutual friends! ✓\n\n**Case 2:** All edges among $\\{a, b, c\\}$ are blue.\n\nThen triangle $abc$ has all blue edges: $ab$, $bc$, $ca$.\n\nWe found 3 mutual strangers! ✓\n\n---\n\n**Conclusion:**\n\nIn any 2-edge-coloring of $K_6$, a monochromatic triangle exists.\n\n**Therefore:** In any group of 6 people, there exist 3 mutual friends or 3 mutual strangers. $\\square$\n\n---\n\n**Ramsey Theory:** This proves $R(3, 3) = 6$. More generally, $R(m, n)$ is the minimum number of vertices needed to guarantee either a red $K_m$ or blue $K_n$ in any 2-edge-coloring. Most Ramsey numbers are unknown!",
+    "fullSolution": "**Prove: In any party of 6 people, $\\exists$ 3 mutual friends or 3 mutual strangers**\n\n---\n\n**Model:** Represent as complete graph $K_6$ with edges colored:\n- Red edge: two people are friends\n- Blue edge: two people are strangers\n\n**Goal:** Prove existence of monochromatic triangle (3 vertices with all edges same color).\n\n---\n\n**Proof:**\n\nLet $v$ be any person. Person $v$ is connected to 5 others.\n\nEach of the 5 edges from $v$ is red or blue.\n\nBy **pigeonhole principle**: at least $\\lceil 5/2 \\rceil = 3$ edges have the same color.\n\nWLOG, assume at least 3 edges from $v$ are red. Call the endpoints $a, b, c$.\n\nSo we have red edges: $va$, $vb$, $vc$.\n\nNow consider edges among $\\{a, b, c\\}$:\n\n**Case 1:** At least one edge among $\\{a, b, c\\}$ is red.\n\nWLOG, say $ab$ is red.\n\nThen triangle $vab$ has all red edges: $va$, $vb$, $ab$.\n\nWe found 3 mutual friends! \u2713\n\n**Case 2:** All edges among $\\{a, b, c\\}$ are blue.\n\nThen triangle $abc$ has all blue edges: $ab$, $bc$, $ca$.\n\nWe found 3 mutual strangers! \u2713\n\n---\n\n**Conclusion:**\n\nIn any 2-edge-coloring of $K_6$, a monochromatic triangle exists.\n\n**Therefore:** In any group of 6 people, there exist 3 mutual friends or 3 mutual strangers. $\\square$\n\n---\n\n**Ramsey Theory:** This proves $R(3, 3) = 6$. More generally, $R(m, n)$ is the minimum number of vertices needed to guarantee either a red $K_m$ or blue $K_n$ in any 2-edge-coloring. Most Ramsey numbers are unknown!",
     "relatedProblems": [
       "discrete-math-combinatorics-pigeonhole-1",
       "discrete-math-graph-coloring-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory",
+      "url": "https://www.youtube.com/playlist?list=PLoJC20gNfC2gmT_5WgwYwGMvgCjYVsIQg",
+      "source": "Sarada Herke"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Graph Theory",
+      "url": "https://www.mathsisfun.com/data/graph-theory.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Graph Theory Introduction",
+      "url": "https://www.youtube.com/watch?v=LFKZLXVO-Dg",
+      "source": "Trefor Bazett"
+    }
+  ]
 }

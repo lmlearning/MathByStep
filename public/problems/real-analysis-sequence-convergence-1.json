@@ -167,7 +167,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! This completes the proof:\n1. Given $\\epsilon > 0$\n2. Since $a_n \\to L$, choose $N$ so that $n \\geq N \\Rightarrow |a_n - L| < \\epsilon$\n3. For $n \\geq N$: $||a_n| - |L|| \\leq |a_n - L| < \\epsilon$\nTherefore $|a_n| \\to |L|$. ∎",
+          "explanation": "Excellent! This completes the proof:\n1. Given $\\epsilon > 0$\n2. Since $a_n \\to L$, choose $N$ so that $n \\geq N \\Rightarrow |a_n - L| < \\epsilon$\n3. For $n \\geq N$: $||a_n| - |L|| \\leq |a_n - L| < \\epsilon$\nTherefore $|a_n| \\to |L|$. \u220e",
           "insight": "The reverse triangle inequality makes this proof straightforward."
         },
         "incorrect": {
@@ -187,10 +187,30 @@
       "If $a_n \\to L$, then $|a_n| \\to |L|$",
       "Note: The converse is FALSE! $|a_n| \\to |L|$ does NOT imply $a_n \\to L$ (consider $a_n = (-1)^n$)"
     ],
-    "fullSolution": "**Theorem:** If $a_n \\to L$, then $|a_n| \\to |L|$.\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\nSince $a_n \\to L$, there exists $N \\in \\mathbb{N}$ such that\n$$n \\geq N \\Rightarrow |a_n - L| < \\epsilon$$\n\nBy the reverse triangle inequality: $||a_n| - |L|| \\leq |a_n - L|$\n\nTherefore, for $n \\geq N$:\n$$||a_n| - |L|| \\leq |a_n - L| < \\epsilon$$\n\nThis shows $|a_n| \\to |L|$. ∎",
+    "fullSolution": "**Theorem:** If $a_n \\to L$, then $|a_n| \\to |L|$.\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\nSince $a_n \\to L$, there exists $N \\in \\mathbb{N}$ such that\n$$n \\geq N \\Rightarrow |a_n - L| < \\epsilon$$\n\nBy the reverse triangle inequality: $||a_n| - |L|| \\leq |a_n - L|$\n\nTherefore, for $n \\geq N$:\n$$||a_n| - |L|| \\leq |a_n - L| < \\epsilon$$\n\nThis shows $|a_n| \\to |L|$. \u220e",
     "relatedProblems": [
       "calculus-limit-epsilon-delta-1",
       "calculus-mvt-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Sequences and Series",
+      "url": "https://www.khanacademy.org/math/calculus-2/cs2-series",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Sequences",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/Sequences.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Real Analysis - Sequences",
+      "url": "https://www.youtube.com/watch?v=sqEyWLGvvdw",
+      "source": "Dr. Peyam"
+    }
+  ]
 }

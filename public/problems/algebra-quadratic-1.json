@@ -5,9 +5,13 @@
   "topic": "Algebra",
   "difficulty": 1,
   "estimatedTime": 5,
-  "tags": ["quadratic", "factoring", "algebra"],
+  "tags": [
+    "quadratic",
+    "factoring",
+    "algebra"
+  ],
   "statement": {
-    "text": "Solve the equation: x² - 5x + 6 = 0"
+    "text": "Solve the equation: x\u00b2 - 5x + 6 = 0"
   },
   "objectives": [
     "Factor a quadratic expression",
@@ -20,7 +24,9 @@
       "order": 1,
       "currentState": {
         "description": "We need to solve:",
-        "equations": ["x² - 5x + 6 = 0"]
+        "equations": [
+          "x\u00b2 - 5x + 6 = 0"
+        ]
       },
       "prompt": {
         "question": "What's the best approach to solve this quadratic equation?",
@@ -53,7 +59,10 @@
       },
       "resultState": {
         "description": "We'll factor the quadratic. We need to find two numbers that:",
-        "equations": ["Multiply to give: 6", "Add to give: -5"]
+        "equations": [
+          "Multiply to give: 6",
+          "Add to give: -5"
+        ]
       }
     },
     {
@@ -61,7 +70,10 @@
       "order": 2,
       "currentState": {
         "description": "Looking for two numbers that multiply to 6 and add to -5:",
-        "equations": ["Product: a × b = 6", "Sum: a + b = -5"]
+        "equations": [
+          "Product: a \u00d7 b = 6",
+          "Sum: a + b = -5"
+        ]
       },
       "prompt": {
         "question": "Which pair of numbers satisfies these conditions?",
@@ -84,7 +96,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! -2 × -3 = 6 and -2 + (-3) = -5. These are our magic numbers.",
+          "explanation": "Perfect! -2 \u00d7 -3 = 6 and -2 + (-3) = -5. These are our magic numbers.",
           "insight": "When the constant term is positive and the linear coefficient is negative, both factors must be negative."
         },
         "incorrect": {
@@ -94,7 +106,9 @@
       },
       "resultState": {
         "description": "Found the factors! We can write:",
-        "equations": ["x² - 5x + 6 = (x - 2)(x - 3)"]
+        "equations": [
+          "x\u00b2 - 5x + 6 = (x - 2)(x - 3)"
+        ]
       }
     },
     {
@@ -102,7 +116,9 @@
       "order": 3,
       "currentState": {
         "description": "We have factored the equation:",
-        "equations": ["(x - 2)(x - 3) = 0"]
+        "equations": [
+          "(x - 2)(x - 3) = 0"
+        ]
       },
       "prompt": {
         "question": "Now that we have the factored form, how do we find the solutions?",
@@ -135,7 +151,9 @@
       },
       "resultState": {
         "description": "Applying zero product property:",
-        "equations": ["x - 2 = 0  or  x - 3 = 0"]
+        "equations": [
+          "x - 2 = 0  or  x - 3 = 0"
+        ]
       }
     },
     {
@@ -143,7 +161,10 @@
       "order": 4,
       "currentState": {
         "description": "We have two simple equations to solve:",
-        "equations": ["x - 2 = 0", "x - 3 = 0"]
+        "equations": [
+          "x - 2 = 0",
+          "x - 3 = 0"
+        ]
       },
       "prompt": {
         "question": "What are the solutions?",
@@ -176,18 +197,40 @@
       },
       "resultState": {
         "description": "Solution found!",
-        "equations": ["x = 2  or  x = 3"]
+        "equations": [
+          "x = 2  or  x = 3"
+        ]
       }
     }
   ],
   "summary": {
     "keyInsights": [
       "Factoring is efficient when the quadratic has integer roots",
-      "Find two numbers that multiply to c and add to b in x² + bx + c",
+      "Find two numbers that multiply to c and add to b in x\u00b2 + bx + c",
       "Zero product property: if ab = 0, then a = 0 or b = 0",
       "Always verify solutions by substituting back into original equation"
     ],
-    "fullSolution": "x² - 5x + 6 = (x - 2)(x - 3) = 0, therefore x = 2 or x = 3",
+    "fullSolution": "x\u00b2 - 5x + 6 = (x - 2)(x - 3) = 0, therefore x = 2 or x = 3",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Factoring Quadratics",
+      "url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:quadratics-multiplying-factoring/x2f8bb11595b61c86:factor-quadratics-intro/v/factoring-quadratic-expressions",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Solving Quadratic Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SolveQuadraticEqnsI.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Quadratic Formula",
+      "url": "https://www.youtube.com/watch?v=IlNAJl36-10",
+      "source": "Organic Chemistry Tutor"
+    }
+  ]
 }

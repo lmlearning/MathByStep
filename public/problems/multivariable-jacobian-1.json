@@ -58,7 +58,9 @@
       },
       "resultState": {
         "description": "Jacobian matrix computed",
-        "equations": ["J = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}"]
+        "equations": [
+          "J = \\begin{pmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{pmatrix}"
+        ]
       }
     },
     {
@@ -98,7 +100,9 @@
       },
       "resultState": {
         "description": "Jacobian determinant found",
-        "equations": ["\\frac{\\partial(x,y)}{\\partial(r,\\theta)} = r"]
+        "equations": [
+          "\\frac{\\partial(x,y)}{\\partial(r,\\theta)} = r"
+        ]
       }
     },
     {
@@ -138,7 +142,9 @@
       },
       "resultState": {
         "description": "Change of variables formula",
-        "equations": ["dx\\, dy = r\\, dr\\, d\\theta"]
+        "equations": [
+          "dx\\, dy = r\\, dr\\, d\\theta"
+        ]
       }
     },
     {
@@ -178,7 +184,9 @@
       },
       "resultState": {
         "description": "Polar integral evaluated",
-        "equations": ["\\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta = \\frac{\\pi}{2}"]
+        "equations": [
+          "\\int_0^{2\\pi} \\int_0^1 r^3\\, dr\\, d\\theta = \\frac{\\pi}{2}"
+        ]
       }
     }
   ],
@@ -196,5 +204,25 @@
       "multivariable-double-integral-1",
       "multivariable-chain-rule-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Multivariable Calculus Course",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Multivariable Calculus",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Divergence and Curl",
+      "url": "https://www.youtube.com/watch?v=rB83DpBJQsE",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

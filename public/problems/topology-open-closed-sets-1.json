@@ -145,7 +145,7 @@
       },
       "prompt": {
         "question": "What are $(0,1]$ and $\\{0\\}$?",
-        "hint": "$(0,1]$: not open (1 has no neighborhood inside) and not closed (0 is limit point not in set) → neither! $\\{0\\}$: closed (contains all its limit points - none!) and not open → closed only."
+        "hint": "$(0,1]$: not open (1 has no neighborhood inside) and not closed (0 is limit point not in set) \u2192 neither! $\\{0\\}$: closed (contains all its limit points - none!) and not open \u2192 closed only."
       },
       "options": [
         {
@@ -164,7 +164,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! $(0,1]$: not closed (missing limit point 0), not open (endpoint 1) → neither. $\\{0\\}$: closed (trivially contains all limit points), not open (isolated point) → closed only.",
+          "explanation": "Excellent! $(0,1]$: not closed (missing limit point 0), not open (endpoint 1) \u2192 neither. $\\{0\\}$: closed (trivially contains all limit points), not open (isolated point) \u2192 closed only.",
           "insight": "A set can be neither open nor closed! Singletons in $\\mathbb{R}$ are always closed."
         },
         "incorrect": {
@@ -192,5 +192,25 @@
       "topology-metric-spaces-1",
       "real-analysis-continuity-uniform-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Introduction to Topology",
+      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
+      "source": "Insights into Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Topology",
+      "url": "https://mathworld.wolfram.com/Topology.html",
+      "source": "Wolfram MathWorld"
+    },
+    {
+      "type": "video",
+      "title": "What is Topology?",
+      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
+      "source": "Brendan Fong"
+    }
+  ]
 }

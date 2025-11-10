@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "Shape identified as cylinder",
-        "equations": ["([0,1] \\times [0,1]) / {\\sim} \\cong S^1 \\times [0,1]"]
+        "equations": [
+          "([0,1] \\times [0,1]) / {\\sim} \\cong S^1 \\times [0,1]"
+        ]
       }
     },
     {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "Quotient map understood",
-        "equations": ["q(x, y) = [x, y]"]
+        "equations": [
+          "q(x, y) = [x, y]"
+        ]
       }
     },
     {
@@ -168,7 +172,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Torus construction:**\n\nIdentify BOTH pairs of opposite edges:\n1. $(x, 0) \\sim (x, 1)$ (top-bottom)\n2. $(0, y) \\sim (1, y)$ (left-right)\n\n**Geometric visualization:**\n- First identification (top-bottom) → cylinder\n- Second identification (left-right) → bend the cylinder and glue its circular ends together → **torus** (doughnut)\n\n**Topologically:** $T^2 = S^1 \\times S^1$ (product of two circles)\n\n**Other quotients of the square:**\n- Identify top-bottom only: **Cylinder** $S^1 \\times [0,1]$\n- Identify left-right only: **Cylinder** $[0,1] \\times S^1$\n- Identify both: **Torus** $T^2$\n- Identify with twist: **Klein bottle** or **Möbius strip** (non-orientable)\n\n**Video game screens:** The classic \"wrap-around\" (like in Pac-Man or Asteroids) implements torus topology!",
+          "explanation": "Perfect! **Torus construction:**\n\nIdentify BOTH pairs of opposite edges:\n1. $(x, 0) \\sim (x, 1)$ (top-bottom)\n2. $(0, y) \\sim (1, y)$ (left-right)\n\n**Geometric visualization:**\n- First identification (top-bottom) \u2192 cylinder\n- Second identification (left-right) \u2192 bend the cylinder and glue its circular ends together \u2192 **torus** (doughnut)\n\n**Topologically:** $T^2 = S^1 \\times S^1$ (product of two circles)\n\n**Other quotients of the square:**\n- Identify top-bottom only: **Cylinder** $S^1 \\times [0,1]$\n- Identify left-right only: **Cylinder** $[0,1] \\times S^1$\n- Identify both: **Torus** $T^2$\n- Identify with twist: **Klein bottle** or **M\u00f6bius strip** (non-orientable)\n\n**Video game screens:** The classic \"wrap-around\" (like in Pac-Man or Asteroids) implements torus topology!",
           "insight": "Different edge identifications create different topological spaces from the same square!"
         },
         "incorrect": {
@@ -178,15 +182,17 @@
       },
       "resultState": {
         "description": "Torus as double quotient",
-        "equations": ["\\text{Square with both edge pairs identified} \\cong T^2"]
+        "equations": [
+          "\\text{Square with both edge pairs identified} \\cong T^2"
+        ]
       }
     }
   ],
   "summary": {
     "keyInsights": [
       "Quotient topology: $X/\\sim$ is $X$ modulo equivalence relation $\\sim$",
-      "Square with $(x,0) \\sim (x,1)$ → **Cylinder** $S^1 \\times [0,1]$",
-      "Square with both edge pairs identified → **Torus** $T^2 = S^1 \\times S^1$",
+      "Square with $(x,0) \\sim (x,1)$ \u2192 **Cylinder** $S^1 \\times [0,1]$",
+      "Square with both edge pairs identified \u2192 **Torus** $T^2 = S^1 \\times S^1$",
       "Quotient map $q: X \\to X/\\sim$ sends points to equivalence classes",
       "Quotient topology: $U$ open in $X/\\sim$ iff $q^{-1}(U)$ open in $X$",
       "Edge identifications build complex spaces from simple ones"
@@ -196,5 +202,25 @@
       "topology-metric-spaces-1",
       "topology-continuous-functions-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Introduction to Topology",
+      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
+      "source": "Insights into Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Topology",
+      "url": "https://mathworld.wolfram.com/Topology.html",
+      "source": "Wolfram MathWorld"
+    },
+    {
+      "type": "video",
+      "title": "What is Topology?",
+      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
+      "source": "Brendan Fong"
+    }
+  ]
 }

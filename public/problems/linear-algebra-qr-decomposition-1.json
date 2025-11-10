@@ -86,7 +86,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Normalize $\\mathbf{a}_1$: $\\mathbf{q}_1 = \\frac{\\mathbf{a}_1}{\\|\\mathbf{a}_1\\|} = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$. Check: $\\|\\mathbf{q}_1\\| = 1$ ✓",
+          "explanation": "Perfect! Normalize $\\mathbf{a}_1$: $\\mathbf{q}_1 = \\frac{\\mathbf{a}_1}{\\|\\mathbf{a}_1\\|} = \\frac{1}{\\sqrt{3}}\\begin{bmatrix} 1 \\\\\\\\ 1 \\\\\\\\ 1 \\end{bmatrix}$. Check: $\\|\\mathbf{q}_1\\| = 1$ \u2713",
           "insight": "First step of Gram-Schmidt is just normalization of the first vector."
         },
         "incorrect": {
@@ -126,7 +126,7 @@
       "feedback": {
         "correct": {
           "explanation": "Excellent! Subtract projection onto $\\mathbf{q}_1$: $\\mathbf{u}_2 = \\mathbf{a}_2 - (\\mathbf{q}_1^T\\mathbf{a}_2)\\mathbf{q}_1 = \\frac{1}{3}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$. Normalize: $\\mathbf{q}_2 = \\frac{1}{\\sqrt{6}}\\begin{bmatrix} 1 \\\\\\\\ -2 \\\\\\\\ 1 \\end{bmatrix}$.",
-          "insight": "Check orthogonality: $\\mathbf{q}_1^T\\mathbf{q}_2 = \\frac{1}{\\sqrt{18}}(1 - 2 + 1) = 0$ ✓"
+          "insight": "Check orthogonality: $\\mathbf{q}_1^T\\mathbf{q}_2 = \\frac{1}{\\sqrt{18}}(1 - 2 + 1) = 0$ \u2713"
         },
         "incorrect": {
           "1": "Must subtract the projection onto $\\mathbf{q}_1$ first before normalizing!",
@@ -164,7 +164,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $Q$ has orthonormal columns $\\mathbf{q}_1, \\mathbf{q}_2$. $R = Q^TA$ is upper triangular with entries $r_{ij} = \\mathbf{q}_i^T\\mathbf{a}_j$. Verify: $QR = A$ ✓",
+          "explanation": "Perfect! $Q$ has orthonormal columns $\\mathbf{q}_1, \\mathbf{q}_2$. $R = Q^TA$ is upper triangular with entries $r_{ij} = \\mathbf{q}_i^T\\mathbf{a}_j$. Verify: $QR = A$ \u2713",
           "insight": "QR decomposition: $A = QR$ where columns of $Q$ are orthonormal basis for column space of $A$."
         },
         "incorrect": {
@@ -191,5 +191,25 @@
       "linear-algebra-gram-schmidt-1",
       "linear-algebra-least-squares-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Linear Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Linear Algebra",
+      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Linear Algebra",
+      "url": "http://math.mit.edu/~gs/linearalgebra/",
+      "source": "MIT OCW"
+    }
+  ]
 }

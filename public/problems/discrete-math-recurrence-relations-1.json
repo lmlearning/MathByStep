@@ -190,5 +190,25 @@
       "discrete-math-combinatorics-1",
       "logic-proof-induction-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Sequences and Series",
+      "url": "https://www.khanacademy.org/math/calculus-2/cs2-series",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Sequences",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/Sequences.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Real Analysis - Sequences",
+      "url": "https://www.youtube.com/watch?v=sqEyWLGvvdw",
+      "source": "Dr. Peyam"
+    }
+  ]
 }

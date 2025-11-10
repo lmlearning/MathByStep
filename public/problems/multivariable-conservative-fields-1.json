@@ -145,12 +145,12 @@
       },
       "prompt": {
         "question": "Does $\\nabla f = \\mathbf{F}$?",
-        "hint": "$f_x = 2xy + y^2 = P$ ✓, $f_y = x^2 + 2xy = Q$ ✓. Verified!"
+        "hint": "$f_x = 2xy + y^2 = P$ \u2713, $f_y = x^2 + 2xy = Q$ \u2713. Verified!"
       },
       "options": [
         {
           "id": "a",
-          "text": "Potential function: $f(x,y) = x^2y + xy^2$ (taking $C=0$). Verify: $\\nabla f = \\mathbf{F}$ ✓"
+          "text": "Potential function: $f(x,y) = x^2y + xy^2$ (taking $C=0$). Verify: $\\nabla f = \\mathbf{F}$ \u2713"
         },
         {
           "id": "b",
@@ -164,7 +164,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $f(x,y) = x^2y + xy^2$ is the potential function. Check: $\\nabla f = \\langle 2xy + y^2, x^2 + 2xy \\rangle = \\mathbf{F}$ ✓.",
+          "explanation": "Perfect! $f(x,y) = x^2y + xy^2$ is the potential function. Check: $\\nabla f = \\langle 2xy + y^2, x^2 + 2xy \\rangle = \\mathbf{F}$ \u2713.",
           "insight": "For conservative fields, $\\int_C \\mathbf{F} \\cdot d\\mathbf{r} = f(\\text{end}) - f(\\text{start})$ (Fundamental Theorem for Line Integrals)."
         },
         "incorrect": {
@@ -185,10 +185,30 @@
       "Potential function: $f(x,y) = x^2y + xy^2$",
       "Conservative fields: path-independent, $\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = 0$ for closed curves"
     ],
-    "fullSolution": "**Determine if $\\mathbf{F} = \\langle 2xy + y^2, x^2 + 2xy \\rangle$ is conservative and find potential**\n\n**Step 1: Test for conservative field**\n$P = 2xy + y^2$, $Q = x^2 + 2xy$\n$$\\frac{\\partial P}{\\partial y} = 2x + 2y$$\n$$\\frac{\\partial Q}{\\partial x} = 2x + 2y$$\nSince $P_y = Q_x$, the field is **conservative** ✓\n\n**Step 2: Find potential function**\nIntegrate $f_x = P$ wrt $x$:\n$$f = \\int (2xy + y^2)\\, dx = x^2y + xy^2 + g(y)$$\n\n**Step 3: Determine $g(y)$ using $f_y = Q$**\n$$f_y = x^2 + 2xy + g'(y) = Q = x^2 + 2xy$$\n$$\\implies g'(y) = 0 \\implies g(y) = C$$\n\n**Potential function:**\n$$f(x,y) = x^2y + xy^2 + C$$\n\nTaking $C = 0$: $f(x,y) = x^2y + xy^2$\n\n**Verification:** $\\nabla f = \\langle 2xy + y^2, x^2 + 2xy \\rangle = \\mathbf{F}$ ✓",
+    "fullSolution": "**Determine if $\\mathbf{F} = \\langle 2xy + y^2, x^2 + 2xy \\rangle$ is conservative and find potential**\n\n**Step 1: Test for conservative field**\n$P = 2xy + y^2$, $Q = x^2 + 2xy$\n$$\\frac{\\partial P}{\\partial y} = 2x + 2y$$\n$$\\frac{\\partial Q}{\\partial x} = 2x + 2y$$\nSince $P_y = Q_x$, the field is **conservative** \u2713\n\n**Step 2: Find potential function**\nIntegrate $f_x = P$ wrt $x$:\n$$f = \\int (2xy + y^2)\\, dx = x^2y + xy^2 + g(y)$$\n\n**Step 3: Determine $g(y)$ using $f_y = Q$**\n$$f_y = x^2 + 2xy + g'(y) = Q = x^2 + 2xy$$\n$$\\implies g'(y) = 0 \\implies g(y) = C$$\n\n**Potential function:**\n$$f(x,y) = x^2y + xy^2 + C$$\n\nTaking $C = 0$: $f(x,y) = x^2y + xy^2$\n\n**Verification:** $\\nabla f = \\langle 2xy + y^2, x^2 + 2xy \\rangle = \\mathbf{F}$ \u2713",
     "relatedProblems": [
       "multivariable-line-integral-1",
       "multivariable-greens-theorem-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Multivariable Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Multivariable Calculus Course",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Calculus III",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

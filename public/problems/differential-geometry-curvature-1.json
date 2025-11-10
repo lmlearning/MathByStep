@@ -206,5 +206,25 @@
       "calculus-arc-length-1",
       "multivariable-parametric-surfaces-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometry",
+      "url": "https://www.khanacademy.org/math/geometry",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometry Reference",
+      "url": "https://www.mathsisfun.com/geometry/index.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Euclidean Geometry",
+      "url": "https://www.youtube.com/watch?v=X83vac2uTUs",
+      "source": "Numberphile"
+    }
+  ]
 }

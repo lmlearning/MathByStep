@@ -5,7 +5,12 @@
   "topic": "Geometry",
   "difficulty": 3,
   "estimatedTime": 12,
-  "tags": ["geometry", "pythagorean-theorem", "proofs", "right-triangles"],
+  "tags": [
+    "geometry",
+    "pythagorean-theorem",
+    "proofs",
+    "right-triangles"
+  ],
   "statement": {
     "text": "Prove the Pythagorean Theorem: In a right triangle with legs $a$ and $b$ and hypotenuse $c$, we have $a^2 + b^2 = c^2$."
   },
@@ -20,7 +25,9 @@
       "order": 1,
       "currentState": {
         "description": "We have a right triangle with legs $a$ and $b$, and hypotenuse $c$. We want to prove:",
-        "equations": ["a^2 + b^2 = c^2"]
+        "equations": [
+          "a^2 + b^2 = c^2"
+        ]
       },
       "prompt": {
         "question": "What geometric construction should we use for this proof?",
@@ -94,7 +101,9 @@
       },
       "resultState": {
         "description": "The inner square has side length $c$, so its area is:",
-        "equations": ["\\text{Inner square area} = c^2"]
+        "equations": [
+          "\\text{Inner square area} = c^2"
+        ]
       }
     },
     {
@@ -135,7 +144,9 @@
       },
       "resultState": {
         "description": "The outer square's area is:",
-        "equations": ["\\text{Outer square area} = (a + b)^2 = a^2 + 2ab + b^2"]
+        "equations": [
+          "\\text{Outer square area} = (a + b)^2 = a^2 + 2ab + b^2"
+        ]
       }
     },
     {
@@ -143,7 +154,10 @@
       "order": 4,
       "currentState": {
         "description": "The outer square contains four right triangles plus the inner square.",
-        "equations": ["\\text{Outer area} = a^2 + 2ab + b^2", "\\text{Inner area} = c^2"]
+        "equations": [
+          "\\text{Outer area} = a^2 + 2ab + b^2",
+          "\\text{Inner area} = c^2"
+        ]
       },
       "prompt": {
         "question": "What is the total area of the four right triangles?",
@@ -176,7 +190,10 @@
       },
       "resultState": {
         "description": "We can now write an equation:",
-        "equations": ["\\text{Outer square} = \\text{Four triangles} + \\text{Inner square}", "a^2 + 2ab + b^2 = 2ab + c^2"]
+        "equations": [
+          "\\text{Outer square} = \\text{Four triangles} + \\text{Inner square}",
+          "a^2 + 2ab + b^2 = 2ab + c^2"
+        ]
       }
     },
     {
@@ -184,7 +201,9 @@
       "order": 5,
       "currentState": {
         "description": "We have the area relationship:",
-        "equations": ["a^2 + 2ab + b^2 = 2ab + c^2"]
+        "equations": [
+          "a^2 + 2ab + b^2 = 2ab + c^2"
+        ]
       },
       "prompt": {
         "question": "How do we complete the proof?",
@@ -193,7 +212,7 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Subtract $2ab$ from both sides to get $a^2 + b^2 = c^2$ ✓"
+          "text": "Subtract $2ab$ from both sides to get $a^2 + b^2 = c^2$ \u2713"
         },
         {
           "id": "opt-2",
@@ -217,7 +236,9 @@
       },
       "resultState": {
         "description": "Proof complete!",
-        "equations": ["a^2 + b^2 = c^2 \\quad \\square"]
+        "equations": [
+          "a^2 + b^2 = c^2 \\quad \\square"
+        ]
       }
     }
   ],
@@ -230,5 +251,25 @@
     ],
     "fullSolution": "Construct a square with side $(a+b)$ containing four right triangles (legs $a$, $b$) arranged to leave a tilted square with side $c$ in the center.\n\nOuter square area: $(a+b)^2 = a^2 + 2ab + b^2$\nInner square area: $c^2$\nFour triangles area: $4 \\cdot \\frac{1}{2}ab = 2ab$\n\nSince outer = inner + triangles:\n$a^2 + 2ab + b^2 = c^2 + 2ab$\n\nSubtracting $2ab$: $a^2 + b^2 = c^2$ $\\square$",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometry Course",
+      "url": "https://www.khanacademy.org/math/geometry",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometry",
+      "url": "https://www.mathsisfun.com/geometry/index.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Euclidean Geometry",
+      "url": "https://www.youtube.com/watch?v=X83vac2uTUs",
+      "source": "Numberphile"
+    }
+  ]
 }

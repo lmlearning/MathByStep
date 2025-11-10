@@ -194,7 +194,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Either N is a new prime, or N has a prime divisor not in our list—both contradict our assumption"
+          "text": "Either N is a new prime, or N has a prime divisor not in our list\u2014both contradict our assumption"
         },
         {
           "id": "b",
@@ -248,7 +248,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Our assumption (finitely many primes) led to a contradiction, so it must be false. Therefore, there are infinitely many prime numbers. ∎",
+          "explanation": "Perfect! Our assumption (finitely many primes) led to a contradiction, so it must be false. Therefore, there are infinitely many prime numbers. \u220e",
           "insight": "This proof is elegant: no matter what finite list of primes you give me, I can construct a number that reveals another prime not on your list."
         },
         "incorrect": {
@@ -288,11 +288,11 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! The proof's beauty is in its simplicity: given any finite list, Euclid's construction $(p_1 \\cdots p_n + 1)$ guarantees we can find another prime. We don't need to know what the primes are or have a formula—we just prove the list never ends.",
+          "explanation": "Exactly! The proof's beauty is in its simplicity: given any finite list, Euclid's construction $(p_1 \\cdots p_n + 1)$ guarantees we can find another prime. We don't need to know what the primes are or have a formula\u2014we just prove the list never ends.",
           "insight": "This proof technique (assuming finitude, then constructing a counterexample) is powerful and appears throughout mathematics."
         },
         "incorrect": {
-          "1": "The proof shows there is no largest prime—that's the point! Any candidate for 'largest' can be used to find a larger one.",
+          "1": "The proof shows there is no largest prime\u2014that's the point! Any candidate for 'largest' can be used to find a larger one.",
           "2": "Note that $p_1 \\cdots p_n + 1$ doesn't always give a prime (e.g., $2 \\cdot 3 \\cdot 5 \\cdot 7 \\cdot 11 \\cdot 13 + 1 = 30031 = 59 \\times 509$). It just has a prime divisor not in the original list."
         }
       },
@@ -305,14 +305,34 @@
     "keyInsights": [
       "Euclid's proof (c. 300 BCE) uses contradiction: assume finitely many primes",
       "The construction $N = p_1 \\cdot p_2 \\cdots p_n + 1$ leaves remainder 1 when divided by any listed prime",
-      "Either N is prime, or N has a prime divisor—both cases give a prime not in the original list",
+      "Either N is prime, or N has a prime divisor\u2014both cases give a prime not in the original list",
       "The proof shows any finite list is incomplete, without needing to construct all primes"
     ],
-    "fullSolution": "**Theorem:** There are infinitely many prime numbers.\n\n**Proof (by contradiction):**\n\nAssume there are finitely many primes: $p_1, p_2, \\ldots, p_n$.\n\nConsider $N = p_1 \\cdot p_2 \\cdot p_3 \\cdots p_n + 1$.\n\nFor any $p_i$ in our list: $N \\div p_i$ leaves remainder 1, so $p_i \\nmid N$.\n\nBy the Fundamental Theorem of Arithmetic, $N > 1$ has a prime divisor (or is prime itself).\n\nCase 1: If $N$ is prime, then $N \\notin \\{p_1, \\ldots, p_n\\}$ (since $N > p_i$ for all $i$).\n\nCase 2: If $N$ is composite, let $q$ be a prime divisor of $N$. Then $q \\notin \\{p_1, \\ldots, p_n\\}$ (since none of the $p_i$ divide $N$).\n\nEither way, we found a prime not in our supposedly complete list. Contradiction!\n\nTherefore, there are infinitely many primes. ∎",
+    "fullSolution": "**Theorem:** There are infinitely many prime numbers.\n\n**Proof (by contradiction):**\n\nAssume there are finitely many primes: $p_1, p_2, \\ldots, p_n$.\n\nConsider $N = p_1 \\cdot p_2 \\cdot p_3 \\cdots p_n + 1$.\n\nFor any $p_i$ in our list: $N \\div p_i$ leaves remainder 1, so $p_i \\nmid N$.\n\nBy the Fundamental Theorem of Arithmetic, $N > 1$ has a prime divisor (or is prime itself).\n\nCase 1: If $N$ is prime, then $N \\notin \\{p_1, \\ldots, p_n\\}$ (since $N > p_i$ for all $i$).\n\nCase 2: If $N$ is composite, let $q$ be a prime divisor of $N$. Then $q \\notin \\{p_1, \\ldots, p_n\\}$ (since none of the $p_i$ divide $N$).\n\nEither way, we found a prime not in our supposedly complete list. Contradiction!\n\nTherefore, there are infinitely many primes. \u220e",
     "relatedProblems": [
       "number-theory-divisibility-1",
       "number-theory-gcd-1",
       "logic-proof-contradiction-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Prime Numbers",
+      "url": "https://www.youtube.com/watch?v=mIStB5X4U8M",
+      "source": "Numberphile"
+    },
+    {
+      "type": "article",
+      "title": "Prime Numbers",
+      "url": "https://www.mathsisfun.com/prime_numbers.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Fundamental Theorem of Arithmetic",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/comp-number-theory/v/the-fundamental-theorem-of-arithmetic-1",
+      "source": "Khan Academy"
+    }
+  ]
 }

@@ -185,10 +185,30 @@
       "Partial fractions: $\\frac{1}{z^2(z-1)} = -\\frac{1}{z} - \\frac{1}{z^2} + \\frac{1}{z-1}$",
       "Result: $\\oint_C \\frac{e^z}{z^2(z-1)}dz = 2\\pi i(e - 2)$"
     ],
-    "fullSolution": "**Evaluate $\\oint_C \\frac{e^z}{z^2(z-1)} dz$ where $C: |z| = 2$**\n\n**Step 1: Identify singularities**\n\n$f(z) = \\frac{e^z}{z^2(z-1)}$ has:\n- Pole of order 2 at $z = 0$\n- Simple pole at $z = 1$\n\nBoth inside $|z| = 2$ ✓\n\n**Step 2: Partial fraction decomposition**\n\n$$\\frac{1}{z^2(z-1)} = \\frac{A}{z} + \\frac{B}{z^2} + \\frac{C}{z-1}$$\n\nMultiply by $z^2(z-1)$:\n$$1 = Az(z-1) + B(z-1) + Cz^2$$\n\nSet $z = 0$: $1 = -B \\implies B = -1$\n\nSet $z = 1$: $1 = C \\implies C = 1$\n\nCoefficient of $z^2$: $0 = A + C \\implies A = -1$\n\nTherefore:\n$$\\frac{1}{z^2(z-1)} = -\\frac{1}{z} - \\frac{1}{z^2} + \\frac{1}{z-1}$$\n\n$$f(z) = -\\frac{e^z}{z} - \\frac{e^z}{z^2} + \\frac{e^z}{z-1}$$\n\n**Step 3: Split the integral**\n\n$$\\oint_C f(z)\\,dz = -\\oint_C \\frac{e^z}{z}\\,dz - \\oint_C \\frac{e^z}{z^2}\\,dz + \\oint_C \\frac{e^z}{z-1}\\,dz$$\n\n**Step 4: Apply Cauchy's Integral Formulas**\n\n**Integral 1:** $\\oint_C \\frac{e^z}{z}\\,dz$\n\nUsing $\\oint_C \\frac{f(z)}{z-a}\\,dz = 2\\pi i f(a)$ with $f(z) = e^z$, $a = 0$:\n$$\\oint_C \\frac{e^z}{z}\\,dz = 2\\pi i \\cdot e^0 = 2\\pi i$$\n\n**Integral 2:** $\\oint_C \\frac{e^z}{z^2}\\,dz$\n\nUsing $\\oint_C \\frac{f(z)}{(z-a)^2}\\,dz = 2\\pi i f'(a)$ with $f(z) = e^z$, $a = 0$:\n$$\\oint_C \\frac{e^z}{z^2}\\,dz = 2\\pi i \\cdot (e^z)'\\big|_{z=0} = 2\\pi i \\cdot e^0 = 2\\pi i$$\n\n**Integral 3:** $\\oint_C \\frac{e^z}{z-1}\\,dz$\n\nUsing Cauchy's formula with $f(z) = e^z$, $a = 1$:\n$$\\oint_C \\frac{e^z}{z-1}\\,dz = 2\\pi i \\cdot e^1 = 2\\pi i e$$\n\n**Step 5: Combine results**\n\n$$\\oint_C f(z)\\,dz = -(2\\pi i) - (2\\pi i) + (2\\pi i e)$$\n$$= 2\\pi i(-1 - 1 + e)$$\n$$= 2\\pi i(e - 2)$$\n\n**Answer:** $\\boxed{2\\pi i(e - 2)}$",
+    "fullSolution": "**Evaluate $\\oint_C \\frac{e^z}{z^2(z-1)} dz$ where $C: |z| = 2$**\n\n**Step 1: Identify singularities**\n\n$f(z) = \\frac{e^z}{z^2(z-1)}$ has:\n- Pole of order 2 at $z = 0$\n- Simple pole at $z = 1$\n\nBoth inside $|z| = 2$ \u2713\n\n**Step 2: Partial fraction decomposition**\n\n$$\\frac{1}{z^2(z-1)} = \\frac{A}{z} + \\frac{B}{z^2} + \\frac{C}{z-1}$$\n\nMultiply by $z^2(z-1)$:\n$$1 = Az(z-1) + B(z-1) + Cz^2$$\n\nSet $z = 0$: $1 = -B \\implies B = -1$\n\nSet $z = 1$: $1 = C \\implies C = 1$\n\nCoefficient of $z^2$: $0 = A + C \\implies A = -1$\n\nTherefore:\n$$\\frac{1}{z^2(z-1)} = -\\frac{1}{z} - \\frac{1}{z^2} + \\frac{1}{z-1}$$\n\n$$f(z) = -\\frac{e^z}{z} - \\frac{e^z}{z^2} + \\frac{e^z}{z-1}$$\n\n**Step 3: Split the integral**\n\n$$\\oint_C f(z)\\,dz = -\\oint_C \\frac{e^z}{z}\\,dz - \\oint_C \\frac{e^z}{z^2}\\,dz + \\oint_C \\frac{e^z}{z-1}\\,dz$$\n\n**Step 4: Apply Cauchy's Integral Formulas**\n\n**Integral 1:** $\\oint_C \\frac{e^z}{z}\\,dz$\n\nUsing $\\oint_C \\frac{f(z)}{z-a}\\,dz = 2\\pi i f(a)$ with $f(z) = e^z$, $a = 0$:\n$$\\oint_C \\frac{e^z}{z}\\,dz = 2\\pi i \\cdot e^0 = 2\\pi i$$\n\n**Integral 2:** $\\oint_C \\frac{e^z}{z^2}\\,dz$\n\nUsing $\\oint_C \\frac{f(z)}{(z-a)^2}\\,dz = 2\\pi i f'(a)$ with $f(z) = e^z$, $a = 0$:\n$$\\oint_C \\frac{e^z}{z^2}\\,dz = 2\\pi i \\cdot (e^z)'\\big|_{z=0} = 2\\pi i \\cdot e^0 = 2\\pi i$$\n\n**Integral 3:** $\\oint_C \\frac{e^z}{z-1}\\,dz$\n\nUsing Cauchy's formula with $f(z) = e^z$, $a = 1$:\n$$\\oint_C \\frac{e^z}{z-1}\\,dz = 2\\pi i \\cdot e^1 = 2\\pi i e$$\n\n**Step 5: Combine results**\n\n$$\\oint_C f(z)\\,dz = -(2\\pi i) - (2\\pi i) + (2\\pi i e)$$\n$$= 2\\pi i(-1 - 1 + e)$$\n$$= 2\\pi i(e - 2)$$\n\n**Answer:** $\\boxed{2\\pi i(e - 2)}$",
     "relatedProblems": [
       "complex-analysis-residue-theorem-1",
       "complex-analysis-laurent-series-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Analysis",
+      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
+      "source": "MathTheBeautiful"
+    },
+    {
+      "type": "article",
+      "title": "Complex Analysis",
+      "url": "https://complex-analysis.com/",
+      "source": "Complex Analysis Course"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

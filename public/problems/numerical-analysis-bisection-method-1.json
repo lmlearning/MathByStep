@@ -64,7 +64,9 @@
       "order": 2,
       "currentState": {
         "description": "Iteration 1: $[a_0, b_0] = [1, 2]$.",
-        "equations": ["f(1) = -1, \\quad f(2) = 5"]
+        "equations": [
+          "f(1) = -1, \\quad f(2) = 5"
+        ]
       },
       "prompt": {
         "question": "What is the midpoint $c_0$ and which subinterval contains the root?",
@@ -97,7 +99,9 @@
       },
       "resultState": {
         "description": "After iteration 1: $[a_1, b_1] = [1, 1.5]$",
-        "equations": ["c_0 = 1.5"]
+        "equations": [
+          "c_0 = 1.5"
+        ]
       }
     },
     {
@@ -137,7 +141,9 @@
       },
       "resultState": {
         "description": "After iteration 2: $[a_2, b_2] = [1.25, 1.5]$",
-        "equations": ["c_1 = 1.25"]
+        "equations": [
+          "c_1 = 1.25"
+        ]
       }
     },
     {
@@ -177,7 +183,9 @@
       },
       "resultState": {
         "description": "Root approximation: $x \\approx 1.375$",
-        "equations": ["c_2 = 1.375, \\quad |error| \\leq 0.125"]
+        "equations": [
+          "c_2 = 1.375, \\quad |error| \\leq 0.125"
+        ]
       }
     }
   ],
@@ -192,10 +200,30 @@
       "Error bound: $|error| \\leq \\frac{b_0 - a_0}{2^n}$",
       "Approximation: $x \\approx 1.375$ with error $\\leq 0.125$"
     ],
-    "fullSolution": "**Bisection Method for $f(x) = x^3 - x - 1$ on $[1, 2]$**\n\n---\n\n**Prerequisites:**\n\n$f$ continuous on $[a, b] = [1, 2]$ (polynomial) ✓\n\nSign change:\n- $f(1) = 1 - 1 - 1 = -1 < 0$\n- $f(2) = 8 - 2 - 1 = 5 > 0$\n\nBy IVT, $\\exists$ root in $(1, 2)$. ✓\n\n---\n\n**Algorithm:** Bisection Method\n\n**Iteration 1:**\n\n$[a_0, b_0] = [1, 2]$\n\n$c_0 = \\frac{1 + 2}{2} = 1.5$\n\n$f(c_0) = f(1.5) = 3.375 - 1.5 - 1 = 0.875 > 0$\n\nSign change in $[a_0, c_0] = [1, 1.5]$\n\nNew interval: $[a_1, b_1] = [1, 1.5]$\n\n---\n\n**Iteration 2:**\n\n$[a_1, b_1] = [1, 1.5]$\n\n$c_1 = \\frac{1 + 1.5}{2} = 1.25$\n\n$f(c_1) = f(1.25) = 1.953125 - 1.25 - 1 \\approx -0.297 < 0$\n\nSign change in $[c_1, b_1] = [1.25, 1.5]$\n\nNew interval: $[a_2, b_2] = [1.25, 1.5]$\n\n---\n\n**Iteration 3:**\n\n$[a_2, b_2] = [1.25, 1.5]$\n\n$c_2 = \\frac{1.25 + 1.5}{2} = 1.375$\n\n$f(c_2) = f(1.375) \\approx 2.599 - 2.375 = 0.224 > 0$\n\nSign change in $[a_2, c_2] = [1.25, 1.375]$\n\nNew interval: $[a_3, b_3] = [1.25, 1.375]$\n\n---\n\n**Result:**\n\nAfter 3 iterations: root $\\approx c_2 = 1.375$\n\n**Error bound:**\n$$|error| \\leq \\frac{b_0 - a_0}{2^3} = \\frac{2 - 1}{8} = 0.125$$\n\n**Verification:**\n\nTrue root $\\approx 1.324717957...$\n\nActual error: $|1.375 - 1.3247| \\approx 0.050 < 0.125$ ✓\n\n---\n\n**Answer:** $\\boxed{x \\approx 1.375}$ with guaranteed error $\\leq 0.125$",
+    "fullSolution": "**Bisection Method for $f(x) = x^3 - x - 1$ on $[1, 2]$**\n\n---\n\n**Prerequisites:**\n\n$f$ continuous on $[a, b] = [1, 2]$ (polynomial) \u2713\n\nSign change:\n- $f(1) = 1 - 1 - 1 = -1 < 0$\n- $f(2) = 8 - 2 - 1 = 5 > 0$\n\nBy IVT, $\\exists$ root in $(1, 2)$. \u2713\n\n---\n\n**Algorithm:** Bisection Method\n\n**Iteration 1:**\n\n$[a_0, b_0] = [1, 2]$\n\n$c_0 = \\frac{1 + 2}{2} = 1.5$\n\n$f(c_0) = f(1.5) = 3.375 - 1.5 - 1 = 0.875 > 0$\n\nSign change in $[a_0, c_0] = [1, 1.5]$\n\nNew interval: $[a_1, b_1] = [1, 1.5]$\n\n---\n\n**Iteration 2:**\n\n$[a_1, b_1] = [1, 1.5]$\n\n$c_1 = \\frac{1 + 1.5}{2} = 1.25$\n\n$f(c_1) = f(1.25) = 1.953125 - 1.25 - 1 \\approx -0.297 < 0$\n\nSign change in $[c_1, b_1] = [1.25, 1.5]$\n\nNew interval: $[a_2, b_2] = [1.25, 1.5]$\n\n---\n\n**Iteration 3:**\n\n$[a_2, b_2] = [1.25, 1.5]$\n\n$c_2 = \\frac{1.25 + 1.5}{2} = 1.375$\n\n$f(c_2) = f(1.375) \\approx 2.599 - 2.375 = 0.224 > 0$\n\nSign change in $[a_2, c_2] = [1.25, 1.375]$\n\nNew interval: $[a_3, b_3] = [1.25, 1.375]$\n\n---\n\n**Result:**\n\nAfter 3 iterations: root $\\approx c_2 = 1.375$\n\n**Error bound:**\n$$|error| \\leq \\frac{b_0 - a_0}{2^3} = \\frac{2 - 1}{8} = 0.125$$\n\n**Verification:**\n\nTrue root $\\approx 1.324717957...$\n\nActual error: $|1.375 - 1.3247| \\approx 0.050 < 0.125$ \u2713\n\n---\n\n**Answer:** $\\boxed{x \\approx 1.375}$ with guaranteed error $\\leq 0.125$",
     "relatedProblems": [
       "numerical-analysis-newtons-method-1",
       "calculus-mvt-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Numerical Methods",
+      "url": "https://www.youtube.com/playlist?list=PLMrJAkhIeNNQromC7gB8LHTRu2UGqOh0a",
+      "source": "Steve Brunton"
+    },
+    {
+      "type": "article",
+      "title": "Numerical Analysis",
+      "url": "https://www.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/",
+      "source": "University of Maryland"
+    },
+    {
+      "type": "video",
+      "title": "Numerical Computing",
+      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+      "source": "Khan Academy"
+    }
+  ]
 }

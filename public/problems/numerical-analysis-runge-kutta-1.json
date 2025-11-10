@@ -166,7 +166,7 @@
       "feedback": {
         "correct": {
           "explanation": "Correct! Exact solution: $y(0.5) = e^{0.5} \\approx 1.6487$. RK4: $\\approx 1.6901$. Small error (2.5%) with just ONE step! With smaller $h$ or more steps, error would decrease dramatically (as $h^5$). Compare to Euler error: $|1.5 - 1.6487| \\approx 0.15$ or 9%.",
-          "insight": "RK4 is 4th-order accurate. For this problem, RK4 error is ~3× smaller than Euler despite using same step size!"
+          "insight": "RK4 is 4th-order accurate. For this problem, RK4 error is ~3\u00d7 smaller than Euler despite using same step size!"
         },
         "incorrect": {
           "1": "No numerical method gives exact values (except special cases)!",
@@ -188,10 +188,30 @@
       "Error: ~2.5% (vs. 9% for Euler)",
       "RK4 is 4th-order: error $\\propto h^5$"
     ],
-    "fullSolution": "**Use RK4 to approximate $y(0.5)$ for $y' = y$, $y(0) = 1$ with $h = 0.5$**\n\n**Setup:**\n- $f(x, y) = y$\n- $(x_0, y_0) = (0, 1)$\n- $h = 0.5$\n- Want: $y(0.5) = y_1$\n\n---\n\n**RK4 Method:**\n\n**Step 1: Calculate $k_1$** (slope at start)\n$$k_1 = h f(x_0, y_0) = 0.5 \\cdot f(0, 1) = 0.5 \\cdot 1 = 0.5$$\n\n**Step 2: Calculate $k_2$** (slope at midpoint, using $k_1$)\n$$k_2 = h f\\left(x_0 + \\frac{h}{2}, y_0 + \\frac{k_1}{2}\\right)$$\n$$= 0.5 \\cdot f\\left(0 + 0.25, 1 + 0.25\\right)$$\n$$= 0.5 \\cdot f(0.25, 1.25)$$\n$$= 0.5 \\cdot 1.25 = 0.625$$\n\n**Step 3: Calculate $k_3$** (slope at midpoint, using $k_2$)\n$$k_3 = h f\\left(x_0 + \\frac{h}{2}, y_0 + \\frac{k_2}{2}\\right)$$\n$$= 0.5 \\cdot f\\left(0.25, 1 + 0.3125\\right)$$\n$$= 0.5 \\cdot 1.3125 = 0.65625$$\n\n**Step 4: Calculate $k_4$** (slope at end, using $k_3$)\n$$k_4 = h f(x_0 + h, y_0 + k_3)$$\n$$= 0.5 \\cdot f(0.5, 1 + 0.65625)$$\n$$= 0.5 \\cdot 1.65625 = 0.828125$$\n\n**Step 5: Weighted average**\n$$y_1 = y_0 + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$\n$$= 1 + \\frac{1}{6}(0.5 + 2(0.625) + 2(0.65625) + 0.828125)$$\n$$= 1 + \\frac{1}{6}(0.5 + 1.25 + 1.3125 + 0.828125)$$\n$$= 1 + \\frac{3.890625}{6}$$\n$$= 1 + 0.6484375$$\n$$\\approx 1.6484$$\n\n**Answer:** $\\boxed{y(0.5) \\approx 1.6484}$\n\n---\n\n**Comparison with Exact Solution:**\n\nExact solution: $y = e^x$\n$$y(0.5) = e^{0.5} \\approx 1.6487$$\n\n**Error Analysis:**\n- RK4: $\\approx 1.6484$\n- Exact: $\\approx 1.6487$\n- Absolute error: $|1.6487 - 1.6484| \\approx 0.0003$ or 0.02%\n\nFor comparison, Euler's method:\n- $y_1 = 1 + 0.5(1) = 1.5$\n- Error: $|1.6487 - 1.5| \\approx 0.15$ or 9%\n\n**RK4 is ~500× more accurate than Euler for this problem!**",
+    "fullSolution": "**Use RK4 to approximate $y(0.5)$ for $y' = y$, $y(0) = 1$ with $h = 0.5$**\n\n**Setup:**\n- $f(x, y) = y$\n- $(x_0, y_0) = (0, 1)$\n- $h = 0.5$\n- Want: $y(0.5) = y_1$\n\n---\n\n**RK4 Method:**\n\n**Step 1: Calculate $k_1$** (slope at start)\n$$k_1 = h f(x_0, y_0) = 0.5 \\cdot f(0, 1) = 0.5 \\cdot 1 = 0.5$$\n\n**Step 2: Calculate $k_2$** (slope at midpoint, using $k_1$)\n$$k_2 = h f\\left(x_0 + \\frac{h}{2}, y_0 + \\frac{k_1}{2}\\right)$$\n$$= 0.5 \\cdot f\\left(0 + 0.25, 1 + 0.25\\right)$$\n$$= 0.5 \\cdot f(0.25, 1.25)$$\n$$= 0.5 \\cdot 1.25 = 0.625$$\n\n**Step 3: Calculate $k_3$** (slope at midpoint, using $k_2$)\n$$k_3 = h f\\left(x_0 + \\frac{h}{2}, y_0 + \\frac{k_2}{2}\\right)$$\n$$= 0.5 \\cdot f\\left(0.25, 1 + 0.3125\\right)$$\n$$= 0.5 \\cdot 1.3125 = 0.65625$$\n\n**Step 4: Calculate $k_4$** (slope at end, using $k_3$)\n$$k_4 = h f(x_0 + h, y_0 + k_3)$$\n$$= 0.5 \\cdot f(0.5, 1 + 0.65625)$$\n$$= 0.5 \\cdot 1.65625 = 0.828125$$\n\n**Step 5: Weighted average**\n$$y_1 = y_0 + \\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$\n$$= 1 + \\frac{1}{6}(0.5 + 2(0.625) + 2(0.65625) + 0.828125)$$\n$$= 1 + \\frac{1}{6}(0.5 + 1.25 + 1.3125 + 0.828125)$$\n$$= 1 + \\frac{3.890625}{6}$$\n$$= 1 + 0.6484375$$\n$$\\approx 1.6484$$\n\n**Answer:** $\\boxed{y(0.5) \\approx 1.6484}$\n\n---\n\n**Comparison with Exact Solution:**\n\nExact solution: $y = e^x$\n$$y(0.5) = e^{0.5} \\approx 1.6487$$\n\n**Error Analysis:**\n- RK4: $\\approx 1.6484$\n- Exact: $\\approx 1.6487$\n- Absolute error: $|1.6487 - 1.6484| \\approx 0.0003$ or 0.02%\n\nFor comparison, Euler's method:\n- $y_1 = 1 + 0.5(1) = 1.5$\n- Error: $|1.6487 - 1.5| \\approx 0.15$ or 9%\n\n**RK4 is ~500\u00d7 more accurate than Euler for this problem!**",
     "relatedProblems": [
       "numerical-analysis-euler-method-1",
       "differential-equations-first-order-linear-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Numerical Methods",
+      "url": "https://www.youtube.com/playlist?list=PLMrJAkhIeNNQromC7gB8LHTRu2UGqOh0a",
+      "source": "Steve Brunton"
+    },
+    {
+      "type": "article",
+      "title": "Numerical Analysis",
+      "url": "https://www.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/",
+      "source": "University of Maryland"
+    },
+    {
+      "type": "video",
+      "title": "Numerical Computing",
+      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+      "source": "Khan Academy"
+    }
+  ]
 }

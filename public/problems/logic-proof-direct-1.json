@@ -273,7 +273,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Therefore, the sum of any two odd integers is even. ∎"
+          "text": "Therefore, the sum of any two odd integers is even. \u220e"
         },
         {
           "id": "b",
@@ -287,7 +287,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! We proved that for any two odd integers $a$ and $b$, their sum $a+b$ is even. The proof is complete! ∎",
+          "explanation": "Exactly! We proved that for any two odd integers $a$ and $b$, their sum $a+b$ is even. The proof is complete! \u220e",
           "insight": "Direct proofs are elegant: start with definitions, manipulate algebraically, arrive at the desired form. This logical chain establishes the result for all cases at once."
         },
         "incorrect": {
@@ -307,11 +307,31 @@
       "Algebraic manipulation reveals structure: $(2k+1) + (2j+1) = 2(k+j+1)$",
       "Closure properties ensure intermediate steps are valid (sum of integers is an integer)"
     ],
-    "fullSolution": "**Theorem:** The sum of any two odd integers is even.\n\n**Proof:**\n\nLet $a$ and $b$ be arbitrary odd integers.\n\nBy definition of odd, we can write:\n- $a = 2k + 1$ for some integer $k$\n- $b = 2j + 1$ for some integer $j$\n\nThen:\n$$a + b = (2k+1) + (2j+1)$$\n$$= 2k + 2j + 2$$\n$$= 2(k + j + 1)$$\n\nSince $k$ and $j$ are integers, $k+j+1$ is also an integer. \n\nLet $m = k+j+1$. Then $a + b = 2m$ where $m \\in \\mathbb{Z}$.\n\nBy definition of even, $a+b$ is even.\n\nTherefore, the sum of any two odd integers is even. ∎",
+    "fullSolution": "**Theorem:** The sum of any two odd integers is even.\n\n**Proof:**\n\nLet $a$ and $b$ be arbitrary odd integers.\n\nBy definition of odd, we can write:\n- $a = 2k + 1$ for some integer $k$\n- $b = 2j + 1$ for some integer $j$\n\nThen:\n$$a + b = (2k+1) + (2j+1)$$\n$$= 2k + 2j + 2$$\n$$= 2(k + j + 1)$$\n\nSince $k$ and $j$ are integers, $k+j+1$ is also an integer. \n\nLet $m = k+j+1$. Then $a + b = 2m$ where $m \\in \\mathbb{Z}$.\n\nBy definition of even, $a+b$ is even.\n\nTherefore, the sum of any two odd integers is even. \u220e",
     "relatedProblems": [
       "number-theory-divisibility-1",
       "logic-proof-induction-1",
       "logic-proof-contradiction-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

@@ -190,5 +190,25 @@
       "linear-algebra-orthogonal-projection-1",
       "statistics-linear-regression-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Linear Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Linear Algebra",
+      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Linear Algebra",
+      "url": "http://math.mit.edu/~gs/linearalgebra/",
+      "source": "MIT OCW"
+    }
+  ]
 }

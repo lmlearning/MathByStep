@@ -150,7 +150,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Metric spaces ⊆ Hausdorff spaces. Cofinite topology is non-Hausdorff example."
+          "text": "Metric spaces \u2286 Hausdorff spaces. Cofinite topology is non-Hausdorff example."
         },
         {
           "id": "b",
@@ -186,10 +186,30 @@
       "Cofinite is NOT Hausdorff: any two non-empty opens intersect",
       "Hausdorff ensures: limits unique, sequences converge to at most one point"
     ],
-    "fullSolution": "**Part 1: Prove every metric space is Hausdorff**\n\nLet $(X, d)$ be a metric space. Let $x, y \\in X$ with $x \\neq y$.\n\n**Goal:** Find disjoint open sets $U, V$ with $x \\in U$, $y \\in V$.\n\n**Construction:**\n\nSince $x \\neq y$:\n$$r := d(x, y) > 0$$\n\nChoose:\n$$\\epsilon = \\frac{r}{2}$$\n\nDefine open balls:\n$$U = B(x, \\epsilon) = \\{z \\in X : d(x, z) < \\epsilon\\}$$\n$$V = B(y, \\epsilon) = \\{z \\in X : d(y, z) < \\epsilon\\}$$\n\n**Verify:**\n1. $U, V$ are open (by definition of metric topology)\n2. $x \\in U$ and $y \\in V$ (since $d(x,x) = d(y,y) = 0 < \\epsilon$)\n3. $U \\cap V = \\emptyset$?\n\n**Claim:** $U \\cap V = \\emptyset$\n\n**Proof by contradiction:** Suppose $z \\in U \\cap V$. Then:\n- $d(x, z) < \\epsilon = r/2$\n- $d(y, z) < \\epsilon = r/2$\n\nBy triangle inequality:\n$$d(x, y) \\leq d(x, z) + d(z, y) < \\frac{r}{2} + \\frac{r}{2} = r$$\n\nBut $d(x, y) = r$, contradicting $d(x,y) < r$.\n\nTherefore $U \\cap V = \\emptyset$. $\\square$\n\n---\n\n**Part 2: Cofinite topology is NOT Hausdorff**\n\nLet $X$ be an infinite set. Cofinite topology:\n$$\\tau = \\{\\emptyset\\} \\cup \\{U \\subseteq X : X \\setminus U \\text{ is finite}\\}$$\n\n**Claim:** $(X, \\tau)$ is not Hausdorff.\n\n**Proof:** Let $x, y \\in X$ with $x \\neq y$. Let $U, V \\in \\tau$ be non-empty open sets with $x \\in U$ and $y \\in V$.\n\nSince $U, V$ are non-empty and open:\n- $X \\setminus U$ is finite\n- $X \\setminus V$ is finite\n\nTherefore:\n$$X \\setminus (U \\cap V) = (X \\setminus U) \\cup (X \\setminus V)$$\n\nis finite (finite union of finite sets).\n\nSince $X$ is infinite and $X \\setminus (U \\cap V)$ is finite:\n$$U \\cap V \\neq \\emptyset$$\n\nThus $U$ and $V$ are not disjoint.\n\n**Conclusion:** No two distinct points in $(X, \\tau)$ can be separated by disjoint open sets. Therefore $(X, \\tau)$ is NOT Hausdorff. $\\square$\n\n---\n\n**Summary:**\n- **Metric spaces** → **Hausdorff** ✓\n- **Cofinite on infinite set** → **NOT Hausdorff** ✗\n\nThis shows Hausdorff is a genuine restriction that not all topologies satisfy!",
+    "fullSolution": "**Part 1: Prove every metric space is Hausdorff**\n\nLet $(X, d)$ be a metric space. Let $x, y \\in X$ with $x \\neq y$.\n\n**Goal:** Find disjoint open sets $U, V$ with $x \\in U$, $y \\in V$.\n\n**Construction:**\n\nSince $x \\neq y$:\n$$r := d(x, y) > 0$$\n\nChoose:\n$$\\epsilon = \\frac{r}{2}$$\n\nDefine open balls:\n$$U = B(x, \\epsilon) = \\{z \\in X : d(x, z) < \\epsilon\\}$$\n$$V = B(y, \\epsilon) = \\{z \\in X : d(y, z) < \\epsilon\\}$$\n\n**Verify:**\n1. $U, V$ are open (by definition of metric topology)\n2. $x \\in U$ and $y \\in V$ (since $d(x,x) = d(y,y) = 0 < \\epsilon$)\n3. $U \\cap V = \\emptyset$?\n\n**Claim:** $U \\cap V = \\emptyset$\n\n**Proof by contradiction:** Suppose $z \\in U \\cap V$. Then:\n- $d(x, z) < \\epsilon = r/2$\n- $d(y, z) < \\epsilon = r/2$\n\nBy triangle inequality:\n$$d(x, y) \\leq d(x, z) + d(z, y) < \\frac{r}{2} + \\frac{r}{2} = r$$\n\nBut $d(x, y) = r$, contradicting $d(x,y) < r$.\n\nTherefore $U \\cap V = \\emptyset$. $\\square$\n\n---\n\n**Part 2: Cofinite topology is NOT Hausdorff**\n\nLet $X$ be an infinite set. Cofinite topology:\n$$\\tau = \\{\\emptyset\\} \\cup \\{U \\subseteq X : X \\setminus U \\text{ is finite}\\}$$\n\n**Claim:** $(X, \\tau)$ is not Hausdorff.\n\n**Proof:** Let $x, y \\in X$ with $x \\neq y$. Let $U, V \\in \\tau$ be non-empty open sets with $x \\in U$ and $y \\in V$.\n\nSince $U, V$ are non-empty and open:\n- $X \\setminus U$ is finite\n- $X \\setminus V$ is finite\n\nTherefore:\n$$X \\setminus (U \\cap V) = (X \\setminus U) \\cup (X \\setminus V)$$\n\nis finite (finite union of finite sets).\n\nSince $X$ is infinite and $X \\setminus (U \\cap V)$ is finite:\n$$U \\cap V \\neq \\emptyset$$\n\nThus $U$ and $V$ are not disjoint.\n\n**Conclusion:** No two distinct points in $(X, \\tau)$ can be separated by disjoint open sets. Therefore $(X, \\tau)$ is NOT Hausdorff. $\\square$\n\n---\n\n**Summary:**\n- **Metric spaces** \u2192 **Hausdorff** \u2713\n- **Cofinite on infinite set** \u2192 **NOT Hausdorff** \u2717\n\nThis shows Hausdorff is a genuine restriction that not all topologies satisfy!",
     "relatedProblems": [
       "topology-metric-spaces-1",
       "topology-compactness-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Introduction to Topology",
+      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
+      "source": "Insights into Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Topology",
+      "url": "https://mathworld.wolfram.com/Topology.html",
+      "source": "Wolfram MathWorld"
+    },
+    {
+      "type": "video",
+      "title": "What is Topology?",
+      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
+      "source": "Brendan Fong"
+    }
+  ]
 }

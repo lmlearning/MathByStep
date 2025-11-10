@@ -206,5 +206,25 @@
       "algebra-quadratic-1",
       "algebra-polynomial-division-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Algebra Course",
+      "url": "https://www.khanacademy.org/math/algebra",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Algebra Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Algebra Basics",
+      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
+      "source": "Professor Leonard"
+    }
+  ]
 }

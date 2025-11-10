@@ -107,7 +107,7 @@
       },
       "prompt": {
         "question": "What is the stabilizer of 1?",
-        "hint": "$\\text{Stab}(1) = \\{g \\in G : g \\cdot 1 = 1\\}$. Check each: $e \\cdot 1 = 1$ ✓. $(12) \\cdot 1 = 2$ ✗. $(13) \\cdot 1 = 3$ ✗. $(23) \\cdot 1 = 1$ ✓. $(123) \\cdot 1 = 2$ ✗. $(132) \\cdot 1 = 3$ ✗. Stabilizer = $\\{e, (23)\\}$."
+        "hint": "$\\text{Stab}(1) = \\{g \\in G : g \\cdot 1 = 1\\}$. Check each: $e \\cdot 1 = 1$ \u2713. $(12) \\cdot 1 = 2$ \u2717. $(13) \\cdot 1 = 3$ \u2717. $(23) \\cdot 1 = 1$ \u2713. $(123) \\cdot 1 = 2$ \u2717. $(132) \\cdot 1 = 3$ \u2717. Stabilizer = $\\{e, (23)\\}$."
       },
       "options": [
         {
@@ -146,12 +146,12 @@
       },
       "prompt": {
         "question": "Does the orbit-stabilizer theorem hold?",
-        "hint": "Orbit-stabilizer theorem: $|G| = |\\text{Orb}(x)| \\cdot |\\text{Stab}(x)|$. Here: $|S_3| = 6$, $|\\text{Orb}(1)| = 3$, $|\\text{Stab}(1)| = 2$. Check: $6 = 3 \\times 2$ ✓"
+        "hint": "Orbit-stabilizer theorem: $|G| = |\\text{Orb}(x)| \\cdot |\\text{Stab}(x)|$. Here: $|S_3| = 6$, $|\\text{Orb}(1)| = 3$, $|\\text{Stab}(1)| = 2$. Check: $6 = 3 \\times 2$ \u2713"
       },
       "options": [
         {
           "id": "a",
-          "text": "$|S_3| = 6 = 3 \\times 2 = |\\text{Orb}(1)| \\times |\\text{Stab}(1)|$ ✓"
+          "text": "$|S_3| = 6 = 3 \\times 2 = |\\text{Orb}(1)| \\times |\\text{Stab}(1)|$ \u2713"
         },
         {
           "id": "b",
@@ -187,10 +187,30 @@
       "Orbit-stabilizer theorem: $|G| = |\\text{Orb}(x)| \\cdot |\\text{Stab}(x)|$",
       "Verified: $6 = 3 \\times 2$"
     ],
-    "fullSolution": "**Find orbit and stabilizer of 1 under $S_3$ acting on $\\{1,2,3\\}$**\n\n**Group:** $S_3 = \\{e, (12), (13), (23), (123), (132)\\}$ has order 6.\n\n**Action:** $S_3$ acts on $X = \\{1, 2, 3\\}$ by permutations: $\\sigma \\cdot i = \\sigma(i)$.\n\n---\n\n**Part 1: Orbit of 1**\n\nOrbit = $\\{g \\cdot 1 : g \\in S_3\\}$\n\nApply each group element:\n- $e \\cdot 1 = 1$\n- $(12) \\cdot 1 = 2$ (swap 1 and 2)\n- $(13) \\cdot 1 = 3$ (swap 1 and 3)\n- $(23) \\cdot 1 = 1$ (swap 2 and 3, fixes 1)\n- $(123) \\cdot 1 = 2$ (cycle $1 \\to 2 \\to 3 \\to 1$)\n- $(132) \\cdot 1 = 3$ (cycle $1 \\to 3 \\to 2 \\to 1$)\n\n**Answer:** $\\boxed{\\text{Orb}(1) = \\{1, 2, 3\\}}$\n\nThe action is **transitive** (single orbit equals all of $X$).\n\n---\n\n**Part 2: Stabilizer of 1**\n\nStabilizer = $\\{g \\in S_3 : g \\cdot 1 = 1\\}$\n\nWhich permutations fix 1?\n- $e \\cdot 1 = 1$ ✓\n- $(12) \\cdot 1 = 2$ ✗\n- $(13) \\cdot 1 = 3$ ✗\n- $(23) \\cdot 1 = 1$ ✓ (only swaps 2 and 3)\n- $(123) \\cdot 1 = 2$ ✗\n- $(132) \\cdot 1 = 3$ ✗\n\n**Answer:** $\\boxed{\\text{Stab}(1) = \\{e, (23)\\}}$\n\nThis is a subgroup of $S_3$ isomorphic to $\\mathbb{Z}_2$ (cyclic of order 2).\n\n---\n\n**Verification: Orbit-Stabilizer Theorem**\n\n$$|G| = |\\text{Orb}(x)| \\cdot |\\text{Stab}(x)|$$\n\nCheck:\n$$|S_3| = 6$$\n$$|\\text{Orb}(1)| = 3$$\n$$|\\text{Stab}(1)| = 2$$\n$$3 \\times 2 = 6 \\checkmark$$\n\n---\n\n**Interpretation:** The 6 elements of $S_3$ partition into 3 cosets of $\\text{Stab}(1)$, corresponding to the 3 elements in the orbit. Each orbit element has exactly 2 group elements that map 1 to it.",
+    "fullSolution": "**Find orbit and stabilizer of 1 under $S_3$ acting on $\\{1,2,3\\}$**\n\n**Group:** $S_3 = \\{e, (12), (13), (23), (123), (132)\\}$ has order 6.\n\n**Action:** $S_3$ acts on $X = \\{1, 2, 3\\}$ by permutations: $\\sigma \\cdot i = \\sigma(i)$.\n\n---\n\n**Part 1: Orbit of 1**\n\nOrbit = $\\{g \\cdot 1 : g \\in S_3\\}$\n\nApply each group element:\n- $e \\cdot 1 = 1$\n- $(12) \\cdot 1 = 2$ (swap 1 and 2)\n- $(13) \\cdot 1 = 3$ (swap 1 and 3)\n- $(23) \\cdot 1 = 1$ (swap 2 and 3, fixes 1)\n- $(123) \\cdot 1 = 2$ (cycle $1 \\to 2 \\to 3 \\to 1$)\n- $(132) \\cdot 1 = 3$ (cycle $1 \\to 3 \\to 2 \\to 1$)\n\n**Answer:** $\\boxed{\\text{Orb}(1) = \\{1, 2, 3\\}}$\n\nThe action is **transitive** (single orbit equals all of $X$).\n\n---\n\n**Part 2: Stabilizer of 1**\n\nStabilizer = $\\{g \\in S_3 : g \\cdot 1 = 1\\}$\n\nWhich permutations fix 1?\n- $e \\cdot 1 = 1$ \u2713\n- $(12) \\cdot 1 = 2$ \u2717\n- $(13) \\cdot 1 = 3$ \u2717\n- $(23) \\cdot 1 = 1$ \u2713 (only swaps 2 and 3)\n- $(123) \\cdot 1 = 2$ \u2717\n- $(132) \\cdot 1 = 3$ \u2717\n\n**Answer:** $\\boxed{\\text{Stab}(1) = \\{e, (23)\\}}$\n\nThis is a subgroup of $S_3$ isomorphic to $\\mathbb{Z}_2$ (cyclic of order 2).\n\n---\n\n**Verification: Orbit-Stabilizer Theorem**\n\n$$|G| = |\\text{Orb}(x)| \\cdot |\\text{Stab}(x)|$$\n\nCheck:\n$$|S_3| = 6$$\n$$|\\text{Orb}(1)| = 3$$\n$$|\\text{Stab}(1)| = 2$$\n$$3 \\times 2 = 6 \\checkmark$$\n\n---\n\n**Interpretation:** The 6 elements of $S_3$ partition into 3 cosets of $\\text{Stab}(1)$, corresponding to the 3 elements in the orbit. Each orbit element has exactly 2 group elements that map 1 to it.",
     "relatedProblems": [
       "abstract-algebra-subgroups-1",
       "abstract-algebra-homomorphisms-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Abstract Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Abstract Algebra",
+      "url": "http://abstract.ups.edu/aata/aata.html",
+      "source": "Open Textbook"
+    },
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "source": "Mathologer"
+    }
+  ]
 }

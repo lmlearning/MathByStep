@@ -201,5 +201,25 @@
       "number-theory-gcd-1",
       "number-theory-chinese-remainder-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Number Theory",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Elementary Number Theory",
+      "url": "https://www.math.brown.edu/johsilve/frintch1ch6.pdf",
+      "source": "Brown University"
+    },
+    {
+      "type": "video",
+      "title": "Numberphile",
+      "url": "https://www.youtube.com/user/numberphile",
+      "source": "Numberphile"
+    }
+  ]
 }

@@ -205,5 +205,25 @@
       "discrete-math-combinatorics-pigeonhole-1",
       "number-theory-gcd-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Combinatorics",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Combinatorics",
+      "url": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Counting and Combinations",
+      "url": "https://www.youtube.com/watch?v=XqQTXW7XfYA",
+      "source": "Eddie Woo"
+    }
+  ]
 }

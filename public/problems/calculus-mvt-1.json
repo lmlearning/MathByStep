@@ -233,7 +233,7 @@
       "options": [
         {
           "id": "a",
-          "text": "$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$ ✓"
+          "text": "$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$ \u2713"
         },
         {
           "id": "b",
@@ -267,10 +267,30 @@
       "MVT combined with bounds on derivatives yields inequalities",
       "This proof shows $|\\sin(b) - \\sin(a)| \\leq |b-a|$, meaning sine is Lipschitz continuous with constant 1"
     ],
-    "fullSolution": "**Theorem:** For all $b > a$, $\\sin(b) - \\sin(a) \\leq b - a$.\n\n**Proof:**\n\nLet $f(x) = \\sin(x)$. Then $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f'(x) = \\cos(x)$.\n\nBy the Mean Value Theorem, $\\exists c \\in (a,b)$ such that:\n$$f'(c) = \\frac{f(b) - f(a)}{b-a}$$\n\nSubstituting:\n$$\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$$\n\nTherefore:\n$$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$$\n\nSince $-1 \\leq \\cos(c) \\leq 1$ and $b - a > 0$:\n$$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$$\n\n∎",
+    "fullSolution": "**Theorem:** For all $b > a$, $\\sin(b) - \\sin(a) \\leq b - a$.\n\n**Proof:**\n\nLet $f(x) = \\sin(x)$. Then $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f'(x) = \\cos(x)$.\n\nBy the Mean Value Theorem, $\\exists c \\in (a,b)$ such that:\n$$f'(c) = \\frac{f(b) - f(a)}{b-a}$$\n\nSubstituting:\n$$\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$$\n\nTherefore:\n$$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$$\n\nSince $-1 \\leq \\cos(c) \\leq 1$ and $b - a > 0$:\n$$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$$\n\n\u220e",
     "relatedProblems": [
       "calc-derivative-chain-rule-1",
       "calculus-limit-epsilon-delta-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Calculus - Derivatives",
+      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Derivatives Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Derivatives",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

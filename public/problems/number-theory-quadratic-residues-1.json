@@ -88,7 +88,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Compute all squares mod $11$:**\n\n$$\\begin{align}\n0^2 &\\equiv 0 \\pmod{11} \\\\\n1^2 &\\equiv 1 \\pmod{11} \\\\\n2^2 &\\equiv 4 \\pmod{11} \\\\\n3^2 &\\equiv 9 \\pmod{11} \\\\\n4^2 &\\equiv 16 \\equiv 5 \\pmod{11} \\\\\n5^2 &\\equiv 25 \\equiv 3 \\pmod{11} \\\\\n6^2 &\\equiv 36 \\equiv 3 \\pmod{11} \\\\\n7^2 &\\equiv 49 \\equiv 5 \\pmod{11} \\\\\n8^2 &\\equiv 64 \\equiv 9 \\pmod{11} \\\\\n9^2 &\\equiv 81 \\equiv 4 \\pmod{11} \\\\\n10^2 &\\equiv 100 \\equiv 1 \\pmod{11}\n\\end{align}$$\n\n**Non-zero quadratic residues mod $11$:**\n$$\\{1, 3, 4, 5, 9\\}$$\n\n**Count:** $\\frac{p-1}{2} = \\frac{11-1}{2} = 5$ QRs ✓\n\n**Quadratic non-residues mod $11$:**\n$$\\{2, 6, 7, 8, 10\\}$$\n\n**Key observation:** Since $5 \\in \\{1, 3, 4, 5, 9\\}$, we have **$5$ is a QR mod $11$** ✓\n\nSpecifically, $4^2 \\equiv 5 \\pmod{11}$ and $7^2 \\equiv 5 \\pmod{11}$.",
+          "explanation": "Correct! **Compute all squares mod $11$:**\n\n$$\\begin{align}\n0^2 &\\equiv 0 \\pmod{11} \\\\\n1^2 &\\equiv 1 \\pmod{11} \\\\\n2^2 &\\equiv 4 \\pmod{11} \\\\\n3^2 &\\equiv 9 \\pmod{11} \\\\\n4^2 &\\equiv 16 \\equiv 5 \\pmod{11} \\\\\n5^2 &\\equiv 25 \\equiv 3 \\pmod{11} \\\\\n6^2 &\\equiv 36 \\equiv 3 \\pmod{11} \\\\\n7^2 &\\equiv 49 \\equiv 5 \\pmod{11} \\\\\n8^2 &\\equiv 64 \\equiv 9 \\pmod{11} \\\\\n9^2 &\\equiv 81 \\equiv 4 \\pmod{11} \\\\\n10^2 &\\equiv 100 \\equiv 1 \\pmod{11}\n\\end{align}$$\n\n**Non-zero quadratic residues mod $11$:**\n$$\\{1, 3, 4, 5, 9\\}$$\n\n**Count:** $\\frac{p-1}{2} = \\frac{11-1}{2} = 5$ QRs \u2713\n\n**Quadratic non-residues mod $11$:**\n$$\\{2, 6, 7, 8, 10\\}$$\n\n**Key observation:** Since $5 \\in \\{1, 3, 4, 5, 9\\}$, we have **$5$ is a QR mod $11$** \u2713\n\nSpecifically, $4^2 \\equiv 5 \\pmod{11}$ and $7^2 \\equiv 5 \\pmod{11}$.",
           "insight": "Exactly $(p-1)/2$ non-zero elements are quadratic residues mod $p$!"
         },
         "incorrect": {
@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "QRs mod 11 found",
-        "equations": ["\\text{QRs mod } 11: \\{1, 3, 4, 5, 9\\}"]
+        "equations": [
+          "\\text{QRs mod } 11: \\{1, 3, 4, 5, 9\\}"
+        ]
       }
     },
     {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "Euler's criterion",
-        "equations": ["a^{(p-1)/2} \\equiv \\pm 1 \\pmod{p}"]
+        "equations": [
+          "a^{(p-1)/2} \\equiv \\pm 1 \\pmod{p}"
+        ]
       }
     },
     {
@@ -168,7 +172,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Compute $5^5 \\bmod 11$:**\n\n**Method 1: Successive squaring**\n$$5^1 \\equiv 5 \\pmod{11}$$\n$$5^2 = 25 \\equiv 3 \\pmod{11}$$\n$$5^4 = (5^2)^2 \\equiv 3^2 = 9 \\pmod{11}$$\n$$5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$$\n\n**Method 2: Direct**\n$$5^5 = 3125 = 284 \\cdot 11 + 1 \\equiv 1 \\pmod{11}$$\n\n**By Euler's Criterion:**\n$$5^{(11-1)/2} = 5^5 \\equiv 1 \\pmod{11}$$\n\nTherefore:\n$$\\left(\\frac{5}{11}\\right) = 1$$\n\nSo **$5$ is a quadratic residue modulo $11$** ✓\n\n**Verification:** Indeed, $4^2 = 16 \\equiv 5 \\pmod{11}$ ✓\n\nAlso, $7^2 = 49 = 44 + 5 \\equiv 5 \\pmod{11}$ ✓\n\n**Solutions to $x^2 \\equiv 5 \\pmod{11}$:** $x \\equiv \\pm 4 \\equiv 4, 7 \\pmod{11}$",
+          "explanation": "Excellent! **Compute $5^5 \\bmod 11$:**\n\n**Method 1: Successive squaring**\n$$5^1 \\equiv 5 \\pmod{11}$$\n$$5^2 = 25 \\equiv 3 \\pmod{11}$$\n$$5^4 = (5^2)^2 \\equiv 3^2 = 9 \\pmod{11}$$\n$$5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$$\n\n**Method 2: Direct**\n$$5^5 = 3125 = 284 \\cdot 11 + 1 \\equiv 1 \\pmod{11}$$\n\n**By Euler's Criterion:**\n$$5^{(11-1)/2} = 5^5 \\equiv 1 \\pmod{11}$$\n\nTherefore:\n$$\\left(\\frac{5}{11}\\right) = 1$$\n\nSo **$5$ is a quadratic residue modulo $11$** \u2713\n\n**Verification:** Indeed, $4^2 = 16 \\equiv 5 \\pmod{11}$ \u2713\n\nAlso, $7^2 = 49 = 44 + 5 \\equiv 5 \\pmod{11}$ \u2713\n\n**Solutions to $x^2 \\equiv 5 \\pmod{11}$:** $x \\equiv \\pm 4 \\equiv 4, 7 \\pmod{11}$",
           "insight": "Euler's criterion provides a quick computational test without trying all squares!"
         },
         "incorrect": {
@@ -194,10 +198,30 @@
       "Solutions: $4^2 \\equiv 5$ and $7^2 \\equiv 5 \\pmod{11}$",
       "Legendre symbol: $\\left(\\frac{5}{11}\\right) = +1$"
     ],
-    "fullSolution": "**Determine if $5$ is a quadratic residue mod $11$**\n\n---\n\n**Method 1: Check All Squares**\n\nCompute $x^2 \\bmod 11$ for $x = 0, 1, 2, \\ldots, 10$:\n\n$$\\begin{array}{c|c}\nx & x^2 \\bmod 11 \\\\ \\hline\n0 & 0 \\\\\n1 & 1 \\\\\n2 & 4 \\\\\n3 & 9 \\\\\n4 & 5 \\\\\n5 & 3 \\\\\n6 & 3 \\\\\n7 & 5 \\\\\n8 & 9 \\\\\n9 & 4 \\\\\n10 & 1\n\\end{array}$$\n\n**QRs mod $11$:** $\\{1, 3, 4, 5, 9\\}$\n\nSince $5 \\in \\{1, 3, 4, 5, 9\\}$, **$5$ is a QR mod $11$** ✓\n\n---\n\n**Method 2: Euler's Criterion**\n\n$$5^{(11-1)/2} = 5^5 \\pmod{11}$$\n\n**Compute:**\n$$5^2 = 25 \\equiv 3 \\pmod{11}$$\n$$5^4 \\equiv 3^2 = 9 \\pmod{11}$$\n$$5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$$\n\n**By Euler's Criterion:**\n$$5^5 \\equiv 1 \\pmod{11}$$\n\nTherefore **$5$ is a QR mod $11$** ✓\n\n---\n\n**Solutions:**\n\n$$x^2 \\equiv 5 \\pmod{11}$$\n\nSolutions: $x \\equiv 4, 7 \\pmod{11}$\n\n**Verify:**\n- $4^2 = 16 \\equiv 5 \\pmod{11}$ ✓\n- $7^2 = 49 \\equiv 5 \\pmod{11}$ ✓\n\n---\n\n**Answer:** $\\boxed{5 \\text{ is a quadratic residue modulo } 11}$\n\n**Legendre symbol:** $\\boxed{\\left(\\frac{5}{11}\\right) = +1}$",
+    "fullSolution": "**Determine if $5$ is a quadratic residue mod $11$**\n\n---\n\n**Method 1: Check All Squares**\n\nCompute $x^2 \\bmod 11$ for $x = 0, 1, 2, \\ldots, 10$:\n\n$$\\begin{array}{c|c}\nx & x^2 \\bmod 11 \\\\ \\hline\n0 & 0 \\\\\n1 & 1 \\\\\n2 & 4 \\\\\n3 & 9 \\\\\n4 & 5 \\\\\n5 & 3 \\\\\n6 & 3 \\\\\n7 & 5 \\\\\n8 & 9 \\\\\n9 & 4 \\\\\n10 & 1\n\\end{array}$$\n\n**QRs mod $11$:** $\\{1, 3, 4, 5, 9\\}$\n\nSince $5 \\in \\{1, 3, 4, 5, 9\\}$, **$5$ is a QR mod $11$** \u2713\n\n---\n\n**Method 2: Euler's Criterion**\n\n$$5^{(11-1)/2} = 5^5 \\pmod{11}$$\n\n**Compute:**\n$$5^2 = 25 \\equiv 3 \\pmod{11}$$\n$$5^4 \\equiv 3^2 = 9 \\pmod{11}$$\n$$5^5 = 5^4 \\cdot 5 \\equiv 9 \\cdot 5 = 45 \\equiv 1 \\pmod{11}$$\n\n**By Euler's Criterion:**\n$$5^5 \\equiv 1 \\pmod{11}$$\n\nTherefore **$5$ is a QR mod $11$** \u2713\n\n---\n\n**Solutions:**\n\n$$x^2 \\equiv 5 \\pmod{11}$$\n\nSolutions: $x \\equiv 4, 7 \\pmod{11}$\n\n**Verify:**\n- $4^2 = 16 \\equiv 5 \\pmod{11}$ \u2713\n- $7^2 = 49 \\equiv 5 \\pmod{11}$ \u2713\n\n---\n\n**Answer:** $\\boxed{5 \\text{ is a quadratic residue modulo } 11}$\n\n**Legendre symbol:** $\\boxed{\\left(\\frac{5}{11}\\right) = +1}$",
     "relatedProblems": [
       "number-theory-fermats-little-theorem-1",
       "number-theory-primes-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Modular Arithmetic",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "video",
+      "title": "Modular Arithmetic Explained",
+      "url": "https://www.youtube.com/watch?v=r0gYad8auYY",
+      "source": "Numberphile"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Number Theory",
+      "url": "https://artofproblemsolving.com/wiki/index.php/Number_theory",
+      "source": "Art of Problem Solving"
+    }
+  ]
 }

@@ -5,7 +5,12 @@
   "topic": "Number Theory",
   "difficulty": 3,
   "estimatedTime": 10,
-  "tags": ["number-theory", "divisibility", "proof-by-contrapositive", "parity"],
+  "tags": [
+    "number-theory",
+    "divisibility",
+    "proof-by-contrapositive",
+    "parity"
+  ],
   "statement": {
     "text": "Prove that if $n^2$ is even, then $n$ must be even (where $n \\in \\mathbb{Z}$)."
   },
@@ -20,7 +25,9 @@
       "order": 1,
       "currentState": {
         "description": "We want to prove: If $n^2$ is even, then $n$ is even.",
-        "equations": ["n^2 \\text{ even} \\implies n \\text{ even}"]
+        "equations": [
+          "n^2 \\text{ even} \\implies n \\text{ even}"
+        ]
       },
       "prompt": {
         "question": "What proof technique should we use?",
@@ -53,7 +60,9 @@
       },
       "resultState": {
         "description": "We'll prove the contrapositive:",
-        "equations": ["n \\text{ odd} \\implies n^2 \\text{ odd}"]
+        "equations": [
+          "n \\text{ odd} \\implies n^2 \\text{ odd}"
+        ]
       }
     },
     {
@@ -61,7 +70,9 @@
       "order": 2,
       "currentState": {
         "description": "We're proving: if $n$ is odd, then $n^2$ is odd.",
-        "equations": ["n \\text{ odd} \\implies n^2 \\text{ odd}"]
+        "equations": [
+          "n \\text{ odd} \\implies n^2 \\text{ odd}"
+        ]
       },
       "prompt": {
         "question": "How do we express that $n$ is odd?",
@@ -94,7 +105,9 @@
       },
       "resultState": {
         "description": "We express $n$ as odd:",
-        "equations": ["n = 2k + 1 \\text{ for some } k \\in \\mathbb{Z}"]
+        "equations": [
+          "n = 2k + 1 \\text{ for some } k \\in \\mathbb{Z}"
+        ]
       }
     },
     {
@@ -102,7 +115,9 @@
       "order": 3,
       "currentState": {
         "description": "We have $n = 2k + 1$ for some integer $k$.",
-        "equations": ["n = 2k + 1, \\quad k \\in \\mathbb{Z}"]
+        "equations": [
+          "n = 2k + 1, \\quad k \\in \\mathbb{Z}"
+        ]
       },
       "prompt": {
         "question": "Now we need to find $n^2$. What is $(2k + 1)^2$?",
@@ -135,7 +150,9 @@
       },
       "resultState": {
         "description": "We've expanded $n^2$:",
-        "equations": ["n^2 = 4k^2 + 4k + 1"]
+        "equations": [
+          "n^2 = 4k^2 + 4k + 1"
+        ]
       }
     },
     {
@@ -143,7 +160,9 @@
       "order": 4,
       "currentState": {
         "description": "We have:",
-        "equations": ["n^2 = 4k^2 + 4k + 1"]
+        "equations": [
+          "n^2 = 4k^2 + 4k + 1"
+        ]
       },
       "prompt": {
         "question": "How can we show that $n^2 = 4k^2 + 4k + 1$ is odd?",
@@ -176,7 +195,10 @@
       },
       "resultState": {
         "description": "Proof complete!",
-        "equations": ["n^2 = 2(2k^2 + 2k) + 1 \\text{, so } n^2 \\text{ is odd}", "\\text{Therefore, by contrapositive: } n^2 \\text{ even} \\implies n \\text{ even } \\square"]
+        "equations": [
+          "n^2 = 2(2k^2 + 2k) + 1 \\text{, so } n^2 \\text{ is odd}",
+          "\\text{Therefore, by contrapositive: } n^2 \\text{ even} \\implies n \\text{ even } \\square"
+        ]
       }
     }
   ],
@@ -189,5 +211,25 @@
     ],
     "fullSolution": "**Proof by contrapositive**: We prove if $n$ is odd, then $n^2$ is odd.\n\nSuppose $n$ is odd. Then $n = 2k + 1$ for some $k \\in \\mathbb{Z}$.\nThen: $n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$\n\nLetting $m = 2k^2 + 2k \\in \\mathbb{Z}$, we have $n^2 = 2m + 1$, so $n^2$ is odd.\n\nBy contrapositive, if $n^2$ is even, then $n$ is even. $\\square$",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Number Theory",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Elementary Number Theory",
+      "url": "https://www.math.brown.edu/johsilve/frintch1ch6.pdf",
+      "source": "Brown University"
+    },
+    {
+      "type": "video",
+      "title": "Numberphile",
+      "url": "https://www.youtube.com/user/numberphile",
+      "source": "Numberphile"
+    }
+  ]
 }

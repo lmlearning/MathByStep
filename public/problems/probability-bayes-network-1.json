@@ -185,10 +185,30 @@
       "Bayes' theorem: $P(B|D) = \\frac{P(D|B)P(B)}{P(D)} \\approx 0.458$ or 45.8%",
       "Posterior slightly higher than prior (45%) because B's defect rate is above average"
     ],
-    "fullSolution": "**Given:**\n- Machine production proportions: $P(A)=0.30$, $P(B)=0.45$, $P(C)=0.25$\n- Defect rates: $P(D|A)=0.02$, $P(D|B)=0.03$, $P(D|C)=0.04$\n\n**Want:** $P(B|D)$ = probability defective item came from machine B\n\n---\n\n**Step 1: Calculate total defect probability**\n\nUsing **law of total probability**:\n$$P(D) = P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)$$\n$$= (0.02)(0.30) + (0.03)(0.45) + (0.04)(0.25)$$\n$$= 0.006 + 0.0135 + 0.01$$\n$$= 0.0295$$\n\nOverall defect rate: **2.95%**\n\n---\n\n**Step 2: Apply Bayes' theorem**\n\n$$P(B|D) = \\frac{P(D|B) \\cdot P(B)}{P(D)}$$\n$$= \\frac{(0.03)(0.45)}{0.0295}$$\n$$= \\frac{0.0135}{0.0295}$$\n$$\\approx 0.4576$$\n\n**Answer:** $\\boxed{P(B|D) \\approx 0.458 \\text{ or } 45.8\\%}$\n\n---\n\n**Verification: Calculate all posteriors**\n\n$$P(A|D) = \\frac{0.02 \\times 0.30}{0.0295} = \\frac{0.006}{0.0295} \\approx 0.203$$\n$$P(B|D) = \\frac{0.03 \\times 0.45}{0.0295} = \\frac{0.0135}{0.0295} \\approx 0.458$$\n$$P(C|D) = \\frac{0.04 \\times 0.25}{0.0295} = \\frac{0.01}{0.0295} \\approx 0.339$$\n\nCheck: $0.203 + 0.458 + 0.339 = 1.000$ ✓\n\n---\n\n**Interpretation:**\n\n| Machine | Prior | Defect Rate | Posterior | Change |\n|---------|-------|-------------|-----------|--------|\n| A       | 30%   | 2% (best)   | 20.3%     | ↓ 9.7% |\n| B       | 45%   | 3% (average)| 45.8%     | ↑ 0.8% |\n| C       | 25%   | 4% (worst)  | 33.9%     | ↑ 8.9% |\n\nObserving a defect decreases probability of A (best quality) and increases probability of C (worst quality). B barely changes (near-average defect rate).",
+    "fullSolution": "**Given:**\n- Machine production proportions: $P(A)=0.30$, $P(B)=0.45$, $P(C)=0.25$\n- Defect rates: $P(D|A)=0.02$, $P(D|B)=0.03$, $P(D|C)=0.04$\n\n**Want:** $P(B|D)$ = probability defective item came from machine B\n\n---\n\n**Step 1: Calculate total defect probability**\n\nUsing **law of total probability**:\n$$P(D) = P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)$$\n$$= (0.02)(0.30) + (0.03)(0.45) + (0.04)(0.25)$$\n$$= 0.006 + 0.0135 + 0.01$$\n$$= 0.0295$$\n\nOverall defect rate: **2.95%**\n\n---\n\n**Step 2: Apply Bayes' theorem**\n\n$$P(B|D) = \\frac{P(D|B) \\cdot P(B)}{P(D)}$$\n$$= \\frac{(0.03)(0.45)}{0.0295}$$\n$$= \\frac{0.0135}{0.0295}$$\n$$\\approx 0.4576$$\n\n**Answer:** $\\boxed{P(B|D) \\approx 0.458 \\text{ or } 45.8\\%}$\n\n---\n\n**Verification: Calculate all posteriors**\n\n$$P(A|D) = \\frac{0.02 \\times 0.30}{0.0295} = \\frac{0.006}{0.0295} \\approx 0.203$$\n$$P(B|D) = \\frac{0.03 \\times 0.45}{0.0295} = \\frac{0.0135}{0.0295} \\approx 0.458$$\n$$P(C|D) = \\frac{0.04 \\times 0.25}{0.0295} = \\frac{0.01}{0.0295} \\approx 0.339$$\n\nCheck: $0.203 + 0.458 + 0.339 = 1.000$ \u2713\n\n---\n\n**Interpretation:**\n\n| Machine | Prior | Defect Rate | Posterior | Change |\n|---------|-------|-------------|-----------|--------|\n| A       | 30%   | 2% (best)   | 20.3%     | \u2193 9.7% |\n| B       | 45%   | 3% (average)| 45.8%     | \u2191 0.8% |\n| C       | 25%   | 4% (worst)  | 33.9%     | \u2191 8.9% |\n\nObserving a defect decreases probability of A (best quality) and increases probability of C (worst quality). B barely changes (near-average defect rate).",
     "relatedProblems": [
       "probability-conditional-probability-1",
       "statistics-hypothesis-testing-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Probability Basics",
+      "url": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Probability",
+      "url": "https://www.mathsisfun.com/data/probability.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Probability Fundamentals",
+      "url": "https://www.youtube.com/watch?v=uzkc-qNVoOk",
+      "source": "StatQuest"
+    }
+  ]
 }

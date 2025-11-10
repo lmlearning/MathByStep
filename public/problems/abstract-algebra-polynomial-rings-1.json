@@ -68,7 +68,7 @@
       },
       "prompt": {
         "question": "Does $p(x) = x^3 - 2$ satisfy Eisenstein's criterion for prime $p = 2$?",
-        "hint": "Eisenstein: If $p$ divides all coefficients except the leading one, $p^2$ doesn't divide the constant term, then $p(x)$ is irreducible. Here: $2 | -2$ ✓, $2 \\nmid 1$ ✓, $4 \\nmid -2$ ✓"
+        "hint": "Eisenstein: If $p$ divides all coefficients except the leading one, $p^2$ doesn't divide the constant term, then $p(x)$ is irreducible. Here: $2 | -2$ \u2713, $2 \\nmid 1$ \u2713, $4 \\nmid -2$ \u2713"
       },
       "options": [
         {
@@ -87,7 +87,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Eisenstein's Criterion:**\n\nA polynomial $f(x) = a_n x^n + \\cdots + a_1 x + a_0 \\in \\mathbb{Z}[x]$ is irreducible over $\\mathbb{Q}$ if there exists a prime $p$ such that:\n1. $p \\nmid a_n$ (doesn't divide leading coefficient)\n2. $p | a_i$ for all $i < n$ (divides all other coefficients)\n3. $p^2 \\nmid a_0$ (doesn't divide constant term twice)\n\n**For $p(x) = x^3 - 2$ with prime $p = 2$:**\n\n1. $2 \\nmid 1$ ✓ (leading coefficient is 1)\n2. Coefficients of $x^2, x$: both are 0, so $2 | 0$ ✓\n   Constant term: $2 | -2$ ✓\n3. $p^2 = 4 \\nmid -2$ ✓\n\n**Conclusion:** By Eisenstein's criterion, $x^3 - 2$ is **irreducible over $\\mathbb{Q}$**!",
+          "explanation": "Perfect! **Eisenstein's Criterion:**\n\nA polynomial $f(x) = a_n x^n + \\cdots + a_1 x + a_0 \\in \\mathbb{Z}[x]$ is irreducible over $\\mathbb{Q}$ if there exists a prime $p$ such that:\n1. $p \\nmid a_n$ (doesn't divide leading coefficient)\n2. $p | a_i$ for all $i < n$ (divides all other coefficients)\n3. $p^2 \\nmid a_0$ (doesn't divide constant term twice)\n\n**For $p(x) = x^3 - 2$ with prime $p = 2$:**\n\n1. $2 \\nmid 1$ \u2713 (leading coefficient is 1)\n2. Coefficients of $x^2, x$: both are 0, so $2 | 0$ \u2713\n   Constant term: $2 | -2$ \u2713\n3. $p^2 = 4 \\nmid -2$ \u2713\n\n**Conclusion:** By Eisenstein's criterion, $x^3 - 2$ is **irreducible over $\\mathbb{Q}$**!",
           "insight": "Eisenstein's criterion is a powerful tool for proving irreducibility!"
         },
         "incorrect": {
@@ -97,7 +97,9 @@
       },
       "resultState": {
         "description": "Irreducibility proved",
-        "equations": ["x^3 - 2 \\text{ is irreducible over } \\mathbb{Q}"]
+        "equations": [
+          "x^3 - 2 \\text{ is irreducible over } \\mathbb{Q}"
+        ]
       }
     },
     {
@@ -137,7 +139,9 @@
       },
       "resultState": {
         "description": "Field extension degree",
-        "equations": ["[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3"]
+        "equations": [
+          "[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3"
+        ]
       }
     },
     {
@@ -177,7 +181,9 @@
       },
       "resultState": {
         "description": "Field isomorphism",
-        "equations": ["\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})"]
+        "equations": [
+          "\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})"
+        ]
       }
     }
   ],
@@ -190,10 +196,30 @@
       "Dimension: $[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3$",
       "Isomorphism: $\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})$"
     ],
-    "fullSolution": "**Determine irreducibility of $p(x) = x^3 - 2$ over $\\mathbb{Q}$**\n\n---\n\n**Step 1: Eisenstein's Criterion**\n\nFor polynomial $f(x) = a_n x^n + \\cdots + a_0 \\in \\mathbb{Z}[x]$, if $\\exists$ prime $p$ with:\n1. $p \\nmid a_n$\n2. $p | a_i$ for all $i < n$\n3. $p^2 \\nmid a_0$\n\nthen $f(x)$ is irreducible over $\\mathbb{Q}$.\n\n**Apply with $p = 2$:**\n\n$p(x) = 1 \\cdot x^3 + 0 \\cdot x^2 + 0 \\cdot x + (-2)$\n\n1. $2 \\nmid 1$ ✓\n2. $2 | 0$ and $2 | -2$ ✓\n3. $4 \\nmid -2$ ✓\n\n**Conclusion:** $x^3 - 2$ is **irreducible over $\\mathbb{Q}$**.\n\n---\n\n**Step 2: Degree of Field Extension**\n\nSince $p(x)$ is irreducible, $\\mathbb{Q}[x]/(p(x))$ is a field.\n\nElements have form:\n$$a_0 + a_1\\overline{x} + a_2\\overline{x}^2, \\quad a_i \\in \\mathbb{Q}$$\n\nwhere $\\overline{x}^3 = 2$ in the quotient.\n\nBasis: $\\{1, \\overline{x}, \\overline{x}^2\\}$\n\n$$[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = \\deg(p) = 3$$\n\n---\n\n**Step 3: Field Isomorphism**\n\n$$\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})$$\n\nThe quotient is isomorphic to the field obtained by adjoining $\\sqrt[3]{2}$ to $\\mathbb{Q}$.\n\n---\n\n**Answer:** \n- $\\boxed{x^3 - 2 \\text{ is irreducible over } \\mathbb{Q}}$\n- $\\boxed{[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3}$",
+    "fullSolution": "**Determine irreducibility of $p(x) = x^3 - 2$ over $\\mathbb{Q}$**\n\n---\n\n**Step 1: Eisenstein's Criterion**\n\nFor polynomial $f(x) = a_n x^n + \\cdots + a_0 \\in \\mathbb{Z}[x]$, if $\\exists$ prime $p$ with:\n1. $p \\nmid a_n$\n2. $p | a_i$ for all $i < n$\n3. $p^2 \\nmid a_0$\n\nthen $f(x)$ is irreducible over $\\mathbb{Q}$.\n\n**Apply with $p = 2$:**\n\n$p(x) = 1 \\cdot x^3 + 0 \\cdot x^2 + 0 \\cdot x + (-2)$\n\n1. $2 \\nmid 1$ \u2713\n2. $2 | 0$ and $2 | -2$ \u2713\n3. $4 \\nmid -2$ \u2713\n\n**Conclusion:** $x^3 - 2$ is **irreducible over $\\mathbb{Q}$**.\n\n---\n\n**Step 2: Degree of Field Extension**\n\nSince $p(x)$ is irreducible, $\\mathbb{Q}[x]/(p(x))$ is a field.\n\nElements have form:\n$$a_0 + a_1\\overline{x} + a_2\\overline{x}^2, \\quad a_i \\in \\mathbb{Q}$$\n\nwhere $\\overline{x}^3 = 2$ in the quotient.\n\nBasis: $\\{1, \\overline{x}, \\overline{x}^2\\}$\n\n$$[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = \\deg(p) = 3$$\n\n---\n\n**Step 3: Field Isomorphism**\n\n$$\\mathbb{Q}[x]/(x^3 - 2) \\cong \\mathbb{Q}(\\sqrt[3]{2})$$\n\nThe quotient is isomorphic to the field obtained by adjoining $\\sqrt[3]{2}$ to $\\mathbb{Q}$.\n\n---\n\n**Answer:** \n- $\\boxed{x^3 - 2 \\text{ is irreducible over } \\mathbb{Q}}$\n- $\\boxed{[\\mathbb{Q}[x]/(x^3 - 2) : \\mathbb{Q}] = 3}$",
     "relatedProblems": [
       "abstract-algebra-field-extensions-1",
       "abstract-algebra-rings-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Abstract Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Abstract Algebra",
+      "url": "http://abstract.ups.edu/aata/aata.html",
+      "source": "Open Textbook"
+    },
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "source": "Mathologer"
+    }
+  ]
 }

@@ -57,7 +57,9 @@
       },
       "resultState": {
         "description": "Radius of convergence established",
-        "equations": ["R = 1, \\quad |z| < 1"]
+        "equations": [
+          "R = 1, \\quad |z| < 1"
+        ]
       }
     },
     {
@@ -65,7 +67,9 @@
       "order": 2,
       "currentState": {
         "description": "Series converges for $|z| < 1$.",
-        "equations": ["\\sum_{n=0}^{\\infty} z^n \\quad \\text{for } |z| < 1"]
+        "equations": [
+          "\\sum_{n=0}^{\\infty} z^n \\quad \\text{for } |z| < 1"
+        ]
       },
       "prompt": {
         "question": "What is the sum of this geometric series in its domain of convergence?",
@@ -88,7 +92,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! For $|z| < 1$, the geometric series sums to:\n$$\\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}$$\n\nVerify: Multiply both sides by $(1-z)$:\n$$(1-z) \\sum_{n=0}^{\\infty} z^n = (1-z)(1 + z + z^2 + \\ldots) = 1 + z + z^2 + \\ldots - z - z^2 - z^3 - \\ldots = 1$$ ✓",
+          "explanation": "Perfect! For $|z| < 1$, the geometric series sums to:\n$$\\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}$$\n\nVerify: Multiply both sides by $(1-z)$:\n$$(1-z) \\sum_{n=0}^{\\infty} z^n = (1-z)(1 + z + z^2 + \\ldots) = 1 + z + z^2 + \\ldots - z - z^2 - z^3 - \\ldots = 1$$ \u2713",
           "insight": "This is the complex version of the familiar geometric series!"
         },
         "incorrect": {
@@ -98,7 +102,9 @@
       },
       "resultState": {
         "description": "Sum identified in domain of convergence",
-        "equations": ["f(z) = \\frac{1}{1-z} \\quad \\text{for } |z| < 1"]
+        "equations": [
+          "f(z) = \\frac{1}{1-z} \\quad \\text{for } |z| < 1"
+        ]
       }
     },
     {
@@ -106,7 +112,9 @@
       "order": 3,
       "currentState": {
         "description": "Power series $f(z) = \\frac{1}{1-z}$ valid for $|z| < 1$.",
-        "equations": ["\\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}, \\quad |z| < 1"]
+        "equations": [
+          "\\sum_{n=0}^{\\infty} z^n = \\frac{1}{1-z}, \\quad |z| < 1"
+        ]
       },
       "prompt": {
         "question": "What is the domain of the function $g(z) = \\frac{1}{1-z}$ as a meromorphic function?",
@@ -139,7 +147,9 @@
       },
       "resultState": {
         "description": "Domain of rational function identified",
-        "equations": ["g(z) = \\frac{1}{1-z} \\text{ analytic on } \\mathbb{C} \\setminus \\{1\\}"]
+        "equations": [
+          "g(z) = \\frac{1}{1-z} \\text{ analytic on } \\mathbb{C} \\setminus \\{1\\}"
+        ]
       }
     },
     {
@@ -183,7 +193,9 @@
       },
       "resultState": {
         "description": "Analytic continuation established",
-        "equations": ["\\frac{1}{1-z} \\text{ extends } \\sum_{n=0}^{\\infty} z^n \\text{ to } \\mathbb{C} \\setminus \\{1\\}"]
+        "equations": [
+          "\\frac{1}{1-z} \\text{ extends } \\sum_{n=0}^{\\infty} z^n \\text{ to } \\mathbb{C} \\setminus \\{1\\}"
+        ]
       }
     }
   ],
@@ -200,5 +212,25 @@
       "complex-analysis-cauchy-riemann-1",
       "complex-analysis-laurent-series-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Analysis",
+      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
+      "source": "MathTheBeautiful"
+    },
+    {
+      "type": "article",
+      "title": "Complex Analysis",
+      "url": "https://complex-analysis.com/",
+      "source": "Complex Analysis Course"
+    },
+    {
+      "type": "video",
+      "title": "Complex Analysis Fundamentals",
+      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

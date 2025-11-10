@@ -233,5 +233,25 @@
       "multivariable-double-integral-1",
       "multivariable-lagrange-multipliers-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Multivariable Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Multivariable Calculus Course",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Calculus III",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

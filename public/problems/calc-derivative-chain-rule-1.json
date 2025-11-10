@@ -5,9 +5,13 @@
   "topic": "Calculus",
   "difficulty": 2,
   "estimatedTime": 8,
-  "tags": ["derivatives", "chain-rule", "composition"],
+  "tags": [
+    "derivatives",
+    "chain-rule",
+    "composition"
+  ],
   "statement": {
-    "text": "Find the derivative of f(x) = sin(x² + 1) with respect to x."
+    "text": "Find the derivative of f(x) = sin(x\u00b2 + 1) with respect to x."
   },
   "objectives": [
     "Apply the chain rule to composite functions",
@@ -20,7 +24,9 @@
       "order": 1,
       "currentState": {
         "description": "We need to find f'(x) where:",
-        "equations": ["f(x) = sin(x² + 1)"]
+        "equations": [
+          "f(x) = sin(x\u00b2 + 1)"
+        ]
       },
       "prompt": {
         "question": "What is the first step in finding this derivative?",
@@ -29,21 +35,21 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Identify this as a chain rule problem: recognize the outer function sin(u) and inner function u = x² + 1"
+          "text": "Identify this as a chain rule problem: recognize the outer function sin(u) and inner function u = x\u00b2 + 1"
         },
         {
           "id": "opt-2",
-          "text": "Directly differentiate to get cos(x² + 1)"
+          "text": "Directly differentiate to get cos(x\u00b2 + 1)"
         },
         {
           "id": "opt-3",
-          "text": "Expand sin(x² + 1) using the sum formula"
+          "text": "Expand sin(x\u00b2 + 1) using the sum formula"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! This is a composite function where sin is applied to x² + 1. The chain rule states: (f ∘ g)'(x) = f'(g(x)) · g'(x). Here, the outer function is sin(u) and the inner function is u = x² + 1.",
+          "explanation": "Exactly! This is a composite function where sin is applied to x\u00b2 + 1. The chain rule states: (f \u2218 g)'(x) = f'(g(x)) \u00b7 g'(x). Here, the outer function is sin(u) and the inner function is u = x\u00b2 + 1.",
           "insight": "Always identify the structure before differentiating."
         },
         "incorrect": {
@@ -53,7 +59,10 @@
       },
       "resultState": {
         "description": "Identified components:",
-        "equations": ["Outer function: f(u) = sin(u)", "Inner function: u(x) = x² + 1"]
+        "equations": [
+          "Outer function: f(u) = sin(u)",
+          "Inner function: u(x) = x\u00b2 + 1"
+        ]
       }
     },
     {
@@ -61,7 +70,10 @@
       "order": 2,
       "currentState": {
         "description": "We have identified:",
-        "equations": ["f(u) = sin(u)", "u(x) = x² + 1"]
+        "equations": [
+          "f(u) = sin(u)",
+          "u(x) = x\u00b2 + 1"
+        ]
       },
       "prompt": {
         "question": "What should we do next?",
@@ -74,7 +86,7 @@
         },
         {
           "id": "opt-2",
-          "text": "Substitute u = x² + 1 back into the original function"
+          "text": "Substitute u = x\u00b2 + 1 back into the original function"
         },
         {
           "id": "opt-3",
@@ -94,7 +106,9 @@
       },
       "resultState": {
         "description": "Outer function derivative found:",
-        "equations": ["f'(u) = cos(u)"]
+        "equations": [
+          "f'(u) = cos(u)"
+        ]
       }
     },
     {
@@ -102,7 +116,10 @@
       "order": 3,
       "currentState": {
         "description": "We have:",
-        "equations": ["f'(u) = cos(u)", "u = x² + 1"]
+        "equations": [
+          "f'(u) = cos(u)",
+          "u = x\u00b2 + 1"
+        ]
       },
       "prompt": {
         "question": "Now what?",
@@ -115,7 +132,7 @@
         },
         {
           "id": "opt-2",
-          "text": "Substitute u = x² + 1 into f'(u) to get final answer"
+          "text": "Substitute u = x\u00b2 + 1 into f'(u) to get final answer"
         },
         {
           "id": "opt-3",
@@ -125,8 +142,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! The derivative of x² + 1 with respect to x is 2x. Now we have both pieces needed for the chain rule.",
-          "insight": "Chain rule: (outer derivative) × (inner derivative)"
+          "explanation": "Excellent! The derivative of x\u00b2 + 1 with respect to x is 2x. Now we have both pieces needed for the chain rule.",
+          "insight": "Chain rule: (outer derivative) \u00d7 (inner derivative)"
         },
         "incorrect": {
           "1": "Close, but we're missing a crucial step. The chain rule requires multiplying by the derivative of the inner function.",
@@ -135,7 +152,10 @@
       },
       "resultState": {
         "description": "Both derivatives found:",
-        "equations": ["f'(u) = cos(u)", "u'(x) = 2x"]
+        "equations": [
+          "f'(u) = cos(u)",
+          "u'(x) = 2x"
+        ]
       }
     },
     {
@@ -143,16 +163,20 @@
       "order": 4,
       "currentState": {
         "description": "We have both pieces:",
-        "equations": ["f'(u) = cos(u)", "u'(x) = 2x", "u = x² + 1"]
+        "equations": [
+          "f'(u) = cos(u)",
+          "u'(x) = 2x",
+          "u = x\u00b2 + 1"
+        ]
       },
       "prompt": {
         "question": "How do we combine these to get the final answer?",
-        "hint": "Remember: chain rule is (outer)' × (inner)'"
+        "hint": "Remember: chain rule is (outer)' \u00d7 (inner)'"
       },
       "options": [
         {
           "id": "opt-1",
-          "text": "Apply chain rule: f'(x) = f'(u) · u'(x) = cos(x² + 1) · 2x"
+          "text": "Apply chain rule: f'(x) = f'(u) \u00b7 u'(x) = cos(x\u00b2 + 1) \u00b7 2x"
         },
         {
           "id": "opt-2",
@@ -160,13 +184,13 @@
         },
         {
           "id": "opt-3",
-          "text": "Just use f'(x) = cos(x² + 1)"
+          "text": "Just use f'(x) = cos(x\u00b2 + 1)"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! The chain rule formula is (f ∘ g)'(x) = f'(g(x)) · g'(x). Here: cos(x² + 1) · 2x = 2x·cos(x² + 1).",
+          "explanation": "Perfect! The chain rule formula is (f \u2218 g)'(x) = f'(g(x)) \u00b7 g'(x). Here: cos(x\u00b2 + 1) \u00b7 2x = 2x\u00b7cos(x\u00b2 + 1).",
           "insight": "The chain rule always multiplies the outer derivative (evaluated at inner function) by the inner derivative."
         },
         "incorrect": {
@@ -176,7 +200,9 @@
       },
       "resultState": {
         "description": "Final answer obtained!",
-        "equations": ["f'(x) = 2x·cos(x² + 1)"]
+        "equations": [
+          "f'(x) = 2x\u00b7cos(x\u00b2 + 1)"
+        ]
       }
     }
   ],
@@ -184,10 +210,30 @@
     "keyInsights": [
       "Chain rule applies when differentiating composite functions",
       "Always identify outer and inner functions first",
-      "Formula: (outer)' evaluated at inner × (inner)'",
+      "Formula: (outer)' evaluated at inner \u00d7 (inner)'",
       "Order matters: substitute back before multiplying"
     ],
-    "fullSolution": "f'(x) = 2x·cos(x² + 1)",
+    "fullSolution": "f'(x) = 2x\u00b7cos(x\u00b2 + 1)",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Calculus - Derivatives",
+      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Derivatives Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Derivatives",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

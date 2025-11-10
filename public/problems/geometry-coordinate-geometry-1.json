@@ -190,5 +190,25 @@
       "geometry-similar-triangles-1",
       "algebra-systems-linear-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometry Course",
+      "url": "https://www.khanacademy.org/math/geometry",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometry",
+      "url": "https://www.mathsisfun.com/geometry/index.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Euclidean Geometry",
+      "url": "https://www.youtube.com/watch?v=X83vac2uTUs",
+      "source": "Numberphile"
+    }
+  ]
 }

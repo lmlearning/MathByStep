@@ -5,7 +5,11 @@
   "topic": "Algebra",
   "difficulty": 2,
   "estimatedTime": 8,
-  "tags": ["systems", "linear-equations", "substitution"],
+  "tags": [
+    "systems",
+    "linear-equations",
+    "substitution"
+  ],
   "statement": {
     "text": "Solve the system of equations: $2x + y = 7$ and $x - y = 2$"
   },
@@ -20,7 +24,10 @@
       "order": 1,
       "currentState": {
         "description": "We have two equations:",
-        "equations": ["2x + y = 7", "x - y = 2"]
+        "equations": [
+          "2x + y = 7",
+          "x - y = 2"
+        ]
       },
       "prompt": {
         "question": "What's the best first step for solving this system?",
@@ -53,7 +60,9 @@
       },
       "resultState": {
         "description": "From the second equation:",
-        "equations": ["x = y + 2"]
+        "equations": [
+          "x = y + 2"
+        ]
       }
     },
     {
@@ -61,7 +70,9 @@
       "order": 2,
       "currentState": {
         "description": "We have $x = y + 2$. Our first equation is:",
-        "equations": ["2x + y = 7"]
+        "equations": [
+          "2x + y = 7"
+        ]
       },
       "prompt": {
         "question": "How do we use $x = y + 2$ to solve the system?",
@@ -94,7 +105,9 @@
       },
       "resultState": {
         "description": "After substitution:",
-        "equations": ["2(y + 2) + y = 7"]
+        "equations": [
+          "2(y + 2) + y = 7"
+        ]
       }
     },
     {
@@ -102,7 +115,9 @@
       "order": 3,
       "currentState": {
         "description": "We need to solve:",
-        "equations": ["2(y + 2) + y = 7"]
+        "equations": [
+          "2(y + 2) + y = 7"
+        ]
       },
       "prompt": {
         "question": "Simplify and solve for $y$.",
@@ -135,7 +150,9 @@
       },
       "resultState": {
         "description": "Solved for $y$:",
-        "equations": ["y = 1"]
+        "equations": [
+          "y = 1"
+        ]
       }
     },
     {
@@ -143,7 +160,9 @@
       "order": 4,
       "currentState": {
         "description": "We found $y = 1$. Recall:",
-        "equations": ["x = y + 2"]
+        "equations": [
+          "x = y + 2"
+        ]
       },
       "prompt": {
         "question": "Now find $x$.",
@@ -166,7 +185,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Substituting $y = 1$ into $x = y + 2$ gives $x = 1 + 2 = 3$. The solution is $(x, y) = (3, 1)$. You can verify: $2(3) + 1 = 7$ ✓ and $3 - 1 = 2$ ✓",
+          "explanation": "Perfect! Substituting $y = 1$ into $x = y + 2$ gives $x = 1 + 2 = 3$. The solution is $(x, y) = (3, 1)$. You can verify: $2(3) + 1 = 7$ \u2713 and $3 - 1 = 2$ \u2713",
           "insight": "Always verify your solution in both original equations!"
         },
         "incorrect": {
@@ -176,7 +195,9 @@
       },
       "resultState": {
         "description": "Solution found!",
-        "equations": ["(x, y) = (3, 1)"]
+        "equations": [
+          "(x, y) = (3, 1)"
+        ]
       }
     }
   ],
@@ -189,5 +210,25 @@
     ],
     "fullSolution": "From $x - y = 2$, we get $x = y + 2$. Substituting into $2x + y = 7$:\n$2(y + 2) + y = 7 \\Rightarrow 2y + 4 + y = 7 \\Rightarrow 3y = 3 \\Rightarrow y = 1$\nThen $x = 1 + 2 = 3$. Solution: $(x, y) = (3, 1)$",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "U-Substitution",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-integration-and-accumulation-of-change/cs1-integration-basics/v/indefinite-integrals-of-x-raised-to-a-power",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Substitution Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/SubstitutionRuleIndefinite.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "U-Substitution Method",
+      "url": "https://www.youtube.com/watch?v=77HgdKhug9E",
+      "source": "Organic Chemistry Tutor"
+    }
+  ]
 }

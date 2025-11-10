@@ -58,7 +58,9 @@
       },
       "resultState": {
         "description": "Characteristic polynomial found",
-        "equations": ["p(\\lambda) = (3-\\lambda)^2"]
+        "equations": [
+          "p(\\lambda) = (3-\\lambda)^2"
+        ]
       }
     },
     {
@@ -98,7 +100,9 @@
       },
       "resultState": {
         "description": "Eigenvalue: $\\lambda = 3$ (algebraic mult. = 2)",
-        "equations": ["\\lambda = 3, \\quad \\text{alg. mult.} = 2"]
+        "equations": [
+          "\\lambda = 3, \\quad \\text{alg. mult.} = 2"
+        ]
       }
     },
     {
@@ -138,7 +142,9 @@
       },
       "resultState": {
         "description": "Eigenspace computed",
-        "equations": ["E_3 = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}, \\quad \\dim(E_3) = 1"]
+        "equations": [
+          "E_3 = \\text{span}\\left\\{\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\\right\\}, \\quad \\dim(E_3) = 1"
+        ]
       }
     },
     {
@@ -178,7 +184,9 @@
       },
       "resultState": {
         "description": "Matrix is not diagonalizable",
-        "equations": ["\\text{geom. mult.} = 1 < 2 = \\text{alg. mult.}"]
+        "equations": [
+          "\\text{geom. mult.} = 1 < 2 = \\text{alg. mult.}"
+        ]
       }
     }
   ],
@@ -196,5 +204,25 @@
       "linear-algebra-eigenvalues-1",
       "linear-algebra-diagonalization-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Eigenvectors Introduction",
+      "url": "https://www.khanacademy.org/math/linear-algebra/alternate-bases/eigen-everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "http://math.mit.edu/~gs/linearalgebra/ila0601.pdf",
+      "source": "MIT OCW"
+    }
+  ]
 }

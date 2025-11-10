@@ -69,7 +69,7 @@
       },
       "prompt": {
         "question": "What should the base case be?",
-        "hint": "Base case: $n = 2$. Check: $2$ is prime, so $2 = 2$ is a product of primes (one factor). ✓"
+        "hint": "Base case: $n = 2$. Check: $2$ is prime, so $2 = 2$ is a product of primes (one factor). \u2713"
       },
       "options": [
         {
@@ -88,7 +88,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Base case: $n = 2$**\n\nWe want to prove $P(n)$: \"$n$ is a product of primes\" for all $n \\geq 2$.\n\n**Why $n = 2$?**\n- The statement is for $n \\geq 2$\n- $n = 2$ is the smallest case\n\n**Verification:**\n$n = 2$ is prime, so:\n$$2 = 2$$\n\nThis is a product of one prime (itself), so $P(2)$ is true ✓\n\n**Note:** We could write $2$ as a product of primes in the form:\n$$2 = p_1$$\nwhere $p_1 = 2$ is prime.\n\n**Why not $n = 1$?**\n$1$ is NOT prime and NOT a product of primes (by convention, empty product issues). The fundamental theorem starts at $n = 2$.",
+          "explanation": "Correct! **Base case: $n = 2$**\n\nWe want to prove $P(n)$: \"$n$ is a product of primes\" for all $n \\geq 2$.\n\n**Why $n = 2$?**\n- The statement is for $n \\geq 2$\n- $n = 2$ is the smallest case\n\n**Verification:**\n$n = 2$ is prime, so:\n$$2 = 2$$\n\nThis is a product of one prime (itself), so $P(2)$ is true \u2713\n\n**Note:** We could write $2$ as a product of primes in the form:\n$$2 = p_1$$\nwhere $p_1 = 2$ is prime.\n\n**Why not $n = 1$?**\n$1$ is NOT prime and NOT a product of primes (by convention, empty product issues). The fundamental theorem starts at $n = 2$.",
           "insight": "Base case is the smallest value in your domain!"
         },
         "incorrect": {
@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "Base case: $P(2)$ verified",
-        "equations": ["P(2): 2 \\text{ is prime}"]
+        "equations": [
+          "P(2): 2 \\text{ is prime}"
+        ]
       }
     },
     {
@@ -128,7 +130,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Inductive step proof:**\n\n**Inductive Hypothesis (IH):** Assume $P(m)$ is true for all $2 \\leq m \\leq k$.\n\nThat is, every integer from $2$ to $k$ is a product of primes.\n\n**Prove $P(k+1)$:** Show $k+1$ is a product of primes.\n\n**Case 1:** $k+1$ is prime\n- Then $k+1 = k+1$ is already a product of one prime ✓\n\n**Case 2:** $k+1$ is composite\n- By definition of composite, $k+1 = ab$ where $a, b$ are integers with $1 < a, b < k+1$\n- Since $a \\geq 2$ and $b \\geq 2$ and $ab = k+1$, we have:\n  - $a \\leq k$ (since $a < k+1$ and $a$ is an integer)\n  - $b \\leq k$ (same reason)\n- By **strong IH**, both $a$ and $b$ are products of primes:\n  - $a = p_1 p_2 \\cdots p_r$ (primes)\n  - $b = q_1 q_2 \\cdots q_s$ (primes)\n- Therefore:\n  $$k+1 = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s$$\n  is a product of primes ✓\n\n**Conclusion:** In both cases, $k+1$ is a product of primes, so $P(k+1)$ holds!",
+          "explanation": "Excellent! **Inductive step proof:**\n\n**Inductive Hypothesis (IH):** Assume $P(m)$ is true for all $2 \\leq m \\leq k$.\n\nThat is, every integer from $2$ to $k$ is a product of primes.\n\n**Prove $P(k+1)$:** Show $k+1$ is a product of primes.\n\n**Case 1:** $k+1$ is prime\n- Then $k+1 = k+1$ is already a product of one prime \u2713\n\n**Case 2:** $k+1$ is composite\n- By definition of composite, $k+1 = ab$ where $a, b$ are integers with $1 < a, b < k+1$\n- Since $a \\geq 2$ and $b \\geq 2$ and $ab = k+1$, we have:\n  - $a \\leq k$ (since $a < k+1$ and $a$ is an integer)\n  - $b \\leq k$ (same reason)\n- By **strong IH**, both $a$ and $b$ are products of primes:\n  - $a = p_1 p_2 \\cdots p_r$ (primes)\n  - $b = q_1 q_2 \\cdots q_s$ (primes)\n- Therefore:\n  $$k+1 = ab = p_1 p_2 \\cdots p_r q_1 q_2 \\cdots q_s$$\n  is a product of primes \u2713\n\n**Conclusion:** In both cases, $k+1$ is a product of primes, so $P(k+1)$ holds!",
           "insight": "Strong induction is perfect when the problem naturally breaks into smaller pieces!"
         },
         "incorrect": {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "Inductive step complete",
-        "equations": ["P(k+1) \\text{ proven using strong IH}"]
+        "equations": [
+          "P(k+1) \\text{ proven using strong IH}"
+        ]
       }
     },
     {
@@ -168,7 +172,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Conclusion:**\n\nBy the principle of strong mathematical induction:\n\n$$\\boxed{\\text{Every integer } n \\geq 2 \\text{ can be expressed as a product of prime numbers.}}$$\n\n**Complete proof summary:**\n\n1. **Base case:** $n = 2$ is prime, so $P(2)$ holds ✓\n\n2. **Inductive step:** \n   - **Assume:** $P(m)$ for all $2 \\leq m \\leq k$\n   - **Prove:** $P(k+1)$\n   - If $k+1$ is prime: done!\n   - If $k+1$ is composite: $k+1 = ab$ with $2 \\leq a,b \\leq k$\n     - By IH: $a$ and $b$ are products of primes\n     - So $k+1 = ab$ is a product of primes ✓\n\n3. **Conclusion:** By strong induction, $P(n)$ holds for all $n \\geq 2$ ✓\n\n**Note:** This proves **existence** of prime factorization. The **uniqueness** (up to order) requires a separate argument using properties of primes and divisibility. Together, they form the Fundamental Theorem of Arithmetic.",
+          "explanation": "Perfect! **Conclusion:**\n\nBy the principle of strong mathematical induction:\n\n$$\\boxed{\\text{Every integer } n \\geq 2 \\text{ can be expressed as a product of prime numbers.}}$$\n\n**Complete proof summary:**\n\n1. **Base case:** $n = 2$ is prime, so $P(2)$ holds \u2713\n\n2. **Inductive step:** \n   - **Assume:** $P(m)$ for all $2 \\leq m \\leq k$\n   - **Prove:** $P(k+1)$\n   - If $k+1$ is prime: done!\n   - If $k+1$ is composite: $k+1 = ab$ with $2 \\leq a,b \\leq k$\n     - By IH: $a$ and $b$ are products of primes\n     - So $k+1 = ab$ is a product of primes \u2713\n\n3. **Conclusion:** By strong induction, $P(n)$ holds for all $n \\geq 2$ \u2713\n\n**Note:** This proves **existence** of prime factorization. The **uniqueness** (up to order) requires a separate argument using properties of primes and divisibility. Together, they form the Fundamental Theorem of Arithmetic.",
           "insight": "Strong induction proves every integer has a prime factorization!"
         },
         "incorrect": {
@@ -178,23 +182,45 @@
       },
       "resultState": {
         "description": "Proof complete",
-        "equations": ["\\forall n \\geq 2: n = p_1 p_2 \\cdots p_k \\text{ (primes)}"]
+        "equations": [
+          "\\forall n \\geq 2: n = p_1 p_2 \\cdots p_k \\text{ (primes)}"
+        ]
       }
     }
   ],
   "summary": {
     "keyInsights": [
       "Strong induction: assume $P(m)$ for ALL $m \\leq k$ to prove $P(k+1)$",
-      "Base case: $n = 2$ is prime ✓",
+      "Base case: $n = 2$ is prime \u2713",
       "Inductive step cases: (1) $k+1$ prime - done, (2) $k+1$ composite - factor and use IH",
       "Composite: $k+1 = ab$ with $a,b \\leq k$, apply IH to both factors",
       "Conclusion: every $n \\geq 2$ is a product of primes",
       "This proves existence part of Fundamental Theorem of Arithmetic"
     ],
-    "fullSolution": "**Prove: Every integer $n \\geq 2$ is a product of primes (Strong Induction)**\n\n---\n\n**Statement:** $P(n)$: \"$n$ can be written as a product of prime numbers\"\n\n---\n\n**Base Case:** $n = 2$\n\n$2$ is prime, so $2 = 2$ is a product of primes (one factor). ✓\n\n---\n\n**Inductive Step:**\n\n**Inductive Hypothesis:** Assume $P(m)$ is true for all $2 \\leq m \\leq k$.\n\n**Prove:** $P(k+1)$\n\n**Case 1:** $k+1$ is prime\n- Then $k+1$ itself is a product of one prime ✓\n\n**Case 2:** $k+1$ is composite\n- By definition, $\\exists$ integers $a, b$ with $1 < a, b < k+1$ such that $k+1 = ab$\n- Since $a, b \\geq 2$ and $a, b < k+1$, we have $2 \\leq a, b \\leq k$\n- By **strong IH**:\n  - $a = p_1 p_2 \\cdots p_r$ (product of primes)\n  - $b = q_1 q_2 \\cdots q_s$ (product of primes)\n- Therefore:\n  $$k+1 = ab = (p_1 p_2 \\cdots p_r)(q_1 q_2 \\cdots q_s)$$\n  is a product of primes ✓\n\n**In both cases,** $P(k+1)$ holds.\n\n---\n\n**Conclusion:**\n\nBy the principle of strong mathematical induction, $P(n)$ is true for all $n \\geq 2$.\n\n$$\\boxed{\\text{Every integer } n \\geq 2 \\text{ is a product of prime numbers.}}$$\n\nThis is the **existence** part of the Fundamental Theorem of Arithmetic.",
+    "fullSolution": "**Prove: Every integer $n \\geq 2$ is a product of primes (Strong Induction)**\n\n---\n\n**Statement:** $P(n)$: \"$n$ can be written as a product of prime numbers\"\n\n---\n\n**Base Case:** $n = 2$\n\n$2$ is prime, so $2 = 2$ is a product of primes (one factor). \u2713\n\n---\n\n**Inductive Step:**\n\n**Inductive Hypothesis:** Assume $P(m)$ is true for all $2 \\leq m \\leq k$.\n\n**Prove:** $P(k+1)$\n\n**Case 1:** $k+1$ is prime\n- Then $k+1$ itself is a product of one prime \u2713\n\n**Case 2:** $k+1$ is composite\n- By definition, $\\exists$ integers $a, b$ with $1 < a, b < k+1$ such that $k+1 = ab$\n- Since $a, b \\geq 2$ and $a, b < k+1$, we have $2 \\leq a, b \\leq k$\n- By **strong IH**:\n  - $a = p_1 p_2 \\cdots p_r$ (product of primes)\n  - $b = q_1 q_2 \\cdots q_s$ (product of primes)\n- Therefore:\n  $$k+1 = ab = (p_1 p_2 \\cdots p_r)(q_1 q_2 \\cdots q_s)$$\n  is a product of primes \u2713\n\n**In both cases,** $P(k+1)$ holds.\n\n---\n\n**Conclusion:**\n\nBy the principle of strong mathematical induction, $P(n)$ is true for all $n \\geq 2$.\n\n$$\\boxed{\\text{Every integer } n \\geq 2 \\text{ is a product of prime numbers.}}$$\n\nThis is the **existence** part of the Fundamental Theorem of Arithmetic.",
     "relatedProblems": [
       "logic-mathematical-induction-1",
       "number-theory-primes-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

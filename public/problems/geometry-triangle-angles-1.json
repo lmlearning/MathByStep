@@ -1,11 +1,16 @@
 {
   "id": "geometry-triangle-angles-1",
   "type": "proof",
-  "title": "Prove: Sum of Triangle Angles = 180°",
+  "title": "Prove: Sum of Triangle Angles = 180\u00b0",
   "topic": "Geometry",
   "difficulty": 3,
   "estimatedTime": 10,
-  "tags": ["geometry", "proofs", "triangles", "angles"],
+  "tags": [
+    "geometry",
+    "proofs",
+    "triangles",
+    "angles"
+  ],
   "statement": {
     "text": "Prove that the sum of the interior angles of any triangle equals 180 degrees."
   },
@@ -19,8 +24,10 @@
       "id": "step-1",
       "order": 1,
       "currentState": {
-        "description": "We have a triangle ABC with angles α, β, and γ. We need to prove:",
-        "equations": ["α + β + γ = 180°"]
+        "description": "We have a triangle ABC with angles \u03b1, \u03b2, and \u03b3. We need to prove:",
+        "equations": [
+          "\u03b1 + \u03b2 + \u03b3 = 180\u00b0"
+        ]
       },
       "prompt": {
         "question": "What's a good first step for this proof?",
@@ -33,11 +40,11 @@
         },
         {
           "id": "opt-2",
-          "text": "Measure all three angles with a protractor to show they sum to 180°"
+          "text": "Measure all three angles with a protractor to show they sum to 180\u00b0"
         },
         {
           "id": "opt-3",
-          "text": "Start by assuming the sum equals 180° and work backwards"
+          "text": "Start by assuming the sum equals 180\u00b0 and work backwards"
         }
       ],
       "correctOptionIndex": 0,
@@ -53,7 +60,9 @@
       },
       "resultState": {
         "description": "We've drawn line DE through vertex A, parallel to BC:",
-        "equations": ["Line DE || Line BC"]
+        "equations": [
+          "Line DE || Line BC"
+        ]
       }
     },
     {
@@ -61,7 +70,10 @@
       "order": 2,
       "currentState": {
         "description": "We have triangle ABC with line DE through A parallel to BC:",
-        "equations": ["DE || BC", "AB and AC are transversals"]
+        "equations": [
+          "DE || BC",
+          "AB and AC are transversals"
+        ]
       },
       "prompt": {
         "question": "What angle relationship can we identify now?",
@@ -84,7 +96,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! When a transversal crosses parallel lines, alternate interior angles are equal. So angle β (at B) equals angle DAB, and angle γ (at C) equals angle EAC.",
+          "explanation": "Perfect! When a transversal crosses parallel lines, alternate interior angles are equal. So angle \u03b2 (at B) equals angle DAB, and angle \u03b3 (at C) equals angle EAC.",
           "insight": "Alternate interior angles theorem is key to many geometric proofs."
         },
         "incorrect": {
@@ -94,7 +106,10 @@
       },
       "resultState": {
         "description": "Using alternate interior angles:",
-        "equations": ["β = angle DAB", "γ = angle EAC"]
+        "equations": [
+          "\u03b2 = angle DAB",
+          "\u03b3 = angle EAC"
+        ]
       }
     },
     {
@@ -102,7 +117,11 @@
       "order": 3,
       "currentState": {
         "description": "We've established:",
-        "equations": ["β = angle DAB", "γ = angle EAC", "α is the angle BAC"]
+        "equations": [
+          "\u03b2 = angle DAB",
+          "\u03b3 = angle EAC",
+          "\u03b1 is the angle BAC"
+        ]
       },
       "prompt": {
         "question": "Looking at point A, what do we notice about angles DAB, BAC, and EAC?",
@@ -111,11 +130,11 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "These three angles form a straight line at point A, so they sum to 180°"
+          "text": "These three angles form a straight line at point A, so they sum to 180\u00b0"
         },
         {
           "id": "opt-2",
-          "text": "These angles form a triangle, so they sum to 180°"
+          "text": "These angles form a triangle, so they sum to 180\u00b0"
         },
         {
           "id": "opt-3",
@@ -125,8 +144,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! The three angles DAB, BAC (which is α), and EAC all meet at point A and together form line DE, which is a straight line. Angles on a straight line sum to 180°.",
-          "insight": "Angles that form a straight line always sum to 180° (supplementary angles)."
+          "explanation": "Exactly! The three angles DAB, BAC (which is \u03b1), and EAC all meet at point A and together form line DE, which is a straight line. Angles on a straight line sum to 180\u00b0.",
+          "insight": "Angles that form a straight line always sum to 180\u00b0 (supplementary angles)."
         },
         "incorrect": {
           "1": "The angles are at a point on a line, not forming a triangle. They lie along the straight line DE.",
@@ -135,7 +154,9 @@
       },
       "resultState": {
         "description": "Angles on line DE at point A:",
-        "equations": ["angle DAB + angle BAC + angle EAC = 180°"]
+        "equations": [
+          "angle DAB + angle BAC + angle EAC = 180\u00b0"
+        ]
       }
     },
     {
@@ -144,9 +165,9 @@
       "currentState": {
         "description": "We know:",
         "equations": [
-          "angle DAB + α + angle EAC = 180°",
-          "β = angle DAB",
-          "γ = angle EAC"
+          "angle DAB + \u03b1 + angle EAC = 180\u00b0",
+          "\u03b2 = angle DAB",
+          "\u03b3 = angle EAC"
         ]
       },
       "prompt": {
@@ -156,7 +177,7 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Substitute: β + α + γ = 180°, proving the sum of triangle angles is 180°"
+          "text": "Substitute: \u03b2 + \u03b1 + \u03b3 = 180\u00b0, proving the sum of triangle angles is 180\u00b0"
         },
         {
           "id": "opt-2",
@@ -170,7 +191,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Since angle DAB = β and angle EAC = γ, we can substitute into our equation: β + α + γ = 180°. This proves that the three interior angles of triangle ABC sum to 180°!",
+          "explanation": "Perfect! Since angle DAB = \u03b2 and angle EAC = \u03b3, we can substitute into our equation: \u03b2 + \u03b1 + \u03b3 = 180\u00b0. This proves that the three interior angles of triangle ABC sum to 180\u00b0!",
           "insight": "This proof works for ANY triangle because we only used general properties of parallel lines and straight angles."
         },
         "incorrect": {
@@ -180,7 +201,9 @@
       },
       "resultState": {
         "description": "Proof complete!",
-        "equations": ["α + β + γ = 180°  Q.E.D."]
+        "equations": [
+          "\u03b1 + \u03b2 + \u03b3 = 180\u00b0  Q.E.D."
+        ]
       }
     }
   ],
@@ -188,10 +211,30 @@
     "keyInsights": [
       "Auxiliary constructions (like parallel lines) can reveal hidden relationships",
       "Alternate interior angles are equal when formed by parallel lines and a transversal",
-      "Angles on a straight line sum to 180°",
+      "Angles on a straight line sum to 180\u00b0",
       "This proof works for ANY triangle, not just specific examples"
     ],
-    "fullSolution": "Draw a line through vertex A parallel to BC. By alternate interior angles, the base angles of the triangle equal the angles formed on the line at A. Since these angles form a straight line, they sum to 180°.",
+    "fullSolution": "Draw a line through vertex A parallel to BC. By alternate interior angles, the base angles of the triangle equal the angles formed on the line at A. Since these angles form a straight line, they sum to 180\u00b0.",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometry Course",
+      "url": "https://www.khanacademy.org/math/geometry",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometry",
+      "url": "https://www.mathsisfun.com/geometry/index.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Euclidean Geometry",
+      "url": "https://www.youtube.com/watch?v=X83vac2uTUs",
+      "source": "Numberphile"
+    }
+  ]
 }

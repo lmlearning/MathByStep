@@ -201,5 +201,25 @@
       "calculus-series-ratio-test-1",
       "real-analysis-sequence-convergence-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Series and Convergence",
+      "url": "https://www.khanacademy.org/math/calculus-2/cs2-series",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Series",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/Series_Basics.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Taylor Series",
+      "url": "https://www.youtube.com/watch?v=3d6DsjIBzJ4",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

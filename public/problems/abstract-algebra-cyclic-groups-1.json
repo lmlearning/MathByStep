@@ -229,10 +229,30 @@
       "Number of generators: $\\phi(8) = 4$ (Euler's totient function)",
       "All groups $\\mathbb{Z}_n$ are cyclic"
     ],
-    "fullSolution": "**Is $(\\mathbb{Z}_8, +)$ cyclic?**\\n\\n**Yes!** $\\mathbb{Z}_8$ is cyclic because 1 generates the entire group:\\n$$\\langle 1 \\rangle = \\{0, 1, 2, 3, 4, 5, 6, 7\\} = \\mathbb{Z}_8$$\\n\\n**All generators:**\\nElement $k$ is a generator iff $\\gcd(k, 8) = 1$:\\n- $\\gcd(1,8) = 1$ ✓\\n- $\\gcd(2,8) = 2$ ✗\\n- $\\gcd(3,8) = 1$ ✓\\n- $\\gcd(4,8) = 4$ ✗\\n- $\\gcd(5,8) = 1$ ✓\\n- $\\gcd(6,8) = 2$ ✗\\n- $\\gcd(7,8) = 1$ ✓\\n\\n**Generators of $\\mathbb{Z}_8$: {1, 3, 5, 7}**\\n\\n**Example:** $\\langle 3 \\rangle = \\{0, 3, 6, 1, 4, 7, 2, 5\\} = \\mathbb{Z}_8$ ✓",
+    "fullSolution": "**Is $(\\mathbb{Z}_8, +)$ cyclic?**\\n\\n**Yes!** $\\mathbb{Z}_8$ is cyclic because 1 generates the entire group:\\n$$\\langle 1 \\rangle = \\{0, 1, 2, 3, 4, 5, 6, 7\\} = \\mathbb{Z}_8$$\\n\\n**All generators:**\\nElement $k$ is a generator iff $\\gcd(k, 8) = 1$:\\n- $\\gcd(1,8) = 1$ \u2713\\n- $\\gcd(2,8) = 2$ \u2717\\n- $\\gcd(3,8) = 1$ \u2713\\n- $\\gcd(4,8) = 4$ \u2717\\n- $\\gcd(5,8) = 1$ \u2713\\n- $\\gcd(6,8) = 2$ \u2717\\n- $\\gcd(7,8) = 1$ \u2713\\n\\n**Generators of $\\mathbb{Z}_8$: {1, 3, 5, 7}**\\n\\n**Example:** $\\langle 3 \\rangle = \\{0, 3, 6, 1, 4, 7, 2, 5\\} = \\mathbb{Z}_8$ \u2713",
     "relatedProblems": [
       "abstract-algebra-group-1",
       "number-theory-modular-arithmetic-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Abstract Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Abstract Algebra",
+      "url": "http://abstract.ups.edu/aata/aata.html",
+      "source": "Open Textbook"
+    },
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "source": "Mathologer"
+    }
+  ]
 }

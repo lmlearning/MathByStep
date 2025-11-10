@@ -153,7 +153,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $u_x = 2x$ and $v_y = 2x$ ✓"
+          "text": "Yes: $u_x = 2x$ and $v_y = 2x$ \u2713"
         },
         {
           "id": "b",
@@ -167,7 +167,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $\\frac{\\partial u}{\\partial x} = \\frac{\\partial}{\\partial x}(x^2-y^2) = 2x$ and $\\frac{\\partial v}{\\partial y} = \\frac{\\partial}{\\partial y}(2xy) = 2x$. First equation satisfied! ✓",
+          "explanation": "Perfect! $\\frac{\\partial u}{\\partial x} = \\frac{\\partial}{\\partial x}(x^2-y^2) = 2x$ and $\\frac{\\partial v}{\\partial y} = \\frac{\\partial}{\\partial y}(2xy) = 2x$. First equation satisfied! \u2713",
           "insight": "Both derivatives equal $2x$."
         },
         "incorrect": {
@@ -193,7 +193,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $u_y = -2y$ and $-v_x = -2y$ ✓"
+          "text": "Yes: $u_y = -2y$ and $-v_x = -2y$ \u2713"
         },
         {
           "id": "b",
@@ -207,7 +207,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! $\\frac{\\partial u}{\\partial y} = \\frac{\\partial}{\\partial y}(x^2-y^2) = -2y$ and $-\\frac{\\partial v}{\\partial x} = -\\frac{\\partial}{\\partial x}(2xy) = -2y$. Second equation satisfied! ✓ Therefore $f(z) = z^2$ is holomorphic.",
+          "explanation": "Excellent! $\\frac{\\partial u}{\\partial y} = \\frac{\\partial}{\\partial y}(x^2-y^2) = -2y$ and $-\\frac{\\partial v}{\\partial x} = -\\frac{\\partial}{\\partial x}(2xy) = -2y$. Second equation satisfied! \u2713 Therefore $f(z) = z^2$ is holomorphic.",
           "insight": "Since both Cauchy-Riemann equations hold (and partials are continuous), $f$ is holomorphic everywhere (entire)."
         },
         "incorrect": {
@@ -228,10 +228,30 @@
       "Therefore $f(z) = z^2$ is holomorphic (entire function)",
       "Holomorphic functions are infinitely differentiable and satisfy many remarkable properties"
     ],
-    "fullSolution": "$f(z) = z^2 = (x+iy)^2 = x^2 - y^2 + 2ixy$\n\n$u(x,y) = x^2 - y^2$, $v(x,y) = 2xy$\n\n**Cauchy-Riemann:**\n\n$u_x = 2x$, $v_y = 2x$ → $u_x = v_y$ ✓\n\n$u_y = -2y$, $v_x = 2y$ → $u_y = -v_x$ ✓\n\nBoth CR equations satisfied, so $f(z) = z^2$ is holomorphic.",
+    "fullSolution": "$f(z) = z^2 = (x+iy)^2 = x^2 - y^2 + 2ixy$\n\n$u(x,y) = x^2 - y^2$, $v(x,y) = 2xy$\n\n**Cauchy-Riemann:**\n\n$u_x = 2x$, $v_y = 2x$ \u2192 $u_x = v_y$ \u2713\n\n$u_y = -2y$, $v_x = 2y$ \u2192 $u_y = -v_x$ \u2713\n\nBoth CR equations satisfied, so $f(z) = z^2$ is holomorphic.",
     "relatedProblems": [
       "algebra-complex-numbers-1",
       "multivariable-partial-derivatives-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Calculus 1",
+      "url": "https://www.khanacademy.org/math/calculus-1",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Calculus Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

@@ -194,5 +194,25 @@
       "multivariable-greens-theorem-1",
       "multivariable-divergence-theorem-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Multivariable Calculus Course",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Multivariable Calculus",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Divergence and Curl",
+      "url": "https://www.youtube.com/watch?v=rB83DpBJQsE",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

@@ -176,7 +176,7 @@
         }
       },
       "resultState": {
-        "description": "Find eigenvector for λ=3"
+        "description": "Find eigenvector for \u03bb=3"
       }
     },
     {
@@ -216,7 +216,7 @@
         }
       },
       "resultState": {
-        "description": "Find eigenvector for λ=2"
+        "description": "Find eigenvector for \u03bb=2"
       }
     }
   ],
@@ -232,5 +232,25 @@
       "algebra-matrix-mult-1",
       "linear-algebra-vector-space-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Eigenvectors Introduction",
+      "url": "https://www.khanacademy.org/math/linear-algebra/alternate-bases/eigen-everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "http://math.mit.edu/~gs/linearalgebra/ila0601.pdf",
+      "source": "MIT OCW"
+    }
+  ]
 }

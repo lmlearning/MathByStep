@@ -5,31 +5,87 @@
   "topic": "Algebra",
   "difficulty": 2,
   "estimatedTime": 7,
-  "tags": ["algebra", "exponents"],
-  "statement": {"text": "Simplify $x^3 \\cdot x^5$."},
-  "objectives": ["Apply exponent multiplication rule", "Simplify expressions with exponents"],
+  "tags": [
+    "algebra",
+    "exponents"
+  ],
+  "statement": {
+    "text": "Simplify $x^3 \\cdot x^5$."
+  },
+  "objectives": [
+    "Apply exponent multiplication rule",
+    "Simplify expressions with exponents"
+  ],
   "steps": [
     {
       "id": "step-1",
       "order": 1,
-      "currentState": {"description": "Multiply powers with same base."},
-      "prompt": {"question": "What is $x^3 \\cdot x^5$?", "hint": "When multiplying powers with the same base, add exponents."},
+      "currentState": {
+        "description": "Multiply powers with same base."
+      },
+      "prompt": {
+        "question": "What is $x^3 \\cdot x^5$?",
+        "hint": "When multiplying powers with the same base, add exponents."
+      },
       "options": [
-        {"id": "a", "text": "$x^8$"},
-        {"id": "b", "text": "$x^{15}$"},
-        {"id": "c", "text": "$x^2$"}
+        {
+          "id": "a",
+          "text": "$x^8$"
+        },
+        {
+          "id": "b",
+          "text": "$x^{15}$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2$"
+        }
       ],
       "correctOptionIndex": 0,
       "feedback": {
-        "correct": {"explanation": "When multiplying powers with the same base, add the exponents: $x^3 \\cdot x^5 = x^{3+5} = x^8$.", "insight": "Add exponents when multiplying!"},
-        "incorrect": {"1": "That's multiplication of exponents, not addition!", "2": "Don't subtract exponents when multiplying!"}
+        "correct": {
+          "explanation": "When multiplying powers with the same base, add the exponents: $x^3 \\cdot x^5 = x^{3+5} = x^8$.",
+          "insight": "Add exponents when multiplying!"
+        },
+        "incorrect": {
+          "1": "That's multiplication of exponents, not addition!",
+          "2": "Don't subtract exponents when multiplying!"
+        }
       },
-      "resultState": {"equations": ["x^3 \\cdot x^5 = x^8"]}
+      "resultState": {
+        "equations": [
+          "x^3 \\cdot x^5 = x^8"
+        ]
+      }
     }
   ],
   "summary": {
-    "keyInsights": ["Exponent multiplication rule: $x^a \\cdot x^b = x^{a+b}$"],
+    "keyInsights": [
+      "Exponent multiplication rule: $x^a \\cdot x^b = x^{a+b}$"
+    ],
     "fullSolution": "$x^3 \\cdot x^5 = x^{3+5} = x^8$",
-    "relatedProblems": ["algebra-exponent-rules-1"]
-  }
+    "relatedProblems": [
+      "algebra-exponent-rules-1"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Exponent Rules",
+      "url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:rational-exponents-radicals/x2f8bb11595b61c86:exponential-properties-rules/v/exponent-properties-involving-products",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Properties of Exponents",
+      "url": "https://www.mathsisfun.com/algebra/exponent-laws.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Exponential Functions",
+      "url": "https://www.youtube.com/watch?v=6WMZ7J0wwMI",
+      "source": "Professor Leonard"
+    }
+  ]
 }

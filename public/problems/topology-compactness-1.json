@@ -88,7 +88,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **$S$ is closed:**\n\n**Method 1: Preimage of closed set**\nDefine $f: \\mathbb{R}^2 \\to \\mathbb{R}$ by $f(x,y) = x^2 + y^2$.\n\n- $f$ is continuous (polynomial)\n- $S = f^{-1}((-\\infty, 1])$\n- $(-\\infty, 1]$ is closed in $\\mathbb{R}$\n- Preimage of closed set under continuous map is closed ✓\n\n**Method 2: Contains limit points**\nIf $(x_n, y_n) \\in S$ and $(x_n, y_n) \\to (x, y)$, then:\n$$x_n^2 + y_n^2 \\leq 1$$\n\nBy continuity of $f$:\n$$x^2 + y^2 = \\lim_{n \\to \\infty} (x_n^2 + y_n^2) \\leq 1$$\n\nSo $(x, y) \\in S$ ✓\n\n**Method 3: Complement is open**\n$$S^c = \\{(x,y) : x^2 + y^2 > 1\\} = f^{-1}((1, \\infty))$$\n\nSince $(1, \\infty)$ is open and $f$ is continuous, $S^c$ is open, so $S$ is closed ✓",
+          "explanation": "Correct! **$S$ is closed:**\n\n**Method 1: Preimage of closed set**\nDefine $f: \\mathbb{R}^2 \\to \\mathbb{R}$ by $f(x,y) = x^2 + y^2$.\n\n- $f$ is continuous (polynomial)\n- $S = f^{-1}((-\\infty, 1])$\n- $(-\\infty, 1]$ is closed in $\\mathbb{R}$\n- Preimage of closed set under continuous map is closed \u2713\n\n**Method 2: Contains limit points**\nIf $(x_n, y_n) \\in S$ and $(x_n, y_n) \\to (x, y)$, then:\n$$x_n^2 + y_n^2 \\leq 1$$\n\nBy continuity of $f$:\n$$x^2 + y^2 = \\lim_{n \\to \\infty} (x_n^2 + y_n^2) \\leq 1$$\n\nSo $(x, y) \\in S$ \u2713\n\n**Method 3: Complement is open**\n$$S^c = \\{(x,y) : x^2 + y^2 > 1\\} = f^{-1}((1, \\infty))$$\n\nSince $(1, \\infty)$ is open and $f$ is continuous, $S^c$ is open, so $S$ is closed \u2713",
           "insight": "Closed sets are precisely the preimages of closed sets under continuous maps!"
         },
         "incorrect": {
@@ -98,7 +98,9 @@
       },
       "resultState": {
         "description": "$S$ is closed",
-        "equations": ["S \\text{ is closed}"]
+        "equations": [
+          "S \\text{ is closed}"
+        ]
       }
     },
     {
@@ -128,7 +130,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **$S$ is bounded:**\n\n**Definition:** A set $S \\subseteq \\mathbb{R}^n$ is **bounded** if there exists $M > 0$ such that:\n$$\\|x\\| \\leq M \\quad \\text{for all } x \\in S$$\n\nEquivalently, $S \\subseteq B_R(0)$ for some $R > 0$.\n\n**For our $S$:**\nIf $(x, y) \\in S$, then $x^2 + y^2 \\leq 1$, so:\n$$\\|(x,y)\\| = \\sqrt{x^2 + y^2} \\leq 1$$\n\nTherefore $S \\subseteq B_2(0)$ (or even $S \\subseteq \\overline{B_1(0)}$), so $S$ is bounded ✓\n\n**Alternative:** \n$$\\text{diam}(S) = \\sup_{p,q \\in S} \\|p - q\\| = 2 < \\infty$$\n\nThe diameter is finite, confirming boundedness.",
+          "explanation": "Correct! **$S$ is bounded:**\n\n**Definition:** A set $S \\subseteq \\mathbb{R}^n$ is **bounded** if there exists $M > 0$ such that:\n$$\\|x\\| \\leq M \\quad \\text{for all } x \\in S$$\n\nEquivalently, $S \\subseteq B_R(0)$ for some $R > 0$.\n\n**For our $S$:**\nIf $(x, y) \\in S$, then $x^2 + y^2 \\leq 1$, so:\n$$\\|(x,y)\\| = \\sqrt{x^2 + y^2} \\leq 1$$\n\nTherefore $S \\subseteq B_2(0)$ (or even $S \\subseteq \\overline{B_1(0)}$), so $S$ is bounded \u2713\n\n**Alternative:** \n$$\\text{diam}(S) = \\sup_{p,q \\in S} \\|p - q\\| = 2 < \\infty$$\n\nThe diameter is finite, confirming boundedness.",
           "insight": "Boundedness means the set fits inside some ball!"
         },
         "incorrect": {
@@ -138,7 +140,9 @@
       },
       "resultState": {
         "description": "$S$ is bounded",
-        "equations": ["S \\text{ is bounded}"]
+        "equations": [
+          "S \\text{ is bounded}"
+        ]
       }
     },
     {
@@ -168,7 +172,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Compactness analysis:**\n\n**$S = \\{(x,y) : x^2 + y^2 \\leq 1\\}$ (closed disk):**\n- Closed ✓\n- Bounded ✓\n- By Heine-Borel: **$S$ is compact** ✓\n\n**$T = \\{(x,y) : x^2 + y^2 < 1\\}$ (open disk):**\n- Open (NOT closed) ✗\n- Bounded ✓\n- By Heine-Borel: **$T$ is NOT compact** ✗\n\n**Explicit open cover for $T$ with no finite subcover:**\nLet $U_n = \\{(x,y) : x^2 + y^2 < 1 - \\frac{1}{n}\\}$ for $n \\geq 2$.\n\nThen $\\{U_n\\}_{n=2}^{\\infty}$ is an open cover of $T$:\n- Each $U_n$ is open\n- For any $(x,y) \\in T$, we have $x^2 + y^2 = r < 1$, so choose $n > \\frac{1}{1-r}$ to get $(x,y) \\in U_n$\n\n**But no finite subcover:** Any finite subcollection $\\{U_{n_1}, \\ldots, U_{n_k}\\}$ only covers up to radius $1 - \\frac{1}{\\max_i n_i} < 1$!\n\nThis proves $T$ is not compact.",
+          "explanation": "Excellent! **Compactness analysis:**\n\n**$S = \\{(x,y) : x^2 + y^2 \\leq 1\\}$ (closed disk):**\n- Closed \u2713\n- Bounded \u2713\n- By Heine-Borel: **$S$ is compact** \u2713\n\n**$T = \\{(x,y) : x^2 + y^2 < 1\\}$ (open disk):**\n- Open (NOT closed) \u2717\n- Bounded \u2713\n- By Heine-Borel: **$T$ is NOT compact** \u2717\n\n**Explicit open cover for $T$ with no finite subcover:**\nLet $U_n = \\{(x,y) : x^2 + y^2 < 1 - \\frac{1}{n}\\}$ for $n \\geq 2$.\n\nThen $\\{U_n\\}_{n=2}^{\\infty}$ is an open cover of $T$:\n- Each $U_n$ is open\n- For any $(x,y) \\in T$, we have $x^2 + y^2 = r < 1$, so choose $n > \\frac{1}{1-r}$ to get $(x,y) \\in U_n$\n\n**But no finite subcover:** Any finite subcollection $\\{U_{n_1}, \\ldots, U_{n_k}\\}$ only covers up to radius $1 - \\frac{1}{\\max_i n_i} < 1$!\n\nThis proves $T$ is not compact.",
           "insight": "The boundary makes all the difference - open sets can't be compact in $\\mathbb{R}^n$!"
         },
         "incorrect": {
@@ -189,15 +193,35 @@
     "keyInsights": [
       "Compactness: every open cover has a finite subcover",
       "Heine-Borel (for $\\mathbb{R}^n$): compact $\\Leftrightarrow$ closed and bounded",
-      "Closed disk $S = \\{x^2 + y^2 \\leq 1\\}$: closed ✓, bounded ✓, compact ✓",
-      "Open disk $T = \\{x^2 + y^2 < 1\\}$: open (not closed) ✗, bounded ✓, not compact ✗",
+      "Closed disk $S = \\{x^2 + y^2 \\leq 1\\}$: closed \u2713, bounded \u2713, compact \u2713",
+      "Open disk $T = \\{x^2 + y^2 < 1\\}$: open (not closed) \u2717, bounded \u2713, not compact \u2717",
       "The boundary determines compactness in $\\mathbb{R}^n$",
       "Open bounded sets in $\\mathbb{R}^n$ are never compact"
     ],
-    "fullSolution": "**Determine compactness of closed and open unit disks**\n\n---\n\n**Heine-Borel Theorem:**\nIn $\\mathbb{R}^n$, a set is compact $\\Leftrightarrow$ it is closed and bounded.\n\n---\n\n**$S = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 \\leq 1\\}$**\n\n**Closed?** Yes!\n- $S = f^{-1}((-\\infty, 1])$ where $f(x,y) = x^2 + y^2$\n- $f$ continuous, $(-\\infty, 1]$ closed\n- Preimage of closed set is closed ✓\n\n**Bounded?** Yes!\n- If $(x,y) \\in S$, then $\\|(x,y)\\| = \\sqrt{x^2+y^2} \\leq 1$\n- So $S \\subseteq B_2(0)$ ✓\n\n**Conclusion:** $S$ is closed and bounded, so **$S$ is compact** ✓\n\n---\n\n**$T = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 < 1\\}$**\n\n**Closed?** No!\n- $T$ is open (standard open disk)\n- Doesn't contain its boundary circle $\\{x^2 + y^2 = 1\\}$\n- Not closed ✗\n\n**Bounded?** Yes!\n- Same argument: $\\|(x,y)\\| < 1$ for all $(x,y) \\in T$ ✓\n\n**Conclusion:** $T$ is bounded but NOT closed, so **$T$ is not compact** ✗\n\n---\n\n**Answer:**\n- $\\boxed{S \\text{ is compact}}$\n- $\\boxed{T \\text{ is not compact}}$",
+    "fullSolution": "**Determine compactness of closed and open unit disks**\n\n---\n\n**Heine-Borel Theorem:**\nIn $\\mathbb{R}^n$, a set is compact $\\Leftrightarrow$ it is closed and bounded.\n\n---\n\n**$S = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 \\leq 1\\}$**\n\n**Closed?** Yes!\n- $S = f^{-1}((-\\infty, 1])$ where $f(x,y) = x^2 + y^2$\n- $f$ continuous, $(-\\infty, 1]$ closed\n- Preimage of closed set is closed \u2713\n\n**Bounded?** Yes!\n- If $(x,y) \\in S$, then $\\|(x,y)\\| = \\sqrt{x^2+y^2} \\leq 1$\n- So $S \\subseteq B_2(0)$ \u2713\n\n**Conclusion:** $S$ is closed and bounded, so **$S$ is compact** \u2713\n\n---\n\n**$T = \\{(x,y) \\in \\mathbb{R}^2 : x^2 + y^2 < 1\\}$**\n\n**Closed?** No!\n- $T$ is open (standard open disk)\n- Doesn't contain its boundary circle $\\{x^2 + y^2 = 1\\}$\n- Not closed \u2717\n\n**Bounded?** Yes!\n- Same argument: $\\|(x,y)\\| < 1$ for all $(x,y) \\in T$ \u2713\n\n**Conclusion:** $T$ is bounded but NOT closed, so **$T$ is not compact** \u2717\n\n---\n\n**Answer:**\n- $\\boxed{S \\text{ is compact}}$\n- $\\boxed{T \\text{ is not compact}}$",
     "relatedProblems": [
       "topology-connectedness-1",
       "real-analysis-bolzano-weierstrass-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Introduction to Topology",
+      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
+      "source": "Insights into Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Topology",
+      "url": "https://mathworld.wolfram.com/Topology.html",
+      "source": "Wolfram MathWorld"
+    },
+    {
+      "type": "video",
+      "title": "What is Topology?",
+      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
+      "source": "Brendan Fong"
+    }
+  ]
 }

@@ -5,29 +5,50 @@
   "topic": "Number Theory",
   "difficulty": 2,
   "estimatedTime": 8,
-  "tags": ["number-theory", "divisibility", "modular-arithmetic", "divisibility-tests"],
+  "tags": [
+    "number-theory",
+    "divisibility",
+    "modular-arithmetic",
+    "divisibility-tests"
+  ],
   "statement": {
     "text": "Determine if $4536$ is divisible by $3$, $4$, and $9$ using divisibility rules. Explain why each rule works."
   },
-  "objectives": ["Apply divisibility rules", "Understand why rules work", "Use modular arithmetic", "Check multiple divisors"],
+  "objectives": [
+    "Apply divisibility rules",
+    "Understand why rules work",
+    "Use modular arithmetic",
+    "Check multiple divisors"
+  ],
   "steps": [
     {
       "id": "step-1",
       "order": 1,
-      "currentState": {"description": "Number: $4536$. Test divisibility by $3$."},
+      "currentState": {
+        "description": "Number: $4536$. Test divisibility by $3$."
+      },
       "prompt": {
         "question": "What is the divisibility rule for $3$?",
         "hint": "A number is divisible by $3$ if the sum of its digits is divisible by $3$."
       },
       "options": [
-        {"id": "a", "text": "Sum of digits divisible by $3$"},
-        {"id": "b", "text": "Last digit divisible by $3$"},
-        {"id": "c", "text": "Number ends in $0$, $3$, $6$, or $9$"}
+        {
+          "id": "a",
+          "text": "Sum of digits divisible by $3$"
+        },
+        {
+          "id": "b",
+          "text": "Last digit divisible by $3$"
+        },
+        {
+          "id": "c",
+          "text": "Number ends in $0$, $3$, $6$, or $9$"
+        }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Divisibility by 3:**\n\nA number is divisible by $3$ iff the sum of its digits is divisible by $3$.\n\n**Why?** Because $10 \\equiv 1 \\pmod{3}$:\n$$abcd = a(1000) + b(100) + c(10) + d$$\n$$\\equiv a(1) + b(1) + c(1) + d \\pmod{3}$$\n$$\\equiv a + b + c + d \\pmod{3}$$\n\n**For $4536$:**\n- Digit sum: $4 + 5 + 3 + 6 = 18$\n- Is $18$ divisible by $3$? Yes! $18 = 3 \\times 6$\n- Therefore $4536$ is divisible by $3$ ✓",
+          "explanation": "Correct! **Divisibility by 3:**\n\nA number is divisible by $3$ iff the sum of its digits is divisible by $3$.\n\n**Why?** Because $10 \\equiv 1 \\pmod{3}$:\n$$abcd = a(1000) + b(100) + c(10) + d$$\n$$\\equiv a(1) + b(1) + c(1) + d \\pmod{3}$$\n$$\\equiv a + b + c + d \\pmod{3}$$\n\n**For $4536$:**\n- Digit sum: $4 + 5 + 3 + 6 = 18$\n- Is $18$ divisible by $3$? Yes! $18 = 3 \\times 6$\n- Therefore $4536$ is divisible by $3$ \u2713",
           "insight": "Since $10 \\equiv 1 \\pmod{3}$, only digit sum matters!"
         },
         "incorrect": {
@@ -35,25 +56,41 @@
           "2": "Not all such numbers work! Use digit sum rule."
         }
       },
-      "resultState": {"description": "Divisible by 3", "equations": ["4 + 5 + 3 + 6 = 18, \\quad 3|18"]}
+      "resultState": {
+        "description": "Divisible by 3",
+        "equations": [
+          "4 + 5 + 3 + 6 = 18, \\quad 3|18"
+        ]
+      }
     },
     {
       "id": "step-2",
       "order": 2,
-      "currentState": {"description": "Test divisibility by $4$."},
+      "currentState": {
+        "description": "Test divisibility by $4$."
+      },
       "prompt": {
         "question": "What is the divisibility rule for $4$?",
         "hint": "A number is divisible by $4$ if its last two digits form a number divisible by $4$."
       },
       "options": [
-        {"id": "a", "text": "Last two digits divisible by $4$"},
-        {"id": "b", "text": "Sum of digits divisible by $4$"},
-        {"id": "c", "text": "Last digit is even"}
+        {
+          "id": "a",
+          "text": "Last two digits divisible by $4$"
+        },
+        {
+          "id": "b",
+          "text": "Sum of digits divisible by $4$"
+        },
+        {
+          "id": "c",
+          "text": "Last digit is even"
+        }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Divisibility by 4:**\n\nA number is divisible by $4$ iff its last two digits form a number divisible by $4$.\n\n**Why?** Because $100 = 4 \\times 25$:\n$$abcd = 100(ab) + cd$$\n\nSince $100 \\equiv 0 \\pmod{4}$:\n$$abcd \\equiv cd \\pmod{4}$$\n\n**For $4536$:**\n- Last two digits: $36$\n- Is $36$ divisible by $4$? Yes! $36 = 4 \\times 9$\n- Therefore $4536$ is divisible by $4$ ✓\n\n**Verification:** $4536 \\div 4 = 1134$ ✓",
+          "explanation": "Perfect! **Divisibility by 4:**\n\nA number is divisible by $4$ iff its last two digits form a number divisible by $4$.\n\n**Why?** Because $100 = 4 \\times 25$:\n$$abcd = 100(ab) + cd$$\n\nSince $100 \\equiv 0 \\pmod{4}$:\n$$abcd \\equiv cd \\pmod{4}$$\n\n**For $4536$:**\n- Last two digits: $36$\n- Is $36$ divisible by $4$? Yes! $36 = 4 \\times 9$\n- Therefore $4536$ is divisible by $4$ \u2713\n\n**Verification:** $4536 \\div 4 = 1134$ \u2713",
           "insight": "Hundreds and higher are always divisible by 4, so only last 2 digits matter!"
         },
         "incorrect": {
@@ -61,25 +98,41 @@
           "2": "Not enough! Even numbers end in even digit, but not all are divisible by $4$."
         }
       },
-      "resultState": {"description": "Divisible by 4", "equations": ["36 = 4 \\times 9"]}
+      "resultState": {
+        "description": "Divisible by 4",
+        "equations": [
+          "36 = 4 \\times 9"
+        ]
+      }
     },
     {
       "id": "step-3",
       "order": 3,
-      "currentState": {"description": "Test divisibility by $9$."},
+      "currentState": {
+        "description": "Test divisibility by $9$."
+      },
       "prompt": {
         "question": "Is $4536$ divisible by $9$?",
         "hint": "Digit sum rule: $4 + 5 + 3 + 6 = 18$. Is $18$ divisible by $9$? Yes! $18 = 9 \\times 2$."
       },
       "options": [
-        {"id": "a", "text": "Yes, because digit sum $18$ is divisible by $9$"},
-        {"id": "b", "text": "No, because $4536$ is not divisible by $9$"},
-        {"id": "c", "text": "Cannot determine"}
+        {
+          "id": "a",
+          "text": "Yes, because digit sum $18$ is divisible by $9$"
+        },
+        {
+          "id": "b",
+          "text": "No, because $4536$ is not divisible by $9$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Divisibility by 9:**\n\nA number is divisible by $9$ iff the sum of its digits is divisible by $9$.\n\n**Why?** Same logic as for $3$: $10 \\equiv 1 \\pmod{9}$\n\n**For $4536$:**\n- Digit sum: $4 + 5 + 3 + 6 = 18$\n- Is $18$ divisible by $9$? Yes! $18 = 9 \\times 2$\n- Therefore $4536$ is divisible by $9$ ✓\n\n**Verification:** $4536 \\div 9 = 504$ ✓\n\n**Connection:** If divisible by $9$, automatically divisible by $3$ (since $9 = 3 \\times 3$).",
+          "explanation": "Correct! **Divisibility by 9:**\n\nA number is divisible by $9$ iff the sum of its digits is divisible by $9$.\n\n**Why?** Same logic as for $3$: $10 \\equiv 1 \\pmod{9}$\n\n**For $4536$:**\n- Digit sum: $4 + 5 + 3 + 6 = 18$\n- Is $18$ divisible by $9$? Yes! $18 = 9 \\times 2$\n- Therefore $4536$ is divisible by $9$ \u2713\n\n**Verification:** $4536 \\div 9 = 504$ \u2713\n\n**Connection:** If divisible by $9$, automatically divisible by $3$ (since $9 = 3 \\times 3$).",
           "insight": "Rule for 9 is similar to rule for 3, but requires digit sum divisible by 9!"
         },
         "incorrect": {
@@ -87,25 +140,41 @@
           "2": "Apply the rule! Digit sum $18 = 9 \\times 2$, so yes."
         }
       },
-      "resultState": {"description": "Divisible by 9", "equations": ["18 = 9 \\times 2"]}
+      "resultState": {
+        "description": "Divisible by 9",
+        "equations": [
+          "18 = 9 \\times 2"
+        ]
+      }
     },
     {
       "id": "step-4",
       "order": 4,
-      "currentState": {"description": "Summary of results."},
+      "currentState": {
+        "description": "Summary of results."
+      },
       "prompt": {
         "question": "Since $4536$ is divisible by both $4$ and $9$, what else must it be divisible by?",
         "hint": "$\\text{lcm}(4, 9) = 36$ since $\\gcd(4, 9) = 1$. So $4536$ is divisible by $36$."
       },
       "options": [
-        {"id": "a", "text": "$36$ (since $\\text{lcm}(4, 9) = 36$)"},
-        {"id": "b", "text": "$13$ (just $4 + 9$)"},
-        {"id": "c", "text": "Only $4$ and $9$, nothing else"}
+        {
+          "id": "a",
+          "text": "$36$ (since $\\text{lcm}(4, 9) = 36$)"
+        },
+        {
+          "id": "b",
+          "text": "$13$ (just $4 + 9$)"
+        },
+        {
+          "id": "c",
+          "text": "Only $4$ and $9$, nothing else"
+        }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **LCM and divisibility:**\n\nIf $n$ is divisible by both $a$ and $b$ where $\\gcd(a, b) = 1$, then $n$ is divisible by $ab$.\n\n**For our case:**\n- $4 | 4536$ and $9 | 4536$\n- $\\gcd(4, 9) = 1$ (coprime)\n- Therefore $36 | 4536$\n\n**Verification:** $4536 \\div 36 = 126$ ✓\n\n**General principle:**\nIf $a | n$ and $b | n$, then $\\text{lcm}(a, b) | n$.\n\nHere: $\\text{lcm}(4, 9) = \\frac{4 \\times 9}{\\gcd(4, 9)} = \\frac{36}{1} = 36$",
+          "explanation": "Excellent! **LCM and divisibility:**\n\nIf $n$ is divisible by both $a$ and $b$ where $\\gcd(a, b) = 1$, then $n$ is divisible by $ab$.\n\n**For our case:**\n- $4 | 4536$ and $9 | 4536$\n- $\\gcd(4, 9) = 1$ (coprime)\n- Therefore $36 | 4536$\n\n**Verification:** $4536 \\div 36 = 126$ \u2713\n\n**General principle:**\nIf $a | n$ and $b | n$, then $\\text{lcm}(a, b) | n$.\n\nHere: $\\text{lcm}(4, 9) = \\frac{4 \\times 9}{\\gcd(4, 9)} = \\frac{36}{1} = 36$",
           "insight": "Divisible by coprime factors means divisible by their product!"
         },
         "incorrect": {
@@ -113,7 +182,12 @@
           "2": "Since $4$ and $9$ are coprime, also divisible by $4 \\times 9 = 36$!"
         }
       },
-      "resultState": {"description": "Also divisible by 36", "equations": ["36 | 4536"]}
+      "resultState": {
+        "description": "Also divisible by 36",
+        "equations": [
+          "36 | 4536"
+        ]
+      }
     }
   ],
   "summary": {
@@ -124,7 +198,30 @@
       "$4536 = 3 \\times 1512 = 4 \\times 1134 = 9 \\times 504$",
       "Since divisible by coprime $4$ and $9$, also divisible by $36$"
     ],
-    "fullSolution": "**Test $4536$ for divisibility by $3$, $4$, and $9$**\n\n---\n\n**Divisibility by 3:**\n\nRule: Sum of digits divisible by $3$\n\n$$4 + 5 + 3 + 6 = 18$$\n$$18 = 3 \\times 6$$ ✓\n\n**Answer:** Yes\n\n---\n\n**Divisibility by 4:**\n\nRule: Last two digits divisible by $4$\n\nLast two digits: $36$\n$$36 = 4 \\times 9$$ ✓\n\n**Answer:** Yes\n\n---\n\n**Divisibility by 9:**\n\nRule: Sum of digits divisible by $9$\n\n$$4 + 5 + 3 + 6 = 18$$\n$$18 = 9 \\times 2$$ ✓\n\n**Answer:** Yes\n\n---\n\n**Summary:** $\\boxed{4536 \\text{ is divisible by } 3, 4, 9, \\text{ and } 36}$",
-    "relatedProblems": ["number-theory-gcd-1", "number-theory-modular-arithmetic-1"]
-  }
+    "fullSolution": "**Test $4536$ for divisibility by $3$, $4$, and $9$**\n\n---\n\n**Divisibility by 3:**\n\nRule: Sum of digits divisible by $3$\n\n$$4 + 5 + 3 + 6 = 18$$\n$$18 = 3 \\times 6$$ \u2713\n\n**Answer:** Yes\n\n---\n\n**Divisibility by 4:**\n\nRule: Last two digits divisible by $4$\n\nLast two digits: $36$\n$$36 = 4 \\times 9$$ \u2713\n\n**Answer:** Yes\n\n---\n\n**Divisibility by 9:**\n\nRule: Sum of digits divisible by $9$\n\n$$4 + 5 + 3 + 6 = 18$$\n$$18 = 9 \\times 2$$ \u2713\n\n**Answer:** Yes\n\n---\n\n**Summary:** $\\boxed{4536 \\text{ is divisible by } 3, 4, 9, \\text{ and } 36}$",
+    "relatedProblems": [
+      "number-theory-gcd-1",
+      "number-theory-modular-arithmetic-1"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Modular Arithmetic",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "video",
+      "title": "Modular Arithmetic Explained",
+      "url": "https://www.youtube.com/watch?v=r0gYad8auYY",
+      "source": "Numberphile"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Number Theory",
+      "url": "https://artofproblemsolving.com/wiki/index.php/Number_theory",
+      "source": "Art of Problem Solving"
+    }
+  ]
 }

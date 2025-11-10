@@ -234,5 +234,25 @@
       "linear-algebra-eigenvalues-1",
       "differential-equations-second-order-homogeneous-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Eigenvectors Introduction",
+      "url": "https://www.khanacademy.org/math/linear-algebra/alternate-bases/eigen-everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "http://math.mit.edu/~gs/linearalgebra/ila0601.pdf",
+      "source": "MIT OCW"
+    }
+  ]
 }

@@ -5,7 +5,12 @@
   "topic": "Calculus",
   "difficulty": 4,
   "estimatedTime": 12,
-  "tags": ["limits", "epsilon-delta", "proofs", "calculus"],
+  "tags": [
+    "limits",
+    "epsilon-delta",
+    "proofs",
+    "calculus"
+  ],
   "statement": {
     "text": "Using the $\\epsilon$-$\\delta$ definition of a limit, prove that $\\lim_{x \\to 2} (3x + 1) = 7$."
   },
@@ -20,7 +25,9 @@
       "order": 1,
       "currentState": {
         "description": "We need to prove: For every $\\epsilon > 0$, there exists $\\delta > 0$ such that if $0 < |x - 2| < \\delta$, then $|(3x + 1) - 7| < \\epsilon$.",
-        "equations": ["\\lim_{x \\to 2} (3x + 1) = 7"]
+        "equations": [
+          "\\lim_{x \\to 2} (3x + 1) = 7"
+        ]
       },
       "prompt": {
         "question": "What should be our first step in this proof?",
@@ -63,7 +70,9 @@
       "order": 2,
       "currentState": {
         "description": "We've simplified to:",
-        "equations": ["|(3x + 1) - 7| = 3|x - 2|"]
+        "equations": [
+          "|(3x + 1) - 7| = 3|x - 2|"
+        ]
       },
       "prompt": {
         "question": "Now that we have $|(3x + 1) - 7| = 3|x - 2|$, what inequality do we need to satisfy?",
@@ -106,7 +115,9 @@
       "order": 3,
       "currentState": {
         "description": "We know that if $|x - 2| < \\frac{\\epsilon}{3}$, then $3|x - 2| < \\epsilon$, which is what we need.",
-        "equations": ["|x - 2| < \\frac{\\epsilon}{3} \\implies 3|x - 2| < \\epsilon"]
+        "equations": [
+          "|x - 2| < \\frac{\\epsilon}{3} \\implies 3|x - 2| < \\epsilon"
+        ]
       },
       "prompt": {
         "question": "Based on our analysis, how should we choose $\\delta$?",
@@ -139,7 +150,9 @@
       },
       "resultState": {
         "description": "We choose:",
-        "equations": ["\\delta = \\frac{\\epsilon}{3}"]
+        "equations": [
+          "\\delta = \\frac{\\epsilon}{3}"
+        ]
       }
     },
     {
@@ -147,7 +160,9 @@
       "order": 4,
       "currentState": {
         "description": "We've chosen $\\delta = \\frac{\\epsilon}{3}$. Now we verify the proof works.",
-        "equations": ["\\delta = \\frac{\\epsilon}{3}"]
+        "equations": [
+          "\\delta = \\frac{\\epsilon}{3}"
+        ]
       },
       "prompt": {
         "question": "How do we complete the proof?",
@@ -156,7 +171,7 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Show: If $0 < |x - 2| < \\delta = \\frac{\\epsilon}{3}$, then $|(3x + 1) - 7| = 3|x - 2| < 3 \\cdot \\frac{\\epsilon}{3} = \\epsilon$ ✓"
+          "text": "Show: If $0 < |x - 2| < \\delta = \\frac{\\epsilon}{3}$, then $|(3x + 1) - 7| = 3|x - 2| < 3 \\cdot \\frac{\\epsilon}{3} = \\epsilon$ \u2713"
         },
         {
           "id": "opt-2",
@@ -195,5 +210,25 @@
     ],
     "fullSolution": "Given $\\epsilon > 0$, choose $\\delta = \\frac{\\epsilon}{3}$. Then if $0 < |x - 2| < \\delta$, we have:\n$|(3x + 1) - 7| = |3x - 6| = 3|x - 2| < 3\\delta = 3 \\cdot \\frac{\\epsilon}{3} = \\epsilon$\nTherefore, $\\lim_{x \\to 2} (3x + 1) = 7$.",
     "relatedProblems": []
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Limits Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-limits-and-continuity/cs1-limits-intro/v/introduction-to-limits-hd",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Limits",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Limits.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "article",
+      "title": "An Intuitive Introduction to Limits",
+      "url": "https://betterexplained.com/articles/an-intuitive-introduction-to-limits/",
+      "source": "Better Explained"
+    }
+  ]
 }

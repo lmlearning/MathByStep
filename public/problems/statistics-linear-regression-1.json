@@ -190,5 +190,25 @@
       "statistics-hypothesis-testing-1",
       "probability-random-variables-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Probability and Statistics",
+      "url": "https://www.khanacademy.org/math/statistics-probability",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Probability",
+      "url": "https://www.mathsisfun.com/data/probability.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "StatQuest",
+      "url": "https://www.youtube.com/c/joshstarmer",
+      "source": "StatQuest"
+    }
+  ]
 }

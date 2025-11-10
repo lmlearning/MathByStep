@@ -95,7 +95,7 @@
         }
       },
       "resultState": {
-        "description": "Compute E[X²]"
+        "description": "Compute E[X\u00b2]"
       }
     },
     {
@@ -151,5 +151,25 @@
       "probability-bayes-theorem-1",
       "statistics-hypothesis-testing-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Probability Basics",
+      "url": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Introduction to Probability",
+      "url": "https://www.mathsisfun.com/data/probability.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Probability Fundamentals",
+      "url": "https://www.youtube.com/watch?v=uzkc-qNVoOk",
+      "source": "StatQuest"
+    }
+  ]
 }

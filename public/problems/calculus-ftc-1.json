@@ -247,7 +247,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! $\\frac{f(x) \\cdot h}{h} = f(x)$ for $h \\neq 0$, and $f(x)$ doesn't depend on $h$, so the limit is $f(x)$. Therefore, $F'(x) = f(x)$! ∎",
+          "explanation": "Excellent! $\\frac{f(x) \\cdot h}{h} = f(x)$ for $h \\neq 0$, and $f(x)$ doesn't depend on $h$, so the limit is $f(x)$. Therefore, $F'(x) = f(x)$! \u220e",
           "insight": "The Fundamental Theorem of Calculus Part 1 shows that differentiation and integration are inverse operations."
         },
         "incorrect": {
@@ -267,10 +267,30 @@
       "Continuity of $f$ is essential to justify the approximation step",
       "This theorem shows differentiation 'undoes' integration"
     ],
-    "fullSolution": "**Theorem (FTC Part 1):** If $f$ is continuous on $[a,b]$ and $F(x) = \\int_a^x f(t)dt$, then $F'(x) = f(x)$.\n\n**Proof:**\n\n$$F'(x) = \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h}$$\n$$= \\lim_{h \\to 0} \\frac{\\int_a^{x+h} f(t)dt - \\int_a^x f(t)dt}{h}$$\n$$= \\lim_{h \\to 0} \\frac{1}{h}\\int_x^{x+h} f(t)dt$$\n\nSince $f$ is continuous at $x$, for small $|h|$, $f(t) \\approx f(x)$ on $[x, x+h]$.\n\nThus: $\\int_x^{x+h} f(t)dt \\approx f(x) \\cdot h$\n\nTherefore:\n$$F'(x) = \\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = f(x)$$ ∎",
+    "fullSolution": "**Theorem (FTC Part 1):** If $f$ is continuous on $[a,b]$ and $F(x) = \\int_a^x f(t)dt$, then $F'(x) = f(x)$.\n\n**Proof:**\n\n$$F'(x) = \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h}$$\n$$= \\lim_{h \\to 0} \\frac{\\int_a^{x+h} f(t)dt - \\int_a^x f(t)dt}{h}$$\n$$= \\lim_{h \\to 0} \\frac{1}{h}\\int_x^{x+h} f(t)dt$$\n\nSince $f$ is continuous at $x$, for small $|h|$, $f(t) \\approx f(x)$ on $[x, x+h]$.\n\nThus: $\\int_x^{x+h} f(t)dt \\approx f(x) \\cdot h$\n\nTherefore:\n$$F'(x) = \\lim_{h \\to 0} \\frac{f(x) \\cdot h}{h} = f(x)$$ \u220e",
     "relatedProblems": [
       "calculus-integration-substitution-1",
       "calculus-mvt-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Calculus 1",
+      "url": "https://www.khanacademy.org/math/calculus-1",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Calculus Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

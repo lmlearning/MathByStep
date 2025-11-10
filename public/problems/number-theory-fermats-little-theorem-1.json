@@ -151,5 +151,25 @@
       "number-theory-modular-arithmetic-1",
       "abstract-algebra-cyclic-groups-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Prime Numbers",
+      "url": "https://www.youtube.com/watch?v=mIStB5X4U8M",
+      "source": "Numberphile"
+    },
+    {
+      "type": "article",
+      "title": "Prime Numbers",
+      "url": "https://www.mathsisfun.com/prime_numbers.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Fundamental Theorem of Arithmetic",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/comp-number-theory/v/the-fundamental-theorem-of-arithmetic-1",
+      "source": "Khan Academy"
+    }
+  ]
 }

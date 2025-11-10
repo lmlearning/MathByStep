@@ -145,12 +145,12 @@
       },
       "prompt": {
         "question": "Do all subgroup orders divide $|G| = 12$?",
-        "hint": "Subgroup orders are 1, 2, 3, 4, 6, 12. All divide 12! ✓"
+        "hint": "Subgroup orders are 1, 2, 3, 4, 6, 12. All divide 12! \u2713"
       },
       "options": [
         {
           "id": "a",
-          "text": "Yes! Subgroup orders {1, 2, 3, 4, 6, 12} all divide 12. Lagrange's Theorem verified ✓"
+          "text": "Yes! Subgroup orders {1, 2, 3, 4, 6, 12} all divide 12. Lagrange's Theorem verified \u2713"
         },
         {
           "id": "b",
@@ -185,10 +185,30 @@
       "Lagrange's Theorem: $|H|$ divides $|G|$ for all $H \\leq G$",
       "For cyclic groups: exactly one subgroup per divisor of $|G|$"
     ],
-    "fullSolution": "**Find all subgroups of $\\mathbb{Z}_{12}$**\n\n**Divisors of 12:** 1, 2, 3, 4, 6, 12\n\nFor cyclic group $\\mathbb{Z}_n$, there's exactly one subgroup of each order dividing $n$:\n\n1. **Order 1:** $\\langle 0 \\rangle = \\{0\\}$\n2. **Order 2:** $\\langle 6 \\rangle = \\{0, 6\\}$\n3. **Order 3:** $\\langle 4 \\rangle = \\{0, 4, 8\\}$\n4. **Order 4:** $\\langle 3 \\rangle = \\{0, 3, 6, 9\\}$\n5. **Order 6:** $\\langle 2 \\rangle = \\{0, 2, 4, 6, 8, 10\\}$\n6. **Order 12:** $\\langle 1 \\rangle = \\mathbb{Z}_{12}$\n\n**Lagrange's Theorem:** For all $H \\leq G$: $|H| \\mid |G|$\n\nVerify: All subgroup orders {1, 2, 3, 4, 6, 12} divide $|G| = 12$ ✓\n\n**Total subgroups: 6**",
+    "fullSolution": "**Find all subgroups of $\\mathbb{Z}_{12}$**\n\n**Divisors of 12:** 1, 2, 3, 4, 6, 12\n\nFor cyclic group $\\mathbb{Z}_n$, there's exactly one subgroup of each order dividing $n$:\n\n1. **Order 1:** $\\langle 0 \\rangle = \\{0\\}$\n2. **Order 2:** $\\langle 6 \\rangle = \\{0, 6\\}$\n3. **Order 3:** $\\langle 4 \\rangle = \\{0, 4, 8\\}$\n4. **Order 4:** $\\langle 3 \\rangle = \\{0, 3, 6, 9\\}$\n5. **Order 6:** $\\langle 2 \\rangle = \\{0, 2, 4, 6, 8, 10\\}$\n6. **Order 12:** $\\langle 1 \\rangle = \\mathbb{Z}_{12}$\n\n**Lagrange's Theorem:** For all $H \\leq G$: $|H| \\mid |G|$\n\nVerify: All subgroup orders {1, 2, 3, 4, 6, 12} divide $|G| = 12$ \u2713\n\n**Total subgroups: 6**",
     "relatedProblems": [
       "abstract-algebra-group-1",
       "abstract-algebra-cyclic-groups-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Abstract Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Abstract Algebra",
+      "url": "http://abstract.ups.edu/aata/aata.html",
+      "source": "Open Textbook"
+    },
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "source": "Mathologer"
+    }
+  ]
 }

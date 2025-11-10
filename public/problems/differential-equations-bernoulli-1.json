@@ -190,5 +190,25 @@
       "differential-equations-first-order-linear-1",
       "differential-equations-separable-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "U-Substitution",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-integration-and-accumulation-of-change/cs1-integration-basics/v/indefinite-integrals-of-x-raised-to-a-power",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Substitution Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/SubstitutionRuleIndefinite.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "U-Substitution Method",
+      "url": "https://www.youtube.com/watch?v=77HgdKhug9E",
+      "source": "Organic Chemistry Tutor"
+    }
+  ]
 }

@@ -186,10 +186,30 @@
       "Even cycles have $\\chi(C_n) = 2$ for even $n$",
       "$\\chi(C_5) = 3$"
     ],
-    "fullSolution": "**Determine $\\chi(K_{3,4})$ and $\\chi(C_5)$**\n\n**Part 1: $K_{3,4}$ (complete bipartite graph)**\n\n$K_{3,4}$ has:\n- Part $A$: 3 vertices\n- Part $B$: 4 vertices  \n- Edges: all possible edges between $A$ and $B$ (none within $A$ or $B$)\n\n**Coloring:**\n- Color all vertices in $A$ red\n- Color all vertices in $B$ blue\n\nThis is a valid 2-coloring:\n- Vertices in $A$ have no edges between them (all red, no conflicts)\n- Vertices in $B$ have no edges between them (all blue, no conflicts)\n- Edges only go between $A$ and $B$ (red-blue, different colors ✓)\n\n**Upper bound:** $\\chi(K_{3,4}) \\leq 2$\n\n**Lower bound:** $K_{3,4}$ has edges, so $\\chi(K_{3,4}) \\geq 2$\n\n**Answer:** $\\chi(K_{3,4}) = 2$\n\n**Part 2: $C_5$ (5-cycle)**\n\n$C_5$ has vertices $v_1, v_2, v_3, v_4, v_5$ with edges:\n$$v_1\\!-\\!v_2\\!-\\!v_3\\!-\\!v_4\\!-\\!v_5\\!-\\!v_1$$\n\n**Try 2 colors:** R-B-R-B-?\n- $v_1$: Red\n- $v_2$: Blue (adjacent to $v_1$)\n- $v_3$: Red (adjacent to $v_2$)\n- $v_4$: Blue (adjacent to $v_3$)\n- $v_5$: adjacent to $v_4$ (blue) AND $v_1$ (red) - need a third color!\n\n**3-coloring:** R-B-R-B-G ✓\n- $v_1$: Red\n- $v_2$: Blue\n- $v_3$: Red\n- $v_4$: Blue  \n- $v_5$: Green\n\nAll adjacent pairs have different colors ✓\n\n**Answer:** $\\chi(C_5) = 3$\n\n**General rule:** For cycle $C_n$:\n$$\\chi(C_n) = \\begin{cases} 2 & \\text{if } n \\text{ even} \\\\\\ 3 & \\text{if } n \\text{ odd} \\end{cases}$$",
+    "fullSolution": "**Determine $\\chi(K_{3,4})$ and $\\chi(C_5)$**\n\n**Part 1: $K_{3,4}$ (complete bipartite graph)**\n\n$K_{3,4}$ has:\n- Part $A$: 3 vertices\n- Part $B$: 4 vertices  \n- Edges: all possible edges between $A$ and $B$ (none within $A$ or $B$)\n\n**Coloring:**\n- Color all vertices in $A$ red\n- Color all vertices in $B$ blue\n\nThis is a valid 2-coloring:\n- Vertices in $A$ have no edges between them (all red, no conflicts)\n- Vertices in $B$ have no edges between them (all blue, no conflicts)\n- Edges only go between $A$ and $B$ (red-blue, different colors \u2713)\n\n**Upper bound:** $\\chi(K_{3,4}) \\leq 2$\n\n**Lower bound:** $K_{3,4}$ has edges, so $\\chi(K_{3,4}) \\geq 2$\n\n**Answer:** $\\chi(K_{3,4}) = 2$\n\n**Part 2: $C_5$ (5-cycle)**\n\n$C_5$ has vertices $v_1, v_2, v_3, v_4, v_5$ with edges:\n$$v_1\\!-\\!v_2\\!-\\!v_3\\!-\\!v_4\\!-\\!v_5\\!-\\!v_1$$\n\n**Try 2 colors:** R-B-R-B-?\n- $v_1$: Red\n- $v_2$: Blue (adjacent to $v_1$)\n- $v_3$: Red (adjacent to $v_2$)\n- $v_4$: Blue (adjacent to $v_3$)\n- $v_5$: adjacent to $v_4$ (blue) AND $v_1$ (red) - need a third color!\n\n**3-coloring:** R-B-R-B-G \u2713\n- $v_1$: Red\n- $v_2$: Blue\n- $v_3$: Red\n- $v_4$: Blue  \n- $v_5$: Green\n\nAll adjacent pairs have different colors \u2713\n\n**Answer:** $\\chi(C_5) = 3$\n\n**General rule:** For cycle $C_n$:\n$$\\chi(C_n) = \\begin{cases} 2 & \\text{if } n \\text{ even} \\\\\\ 3 & \\text{if } n \\text{ odd} \\end{cases}$$",
     "relatedProblems": [
       "graph-theory-euler-path-1",
       "discrete-math-combinatorics-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Discrete Mathematics",
+      "url": "https://www.youtube.com/playlist?list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz",
+      "source": "Trefor Bazett"
+    },
+    {
+      "type": "article",
+      "title": "Discrete Math",
+      "url": "https://www.mathsisfun.com/sets/index.html",
+      "source": "Math is Fun"
+    },
+    {
+      "type": "video",
+      "title": "Combinatorics",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb",
+      "source": "Khan Academy"
+    }
+  ]
 }

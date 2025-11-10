@@ -48,7 +48,7 @@
       "feedback": {
         "correct": {
           "explanation": "Correct! Simpson's Rule uses pattern:\n$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \\ldots + 4f(x_{n-1}) + f(x_n)]$$\n\nwhere $h = \\frac{b-a}{n}$ and $n$ must be even.\n\n**Pattern:** First and last terms have coefficient 1, odd indices get 4, even indices (except endpoints) get 2.",
-          "insight": "Simpson's Rule is exact for polynomials of degree ≤ 3! It's based on approximating $f$ with parabolas (quadratic interpolation)."
+          "insight": "Simpson's Rule is exact for polynomials of degree \u2264 3! It's based on approximating $f$ with parabolas (quadratic interpolation)."
         },
         "incorrect": {
           "1": "That's the Trapezoidal Rule, which uses linear interpolation. Simpson's Rule has coefficient $\\frac{h}{3}$ and pattern 1,4,2,4,...,1.",
@@ -57,7 +57,9 @@
       },
       "resultState": {
         "description": "Simpson's Rule formula identified",
-        "equations": ["\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + \\ldots + f(x_n)]"]
+        "equations": [
+          "\\int_a^b f(x) \\, dx \\approx \\frac{h}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + \\ldots + f(x_n)]"
+        ]
       }
     },
     {
@@ -65,7 +67,9 @@
       "order": 2,
       "currentState": {
         "description": "Using $n = 2$ subintervals on $[0, 1]$.",
-        "equations": ["\\int_0^1 e^{-x^2} \\, dx \\approx ?"]
+        "equations": [
+          "\\int_0^1 e^{-x^2} \\, dx \\approx ?"
+        ]
       },
       "prompt": {
         "question": "What are the grid points $x_0, x_1, x_2$ and step size $h$?",
@@ -98,7 +102,10 @@
       },
       "resultState": {
         "description": "Grid established",
-        "equations": ["h = 0.5", "x_0 = 0, \\, x_1 = 0.5, \\, x_2 = 1"]
+        "equations": [
+          "h = 0.5",
+          "x_0 = 0, \\, x_1 = 0.5, \\, x_2 = 1"
+        ]
       }
     },
     {
@@ -106,7 +113,9 @@
       "order": 3,
       "currentState": {
         "description": "Grid: $x_0 = 0, x_1 = 0.5, x_2 = 1$; $h = 0.5$.",
-        "equations": ["f(x) = e^{-x^2}"]
+        "equations": [
+          "f(x) = e^{-x^2}"
+        ]
       },
       "prompt": {
         "question": "Evaluate $f(x) = e^{-x^2}$ at the grid points.",
@@ -187,7 +196,9 @@
       },
       "resultState": {
         "description": "Simpson's Rule approximation complete",
-        "equations": ["\\int_0^1 e^{-x^2} \\, dx \\approx 0.7472"]
+        "equations": [
+          "\\int_0^1 e^{-x^2} \\, dx \\approx 0.7472"
+        ]
       }
     }
   ],
@@ -204,5 +215,25 @@
       "numerical-analysis-euler-method-1",
       "calculus-integration-substitution-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Numerical Methods",
+      "url": "https://www.youtube.com/playlist?list=PLMrJAkhIeNNQromC7gB8LHTRu2UGqOh0a",
+      "source": "Steve Brunton"
+    },
+    {
+      "type": "article",
+      "title": "Numerical Analysis",
+      "url": "https://www.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/",
+      "source": "University of Maryland"
+    },
+    {
+      "type": "video",
+      "title": "Numerical Computing",
+      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+      "source": "Khan Academy"
+    }
+  ]
 }

@@ -58,7 +58,9 @@
       },
       "resultState": {
         "description": "General solution for $\\lambda > 0$",
-        "equations": ["y(x) = A\\cos(\\sqrt{\\lambda}\\, x) + B\\sin(\\sqrt{\\lambda}\\, x)"]
+        "equations": [
+          "y(x) = A\\cos(\\sqrt{\\lambda}\\, x) + B\\sin(\\sqrt{\\lambda}\\, x)"
+        ]
       }
     },
     {
@@ -98,7 +100,9 @@
       },
       "resultState": {
         "description": "After first BC",
-        "equations": ["y(x) = B\\sin(\\sqrt{\\lambda}\\, x)"]
+        "equations": [
+          "y(x) = B\\sin(\\sqrt{\\lambda}\\, x)"
+        ]
       }
     },
     {
@@ -128,7 +132,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! Apply second boundary condition:\n\n$$y(\\pi) = B\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n\n**Two cases:**\n1. $B = 0$ → trivial solution $y \\equiv 0$ (not interesting)\n2. $B \\neq 0$ → $\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$\n\n**For case 2:**\n$$\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n$$\\sqrt{\\lambda}\\, \\pi = n\\pi \\quad (n \\in \\mathbb{Z})$$\n$$\\sqrt{\\lambda} = n$$\n$$\\lambda = n^2$$\n\nSince $\\lambda > 0$, we need $n > 0$:\n$$\\boxed{\\lambda_n = n^2 \\quad \\text{for } n = 1, 2, 3, \\ldots}$$\n\n**Eigenvalues:** $\\lambda_1 = 1, \\lambda_2 = 4, \\lambda_3 = 9, \\lambda_4 = 16, \\ldots$",
+          "explanation": "Excellent! Apply second boundary condition:\n\n$$y(\\pi) = B\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n\n**Two cases:**\n1. $B = 0$ \u2192 trivial solution $y \\equiv 0$ (not interesting)\n2. $B \\neq 0$ \u2192 $\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$\n\n**For case 2:**\n$$\\sin(\\sqrt{\\lambda}\\, \\pi) = 0$$\n$$\\sqrt{\\lambda}\\, \\pi = n\\pi \\quad (n \\in \\mathbb{Z})$$\n$$\\sqrt{\\lambda} = n$$\n$$\\lambda = n^2$$\n\nSince $\\lambda > 0$, we need $n > 0$:\n$$\\boxed{\\lambda_n = n^2 \\quad \\text{for } n = 1, 2, 3, \\ldots}$$\n\n**Eigenvalues:** $\\lambda_1 = 1, \\lambda_2 = 4, \\lambda_3 = 9, \\lambda_4 = 16, \\ldots$",
           "insight": "Boundary conditions quantize the eigenvalues - only discrete values work!"
         },
         "incorrect": {
@@ -138,7 +142,9 @@
       },
       "resultState": {
         "description": "Eigenvalues found",
-        "equations": ["\\lambda_n = n^2, \\quad n = 1, 2, 3, \\ldots"]
+        "equations": [
+          "\\lambda_n = n^2, \\quad n = 1, 2, 3, \\ldots"
+        ]
       }
     },
     {
@@ -168,7 +174,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Eigenfunctions:**\n\nFor each eigenvalue $\\lambda_n = n^2$, the corresponding eigenfunction is:\n$$y_n(x) = \\sin(nx)$$\n\n(We can set $B_n = 1$ by convention, or normalize differently.)\n\n**First few eigenfunctions:**\n- $n = 1$: $\\lambda_1 = 1$, $y_1(x) = \\sin(x)$\n- $n = 2$: $\\lambda_2 = 4$, $y_2(x) = \\sin(2x)$\n- $n = 3$: $\\lambda_3 = 9$, $y_3(x) = \\sin(3x)$\n- $n = 4$: $\\lambda_4 = 16$, $y_4(x) = \\sin(4x)$\n\n**Properties:**\n- All satisfy $y_n(0) = y_n(\\pi) = 0$ ✓\n- Orthogonal: $\\int_0^\\pi \\sin(mx)\\sin(nx)\\, dx = 0$ for $m \\neq n$\n- Complete: Any function satisfying BCs can be expanded in this basis (Fourier sine series)\n\n**Application:** These form the basis for Fourier sine series on $[0, \\pi]$!",
+          "explanation": "Perfect! **Eigenfunctions:**\n\nFor each eigenvalue $\\lambda_n = n^2$, the corresponding eigenfunction is:\n$$y_n(x) = \\sin(nx)$$\n\n(We can set $B_n = 1$ by convention, or normalize differently.)\n\n**First few eigenfunctions:**\n- $n = 1$: $\\lambda_1 = 1$, $y_1(x) = \\sin(x)$\n- $n = 2$: $\\lambda_2 = 4$, $y_2(x) = \\sin(2x)$\n- $n = 3$: $\\lambda_3 = 9$, $y_3(x) = \\sin(3x)$\n- $n = 4$: $\\lambda_4 = 16$, $y_4(x) = \\sin(4x)$\n\n**Properties:**\n- All satisfy $y_n(0) = y_n(\\pi) = 0$ \u2713\n- Orthogonal: $\\int_0^\\pi \\sin(mx)\\sin(nx)\\, dx = 0$ for $m \\neq n$\n- Complete: Any function satisfying BCs can be expanded in this basis (Fourier sine series)\n\n**Application:** These form the basis for Fourier sine series on $[0, \\pi]$!",
           "insight": "Eigenfunctions of BVPs form orthogonal bases for function spaces!"
         },
         "incorrect": {
@@ -178,7 +184,9 @@
       },
       "resultState": {
         "description": "Eigenfunctions found",
-        "equations": ["y_n(x) = \\sin(nx), \\quad n = 1, 2, 3, \\ldots"]
+        "equations": [
+          "y_n(x) = \\sin(nx), \\quad n = 1, 2, 3, \\ldots"
+        ]
       }
     }
   ],
@@ -197,5 +205,25 @@
       "differential-equations-second-order-homogeneous-1",
       "calculus-power-series-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Differential Equations",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Differential Equations Course",
+      "url": "https://www.khanacademy.org/math/differential-equations",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Differential Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/DE.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

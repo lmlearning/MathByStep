@@ -52,7 +52,7 @@
         },
         "incorrect": {
           "1": "The multiplication is defined because both matrices are $2 \\times 2$ (inner dimensions match).",
-          "2": "The result dimension is (rows of A) × (columns of B) = $2 \\times 2$, not $2 \\times 4$."
+          "2": "The result dimension is (rows of A) \u00d7 (columns of B) = $2 \\times 2$, not $2 \\times 4$."
         }
       },
       "resultState": {
@@ -63,7 +63,7 @@
       "id": "step-2",
       "order": 2,
       "currentState": {
-        "expression": "$(AB)_{11} = $ (row 1 of A) · (column 1 of B)",
+        "expression": "$(AB)_{11} = $ (row 1 of A) \u00b7 (column 1 of B)",
         "description": "Each entry is a dot product of a row from A with a column from B."
       },
       "prompt": {
@@ -108,7 +108,7 @@
       },
       "prompt": {
         "question": "What is $AB$?",
-        "hint": "Compute each entry: $(AB)_{ij} = $ (row $i$ of A) · (column $j$ of B)."
+        "hint": "Compute each entry: $(AB)_{ij} = $ (row $i$ of A) \u00b7 (column $j$ of B)."
       },
       "options": [
         {
@@ -148,7 +148,7 @@
       },
       "prompt": {
         "question": "What is $BA$?",
-        "hint": "Apply the same process: $(BA)_{ij} = $ (row $i$ of B) · (column $j$ of A)."
+        "hint": "Apply the same process: $(BA)_{ij} = $ (row $i$ of B) \u00b7 (column $j$ of A)."
       },
       "options": [
         {
@@ -182,7 +182,7 @@
   ],
   "summary": {
     "keyInsights": [
-      "Matrix multiplication: $(AB)_{ij} = \\sum_k a_{ik}b_{kj}$ (row $i$ · column $j$)",
+      "Matrix multiplication: $(AB)_{ij} = \\sum_k a_{ik}b_{kj}$ (row $i$ \u00b7 column $j$)",
       "Multiplication is defined when inner dimensions match: $A_{m \\times n} \\cdot B_{n \\times p} = C_{m \\times p}$",
       "Matrix multiplication is NOT commutative: generally $AB \\neq BA$",
       "Order matters in matrix multiplication"
@@ -191,5 +191,25 @@
     "relatedProblems": [
       "algebra-systems-linear-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Matrix Operations",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "video",
+      "title": "Matrices - Essence of Linear Algebra",
+      "url": "https://www.youtube.com/watch?v=kYB8IZa5AuE",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "article",
+      "title": "Matrix Algebra",
+      "url": "https://www.mathsisfun.com/algebra/matrix-introduction.html",
+      "source": "Math is Fun"
+    }
+  ]
 }

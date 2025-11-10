@@ -34,7 +34,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $\\phi(a+b) = (a+b) \\bmod 6 = (a \\bmod 6) + (b \\bmod 6) = \\phi(a) + \\phi(b)$ ✓"
+          "text": "Yes: $\\phi(a+b) = (a+b) \\bmod 6 = (a \\bmod 6) + (b \\bmod 6) = \\phi(a) + \\phi(b)$ \u2713"
         },
         {
           "id": "b",
@@ -186,10 +186,30 @@
       "Image: $\\text{Im}(\\phi) = \\mathbb{Z}_6$ (surjective)",
       "First Isomorphism Theorem: $\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$"
     ],
-    "fullSolution": "**Analyze $\\phi: \\mathbb{Z} \\to \\mathbb{Z}_6$ where $\\phi(n) = n \\bmod 6$**\n\n**Verify homomorphism:**\nFor any $a, b \\in \\mathbb{Z}$:\n$$\\phi(a+b) = (a+b) \\bmod 6$$\nBy properties of modular arithmetic:\n$$= (a \\bmod 6) + (b \\bmod 6) \\pmod{6}$$\n$$= \\phi(a) + \\phi(b) \\text{ in } \\mathbb{Z}_6$$\nSo $\\phi$ is a homomorphism ✓\n\n**Kernel:**\n$$\\ker(\\phi) = \\{n \\in \\mathbb{Z} : \\phi(n) = 0\\}$$\n$$= \\{n \\in \\mathbb{Z} : n \\equiv 0 \\pmod{6}\\}$$\n$$= \\{6k : k \\in \\mathbb{Z}\\} = 6\\mathbb{Z}$$\n\n**Image:**\n$$\\text{Im}(\\phi) = \\{\\phi(n) : n \\in \\mathbb{Z}\\}$$\nFor any $r \\in \\{0,1,2,3,4,5\\}$, we have $\\phi(r) = r$.\n$$\\text{Im}(\\phi) = \\mathbb{Z}_6$$\n\n**First Isomorphism Theorem:**\n$$\\mathbb{Z}/\\ker(\\phi) \\cong \\text{Im}(\\phi)$$\n$$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$$",
+    "fullSolution": "**Analyze $\\phi: \\mathbb{Z} \\to \\mathbb{Z}_6$ where $\\phi(n) = n \\bmod 6$**\n\n**Verify homomorphism:**\nFor any $a, b \\in \\mathbb{Z}$:\n$$\\phi(a+b) = (a+b) \\bmod 6$$\nBy properties of modular arithmetic:\n$$= (a \\bmod 6) + (b \\bmod 6) \\pmod{6}$$\n$$= \\phi(a) + \\phi(b) \\text{ in } \\mathbb{Z}_6$$\nSo $\\phi$ is a homomorphism \u2713\n\n**Kernel:**\n$$\\ker(\\phi) = \\{n \\in \\mathbb{Z} : \\phi(n) = 0\\}$$\n$$= \\{n \\in \\mathbb{Z} : n \\equiv 0 \\pmod{6}\\}$$\n$$= \\{6k : k \\in \\mathbb{Z}\\} = 6\\mathbb{Z}$$\n\n**Image:**\n$$\\text{Im}(\\phi) = \\{\\phi(n) : n \\in \\mathbb{Z}\\}$$\nFor any $r \\in \\{0,1,2,3,4,5\\}$, we have $\\phi(r) = r$.\n$$\\text{Im}(\\phi) = \\mathbb{Z}_6$$\n\n**First Isomorphism Theorem:**\n$$\\mathbb{Z}/\\ker(\\phi) \\cong \\text{Im}(\\phi)$$\n$$\\mathbb{Z}/6\\mathbb{Z} \\cong \\mathbb{Z}_6$$",
     "relatedProblems": [
       "abstract-algebra-group-1",
       "abstract-algebra-subgroups-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Abstract Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Abstract Algebra",
+      "url": "http://abstract.ups.edu/aata/aata.html",
+      "source": "Open Textbook"
+    },
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "source": "Mathologer"
+    }
+  ]
 }

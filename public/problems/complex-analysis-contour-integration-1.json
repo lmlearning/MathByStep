@@ -234,5 +234,25 @@
       "complex-analysis-cauchy-riemann-1",
       "calculus-integration-by-parts-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Analysis",
+      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
+      "source": "MathTheBeautiful"
+    },
+    {
+      "type": "article",
+      "title": "Complex Analysis",
+      "url": "https://complex-analysis.com/",
+      "source": "Complex Analysis Course"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
+      "source": "3Blue1Brown"
+    }
+  ]
 }

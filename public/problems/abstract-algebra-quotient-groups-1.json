@@ -58,7 +58,9 @@
       },
       "resultState": {
         "description": "Quotient group defined as cosets",
-        "equations": ["G/H = \\{a + H : a \\in \\mathbb{Z}\\}"]
+        "equations": [
+          "G/H = \\{a + H : a \\in \\mathbb{Z}\\}"
+        ]
       }
     },
     {
@@ -66,7 +68,9 @@
       "order": 2,
       "currentState": {
         "description": "Quotient group $G/H$ contains cosets $a + H$.",
-        "equations": ["a + H = \\{a + 6k : k \\in \\mathbb{Z}\\}"]
+        "equations": [
+          "a + H = \\{a + 6k : k \\in \\mathbb{Z}\\}"
+        ]
       },
       "prompt": {
         "question": "How many distinct cosets are there in $G/H$?",
@@ -99,7 +103,9 @@
       },
       "resultState": {
         "description": "6 distinct cosets identified",
-        "equations": ["G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"]
+        "equations": [
+          "G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"
+        ]
       }
     },
     {
@@ -107,7 +113,9 @@
       "order": 3,
       "currentState": {
         "description": "Six cosets in $G/H$.",
-        "equations": ["G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"]
+        "equations": [
+          "G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"
+        ]
       },
       "prompt": {
         "question": "What is the group operation in $G/H$?",
@@ -140,7 +148,9 @@
       },
       "resultState": {
         "description": "Group operation defined",
-        "equations": ["(a+H) + (b+H) = (a+b) + H"]
+        "equations": [
+          "(a+H) + (b+H) = (a+b) + H"
+        ]
       }
     },
     {
@@ -148,7 +158,9 @@
       "order": 4,
       "currentState": {
         "description": "$G/H$ has 6 elements with operation $(a+H) + (b+H) = (a+b) + H$.",
-        "equations": ["G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"]
+        "equations": [
+          "G/H = \\{0+H, 1+H, 2+H, 3+H, 4+H, 5+H\\}"
+        ]
       },
       "prompt": {
         "question": "What familiar group is $G/H$ isomorphic to?",
@@ -197,5 +209,25 @@
       "abstract-algebra-group-1",
       "abstract-algebra-homomorphisms-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Abstract Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Abstract Algebra",
+      "url": "http://abstract.ups.edu/aata/aata.html",
+      "source": "Open Textbook"
+    },
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "source": "Mathologer"
+    }
+  ]
 }

@@ -207,7 +207,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $\\int x e^x dx = xe^x - e^x + C = e^x(x-1) + C$. We can verify by differentiating: $\\frac{d}{dx}[e^x(x-1)] = e^x(x-1) + e^x = xe^x$ ✓",
+          "explanation": "Perfect! $\\int x e^x dx = xe^x - e^x + C = e^x(x-1) + C$. We can verify by differentiating: $\\frac{d}{dx}[e^x(x-1)] = e^x(x-1) + e^x = xe^x$ \u2713",
           "insight": "Always add the constant of integration for indefinite integrals!"
         },
         "incorrect": {
@@ -227,10 +227,30 @@
       "The goal is to make $\\int v \\, du$ simpler than the original integral",
       "Verify your answer by differentiating"
     ],
-    "fullSolution": "$\\int x e^x dx$\n\nLet $u = x$, $dv = e^x dx$\n\nThen $du = dx$, $v = e^x$\n\nBy integration by parts:\n$$\\int x e^x dx = xe^x - \\int e^x dx = xe^x - e^x + C = e^x(x-1) + C$$\n\nVerification: $\\frac{d}{dx}[e^x(x-1)] = e^x + e^x(x-1)' = e^x + e^x = xe^x$ ✓",
+    "fullSolution": "$\\int x e^x dx$\n\nLet $u = x$, $dv = e^x dx$\n\nThen $du = dx$, $v = e^x$\n\nBy integration by parts:\n$$\\int x e^x dx = xe^x - \\int e^x dx = xe^x - e^x + C = e^x(x-1) + C$$\n\nVerification: $\\frac{d}{dx}[e^x(x-1)] = e^x + e^x(x-1)' = e^x + e^x = xe^x$ \u2713",
     "relatedProblems": [
       "calculus-integration-substitution-1",
       "calculus-ftc-1"
     ]
-  }
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Essence of Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Calculus 1",
+      "url": "https://www.khanacademy.org/math/calculus-1",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Calculus Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
 }

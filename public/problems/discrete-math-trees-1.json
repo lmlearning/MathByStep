@@ -5,31 +5,87 @@
   "topic": "Logic & Proofs",
   "difficulty": 2,
   "estimatedTime": 7,
-  "tags": ["logic", "sets"],
-  "statement": {"text": "Find $A \\cup B$ where $A = \\{1,2,3\\}$ and $B = \\{3,4,5\\}$."},
-  "objectives": ["Understand union", "Apply set operations"],
+  "tags": [
+    "logic",
+    "sets"
+  ],
+  "statement": {
+    "text": "Find $A \\cup B$ where $A = \\{1,2,3\\}$ and $B = \\{3,4,5\\}$."
+  },
+  "objectives": [
+    "Understand union",
+    "Apply set operations"
+  ],
   "steps": [
     {
       "id": "step-1",
       "order": 1,
-      "currentState": {"description": "Union."},
-      "prompt": {"question": "What is $A \\cup B$?", "hint": "All elements in either set."},
+      "currentState": {
+        "description": "Union."
+      },
+      "prompt": {
+        "question": "What is $A \\cup B$?",
+        "hint": "All elements in either set."
+      },
       "options": [
-        {"id": "a", "text": "$\\{1,2,3,4,5\\}$"},
-        {"id": "b", "text": "$\\{3\\}$"},
-        {"id": "c", "text": "$\\{1,2,4,5\\}$"}
+        {
+          "id": "a",
+          "text": "$\\{1,2,3,4,5\\}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\{3\\}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\{1,2,4,5\\}$"
+        }
       ],
       "correctOptionIndex": 0,
       "feedback": {
-        "correct": {"explanation": "Union contains all elements from both sets.", "insight": "Combine all!"},
-        "incorrect": {"1": "That's intersection!", "2": "Include 3!"}
+        "correct": {
+          "explanation": "Union contains all elements from both sets.",
+          "insight": "Combine all!"
+        },
+        "incorrect": {
+          "1": "That's intersection!",
+          "2": "Include 3!"
+        }
       },
-      "resultState": {"equations": ["A \\cup B = \\{1,2,3,4,5\\}"]}
+      "resultState": {
+        "equations": [
+          "A \\cup B = \\{1,2,3,4,5\\}"
+        ]
+      }
     }
   ],
   "summary": {
-    "keyInsights": ["Union: $A \\cup B = \\{1,2,3,4,5\\}$"],
+    "keyInsights": [
+      "Union: $A \\cup B = \\{1,2,3,4,5\\}$"
+    ],
     "fullSolution": "$A \\cup B = \\{1,2,3,4,5\\}$",
-    "relatedProblems": ["logic-set-theory-demorgans-1"]
-  }
+    "relatedProblems": [
+      "logic-set-theory-demorgans-1"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
+    }
+  ]
 }
