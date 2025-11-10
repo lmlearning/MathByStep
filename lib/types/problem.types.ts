@@ -30,6 +30,16 @@ export interface Problem {
     fullSolution: string;
     relatedProblems: string[];
   };
+
+  // Learning resources
+  learningResources?: LearningResource[];
+}
+
+export interface LearningResource {
+  type: 'video' | 'article';
+  title: string;
+  url: string;
+  source: string;
 }
 
 export interface Step {

@@ -7,6 +7,7 @@ import { getProblem } from '@/lib/data/problems';
 import { useProgress } from '@/lib/hooks/useProgress';
 import { ProblemStatement } from '@/components/problem/ProblemStatement';
 import { StepContainer } from '@/components/problem/StepContainer';
+import { LearningResources } from '@/components/problem/LearningResources';
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Button } from '@/components/shared/Button';
 import { shuffleOptions, ShuffledStep } from '@/lib/utils/shuffleOptions';
@@ -160,6 +161,11 @@ export default function ProblemPage() {
           isLastStep={isLastStep}
           shuffledToOriginalMap={shuffledStep?.shuffledToOriginalMap}
         />
+
+        {/* Learning Resources */}
+        {problem.learningResources && problem.learningResources.length > 0 && (
+          <LearningResources resources={problem.learningResources} />
+        )}
       </div>
     </div>
   );
