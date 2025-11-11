@@ -1,0 +1,115 @@
+{
+  "id": "algebra-final-1",
+  "type": "problem",
+  "title": "Algebra 1",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "algebra"
+  ],
+  "statement": {
+    "text": "Alg problem 1"
+  },
+  "objectives": [
+    "Solve",
+    "Understand"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "hint"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Right"
+        },
+        {
+          "id": "b",
+          "text": "Wrong"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good",
+          "insight": "Yes"
+        },
+        "incorrect": {
+          "1": "No"
+        }
+      },
+      "resultState": {
+        "description": "Done"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "hint"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Right"
+        },
+        {
+          "id": "b",
+          "text": "Wrong"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good",
+          "insight": "Yes"
+        },
+        "incorrect": {
+          "1": "No"
+        }
+      },
+      "resultState": {
+        "description": "Done"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Key"
+    ],
+    "fullSolution": "Sol",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Algebra",
+      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Algebra",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "source": "Paul's Notes"
+    },
+    {
+      "type": "video",
+      "title": "Algebra",
+      "url": "https://www.youtube.com/watch?v=m6f88UxqTJg",
+      "source": "Organic Chem Tutor"
+    }
+  ]
+}
