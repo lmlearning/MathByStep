@@ -73,7 +73,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $0+0+0 = 0$ \u2713"
+          "text": "Yes: $0+0+0 = 0$ ✓"
         },
         {
           "id": "b",
@@ -87,12 +87,12 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! $(0,0,0)$ satisfies $0+0+0=0$, so $\\vec{0} \\in W$. First condition satisfied! \u2713",
+          "explanation": "Correct! $(0,0,0)$ satisfies $0+0+0=0$, so $\\vec{0} \\in W$. First condition satisfied! ✓",
           "insight": "The zero vector must always be in any subspace."
         },
         "incorrect": {
           "1": "Check: does $(0,0,0)$ satisfy $x+y+z=0$? Yes: $0+0+0=0$.",
-          "2": "We can determine this by substituting: $0+0+0=0$ \u2713."
+          "2": "We can determine this by substituting: $0+0+0=0$ ✓."
         }
       },
       "resultState": {
@@ -113,7 +113,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$ \u2713"
+          "text": "Yes: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$ ✓"
         },
         {
           "id": "b",
@@ -127,7 +127,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! By rearranging and using the fact that both vectors satisfy the condition, we get $0+0=0$. Closure under addition verified! \u2713",
+          "explanation": "Perfect! By rearranging and using the fact that both vectors satisfy the condition, we get $0+0=0$. Closure under addition verified! ✓",
           "insight": "Linear conditions like $x+y+z=0$ preserve closure under addition."
         },
         "incorrect": {
@@ -153,7 +153,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$ \u2713"
+          "text": "Yes: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$ ✓"
         },
         {
           "id": "b",
@@ -167,7 +167,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! Since $x+y+z=0$, we have $c(x+y+z) = c \\cdot 0 = 0$ for any scalar $c$. Closure under scalar multiplication verified! \u2713",
+          "explanation": "Excellent! Since $x+y+z=0$, we have $c(x+y+z) = c \\cdot 0 = 0$ for any scalar $c$. Closure under scalar multiplication verified! ✓",
           "insight": "Factoring shows that scalar multiplication preserves the linear condition."
         },
         "incorrect": {
@@ -193,7 +193,7 @@
       "options": [
         {
           "id": "a",
-          "text": "$W$ is a subspace of $\\mathbb{R}^3$ \u2713"
+          "text": "$W$ is a subspace of $\\mathbb{R}^3$ ✓"
         },
         {
           "id": "b",
@@ -227,7 +227,7 @@
       "Geometrically, $W = \\{(x,y,z) : x+y+z=0\\}$ is a plane through the origin in $\\mathbb{R}^3$",
       "Non-homogeneous equations (like $x+y+z=1$) do NOT define subspaces (don't contain origin)"
     ],
-    "fullSolution": "$W = \\{(x,y,z) \\in \\mathbb{R}^3 : x+y+z=0\\}$\n\n(1) Zero vector: $(0,0,0)$ satisfies $0+0+0=0$ \u2713\n\n(2) Addition: If $\\vec{u}, \\vec{v} \\in W$, then $x_1+y_1+z_1=0$ and $x_2+y_2+z_2=0$.\n$(\\vec{u}+\\vec{v})$: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$ \u2713\n\n(3) Scalar mult: If $\\vec{u} \\in W$ and $c \\in \\mathbb{R}$, then $x+y+z=0$.\n$(c\\vec{u})$: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$ \u2713\n\nTherefore, $W$ is a subspace of $\\mathbb{R}^3$.",
+    "fullSolution": "$W = \\{(x,y,z) \\in \\mathbb{R}^3 : x+y+z=0\\}$\n\n(1) Zero vector: $(0,0,0)$ satisfies $0+0+0=0$ ✓\n\n(2) Addition: If $\\vec{u}, \\vec{v} \\in W$, then $x_1+y_1+z_1=0$ and $x_2+y_2+z_2=0$.\n$(\\vec{u}+\\vec{v})$: $(x_1+x_2)+(y_1+y_2)+(z_1+z_2) = (x_1+y_1+z_1)+(x_2+y_2+z_2) = 0+0 = 0$ ✓\n\n(3) Scalar mult: If $\\vec{u} \\in W$ and $c \\in \\mathbb{R}$, then $x+y+z=0$.\n$(c\\vec{u})$: $cx+cy+cz = c(x+y+z) = c \\cdot 0 = 0$ ✓\n\nTherefore, $W$ is a subspace of $\\mathbb{R}^3$.",
     "relatedProblems": [
       "algebra-systems-linear-1",
       "algebra-matrix-mult-1"
@@ -236,21 +236,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Algebra Course",
-      "url": "https://www.khanacademy.org/math/algebra",
+      "title": "Subspaces",
+      "url": "https://www.youtube.com/watch?v=kJTxJ1xPP2s",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Algebra Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Vector Subspaces",
+      "url": "https://brilliant.org/wiki/vector-subspaces/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Algebra Fundamentals",
-      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
-      "source": "Professor Leonard"
+      "title": "Subspace Test",
+      "url": "https://www.youtube.com/watch?v=sTUd0RlFu5M",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

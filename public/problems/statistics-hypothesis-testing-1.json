@@ -229,7 +229,7 @@
       "Decision rule: reject $H_0$ if $|t| > t_{critical}$ (or use p-value)",
       "Conclusion: Reject $H_0$; evidence suggests serving time > 5 minutes"
     ],
-    "fullSolution": "**Hypothesis Test**\\n\\n**Given:** $n=16$, $\\bar{x}=5.8$, $s=1.2$, $\\alpha=0.05$\\n\\n**Hypotheses:**\\n- $H_0: \\mu = 5$\\n- $H_a: \\mu > 5$ (right-tailed)\\n\\n**Test:** t-test (unknown $\\sigma$, small sample)\\n\\n**Test statistic:**\\n$$t = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}} = \\frac{5.8-5}{1.2/4} = \\frac{0.8}{0.3} = 2.67$$\\n\\n**Critical value:** df = 15, $\\alpha=0.05$ (one-tail): $t_{0.05,15} = 1.753$\\n\\n**Decision:** $t = 2.67 > 1.753$ \u2192 **Reject $H_0$**\\n\\n**Conclusion:** At 5% significance level, there is sufficient evidence to conclude that the average serving time exceeds 5 minutes.\\n\\n**p-value:** $P(t_{15} > 2.67) \\approx 0.009 < 0.05$ \u2713",
+    "fullSolution": "**Hypothesis Test**\\n\\n**Given:** $n=16$, $\\bar{x}=5.8$, $s=1.2$, $\\alpha=0.05$\\n\\n**Hypotheses:**\\n- $H_0: \\mu = 5$\\n- $H_a: \\mu > 5$ (right-tailed)\\n\\n**Test:** t-test (unknown $\\sigma$, small sample)\\n\\n**Test statistic:**\\n$$t = \\frac{\\bar{x}-\\mu_0}{s/\\sqrt{n}} = \\frac{5.8-5}{1.2/4} = \\frac{0.8}{0.3} = 2.67$$\\n\\n**Critical value:** df = 15, $\\alpha=0.05$ (one-tail): $t_{0.05,15} = 1.753$\\n\\n**Decision:** $t = 2.67 > 1.753$ → **Reject $H_0$**\\n\\n**Conclusion:** At 5% significance level, there is sufficient evidence to conclude that the average serving time exceeds 5 minutes.\\n\\n**p-value:** $P(t_{15} > 2.67) \\approx 0.009 < 0.05$ ✓",
     "relatedProblems": [
       "probability-bayes-theorem-1",
       "real-analysis-sequence-convergence-1"
@@ -238,21 +238,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Hypothesis Testing",
+      "url": "https://www.youtube.com/watch?v=bf3v2b_6GnI",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Hypothesis Testing",
+      "url": "https://brilliant.org/wiki/hypothesis-testing/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Hypothesis Testing - The T-Test",
+      "url": "https://www.youtube.com/watch?v=0zZYBALbZgg",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

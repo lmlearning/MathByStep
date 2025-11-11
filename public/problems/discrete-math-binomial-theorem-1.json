@@ -88,7 +88,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Expand $(x + 2)^4$:**\n\n**Binomial coefficients for $n=4$:** $\\binom{4}{0}=1, \\binom{4}{1}=4, \\binom{4}{2}=6, \\binom{4}{3}=4, \\binom{4}{4}=1$\n\n$$(x + 2)^4 = \\sum_{k=0}^{4} \\binom{4}{k} x^{4-k} 2^k$$\n\n**Term by term:**\n- $k=0$: $\\binom{4}{0}x^4(2^0) = 1 \\cdot x^4 \\cdot 1 = x^4$\n- $k=1$: $\\binom{4}{1}x^3(2^1) = 4 \\cdot x^3 \\cdot 2 = 8x^3$\n- $k=2$: $\\binom{4}{2}x^2(2^2) = 6 \\cdot x^2 \\cdot 4 = 24x^2$\n- $k=3$: $\\binom{4}{3}x^1(2^3) = 4 \\cdot x \\cdot 8 = 32x$\n- $k=4$: $\\binom{4}{4}x^0(2^4) = 1 \\cdot 1 \\cdot 16 = 16$\n\n**Sum:**\n$$(x + 2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16$$ \u2713",
+          "explanation": "Correct! **Expand $(x + 2)^4$:**\n\n**Binomial coefficients for $n=4$:** $\\binom{4}{0}=1, \\binom{4}{1}=4, \\binom{4}{2}=6, \\binom{4}{3}=4, \\binom{4}{4}=1$\n\n$$(x + 2)^4 = \\sum_{k=0}^{4} \\binom{4}{k} x^{4-k} 2^k$$\n\n**Term by term:**\n- $k=0$: $\\binom{4}{0}x^4(2^0) = 1 \\cdot x^4 \\cdot 1 = x^4$\n- $k=1$: $\\binom{4}{1}x^3(2^1) = 4 \\cdot x^3 \\cdot 2 = 8x^3$\n- $k=2$: $\\binom{4}{2}x^2(2^2) = 6 \\cdot x^2 \\cdot 4 = 24x^2$\n- $k=3$: $\\binom{4}{3}x^1(2^3) = 4 \\cdot x \\cdot 8 = 32x$\n- $k=4$: $\\binom{4}{4}x^0(2^4) = 1 \\cdot 1 \\cdot 16 = 16$\n\n**Sum:**\n$$(x + 2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16$$ ✓",
           "insight": "Each term combines coefficient, power of $x$, and power of $2$!"
         },
         "incorrect": {
@@ -130,7 +130,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Find coefficient of $x^2$ in $(2x - 1)^5$:**\n\n**General term:**\n$$\\binom{5}{k}(2x)^{5-k}(-1)^k$$\n\n**For $x^2$ term:** Need power of $x$ to be 2:\n$$(2x)^{5-k} \\text{ has } x^{5-k}$$\n\nSo $5 - k = 2 \\implies k = 3$\n\n**The $x^2$ term:**\n$$\\binom{5}{3}(2x)^{2}(-1)^3$$\n\n**Evaluate each part:**\n- $\\binom{5}{3} = \\frac{5!}{3!2!} = \\frac{5 \\cdot 4}{2} = 10$\n- $(2x)^2 = 4x^2$\n- $(-1)^3 = -1$\n\n**Multiply:**\n$$10 \\cdot 4x^2 \\cdot (-1) = -40x^2$$\n\n**Coefficient:** $-40$ \u2713",
+          "explanation": "Excellent! **Find coefficient of $x^2$ in $(2x - 1)^5$:**\n\n**General term:**\n$$\\binom{5}{k}(2x)^{5-k}(-1)^k$$\n\n**For $x^2$ term:** Need power of $x$ to be 2:\n$$(2x)^{5-k} \\text{ has } x^{5-k}$$\n\nSo $5 - k = 2 \\implies k = 3$\n\n**The $x^2$ term:**\n$$\\binom{5}{3}(2x)^{2}(-1)^3$$\n\n**Evaluate each part:**\n- $\\binom{5}{3} = \\frac{5!}{3!2!} = \\frac{5 \\cdot 4}{2} = 10$\n- $(2x)^2 = 4x^2$\n- $(-1)^3 = -1$\n\n**Multiply:**\n$$10 \\cdot 4x^2 \\cdot (-1) = -40x^2$$\n\n**Coefficient:** $-40$ ✓",
           "insight": "To find specific term, identify which $k$ gives desired power!"
         },
         "incorrect": {
@@ -172,7 +172,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Sum of binomial coefficients:**\n\n$$\\sum_{k=0}^{n} \\binom{n}{k} = 2^n$$\n\n**Proof:** Use binomial theorem with $a = b = 1$:\n$$(1 + 1)^n = \\sum_{k=0}^{n} \\binom{n}{k} 1^{n-k} 1^k$$\n$$2^n = \\sum_{k=0}^{n} \\binom{n}{k}$$ \u2713\n\n**Example:** $n = 4$\n$$\\binom{4}{0} + \\binom{4}{1} + \\binom{4}{2} + \\binom{4}{3} + \\binom{4}{4}$$\n$$= 1 + 4 + 6 + 4 + 1 = 16 = 2^4$$ \u2713\n\n**Interpretation:** The sum counts all subsets of an $n$-element set (each element either in or out: $2^n$ choices).",
+          "explanation": "Perfect! **Sum of binomial coefficients:**\n\n$$\\sum_{k=0}^{n} \\binom{n}{k} = 2^n$$\n\n**Proof:** Use binomial theorem with $a = b = 1$:\n$$(1 + 1)^n = \\sum_{k=0}^{n} \\binom{n}{k} 1^{n-k} 1^k$$\n$$2^n = \\sum_{k=0}^{n} \\binom{n}{k}$$ ✓\n\n**Example:** $n = 4$\n$$\\binom{4}{0} + \\binom{4}{1} + \\binom{4}{2} + \\binom{4}{3} + \\binom{4}{4}$$\n$$= 1 + 4 + 6 + 4 + 1 = 16 = 2^4$$ ✓\n\n**Interpretation:** The sum counts all subsets of an $n$-element set (each element either in or out: $2^n$ choices).",
           "insight": "Binomial coefficients sum to $2^n$ - count all subsets!"
         },
         "incorrect": {
@@ -206,21 +206,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Binomial Theorem",
+      "url": "https://www.youtube.com/watch?v=EeXTr44OpMQ",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Binomial Theorem",
+      "url": "https://brilliant.org/wiki/binomial-theorem/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Binomial Theorem",
+      "url": "https://www.youtube.com/watch?v=DfiHGP-84PE",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

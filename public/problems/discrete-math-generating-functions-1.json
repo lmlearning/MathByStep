@@ -67,7 +67,7 @@
       },
       "prompt": {
         "question": "What is the generating function for pennies?",
-        "hint": "Pennies (1\u00a2): can use 0, 1, 2, ... pennies. Contributes $0\u00a2, 1\u00a2, 2\u00a2, \\ldots$ Total: $1 + x + x^2 + x^3 + \\cdots = \\frac{1}{1-x}$."
+        "hint": "Pennies (1¢): can use 0, 1, 2, ... pennies. Contributes $0¢, 1¢, 2¢, \\ldots$ Total: $1 + x + x^2 + x^3 + \\cdots = \\frac{1}{1-x}$."
       },
       "options": [
         {
@@ -86,7 +86,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Pennies: $1 + x + x^2 + \\cdots = \\frac{1}{1-x}$ (geometric series). Term $x^k$ means using $k$ pennies for $k\u00a2$. Can use any number of pennies!",
+          "explanation": "Perfect! Pennies: $1 + x + x^2 + \\cdots = \\frac{1}{1-x}$ (geometric series). Term $x^k$ means using $k$ pennies for $k¢$. Can use any number of pennies!",
           "insight": "Geometric series $\\frac{1}{1-x}$ represents unlimited supply. For limited supply of $m$, use $1 + x + \\cdots + x^m$."
         },
         "incorrect": {
@@ -102,11 +102,11 @@
       "id": "step-3",
       "order": 3,
       "currentState": {
-        "description": "Nickels (5\u00a2) and dimes (10\u00a2)."
+        "description": "Nickels (5¢) and dimes (10¢)."
       },
       "prompt": {
         "question": "What are the GFs for nickels and dimes?",
-        "hint": "Nickels: $0\u00a2, 5\u00a2, 10\u00a2, 15\u00a2, \\ldots \\Rightarrow 1 + x^5 + x^{10} + x^{15} + \\cdots = \\frac{1}{1-x^5}$. Dimes: $1 + x^{10} + x^{20} + \\cdots = \\frac{1}{1-x^{10}}$."
+        "hint": "Nickels: $0¢, 5¢, 10¢, 15¢, \\ldots \\Rightarrow 1 + x^5 + x^{10} + x^{15} + \\cdots = \\frac{1}{1-x^5}$. Dimes: $1 + x^{10} + x^{20} + \\cdots = \\frac{1}{1-x^{10}}$."
       },
       "options": [
         {
@@ -125,7 +125,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! Nickels (5\u00a2): $k$ nickels = $5k\u00a2$, so $1 + x^5 + x^{10} + \\cdots = \\frac{1}{1-x^5}$. Dimes (10\u00a2): $1 + x^{10} + x^{20} + \\cdots = \\frac{1}{1-x^{10}}$. Each series represents using 0, 1, 2, ... of that coin.",
+          "explanation": "Correct! Nickels (5¢): $k$ nickels = $5k¢$, so $1 + x^5 + x^{10} + \\cdots = \\frac{1}{1-x^5}$. Dimes (10¢): $1 + x^{10} + x^{20} + \\cdots = \\frac{1}{1-x^{10}}$. Each series represents using 0, 1, 2, ... of that coin.",
           "insight": "For coin of value $c$: generating function is $\\frac{1}{1-x^c}$ (unlimited supply)."
         },
         "incorrect": {
@@ -145,7 +145,7 @@
       },
       "prompt": {
         "question": "What is the combined generating function?",
-        "hint": "$C(x) = \\frac{1}{1-x} \\cdot \\frac{1}{1-x^5} \\cdot \\frac{1}{1-x^{10}} = \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$. Coefficient $[x^n]C(x)$ = ways to make $n\u00a2$."
+        "hint": "$C(x) = \\frac{1}{1-x} \\cdot \\frac{1}{1-x^5} \\cdot \\frac{1}{1-x^{10}} = \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$. Coefficient $[x^n]C(x)$ = ways to make $n¢$."
       },
       "options": [
         {
@@ -164,8 +164,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Product rule**: to count combinations (pennies AND nickels AND dimes), multiply generating functions. $C(x) = \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$. Expanding this series: $[x^n]C(x)$ gives number of ways to make $n\u00a2$. Example: $[x^{10}]C(x) = 4$ (10 pennies, 2 nickels, 1 dime, 1 nickel + 5 pennies).",
-          "insight": "Product of GFs \u2194 counting combinations. Sum of GFs \u2194 counting alternatives (OR)."
+          "explanation": "Perfect! **Product rule**: to count combinations (pennies AND nickels AND dimes), multiply generating functions. $C(x) = \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$. Expanding this series: $[x^n]C(x)$ gives number of ways to make $n¢$. Example: $[x^{10}]C(x) = 4$ (10 pennies, 2 nickels, 1 dime, 1 nickel + 5 pennies).",
+          "insight": "Product of GFs ↔ counting combinations. Sum of GFs ↔ counting alternatives (OR)."
         },
         "incorrect": {
           "1": "Sum is wrong! That counts alternatives (pennies OR nickels OR dimes). Want combinations (AND).",
@@ -180,13 +180,13 @@
   "summary": {
     "keyInsights": [
       "Generating function: $G(x) = \\sum a_n x^n$ encodes sequence $(a_0, a_1, a_2, \\ldots)$",
-      "Pennies (1\u00a2): $\\frac{1}{1-x}$ (unlimited supply)",
-      "Nickels (5\u00a2): $\\frac{1}{1-x^5}$",
-      "Dimes (10\u00a2): $\\frac{1}{1-x^{10}}$",
+      "Pennies (1¢): $\\frac{1}{1-x}$ (unlimited supply)",
+      "Nickels (5¢): $\\frac{1}{1-x^5}$",
+      "Dimes (10¢): $\\frac{1}{1-x^{10}}$",
       "Combined: $C(x) = \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$",
       "Coefficient $[x^n]C(x)$ = ways to make $n$ cents"
     ],
-    "fullSolution": "**Use generating functions to count ways to make change**\n\n**Setup:**\n- Coins: pennies (1\u00a2), nickels (5\u00a2), dimes (10\u00a2)\n- Goal: count ways to make $n$ cents\n\n---\n\n**Step 1: Generating function for each coin type**\n\n**Pennies (1\u00a2):** Can use 0, 1, 2, 3, ... pennies\n- 0 pennies: $0\u00a2$ \u2192 $x^0 = 1$\n- 1 penny: $1\u00a2$ \u2192 $x^1 = x$\n- 2 pennies: $2\u00a2$ \u2192 $x^2$\n- $k$ pennies: $k\u00a2$ \u2192 $x^k$\n\nGenerating function:\n$$P(x) = 1 + x + x^2 + x^3 + \\cdots = \\frac{1}{1-x}$$\n\n**Nickels (5\u00a2):** Can use 0, 1, 2, 3, ... nickels\n- $k$ nickels = $5k\u00a2$ \u2192 $x^{5k}$\n\n$$N(x) = 1 + x^5 + x^{10} + x^{15} + \\cdots = \\sum_{k=0}^\\infty x^{5k} = \\frac{1}{1-x^5}$$\n\n**Dimes (10\u00a2):** Can use 0, 1, 2, 3, ... dimes\n- $k$ dimes = $10k\u00a2$ \u2192 $x^{10k}$\n\n$$D(x) = 1 + x^{10} + x^{20} + x^{30} + \\cdots = \\sum_{k=0}^\\infty x^{10k} = \\frac{1}{1-x^{10}}$$\n\n---\n\n**Step 2: Combine using product**\n\nTo count combinations (use pennies AND nickels AND dimes), multiply:\n\n$$C(x) = P(x) \\cdot N(x) \\cdot D(x)$$\n$$= \\frac{1}{1-x} \\cdot \\frac{1}{1-x^5} \\cdot \\frac{1}{1-x^{10}}$$\n$$= \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$$\n\n---\n\n**Step 3: Extract coefficients**\n\nThe number of ways to make $n$ cents is the coefficient $[x^n]C(x)$.\n\n**Example: $n = 10$ cents**\n\nExpand $C(x)$ up to $x^{10}$ term (tedious by hand, use computer or partial fractions):\n\n$$C(x) = 1 + x + 2x^2 + 2x^3 + 3x^4 + 4x^5 + \\cdots + 4x^{10} + \\cdots$$\n\nSo $[x^{10}]C(x) = 4$ ways:\n1. 10 pennies\n2. 5 pennies + 1 nickel\n3. 2 nickels\n4. 1 dime\n\n**Example: $n = 20$ cents**\n\n$[x^{20}]C(x) = 9$ ways:\n1. 20 pennies\n2. 15 pennies + 1 nickel\n3. 10 pennies + 2 nickels\n4. 10 pennies + 1 dime\n5. 5 pennies + 3 nickels\n6. 5 pennies + 1 nickel + 1 dime\n7. 4 nickels\n8. 2 nickels + 1 dime\n9. 2 dimes\n\n---\n\n**General formula:**\n\nNumber of ways to make $n$ cents:\n$$a_n = [x^n] \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$$\n\nFor large $n$, use partial fractions or computer algebra to extract coefficient.",
+    "fullSolution": "**Use generating functions to count ways to make change**\n\n**Setup:**\n- Coins: pennies (1¢), nickels (5¢), dimes (10¢)\n- Goal: count ways to make $n$ cents\n\n---\n\n**Step 1: Generating function for each coin type**\n\n**Pennies (1¢):** Can use 0, 1, 2, 3, ... pennies\n- 0 pennies: $0¢$ → $x^0 = 1$\n- 1 penny: $1¢$ → $x^1 = x$\n- 2 pennies: $2¢$ → $x^2$\n- $k$ pennies: $k¢$ → $x^k$\n\nGenerating function:\n$$P(x) = 1 + x + x^2 + x^3 + \\cdots = \\frac{1}{1-x}$$\n\n**Nickels (5¢):** Can use 0, 1, 2, 3, ... nickels\n- $k$ nickels = $5k¢$ → $x^{5k}$\n\n$$N(x) = 1 + x^5 + x^{10} + x^{15} + \\cdots = \\sum_{k=0}^\\infty x^{5k} = \\frac{1}{1-x^5}$$\n\n**Dimes (10¢):** Can use 0, 1, 2, 3, ... dimes\n- $k$ dimes = $10k¢$ → $x^{10k}$\n\n$$D(x) = 1 + x^{10} + x^{20} + x^{30} + \\cdots = \\sum_{k=0}^\\infty x^{10k} = \\frac{1}{1-x^{10}}$$\n\n---\n\n**Step 2: Combine using product**\n\nTo count combinations (use pennies AND nickels AND dimes), multiply:\n\n$$C(x) = P(x) \\cdot N(x) \\cdot D(x)$$\n$$= \\frac{1}{1-x} \\cdot \\frac{1}{1-x^5} \\cdot \\frac{1}{1-x^{10}}$$\n$$= \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$$\n\n---\n\n**Step 3: Extract coefficients**\n\nThe number of ways to make $n$ cents is the coefficient $[x^n]C(x)$.\n\n**Example: $n = 10$ cents**\n\nExpand $C(x)$ up to $x^{10}$ term (tedious by hand, use computer or partial fractions):\n\n$$C(x) = 1 + x + 2x^2 + 2x^3 + 3x^4 + 4x^5 + \\cdots + 4x^{10} + \\cdots$$\n\nSo $[x^{10}]C(x) = 4$ ways:\n1. 10 pennies\n2. 5 pennies + 1 nickel\n3. 2 nickels\n4. 1 dime\n\n**Example: $n = 20$ cents**\n\n$[x^{20}]C(x) = 9$ ways:\n1. 20 pennies\n2. 15 pennies + 1 nickel\n3. 10 pennies + 2 nickels\n4. 10 pennies + 1 dime\n5. 5 pennies + 3 nickels\n6. 5 pennies + 1 nickel + 1 dime\n7. 4 nickels\n8. 2 nickels + 1 dime\n9. 2 dimes\n\n---\n\n**General formula:**\n\nNumber of ways to make $n$ cents:\n$$a_n = [x^n] \\frac{1}{(1-x)(1-x^5)(1-x^{10})}$$\n\nFor large $n$, use partial fractions or computer algebra to extract coefficient.",
     "relatedProblems": [
       "discrete-math-combinatorics-1",
       "discrete-math-recurrence-relations-1"
@@ -195,21 +195,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
-      "source": "Khan Academy"
+      "title": "Generating Functions",
+      "url": "https://www.youtube.com/watch?v=fXRSFEbLryo",
+      "source": "Trev Tutor"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Generating Functions",
+      "url": "https://brilliant.org/wiki/generating-functions/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Introduction to Generating Functions",
+      "url": "https://www.youtube.com/watch?v=AyUy5CeklVw",
+      "source": "MIT OpenCourseWare"
     }
   ]
 }

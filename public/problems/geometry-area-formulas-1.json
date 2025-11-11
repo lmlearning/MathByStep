@@ -71,21 +71,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Area Formulas",
+      "url": "https://www.youtube.com/watch?v=YokKp3pwVFc",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Area of Polygons",
+      "url": "https://brilliant.org/wiki/area-of-a-polygon/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Geometry - Area Formulas",
+      "url": "https://www.youtube.com/watch?v=CYWX2ISoQco",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

@@ -91,7 +91,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Planar Graph Inequality:**\n\nFor any simple planar graph with $V \\geq 3$ vertices:\n$$E \\leq 3V - 6$$\n\n**Proof idea:** Uses Euler's formula $V - E + F = 2$ and the fact that each face has $\\geq 3$ edges, with each edge bordering $\\leq 2$ faces.\n\n**For $K_5$:**\n$$V = 5, \\quad E = 10$$\n\nCheck inequality:\n$$E \\leq 3V - 6$$\n$$10 \\leq 3(5) - 6$$\n$$10 \\leq 15 - 6$$\n$$10 \\leq 9$$ \u2717\n\n**Contradiction!** Since $K_5$ violates the inequality, it **cannot be planar**.",
+          "explanation": "Perfect! **Planar Graph Inequality:**\n\nFor any simple planar graph with $V \\geq 3$ vertices:\n$$E \\leq 3V - 6$$\n\n**Proof idea:** Uses Euler's formula $V - E + F = 2$ and the fact that each face has $\\geq 3$ edges, with each edge bordering $\\leq 2$ faces.\n\n**For $K_5$:**\n$$V = 5, \\quad E = 10$$\n\nCheck inequality:\n$$E \\leq 3V - 6$$\n$$10 \\leq 3(5) - 6$$\n$$10 \\leq 15 - 6$$\n$$10 \\leq 9$$ ✗\n\n**Contradiction!** Since $K_5$ violates the inequality, it **cannot be planar**.",
           "insight": "This inequality provides a quick planarity test!"
         },
         "incorrect": {
@@ -175,7 +175,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Contradiction via Euler's Formula:**\n\n**Assume** $K_5$ is planar. Then Euler's formula applies:\n$$V - E + F = 2$$\n$$5 - 10 + F = 2$$\n$$F = 7$$\n\n**Face-edge relationship:** Each face in a simple planar graph has $\\geq 3$ edges on its boundary (including the outer face).\n\nCounting edge-face incidences:\n$$\\sum_{\\text{faces}} (\\text{edges on boundary}) \\geq 3F$$\n\nBut each edge borders $\\leq 2$ faces, so:\n$$2E \\geq 3F$$\n\n**Check:**\n$$2E = 2(10) = 20$$\n$$3F = 3(7) = 21$$\n$$20 \\geq 21$$ \u2717\n\n**Contradiction!** Therefore, $K_5$ is **not planar**.\n\n**Conclusion:** Multiple proofs show $K_5$ is non-planar:\n1. Violates $E \\leq 3V - 6$\n2. Is a forbidden minor (Kuratowski)\n3. Euler formula leads to contradiction",
+          "explanation": "Perfect! **Contradiction via Euler's Formula:**\n\n**Assume** $K_5$ is planar. Then Euler's formula applies:\n$$V - E + F = 2$$\n$$5 - 10 + F = 2$$\n$$F = 7$$\n\n**Face-edge relationship:** Each face in a simple planar graph has $\\geq 3$ edges on its boundary (including the outer face).\n\nCounting edge-face incidences:\n$$\\sum_{\\text{faces}} (\\text{edges on boundary}) \\geq 3F$$\n\nBut each edge borders $\\leq 2$ faces, so:\n$$2E \\geq 3F$$\n\n**Check:**\n$$2E = 2(10) = 20$$\n$$3F = 3(7) = 21$$\n$$20 \\geq 21$$ ✗\n\n**Contradiction!** Therefore, $K_5$ is **not planar**.\n\n**Conclusion:** Multiple proofs show $K_5$ is non-planar:\n1. Violates $E \\leq 3V - 6$\n2. Is a forbidden minor (Kuratowski)\n3. Euler formula leads to contradiction",
           "insight": "Euler's formula $V - E + F = 2$ is powerful for proving non-planarity!"
         },
         "incorrect": {
@@ -200,7 +200,7 @@
       "Euler's formula: $V - E + F = 2$ leads to contradiction",
       "$K_5$ is **not planar**"
     ],
-    "fullSolution": "**Determine if $K_5$ is planar**\n\n---\n\n**Step 1: Graph Properties**\n\n$K_5$ is the complete graph on 5 vertices:\n- $V = 5$\n- $E = \\binom{5}{2} = 10$\n\n---\n\n**Step 2: Planar Graph Inequality**\n\nFor simple planar graphs with $V \\geq 3$:\n$$E \\leq 3V - 6$$\n\nCheck for $K_5$:\n$$10 \\leq 3(5) - 6 = 9$$\n\nThis is **false**, so $K_5$ is **not planar**.\n\n---\n\n**Step 3: Kuratowski's Theorem**\n\n**Theorem:** A graph is planar $\\iff$ it has no $K_5$ or $K_{3,3}$ minor.\n\nSince $K_5$ IS one of the forbidden minors, it is not planar.\n\n---\n\n**Step 4: Euler's Formula Proof**\n\nAssume $K_5$ is planar. Then:\n$$V - E + F = 2$$\n$$5 - 10 + F = 2$$\n$$F = 7$$\n\nEach face has $\\geq 3$ edges:\n$$2E \\geq 3F$$\n$$20 \\geq 21$$ \u2717\n\nContradiction!\n\n---\n\n**Answer:** $\\boxed{K_5 \\text{ is NOT planar}}$\n\n---\n\n**Note:** Similarly, $K_{3,3}$ (complete bipartite graph with parts of size 3) is also not planar. These are the only two minimal non-planar graphs.",
+    "fullSolution": "**Determine if $K_5$ is planar**\n\n---\n\n**Step 1: Graph Properties**\n\n$K_5$ is the complete graph on 5 vertices:\n- $V = 5$\n- $E = \\binom{5}{2} = 10$\n\n---\n\n**Step 2: Planar Graph Inequality**\n\nFor simple planar graphs with $V \\geq 3$:\n$$E \\leq 3V - 6$$\n\nCheck for $K_5$:\n$$10 \\leq 3(5) - 6 = 9$$\n\nThis is **false**, so $K_5$ is **not planar**.\n\n---\n\n**Step 3: Kuratowski's Theorem**\n\n**Theorem:** A graph is planar $\\iff$ it has no $K_5$ or $K_{3,3}$ minor.\n\nSince $K_5$ IS one of the forbidden minors, it is not planar.\n\n---\n\n**Step 4: Euler's Formula Proof**\n\nAssume $K_5$ is planar. Then:\n$$V - E + F = 2$$\n$$5 - 10 + F = 2$$\n$$F = 7$$\n\nEach face has $\\geq 3$ edges:\n$$2E \\geq 3F$$\n$$20 \\geq 21$$ ✗\n\nContradiction!\n\n---\n\n**Answer:** $\\boxed{K_5 \\text{ is NOT planar}}$\n\n---\n\n**Note:** Similarly, $K_{3,3}$ (complete bipartite graph with parts of size 3) is also not planar. These are the only two minimal non-planar graphs.",
     "relatedProblems": [
       "graph-theory-eulers-formula-1",
       "graph-theory-euler-path-1"
@@ -209,21 +209,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
-      "source": "Khan Academy"
+      "title": "Planar Graphs",
+      "url": "https://www.youtube.com/watch?v=zZ3j1u4-T0g",
+      "source": "Trev Tutor"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Planar Graphs",
+      "url": "https://brilliant.org/wiki/planar-graphs/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Kuratowski's Theorem",
+      "url": "https://www.youtube.com/watch?v=KOzK2bBZNFA",
+      "source": "TheTrevTutor"
     }
   ]
 }

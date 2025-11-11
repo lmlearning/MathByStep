@@ -71,21 +71,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Vector Projections",
+      "url": "https://www.youtube.com/watch?v=h0NJK4mEIJU",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Vector Projection",
+      "url": "https://brilliant.org/wiki/dot-product-projection/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Vector Projection",
+      "url": "https://www.youtube.com/watch?v=TBx-pWqSqWg",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

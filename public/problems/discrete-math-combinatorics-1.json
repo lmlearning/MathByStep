@@ -33,11 +33,11 @@
       "options": [
         {
           "id": "a",
-          "text": "(Ways to choose 3 aces) \u00d7 (Ways to choose 2 non-aces)"
+          "text": "(Ways to choose 3 aces) × (Ways to choose 2 non-aces)"
         },
         {
           "id": "b",
-          "text": "(Ways to choose 5 cards) \u2212 (Ways without aces)"
+          "text": "(Ways to choose 5 cards) − (Ways without aces)"
         },
         {
           "id": "c",
@@ -103,7 +103,7 @@
       "id": "step-3",
       "order": 3,
       "currentState": {
-        "expression": "48 non-ace cards (52\u22124), need to choose 2",
+        "expression": "48 non-ace cards (52−4), need to choose 2",
         "description": "How many ways to choose 2 cards from 48?"
       },
       "prompt": {
@@ -196,21 +196,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Combinations and Permutations",
+      "url": "https://www.youtube.com/watch?v=iKy-d5_erhI",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Combinatorics",
+      "url": "https://brilliant.org/wiki/combinatorics/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Permutations and Combinations",
+      "url": "https://www.youtube.com/watch?v=XJnIdRXUi7A",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

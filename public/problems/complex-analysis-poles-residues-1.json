@@ -198,7 +198,7 @@
       "Residues: $\\text{Res}(f, 0) = -1$, $\\text{Res}(f, 1) = 2$",
       "Sum of residues: $1$"
     ],
-    "fullSolution": "**Find poles and residues of $f(z) = \\frac{z^2+1}{z^2(z-1)}$**\n\n---\n\n**Step 1: Identify Poles**\n\nSingularities occur where denominator vanishes:\n$$z^2(z-1) = 0$$\n\n- $z = 0$ with multiplicity 2 \u2192 pole of order 2\n- $z = 1$ with multiplicity 1 \u2192 simple pole\n\n(Numerator $z^2 + 1$ is non-zero at both points)\n\n---\n\n**Step 2: Residue at $z = 1$ (Simple Pole)**\n\nFormula for simple pole:\n$$\\text{Res}(f, z_0) = \\lim_{z \\to z_0} (z - z_0) f(z)$$\n\n$$\\text{Res}(f, 1) = \\lim_{z \\to 1} (z-1) \\cdot \\frac{z^2+1}{z^2(z-1)}$$\n\n$$= \\lim_{z \\to 1} \\frac{z^2+1}{z^2} = \\frac{2}{1} = 2$$\n\n---\n\n**Step 3: Residue at $z = 0$ (Order 2 Pole)**\n\nFormula for pole of order $m$:\n$$\\text{Res}(f, z_0) = \\frac{1}{(m-1)!} \\lim_{z \\to z_0} \\frac{d^{m-1}}{dz^{m-1}}\\left[(z-z_0)^m f(z)\\right]$$\n\nFor $m = 2$:\n$$\\text{Res}(f, 0) = \\lim_{z \\to 0} \\frac{d}{dz}\\left[z^2 f(z)\\right]$$\n\nCompute:\n$$z^2 f(z) = \\frac{z^2+1}{z-1}$$\n\nDerivative (quotient rule):\n$$\\frac{d}{dz}\\left[\\frac{z^2+1}{z-1}\\right] = \\frac{2z(z-1) - (z^2+1)}{(z-1)^2} = \\frac{z^2 - 2z - 1}{(z-1)^2}$$\n\nAt $z = 0$:\n$$\\text{Res}(f, 0) = \\frac{-1}{1} = -1$$\n\n---\n\n**Answer:**\n\n| Pole | Order | Residue |\n|------|-------|----------|\n| $z = 0$ | 2 | $-1$ |\n| $z = 1$ | 1 | $2$ |\n\n**Sum of residues:** $-1 + 2 = 1$",
+    "fullSolution": "**Find poles and residues of $f(z) = \\frac{z^2+1}{z^2(z-1)}$**\n\n---\n\n**Step 1: Identify Poles**\n\nSingularities occur where denominator vanishes:\n$$z^2(z-1) = 0$$\n\n- $z = 0$ with multiplicity 2 → pole of order 2\n- $z = 1$ with multiplicity 1 → simple pole\n\n(Numerator $z^2 + 1$ is non-zero at both points)\n\n---\n\n**Step 2: Residue at $z = 1$ (Simple Pole)**\n\nFormula for simple pole:\n$$\\text{Res}(f, z_0) = \\lim_{z \\to z_0} (z - z_0) f(z)$$\n\n$$\\text{Res}(f, 1) = \\lim_{z \\to 1} (z-1) \\cdot \\frac{z^2+1}{z^2(z-1)}$$\n\n$$= \\lim_{z \\to 1} \\frac{z^2+1}{z^2} = \\frac{2}{1} = 2$$\n\n---\n\n**Step 3: Residue at $z = 0$ (Order 2 Pole)**\n\nFormula for pole of order $m$:\n$$\\text{Res}(f, z_0) = \\frac{1}{(m-1)!} \\lim_{z \\to z_0} \\frac{d^{m-1}}{dz^{m-1}}\\left[(z-z_0)^m f(z)\\right]$$\n\nFor $m = 2$:\n$$\\text{Res}(f, 0) = \\lim_{z \\to 0} \\frac{d}{dz}\\left[z^2 f(z)\\right]$$\n\nCompute:\n$$z^2 f(z) = \\frac{z^2+1}{z-1}$$\n\nDerivative (quotient rule):\n$$\\frac{d}{dz}\\left[\\frac{z^2+1}{z-1}\\right] = \\frac{2z(z-1) - (z^2+1)}{(z-1)^2} = \\frac{z^2 - 2z - 1}{(z-1)^2}$$\n\nAt $z = 0$:\n$$\\text{Res}(f, 0) = \\frac{-1}{1} = -1$$\n\n---\n\n**Answer:**\n\n| Pole | Order | Residue |\n|------|-------|----------|\n| $z = 0$ | 2 | $-1$ |\n| $z = 1$ | 1 | $2$ |\n\n**Sum of residues:** $-1 + 2 = 1$",
     "relatedProblems": [
       "complex-analysis-residue-theorem-1",
       "complex-analysis-laurent-series-1"
@@ -207,21 +207,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
-      "source": "Khan Academy"
+      "title": "Poles and Residues",
+      "url": "https://www.youtube.com/watch?v=zHbfZWZJTGc",
+      "source": "Dr. Peyam"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Poles and Residues",
+      "url": "https://brilliant.org/wiki/residue-theorem/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Residues and Poles",
+      "url": "https://www.youtube.com/watch?v=6z9Y29ZsKQs",
+      "source": "Faculty of Khan"
     }
   ]
 }

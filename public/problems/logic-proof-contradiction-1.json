@@ -209,7 +209,7 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Since $b^2$ is even, $b$ is even. But we showed $a$ is even too, contradicting $\\gcd(a,b) = 1$ \u2717"
+          "text": "Since $b^2$ is even, $b$ is even. But we showed $a$ is even too, contradicting $\\gcd(a,b) = 1$ ✗"
         },
         {
           "id": "opt-2",
@@ -252,21 +252,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Proof by Contradiction",
+      "url": "https://www.youtube.com/watch?v=Z1K91K3DP0U",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Proof by Contradiction",
+      "url": "https://brilliant.org/wiki/contradiction/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Proof by Contradiction",
+      "url": "https://www.youtube.com/watch?v=mYe5YooqpAU",
+      "source": "The Math Sorcerer"
     }
   ]
 }

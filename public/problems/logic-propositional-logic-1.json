@@ -28,7 +28,7 @@
       },
       "prompt": {
         "question": "How many rows in the truth table?",
-        "hint": "3 variables \u2192 $2^3 = 8$ rows."
+        "hint": "3 variables → $2^3 = 8$ rows."
       },
       "options": [
         {
@@ -95,7 +95,7 @@
         }
       },
       "resultState": {
-        "description": "Evaluate P \u2192 Q and Q \u2192 R"
+        "description": "Evaluate P → Q and Q → R"
       }
     },
     {
@@ -164,7 +164,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! Example: $P=T, Q=F, R=T$: $(T \\to F) \\land (F \\to T) = F \\land T = F$, but $T \\to T = T$. Different values \u2192 not equivalent.",
+          "explanation": "Correct! Example: $P=T, Q=F, R=T$: $(T \\to F) \\land (F \\to T) = F \\land T = F$, but $T \\to T = T$. Different values → not equivalent.",
           "insight": "The converse would be true: $(P \\to Q) \\land (Q \\to R) \\implies (P \\to R)$ is valid (hypothetical syllogism), but not the equivalence!"
         },
         "incorrect": {
@@ -173,7 +173,7 @@
         }
       },
       "resultState": {
-        "description": "Compare with P \u2192 R"
+        "description": "Compare with P → R"
       }
     }
   ],
@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Truth Tables and Logic",
+      "url": "https://www.youtube.com/watch?v=tWVWeAqZ0WU",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Propositional Logic",
+      "url": "https://brilliant.org/wiki/propositional-logic/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Propositional Logic",
+      "url": "https://www.youtube.com/watch?v=Lp0q-SM7ElQ",
+      "source": "TheTrevTutor"
     }
   ]
 }

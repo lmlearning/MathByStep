@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
-      "source": "Khan Academy"
+      "title": "Graph Isomorphism",
+      "url": "https://www.youtube.com/watch?v=UCle3Smvh1s",
+      "source": "Trev Tutor"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Graph Isomorphism",
+      "url": "https://brilliant.org/wiki/graph-isomorphism/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Isomorphic Graphs",
+      "url": "https://www.youtube.com/watch?v=RcmNfPPPXLw",
+      "source": "TheTrevTutor"
     }
   ]
 }

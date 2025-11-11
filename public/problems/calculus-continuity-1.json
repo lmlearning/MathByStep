@@ -71,21 +71,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Continuity",
+      "url": "https://www.youtube.com/watch?v=P_6NqQNRPLc",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
+      "title": "Continuity",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Continuity.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Continuity",
+      "url": "https://www.youtube.com/watch?v=O8pKPMEMWLk",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

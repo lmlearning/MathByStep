@@ -127,7 +127,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $x \\in A^c$ AND $x \\in B^c$ means $x \\in A^c \\cap B^c$ by definition of intersection. Thus $(A \\cup B)^c \\subseteq A^c \\cap B^c$ \u2713",
+          "explanation": "Perfect! $x \\in A^c$ AND $x \\in B^c$ means $x \\in A^c \\cap B^c$ by definition of intersection. Thus $(A \\cup B)^c \\subseteq A^c \\cap B^c$ ✓",
           "insight": "We've proven the first inclusion!"
         },
         "incorrect": {
@@ -207,7 +207,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! If $x \\notin A$ and $x \\notin B$, then $x$ is not in $A$ or $B$, so $x \\notin A \\cup B$, thus $x \\in (A \\cup B)^c$. We've shown $A^c \\cap B^c \\subseteq (A \\cup B)^c$ \u2713",
+          "explanation": "Exactly! If $x \\notin A$ and $x \\notin B$, then $x$ is not in $A$ or $B$, so $x \\notin A \\cup B$, thus $x \\in (A \\cup B)^c$. We've shown $A^c \\cap B^c \\subseteq (A \\cup B)^c$ ✓",
           "insight": "We've proven the second inclusion, completing the proof!"
         },
         "incorrect": {
@@ -227,7 +227,7 @@
       "Negating 'or' gives 'and': $\\neg(P \\lor Q) \\equiv \\neg P \\land \\neg Q$",
       "These laws connect set operations and logic"
     ],
-    "fullSolution": "**Theorem:** $(A \\cup B)^c = A^c \\cap B^c$\n\n**Proof:**\n\n($\\subseteq$) Let $x \\in (A \\cup B)^c$.\nThen $x \\notin A \\cup B$.\nSo $x \\notin A$ and $x \\notin B$ (negation of 'or').\nThus $x \\in A^c$ and $x \\in B^c$.\nTherefore $x \\in A^c \\cap B^c$.\n\n($\\supseteq$) Let $x \\in A^c \\cap B^c$.\nThen $x \\in A^c$ and $x \\in B^c$.\nSo $x \\notin A$ and $x \\notin B$.\nThus $x \\notin A \\cup B$.\nTherefore $x \\in (A \\cup B)^c$.\n\nBy double inclusion, $(A \\cup B)^c = A^c \\cap B^c$. \u220e",
+    "fullSolution": "**Theorem:** $(A \\cup B)^c = A^c \\cap B^c$\n\n**Proof:**\n\n($\\subseteq$) Let $x \\in (A \\cup B)^c$.\nThen $x \\notin A \\cup B$.\nSo $x \\notin A$ and $x \\notin B$ (negation of 'or').\nThus $x \\in A^c$ and $x \\in B^c$.\nTherefore $x \\in A^c \\cap B^c$.\n\n($\\supseteq$) Let $x \\in A^c \\cap B^c$.\nThen $x \\in A^c$ and $x \\in B^c$.\nSo $x \\notin A$ and $x \\notin B$.\nThus $x \\notin A \\cup B$.\nTherefore $x \\in (A \\cup B)^c$.\n\nBy double inclusion, $(A \\cup B)^c = A^c \\cap B^c$. ∎",
     "relatedProblems": [
       "logic-proof-direct-1",
       "logic-proof-contradiction-1"
@@ -236,21 +236,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "De Morgan's Laws",
+      "url": "https://www.youtube.com/watch?v=f8CiBiRo_zA",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "De Morgan's Laws",
+      "url": "https://brilliant.org/wiki/de-morgans-laws/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "De Morgan's Law",
+      "url": "https://www.youtube.com/watch?v=4z8nEdLJqH0",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

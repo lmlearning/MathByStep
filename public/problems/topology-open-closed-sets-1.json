@@ -145,7 +145,7 @@
       },
       "prompt": {
         "question": "What are $(0,1]$ and $\\{0\\}$?",
-        "hint": "$(0,1]$: not open (1 has no neighborhood inside) and not closed (0 is limit point not in set) \u2192 neither! $\\{0\\}$: closed (contains all its limit points - none!) and not open \u2192 closed only."
+        "hint": "$(0,1]$: not open (1 has no neighborhood inside) and not closed (0 is limit point not in set) → neither! $\\{0\\}$: closed (contains all its limit points - none!) and not open → closed only."
       },
       "options": [
         {
@@ -164,7 +164,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! $(0,1]$: not closed (missing limit point 0), not open (endpoint 1) \u2192 neither. $\\{0\\}$: closed (trivially contains all limit points), not open (isolated point) \u2192 closed only.",
+          "explanation": "Excellent! $(0,1]$: not closed (missing limit point 0), not open (endpoint 1) → neither. $\\{0\\}$: closed (trivially contains all limit points), not open (isolated point) → closed only.",
           "insight": "A set can be neither open nor closed! Singletons in $\\mathbb{R}$ are always closed."
         },
         "incorrect": {
@@ -196,21 +196,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
-      "source": "Khan Academy"
+      "title": "Open and Closed Sets",
+      "url": "https://www.youtube.com/watch?v=VuJ3-zQTtb0",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Open and Closed Sets",
+      "url": "https://brilliant.org/wiki/open-and-closed-sets/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Open Sets, Closed Sets, and Limit Points",
+      "url": "https://www.youtube.com/watch?v=a00x8M2hKjI",
+      "source": "Dr. Peyam"
     }
   ]
 }
