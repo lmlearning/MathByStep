@@ -213,21 +213,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Quotient Groups",
+      "url": "https://www.youtube.com/watch?v=cCBjUZP8v_8",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Quotient Groups",
+      "url": "https://brilliant.org/wiki/quotient-group/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Factor Groups",
+      "url": "https://www.youtube.com/watch?v=nMPxFQ5Dppw",
+      "source": "Michael Penn"
     }
   ]
 }

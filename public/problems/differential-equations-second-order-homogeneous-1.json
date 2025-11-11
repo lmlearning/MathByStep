@@ -199,21 +199,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Differential Equations",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Differential Equations Course",
-      "url": "https://www.khanacademy.org/math/differential-equations",
-      "source": "Khan Academy"
+      "title": "Second Order Homogeneous DEs",
+      "url": "https://www.youtube.com/watch?v=pRnqBFgEYk4",
+      "source": "Dr. Trefor Bazett"
     },
     {
       "type": "article",
-      "title": "Differential Equations",
-      "url": "https://tutorial.math.lamar.edu/Classes/DE/DE.aspx",
+      "title": "Second Order DEs",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/SecondOrderConcepts.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Characteristic Equation Method",
+      "url": "https://www.youtube.com/watch?v=cxGCKMu_QOI",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

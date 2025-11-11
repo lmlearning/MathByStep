@@ -238,21 +238,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Cyclic Groups",
+      "url": "https://www.youtube.com/watch?v=fkDpEAANK9U",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Cyclic Groups",
+      "url": "https://brilliant.org/wiki/cyclic-groups/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Cyclic Groups and Generators",
+      "url": "https://www.youtube.com/watch?v=P5COjQHCQIw",
+      "source": "Michael Penn"
     }
   ]
 }

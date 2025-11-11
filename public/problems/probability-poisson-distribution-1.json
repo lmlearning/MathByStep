@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
-      "source": "Socratica"
+      "title": "Poisson Distribution",
+      "url": "https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/poisson-distribution/v/poisson-process-1",
+      "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Poisson Distribution",
+      "url": "https://brilliant.org/wiki/poisson-distribution/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Poisson Probability",
+      "url": "https://www.youtube.com/watch?v=cPOChr_kuQs",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

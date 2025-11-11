@@ -236,21 +236,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Matrix Multiplication",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro",
       "source": "Khan Academy"
     },
     {
+      "type": "video",
+      "title": "Matrices - Linear Algebra",
+      "url": "https://www.youtube.com/watch?v=kYB8IZa5AuE",
+      "source": "3Blue1Brown"
+    },
+    {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Matrix Algebra",
+      "url": "https://www.mathsisfun.com/algebra/matrix-introduction.html",
+      "source": "Math is Fun"
     }
   ]
 }

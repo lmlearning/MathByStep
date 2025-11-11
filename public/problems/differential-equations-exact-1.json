@@ -193,21 +193,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Differential Equations",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Differential Equations Course",
-      "url": "https://www.khanacademy.org/math/differential-equations",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Differential Equations",
-      "url": "https://tutorial.math.lamar.edu/Classes/DE/DE.aspx",
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
     }
   ]
 }

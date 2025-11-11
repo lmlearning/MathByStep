@@ -198,21 +198,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Multivariable Calculus Course",
-      "url": "https://www.khanacademy.org/math/multivariable-calculus",
-      "source": "Khan Academy"
+      "title": "Stokes' Theorem",
+      "url": "https://www.youtube.com/watch?v=1lGM5DEdMaw",
+      "source": "3Blue1Brown"
     },
     {
       "type": "article",
-      "title": "Multivariable Calculus",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "title": "Stokes' Theorem",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/StokesTheorem.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Divergence and Curl",
-      "url": "https://www.youtube.com/watch?v=rB83DpBJQsE",
-      "source": "3Blue1Brown"
+      "title": "Stokes' Theorem Explained",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus/greens-theorem-and-stokes-theorem/stokes-theorem/v/stokes-theorem-intuition",
+      "source": "Khan Academy"
     }
   ]
 }

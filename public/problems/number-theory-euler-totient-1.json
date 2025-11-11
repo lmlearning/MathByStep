@@ -208,20 +208,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Number Theory",
-      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "title": "Euler's Totient Function",
+      "url": "https://www.youtube.com/watch?v=qu3ZP8HtLmQ",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Elementary Number Theory",
-      "url": "https://www.math.brown.edu/johsilve/frintch1ch6.pdf",
-      "source": "Brown University"
+      "title": "Euler's Totient Function",
+      "url": "https://brilliant.org/wiki/eulers-totient-function/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Numberphile",
-      "url": "https://www.youtube.com/user/numberphile",
+      "title": "Euler's Phi Function",
+      "url": "https://www.youtube.com/watch?v=IEH9vR2MMIM",
       "source": "Numberphile"
     }
   ]

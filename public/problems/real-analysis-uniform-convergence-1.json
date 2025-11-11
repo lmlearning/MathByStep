@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Real Analysis",
-      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61O7HkcF7UImpM0cR_L2gSw",
-      "source": "MIT OCW"
+      "title": "Uniform Convergence",
+      "url": "https://www.youtube.com/watch?v=jNqHBEGj580",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Introduction to Real Analysis",
-      "url": "https://www.math.ucdavis.edu/~hunter/intro_analysis_pdf/intro_analysis.html",
-      "source": "UC Davis"
+      "title": "Uniform Convergence",
+      "url": "https://brilliant.org/wiki/uniform-convergence/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Real Analysis Lectures",
-      "url": "https://www.youtube.com/playlist?list=PLun8-Z_lTkC5Hf1gEJ5Qz7RR4-9_LdPZo",
-      "source": "Dr. Peyam"
+      "title": "Pointwise vs Uniform Convergence",
+      "url": "https://www.youtube.com/watch?v=X2rN2gU3-3c",
+      "source": "Dr. Trefor Bazett"
     }
   ]
 }

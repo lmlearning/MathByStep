@@ -205,21 +205,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Polynomial Rings",
+      "url": "https://www.youtube.com/watch?v=yHGCDNhEFDk",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Polynomial Rings",
+      "url": "https://brilliant.org/wiki/polynomial-rings/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Irreducible Polynomials",
+      "url": "https://www.youtube.com/watch?v=8RaOzc8g6n8",
+      "source": "Michael Penn"
     }
   ]
 }

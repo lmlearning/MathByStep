@@ -205,21 +205,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Probability Basics",
-      "url": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Introduction to Probability",
-      "url": "https://www.mathsisfun.com/data/probability.html",
-      "source": "Math is Fun"
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Probability Fundamentals",
-      "url": "https://www.youtube.com/watch?v=uzkc-qNVoOk",
-      "source": "StatQuest"
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
     }
   ]
 }

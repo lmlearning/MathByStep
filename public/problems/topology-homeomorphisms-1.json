@@ -208,21 +208,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Introduction to Topology",
-      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
-      "source": "Insights into Mathematics"
+      "title": "Homeomorphisms",
+      "url": "https://www.youtube.com/watch?v=am1L7A7AWak",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Topology",
-      "url": "https://mathworld.wolfram.com/Topology.html",
+      "title": "Homeomorphism",
+      "url": "https://mathworld.wolfram.com/Homeomorphism.html",
       "source": "Wolfram MathWorld"
     },
     {
       "type": "video",
-      "title": "What is Topology?",
-      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
-      "source": "Brendan Fong"
+      "title": "Topological Equivalence",
+      "url": "https://www.youtube.com/watch?v=AZ21cNPEHNA",
+      "source": "Dr. Trefor Bazett"
     }
   ]
 }

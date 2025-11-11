@@ -155,13 +155,13 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Matrix Operations",
+      "title": "Matrix Multiplication",
       "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro",
       "source": "Khan Academy"
     },
     {
       "type": "video",
-      "title": "Matrices - Essence of Linear Algebra",
+      "title": "Matrices - Linear Algebra",
       "url": "https://www.youtube.com/watch?v=kYB8IZa5AuE",
       "source": "3Blue1Brown"
     },

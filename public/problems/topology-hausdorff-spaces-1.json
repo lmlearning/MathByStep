@@ -195,21 +195,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Introduction to Topology",
-      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
-      "source": "Insights into Mathematics"
+      "title": "Hausdorff Spaces",
+      "url": "https://www.youtube.com/watch?v=fP2S91-kEGg",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Topology",
-      "url": "https://mathworld.wolfram.com/Topology.html",
+      "title": "Hausdorff Spaces",
+      "url": "https://mathworld.wolfram.com/HausdorffSpace.html",
       "source": "Wolfram MathWorld"
     },
     {
       "type": "video",
-      "title": "What is Topology?",
-      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
-      "source": "Brendan Fong"
+      "title": "T2 Separation Axiom",
+      "url": "https://www.youtube.com/watch?v=n9FNYwXlZ6E",
+      "source": "Aleph 0"
     }
   ]
 }

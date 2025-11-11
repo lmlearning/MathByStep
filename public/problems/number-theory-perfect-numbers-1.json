@@ -114,20 +114,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
-      "source": "Socratica"
+      "title": "Perfect Numbers",
+      "url": "https://www.youtube.com/watch?v=T0xKc99RI6I",
+      "source": "Numberphile"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Perfect Numbers",
+      "url": "https://brilliant.org/wiki/perfect-numbers/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
+      "title": "Even Perfect Numbers",
+      "url": "https://www.youtube.com/watch?v=JE1JxpJdh1w",
       "source": "Mathologer"
     }
   ]

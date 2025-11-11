@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
-      "source": "Socratica"
+      "title": "Fundamental Group",
+      "url": "https://www.youtube.com/watch?v=pnV8IY7YGQM",
+      "source": "Richard E Borcherds"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Fundamental Group",
+      "url": "https://mathworld.wolfram.com/FundamentalGroup.html",
+      "source": "Wolfram MathWorld"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Homotopy and Fundamental Group",
+      "url": "https://www.youtube.com/watch?v=h2gKVoyJyuw",
+      "source": "Aleph 0"
     }
   ]
 }

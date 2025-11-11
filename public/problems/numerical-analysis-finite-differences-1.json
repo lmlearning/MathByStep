@@ -209,21 +209,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Numerical Methods",
-      "url": "https://www.youtube.com/playlist?list=PLMrJAkhIeNNQromC7gB8LHTRu2UGqOh0a",
-      "source": "Steve Brunton"
-    },
-    {
-      "type": "article",
-      "title": "Numerical Analysis",
-      "url": "https://www.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/",
-      "source": "University of Maryland"
+      "title": "Essence of Calculus - Derivatives",
+      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
+      "source": "3Blue1Brown"
     },
     {
       "type": "video",
-      "title": "Numerical Computing",
-      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+      "title": "Derivatives Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
       "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Derivatives",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "source": "Paul's Online Math Notes"
     }
   ]
 }

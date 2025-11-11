@@ -206,21 +206,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Ideals in Ring Theory",
+      "url": "https://www.youtube.com/watch?v=4SoTUmTPV90",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Ideals",
+      "url": "https://brilliant.org/wiki/ideals/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Ideals and Quotient Rings",
+      "url": "https://www.youtube.com/watch?v=MQNLGEa6-YI",
+      "source": "Michael Penn"
     }
   ]
 }

@@ -210,21 +210,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Limits Introduction",
-      "url": "https://www.khanacademy.org/math/calculus-1/cs1-limits-and-continuity/cs1-limits-intro/v/introduction-to-limits-hd",
+      "title": "Essence of Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Calculus 1",
+      "url": "https://www.khanacademy.org/math/calculus-1",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Limits",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Limits.aspx",
+      "title": "Calculus Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
       "source": "Paul's Online Math Notes"
-    },
-    {
-      "type": "article",
-      "title": "An Intuitive Introduction to Limits",
-      "url": "https://betterexplained.com/articles/an-intuitive-introduction-to-limits/",
-      "source": "Better Explained"
     }
   ]
 }

@@ -155,21 +155,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Complex Analysis",
-      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
-      "source": "MathTheBeautiful"
+      "title": "Residue Theorem",
+      "url": "https://www.youtube.com/watch?v=0FBIoSyV5P8",
+      "source": "Dr. Trefor Bazett"
     },
     {
       "type": "article",
-      "title": "Complex Analysis",
-      "url": "https://complex-analysis.com/",
-      "source": "Complex Analysis Course"
+      "title": "Residue Theorem",
+      "url": "https://complex-analysis.com/content/residue_theorem.html",
+      "source": "Complex Analysis"
     },
     {
       "type": "video",
-      "title": "Complex Numbers",
-      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
-      "source": "3Blue1Brown"
+      "title": "Calculating Residues",
+      "url": "https://www.youtube.com/watch?v=93LjB-THQPQ",
+      "source": "Faculty of Khan"
     }
   ]
 }

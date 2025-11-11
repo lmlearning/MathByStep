@@ -197,21 +197,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Separable Differential Equations",
+      "url": "https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/separable-equations/v/separable-differential-equations-introduction",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "Separable Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/Separable.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Separation of Variables",
+      "url": "https://www.youtube.com/watch?v=R3qWIgVJ1DU",
+      "source": "Professor Leonard"
     }
   ]
 }

@@ -195,21 +195,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Introduction to Topology",
-      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
-      "source": "Insights into Mathematics"
+      "title": "Connected Spaces",
+      "url": "https://www.youtube.com/watch?v=pVZNg8mCBsE",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Topology",
-      "url": "https://mathworld.wolfram.com/Topology.html",
+      "title": "Connectedness in Topology",
+      "url": "https://mathworld.wolfram.com/ConnectedSpace.html",
       "source": "Wolfram MathWorld"
     },
     {
       "type": "video",
-      "title": "What is Topology?",
-      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
-      "source": "Brendan Fong"
+      "title": "Path Connectedness",
+      "url": "https://www.youtube.com/watch?v=Z3Q7xOMEfn4",
+      "source": "Dr. Trefor Bazett"
     }
   ]
 }

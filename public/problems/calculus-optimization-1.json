@@ -238,21 +238,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Optimization Problems",
+      "title": "Optimization Problems - Fencing",
       "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-analyzing-functions/cs1-optimization-problems/v/optimization-fence-1",
       "source": "Khan Academy"
     },
     {
       "type": "article",
       "title": "Optimization",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/Optimization.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Calculus Optimization",
+      "title": "Calculus Optimization Examples",
       "url": "https://www.youtube.com/watch?v=HjR9OKbRSYE",
-      "source": "Organic Chemistry Tutor"
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

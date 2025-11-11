@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Exponent Rules",
-      "url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:rational-exponents-radicals/x2f8bb11595b61c86:exponential-properties-rules/v/exponent-properties-involving-products",
-      "source": "Khan Academy"
+      "title": "Gradient and Directional Derivatives",
+      "url": "https://www.youtube.com/watch?v=8yGr8hWGBos",
+      "source": "Dr. Trefor Bazett"
     },
     {
       "type": "article",
-      "title": "Properties of Exponents",
-      "url": "https://www.mathsisfun.com/algebra/exponent-laws.html",
-      "source": "Math is Fun"
+      "title": "Gradient Vector",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/Gradient.aspx",
+      "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Exponential Functions",
-      "url": "https://www.youtube.com/watch?v=6WMZ7J0wwMI",
-      "source": "Professor Leonard"
+      "title": "The Gradient",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient",
+      "source": "Khan Academy"
     }
   ]
 }

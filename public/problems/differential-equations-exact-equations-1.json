@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
-      "source": "Socratica"
+      "title": "Exact Differential Equations",
+      "url": "https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/exact-equations-intuition-1-proofy",
+      "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Exact Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/Exact.aspx",
+      "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Exact DEs Explained",
+      "url": "https://www.youtube.com/watch?v=h3yQj2Ipqtw",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

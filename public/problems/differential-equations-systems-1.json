@@ -238,21 +238,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Eigenvalues and Eigenvectors",
-      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Eigenvectors Introduction",
-      "url": "https://www.khanacademy.org/math/linear-algebra/alternate-bases/eigen-everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors",
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Eigenvalues and Eigenvectors",
-      "url": "http://math.mit.edu/~gs/linearalgebra/ila0601.pdf",
-      "source": "MIT OCW"
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
     }
   ]
 }

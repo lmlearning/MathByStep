@@ -71,20 +71,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Exponent Rules",
-      "url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:rational-exponents-radicals/x2f8bb11595b61c86:exponential-properties-rules/v/exponent-properties-involving-products",
+      "title": "Algebra Course",
+      "url": "https://www.khanacademy.org/math/algebra",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Properties of Exponents",
-      "url": "https://www.mathsisfun.com/algebra/exponent-laws.html",
-      "source": "Math is Fun"
+      "title": "Algebra Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Exponential Functions",
-      "url": "https://www.youtube.com/watch?v=6WMZ7J0wwMI",
+      "title": "Algebra Fundamentals",
+      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
       "source": "Professor Leonard"
     }
   ]

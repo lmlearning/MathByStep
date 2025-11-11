@@ -208,20 +208,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Eigenvalues and Eigenvectors",
-      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
+      "title": "Essence of Linear Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
       "source": "3Blue1Brown"
     },
     {
       "type": "video",
-      "title": "Eigenvectors Introduction",
-      "url": "https://www.khanacademy.org/math/linear-algebra/alternate-bases/eigen-everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors",
+      "title": "Linear Algebra Course",
+      "url": "https://www.khanacademy.org/math/linear-algebra",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Eigenvalues and Eigenvectors",
-      "url": "http://math.mit.edu/~gs/linearalgebra/ila0601.pdf",
+      "title": "Linear Algebra",
+      "url": "http://math.mit.edu/~gs/linearalgebra/",
       "source": "MIT OCW"
     }
   ]

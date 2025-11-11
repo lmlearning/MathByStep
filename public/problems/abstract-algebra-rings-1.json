@@ -195,21 +195,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Ring Homomorphisms",
+      "url": "https://www.youtube.com/watch?v=pG3OLcCW9do",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Ring Homomorphisms",
+      "url": "https://brilliant.org/wiki/ring-homomorphism/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Ring Theory Basics",
+      "url": "https://www.youtube.com/watch?v=FrAueyB5iWk",
+      "source": "Michael Penn"
     }
   ]
 }

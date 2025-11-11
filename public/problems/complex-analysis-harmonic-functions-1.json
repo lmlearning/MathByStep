@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
-      "source": "Socratica"
+      "title": "Harmonic Functions",
+      "url": "https://www.youtube.com/watch?v=5t6EqiEaKu8",
+      "source": "Dr. Trefor Bazett"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Harmonic Functions in Complex Analysis",
+      "url": "https://complex-analysis.com/content/harmonic_functions.html",
+      "source": "Complex Analysis"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Laplace's Equation",
+      "url": "https://www.youtube.com/watch?v=jKDJNdNqQRI",
+      "source": "Faculty of Khan"
     }
   ]
 }

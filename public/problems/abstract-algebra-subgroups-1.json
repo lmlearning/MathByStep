@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Subgroups",
+      "url": "https://www.youtube.com/watch?v=x1hFvgiQhIw",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Subgroups and Lagrange's Theorem",
+      "url": "https://brilliant.org/wiki/subgroups/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Subgroup Test",
+      "url": "https://www.youtube.com/watch?v=x_NJsxrILnI",
+      "source": "Michael Penn"
     }
   ]
 }

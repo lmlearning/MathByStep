@@ -196,21 +196,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Abstract Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6",
+      "title": "Group Actions",
+      "url": "https://www.youtube.com/watch?v=D3UKW8f_YC8",
       "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Abstract Algebra",
-      "url": "http://abstract.ups.edu/aata/aata.html",
-      "source": "Open Textbook"
+      "title": "Group Actions",
+      "url": "https://brilliant.org/wiki/group-actions/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Group Theory",
-      "url": "https://www.youtube.com/watch?v=IP7nW_hKB7I",
-      "source": "Mathologer"
+      "title": "Orbits and Stabilizers",
+      "url": "https://www.youtube.com/watch?v=qLBbmJyLzM0",
+      "source": "Michael Penn"
     }
   ]
 }

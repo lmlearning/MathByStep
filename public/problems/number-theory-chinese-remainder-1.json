@@ -195,20 +195,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Number Theory",
-      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://www.youtube.com/watch?v=zIFehsBHB8o",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Elementary Number Theory",
-      "url": "https://www.math.brown.edu/johsilve/frintch1ch6.pdf",
-      "source": "Brown University"
+      "title": "Chinese Remainder Theorem",
+      "url": "https://brilliant.org/wiki/chinese-remainder-theorem/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Numberphile",
-      "url": "https://www.youtube.com/user/numberphile",
+      "title": "CRT Explained",
+      "url": "https://www.youtube.com/watch?v=ru7mWZJlRQg",
       "source": "Numberphile"
     }
   ]

@@ -71,21 +71,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Euclidean Algorithm for GCD",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Greatest Common Divisor",
+      "url": "https://brilliant.org/wiki/greatest-common-divisor/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "GCD and Euclidean Algorithm",
+      "url": "https://www.youtube.com/watch?v=H_2_nqKAZ5w",
+      "source": "Eddie Woo"
     }
   ]
 }

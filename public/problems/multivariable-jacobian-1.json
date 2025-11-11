@@ -208,21 +208,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Multivariable Calculus Course",
-      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "title": "Matrix Multiplication",
+      "url": "https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro",
       "source": "Khan Academy"
     },
     {
-      "type": "article",
-      "title": "Multivariable Calculus",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
-      "source": "Paul's Online Math Notes"
+      "type": "video",
+      "title": "Matrices - Linear Algebra",
+      "url": "https://www.youtube.com/watch?v=kYB8IZa5AuE",
+      "source": "3Blue1Brown"
     },
     {
-      "type": "video",
-      "title": "Divergence and Curl",
-      "url": "https://www.youtube.com/watch?v=rB83DpBJQsE",
-      "source": "3Blue1Brown"
+      "type": "article",
+      "title": "Matrix Algebra",
+      "url": "https://www.mathsisfun.com/algebra/matrix-introduction.html",
+      "source": "Math is Fun"
     }
   ]
 }

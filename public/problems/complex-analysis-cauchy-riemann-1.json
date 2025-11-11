@@ -237,21 +237,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
-      "source": "Khan Academy"
+      "title": "Cauchy-Riemann Equations",
+      "url": "https://www.youtube.com/watch?v=L_3WXGww4T4",
+      "source": "Dr. Trefor Bazett"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Cauchy-Riemann Equations",
+      "url": "https://complex-analysis.com/content/cauchy_riemann_equations.html",
+      "source": "Complex Analysis"
+    },
+    {
+      "type": "video",
+      "title": "Analytic Functions",
+      "url": "https://www.youtube.com/watch?v=Xq3MqrqwsYI",
+      "source": "Faculty of Khan"
     }
   ]
 }

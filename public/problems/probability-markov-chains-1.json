@@ -208,21 +208,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Probability Basics",
-      "url": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability",
-      "source": "Khan Academy"
+      "title": "Markov Chains",
+      "url": "https://www.youtube.com/watch?v=i3AkTO9HLXo",
+      "source": "Normalized Nerd"
     },
     {
       "type": "article",
-      "title": "Introduction to Probability",
-      "url": "https://www.mathsisfun.com/data/probability.html",
-      "source": "Math is Fun"
+      "title": "Markov Chains",
+      "url": "https://brilliant.org/wiki/markov-chains/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Probability Fundamentals",
-      "url": "https://www.youtube.com/watch?v=uzkc-qNVoOk",
-      "source": "StatQuest"
+      "title": "Markov Chain Example",
+      "url": "https://www.khanacademy.org/computing/computer-science/informationtheory/moderninfotheory/v/markov_chains",
+      "source": "Khan Academy"
     }
   ]
 }

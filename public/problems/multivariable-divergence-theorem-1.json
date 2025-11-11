@@ -197,21 +197,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Multivariable Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7",
+      "title": "Divergence Theorem",
+      "url": "https://www.youtube.com/watch?v=rB83DpBJQsE",
       "source": "3Blue1Brown"
     },
     {
-      "type": "video",
-      "title": "Multivariable Calculus Course",
-      "url": "https://www.khanacademy.org/math/multivariable-calculus",
-      "source": "Khan Academy"
+      "type": "article",
+      "title": "Divergence Theorem",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/DivergenceTheorem.aspx",
+      "source": "Paul's Online Math Notes"
     },
     {
-      "type": "article",
-      "title": "Calculus III",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
-      "source": "Paul's Online Math Notes"
+      "type": "video",
+      "title": "Gauss's Theorem",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus/greens-theorem-and-stokes-theorem/divergence-theorem-articles/v/divergence-theorem-proof-part-1",
+      "source": "Khan Academy"
     }
   ]
 }

@@ -207,21 +207,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Introduction to Topology",
-      "url": "https://www.youtube.com/watch?v=tdkRV5sqYJI",
-      "source": "Insights into Mathematics"
+      "title": "Compactness in Topology",
+      "url": "https://www.youtube.com/watch?v=xmP5kZuFPTg",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Topology",
-      "url": "https://mathworld.wolfram.com/Topology.html",
-      "source": "Wolfram MathWorld"
+      "title": "Heine-Borel Theorem",
+      "url": "https://brilliant.org/wiki/heine-borel-theorem/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "What is Topology?",
-      "url": "https://www.youtube.com/watch?v=hJPv4yZzbKE",
-      "source": "Brendan Fong"
+      "title": "Heine-Borel Theorem Proof",
+      "url": "https://www.youtube.com/watch?v=1LQ0rJW5Xf8",
+      "source": "Dr. Peyam"
     }
   ]
 }

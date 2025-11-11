@@ -237,21 +237,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Probability Basics",
-      "url": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability",
-      "source": "Khan Academy"
+      "title": "Bayes' Theorem",
+      "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM",
+      "source": "3Blue1Brown"
     },
     {
       "type": "article",
-      "title": "Introduction to Probability",
-      "url": "https://www.mathsisfun.com/data/probability.html",
-      "source": "Math is Fun"
+      "title": "Understanding Bayes' Theorem",
+      "url": "https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/",
+      "source": "Better Explained"
     },
     {
       "type": "video",
-      "title": "Probability Fundamentals",
-      "url": "https://www.youtube.com/watch?v=uzkc-qNVoOk",
-      "source": "StatQuest"
+      "title": "Bayes' Theorem Examples",
+      "url": "https://www.khanacademy.org/math/statistics-probability/probability-library/conditional-probability-independence/v/bayes-theorem-visualized",
+      "source": "Khan Academy"
     }
   ]
 }

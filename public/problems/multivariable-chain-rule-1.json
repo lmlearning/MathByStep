@@ -236,21 +236,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Multivariable Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Multivariable Calculus Course",
-      "url": "https://www.khanacademy.org/math/multivariable-calculus",
-      "source": "Khan Academy"
+      "title": "Multivariable Chain Rule",
+      "url": "https://www.youtube.com/watch?v=NO3AqAaAE6o",
+      "source": "Dr. Trefor Bazett"
     },
     {
       "type": "article",
-      "title": "Calculus III",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "title": "Chain Rule for Multivariable Functions",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/ChainRule.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Multivariable Chain Rule Examples",
+      "url": "https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/multivariable-chain-rule/v/multivariable-chain-rule-intro",
+      "source": "Khan Academy"
     }
   ]
 }

@@ -237,20 +237,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Multivariable Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7",
+      "title": "Integration and FTC",
+      "url": "https://www.youtube.com/watch?v=rfG8ce4nNh0",
       "source": "3Blue1Brown"
     },
     {
       "type": "video",
-      "title": "Multivariable Calculus Course",
-      "url": "https://www.khanacademy.org/math/multivariable-calculus",
+      "title": "Integrals Introduction",
+      "url": "https://www.khanacademy.org/math/calculus-1/cs1-integration-and-accumulation-of-change/cs1-accumulation-of-change-topic/v/introduction-to-integral-calculus",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus III",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx",
+      "title": "Integration",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/IndefiniteIntegrals.aspx",
       "source": "Paul's Online Math Notes"
     }
   ]

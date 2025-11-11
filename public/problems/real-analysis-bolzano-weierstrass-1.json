@@ -195,20 +195,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Sequences and Series",
-      "url": "https://www.khanacademy.org/math/calculus-2/cs2-series",
-      "source": "Khan Academy"
+      "title": "Bolzano-Weierstrass Theorem",
+      "url": "https://www.youtube.com/watch?v=zKv2SJJgI7s",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Sequences",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/Sequences.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Bolzano-Weierstrass Theorem",
+      "url": "https://brilliant.org/wiki/bolzano-weierstrass-theorem/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Real Analysis - Sequences",
-      "url": "https://www.youtube.com/watch?v=sqEyWLGvvdw",
+      "title": "Bolzano-Weierstrass Proof",
+      "url": "https://www.youtube.com/watch?v=Y1TLJiJkN_8",
       "source": "Dr. Peyam"
     }
   ]

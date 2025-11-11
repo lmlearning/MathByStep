@@ -207,20 +207,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Complex Analysis",
-      "url": "https://www.youtube.com/playlist?list=PLi7yHjesblV0sSfZzWdSUXGO683n_nJdQ",
-      "source": "MathTheBeautiful"
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
+      "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Complex Analysis",
-      "url": "https://complex-analysis.com/",
-      "source": "Complex Analysis Course"
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Complex Analysis Fundamentals",
-      "url": "https://www.youtube.com/watch?v=5PcpBw5Hbwo",
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
       "source": "3Blue1Brown"
     }
   ]

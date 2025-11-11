@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Exponent Rules",
-      "url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:rational-exponents-radicals/x2f8bb11595b61c86:exponential-properties-rules/v/exponent-properties-involving-products",
+      "title": "Essence of Linear Algebra",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "video",
+      "title": "Linear Algebra Course",
+      "url": "https://www.khanacademy.org/math/linear-algebra",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Properties of Exponents",
-      "url": "https://www.mathsisfun.com/algebra/exponent-laws.html",
-      "source": "Math is Fun"
-    },
-    {
-      "type": "video",
-      "title": "Exponential Functions",
-      "url": "https://www.youtube.com/watch?v=6WMZ7J0wwMI",
-      "source": "Professor Leonard"
+      "title": "Linear Algebra",
+      "url": "http://math.mit.edu/~gs/linearalgebra/",
+      "source": "MIT OCW"
     }
   ]
 }

@@ -209,21 +209,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Numerical Methods",
-      "url": "https://www.youtube.com/playlist?list=PLMrJAkhIeNNQromC7gB8LHTRu2UGqOh0a",
-      "source": "Steve Brunton"
+      "title": "Khan Academy Mathematics",
+      "url": "https://www.khanacademy.org/math",
+      "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Numerical Analysis",
-      "url": "https://www.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/",
-      "source": "University of Maryland"
+      "title": "Paul's Online Math Notes",
+      "url": "https://tutorial.math.lamar.edu/",
+      "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Numerical Computing",
-      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
-      "source": "Khan Academy"
+      "title": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "source": "3Blue1Brown"
     }
   ]
 }

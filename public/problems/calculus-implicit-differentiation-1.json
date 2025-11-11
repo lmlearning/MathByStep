@@ -157,20 +157,20 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus - Derivatives",
-      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
+      "title": "Essence of Calculus",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
       "source": "3Blue1Brown"
     },
     {
       "type": "video",
-      "title": "Derivatives Introduction",
-      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
+      "title": "Calculus 1",
+      "url": "https://www.khanacademy.org/math/calculus-1",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Derivatives",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "title": "Calculus Reference",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
       "source": "Paul's Online Math Notes"
     }
   ]

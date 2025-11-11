@@ -237,21 +237,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Algebra Course",
-      "url": "https://www.khanacademy.org/math/algebra",
-      "source": "Khan Academy"
+      "title": "Lagrange's Theorem",
+      "url": "https://www.youtube.com/watch?v=EWH6pZnGws4",
+      "source": "Socratica"
     },
     {
       "type": "article",
-      "title": "Algebra Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Lagrange's Theorem in Group Theory",
+      "url": "https://brilliant.org/wiki/lagranges-theorem-group-theory/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "Algebra Basics",
-      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
-      "source": "Professor Leonard"
+      "title": "Lagrange's Theorem Proof",
+      "url": "https://www.youtube.com/watch?v=8c0LGQIiQKQ",
+      "source": "Michael Penn"
     }
   ]
 }
