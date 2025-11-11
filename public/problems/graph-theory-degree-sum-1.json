@@ -1,0 +1,129 @@
+{
+  "id": "graph-theory-degree-sum-1",
+  "type": "problem",
+  "title": "Handshaking Lemma",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "graph-theory",
+    "degree",
+    "handshaking-lemma"
+  ],
+  "statement": {
+    "text": "A graph has 5 vertices with degrees 2, 3, 3, 4, and $d$. Find $d$."
+  },
+  "objectives": [
+    "Apply handshaking lemma",
+    "Understand degree sum"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall handshaking lemma"
+      },
+      "prompt": {
+        "question": "Sum of all degrees equals?",
+        "hint": "$2 \\times$(number of edges)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2|E|$ (twice the number of edges)"
+        },
+        {
+          "id": "b",
+          "text": "$|V|$ (number of vertices)"
+        },
+        {
+          "id": "c",
+          "text": "$|E|$ (number of edges)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Each edge contributes 2 to the degree sum",
+          "insight": "Sum of degrees must be even"
+        },
+        "incorrect": {
+          "1": "That's unrelated to degrees",
+          "2": "Count each edge twice"
+        }
+      },
+      "resultState": {
+        "description": "$\\sum \\deg(v) = 2|E|$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Sum must be even"
+      },
+      "prompt": {
+        "question": "$2 + 3 + 3 + 4 + d = ?$ must be even. Find $d$.",
+        "hint": "$12 + d$ even, so $d$ is even"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$d = 0, 2, 4, 6, \\ldots$ (any even number)"
+        },
+        {
+          "id": "b",
+          "text": "$d = 1, 3, 5, \\ldots$ (odd)"
+        },
+        {
+          "id": "c",
+          "text": "$d = 12$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$12 + d$ must be even, so $d$ must be even.\\n\\nIf graph is simple, $0 \\leq d \\leq 4$, so $d \\in \\{0, 2, 4\\}$",
+          "insight": "Degree sum is always even"
+        },
+        "incorrect": {
+          "1": "$12 + odd = odd$, but sum must be even",
+          "2": "That specific value isn't required"
+        }
+      },
+      "resultState": {
+        "description": "$d$ is even"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Handshaking lemma: $\\sum \\deg(v) = 2|E|$",
+      "Degree sum must be even",
+      "$d$ must be even"
+    ],
+    "fullSolution": "By handshaking lemma: $2 + 3 + 3 + 4 + d = 2|E|$\\n\\n$12 + d$ must be even\\n\\nTherefore $d$ is even",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory",
+      "url": "https://www.youtube.com/watch?v=eIb1cz06UwI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Handshaking Lemma",
+      "url": "https://brilliant.org/wiki/handshaking-lemma/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Graph Theory",
+      "url": "https://www.youtube.com/watch?v=HkNdNpKUByM",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

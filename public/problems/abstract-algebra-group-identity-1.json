@@ -1,0 +1,128 @@
+{
+  "id": "abstract-algebra-group-identity-1",
+  "type": "problem",
+  "title": "Verify Group Identity",
+  "topic": "Abstract Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "abstract-algebra",
+    "groups",
+    "identity"
+  ],
+  "statement": {
+    "text": "In the group $(\\mathbb{Z}_4, +)$, what is the identity element?"
+  },
+  "objectives": [
+    "Understand group identity",
+    "Verify identity property"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Define identity"
+      },
+      "prompt": {
+        "question": "Identity element $e$ satisfies what property?",
+        "hint": "$a + e = e + a = a$ for all $a$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$a + e = a$ for all $a$"
+        },
+        {
+          "id": "b",
+          "text": "$a + e = 0$ for all $a$"
+        },
+        {
+          "id": "c",
+          "text": "$a + e = e$ for all $a$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Identity leaves elements unchanged: $a + e = a$",
+          "insight": "In $\\mathbb{Z}_4$, operations are mod 4"
+        },
+        "incorrect": {
+          "1": "That's the inverse",
+          "2": "Identity preserves the element"
+        }
+      },
+      "resultState": {
+        "description": "Identity: $a + e = a$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find identity in $\\mathbb{Z}_4$"
+      },
+      "prompt": {
+        "question": "What element satisfies $a + e \\equiv a \\pmod{4}$?",
+        "hint": "$e = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$e = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$e = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$e = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$a + 0 \\equiv a \\pmod{4}$ for all $a \\in \\{0,1,2,3\\}$",
+          "insight": "0 is the additive identity"
+        },
+        "incorrect": {
+          "1": "$a + 1 \\not\\equiv a$",
+          "2": "$4 \\equiv 0 \\pmod{4}$"
+        }
+      },
+      "resultState": {
+        "description": "Identity = 0"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Identity: $a + e = a$ for all $a$",
+      "In $(\\mathbb{Z}_4, +)$, identity = 0"
+    ],
+    "fullSolution": "The identity element in $(\\mathbb{Z}_4, +)$ is 0, since $a + 0 \\equiv a \\pmod{4}$ for all $a$.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/watch?v=g7L_r6zw4-c",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Groups",
+      "url": "https://brilliant.org/wiki/groups-definition-and-introduction/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Introduction to Groups",
+      "url": "https://www.youtube.com/watch?v=zkgqB3STAZk",
+      "source": "TheTrevTutor"
+    }
+  ]
+}

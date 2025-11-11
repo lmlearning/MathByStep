@@ -1,0 +1,128 @@
+{
+  "id": "logic-contrapositive-1",
+  "type": "problem",
+  "title": "Write the Contrapositive",
+  "topic": "Logic & Proofs",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "logic",
+    "contrapositive",
+    "implications"
+  ],
+  "statement": {
+    "text": "What is the contrapositive of: 'If it rains, then the ground is wet'?"
+  },
+  "objectives": [
+    "Understand contrapositive",
+    "Apply logical equivalence"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify form"
+      },
+      "prompt": {
+        "question": "Original statement form: $P \\to Q$. What is $P$ and $Q$?",
+        "hint": "$P$: it rains, $Q$: ground is wet"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P$: it rains, $Q$: ground is wet"
+        },
+        {
+          "id": "b",
+          "text": "$P$: ground is wet, $Q$: it rains"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$P \\to Q$: 'If $P$ then $Q$'",
+          "insight": "Now form contrapositive"
+        },
+        "incorrect": {
+          "1": "Order matters in implications",
+          "2": "Read carefully"
+        }
+      },
+      "resultState": {
+        "description": "$P \\to Q$ identified"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Form contrapositive"
+      },
+      "prompt": {
+        "question": "Contrapositive of $P \\to Q$ is?",
+        "hint": "$\\neg Q \\to \\neg P$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\neg Q \\to \\neg P$: 'If ground not wet, then no rain'"
+        },
+        {
+          "id": "b",
+          "text": "$\\neg P \\to \\neg Q$: 'If no rain, then ground not wet'"
+        },
+        {
+          "id": "c",
+          "text": "$Q \\to P$: 'If ground wet, then it rains'"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Contrapositive: negate both parts and reverse order",
+          "insight": "$P \\to Q$ is logically equivalent to $\\neg Q \\to \\neg P$"
+        },
+        "incorrect": {
+          "1": "That's the inverse, not contrapositive",
+          "2": "That's the converse"
+        }
+      },
+      "resultState": {
+        "description": "Contrapositive: 'If ground not wet, then no rain'"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Contrapositive of $P \\to Q$ is $\\neg Q \\to \\neg P$",
+      "They are logically equivalent"
+    ],
+    "fullSolution": "Original: 'If it rains, then ground is wet' ($P \\to Q$)\\n\\nContrapositive: 'If ground is not wet, then it did not rain' ($\\neg Q \\to \\neg P$)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Contrapositive",
+      "url": "https://www.youtube.com/watch?v=VqfqF-8ZNRI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Contrapositive",
+      "url": "https://brilliant.org/wiki/contrapositive/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Proof by Contrapositive",
+      "url": "https://www.youtube.com/watch?v=LQYV2AeVVqU",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

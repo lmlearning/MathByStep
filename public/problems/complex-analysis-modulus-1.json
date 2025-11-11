@@ -1,0 +1,126 @@
+{
+  "id": "complex-analysis-modulus-1",
+  "type": "problem",
+  "title": "Complex Number Modulus",
+  "topic": "Complex Analysis",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "complex-analysis",
+    "modulus"
+  ],
+  "statement": {
+    "text": "Find $|3 + 4i|$."
+  },
+  "objectives": [
+    "Compute complex modulus"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall formula"
+      },
+      "prompt": {
+        "question": "$|a + bi| = ?$",
+        "hint": "$\\sqrt{a^2 + b^2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{a^2 + b^2}$"
+        },
+        {
+          "id": "b",
+          "text": "$a + b$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt{a + b}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Modulus: $|a+bi| = \\sqrt{a^2+b^2}$",
+          "insight": "Pythagorean theorem"
+        },
+        "incorrect": {
+          "1": "Use square root of sum of squares",
+          "2": "Square each part first"
+        }
+      },
+      "resultState": {
+        "description": "$|3+4i| = \\sqrt{3^2+4^2}$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate"
+      },
+      "prompt": {
+        "question": "$\\sqrt{9 + 16} = ?$",
+        "hint": "$\\sqrt{25} = 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$5$"
+        },
+        {
+          "id": "b",
+          "text": "$7$"
+        },
+        {
+          "id": "c",
+          "text": "$25$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\sqrt{25} = 5$",
+          "insight": "3-4-5 right triangle!"
+        },
+        "incorrect": {
+          "1": "That's $9+16$, not the square root",
+          "2": "Don't forget the square root"
+        }
+      },
+      "resultState": {
+        "description": "$|3+4i| = 5$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$|a+bi| = \\sqrt{a^2+b^2}$",
+      "$|3+4i| = 5$"
+    ],
+    "fullSolution": "$|3+4i| = \\sqrt{3^2+4^2} = \\sqrt{9+16} = \\sqrt{25} = 5$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=T647CGsuOVU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complex Numbers",
+      "url": "https://brilliant.org/wiki/complex-numbers/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=SP-YJe7Vldo",
+      "source": "3Blue1Brown"
+    }
+  ]
+}

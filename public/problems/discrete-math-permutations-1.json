@@ -1,0 +1,128 @@
+{
+  "id": "discrete-math-permutations-1",
+  "type": "problem",
+  "title": "Permutations Without Repetition",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "discrete-math",
+    "combinatorics",
+    "permutations"
+  ],
+  "statement": {
+    "text": "How many ways can 5 people be arranged in a line?"
+  },
+  "objectives": [
+    "Apply permutation formula",
+    "Understand factorial"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify formula"
+      },
+      "prompt": {
+        "question": "Permutations of $n$ distinct objects?",
+        "hint": "$n!$ (n factorial)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$n!$"
+        },
+        {
+          "id": "b",
+          "text": "$2^n$"
+        },
+        {
+          "id": "c",
+          "text": "$n^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Permutations of $n$ objects = $n!$",
+          "insight": "$n! = n \\times (n-1) \\times \\cdots \\times 2 \\times 1$"
+        },
+        "incorrect": {
+          "1": "That's for subsets",
+          "2": "Use factorial"
+        }
+      },
+      "resultState": {
+        "description": "$P(5) = 5!$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate"
+      },
+      "prompt": {
+        "question": "What is $5!$?",
+        "hint": "$5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$120$"
+        },
+        {
+          "id": "b",
+          "text": "$25$"
+        },
+        {
+          "id": "c",
+          "text": "$60$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$",
+          "insight": "120 different arrangements"
+        },
+        "incorrect": {
+          "1": "That's $5^2$",
+          "2": "Multiply all the numbers"
+        }
+      },
+      "resultState": {
+        "description": "$5! = 120$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$n!$ = permutations of $n$ objects",
+      "$5! = 120$"
+    ],
+    "fullSolution": "Permutations of 5 people = $5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Permutations",
+      "url": "https://www.youtube.com/watch?v=XJnIdRXUi7A",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Permutations and Combinations",
+      "url": "https://brilliant.org/wiki/permutations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Permutations and Combinations",
+      "url": "https://www.youtube.com/watch?v=iKy-d5_erhI",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

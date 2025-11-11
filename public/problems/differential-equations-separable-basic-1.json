@@ -1,0 +1,168 @@
+{
+  "id": "differential-equations-separable-basic-1",
+  "type": "problem",
+  "title": "Solve Separable Differential Equation",
+  "topic": "Differential Equations",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "differential-equations",
+    "separable",
+    "first-order"
+  ],
+  "statement": {
+    "text": "Solve: $\\frac{dy}{dx} = 2xy$"
+  },
+  "objectives": [
+    "Separate variables",
+    "Integrate both sides",
+    "Solve for y"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Separate variables"
+      },
+      "prompt": {
+        "question": "Rewrite with $y$ terms on left, $x$ terms on right",
+        "hint": "$\\frac{dy}{y} = 2x\\,dx$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{y} = 2x\\,dx$"
+        },
+        {
+          "id": "b",
+          "text": "$dy = 2xy\\,dx$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dx}{x} = 2y\\,dy$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Divide both sides by $y$, multiply by $dx$",
+          "insight": "Now integrate both sides"
+        },
+        "incorrect": {
+          "1": "Need to separate the variables",
+          "2": "Variables are swapped"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{dy}{y} = 2x\\,dx$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Integrate both sides"
+      },
+      "prompt": {
+        "question": "$\\int \\frac{dy}{y} = \\int 2x\\,dx$ gives?",
+        "hint": "$\\ln|y| = x^2 + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln|y| = x^2 + C$"
+        },
+        {
+          "id": "b",
+          "text": "$y = x^2 + C$"
+        },
+        {
+          "id": "c",
+          "text": "$\\ln|y| = 2x + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\int \\frac{1}{y}dy = \\ln|y|$ and $\\int 2x\\,dx = x^2$",
+          "insight": "Now solve for $y$"
+        },
+        "incorrect": {
+          "1": "Don't forget the logarithm",
+          "2": "$\\int 2x\\,dx = x^2$, not $2x$"
+        }
+      },
+      "resultState": {
+        "description": "$\\ln|y| = x^2 + C$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve for y"
+      },
+      "prompt": {
+        "question": "Exponentiate both sides to get $y = ?$",
+        "hint": "$y = Ae^{x^2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = Ae^{x^2}$ where $A = e^C$"
+        },
+        {
+          "id": "b",
+          "text": "$y = e^{x^2} + C$"
+        },
+        {
+          "id": "c",
+          "text": "$y = Ce^{2x}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$e^{\\ln|y|} = e^{x^2+C} = e^C \\cdot e^{x^2} = Ae^{x^2}$",
+          "insight": "General solution with constant $A$"
+        },
+        "incorrect": {
+          "1": "Exponent rules: $e^{a+b} = e^a \\cdot e^b$",
+          "2": "Check the exponent"
+        }
+      },
+      "resultState": {
+        "description": "$y = Ae^{x^2}$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Separable: $\\frac{dy}{y} = 2x\\,dx$",
+      "General solution: $y = Ae^{x^2}$"
+    ],
+    "fullSolution": "$\\frac{dy}{dx} = 2xy$\\n\\n$\\frac{dy}{y} = 2x\\,dx$\\n\\n$\\ln|y| = x^2 + C$\\n\\n$y = Ae^{x^2}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Separable Differential Equations",
+      "url": "https://www.youtube.com/watch?v=_FRxyweRHBY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Separable Differential Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/Separable.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Separable Differential Equations",
+      "url": "https://www.youtube.com/watch?v=5IC2RIIn6b0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "topology-open-set-1",
+  "type": "problem",
+  "title": "Verify Open Set in Metric Space",
+  "topic": "Topology",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "topology",
+    "open-sets",
+    "metric-spaces"
+  ],
+  "statement": {
+    "text": "Is $(0, 1)$ an open set in $\\mathbb{R}$ with standard metric?"
+  },
+  "objectives": [
+    "Understand open sets",
+    "Apply epsilon-ball definition"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Definition of open set"
+      },
+      "prompt": {
+        "question": "A set $U$ is open if?",
+        "hint": "Every point has a ball contained in $U$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "For each $x \\in U$, exists $\\epsilon > 0$: $B_\\epsilon(x) \\subset U$"
+        },
+        {
+          "id": "b",
+          "text": "The set is unbounded"
+        },
+        {
+          "id": "c",
+          "text": "The set contains its boundary"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Open: every point has an open ball around it inside the set",
+          "insight": "Check if $(0,1)$ satisfies this"
+        },
+        "incorrect": {
+          "1": "That's not the definition",
+          "2": "Open sets don't contain their boundary"
+        }
+      },
+      "resultState": {
+        "description": "Need to show $B_\\epsilon(x) \\subset (0,1)$ for all $x \\in (0,1)$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Verify for $(0,1)$"
+      },
+      "prompt": {
+        "question": "For $x \\in (0,1)$, can we find $\\epsilon$ so $(x-\\epsilon, x+\\epsilon) \\subset (0,1)$?",
+        "hint": "Yes, take $\\epsilon = \\min(x, 1-x)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, $(0,1)$ is open"
+        },
+        {
+          "id": "b",
+          "text": "No, $(0,1)$ is not open"
+        },
+        {
+          "id": "c",
+          "text": "Only some points work"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "For any $x \\in (0,1)$, choose $\\epsilon = \\min(x, 1-x)/2$.\\nThen $(x-\\epsilon, x+\\epsilon) \\subset (0,1)$.",
+          "insight": "$(0,1)$ is open"
+        },
+        "incorrect": {
+          "1": "We can always find such $\\epsilon$",
+          "2": "Works for all points in $(0,1)$"
+        }
+      },
+      "resultState": {
+        "description": "$(0,1)$ is open"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Open: every point has open ball inside set",
+      "$(0,1)$ is open in $\\mathbb{R}$"
+    ],
+    "fullSolution": "$(0,1)$ is open because for any $x \\in (0,1)$, we can choose $\\epsilon = \\min(x, 1-x)/2 > 0$ so that $B_\\epsilon(x) = (x-\\epsilon, x+\\epsilon) \\subset (0,1)$.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Open and Closed Sets",
+      "url": "https://www.youtube.com/watch?v=BWUu4YQ3VG4",
+      "source": "The Bright Side of Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Open Sets",
+      "url": "https://brilliant.org/wiki/open-sets/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Topology",
+      "url": "https://www.youtube.com/watch?v=TBCJIqwvq5g",
+      "source": "Dr. Peyam"
+    }
+  ]
+}

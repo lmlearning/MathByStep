@@ -1,0 +1,128 @@
+{
+  "id": "real-analysis-bounded-sequence-1",
+  "type": "problem",
+  "title": "Determine if Sequence is Bounded",
+  "topic": "Real Analysis",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "real-analysis",
+    "sequences",
+    "bounded"
+  ],
+  "statement": {
+    "text": "Is the sequence $a_n = \\frac{n}{n+1}$ bounded?"
+  },
+  "objectives": [
+    "Understand bounded sequences",
+    "Find bounds"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Definition of bounded"
+      },
+      "prompt": {
+        "question": "A sequence is bounded if?",
+        "hint": "$\\exists M: |a_n| \\leq M$ for all $n$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\exists M > 0: |a_n| \\leq M$ for all $n$"
+        },
+        {
+          "id": "b",
+          "text": "$a_n \\to 0$"
+        },
+        {
+          "id": "c",
+          "text": "$a_n$ is constant"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Bounded means all terms fit within some interval $[-M, M]$",
+          "insight": "Check if $a_n$ has bounds"
+        },
+        "incorrect": {
+          "1": "Convergence doesn't mean bounded",
+          "2": "Can vary and still be bounded"
+        }
+      },
+      "resultState": {
+        "description": "Find bounds for $a_n$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Analyze $a_n = \\frac{n}{n+1}$"
+      },
+      "prompt": {
+        "question": "What are the bounds?",
+        "hint": "$0 < a_n < 1$ for all $n$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$0 < a_n < 1$ (bounded)"
+        },
+        {
+          "id": "b",
+          "text": "Unbounded"
+        },
+        {
+          "id": "c",
+          "text": "$-1 < a_n < 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$a_n = \\frac{n}{n+1} = 1 - \\frac{1}{n+1} < 1$ and $a_n > 0$\\n\\nBounded by $M = 1$",
+          "insight": "$a_n \\to 1$ as $n \\to \\infty$"
+        },
+        "incorrect": {
+          "1": "Check the values",
+          "2": "All terms are positive"
+        }
+      },
+      "resultState": {
+        "description": "Bounded: $0 < a_n < 1$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Sequence is bounded if $|a_n| \\leq M$ for some $M$",
+      "$a_n = \\frac{n}{n+1}$ is bounded by 1"
+    ],
+    "fullSolution": "$a_n = \\frac{n}{n+1} = 1 - \\frac{1}{n+1}$\\n\\nFor all $n \\geq 1$: $0 < a_n < 1$\\n\\nBounded by $M = 1$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Bounded Sequences",
+      "url": "https://www.youtube.com/watch?v=J8kTY5jjTGg",
+      "source": "The Bright Side of Mathematics"
+    },
+    {
+      "type": "article",
+      "title": "Sequences",
+      "url": "https://brilliant.org/wiki/sequences-definition/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Sequences",
+      "url": "https://www.youtube.com/watch?v=gge3U_lrbig",
+      "source": "Dr. Peyam"
+    }
+  ]
+}

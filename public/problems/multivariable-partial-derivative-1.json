@@ -1,0 +1,127 @@
+{
+  "id": "multivariable-partial-derivative-1",
+  "type": "problem",
+  "title": "Compute Partial Derivatives",
+  "topic": "Multivariable Calculus",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "multivariable",
+    "partial-derivatives"
+  ],
+  "statement": {
+    "text": "Find $\\frac{\\partial f}{\\partial x}$ and $\\frac{\\partial f}{\\partial y}$ for $f(x,y) = x^2y + 3xy^2$."
+  },
+  "objectives": [
+    "Compute partial derivatives",
+    "Treat other variables as constants"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find $\\frac{\\partial f}{\\partial x}$"
+      },
+      "prompt": {
+        "question": "Differentiate with respect to $x$, treating $y$ as constant",
+        "hint": "$2xy + 3y^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2xy + 3y^2$"
+        },
+        {
+          "id": "b",
+          "text": "$x^2 + 6xy$"
+        },
+        {
+          "id": "c",
+          "text": "$2xy + 3x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\frac{\\partial}{\\partial x}[x^2y] = 2xy$ and $\\frac{\\partial}{\\partial x}[3xy^2] = 3y^2$",
+          "insight": "$y$ is constant when differentiating with respect to $x$"
+        },
+        "incorrect": {
+          "1": "That's $\\frac{\\partial f}{\\partial y}$",
+          "2": "Remember $y^2$ is constant in $x$"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{\\partial f}{\\partial x} = 2xy + 3y^2$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find $\\frac{\\partial f}{\\partial y}$"
+      },
+      "prompt": {
+        "question": "Differentiate with respect to $y$, treating $x$ as constant",
+        "hint": "$x^2 + 6xy$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2 + 6xy$"
+        },
+        {
+          "id": "b",
+          "text": "$2xy + 3y^2$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2 + 3x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\frac{\\partial}{\\partial y}[x^2y] = x^2$ and $\\frac{\\partial}{\\partial y}[3xy^2] = 6xy$",
+          "insight": "$x$ is constant when differentiating with respect to $y$"
+        },
+        "incorrect": {
+          "1": "That's $\\frac{\\partial f}{\\partial x}$",
+          "2": "Apply power rule to $y^2$"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{\\partial f}{\\partial y} = x^2 + 6xy$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{\\partial f}{\\partial x} = 2xy + 3y^2$",
+      "$\\frac{\\partial f}{\\partial y} = x^2 + 6xy$"
+    ],
+    "fullSolution": "$f(x,y) = x^2y + 3xy^2$\\n\\n$\\frac{\\partial f}{\\partial x} = 2xy + 3y^2$\\n\\n$\\frac{\\partial f}{\\partial y} = x^2 + 6xy$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Partial Derivatives",
+      "url": "https://www.youtube.com/watch?v=AXqhWeUEtQU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Partial Derivatives",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/PartialDerivatives.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Partial Derivatives",
+      "url": "https://www.youtube.com/watch?v=kdMep8_wCQw",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

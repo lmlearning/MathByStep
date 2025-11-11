@@ -1,0 +1,129 @@
+{
+  "id": "numerical-analysis-fixed-point-1",
+  "type": "problem",
+  "title": "Fixed Point Iteration",
+  "topic": "Numerical Analysis",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "numerical-analysis",
+    "fixed-point",
+    "iteration"
+  ],
+  "statement": {
+    "text": "Find a fixed point of $g(x) = \\cos(x)$ using iteration starting at $x_0 = 0$."
+  },
+  "objectives": [
+    "Understand fixed point",
+    "Perform iterations"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "What is a fixed point?"
+      },
+      "prompt": {
+        "question": "Fixed point $x^*$ satisfies?",
+        "hint": "$g(x^*) = x^*$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$g(x^*) = x^*$"
+        },
+        {
+          "id": "b",
+          "text": "$g'(x^*) = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$g(x^*) = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Fixed point: $x$ maps to itself under $g$",
+          "insight": "Iterate: $x_{n+1} = g(x_n)$"
+        },
+        "incorrect": {
+          "1": "That's a critical point",
+          "2": "That's a root/zero"
+        }
+      },
+      "resultState": {
+        "description": "Find $x$ where $\\cos(x) = x$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Iterate"
+      },
+      "prompt": {
+        "question": "$x_0 = 0$, $x_1 = \\cos(0) = 1$, $x_2 = \\cos(1) \\approx ?$",
+        "hint": "$\\cos(1) \\approx 0.540$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\approx 0.540$"
+        },
+        {
+          "id": "b",
+          "text": "$= 1$"
+        },
+        {
+          "id": "c",
+          "text": "$= 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$x_2 = \\cos(1) \\approx 0.540$\\nContinuing: $x_3 \\approx 0.858$, $x_4 \\approx 0.654$, ...\\nConverges to $x^* \\approx 0.739$",
+          "insight": "Fixed point iteration"
+        },
+        "incorrect": {
+          "1": "Calculate $\\cos(1)$",
+          "2": "Apply the function"
+        }
+      },
+      "resultState": {
+        "description": "Fixed point $\\approx 0.739$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Fixed point: $g(x^*) = x^*$",
+      "Iterate: $x_{n+1} = g(x_n)$",
+      "For $g(x) = \\cos(x)$: $x^* \\approx 0.739$"
+    ],
+    "fullSolution": "Fixed point iteration for $g(x) = \\cos(x)$:\\n$x_0 = 0$\\n$x_1 = 1$\\n$x_2 \\approx 0.540$\\n$x_3 \\approx 0.858$\\n...\\nConverges to $x^* \\approx 0.739$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Fixed Point Iteration",
+      "url": "https://www.youtube.com/watch?v=_zCgIW-vJ5o",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Fixed Point Iteration",
+      "url": "https://brilliant.org/wiki/fixed-point-iteration/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Fixed Point Iteration",
+      "url": "https://www.youtube.com/watch?v=EHJfJgyxPjE",
+      "source": "The Math Sorcerer"
+    }
+  ]
+}
