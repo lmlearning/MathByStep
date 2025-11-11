@@ -1,0 +1,150 @@
+{
+  "id": "complex-analysis-more-1",
+  "type": "problem",
+  "title": "Complex Arithmetic",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "complex-analysis",
+    "functions"
+  ],
+  "statement": {
+    "text": "Complex analysis problem 1"
+  },
+  "objectives": [
+    "Apply complex-analysis",
+    "Solve problem"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Step 1?",
+        "hint": "Hint"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Right"
+        },
+        {
+          "id": "b",
+          "text": "Wrong"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good!",
+          "insight": "Continue"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Done step 1"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Step 2?",
+        "hint": "Hint"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Right"
+        },
+        {
+          "id": "b",
+          "text": "Wrong"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good!",
+          "insight": "Continue"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Done step 2"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Step 3?",
+        "hint": "Hint"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Right"
+        },
+        {
+          "id": "b",
+          "text": "Wrong"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good!",
+          "insight": "Continue"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Done step 3"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Concept: complex-analysis"
+    ],
+    "fullSolution": "Solve: Complex analysis problem 1",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Analysis",
+      "url": "https://www.youtube.com/watch?v=T647CGsuOVU",
+      "source": "Dr. Peyam"
+    },
+    {
+      "type": "article",
+      "title": "Complex",
+      "url": "https://brilliant.org/wiki/complex-analysis/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=SP-YJe7Vldo",
+      "source": "3Blue1Brown"
+    }
+  ]
+}
