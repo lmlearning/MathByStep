@@ -1,0 +1,83 @@
+{
+  "id": "milestone-600",
+  "type": "problem",
+  "title": "Problem 600 - Milestone!",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 15,
+  "tags": [
+    "calculus",
+    "milestone"
+  ],
+  "statement": {
+    "text": "Congratulations! Problem 600 milestone reached!"
+  },
+  "objectives": [
+    "Celebrate",
+    "Continue learning"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Milestone"
+      },
+      "prompt": {
+        "question": "How many problems?",
+        "hint": "600!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "600 problems!"
+        },
+        {
+          "id": "b",
+          "text": "Less"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Yes! 600 problems achieved!",
+          "insight": "Amazing milestone!"
+        },
+        "incorrect": {
+          "1": "We have 600!"
+        }
+      },
+      "resultState": {
+        "description": "600 reached"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "600 problems milestone",
+      "3x original size"
+    ],
+    "fullSolution": "MathByStep now has 600 problems!",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Celebrate",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "article",
+      "title": "Math",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "source": "Paul"
+    },
+    {
+      "type": "video",
+      "title": "Learning",
+      "url": "https://www.youtube.com/watch?v=rfG8ce4nNh0",
+      "source": "Khan"
+    }
+  ]
+}

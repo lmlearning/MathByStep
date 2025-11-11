@@ -1,0 +1,115 @@
+{
+  "id": "alg-mega-6",
+  "type": "problem",
+  "title": "A6",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "alg"
+  ],
+  "statement": {
+    "text": "A6"
+  },
+  "objectives": [
+    "Solve",
+    "Learn"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "h"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "B"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "OK",
+          "insight": "Y"
+        },
+        "incorrect": {
+          "1": "N"
+        }
+      },
+      "resultState": {
+        "description": "D"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "h"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "B"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "OK",
+          "insight": "Y"
+        },
+        "incorrect": {
+          "1": "N"
+        }
+      },
+      "resultState": {
+        "description": "D"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "K"
+    ],
+    "fullSolution": "S",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "A",
+      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
+      "source": "K"
+    },
+    {
+      "type": "article",
+      "title": "A",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "source": "P"
+    },
+    {
+      "type": "video",
+      "title": "A",
+      "url": "https://www.youtube.com/watch?v=m6f88UxqTJg",
+      "source": "O"
+    }
+  ]
+}

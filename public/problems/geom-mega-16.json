@@ -1,0 +1,115 @@
+{
+  "id": "geom-mega-16",
+  "type": "problem",
+  "title": "G16",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "geom"
+  ],
+  "statement": {
+    "text": "G16"
+  },
+  "objectives": [
+    "Solve",
+    "Learn"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "h"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "B"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "OK",
+          "insight": "Y"
+        },
+        "incorrect": {
+          "1": "N"
+        }
+      },
+      "resultState": {
+        "description": "D"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "h"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "B"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "OK",
+          "insight": "Y"
+        },
+        "incorrect": {
+          "1": "N"
+        }
+      },
+      "resultState": {
+        "description": "D"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "K"
+    ],
+    "fullSolution": "S",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "G",
+      "url": "https://www.youtube.com/watch?v=quv18pRwzYw",
+      "source": "K"
+    },
+    {
+      "type": "article",
+      "title": "G",
+      "url": "https://brilliant.org/wiki/geometry/",
+      "source": "B"
+    },
+    {
+      "type": "video",
+      "title": "G",
+      "url": "https://www.youtube.com/watch?v=1-OhJkMkPxk",
+      "source": "O"
+    }
+  ]
+}

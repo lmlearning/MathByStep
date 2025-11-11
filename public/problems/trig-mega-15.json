@@ -1,0 +1,115 @@
+{
+  "id": "trig-mega-15",
+  "type": "problem",
+  "title": "T15",
+  "topic": "Trigonometry",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "trig"
+  ],
+  "statement": {
+    "text": "T15"
+  },
+  "objectives": [
+    "Solve",
+    "Learn"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "h"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "B"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "OK",
+          "insight": "Y"
+        },
+        "incorrect": {
+          "1": "N"
+        }
+      },
+      "resultState": {
+        "description": "D"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step"
+      },
+      "prompt": {
+        "question": "?",
+        "hint": "h"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "B"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "OK",
+          "insight": "Y"
+        },
+        "incorrect": {
+          "1": "N"
+        }
+      },
+      "resultState": {
+        "description": "D"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "K"
+    ],
+    "fullSolution": "S",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "T",
+      "url": "https://www.youtube.com/watch?v=PUB0TaZ7bhA",
+      "source": "K"
+    },
+    {
+      "type": "article",
+      "title": "T",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/TrigFunctions.aspx",
+      "source": "P"
+    },
+    {
+      "type": "video",
+      "title": "T",
+      "url": "https://www.youtube.com/watch?v=0j6yEhRQFPs",
+      "source": "O"
+    }
+  ]
+}
