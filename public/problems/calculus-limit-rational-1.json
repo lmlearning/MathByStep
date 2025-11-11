@@ -1,0 +1,151 @@
+{
+  "id": "calculus-limit-rational-1",
+  "type": "problem",
+  "title": "Limit of Rational Function",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "limits",
+    "rational-functions"
+  ],
+  "statement": {
+    "text": "Evaluate $\\lim_{x \\to 3} \\frac{x^2-9}{x-3}$."
+  },
+  "objectives": [
+    "Understand calculus",
+    "Apply limits"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Factor numerator"
+      },
+      "prompt": {
+        "question": "What is $x^2-9$ factored?",
+        "hint": "$(x-3)(x+3)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x-3)(x+3)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x-9)(x+1)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Difference of squares!",
+          "insight": "$a^2-b^2=(a-b)(a+b)$"
+        },
+        "incorrect": {
+          "1": "$9 = 3^2$"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{(x-3)(x+3)}{x-3}$"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Cancel common factors"
+      },
+      "prompt": {
+        "question": "After canceling?",
+        "hint": "$x+3$ for $x \\neq 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x+3$"
+        },
+        {
+          "id": "b",
+          "text": "$x-3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Cancel $(x-3)$",
+          "insight": "Now substitute!"
+        },
+        "incorrect": {
+          "1": "Top factor cancels"
+        }
+      },
+      "resultState": {
+        "description": "$x+3$"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Evaluate limit"
+      },
+      "prompt": {
+        "question": "What is $\\lim_{x \\to 3}(x+3)$?",
+        "hint": "$3+3=6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "6"
+        },
+        {
+          "id": "b",
+          "text": "0"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$3+3=6$",
+          "insight": "Direct substitution!"
+        },
+        "incorrect": {
+          "1": "Substitute $x=3$"
+        }
+      },
+      "resultState": {
+        "description": "Limit = 6"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Key concept from Limit of Rational Function"
+    ],
+    "fullSolution": "Solution for Evaluate $\\lim_{x \\to 3} \\frac{x^2-9}{x-3}$.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Limits",
+      "url": "https://www.youtube.com/watch?v=riXcZT2ICjA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Computing Limits",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ComputingLimits.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Limits",
+      "url": "https://www.youtube.com/watch?v=YNstP0ESndU",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "trigonometry-pythagorean-identity-1",
+  "type": "problem",
+  "title": "Pythagorean Trigonometric Identity",
+  "topic": "Trigonometry",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "trigonometry",
+    "identities",
+    "pythagorean"
+  ],
+  "statement": {
+    "text": "Prove that $\\sin^2\\theta + \\cos^2\\theta = 1$ using the unit circle."
+  },
+  "objectives": [
+    "Understand trigonometry",
+    "Apply identities"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Consider point on unit circle"
+      },
+      "prompt": {
+        "question": "What are coordinates of point at angle $\\theta$?",
+        "hint": "$(\\cos\\theta, \\sin\\theta)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\cos\\theta, \\sin\\theta)$"
+        },
+        {
+          "id": "b",
+          "text": "$(\\sin\\theta, \\cos\\theta)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "On unit circle: $(\\cos\\theta, \\sin\\theta)$",
+          "insight": "x-coordinate is cosine!"
+        },
+        "incorrect": {
+          "1": "Cosine is x-coordinate"
+        }
+      },
+      "resultState": {
+        "description": "Point: $(\\cos\\theta, \\sin\\theta)$"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply distance formula"
+      },
+      "prompt": {
+        "question": "What is distance from origin?",
+        "hint": "$\\sqrt{\\cos^2\\theta + \\sin^2\\theta} = 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{\\cos^2\\theta + \\sin^2\\theta} = 1$"
+        },
+        {
+          "id": "b",
+          "text": "$\\cos\\theta + \\sin\\theta = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Distance formula on unit circle!",
+          "insight": "Square both sides"
+        },
+        "incorrect": {
+          "1": "Use distance formula with squares"
+        }
+      },
+      "resultState": {
+        "description": "$\\cos^2\\theta + \\sin^2\\theta = 1$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Key concept from Pythagorean Trigonometric Identity"
+    ],
+    "fullSolution": "Solution for Prove that $\\sin^2\\theta + \\cos^2\\theta = 1$ using the unit circle.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Pythagorean Identity",
+      "url": "https://www.youtube.com/watch?v=ZJHemTLIcVg",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Trig Identities",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/TrigIdentities.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Trigonometric Identities",
+      "url": "https://www.youtube.com/watch?v=VT4VJZ05Cts",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

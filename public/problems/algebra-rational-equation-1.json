@@ -1,0 +1,152 @@
+{
+  "id": "algebra-rational-equation-1",
+  "type": "problem",
+  "title": "Solve Rational Equation",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "algebra",
+    "rational-equations",
+    "fractions"
+  ],
+  "statement": {
+    "text": "Solve $\\frac{1}{x} + \\frac{1}{x+2} = \\frac{1}{2}$."
+  },
+  "objectives": [
+    "Solve rational equations",
+    "Find common denominators"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find LCD"
+      },
+      "prompt": {
+        "question": "What is the LCD?",
+        "hint": "$2x(x+2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x(x+2)$"
+        },
+        {
+          "id": "b",
+          "text": "$x(x+2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "LCD is $2x(x+2)$",
+          "insight": "Include all factors!"
+        },
+        "incorrect": {
+          "1": "Don't forget the 2"
+        }
+      },
+      "resultState": {
+        "description": "LCD: $2x(x+2)$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Multiply through"
+      },
+      "prompt": {
+        "question": "After multiplying?",
+        "hint": "$2(x+2) + 2x = x(x+2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x+4+2x = x^2+2x$"
+        },
+        {
+          "id": "b",
+          "text": "$x+2+x = x^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$4x+4 = x^2+2x$",
+          "insight": "Now solve!"
+        },
+        "incorrect": {
+          "1": "Distribute carefully"
+        }
+      },
+      "resultState": {
+        "description": "$x^2-2x-4=0$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve quadratic"
+      },
+      "prompt": {
+        "question": "Solutions?",
+        "hint": "$x = \\frac{2\\pm\\sqrt{20}}{2} = 1\\pm\\sqrt{5}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=1+\\sqrt{5}$ (reject $1-\\sqrt{5}<0$)"
+        },
+        {
+          "id": "b",
+          "text": "$x=1\\pm\\sqrt{5}$ (both)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$x=1+\\sqrt{5}$ (positive only)",
+          "insight": "Check domain!"
+        },
+        "incorrect": {
+          "1": "$1-\\sqrt{5} \\approx -1.24$ makes denominators negative"
+        }
+      },
+      "resultState": {
+        "description": "$x=1+\\sqrt{5}$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Multiply by LCD to clear fractions",
+      "$x=1+\\sqrt{5}$"
+    ],
+    "fullSolution": "$x=1+\\sqrt{5} \\approx 3.24$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Rational Equations",
+      "url": "https://www.youtube.com/watch?v=hOnOGfCcUYw",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Rational Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SolveRationalEqns.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Solving Rational Equations",
+      "url": "https://www.youtube.com/watch?v=P1K1ysL9Ou8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

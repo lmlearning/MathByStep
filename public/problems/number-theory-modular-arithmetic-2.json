@@ -1,0 +1,151 @@
+{
+  "id": "number-theory-modular-arithmetic-2",
+  "type": "problem",
+  "title": "Modular Arithmetic Computation",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "number-theory",
+    "modular-arithmetic",
+    "congruences"
+  ],
+  "statement": {
+    "text": "Find $7^{100} \\bmod 11$."
+  },
+  "objectives": [
+    "Understand number-theory",
+    "Apply modular-arithmetic"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Find pattern"
+      },
+      "prompt": {
+        "question": "What is $7^2 \\bmod 11$?",
+        "hint": "$49 \\equiv 5 \\pmod{11}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "5"
+        },
+        {
+          "id": "b",
+          "text": "49"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$49 = 4(11) + 5$",
+          "insight": "Find pattern!"
+        },
+        "incorrect": {
+          "1": "Reduce mod 11"
+        }
+      },
+      "resultState": {
+        "description": "$7^2 \\equiv 5$"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Continue pattern"
+      },
+      "prompt": {
+        "question": "What is $7^{10} \\bmod 11$?",
+        "hint": "By Fermat: $7^{10} \\equiv 1 \\pmod{11}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "7"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Fermat's Little Theorem!",
+          "insight": "$a^{p-1} \\equiv 1 \\pmod{p}$"
+        },
+        "incorrect": {
+          "1": "Use Fermat"
+        }
+      },
+      "resultState": {
+        "description": "$7^{10} \\equiv 1$"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Compute $7^{100}$"
+      },
+      "prompt": {
+        "question": "So $7^{100}$ mod 11?",
+        "hint": "$(7^{10})^{10} \\equiv 1^{10} = 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "7"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$(7^{10})^{10} \\equiv 1$",
+          "insight": "Perfect!"
+        },
+        "incorrect": {
+          "1": "$100 = 10 \\times 10$"
+        }
+      },
+      "resultState": {
+        "description": "$7^{100} \\equiv 1 \\pmod{11}$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Key concept from Modular Arithmetic Computation"
+    ],
+    "fullSolution": "Solution for Find $7^{100} \\bmod 11$.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Modular Arithmetic",
+      "url": "https://www.youtube.com/watch?v=MEKHwWv7ckg",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Modular Arithmetic",
+      "url": "https://brilliant.org/wiki/modular-arithmetic/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Modular Arithmetic",
+      "url": "https://www.youtube.com/watch?v=Vq2vAW4JCN4",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

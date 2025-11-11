@@ -1,0 +1,119 @@
+{
+  "id": "algebra-factoring-quadratic-1",
+  "type": "problem",
+  "title": "Factor Quadratic Expression",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "factoring",
+    "quadratics"
+  ],
+  "statement": {
+    "text": "Factor $x^2 + 7x + 12$ completely."
+  },
+  "objectives": [
+    "Factor quadratic expressions",
+    "Find factors"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find two numbers that multiply to 12 and add to 7"
+      },
+      "prompt": {
+        "question": "Which pair works?",
+        "hint": "$3 \\times 4 = 12$ and $3+4=7$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "3 and 4"
+        },
+        {
+          "id": "b",
+          "text": "2 and 6"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$3+4=7$ and $3 \\times 4=12$ ✓",
+          "insight": "Perfect!"
+        },
+        "incorrect": {
+          "1": "$2+6=8$, not 7"
+        }
+      },
+      "resultState": {
+        "description": "3 and 4"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Write factored form"
+      },
+      "prompt": {
+        "question": "Factored form?",
+        "hint": "$(x+3)(x+4)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+3)(x+4)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x+2)(x+6)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$(x+3)(x+4)=x^2+7x+12$ ✓",
+          "insight": "Always expand to verify!"
+        },
+        "incorrect": {
+          "1": "Use 3 and 4"
+        }
+      },
+      "resultState": {
+        "description": "$(x+3)(x+4)$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$x^2+7x+12 = (x+3)(x+4)$"
+    ],
+    "fullSolution": "$(x+3)(x+4)$",
+    "relatedProblems": [
+      "algebra-quadratic-formula-1"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Factoring Quadratics",
+      "url": "https://www.youtube.com/watch?v=dAgfnK528RA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Factoring Quadratics",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Factoring.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Factoring Trinomials",
+      "url": "https://www.youtube.com/watch?v=U9kMi3g0RYM",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

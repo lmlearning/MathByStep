@@ -1,0 +1,116 @@
+{
+  "id": "trigonometry-new-7",
+  "type": "problem",
+  "title": "Trigonometry Problem 7",
+  "topic": "Trigonometry",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "trigonometry",
+    "identities"
+  ],
+  "statement": {
+    "text": "Solve trig equation 7"
+  },
+  "objectives": [
+    "Understand trigonometry",
+    "Solve the problem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "First step"
+      },
+      "prompt": {
+        "question": "What is the first step?",
+        "hint": "Start here"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct approach"
+        },
+        {
+          "id": "b",
+          "text": "Wrong approach"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good!",
+          "insight": "Keep going!"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Step 1 complete"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve"
+      },
+      "prompt": {
+        "question": "Final answer?",
+        "hint": "Calculate carefully"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct answer"
+        },
+        {
+          "id": "b",
+          "text": "Incorrect"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect!",
+          "insight": "Well done!"
+        },
+        "incorrect": {
+          "1": "Check work"
+        }
+      },
+      "resultState": {
+        "description": "Complete"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Concept from Trigonometry Problem 7"
+    ],
+    "fullSolution": "Solution to: Solve trig equation 7",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Trigonometry",
+      "url": "https://www.youtube.com/watch?v=PUB0TaZ7bhA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Trig Functions",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/TrigFunctions.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Trig",
+      "url": "https://www.youtube.com/watch?v=0j6yEhRQFPs",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

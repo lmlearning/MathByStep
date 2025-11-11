@@ -1,0 +1,152 @@
+{
+  "id": "algebra-quadratic-formula-1",
+  "type": "problem",
+  "title": "Solve Quadratic Using Quadratic Formula",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "algebra",
+    "quadratic-equations",
+    "quadratic-formula"
+  ],
+  "statement": {
+    "text": "Solve $2x^2 - 5x + 2 = 0$ using the quadratic formula."
+  },
+  "objectives": [
+    "Apply the quadratic formula",
+    "Simplify radical expressions"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify $a=2, b=-5, c=2$"
+      },
+      "prompt": {
+        "question": "What are $a$, $b$, $c$?",
+        "hint": "$a=2, b=-5, c=2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$a=2, b=-5, c=2$"
+        },
+        {
+          "id": "b",
+          "text": "$a=2, b=5, c=2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Watch signs!"
+        },
+        "incorrect": {
+          "1": "$b=-5$ (negative)"
+        }
+      },
+      "resultState": {
+        "description": "$a=2, b=-5, c=2$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate discriminant"
+      },
+      "prompt": {
+        "question": "What is $\\Delta = b^2-4ac$?",
+        "hint": "$25-16=9$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\Delta=9$"
+        },
+        {
+          "id": "b",
+          "text": "$\\Delta=25$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\Delta=9$",
+          "insight": "Two real roots!"
+        },
+        "incorrect": {
+          "1": "$25-16=9$"
+        }
+      },
+      "resultState": {
+        "description": "$\\Delta=9$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply formula"
+      },
+      "prompt": {
+        "question": "Solutions?",
+        "hint": "$x = \\frac{5\\pm3}{4}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=2$ or $x=1/2$"
+        },
+        {
+          "id": "b",
+          "text": "$x=1$ or $x=2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$x=\\frac{5\\pm3}{4}$ gives $x=2$ or $x=1/2$",
+          "insight": "Perfect!"
+        },
+        "incorrect": {
+          "1": "Check arithmetic"
+        }
+      },
+      "resultState": {
+        "description": "$x=2$ or $x=1/2$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Formula: $x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$",
+      "$x=2$ or $x=1/2$"
+    ],
+    "fullSolution": "$x = \\frac{5\\pm3}{4} = 2$ or $1/2$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Quadratic Formula",
+      "url": "https://www.youtube.com/watch?v=i7idZfS8t8w",
+      "source": "The Organic Chemistry Tutor"
+    },
+    {
+      "type": "article",
+      "title": "Quadratic Formula",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/QuadraticFormula.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Quadratic Equation",
+      "url": "https://www.youtube.com/watch?v=NsC4JUC6vDE",
+      "source": "Khan Academy"
+    }
+  ]
+}

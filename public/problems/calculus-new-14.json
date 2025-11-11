@@ -1,0 +1,116 @@
+{
+  "id": "calculus-new-14",
+  "type": "problem",
+  "title": "Calculus Problem 14",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "calculus",
+    "derivatives"
+  ],
+  "statement": {
+    "text": "Evaluate calculus expression 14"
+  },
+  "objectives": [
+    "Understand calculus",
+    "Solve the problem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "First step"
+      },
+      "prompt": {
+        "question": "What is the first step?",
+        "hint": "Start here"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct approach"
+        },
+        {
+          "id": "b",
+          "text": "Wrong approach"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Good!",
+          "insight": "Keep going!"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Step 1 complete"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve"
+      },
+      "prompt": {
+        "question": "Final answer?",
+        "hint": "Calculate carefully"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct answer"
+        },
+        {
+          "id": "b",
+          "text": "Incorrect"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect!",
+          "insight": "Well done!"
+        },
+        "incorrect": {
+          "1": "Check work"
+        }
+      },
+      "resultState": {
+        "description": "Complete"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Concept from Calculus Problem 14"
+    ],
+    "fullSolution": "Solution to: Evaluate calculus expression 14",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Calculus Concepts",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "article",
+      "title": "Calculus",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Calculus",
+      "url": "https://www.youtube.com/watch?v=rfG8ce4nNh0",
+      "source": "Khan Academy"
+    }
+  ]
+}
