@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllProblemMetadata } from '@/lib/data/problems';
+import { getAllProblemMetadataServer } from '@/lib/data/problems.server';
 import { Card } from '@/components/shared/Card';
 
 // Category configuration
@@ -112,7 +112,7 @@ const CATEGORIES = [
 ];
 
 export default async function Home() {
-  const problems = await getAllProblemMetadata();
+  const problems = await getAllProblemMetadataServer();
 
   // Count problems per category
   const categoryCounts = problems.reduce((acc, problem) => {

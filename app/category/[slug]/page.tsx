@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllProblemMetadata } from '@/lib/data/problems';
+import { getAllProblemMetadataServer } from '@/lib/data/problems.server';
 import { Card } from '@/components/shared/Card';
 import { TextWithMath } from '@/components/shared/MathRenderer';
 import { notFound } from 'next/navigation';
@@ -38,7 +38,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   // Get all problems and filter by category
-  const allProblems = await getAllProblemMetadata();
+  const allProblems = await getAllProblemMetadataServer();
   const problems = allProblems.filter(p => p.topic === categoryName);
 
   return (
