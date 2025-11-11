@@ -1,0 +1,167 @@
+{
+  "id": "number-theory-prime-factorization-1",
+  "type": "problem",
+  "title": "Prime Factorization",
+  "topic": "Number Theory",
+  "difficulty": 1,
+  "estimatedTime": 7,
+  "tags": [
+    "number-theory",
+    "primes",
+    "factorization"
+  ],
+  "statement": {
+    "text": "Find the prime factorization of 60."
+  },
+  "objectives": [
+    "Factor into primes",
+    "Express using exponents"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Start with smallest prime"
+      },
+      "prompt": {
+        "question": "60 is even. What prime divides it?",
+        "hint": "2 is the smallest prime"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "2"
+        },
+        {
+          "id": "b",
+          "text": "3"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$60 = 2 \\times 30$",
+          "insight": "Always start with 2 for even numbers"
+        },
+        "incorrect": {
+          "1": "Even numbers are divisible by 2",
+          "2": "Even numbers are divisible by 2"
+        }
+      },
+      "resultState": {
+        "description": "$60 = 2 \\times 30$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Continue factoring"
+      },
+      "prompt": {
+        "question": "Continue: $30 = 2 \\times ?$",
+        "hint": "$30 = 2 \\times 15$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "15"
+        },
+        {
+          "id": "b",
+          "text": "10"
+        },
+        {
+          "id": "c",
+          "text": "6"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$30 = 2 \\times 15$, so $60 = 2^2 \\times 15$",
+          "insight": "Keep factoring!"
+        },
+        "incorrect": {
+          "1": "$2 \\times 10 = 20$",
+          "2": "$2 \\times 6 = 12$"
+        }
+      },
+      "resultState": {
+        "description": "$60 = 2^2 \\times 15$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Factor 15"
+      },
+      "prompt": {
+        "question": "What is $15 = 3 \\times ?$",
+        "hint": "$15 = 3 \\times 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$15 = 3 \\times 5$"
+        },
+        {
+          "id": "b",
+          "text": "$15 = 3 \\times 3$"
+        },
+        {
+          "id": "c",
+          "text": "$15 = 5 \\times 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$60 = 2^2 \\times 3 \\times 5$",
+          "insight": "All factors are prime!"
+        },
+        "incorrect": {
+          "1": "$3 \\times 3 = 9$",
+          "2": "$5 \\times 2 = 10$"
+        }
+      },
+      "resultState": {
+        "description": "$60 = 2^2 \\times 3 \\times 5$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Prime factorization is unique",
+      "$60 = 2^2 \\times 3 \\times 5$"
+    ],
+    "fullSolution": "$60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5 = 2^2 \\times 3 \\times 5$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Prime Factorization",
+      "url": "https://www.youtube.com/watch?v=6PDFgwgQgD8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Prime Factorization",
+      "url": "https://brilliant.org/wiki/prime-factorization/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Prime Factorization",
+      "url": "https://www.youtube.com/watch?v=FjywBMY4aHM",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

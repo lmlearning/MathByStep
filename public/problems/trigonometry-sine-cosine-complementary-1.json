@@ -1,0 +1,127 @@
+{
+  "id": "trigonometry-sine-cosine-complementary-1",
+  "type": "problem",
+  "title": "Sine and Cosine of Complementary Angles",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "trigonometry",
+    "complementary-angles",
+    "identities"
+  ],
+  "statement": {
+    "text": "Prove that $\\sin(90° - \\theta) = \\cos(\\theta)$."
+  },
+  "objectives": [
+    "Understand complementary angle relationship"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Consider right triangle"
+      },
+      "prompt": {
+        "question": "In a right triangle with angle $\\theta$, what is the other acute angle?",
+        "hint": "$90° - \\theta$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$90° - \\theta$"
+        },
+        {
+          "id": "b",
+          "text": "$180° - \\theta$"
+        },
+        {
+          "id": "c",
+          "text": "$\\theta$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "In a right triangle, two acute angles sum to 90°",
+          "insight": "These are complementary angles"
+        },
+        "incorrect": {
+          "1": "Triangle angles sum to 180°, but one is already 90°",
+          "2": "The other angle is different"
+        }
+      },
+      "resultState": {
+        "description": "Other angle is $90° - \\theta$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Compare sine and cosine"
+      },
+      "prompt": {
+        "question": "$\\sin(\\theta)$ = opposite/hypotenuse. What is $\\cos(90° - \\theta)$?",
+        "hint": "Same ratio!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Same: opposite/hypotenuse"
+        },
+        {
+          "id": "b",
+          "text": "Different: adjacent/hypotenuse"
+        },
+        {
+          "id": "c",
+          "text": "Reciprocal"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "From the other angle's view, opposite becomes adjacent!",
+          "insight": "$\\sin(90° - \\theta) = \\cos(\\theta)$"
+        },
+        "incorrect": {
+          "1": "Switch perspective in the triangle",
+          "2": "Not reciprocal"
+        }
+      },
+      "resultState": {
+        "description": "$\\sin(90° - \\theta) = \\cos(\\theta)$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\sin(90° - \\theta) = \\cos(\\theta)$",
+      "$\\cos(90° - \\theta) = \\sin(\\theta)$"
+    ],
+    "fullSolution": "In a right triangle, the opposite side for angle $\\theta$ is the adjacent side for angle $90° - \\theta$. Therefore $\\sin(90° - \\theta) = \\cos(\\theta)$.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Cofunction Identities",
+      "url": "https://www.youtube.com/watch?v=SIcCVr4J6Xc",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complementary Angles",
+      "url": "https://brilliant.org/wiki/complementary-and-supplementary-angles/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Cofunction Identities",
+      "url": "https://www.youtube.com/watch?v=OVPMjx_8MJI",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "probability-basic-coin-flip-1",
+  "type": "problem",
+  "title": "Probability of Independent Events",
+  "topic": "Probability & Statistics",
+  "difficulty": 1,
+  "estimatedTime": 7,
+  "tags": [
+    "probability",
+    "independent-events"
+  ],
+  "statement": {
+    "text": "What is the probability of getting heads twice when flipping a fair coin twice?"
+  },
+  "objectives": [
+    "Apply multiplication rule for independent events"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Probability of one heads"
+      },
+      "prompt": {
+        "question": "What is P(heads) for one flip?",
+        "hint": "$\\frac{1}{2}$ for a fair coin"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{4}$"
+        },
+        {
+          "id": "c",
+          "text": "$1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Fair coin: P(H) = P(T) = $\\frac{1}{2}$",
+          "insight": "Equally likely outcomes"
+        },
+        "incorrect": {
+          "1": "That's for two heads!",
+          "2": "Can't be certain"
+        }
+      },
+      "resultState": {
+        "description": "P(H) = $\\frac{1}{2}$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Multiply probabilities"
+      },
+      "prompt": {
+        "question": "P(HH) = P(H) × P(H) = ?",
+        "hint": "$\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{4}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{3}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "For independent events: P(A and B) = P(A) × P(B)",
+          "insight": "$\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$"
+        },
+        "incorrect": {
+          "1": "Multiply, don't add!",
+          "2": "Multiply the probabilities"
+        }
+      },
+      "resultState": {
+        "description": "P(HH) = $\\frac{1}{4}$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Independent events: P(A and B) = P(A) × P(B)",
+      "P(HH) = $\\frac{1}{4}$ = 0.25 = 25%"
+    ],
+    "fullSolution": "P(HH) = P(H) × P(H) = $\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Independent Events",
+      "url": "https://www.youtube.com/watch?v=tWlub0Duj0s",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Independent Events",
+      "url": "https://brilliant.org/wiki/probability-independent-events/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Independent Events",
+      "url": "https://www.youtube.com/watch?v=bCYxEHeIKf8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

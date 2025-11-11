@@ -1,0 +1,128 @@
+{
+  "id": "algebra-factoring-difference-squares-1",
+  "type": "problem",
+  "title": "Factor Difference of Squares",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "factoring",
+    "difference-of-squares"
+  ],
+  "statement": {
+    "text": "Factor completely: $x^2 - 25$."
+  },
+  "objectives": [
+    "Recognize difference of squares pattern",
+    "Apply factoring formula"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recognize pattern"
+      },
+      "prompt": {
+        "question": "Is this a difference of squares $a^2 - b^2$?",
+        "hint": "$x^2 - 25 = x^2 - 5^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, $a=x$ and $b=5$"
+        },
+        {
+          "id": "b",
+          "text": "No, cannot factor"
+        },
+        {
+          "id": "c",
+          "text": "Yes, $a=x^2$ and $b=25$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $x^2 - 25 = x^2 - 5^2$ is a difference of squares.",
+          "insight": "Pattern: $a^2 - b^2 = (a+b)(a-b)$"
+        },
+        "incorrect": {
+          "1": "Difference of squares can always be factored!",
+          "2": "$a$ and $b$ are the bases, not the full terms"
+        }
+      },
+      "resultState": {
+        "description": "$x^2 - 5^2$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply formula"
+      },
+      "prompt": {
+        "question": "Using $a^2-b^2=(a+b)(a-b)$, what is the factored form?",
+        "hint": "$(x+5)(x-5)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+5)(x-5)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x-5)^2$"
+        },
+        {
+          "id": "c",
+          "text": "$(x+5)^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $x^2 - 25 = (x+5)(x-5)$",
+          "insight": "Always verify: $(x+5)(x-5) = x^2 - 5x + 5x - 25 = x^2 - 25$ ✓"
+        },
+        "incorrect": {
+          "1": "That's $(x-5)^2 = x^2 - 10x + 25$",
+          "2": "That's $(x+5)^2 = x^2 + 10x + 25$"
+        }
+      },
+      "resultState": {
+        "description": "$(x+5)(x-5)$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$a^2 - b^2 = (a+b)(a-b)$",
+      "$x^2 - 25 = (x+5)(x-5)$"
+    ],
+    "fullSolution": "$x^2 - 25 = x^2 - 5^2 = (x+5)(x-5)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Factoring Difference of Squares",
+      "url": "https://www.youtube.com/watch?v=kGdPNsylWgg",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Difference of Squares",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SpecialFactoring.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Difference of Two Squares",
+      "url": "https://www.youtube.com/watch?v=R4GIAbKt7Pc",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

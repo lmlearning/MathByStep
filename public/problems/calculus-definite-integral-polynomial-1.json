@@ -1,0 +1,129 @@
+{
+  "id": "calculus-definite-integral-polynomial-1",
+  "type": "problem",
+  "title": "Evaluate Definite Integral",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "integration",
+    "definite-integrals"
+  ],
+  "statement": {
+    "text": "Evaluate $\\int_1^3 (2x + 3) dx$."
+  },
+  "objectives": [
+    "Find antiderivative",
+    "Apply Fundamental Theorem of Calculus"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find antiderivative"
+      },
+      "prompt": {
+        "question": "What is the antiderivative of $2x + 3$?",
+        "hint": "$x^2 + 3x + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2 + 3x + C$"
+        },
+        {
+          "id": "b",
+          "text": "$2x^2 + 3x + C$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2 + 3 + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\int (2x+3)dx = x^2 + 3x + C$",
+          "insight": "$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$"
+        },
+        "incorrect": {
+          "1": "$\\int 2x dx = \\frac{2x^2}{2} = x^2$, not $2x^2$",
+          "2": "$\\int 3 dx = 3x$, not just 3"
+        }
+      },
+      "resultState": {
+        "description": "$F(x) = x^2 + 3x$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Evaluate at bounds"
+      },
+      "prompt": {
+        "question": "Compute $F(3) - F(1)$",
+        "hint": "$(9+9) - (1+3) = 18 - 4 = 14$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$14$"
+        },
+        {
+          "id": "b",
+          "text": "$12$"
+        },
+        {
+          "id": "c",
+          "text": "$18$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$F(3) = 9 + 9 = 18$\\n$F(1) = 1 + 3 = 4$\\n$18 - 4 = 14$",
+          "insight": "FTC: $\\int_a^b f(x)dx = F(b) - F(a)$"
+        },
+        "incorrect": {
+          "1": "Check arithmetic: $F(3) = 3^2 + 3(3) = 18$",
+          "2": "Don't forget to subtract: $F(3) - F(1)$"
+        }
+      },
+      "resultState": {
+        "description": "$\\int_1^3 (2x+3)dx = 14$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Antiderivative: $F(x) = x^2 + 3x$",
+      "FTC: $\\int_a^b f(x)dx = F(b) - F(a)$",
+      "Answer: 14"
+    ],
+    "fullSolution": "$\\int_1^3 (2x+3)dx = [x^2 + 3x]_1^3$\\n\\n$= (9 + 9) - (1 + 3) = 18 - 4 = 14$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Definite Integrals",
+      "url": "https://www.youtube.com/watch?v=Gc3QvUB0PkI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Computing Definite Integrals",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDefiniteIntegral.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Definite Integrals",
+      "url": "https://www.youtube.com/watch?v=ifbaAqfqpc4",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

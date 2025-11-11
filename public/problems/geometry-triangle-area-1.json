@@ -1,0 +1,127 @@
+{
+  "id": "geometry-triangle-area-1",
+  "type": "problem",
+  "title": "Triangle Area Using Base and Height",
+  "topic": "Geometry",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "geometry",
+    "triangles",
+    "area"
+  ],
+  "statement": {
+    "text": "A triangle has base 8 cm and height 5 cm. Find its area."
+  },
+  "objectives": [
+    "Apply triangle area formula"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall formula"
+      },
+      "prompt": {
+        "question": "What is the formula for triangle area?",
+        "hint": "$A = \\frac{1}{2}bh$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$A = \\frac{1}{2}bh$"
+        },
+        {
+          "id": "b",
+          "text": "$A = bh$"
+        },
+        {
+          "id": "c",
+          "text": "$A = \\frac{1}{2}(b+h)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Area = $\\frac{1}{2} \\times \\text{base} \\times \\text{height}$",
+          "insight": "Half of base times height"
+        },
+        "incorrect": {
+          "1": "That's for rectangles. Triangles are half!",
+          "2": "We multiply, not add"
+        }
+      },
+      "resultState": {
+        "description": "$A = \\frac{1}{2}bh$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Substitute values"
+      },
+      "prompt": {
+        "question": "Calculate $A = \\frac{1}{2}(8)(5)$",
+        "hint": "$\\frac{40}{2} = 20$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$20 \\text{ cm}^2$"
+        },
+        {
+          "id": "b",
+          "text": "$40 \\text{ cm}^2$"
+        },
+        {
+          "id": "c",
+          "text": "$13 \\text{ cm}^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$A = \\frac{1}{2}(8)(5) = \\frac{40}{2} = 20$ cm²",
+          "insight": "Always include units!"
+        },
+        "incorrect": {
+          "1": "Don't forget to divide by 2!",
+          "2": "We multiply $b \\times h$, not add"
+        }
+      },
+      "resultState": {
+        "description": "$A = 20$ cm²"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$A = \\frac{1}{2}bh$",
+      "Area = 20 cm²"
+    ],
+    "fullSolution": "$A = \\frac{1}{2} \\times 8 \\times 5 = 20$ cm²",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Area of a Triangle",
+      "url": "https://www.youtube.com/watch?v=UtwbemX7JNo",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Area of Triangles",
+      "url": "https://brilliant.org/wiki/area-of-a-triangle/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Area of a Triangle",
+      "url": "https://www.youtube.com/watch?v=WZNSZrKuaho",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

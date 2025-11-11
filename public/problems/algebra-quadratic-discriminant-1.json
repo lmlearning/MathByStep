@@ -1,0 +1,121 @@
+{
+  "id": "algebra-quadratic-discriminant-1",
+  "type": "problem",
+  "title": "Discriminant Analysis",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "quadratics",
+    "discriminant"
+  ],
+  "statement": {
+    "text": "For $x^2 + 4x + 4 = 0$, find the discriminant and determine the number of real solutions."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "What is $b^2 - 4ac$?",
+        "hint": "$16 - 16 = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$"
+        },
+        {
+          "id": "b",
+          "text": "$16$"
+        },
+        {
+          "id": "c",
+          "text": "$-16$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "How many real solutions when discriminant = 0?",
+        "hint": "One repeated real root"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "One (repeated)"
+        },
+        {
+          "id": "b",
+          "text": "Two distinct"
+        },
+        {
+          "id": "c",
+          "text": "None"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Discriminant = 0 means one repeated real solution: $x = -2$"
+    ],
+    "fullSolution": "Discriminant = 0 means one repeated real solution: $x = -2$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Discriminant",
+      "url": "https://www.youtube.com/watch?v=tHgsRl8hkn8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Discriminant",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/QuadraticFormula.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
+}

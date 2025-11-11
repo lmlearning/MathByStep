@@ -1,0 +1,122 @@
+{
+  "id": "calculus-chain-rule-basic-1",
+  "type": "problem",
+  "title": "Chain Rule Application",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "calculus",
+    "derivatives",
+    "chain-rule"
+  ],
+  "statement": {
+    "text": "Find the derivative of $f(x) = (2x+1)^3$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Identify outer and inner functions",
+        "hint": "Outer: $u^3$, Inner: $u = 2x+1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Outer: $u^3$, Inner: $2x+1$"
+        },
+        {
+          "id": "b",
+          "text": "Outer: $2x$, Inner: $x^3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Apply chain rule $f'(x) = 3(2x+1)^2 \\cdot 2 = ?$",
+        "hint": "$6(2x+1)^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$6(2x+1)^2$"
+        },
+        {
+          "id": "b",
+          "text": "$3(2x+1)^2$"
+        },
+        {
+          "id": "c",
+          "text": "$(2x+1)^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$f'(x) = 6(2x+1)^2$"
+    ],
+    "fullSolution": "$f'(x) = 6(2x+1)^2$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Chain Rule",
+      "url": "https://www.youtube.com/watch?v=H-ybCx8gt-8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Chain Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Chain Rule",
+      "url": "https://www.youtube.com/watch?v=--kV6D3F2uM",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

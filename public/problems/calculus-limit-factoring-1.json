@@ -1,0 +1,167 @@
+{
+  "id": "calculus-limit-factoring-1",
+  "type": "problem",
+  "title": "Limit by Factoring",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "calculus",
+    "limits",
+    "factoring"
+  ],
+  "statement": {
+    "text": "Evaluate: $\\lim_{x \\to 3} \\frac{x^2-9}{x-3}$"
+  },
+  "objectives": [
+    "Remove indeterminate form",
+    "Apply factoring"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Check direct substitution"
+      },
+      "prompt": {
+        "question": "What happens if you substitute $x=3$ directly?",
+        "hint": "$\\frac{0}{0}$ indeterminate"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{0}{0}$ (indeterminate)"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\frac{3^2-9}{3-3} = \\frac{0}{0}$ - need to simplify!",
+          "insight": "Factor to remove form"
+        },
+        "incorrect": {
+          "1": "Substitute carefully",
+          "2": "Both numerator and denominator are 0"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{0}{0}$ indeterminate"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Factor numerator"
+      },
+      "prompt": {
+        "question": "Factor $x^2-9$",
+        "hint": "$(x+3)(x-3)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+3)(x-3)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x-3)^2$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot factor"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$x^2-9 = (x+3)(x-3)$",
+          "insight": "Now cancel!"
+        },
+        "incorrect": {
+          "1": "$(x-3)^2 = x^2-6x+9$",
+          "2": "Difference of squares"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{(x+3)(x-3)}{x-3}$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Cancel and evaluate"
+      },
+      "prompt": {
+        "question": "$\\lim_{x \\to 3} (x+3) = ?$",
+        "hint": "$3 + 3 = 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$6$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "After canceling: $\\lim_{x \\to 3} (x+3) = 3+3 = 6$",
+          "insight": "Limit exists!"
+        },
+        "incorrect": {
+          "1": "Substitute $x=3$ into $x+3$",
+          "2": "$x+3$ at $x=3$ is 6"
+        }
+      },
+      "resultState": {
+        "description": "Limit = 6"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Factor to remove $\\frac{0}{0}$",
+      "$\\lim_{x \\to 3} \\frac{x^2-9}{x-3} = 6$"
+    ],
+    "fullSolution": "$\\lim_{x \\to 3} \\frac{x^2-9}{x-3} = \\lim_{x \\to 3} \\frac{(x+3)(x-3)}{x-3} = \\lim_{x \\to 3} (x+3) = 6$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Limits by Factoring",
+      "url": "https://www.youtube.com/watch?v=riXcZT2ICjA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Computing Limits",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ComputingLimits.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Evaluating Limits",
+      "url": "https://www.youtube.com/watch?v=WKDP7yF0x0Q",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

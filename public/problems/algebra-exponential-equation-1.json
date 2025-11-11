@@ -1,0 +1,128 @@
+{
+  "id": "algebra-exponential-equation-1",
+  "type": "problem",
+  "title": "Solve Exponential Equation",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "algebra",
+    "exponential-equations",
+    "logarithms"
+  ],
+  "statement": {
+    "text": "Solve: $2^x = 32$"
+  },
+  "objectives": [
+    "Express same base",
+    "Solve for exponent"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Express 32 as power of 2"
+      },
+      "prompt": {
+        "question": "What is 32 as a power of 2?",
+        "hint": "$32 = 2^5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^5$"
+        },
+        {
+          "id": "b",
+          "text": "$2^4$"
+        },
+        {
+          "id": "c",
+          "text": "$2^6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$32 = 2 \\times 16 = 2 \\times 2^4 = 2^5$",
+          "insight": "Same base!"
+        },
+        "incorrect": {
+          "1": "$2^4 = 16$",
+          "2": "$2^6 = 64$"
+        }
+      },
+      "resultState": {
+        "description": "$2^x = 2^5$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Equate exponents"
+      },
+      "prompt": {
+        "question": "If $2^x = 2^5$, then $x = ?$",
+        "hint": "$x = 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 5$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 32$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Same base $\\Rightarrow$ same exponent: $x = 5$",
+          "insight": "Check: $2^5 = 32$ ✓"
+        },
+        "incorrect": {
+          "1": "Exponents equal when bases equal",
+          "2": "x is the power, not the base"
+        }
+      },
+      "resultState": {
+        "description": "$x = 5$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$a^m = a^n \\Rightarrow m = n$",
+      "$x = 5$"
+    ],
+    "fullSolution": "$2^x = 32 = 2^5$\\n\\nTherefore $x = 5$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Exponential Equations",
+      "url": "https://www.youtube.com/watch?v=jnKMBBP7I7E",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Exponential Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SolveExpEqns.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Exponential Equations",
+      "url": "https://www.youtube.com/watch?v=5r0WXEDiNW4",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

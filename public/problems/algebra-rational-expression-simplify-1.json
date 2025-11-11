@@ -1,0 +1,167 @@
+{
+  "id": "algebra-rational-expression-simplify-1",
+  "type": "problem",
+  "title": "Simplify Rational Expression",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "rational-expressions",
+    "factoring"
+  ],
+  "statement": {
+    "text": "Simplify: $\\frac{x^2-9}{x^2+6x+9}$"
+  },
+  "objectives": [
+    "Factor numerator and denominator",
+    "Cancel common factors"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Factor numerator"
+      },
+      "prompt": {
+        "question": "Factor $x^2 - 9$",
+        "hint": "Difference of squares: $(x+3)(x-3)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+3)(x-3)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x-3)^2$"
+        },
+        {
+          "id": "c",
+          "text": "$(x-9)(x+1)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$x^2-9 = x^2-3^2 = (x+3)(x-3)$",
+          "insight": "Difference of squares"
+        },
+        "incorrect": {
+          "1": "$(x-3)^2 = x^2-6x+9$",
+          "2": "Factor as $a^2-b^2$"
+        }
+      },
+      "resultState": {
+        "description": "$x^2-9 = (x+3)(x-3)$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Factor denominator"
+      },
+      "prompt": {
+        "question": "Factor $x^2+6x+9$",
+        "hint": "Perfect square: $(x+3)^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+3)^2$"
+        },
+        {
+          "id": "b",
+          "text": "$(x+9)(x+1)$"
+        },
+        {
+          "id": "c",
+          "text": "$(x+3)(x-3)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$x^2+6x+9 = (x+3)^2$",
+          "insight": "Perfect square trinomial"
+        },
+        "incorrect": {
+          "1": "Check: $(x+9)(x+1) = x^2+10x+9$",
+          "2": "That gives $x^2-9$"
+        }
+      },
+      "resultState": {
+        "description": "$x^2+6x+9 = (x+3)^2$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Cancel common factors"
+      },
+      "prompt": {
+        "question": "Simplify $\\frac{(x+3)(x-3)}{(x+3)^2}$",
+        "hint": "$\\frac{x-3}{x+3}$ for $x \\neq -3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{x-3}{x+3}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{x-3}{x-3}$"
+        },
+        {
+          "id": "c",
+          "text": "$x-3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\frac{(x+3)(x-3)}{(x+3)(x+3)} = \\frac{x-3}{x+3}$ (cancel one $x+3$)",
+          "insight": "Note: $x \\neq -3$"
+        },
+        "incorrect": {
+          "1": "Don't cancel all factors",
+          "2": "Denominator still has $x+3$"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{x-3}{x+3}$, $x \\neq -3$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Factor first, then cancel",
+      "$\\frac{x^2-9}{x^2+6x+9} = \\frac{x-3}{x+3}$"
+    ],
+    "fullSolution": "$\\frac{x^2-9}{x^2+6x+9} = \\frac{(x+3)(x-3)}{(x+3)^2} = \\frac{x-3}{x+3}$ for $x \\neq -3$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Simplifying Rational Expressions",
+      "url": "https://www.youtube.com/watch?v=gZRQFLp3Sug",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Rational Expressions",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/RationalExpressions.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Simplifying Rational Expressions",
+      "url": "https://www.youtube.com/watch?v=pBOkKH9V6yg",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

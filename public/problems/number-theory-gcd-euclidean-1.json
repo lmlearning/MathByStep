@@ -1,0 +1,161 @@
+{
+  "id": "number-theory-gcd-euclidean-1",
+  "type": "problem",
+  "title": "GCD Using Euclidean Algorithm",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "number-theory",
+    "gcd",
+    "euclidean-algorithm"
+  ],
+  "statement": {
+    "text": "Find $\\gcd(48, 18)$ using the Euclidean algorithm."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "$48 = 18 \\cdot q + r$. Find $r$.",
+        "hint": "$48 = 18(2) + 12$, so $r=12$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$12$"
+        },
+        {
+          "id": "b",
+          "text": "$6$"
+        },
+        {
+          "id": "c",
+          "text": "$30$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Now find $\\gcd(18, 12)$",
+        "hint": "$18 = 12(1) + 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Continue: $\\gcd(12, 6)$"
+        },
+        {
+          "id": "b",
+          "text": "Stop: $\\gcd = 12$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "$12 = 6(2) + 0$, so $\\gcd = ?$",
+        "hint": "$\\gcd = 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$6$"
+        },
+        {
+          "id": "b",
+          "text": "$12$"
+        },
+        {
+          "id": "c",
+          "text": "$2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\gcd(48, 18) = 6$"
+    ],
+    "fullSolution": "$\\gcd(48, 18) = 6$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Euclidean Algorithm",
+      "url": "https://www.youtube.com/watch?v=H_2_nqKAZ5w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Euclidean Algorithm",
+      "url": "https://brilliant.org/wiki/euclidean-algorithm/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "GCD Euclidean Algorithm",
+      "url": "https://www.youtube.com/watch?v=JUzYl1TYMcU",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

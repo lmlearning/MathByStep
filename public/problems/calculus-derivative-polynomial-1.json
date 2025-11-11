@@ -1,0 +1,167 @@
+{
+  "id": "calculus-derivative-polynomial-1",
+  "type": "problem",
+  "title": "Derivative of Polynomial",
+  "topic": "Calculus",
+  "difficulty": 1,
+  "estimatedTime": 7,
+  "tags": [
+    "calculus",
+    "derivatives",
+    "polynomials"
+  ],
+  "statement": {
+    "text": "Find the derivative of $f(x) = 3x^4 - 2x^2 + 5$."
+  },
+  "objectives": [
+    "Apply power rule",
+    "Understand constant rule"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Apply power rule to each term"
+      },
+      "prompt": {
+        "question": "What is the derivative of $3x^4$?",
+        "hint": "Power rule: $\\frac{d}{dx}[x^n] = nx^{n-1}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$12x^3$"
+        },
+        {
+          "id": "b",
+          "text": "$3x^3$"
+        },
+        {
+          "id": "c",
+          "text": "$4x^3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{d}{dx}[3x^4] = 3 \\cdot 4x^3 = 12x^3$",
+          "insight": "Multiply by exponent, reduce power by 1"
+        },
+        "incorrect": {
+          "1": "Don't forget to multiply by the coefficient 3!",
+          "2": "Don't forget the coefficient 3: $3 \\cdot 4x^3 = 12x^3$"
+        }
+      },
+      "resultState": {
+        "description": "$12x^3$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Derivative of $-2x^2$"
+      },
+      "prompt": {
+        "question": "What is the derivative of $-2x^2$?",
+        "hint": "$-2 \\cdot 2x^1 = -4x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-4x$"
+        },
+        {
+          "id": "b",
+          "text": "$-2x$"
+        },
+        {
+          "id": "c",
+          "text": "$-4x^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\frac{d}{dx}[-2x^2] = -2 \\cdot 2x = -4x$",
+          "insight": "Keep the negative sign!"
+        },
+        "incorrect": {
+          "1": "Multiply by 2: $-2 \\cdot 2 = -4$",
+          "2": "Reduce the power: $x^2 \\rightarrow x^1 = x$"
+        }
+      },
+      "resultState": {
+        "description": "$-4x$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Complete the derivative"
+      },
+      "prompt": {
+        "question": "What is $f'(x)$?",
+        "hint": "Combine terms; constant becomes 0"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(x) = 12x^3 - 4x$"
+        },
+        {
+          "id": "b",
+          "text": "$f'(x) = 12x^3 - 4x + 5$"
+        },
+        {
+          "id": "c",
+          "text": "$f'(x) = 12x^3 - 2x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $f'(x) = 12x^3 - 4x$ (constant 5 vanishes)",
+          "insight": "$\\frac{d}{dx}[c] = 0$ for any constant $c$"
+        },
+        "incorrect": {
+          "1": "The derivative of a constant is 0",
+          "2": "Check the $-2x^2$ term again"
+        }
+      },
+      "resultState": {
+        "description": "$f'(x) = 12x^3 - 4x$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Power rule: $\\frac{d}{dx}[x^n] = nx^{n-1}$",
+      "$f'(x) = 12x^3 - 4x$"
+    ],
+    "fullSolution": "$f(x) = 3x^4 - 2x^2 + 5$\\n\\n$f'(x) = 12x^3 - 4x + 0 = 12x^3 - 4x$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Power Rule",
+      "url": "https://www.youtube.com/watch?v=S2xyJEJZFlY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Derivatives - Power Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DiffFormulas.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Derivatives - Power Rule",
+      "url": "https://www.youtube.com/watch?v=kMHp88dmIJg",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

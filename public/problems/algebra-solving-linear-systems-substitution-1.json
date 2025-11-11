@@ -1,0 +1,167 @@
+{
+  "id": "algebra-solving-linear-systems-substitution-1",
+  "type": "problem",
+  "title": "Solve System by Substitution",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "algebra",
+    "systems",
+    "substitution"
+  ],
+  "statement": {
+    "text": "Solve the system: $y = 2x + 1$ and $3x + y = 11$."
+  },
+  "objectives": [
+    "Apply substitution method",
+    "Solve for two variables"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Substitute $y = 2x + 1$ into second equation"
+      },
+      "prompt": {
+        "question": "Substitute into $3x + y = 11$. What do you get?",
+        "hint": "$3x + (2x+1) = 11$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3x + 2x + 1 = 11$"
+        },
+        {
+          "id": "b",
+          "text": "$3x + y + 1 = 11$"
+        },
+        {
+          "id": "c",
+          "text": "$3x = 11$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Replace $y$ with $2x+1$: $3x + (2x+1) = 11$",
+          "insight": "Substitution eliminates one variable"
+        },
+        "incorrect": {
+          "1": "You need to replace $y$ with $2x+1$",
+          "2": "Don't forget to substitute!"
+        }
+      },
+      "resultState": {
+        "description": "$5x + 1 = 11$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve for $x$"
+      },
+      "prompt": {
+        "question": "Solve $5x + 1 = 11$ for $x$",
+        "hint": "$5x = 10$, so $x = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 12$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 10$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$5x = 10 \\Rightarrow x = 2$",
+          "insight": "Now find $y$!"
+        },
+        "incorrect": {
+          "1": "Subtract 1 first: $5x = 10$",
+          "2": "Divide by 5: $x = 10/5 = 2$"
+        }
+      },
+      "resultState": {
+        "description": "$x = 2$"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find $y$"
+      },
+      "prompt": {
+        "question": "Use $y = 2x + 1$ with $x=2$ to find $y$",
+        "hint": "$y = 2(2) + 1 = 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 5$"
+        },
+        {
+          "id": "b",
+          "text": "$y = 3$"
+        },
+        {
+          "id": "c",
+          "text": "$y = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$y = 2(2) + 1 = 4 + 1 = 5$. Solution: $(2, 5)$",
+          "insight": "Check: $3(2) + 5 = 11$ ✓"
+        },
+        "incorrect": {
+          "1": "Remember: $y = 2x + 1$",
+          "2": "$2(2) + 1 = 5$"
+        }
+      },
+      "resultState": {
+        "description": "$(x, y) = (2, 5)$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Substitution replaces one variable",
+      "Solution: $(2, 5)$"
+    ],
+    "fullSolution": "From $y = 2x+1$, substitute into $3x+y=11$:\\n$3x + 2x + 1 = 11$\\n$5x = 10$\\n$x = 2$\\n$y = 2(2)+1 = 5$\\n\\nSolution: $(2, 5)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Substitution Method",
+      "url": "https://www.youtube.com/watch?v=FqAeVNqqeUA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Substitution Method",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SystemsTwoVrble.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Systems of Equations - Substitution",
+      "url": "https://www.youtube.com/watch?v=Uj27-09pXPQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "linear-algebra-dot-product-1",
+  "type": "problem",
+  "title": "Vector Dot Product",
+  "topic": "Linear Algebra",
+  "difficulty": 1,
+  "estimatedTime": 7,
+  "tags": [
+    "linear-algebra",
+    "vectors",
+    "dot-product"
+  ],
+  "statement": {
+    "text": "Compute $\\langle 3, -2 \\rangle \\cdot \\langle 1, 4 \\rangle$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "What is $\\mathbf{a} \\cdot \\mathbf{b}$?",
+        "hint": "$a_1b_1 + a_2b_2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$a_1b_1 + a_2b_2$"
+        },
+        {
+          "id": "b",
+          "text": "$a_1b_2 + a_2b_1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate $3(1) + (-2)(4) = ?$",
+        "hint": "$3 - 8 = -5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-5$"
+        },
+        {
+          "id": "b",
+          "text": "$5$"
+        },
+        {
+          "id": "c",
+          "text": "$11$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Dot product = $-5$"
+    ],
+    "fullSolution": "Dot product = $-5$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Dot Product",
+      "url": "https://www.youtube.com/watch?v=WNuIhXo39_k",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Dot Product",
+      "url": "https://brilliant.org/wiki/dot-product-distance-between-point-and-a-line/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Dot Product",
+      "url": "https://www.youtube.com/watch?v=LyGKycYT2v0",
+      "source": "3Blue1Brown"
+    }
+  ]
+}

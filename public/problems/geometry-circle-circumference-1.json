@@ -1,0 +1,127 @@
+{
+  "id": "geometry-circle-circumference-1",
+  "type": "problem",
+  "title": "Circle Circumference",
+  "topic": "Geometry",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "geometry",
+    "circles",
+    "circumference"
+  ],
+  "statement": {
+    "text": "A circle has radius 7 cm. Find its circumference."
+  },
+  "objectives": [
+    "Apply circumference formula"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall formula"
+      },
+      "prompt": {
+        "question": "Circumference formula?",
+        "hint": "$C = 2\\pi r$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$C = 2\\pi r$"
+        },
+        {
+          "id": "b",
+          "text": "$C = \\pi r^2$"
+        },
+        {
+          "id": "c",
+          "text": "$C = \\pi d$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$C = 2\\pi r$ or equivalently $C = \\pi d$",
+          "insight": "Both formulas work!"
+        },
+        "incorrect": {
+          "1": "That's area!",
+          "2": "That works too! But $2\\pi r$ is more common"
+        }
+      },
+      "resultState": {
+        "description": "$C = 2\\pi r$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Substitute"
+      },
+      "prompt": {
+        "question": "$C = 2\\pi(7) = ?$",
+        "hint": "$14\\pi$ cm"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$14\\pi$ cm"
+        },
+        {
+          "id": "b",
+          "text": "$49\\pi$ cm"
+        },
+        {
+          "id": "c",
+          "text": "$7\\pi$ cm"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$C = 2\\pi(7) = 14\\pi \\approx 43.98$ cm",
+          "insight": "Can leave as $14\\pi$ or use $\\pi \\approx 3.14$"
+        },
+        "incorrect": {
+          "1": "That's area: $\\pi r^2$",
+          "2": "Don't forget the 2"
+        }
+      },
+      "resultState": {
+        "description": "$C = 14\\pi$ cm"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$C = 2\\pi r = \\pi d$",
+      "$C = 14\\pi \\approx 43.98$ cm"
+    ],
+    "fullSolution": "$C = 2\\pi r = 2\\pi(7) = 14\\pi$ cm",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Circumference of a Circle",
+      "url": "https://www.youtube.com/watch?v=4kL0ttACYBw",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Circles",
+      "url": "https://brilliant.org/wiki/circle/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Area and Circumference",
+      "url": "https://www.youtube.com/watch?v=wz2eyGpyxxc",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
