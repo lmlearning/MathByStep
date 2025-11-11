@@ -233,7 +233,7 @@
       "options": [
         {
           "id": "a",
-          "text": "$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$ \u2713"
+          "text": "$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$ ✓"
         },
         {
           "id": "b",
@@ -267,7 +267,7 @@
       "MVT combined with bounds on derivatives yields inequalities",
       "This proof shows $|\\sin(b) - \\sin(a)| \\leq |b-a|$, meaning sine is Lipschitz continuous with constant 1"
     ],
-    "fullSolution": "**Theorem:** For all $b > a$, $\\sin(b) - \\sin(a) \\leq b - a$.\n\n**Proof:**\n\nLet $f(x) = \\sin(x)$. Then $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f'(x) = \\cos(x)$.\n\nBy the Mean Value Theorem, $\\exists c \\in (a,b)$ such that:\n$$f'(c) = \\frac{f(b) - f(a)}{b-a}$$\n\nSubstituting:\n$$\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$$\n\nTherefore:\n$$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$$\n\nSince $-1 \\leq \\cos(c) \\leq 1$ and $b - a > 0$:\n$$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$$\n\n\u220e",
+    "fullSolution": "**Theorem:** For all $b > a$, $\\sin(b) - \\sin(a) \\leq b - a$.\n\n**Proof:**\n\nLet $f(x) = \\sin(x)$. Then $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f'(x) = \\cos(x)$.\n\nBy the Mean Value Theorem, $\\exists c \\in (a,b)$ such that:\n$$f'(c) = \\frac{f(b) - f(a)}{b-a}$$\n\nSubstituting:\n$$\\cos(c) = \\frac{\\sin(b) - \\sin(a)}{b-a}$$\n\nTherefore:\n$$\\sin(b) - \\sin(a) = \\cos(c) \\cdot (b-a)$$\n\nSince $-1 \\leq \\cos(c) \\leq 1$ and $b - a > 0$:\n$$\\sin(b) - \\sin(a) = \\cos(c)(b-a) \\leq 1 \\cdot (b-a) = b-a$$\n\n∎",
     "relatedProblems": [
       "calc-derivative-chain-rule-1",
       "calculus-limit-epsilon-delta-1"
@@ -276,21 +276,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Mean Value Theorem",
+      "url": "https://www.youtube.com/watch?v=LfEso7JQA-c",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "The Mean Value Theorem",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Mean Value Theorem Explained",
+      "url": "https://www.youtube.com/watch?v=CjYBwf5boVo",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

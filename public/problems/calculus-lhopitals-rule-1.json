@@ -1,7 +1,7 @@
 {
   "id": "calculus-lhopitals-rule-1",
   "type": "problem",
-  "title": "L'H\u00f4pital's Rule for Indeterminate Forms",
+  "title": "L'Hôpital's Rule for Indeterminate Forms",
   "topic": "Calculus",
   "difficulty": 3,
   "estimatedTime": 10,
@@ -13,11 +13,11 @@
     "derivatives"
   ],
   "statement": {
-    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(x) - x}{x^3}$ using L'H\u00f4pital's Rule."
+    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(x) - x}{x^3}$ using L'Hôpital's Rule."
   },
   "objectives": [
     "Recognize indeterminate forms",
-    "Apply L'H\u00f4pital's Rule correctly",
+    "Apply L'Hôpital's Rule correctly",
     "Take multiple derivatives when needed",
     "Verify final answer"
   ],
@@ -49,8 +49,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Check indeterminate form:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin(x) - x}{x^3}$$\n\n**Numerator as $x \\to 0$:**\n$$\\sin(0) - 0 = 0$$\n\n**Denominator as $x \\to 0$:**\n$$0^3 = 0$$\n\n**Form:** $\\frac{0}{0}$ (indeterminate) \u2713\n\n**Indeterminate forms where L'H\u00f4pital applies:**\n1. $\\frac{0}{0}$\n2. $\\frac{\\infty}{\\infty}$\n\n**Other indeterminate forms** (require algebraic manipulation first):\n- $0 \\cdot \\infty$\n- $\\infty - \\infty$\n- $0^0$, $1^{\\infty}$, $\\infty^0$\n\n**L'H\u00f4pital's Rule:** If $\\lim_{x \\to a} \\frac{f(x)}{g(x)}$ is $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$, and $\\lim_{x \\to a} \\frac{f'(x)}{g'(x)}$ exists, then:\n$$\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\lim_{x \\to a} \\frac{f'(x)}{g'(x)}$$",
-          "insight": "L'H\u00f4pital applies to $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ forms!"
+          "explanation": "Correct! **Check indeterminate form:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin(x) - x}{x^3}$$\n\n**Numerator as $x \\to 0$:**\n$$\\sin(0) - 0 = 0$$\n\n**Denominator as $x \\to 0$:**\n$$0^3 = 0$$\n\n**Form:** $\\frac{0}{0}$ (indeterminate) ✓\n\n**Indeterminate forms where L'Hôpital applies:**\n1. $\\frac{0}{0}$\n2. $\\frac{\\infty}{\\infty}$\n\n**Other indeterminate forms** (require algebraic manipulation first):\n- $0 \\cdot \\infty$\n- $\\infty - \\infty$\n- $0^0$, $1^{\\infty}$, $\\infty^0$\n\n**L'Hôpital's Rule:** If $\\lim_{x \\to a} \\frac{f(x)}{g(x)}$ is $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$, and $\\lim_{x \\to a} \\frac{f'(x)}{g'(x)}$ exists, then:\n$$\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\lim_{x \\to a} \\frac{f'(x)}{g'(x)}$$",
+          "insight": "L'Hôpital applies to $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ forms!"
         },
         "incorrect": {
           "1": "No! $\\sin(0) = 0$, so numerator is 0, not 1.",
@@ -68,16 +68,16 @@
       "id": "step-2",
       "order": 2,
       "currentState": {
-        "description": "Apply L'H\u00f4pital's Rule once."
+        "description": "Apply L'Hôpital's Rule once."
       },
       "prompt": {
-        "question": "Apply L'H\u00f4pital: compute derivatives. What is $\\lim_{x \\to 0} \\frac{(\\sin x - x)'}{(x^3)'}$?",
+        "question": "Apply L'Hôpital: compute derivatives. What is $\\lim_{x \\to 0} \\frac{(\\sin x - x)'}{(x^3)'}$?",
         "hint": "$(\\sin x - x)' = \\cos x - 1$, $(x^3)' = 3x^2$. New limit: $\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$. Still $\\frac{0}{0}$, apply again!"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$ (still $\\frac{0}{0}$, need to apply L'H\u00f4pital again)"
+          "text": "$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$ (still $\\frac{0}{0}$, need to apply L'Hôpital again)"
         },
         {
           "id": "b",
@@ -91,16 +91,16 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **First application:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$$\n\n**Differentiate numerator and denominator:**\n- $(\\sin x - x)' = \\cos x - 1$\n- $(x^3)' = 3x^2$\n\n**New limit:**\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$$\n\n**Check form:**\n- Numerator: $\\cos(0) - 1 = 1 - 1 = 0$\n- Denominator: $3(0)^2 = 0$\n- Form: $\\frac{0}{0}$ (still indeterminate!) \u2717\n\n**Need to apply L'H\u00f4pital again!**\n\nSometimes multiple applications are needed until you get a determinate form.\n\n**Common mistake:** Forgetting to check if the new limit is still indeterminate.",
-          "insight": "May need multiple applications of L'H\u00f4pital for complicated limits!"
+          "explanation": "Correct! **First application:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$$\n\n**Differentiate numerator and denominator:**\n- $(\\sin x - x)' = \\cos x - 1$\n- $(x^3)' = 3x^2$\n\n**New limit:**\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$$\n\n**Check form:**\n- Numerator: $\\cos(0) - 1 = 1 - 1 = 0$\n- Denominator: $3(0)^2 = 0$\n- Form: $\\frac{0}{0}$ (still indeterminate!) ✗\n\n**Need to apply L'Hôpital again!**\n\nSometimes multiple applications are needed until you get a determinate form.\n\n**Common mistake:** Forgetting to check if the new limit is still indeterminate.",
+          "insight": "May need multiple applications of L'Hôpital for complicated limits!"
         },
         "incorrect": {
           "1": "Check the form! $\\cos(0) - 1 = 0$, and $3(0)^2 = 0$, so still $\\frac{0}{0}$!",
-          "2": "That's the problem - it's still $\\frac{0}{0}$, so apply L'H\u00f4pital again!"
+          "2": "That's the problem - it's still $\\frac{0}{0}$, so apply L'Hôpital again!"
         }
       },
       "resultState": {
-        "description": "After first L'H\u00f4pital",
+        "description": "After first L'Hôpital",
         "equations": [
           "\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2} \\quad (\\text{still } \\frac{0}{0})"
         ]
@@ -110,10 +110,10 @@
       "id": "step-3",
       "order": 3,
       "currentState": {
-        "description": "Apply L'H\u00f4pital's Rule again."
+        "description": "Apply L'Hôpital's Rule again."
       },
       "prompt": {
-        "question": "Apply L'H\u00f4pital again: $\\lim_{x \\to 0} \\frac{(\\cos x - 1)'}{(3x^2)'}$?",
+        "question": "Apply L'Hôpital again: $\\lim_{x \\to 0} \\frac{(\\cos x - 1)'}{(3x^2)'}$?",
         "hint": "$(\\cos x - 1)' = -\\sin x$, $(3x^2)' = 6x$. New limit: $\\lim_{x \\to 0} \\frac{-\\sin x}{6x}$. Still $\\frac{0}{0}$!"
       },
       "options": [
@@ -133,16 +133,16 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Correct! **Second application:**\n\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$$\n\n**Differentiate again:**\n- $(\\cos x - 1)' = -\\sin x$\n- $(3x^2)' = 6x$\n\n**New limit:**\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x}$$\n\n**Check form:**\n- Numerator: $-\\sin(0) = 0$\n- Denominator: $6(0) = 0$\n- Form: $\\frac{0}{0}$ (STILL indeterminate!) \u2717\n\n**Apply L'H\u00f4pital one more time!**\n\n**Pattern recognition:** We know $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$, so:\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x} = -\\frac{1}{6} \\lim_{x \\to 0} \\frac{\\sin x}{x} = -\\frac{1}{6}$$\n\nBut let's verify with one more L'H\u00f4pital application!",
+          "explanation": "Correct! **Second application:**\n\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$$\n\n**Differentiate again:**\n- $(\\cos x - 1)' = -\\sin x$\n- $(3x^2)' = 6x$\n\n**New limit:**\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x}$$\n\n**Check form:**\n- Numerator: $-\\sin(0) = 0$\n- Denominator: $6(0) = 0$\n- Form: $\\frac{0}{0}$ (STILL indeterminate!) ✗\n\n**Apply L'Hôpital one more time!**\n\n**Pattern recognition:** We know $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$, so:\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x} = -\\frac{1}{6} \\lim_{x \\to 0} \\frac{\\sin x}{x} = -\\frac{1}{6}$$\n\nBut let's verify with one more L'Hôpital application!",
           "insight": "Three applications needed! Each step must check the form."
         },
         "incorrect": {
-          "1": "It's still $\\frac{0}{0}$, but we can apply L'H\u00f4pital again to resolve it!",
-          "2": "We can use L'H\u00f4pital or the standard limit $\\lim \\frac{\\sin x}{x} = 1$!"
+          "1": "It's still $\\frac{0}{0}$, but we can apply L'Hôpital again to resolve it!",
+          "2": "We can use L'Hôpital or the standard limit $\\lim \\frac{\\sin x}{x} = 1$!"
         }
       },
       "resultState": {
-        "description": "After second L'H\u00f4pital",
+        "description": "After second L'Hôpital",
         "equations": [
           "\\lim_{x \\to 0} \\frac{-\\sin x}{6x}"
         ]
@@ -152,10 +152,10 @@
       "id": "step-4",
       "order": 4,
       "currentState": {
-        "description": "Final application of L'H\u00f4pital."
+        "description": "Final application of L'Hôpital."
       },
       "prompt": {
-        "question": "Apply L'H\u00f4pital once more: $\\lim_{x \\to 0} \\frac{(-\\sin x)'}{(6x)'}$?",
+        "question": "Apply L'Hôpital once more: $\\lim_{x \\to 0} \\frac{(-\\sin x)'}{(6x)'}$?",
         "hint": "$(-\\sin x)' = -\\cos x$, $(6x)' = 6$. Limit: $\\lim_{x \\to 0} \\frac{-\\cos x}{6} = \\frac{-\\cos(0)}{6} = \\frac{-1}{6}$."
       },
       "options": [
@@ -175,8 +175,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! **Third application:**\n\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x}$$\n\n**Differentiate once more:**\n- $(-\\sin x)' = -\\cos x$\n- $(6x)' = 6$\n\n**Final limit:**\n$$\\lim_{x \\to 0} \\frac{-\\cos x}{6}$$\n\n**Evaluate directly** (no longer indeterminate):\n$$= \\frac{-\\cos(0)}{6} = \\frac{-1}{6}$$\n\n**Answer:** $\\boxed{-\\frac{1}{6}}$\n\n---\n\n**Summary of applications:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$$\n$$= \\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2} \\quad \\text{(L'H 1)}$$\n$$= \\lim_{x \\to 0} \\frac{-\\sin x}{6x} \\quad \\text{(L'H 2)}$$\n$$= \\lim_{x \\to 0} \\frac{-\\cos x}{6} \\quad \\text{(L'H 3)}$$\n$$= -\\frac{1}{6}$$\n\n**Verification using Taylor series:**\n$$\\sin x = x - \\frac{x^3}{6} + \\frac{x^5}{120} - \\cdots$$\n$$\\frac{\\sin x - x}{x^3} = \\frac{-\\frac{x^3}{6} + O(x^5)}{x^3} = -\\frac{1}{6} + O(x^2) \\to -\\frac{1}{6}$$ \u2713",
-          "insight": "L'H\u00f4pital can be applied repeatedly until getting determinate form!"
+          "explanation": "Perfect! **Third application:**\n\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x}$$\n\n**Differentiate once more:**\n- $(-\\sin x)' = -\\cos x$\n- $(6x)' = 6$\n\n**Final limit:**\n$$\\lim_{x \\to 0} \\frac{-\\cos x}{6}$$\n\n**Evaluate directly** (no longer indeterminate):\n$$= \\frac{-\\cos(0)}{6} = \\frac{-1}{6}$$\n\n**Answer:** $\\boxed{-\\frac{1}{6}}$\n\n---\n\n**Summary of applications:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$$\n$$= \\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2} \\quad \\text{(L'H 1)}$$\n$$= \\lim_{x \\to 0} \\frac{-\\sin x}{6x} \\quad \\text{(L'H 2)}$$\n$$= \\lim_{x \\to 0} \\frac{-\\cos x}{6} \\quad \\text{(L'H 3)}$$\n$$= -\\frac{1}{6}$$\n\n**Verification using Taylor series:**\n$$\\sin x = x - \\frac{x^3}{6} + \\frac{x^5}{120} - \\cdots$$\n$$\\frac{\\sin x - x}{x^3} = \\frac{-\\frac{x^3}{6} + O(x^5)}{x^3} = -\\frac{1}{6} + O(x^2) \\to -\\frac{1}{6}$$ ✓",
+          "insight": "L'Hôpital can be applied repeatedly until getting determinate form!"
         },
         "incorrect": {
           "1": "$\\cos(0) = 1$, not 0! So $\\frac{-1}{6}$.",
@@ -194,14 +194,14 @@
   "summary": {
     "keyInsights": [
       "Limit: $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ has form $\\frac{0}{0}$",
-      "L'H\u00f4pital's Rule: differentiate top and bottom",
-      "Applied L'H\u00f4pital three times to resolve indeterminate forms",
+      "L'Hôpital's Rule: differentiate top and bottom",
+      "Applied L'Hôpital three times to resolve indeterminate forms",
       "First: $\\frac{\\cos x - 1}{3x^2}$ (still $\\frac{0}{0}$)",
       "Second: $\\frac{-\\sin x}{6x}$ (still $\\frac{0}{0}$)",
       "Third: $\\frac{-\\cos x}{6} = -\\frac{1}{6}$ (determinate)",
       "Answer: $-\\frac{1}{6}$"
     ],
-    "fullSolution": "**Evaluate $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ using L'H\u00f4pital's Rule**\n\n---\n\n**Check form:** As $x \\to 0$:\n- Numerator: $\\sin(0) - 0 = 0$\n- Denominator: $0^3 = 0$\n- Form: $\\frac{0}{0}$ \u2713\n\n---\n\n**L'H\u00f4pital Application 1:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3} = \\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$$\n\n**Check:** Still $\\frac{0}{0}$ (since $\\cos(0) - 1 = 0$)\n\n---\n\n**L'H\u00f4pital Application 2:**\n\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2} = \\lim_{x \\to 0} \\frac{-\\sin x}{6x}$$\n\n**Check:** Still $\\frac{0}{0}$\n\n---\n\n**L'H\u00f4pital Application 3:**\n\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x} = \\lim_{x \\to 0} \\frac{-\\cos x}{6}$$\n\n**Evaluate:** No longer indeterminate!\n\n$$= \\frac{-\\cos(0)}{6} = \\frac{-1}{6}$$\n\n---\n\n**Answer:** $\\boxed{-\\frac{1}{6}}$\n\n---\n\n**Alternative (Taylor series):**\n\n$$\\sin x = x - \\frac{x^3}{6} + O(x^5)$$\n\n$$\\frac{\\sin x - x}{x^3} = \\frac{-\\frac{x^3}{6} + O(x^5)}{x^3} = -\\frac{1}{6} + O(x^2) \\to -\\frac{1}{6}$$ \u2713",
+    "fullSolution": "**Evaluate $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ using L'Hôpital's Rule**\n\n---\n\n**Check form:** As $x \\to 0$:\n- Numerator: $\\sin(0) - 0 = 0$\n- Denominator: $0^3 = 0$\n- Form: $\\frac{0}{0}$ ✓\n\n---\n\n**L'Hôpital Application 1:**\n\n$$\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3} = \\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2}$$\n\n**Check:** Still $\\frac{0}{0}$ (since $\\cos(0) - 1 = 0$)\n\n---\n\n**L'Hôpital Application 2:**\n\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2} = \\lim_{x \\to 0} \\frac{-\\sin x}{6x}$$\n\n**Check:** Still $\\frac{0}{0}$\n\n---\n\n**L'Hôpital Application 3:**\n\n$$\\lim_{x \\to 0} \\frac{-\\sin x}{6x} = \\lim_{x \\to 0} \\frac{-\\cos x}{6}$$\n\n**Evaluate:** No longer indeterminate!\n\n$$= \\frac{-\\cos(0)}{6} = \\frac{-1}{6}$$\n\n---\n\n**Answer:** $\\boxed{-\\frac{1}{6}}$\n\n---\n\n**Alternative (Taylor series):**\n\n$$\\sin x = x - \\frac{x^3}{6} + O(x^5)$$\n\n$$\\frac{\\sin x - x}{x^3} = \\frac{-\\frac{x^3}{6} + O(x^5)}{x^3} = -\\frac{1}{6} + O(x^2) \\to -\\frac{1}{6}$$ ✓",
     "relatedProblems": [
       "calculus-limit-epsilon-delta-1",
       "calculus-taylor-series-1"
@@ -210,21 +210,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "L'Hôpital's Rule",
+      "url": "https://www.youtube.com/watch?v=cOmAk82cr9M",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "L'Hospital's Rule and Indeterminate Forms",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/LHospitalsRule.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "L'Hopital's Rule",
+      "url": "https://www.youtube.com/watch?v=51fzl9hpNRw",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

@@ -185,7 +185,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Substituting $y = 1$ into $x = y + 2$ gives $x = 1 + 2 = 3$. The solution is $(x, y) = (3, 1)$. You can verify: $2(3) + 1 = 7$ \u2713 and $3 - 1 = 2$ \u2713",
+          "explanation": "Perfect! Substituting $y = 1$ into $x = y + 2$ gives $x = 1 + 2 = 3$. The solution is $(x, y) = (3, 1)$. You can verify: $2(3) + 1 = 7$ ✓ and $3 - 1 = 2$ ✓",
           "insight": "Always verify your solution in both original equations!"
         },
         "incorrect": {
@@ -214,21 +214,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Algebra Course",
-      "url": "https://www.khanacademy.org/math/algebra",
+      "title": "Systems of Linear Equations",
+      "url": "https://www.youtube.com/watch?v=5SrvN527f50",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Algebra Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "title": "Systems of Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SystemsTwoVrble.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Algebra Fundamentals",
-      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
-      "source": "Professor Leonard"
+      "title": "Systems of Linear Equations",
+      "url": "https://www.youtube.com/watch?v=AqIrdW2-K6k",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

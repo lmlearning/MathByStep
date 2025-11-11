@@ -96,7 +96,7 @@
         }
       },
       "resultState": {
-        "description": "Compute \u2202f/\u2202x"
+        "description": "Compute ∂f/∂x"
       }
     },
     {
@@ -136,7 +136,7 @@
         }
       },
       "resultState": {
-        "description": "Compute \u2202f/\u2202y"
+        "description": "Compute ∂f/∂y"
       }
     },
     {
@@ -236,21 +236,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus - Derivatives",
-      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Derivatives Introduction",
-      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
+      "title": "Partial Derivatives",
+      "url": "https://www.youtube.com/watch?v=AXqhWeUEtQU",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Derivatives",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "title": "Partial Derivatives",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/PartialDerivatives.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Partial Derivatives",
+      "url": "https://www.youtube.com/watch?v=dfvnCHqzK54",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

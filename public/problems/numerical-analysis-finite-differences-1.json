@@ -175,7 +175,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! **Forward Difference Calculation:**\n\n$$f'(1) \\approx \\frac{f(1+h) - f(1)}{h} = \\frac{f(1.1) - f(1)}{0.1}$$\n\n**Compute:**\n$$f(1) = e^1 = e \\approx 2.718282$$\n$$f(1.1) = e^{1.1} \\approx 3.004166$$\n\n$$\\frac{f(1.1) - f(1)}{0.1} = \\frac{3.004166 - 2.718282}{0.1} = \\frac{0.285884}{0.1} \\approx 2.859$$\n\n**Error:**\n$$\\text{Approximation} - \\text{Exact} = 2.859 - 2.718 \\approx 0.141$$\n$$\\text{Relative error} = \\frac{0.141}{2.718} \\approx 5.2\\%$$\n\n**Theoretical error:** $\\frac{h}{2}|f''(1)| = \\frac{0.1}{2} \\cdot e \\approx 0.136$ \u2713\n\n**Improvement:** Smaller $h$ or higher-order methods (central difference) would reduce error.",
+          "explanation": "Excellent! **Forward Difference Calculation:**\n\n$$f'(1) \\approx \\frac{f(1+h) - f(1)}{h} = \\frac{f(1.1) - f(1)}{0.1}$$\n\n**Compute:**\n$$f(1) = e^1 = e \\approx 2.718282$$\n$$f(1.1) = e^{1.1} \\approx 3.004166$$\n\n$$\\frac{f(1.1) - f(1)}{0.1} = \\frac{3.004166 - 2.718282}{0.1} = \\frac{0.285884}{0.1} \\approx 2.859$$\n\n**Error:**\n$$\\text{Approximation} - \\text{Exact} = 2.859 - 2.718 \\approx 0.141$$\n$$\\text{Relative error} = \\frac{0.141}{2.718} \\approx 5.2\\%$$\n\n**Theoretical error:** $\\frac{h}{2}|f''(1)| = \\frac{0.1}{2} \\cdot e \\approx 0.136$ ✓\n\n**Improvement:** Smaller $h$ or higher-order methods (central difference) would reduce error.",
           "insight": "Forward difference overestimates when function is concave up!"
         },
         "incorrect": {
@@ -209,21 +209,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus - Derivatives",
-      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Derivatives Introduction",
-      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
-      "source": "Khan Academy"
+      "title": "Finite Difference Method",
+      "url": "https://www.youtube.com/watch?v=ToIXSwZ1pJU",
+      "source": "Steve Brunton"
     },
     {
       "type": "article",
-      "title": "Derivatives",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Finite Difference Methods",
+      "url": "https://brilliant.org/wiki/finite-difference/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Finite Differences",
+      "url": "https://www.youtube.com/watch?v=Z9MKuUv5dSA",
+      "source": "The Math Sorcerer"
     }
   ]
 }

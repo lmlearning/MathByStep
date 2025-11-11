@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Squeeze Theorem",
+      "url": "https://www.youtube.com/watch?v=M5NdGEZdyX0",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "The Squeeze Theorem",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/TheLimit.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Squeeze Theorem (Sandwich Theorem)",
+      "url": "https://www.youtube.com/watch?v=vFzECNQjkf4",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

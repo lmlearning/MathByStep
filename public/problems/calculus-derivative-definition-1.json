@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus - Derivatives",
-      "url": "https://www.youtube.com/watch?v=9vKqVkMQHKk",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Derivatives Introduction",
-      "url": "https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules/cs1-derivative-introduction/v/calculus-derivatives-1-new-hd-version",
+      "title": "Exponent Rules",
+      "url": "https://www.youtube.com/watch?v=kITJ6qH7jS0",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Derivatives",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+      "title": "Integer Exponents",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/IntegerExponents.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Laws of Exponents",
+      "url": "https://www.youtube.com/watch?v=kIlz8gNT2ok",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

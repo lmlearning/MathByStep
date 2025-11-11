@@ -197,21 +197,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Trigonometric Substitution",
+      "url": "https://www.youtube.com/watch?v=kBPPAyZHZAw",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "Trig Substitutions",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/TrigSubstitutions.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Trigonometric Substitution",
+      "url": "https://www.youtube.com/watch?v=PJiwWjfDyT4",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

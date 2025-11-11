@@ -87,12 +87,12 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! The order of vertices matters: A\u2194D, B\u2194E, C\u2194F. Therefore AB\u2194DE, BC\u2194EF, AC\u2194DF.",
+          "explanation": "Perfect! The order of vertices matters: A↔D, B↔E, C↔F. Therefore AB↔DE, BC↔EF, AC↔DF.",
           "insight": "The similarity statement gives us the vertex correspondence. $\\triangle ABC \\sim \\triangle DEF$ means the vertices match in order."
         },
         "incorrect": {
           "1": "Not quite. In $\\triangle ABC \\sim \\triangle DEF$, vertex B corresponds to E, but BC connects B to C, while DE connects D to E.",
-          "2": "No. AB corresponds to DE because A\u2194D and B\u2194E in the similarity statement."
+          "2": "No. AB corresponds to DE because A↔D and B↔E in the similarity statement."
         }
       },
       "resultState": {
@@ -171,7 +171,7 @@
           "insight": "The scale factor applies to all pairs of corresponding sides in similar figures."
         },
         "incorrect": {
-          "1": "EF corresponds to BC (not AC). Check the vertex correspondence: B\u2194E and C\u2194F, so BC\u2194EF.",
+          "1": "EF corresponds to BC (not AC). Check the vertex correspondence: B↔E and C↔F, so BC↔EF.",
           "2": "The scale factor goes from ABC to DEF, so we want $\\frac{EF}{BC}$, not the reciprocal."
         }
       },
@@ -247,7 +247,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! $\\frac{9}{6} = \\frac{12}{8} = \\frac{3}{2}$ \u2713. All corresponding sides have the same ratio, confirming our answer.",
+          "explanation": "Excellent! $\\frac{9}{6} = \\frac{12}{8} = \\frac{3}{2}$ ✓. All corresponding sides have the same ratio, confirming our answer.",
           "insight": "In similar figures, all corresponding linear measurements (sides, altitudes, medians, etc.) have the same scale factor."
         },
         "incorrect": {
@@ -267,7 +267,7 @@
       "The scale factor is the constant ratio of all corresponding linear measurements",
       "To find unknown sides, set up proportions using the scale factor"
     ],
-    "fullSolution": "Given: $\\triangle ABC \\sim \\triangle DEF$, AB = 6, BC = 8, AC = 10, DE = 9\n\nScale factor: $\\frac{DE}{AB} = \\frac{9}{6} = \\frac{3}{2}$\n\nSince BC corresponds to EF:\n$\\frac{EF}{BC} = \\frac{3}{2}$\n$\\frac{EF}{8} = \\frac{3}{2}$\n$EF = 8 \\times \\frac{3}{2} = 12$ cm\n\nVerification: $\\frac{9}{6} = \\frac{12}{8} = \\frac{3}{2}$ \u2713",
+    "fullSolution": "Given: $\\triangle ABC \\sim \\triangle DEF$, AB = 6, BC = 8, AC = 10, DE = 9\n\nScale factor: $\\frac{DE}{AB} = \\frac{9}{6} = \\frac{3}{2}$\n\nSince BC corresponds to EF:\n$\\frac{EF}{BC} = \\frac{3}{2}$\n$\\frac{EF}{8} = \\frac{3}{2}$\n$EF = 8 \\times \\frac{3}{2} = 12$ cm\n\nVerification: $\\frac{9}{6} = \\frac{12}{8} = \\frac{3}{2}$ ✓",
     "relatedProblems": [
       "geometry-triangle-angles-1",
       "geometry-pythagorean-proof-1"
@@ -276,21 +276,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Triangle Angle Sum",
+      "url": "https://www.youtube.com/watch?v=YlQdbw0kPBQ",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Triangle Angle Sum Theorem",
+      "url": "https://brilliant.org/wiki/triangle-angle-sum/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Angles in a Triangle",
+      "url": "https://www.youtube.com/watch?v=B3ynW3Km1_8",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

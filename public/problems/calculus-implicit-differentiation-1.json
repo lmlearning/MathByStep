@@ -157,21 +157,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=qb40J4N1fa4",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "Implicit Differentiation",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ImplicitDiff.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Implicit Differentiation - Basic Idea and Examples",
+      "url": "https://www.youtube.com/watch?v=4vWtMdQe7pY",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

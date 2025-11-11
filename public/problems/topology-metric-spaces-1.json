@@ -91,7 +91,7 @@
           "insight": "This reduces to proving the triangle inequality for vectors in $\\mathbb{R}^n$."
         },
         "incorrect": {
-          "1": "Check: $(x-y) + (y-z) = x - y + y - z = x - z$ \u2713. Addition, not subtraction.",
+          "1": "Check: $(x-y) + (y-z) = x - y + y - z = x - z$ ✓. Addition, not subtraction.",
           "2": "Distances don't multiply. The triangle inequality is about addition: $||a+b|| \\leq ||a|| + ||b||$."
         }
       },
@@ -153,7 +153,7 @@
       "options": [
         {
           "id": "a",
-          "text": "$||a+b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2 = (||a|| + ||b||)^2$ \u2713"
+          "text": "$||a+b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2 = (||a|| + ||b||)^2$ ✓"
         },
         {
           "id": "b",
@@ -167,7 +167,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! Since $a \\cdot b \\leq ||a||||b||$ by Cauchy-Schwarz, we have $||a+b||^2 = ||a||^2 + 2a\\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2 = (||a||+||b||)^2$. Taking square roots: $||a+b|| \\leq ||a|| + ||b||$ \u2713",
+          "explanation": "Excellent! Since $a \\cdot b \\leq ||a||||b||$ by Cauchy-Schwarz, we have $||a+b||^2 = ||a||^2 + 2a\\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2 = (||a||+||b||)^2$. Taking square roots: $||a+b|| \\leq ||a|| + ||b||$ ✓",
           "insight": "Cauchy-Schwarz inequality is the key to proving the triangle inequality."
         },
         "incorrect": {
@@ -187,7 +187,7 @@
       "For Euclidean metric, the proof uses Cauchy-Schwarz: $a \\cdot b \\leq ||a||||b||$",
       "This makes $\\mathbb{R}^n$ with standard distance a metric space"
     ],
-    "fullSolution": "**Triangle Inequality:** $d(x,z) \\leq d(x,y) + d(y,z)$ for Euclidean metric.\n\n**Proof:**\nLet $a = x-y$, $b = y-z$. Then $a+b = x-z$.\n\nWant: $||a+b|| \\leq ||a|| + ||b||$\n\nSquare both sides:\n$||a+b||^2 \\leq (||a||+||b||)^2$\n\nExpand:\n$||a||^2 + 2a\\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2$\n\nThis reduces to: $a \\cdot b \\leq ||a||||b||$\n\nwhich is Cauchy-Schwarz inequality \u2713\n\nTherefore triangle inequality holds.",
+    "fullSolution": "**Triangle Inequality:** $d(x,z) \\leq d(x,y) + d(y,z)$ for Euclidean metric.\n\n**Proof:**\nLet $a = x-y$, $b = y-z$. Then $a+b = x-z$.\n\nWant: $||a+b|| \\leq ||a|| + ||b||$\n\nSquare both sides:\n$||a+b||^2 \\leq (||a||+||b||)^2$\n\nExpand:\n$||a||^2 + 2a\\cdot b + ||b||^2 \\leq ||a||^2 + 2||a||||b|| + ||b||^2$\n\nThis reduces to: $a \\cdot b \\leq ||a||||b||$\n\nwhich is Cauchy-Schwarz inequality ✓\n\nTherefore triangle inequality holds.",
     "relatedProblems": [
       "geometry-triangle-angles-1",
       "real-analysis-sequence-convergence-1"
@@ -196,21 +196,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Solving Inequalities",
+      "url": "https://www.youtube.com/watch?v=8YUDtYxv4NE",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
+      "title": "Solving Inequalities",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SolveLinearInequalities.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Solving Linear Inequalities",
+      "url": "https://www.youtube.com/watch?v=VlvGMnM8vZQ",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

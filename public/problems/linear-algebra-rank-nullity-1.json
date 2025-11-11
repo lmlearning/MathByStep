@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Rank-Nullity Theorem",
+      "url": "https://www.youtube.com/watch?v=VqP2tREMvt0",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Rank-Nullity Theorem",
+      "url": "https://brilliant.org/wiki/rank-nullity/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Rank Nullity Theorem",
+      "url": "https://www.youtube.com/watch?v=nh3cYyvvHjQ",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

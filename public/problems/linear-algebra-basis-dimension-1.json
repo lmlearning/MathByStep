@@ -237,21 +237,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Linear Algebra: Basis and Dimension",
+      "url": "https://www.youtube.com/watch?v=eeMJg4uI7o0",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Basis and Dimension",
+      "url": "https://brilliant.org/wiki/basis-linear-algebra/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Basis and Dimension of a Vector Space",
+      "url": "https://www.youtube.com/watch?v=zntNi3-ybfQ",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

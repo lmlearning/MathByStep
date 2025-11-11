@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Coordinate Plane",
+      "url": "https://www.youtube.com/watch?v=28h9TVO-_so",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Coordinate Geometry",
+      "url": "https://brilliant.org/wiki/coordinate-geometry/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Coordinate Geometry Basics",
+      "url": "https://www.youtube.com/watch?v=x1-abB42v2A",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

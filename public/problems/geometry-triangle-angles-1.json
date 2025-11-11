@@ -1,7 +1,7 @@
 {
   "id": "geometry-triangle-angles-1",
   "type": "proof",
-  "title": "Prove: Sum of Triangle Angles = 180\u00b0",
+  "title": "Prove: Sum of Triangle Angles = 180°",
   "topic": "Geometry",
   "difficulty": 3,
   "estimatedTime": 10,
@@ -24,9 +24,9 @@
       "id": "step-1",
       "order": 1,
       "currentState": {
-        "description": "We have a triangle ABC with angles \u03b1, \u03b2, and \u03b3. We need to prove:",
+        "description": "We have a triangle ABC with angles α, β, and γ. We need to prove:",
         "equations": [
-          "\u03b1 + \u03b2 + \u03b3 = 180\u00b0"
+          "α + β + γ = 180°"
         ]
       },
       "prompt": {
@@ -40,11 +40,11 @@
         },
         {
           "id": "opt-2",
-          "text": "Measure all three angles with a protractor to show they sum to 180\u00b0"
+          "text": "Measure all three angles with a protractor to show they sum to 180°"
         },
         {
           "id": "opt-3",
-          "text": "Start by assuming the sum equals 180\u00b0 and work backwards"
+          "text": "Start by assuming the sum equals 180° and work backwards"
         }
       ],
       "correctOptionIndex": 0,
@@ -96,7 +96,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! When a transversal crosses parallel lines, alternate interior angles are equal. So angle \u03b2 (at B) equals angle DAB, and angle \u03b3 (at C) equals angle EAC.",
+          "explanation": "Perfect! When a transversal crosses parallel lines, alternate interior angles are equal. So angle β (at B) equals angle DAB, and angle γ (at C) equals angle EAC.",
           "insight": "Alternate interior angles theorem is key to many geometric proofs."
         },
         "incorrect": {
@@ -107,8 +107,8 @@
       "resultState": {
         "description": "Using alternate interior angles:",
         "equations": [
-          "\u03b2 = angle DAB",
-          "\u03b3 = angle EAC"
+          "β = angle DAB",
+          "γ = angle EAC"
         ]
       }
     },
@@ -118,9 +118,9 @@
       "currentState": {
         "description": "We've established:",
         "equations": [
-          "\u03b2 = angle DAB",
-          "\u03b3 = angle EAC",
-          "\u03b1 is the angle BAC"
+          "β = angle DAB",
+          "γ = angle EAC",
+          "α is the angle BAC"
         ]
       },
       "prompt": {
@@ -130,11 +130,11 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "These three angles form a straight line at point A, so they sum to 180\u00b0"
+          "text": "These three angles form a straight line at point A, so they sum to 180°"
         },
         {
           "id": "opt-2",
-          "text": "These angles form a triangle, so they sum to 180\u00b0"
+          "text": "These angles form a triangle, so they sum to 180°"
         },
         {
           "id": "opt-3",
@@ -144,8 +144,8 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! The three angles DAB, BAC (which is \u03b1), and EAC all meet at point A and together form line DE, which is a straight line. Angles on a straight line sum to 180\u00b0.",
-          "insight": "Angles that form a straight line always sum to 180\u00b0 (supplementary angles)."
+          "explanation": "Exactly! The three angles DAB, BAC (which is α), and EAC all meet at point A and together form line DE, which is a straight line. Angles on a straight line sum to 180°.",
+          "insight": "Angles that form a straight line always sum to 180° (supplementary angles)."
         },
         "incorrect": {
           "1": "The angles are at a point on a line, not forming a triangle. They lie along the straight line DE.",
@@ -155,7 +155,7 @@
       "resultState": {
         "description": "Angles on line DE at point A:",
         "equations": [
-          "angle DAB + angle BAC + angle EAC = 180\u00b0"
+          "angle DAB + angle BAC + angle EAC = 180°"
         ]
       }
     },
@@ -165,9 +165,9 @@
       "currentState": {
         "description": "We know:",
         "equations": [
-          "angle DAB + \u03b1 + angle EAC = 180\u00b0",
-          "\u03b2 = angle DAB",
-          "\u03b3 = angle EAC"
+          "angle DAB + α + angle EAC = 180°",
+          "β = angle DAB",
+          "γ = angle EAC"
         ]
       },
       "prompt": {
@@ -177,7 +177,7 @@
       "options": [
         {
           "id": "opt-1",
-          "text": "Substitute: \u03b2 + \u03b1 + \u03b3 = 180\u00b0, proving the sum of triangle angles is 180\u00b0"
+          "text": "Substitute: β + α + γ = 180°, proving the sum of triangle angles is 180°"
         },
         {
           "id": "opt-2",
@@ -191,7 +191,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Since angle DAB = \u03b2 and angle EAC = \u03b3, we can substitute into our equation: \u03b2 + \u03b1 + \u03b3 = 180\u00b0. This proves that the three interior angles of triangle ABC sum to 180\u00b0!",
+          "explanation": "Perfect! Since angle DAB = β and angle EAC = γ, we can substitute into our equation: β + α + γ = 180°. This proves that the three interior angles of triangle ABC sum to 180°!",
           "insight": "This proof works for ANY triangle because we only used general properties of parallel lines and straight angles."
         },
         "incorrect": {
@@ -202,7 +202,7 @@
       "resultState": {
         "description": "Proof complete!",
         "equations": [
-          "\u03b1 + \u03b2 + \u03b3 = 180\u00b0  Q.E.D."
+          "α + β + γ = 180°  Q.E.D."
         ]
       }
     }
@@ -211,30 +211,30 @@
     "keyInsights": [
       "Auxiliary constructions (like parallel lines) can reveal hidden relationships",
       "Alternate interior angles are equal when formed by parallel lines and a transversal",
-      "Angles on a straight line sum to 180\u00b0",
+      "Angles on a straight line sum to 180°",
       "This proof works for ANY triangle, not just specific examples"
     ],
-    "fullSolution": "Draw a line through vertex A parallel to BC. By alternate interior angles, the base angles of the triangle equal the angles formed on the line at A. Since these angles form a straight line, they sum to 180\u00b0.",
+    "fullSolution": "Draw a line through vertex A parallel to BC. By alternate interior angles, the base angles of the triangle equal the angles formed on the line at A. Since these angles form a straight line, they sum to 180°.",
     "relatedProblems": []
   },
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Triangle Angle Sum",
+      "url": "https://www.youtube.com/watch?v=YlQdbw0kPBQ",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Triangle Angle Sum Theorem",
+      "url": "https://brilliant.org/wiki/triangle-angle-sum/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Angles in a Triangle",
+      "url": "https://www.youtube.com/watch?v=B3ynW3Km1_8",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

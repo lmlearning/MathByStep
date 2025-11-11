@@ -16,7 +16,7 @@
   "objectives": [
     "Apply polynomial long division systematically",
     "Understand the relationship between dividend, divisor, quotient, and remainder",
-    "Verify the division algorithm: dividend = divisor \u00d7 quotient + remainder"
+    "Verify the division algorithm: dividend = divisor × quotient + remainder"
   ],
   "steps": [
     {
@@ -273,26 +273,26 @@
       "options": [
         {
           "id": "a",
-          "text": "Dividend = Divisor \u00d7 Quotient + Remainder"
+          "text": "Dividend = Divisor × Quotient + Remainder"
         },
         {
           "id": "b",
-          "text": "Dividend = Divisor + Quotient \u00d7 Remainder"
+          "text": "Dividend = Divisor + Quotient × Remainder"
         },
         {
           "id": "c",
-          "text": "Dividend \u00d7 Divisor = Quotient + Remainder"
+          "text": "Dividend × Divisor = Quotient + Remainder"
         }
       ],
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
           "explanation": "Perfect! The division algorithm states: $P(x) = D(x) \\cdot Q(x) + R(x)$. This fundamental relationship applies to all polynomial division.",
-          "insight": "This is analogous to integer division: $17 = 5 \\times 3 + 2$ (dividend = divisor \u00d7 quotient + remainder)."
+          "insight": "This is analogous to integer division: $17 = 5 \\times 3 + 2$ (dividend = divisor × quotient + remainder)."
         },
         "incorrect": {
           "1": "The operations are mixed up. We multiply the divisor by the quotient, then add the remainder.",
-          "2": "We don't multiply dividend and divisor. The correct form is: dividend = divisor \u00d7 quotient + remainder."
+          "2": "We don't multiply dividend and divisor. The correct form is: dividend = divisor × quotient + remainder."
         }
       },
       "resultState": {
@@ -307,7 +307,7 @@
       "Each step: divide leading terms, multiply back, subtract, bring down next term",
       "The remainder can always be verified by multiplying back and adding"
     ],
-    "fullSolution": "$(2x^3 + 5x^2 - 3x + 1) \\div (x + 2) = 2x^2 + x - 5 + \\frac{11}{x + 2}$\n\nVerification: $(x + 2)(2x^2 + x - 5) + 11$\n$= 2x^3 + 4x^2 + x^2 + 2x - 5x - 10 + 11$\n$= 2x^3 + 5x^2 - 3x + 1$ \u2713",
+    "fullSolution": "$(2x^3 + 5x^2 - 3x + 1) \\div (x + 2) = 2x^2 + x - 5 + \\frac{11}{x + 2}$\n\nVerification: $(x + 2)(2x^2 + x - 5) + 11$\n$= 2x^3 + 4x^2 + x^2 + 2x - 5x - 10 + 11$\n$= 2x^3 + 5x^2 - 3x + 1$ ✓",
     "relatedProblems": [
       "algebra-quadratic-1",
       "algebra-systems-linear-1"
@@ -316,21 +316,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Algebra Course",
-      "url": "https://www.khanacademy.org/math/algebra",
+      "title": "Polynomial Long Division",
+      "url": "https://www.youtube.com/watch?v=LkSv5bTVxMs",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Algebra Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "title": "Dividing Polynomials",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/DividingPolynomials.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Algebra Fundamentals",
-      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
-      "source": "Professor Leonard"
+      "title": "Polynomial Long Division",
+      "url": "https://www.youtube.com/watch?v=LrS7cMfCCNc",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

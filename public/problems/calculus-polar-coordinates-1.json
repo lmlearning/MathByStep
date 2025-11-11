@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Polar Form of Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=Vc3BczNq2SE",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Polar & Exponential Form",
+      "url": "https://brilliant.org/wiki/complex-numbers-exponential-form/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Complex Numbers in Polar Form",
+      "url": "https://www.youtube.com/watch?v=jDO5sSwFlcU",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

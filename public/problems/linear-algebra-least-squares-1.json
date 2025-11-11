@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Least Squares Approximation",
+      "url": "https://www.youtube.com/watch?v=MC7l96tW8V8",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Least Squares",
+      "url": "https://brilliant.org/wiki/least-squares/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Least Squares Regression",
+      "url": "https://www.youtube.com/watch?v=Qa2APhWjQPc",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

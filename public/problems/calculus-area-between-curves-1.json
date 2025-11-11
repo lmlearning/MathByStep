@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Area Between Curves",
+      "url": "https://www.youtube.com/watch?v=CDDDAeswqXU",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "Area Between Curves",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Area Between Two Curves",
+      "url": "https://www.youtube.com/watch?v=TcRmZ2WMLSk",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

@@ -114,21 +114,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Exponent Rules",
+      "url": "https://www.youtube.com/watch?v=kITJ6qH7jS0",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
+      "title": "Integer Exponents",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/IntegerExponents.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Laws of Exponents",
+      "url": "https://www.youtube.com/watch?v=kIlz8gNT2ok",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

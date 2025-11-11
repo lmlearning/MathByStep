@@ -237,21 +237,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Ratio Test for Convergence",
+      "url": "https://www.youtube.com/watch?v=m7MIxGSod4k",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "Ratio Test",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/RatioTest.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Ratio Test",
+      "url": "https://www.youtube.com/watch?v=YZNv90qS83w",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

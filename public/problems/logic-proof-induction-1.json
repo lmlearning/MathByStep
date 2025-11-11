@@ -73,7 +73,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $1 = \\frac{1(2)}{2} = 1$ \u2713"
+          "text": "Yes: $1 = \\frac{1(2)}{2} = 1$ ✓"
         },
         {
           "id": "b",
@@ -103,7 +103,7 @@
       "id": "step-3",
       "order": 3,
       "currentState": {
-        "expression": "Base case proven \u2713",
+        "expression": "Base case proven ✓",
         "description": "Now for the inductive step. We assume the formula is true for some arbitrary $k$."
       },
       "prompt": {
@@ -128,7 +128,7 @@
       "feedback": {
         "correct": {
           "explanation": "Perfect! This is the inductive hypothesis (IH). We assume it's true for an arbitrary $k$ and will use this to prove it for $k+1$.",
-          "insight": "The inductive hypothesis is our assumption\u2014it's what we get to use in proving the next case."
+          "insight": "The inductive hypothesis is our assumption—it's what we get to use in proving the next case."
         },
         "incorrect": {
           "1": "That's what we're trying to prove! We can only assume it for a single arbitrary value k.",
@@ -263,7 +263,7 @@
       "id": "step-7",
       "order": 7,
       "currentState": {
-        "expression": "$1 + 2 + \\cdots + k + (k+1) = \\frac{(k+1)(k+2)}{2}$ \u2713",
+        "expression": "$1 + 2 + \\cdots + k + (k+1) = \\frac{(k+1)(k+2)}{2}$ ✓",
         "description": "We've proven the inductive step!"
       },
       "prompt": {
@@ -287,11 +287,11 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Exactly! We proved: (1) it works for $n=1$, and (2) if it works for $n=k$, it works for $n=k+1$. Therefore, it works for all $n \\geq 1$. \u220e",
+          "explanation": "Exactly! We proved: (1) it works for $n=1$, and (2) if it works for $n=k$, it works for $n=k+1$. Therefore, it works for all $n \\geq 1$. ∎",
           "insight": "This is the power of induction: two finite proofs (base case + inductive step) establish infinitely many cases!"
         },
         "incorrect": {
-          "1": "Induction proves much more! The inductive step shows 1\u21922, 2\u21923, 3\u21924, ... covering all positive integers.",
+          "1": "Induction proves much more! The inductive step shows 1→2, 2→3, 3→4, ... covering all positive integers.",
           "2": "No need! The inductive step proves the implication $P(k) \\Rightarrow P(k+1)$ for all k, which (with the base case) covers all cases."
         }
       },
@@ -307,7 +307,7 @@
       "The inductive step uses the IH to prove the statement for $n=k+1$",
       "Together, base case and inductive step establish truth for all $n \\geq 1$"
     ],
-    "fullSolution": "**Theorem:** For all positive integers $n$, $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$.\n\n**Proof by induction:**\n\n**Base case** ($n=1$): \n$\\sum_{i=1}^{1} i = 1$ and $\\frac{1(1+1)}{2} = 1$. \u2713\n\n**Inductive step:** \nAssume (IH) that $\\sum_{i=1}^{k} i = \\frac{k(k+1)}{2}$ for some $k \\geq 1$.\n\nWe must prove: $\\sum_{i=1}^{k+1} i = \\frac{(k+1)(k+2)}{2}$.\n\nStarting with the left side:\n$$\\sum_{i=1}^{k+1} i = \\left(\\sum_{i=1}^{k} i\\right) + (k+1)$$\n$$= \\frac{k(k+1)}{2} + (k+1)$$ (by IH)\n$$= \\frac{k(k+1) + 2(k+1)}{2}$$\n$$= \\frac{(k+1)(k+2)}{2}$$ \u2713\n\nBy mathematical induction, the formula holds for all $n \\geq 1$. \u220e",
+    "fullSolution": "**Theorem:** For all positive integers $n$, $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$.\n\n**Proof by induction:**\n\n**Base case** ($n=1$): \n$\\sum_{i=1}^{1} i = 1$ and $\\frac{1(1+1)}{2} = 1$. ✓\n\n**Inductive step:** \nAssume (IH) that $\\sum_{i=1}^{k} i = \\frac{k(k+1)}{2}$ for some $k \\geq 1$.\n\nWe must prove: $\\sum_{i=1}^{k+1} i = \\frac{(k+1)(k+2)}{2}$.\n\nStarting with the left side:\n$$\\sum_{i=1}^{k+1} i = \\left(\\sum_{i=1}^{k} i\\right) + (k+1)$$\n$$= \\frac{k(k+1)}{2} + (k+1)$$ (by IH)\n$$= \\frac{k(k+1) + 2(k+1)}{2}$$\n$$= \\frac{(k+1)(k+2)}{2}$$ ✓\n\nBy mathematical induction, the formula holds for all $n \\geq 1$. ∎",
     "relatedProblems": [
       "logic-proof-contradiction-1",
       "number-theory-infinitely-many-primes-1"
@@ -316,21 +316,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Proof by Induction",
+      "url": "https://www.youtube.com/watch?v=dxSu8Y5bWgA",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
-      "source": "Paul's Online Math Notes"
+      "title": "Mathematical Induction",
+      "url": "https://brilliant.org/wiki/mathematical-induction/",
+      "source": "Brilliant"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Proof by Induction",
+      "url": "https://www.youtube.com/watch?v=wblW_M_HVQ8",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

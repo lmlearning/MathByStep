@@ -167,7 +167,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Excellent! This completes the proof:\n1. Given $\\epsilon > 0$\n2. Since $a_n \\to L$, choose $N$ so that $n \\geq N \\Rightarrow |a_n - L| < \\epsilon$\n3. For $n \\geq N$: $||a_n| - |L|| \\leq |a_n - L| < \\epsilon$\nTherefore $|a_n| \\to |L|$. \u220e",
+          "explanation": "Excellent! This completes the proof:\n1. Given $\\epsilon > 0$\n2. Since $a_n \\to L$, choose $N$ so that $n \\geq N \\Rightarrow |a_n - L| < \\epsilon$\n3. For $n \\geq N$: $||a_n| - |L|| \\leq |a_n - L| < \\epsilon$\nTherefore $|a_n| \\to |L|$. ∎",
           "insight": "The reverse triangle inequality makes this proof straightforward."
         },
         "incorrect": {
@@ -187,7 +187,7 @@
       "If $a_n \\to L$, then $|a_n| \\to |L|$",
       "Note: The converse is FALSE! $|a_n| \\to |L|$ does NOT imply $a_n \\to L$ (consider $a_n = (-1)^n$)"
     ],
-    "fullSolution": "**Theorem:** If $a_n \\to L$, then $|a_n| \\to |L|$.\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\nSince $a_n \\to L$, there exists $N \\in \\mathbb{N}$ such that\n$$n \\geq N \\Rightarrow |a_n - L| < \\epsilon$$\n\nBy the reverse triangle inequality: $||a_n| - |L|| \\leq |a_n - L|$\n\nTherefore, for $n \\geq N$:\n$$||a_n| - |L|| \\leq |a_n - L| < \\epsilon$$\n\nThis shows $|a_n| \\to |L|$. \u220e",
+    "fullSolution": "**Theorem:** If $a_n \\to L$, then $|a_n| \\to |L|$.\n\n**Proof:**\n\nLet $\\epsilon > 0$ be given.\n\nSince $a_n \\to L$, there exists $N \\in \\mathbb{N}$ such that\n$$n \\geq N \\Rightarrow |a_n - L| < \\epsilon$$\n\nBy the reverse triangle inequality: $||a_n| - |L|| \\leq |a_n - L|$\n\nTherefore, for $n \\geq N$:\n$$||a_n| - |L|| \\leq |a_n - L| < \\epsilon$$\n\nThis shows $|a_n| \\to |L|$. ∎",
     "relatedProblems": [
       "calculus-limit-epsilon-delta-1",
       "calculus-mvt-1"
@@ -196,21 +196,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
-      "source": "Khan Academy"
+      "title": "Sequence Convergence",
+      "url": "https://www.youtube.com/watch?v=zL71J_SEF_c",
+      "source": "The Bright Side of Mathematics"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Convergence of Sequences",
+      "url": "https://brilliant.org/wiki/convergence-of-sequences/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Epsilon-Delta Definition of a Limit",
+      "url": "https://www.youtube.com/watch?v=tXHlJNhqtS8",
+      "source": "Dr. Peyam"
     }
   ]
 }

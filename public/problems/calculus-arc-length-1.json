@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Calculus",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Calculus 1",
-      "url": "https://www.khanacademy.org/math/calculus-1",
+      "title": "Arc Length",
+      "url": "https://www.youtube.com/watch?v=A7THJu61_Ac",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Calculus Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "title": "Arc Length",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcII/ArcLength.aspx",
       "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Arc Length Calculus Problems",
+      "url": "https://www.youtube.com/watch?v=MKllMDsW8wM",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

@@ -155,21 +155,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Orthogonal Projections",
+      "url": "https://www.youtube.com/watch?v=Y4G61oOwcZo",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Orthogonal Projections",
+      "url": "https://brilliant.org/wiki/orthogonal-projections/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Orthogonal Projection",
+      "url": "https://www.youtube.com/watch?v=UC6zxre8rPc",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

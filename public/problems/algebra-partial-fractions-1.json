@@ -233,7 +233,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes: $\\frac{2(x+2) + 1(x+1)}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ \u2713"
+          "text": "Yes: $\\frac{2(x+2) + 1(x+1)}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ ✓"
         },
         {
           "id": "b",
@@ -247,7 +247,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! $\\frac{2(x+2) + (x+1)}{(x+1)(x+2)} = \\frac{2x+4+x+1}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ \u2713",
+          "explanation": "Perfect! $\\frac{2(x+2) + (x+1)}{(x+1)(x+2)} = \\frac{2x+4+x+1}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ ✓",
           "insight": "Always verify your partial fraction decomposition by recombining the fractions."
         },
         "incorrect": {
@@ -267,7 +267,7 @@
       "Strategic substitution of x-values that zero out terms solves for coefficients efficiently",
       "Always verify by recombining the partial fractions"
     ],
-    "fullSolution": "$\\frac{3x+5}{(x+1)(x+2)} = \\frac{A}{x+1} + \\frac{B}{x+2}$\n\nClear denominators: $3x + 5 = A(x+2) + B(x+1)$\n\nAt $x = -1$: $2 = A(1) \\Rightarrow A = 2$\n\nAt $x = -2$: $-1 = B(-1) \\Rightarrow B = 1$\n\nTherefore: $\\frac{3x+5}{(x+1)(x+2)} = \\frac{2}{x+1} + \\frac{1}{x+2}$\n\nVerification: $\\frac{2(x+2)+(x+1)}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ \u2713",
+    "fullSolution": "$\\frac{3x+5}{(x+1)(x+2)} = \\frac{A}{x+1} + \\frac{B}{x+2}$\n\nClear denominators: $3x + 5 = A(x+2) + B(x+1)$\n\nAt $x = -1$: $2 = A(1) \\Rightarrow A = 2$\n\nAt $x = -2$: $-1 = B(-1) \\Rightarrow B = 1$\n\nTherefore: $\\frac{3x+5}{(x+1)(x+2)} = \\frac{2}{x+1} + \\frac{1}{x+2}$\n\nVerification: $\\frac{2(x+2)+(x+1)}{(x+1)(x+2)} = \\frac{3x+5}{(x+1)(x+2)}$ ✓",
     "relatedProblems": [
       "algebra-polynomial-division-1",
       "calculus-integration-substitution-1"
@@ -276,21 +276,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Algebra Course",
-      "url": "https://www.khanacademy.org/math/algebra",
+      "title": "Partial Fraction Decomposition",
+      "url": "https://www.youtube.com/watch?v=bPRbJRVHE6U",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Algebra Reference",
-      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx",
+      "title": "Partial Fractions",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/PartialFractions.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "Algebra Fundamentals",
-      "url": "https://www.youtube.com/watch?v=NybHckSEQBI",
-      "source": "Professor Leonard"
+      "title": "Partial Fraction Decomposition",
+      "url": "https://www.youtube.com/watch?v=jW7dWLudiI8",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

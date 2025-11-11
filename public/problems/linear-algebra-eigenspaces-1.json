@@ -208,21 +208,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Introduction to Eigenvalues and Eigenvectors",
+      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://brilliant.org/wiki/eigenvalues-and-eigenvectors/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://www.youtube.com/watch?v=IdsV0RaC9jM",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

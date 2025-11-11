@@ -91,7 +91,7 @@
       "correctOptionIndex": 0,
       "feedback": {
         "correct": {
-          "explanation": "Perfect! Find eigenvalues:\n\n$$\\det(A^T A - \\lambda I) = \\det\\begin{pmatrix} 25-\\lambda & 20 \\\\ 20 & 25-\\lambda \\end{pmatrix}$$\n\n$$= (25-\\lambda)^2 - 20^2$$\n\n$$= (25-\\lambda)^2 - 400$$\n\nLet $\\mu = 25 - \\lambda$:\n$$\\mu^2 - 400 = 0$$\n$$\\mu = \\pm 20$$\n\nSo $25 - \\lambda = \\pm 20$:\n- $25 - \\lambda = 20 \\implies \\lambda = 5$\n- $25 - \\lambda = -20 \\implies \\lambda = 45$\n\nEigenvalues: $\\lambda_1 = 45, \\lambda_2 = 5$.\n\n**Both positive** \u2713 (as expected for $A^T A$)",
+          "explanation": "Perfect! Find eigenvalues:\n\n$$\\det(A^T A - \\lambda I) = \\det\\begin{pmatrix} 25-\\lambda & 20 \\\\ 20 & 25-\\lambda \\end{pmatrix}$$\n\n$$= (25-\\lambda)^2 - 20^2$$\n\n$$= (25-\\lambda)^2 - 400$$\n\nLet $\\mu = 25 - \\lambda$:\n$$\\mu^2 - 400 = 0$$\n$$\\mu = \\pm 20$$\n\nSo $25 - \\lambda = \\pm 20$:\n- $25 - \\lambda = 20 \\implies \\lambda = 5$\n- $25 - \\lambda = -20 \\implies \\lambda = 45$\n\nEigenvalues: $\\lambda_1 = 45, \\lambda_2 = 5$.\n\n**Both positive** ✓ (as expected for $A^T A$)",
           "insight": "Eigenvalues of $A^T A$ are always non-negative!"
         },
         "incorrect": {
@@ -209,21 +209,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Singular Value Decomposition (SVD)",
+      "url": "https://www.youtube.com/watch?v=mBcLRGuAFUk",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Singular Value Decomposition",
+      "url": "https://brilliant.org/wiki/singular-value-decomposition/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Singular Value Decomposition (SVD)",
+      "url": "https://www.youtube.com/watch?v=vSczTbgc8Rc",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

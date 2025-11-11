@@ -194,21 +194,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Essence of Linear Algebra",
-      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-      "source": "3Blue1Brown"
-    },
-    {
-      "type": "video",
-      "title": "Linear Algebra Course",
-      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "title": "Gaussian Elimination",
+      "url": "https://www.youtube.com/watch?v=eYSASx8_nyg",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Linear Algebra",
-      "url": "http://math.mit.edu/~gs/linearalgebra/",
-      "source": "MIT OCW"
+      "title": "Gaussian Elimination",
+      "url": "https://brilliant.org/wiki/gaussian-elimination/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Gaussian Elimination & Row Echelon Form",
+      "url": "https://www.youtube.com/watch?v=edb6iugi6Uk",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }

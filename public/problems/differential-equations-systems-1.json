@@ -137,7 +137,7 @@
         }
       },
       "resultState": {
-        "description": "Find eigenvector for \u03bb\u2081=3"
+        "description": "Find eigenvector for λ₁=3"
       }
     },
     {
@@ -177,7 +177,7 @@
         }
       },
       "resultState": {
-        "description": "Find eigenvector for \u03bb\u2082=-1"
+        "description": "Find eigenvector for λ₂=-1"
       }
     },
     {
@@ -229,7 +229,7 @@
       "For this problem: saddle point with eigenvalues 3 and -1",
       "Solution: $\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$"
     ],
-    "fullSolution": "**Solve:** $\\vec{x}' = A\\vec{x}$ where $A = \\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$\\n\\n**Characteristic equation:**\\n$$\\det(A - \\lambda I) = (1-\\lambda)^2 - 4 = \\lambda^2 - 2\\lambda - 3 = 0$$\\n$$(\\lambda - 3)(\\lambda + 1) = 0$$\\n\\n**Eigenvalues:** $\\lambda_1 = 3$, $\\lambda_2 = -1$\\n\\n**Eigenvector for \u03bb\u2081=3:**\\n$(A - 3I)\\vec{v} = \\vec{0}$: $\\begin{pmatrix} -2 & 2 \\\\ 2 & -2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\vec{0}$\\n\\n$v_2 = v_1 \\Rightarrow \\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$\\n\\n**Eigenvector for \u03bb\u2082=-1:**\\n$(A + I)\\vec{v} = \\vec{0}$: $v_2 = -v_1 \\Rightarrow \\vec{v}_2 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$\\n\\n**General solution:**\\n$$\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$$\\n\\n**Components:**\\n$x(t) = c_1e^{3t} + c_2e^{-t}$\\n$y(t) = c_1e^{3t} - c_2e^{-t}$",
+    "fullSolution": "**Solve:** $\\vec{x}' = A\\vec{x}$ where $A = \\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$\\n\\n**Characteristic equation:**\\n$$\\det(A - \\lambda I) = (1-\\lambda)^2 - 4 = \\lambda^2 - 2\\lambda - 3 = 0$$\\n$$(\\lambda - 3)(\\lambda + 1) = 0$$\\n\\n**Eigenvalues:** $\\lambda_1 = 3$, $\\lambda_2 = -1$\\n\\n**Eigenvector for λ₁=3:**\\n$(A - 3I)\\vec{v} = \\vec{0}$: $\\begin{pmatrix} -2 & 2 \\\\ 2 & -2 \\end{pmatrix}\\begin{pmatrix} v_1 \\\\ v_2 \\end{pmatrix} = \\vec{0}$\\n\\n$v_2 = v_1 \\Rightarrow \\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$\\n\\n**Eigenvector for λ₂=-1:**\\n$(A + I)\\vec{v} = \\vec{0}$: $v_2 = -v_1 \\Rightarrow \\vec{v}_2 = \\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$\\n\\n**General solution:**\\n$$\\vec{x}(t) = c_1e^{3t}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} + c_2e^{-t}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$$\\n\\n**Components:**\\n$x(t) = c_1e^{3t} + c_2e^{-t}$\\n$y(t) = c_1e^{3t} - c_2e^{-t}$",
     "relatedProblems": [
       "linear-algebra-eigenvalues-1",
       "differential-equations-second-order-homogeneous-1"
@@ -238,21 +238,21 @@
   "learningResources": [
     {
       "type": "video",
-      "title": "Khan Academy Mathematics",
-      "url": "https://www.khanacademy.org/math",
+      "title": "Systems of Linear Equations",
+      "url": "https://www.youtube.com/watch?v=5SrvN527f50",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Paul's Online Math Notes",
-      "url": "https://tutorial.math.lamar.edu/",
+      "title": "Systems of Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SystemsTwoVrble.aspx",
       "source": "Paul's Online Math Notes"
     },
     {
       "type": "video",
-      "title": "3Blue1Brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "source": "3Blue1Brown"
+      "title": "Systems of Linear Equations",
+      "url": "https://www.youtube.com/watch?v=AqIrdW2-K6k",
+      "source": "The Organic Chemistry Tutor"
     }
   ]
 }
