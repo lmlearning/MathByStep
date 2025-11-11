@@ -1,0 +1,151 @@
+{
+  "id": "geometry-extra-9",
+  "type": "problem",
+  "title": "3D Geometry Volume",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 14,
+  "tags": [
+    "geometry",
+    "circles"
+  ],
+  "statement": {
+    "text": "Problem about 3d geometry volume"
+  },
+  "objectives": [
+    "Apply geometry",
+    "Master circles"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "What to do in step 1?",
+        "hint": "Hint for step 1"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct approach"
+        },
+        {
+          "id": "b",
+          "text": "Wrong approach"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Great! Step 1 complete",
+          "insight": "Continue"
+        },
+        "incorrect": {
+          "1": "Review the concept"
+        }
+      },
+      "resultState": {
+        "description": "Completed step 1"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "What to do in step 2?",
+        "hint": "Hint for step 2"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct approach"
+        },
+        {
+          "id": "b",
+          "text": "Wrong approach"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Great! Step 2 complete",
+          "insight": "Continue"
+        },
+        "incorrect": {
+          "1": "Review the concept"
+        }
+      },
+      "resultState": {
+        "description": "Completed step 2"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "What to do in step 3?",
+        "hint": "Hint for step 3"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct approach"
+        },
+        {
+          "id": "b",
+          "text": "Wrong approach"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Great! Step 3 complete",
+          "insight": "Continue"
+        },
+        "incorrect": {
+          "1": "Review the concept"
+        }
+      },
+      "resultState": {
+        "description": "Completed step 3"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Main concept: geometry",
+      "Method: standard approach"
+    ],
+    "fullSolution": "Solution to: Problem about 3d geometry volume",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometry Basics",
+      "url": "https://www.youtube.com/watch?v=quv18pRwzYw",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometry",
+      "url": "https://brilliant.org/wiki/geometry/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Geometry",
+      "url": "https://www.youtube.com/watch?v=1-OhJkMkPxk",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
