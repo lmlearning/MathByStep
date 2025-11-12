@@ -1,0 +1,128 @@
+{
+  "id": "calculus-substitution-trig-1",
+  "type": "problem",
+  "title": "U-Substitution with Trig",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "integration",
+    "u-substitution"
+  ],
+  "statement": {
+    "text": "Evaluate $\\int \\sin(x)\\cos(x) dx$."
+  },
+  "objectives": [
+    "Choose appropriate substitution",
+    "Integrate and substitute back"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Choose substitution"
+      },
+      "prompt": {
+        "question": "Let $u = ?$",
+        "hint": "$u = \\sin(x)$ works well"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$u = \\sin(x)$, so $du = \\cos(x)dx$"
+        },
+        {
+          "id": "b",
+          "text": "$u = \\cos(x)$, so $du = -\\sin(x)dx$"
+        },
+        {
+          "id": "c",
+          "text": "$u = \\sin(x)\\cos(x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "With $u = \\sin(x)$, we have $du = \\cos(x)dx$\\n\\n$\\int \\sin(x)\\cos(x)dx = \\int u\\,du$",
+          "insight": "Now integrate $\\int u\\,du$"
+        },
+        "incorrect": {
+          "1": "That works too! (gives $-\\frac{\\cos^2(x)}{2} + C$)",
+          "2": "Too complex for substitution"
+        }
+      },
+      "resultState": {
+        "description": "$\\int u\\,du$ where $u = \\sin(x)$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Integrate and substitute back"
+      },
+      "prompt": {
+        "question": "$\\int u\\,du = \\frac{u^2}{2} + C = ?$",
+        "hint": "$\\frac{\\sin^2(x)}{2} + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\sin^2(x)}{2} + C$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\cos^2(x)}{2} + C$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin^2(x) + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\int \\sin(x)\\cos(x)dx = \\frac{\\sin^2(x)}{2} + C$",
+          "insight": "Alternative: $-\\frac{\\cos^2(x)}{2} + C$ (differ by constant)"
+        },
+        "incorrect": {
+          "1": "That's if $u = \\cos(x)$",
+          "2": "Don't forget the $\\frac{1}{2}$"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{\\sin^2(x)}{2} + C$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$u = \\sin(x)$, $du = \\cos(x)dx$",
+      "$\\int \\sin(x)\\cos(x)dx = \\frac{\\sin^2(x)}{2} + C$"
+    ],
+    "fullSolution": "Let $u = \\sin(x)$, $du = \\cos(x)dx$\\n\\n$\\int \\sin(x)\\cos(x)dx = \\int u\\,du = \\frac{u^2}{2} + C = \\frac{\\sin^2(x)}{2} + C$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "U-Substitution",
+      "url": "https://www.youtube.com/watch?v=wuLqKJfzfT0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Substitution Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/SubstitutionRuleIndefinite.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "U-Substitution",
+      "url": "https://www.youtube.com/watch?v=fJqBradYz7s",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

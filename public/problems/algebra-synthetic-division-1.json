@@ -1,0 +1,128 @@
+{
+  "id": "algebra-synthetic-division-1",
+  "type": "problem",
+  "title": "Synthetic Division",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "algebra",
+    "synthetic-division",
+    "polynomials"
+  ],
+  "statement": {
+    "text": "Use synthetic division to divide $x^3 - 2x^2 + 3x - 4$ by $x - 2$."
+  },
+  "objectives": [
+    "Apply synthetic division",
+    "Find quotient and remainder"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Set up synthetic division"
+      },
+      "prompt": {
+        "question": "What value do we use for synthetic division with $x - 2$?",
+        "hint": "Use $2$ (the root of $x - 2 = 0$)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$"
+        },
+        {
+          "id": "b",
+          "text": "$-2$"
+        },
+        {
+          "id": "c",
+          "text": "$1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "For $x - 2$, use $c = 2$",
+          "insight": "Write coefficients: $1, -2, 3, -4$"
+        },
+        "incorrect": {
+          "1": "It's $x - 2$, so use $+2$",
+          "2": "Solve $x - 2 = 0$"
+        }
+      },
+      "resultState": {
+        "description": "Use $2$ with coefficients $1, -2, 3, -4$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Perform synthetic division"
+      },
+      "prompt": {
+        "question": "After synthetic division, what is the remainder?",
+        "hint": "Remainder is $12$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$12$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$-4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Process:\\n$2 | 1\\quad -2\\quad 3\\quad -4$\\n$\\quad\\quad 2\\quad 0\\quad 6$\\n$\\quad 1\\quad 0\\quad 3\\quad |2$\\n\\nQuotient: $x^2 + 3$, Remainder: $12$",
+          "insight": "Result: $x^2 + 3 + \\frac{12}{x-2}$"
+        },
+        "incorrect": {
+          "1": "$x - 2$ is not a factor",
+          "2": "That's the constant term, not remainder"
+        }
+      },
+      "resultState": {
+        "description": "Quotient: $x^2 + 3$, Remainder: $12$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Synthetic division with $x - 2$ uses $c = 2$",
+      "Result: $x^2 + 3$ with remainder $12$"
+    ],
+    "fullSolution": "$\\frac{x^3 - 2x^2 + 3x - 4}{x - 2} = x^2 + 3 + \\frac{12}{x-2}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Synthetic Division",
+      "url": "https://www.youtube.com/watch?v=D9bT2nC-0jI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Synthetic Division",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/DividingPolynomials.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Synthetic Division",
+      "url": "https://www.youtube.com/watch?v=pMZJl5qB7R4",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

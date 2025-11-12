@@ -1,0 +1,127 @@
+{
+  "id": "calculus-implicit-diff-circle-1",
+  "type": "problem",
+  "title": "Implicit Differentiation - Circle",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "calculus",
+    "implicit-differentiation"
+  ],
+  "statement": {
+    "text": "Find $\\frac{dy}{dx}$ for the circle $x^2 + y^2 = 25$."
+  },
+  "objectives": [
+    "Apply implicit differentiation",
+    "Solve for dy/dx"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Differentiate both sides"
+      },
+      "prompt": {
+        "question": "Differentiate $x^2 + y^2 = 25$ with respect to $x$",
+        "hint": "$2x + 2y\\frac{dy}{dx} = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x + 2y\\frac{dy}{dx} = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$2x + 2y = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$2x + y^2 = 25$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$\\frac{d}{dx}[x^2] = 2x$ and $\\frac{d}{dx}[y^2] = 2y\\frac{dy}{dx}$ (chain rule)",
+          "insight": "Now solve for $\\frac{dy}{dx}$"
+        },
+        "incorrect": {
+          "1": "Need chain rule for $y^2$",
+          "2": "Differentiate, don't just rewrite"
+        }
+      },
+      "resultState": {
+        "description": "$2x + 2y\\frac{dy}{dx} = 0$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve for dy/dx"
+      },
+      "prompt": {
+        "question": "Solve for $\\frac{dy}{dx}$",
+        "hint": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dy}{dx} = -\\frac{y}{x}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dy}{dx} = \\frac{x}{y}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$2y\\frac{dy}{dx} = -2x \\Rightarrow \\frac{dy}{dx} = -\\frac{x}{y}$",
+          "insight": "Slope depends on position $(x,y)$ on circle"
+        },
+        "incorrect": {
+          "1": "Check algebra: $2y\\frac{dy}{dx} = -2x$",
+          "2": "Missing negative sign"
+        }
+      },
+      "resultState": {
+        "description": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Use chain rule on $y$ terms",
+      "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+    ],
+    "fullSolution": "$x^2 + y^2 = 25$\\n\\n$2x + 2y\\frac{dy}{dx} = 0$\\n\\n$\\frac{dy}{dx} = -\\frac{x}{y}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=qb40J4N1fa4",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Implicit Differentiation",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ImplicitDiff.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=4x0q23FPR7k",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

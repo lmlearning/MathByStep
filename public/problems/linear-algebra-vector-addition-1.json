@@ -1,16 +1,16 @@
 {
-  "id": "multivariable-gradient-1",
+  "id": "linear-algebra-vector-addition-1",
   "type": "problem",
-  "title": "Compute Gradient Vector",
-  "topic": "Multivariable Calculus",
-  "difficulty": 2,
-  "estimatedTime": 9,
+  "title": "Vector Addition in R²",
+  "topic": "Linear Algebra",
+  "difficulty": 1,
+  "estimatedTime": 6,
   "tags": [
-    "multivariable",
-    "gradient"
+    "linear-algebra",
+    "vectors"
   ],
   "statement": {
-    "text": "Find $\\nabla f$ for $f(x,y) = x^2 + 2y^2$."
+    "text": "Compute $\\langle 2, 3 \\rangle + \\langle -1, 4 \\rangle$."
   },
   "objectives": [
     "Understand concept",
@@ -24,21 +24,21 @@
         "description": "Step 1"
       },
       "prompt": {
-        "question": "Gradient: $\\nabla f = \\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\rangle$",
-        "hint": "$\\langle 2x, 4y \\rangle$"
+        "question": "Add component-wise: first component?",
+        "hint": "$2 + (-1) = 1$"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\langle 2x, 4y \\rangle$"
+          "text": "$1$"
         },
         {
           "id": "b",
-          "text": "$\\langle x^2, 2y^2 \\rangle$"
+          "text": "$3$"
         },
         {
           "id": "c",
-          "text": "$\\langle 2x, 2y \\rangle$"
+          "text": "$-1$"
         }
       ],
       "correctOptionIndex": 0,
@@ -63,21 +63,21 @@
         "description": "Step 2"
       },
       "prompt": {
-        "question": "At point $(1, 1)$, what is $\\nabla f$?",
-        "hint": "$\\langle 2(1), 4(1) \\rangle = \\langle 2, 4 \\rangle$"
+        "question": "Second component?",
+        "hint": "$3 + 4 = 7$"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\langle 2, 4 \\rangle$"
+          "text": "$7$"
         },
         {
           "id": "b",
-          "text": "$\\langle 1, 1 \\rangle$"
+          "text": "$12$"
         },
         {
           "id": "c",
-          "text": "$\\langle 2, 2 \\rangle$"
+          "text": "$1$"
         }
       ],
       "correctOptionIndex": 0,
@@ -98,23 +98,23 @@
   ],
   "summary": {
     "keyInsights": [
-      "$\\nabla f = \\langle 2x, 4y \\rangle$"
+      "$\\langle 2, 3 \\rangle + \\langle -1, 4 \\rangle = \\langle 1, 7 \\rangle$"
     ],
-    "fullSolution": "$\\nabla f = \\langle 2x, 4y \\rangle$",
+    "fullSolution": "$\\langle 2, 3 \\rangle + \\langle -1, 4 \\rangle = \\langle 1, 7 \\rangle$",
     "relatedProblems": []
   },
   "learningResources": [
     {
       "type": "video",
-      "title": "Gradient",
-      "url": "https://www.youtube.com/watch?v=tIpKfDc295M",
+      "title": "Vector Addition",
+      "url": "https://www.youtube.com/watch?v=Tt8FFufJZwY",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Gradient",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/Gradient.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Vector Operations",
+      "url": "https://brilliant.org/wiki/vector-operations/",
+      "source": "Brilliant"
     }
   ]
 }

@@ -1,0 +1,128 @@
+{
+  "id": "algebra-complete-square-1",
+  "type": "problem",
+  "title": "Complete the Square",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 10,
+  "tags": [
+    "algebra",
+    "completing-square",
+    "quadratics"
+  ],
+  "statement": {
+    "text": "Rewrite $x^2 + 6x + 5$ in the form $(x+a)^2 + b$."
+  },
+  "objectives": [
+    "Complete the square",
+    "Find vertex form"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find half of coefficient of x"
+      },
+      "prompt": {
+        "question": "What is half of 6?",
+        "hint": "$6 \\div 2 = 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$"
+        },
+        {
+          "id": "b",
+          "text": "$6$"
+        },
+        {
+          "id": "c",
+          "text": "$12$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Half of 6 is 3",
+          "insight": "We'll use $(x+3)^2$"
+        },
+        "incorrect": {
+          "1": "Divide by 2",
+          "2": "That's double, not half"
+        }
+      },
+      "resultState": {
+        "description": "Use $(x+3)^2$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Expand and compare"
+      },
+      "prompt": {
+        "question": "$(x+3)^2 = x^2 + 6x + 9$. To get our original, what do we add?",
+        "hint": "$5 - 9 = -4$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+3)^2 - 4$"
+        },
+        {
+          "id": "b",
+          "text": "$(x+3)^2 + 5$"
+        },
+        {
+          "id": "c",
+          "text": "$(x+3)^2 + 9$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$(x+3)^2 - 4 = x^2 + 6x + 9 - 4 = x^2 + 6x + 5$ ✓",
+          "insight": "Completed square form"
+        },
+        "incorrect": {
+          "1": "Check: expand and compare to original",
+          "2": "We have +9 in the square, but only need +5 total"
+        }
+      },
+      "resultState": {
+        "description": "$x^2 + 6x + 5 = (x+3)^2 - 4$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Take half of $b$, square it: $(\\frac{b}{2})^2$",
+      "$x^2 + 6x + 5 = (x+3)^2 - 4$"
+    ],
+    "fullSolution": "$x^2 + 6x + 5$\\n\\nTake half of 6: $\\frac{6}{2} = 3$\\n\\n$(x+3)^2 = x^2 + 6x + 9$\\n\\nAdjust: $(x+3)^2 - 4 = x^2 + 6x + 5$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Completing the Square",
+      "url": "https://www.youtube.com/watch?v=iQNb3ElB3BU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Completing the Square",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/CompleteSquare.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Completing the Square",
+      "url": "https://www.youtube.com/watch?v=Mzj_JaOJT4g",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

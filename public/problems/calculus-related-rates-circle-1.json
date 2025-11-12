@@ -1,16 +1,17 @@
 {
-  "id": "multivariable-gradient-1",
+  "id": "calculus-related-rates-circle-1",
   "type": "problem",
-  "title": "Compute Gradient Vector",
-  "topic": "Multivariable Calculus",
-  "difficulty": 2,
-  "estimatedTime": 9,
+  "title": "Related Rates - Expanding Circle",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 12,
   "tags": [
-    "multivariable",
-    "gradient"
+    "calculus",
+    "related-rates",
+    "applications"
   ],
   "statement": {
-    "text": "Find $\\nabla f$ for $f(x,y) = x^2 + 2y^2$."
+    "text": "A circle's radius increases at 2 cm/s. How fast is the area increasing when $r = 5$ cm?"
   },
   "objectives": [
     "Understand concept",
@@ -24,21 +25,21 @@
         "description": "Step 1"
       },
       "prompt": {
-        "question": "Gradient: $\\nabla f = \\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\rangle$",
-        "hint": "$\\langle 2x, 4y \\rangle$"
+        "question": "Area formula: $A = \\pi r^2$. Differentiate with respect to time.",
+        "hint": "$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\langle 2x, 4y \\rangle$"
+          "text": "$\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$"
         },
         {
           "id": "b",
-          "text": "$\\langle x^2, 2y^2 \\rangle$"
+          "text": "$\\frac{dA}{dt} = \\pi r^2$"
         },
         {
           "id": "c",
-          "text": "$\\langle 2x, 2y \\rangle$"
+          "text": "$\\frac{dA}{dt} = 2\\pi r$"
         }
       ],
       "correctOptionIndex": 0,
@@ -63,21 +64,21 @@
         "description": "Step 2"
       },
       "prompt": {
-        "question": "At point $(1, 1)$, what is $\\nabla f$?",
-        "hint": "$\\langle 2(1), 4(1) \\rangle = \\langle 2, 4 \\rangle$"
+        "question": "Substitute $r = 5$, $\\frac{dr}{dt} = 2$",
+        "hint": "$\\frac{dA}{dt} = 2\\pi(5)(2) = 20\\pi$ cm²/s"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\langle 2, 4 \\rangle$"
+          "text": "$20\\pi$ cm²/s"
         },
         {
           "id": "b",
-          "text": "$\\langle 1, 1 \\rangle$"
+          "text": "$10\\pi$ cm²/s"
         },
         {
           "id": "c",
-          "text": "$\\langle 2, 2 \\rangle$"
+          "text": "$25\\pi$ cm²/s"
         }
       ],
       "correctOptionIndex": 0,
@@ -98,22 +99,22 @@
   ],
   "summary": {
     "keyInsights": [
-      "$\\nabla f = \\langle 2x, 4y \\rangle$"
+      "$\\frac{dA}{dt} = 20\\pi$ cm²/s when $r = 5$ cm"
     ],
-    "fullSolution": "$\\nabla f = \\langle 2x, 4y \\rangle$",
+    "fullSolution": "$\\frac{dA}{dt} = 20\\pi$ cm²/s when $r = 5$ cm",
     "relatedProblems": []
   },
   "learningResources": [
     {
       "type": "video",
-      "title": "Gradient",
-      "url": "https://www.youtube.com/watch?v=tIpKfDc295M",
+      "title": "Related Rates",
+      "url": "https://www.youtube.com/watch?v=H-ek4od9I4A",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Gradient",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/Gradient.aspx",
+      "title": "Related Rates",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates.aspx",
       "source": "Paul's Online Math Notes"
     }
   ]

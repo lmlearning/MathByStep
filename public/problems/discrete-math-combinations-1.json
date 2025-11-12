@@ -1,16 +1,17 @@
 {
-  "id": "multivariable-gradient-1",
+  "id": "discrete-math-combinations-1",
   "type": "problem",
-  "title": "Compute Gradient Vector",
-  "topic": "Multivariable Calculus",
+  "title": "Combinations Formula",
+  "topic": "Discrete Mathematics",
   "difficulty": 2,
-  "estimatedTime": 9,
+  "estimatedTime": 8,
   "tags": [
-    "multivariable",
-    "gradient"
+    "discrete-math",
+    "combinatorics",
+    "combinations"
   ],
   "statement": {
-    "text": "Find $\\nabla f$ for $f(x,y) = x^2 + 2y^2$."
+    "text": "How many ways can you choose 2 items from 5 items (order doesn't matter)?"
   },
   "objectives": [
     "Understand concept",
@@ -24,21 +25,21 @@
         "description": "Step 1"
       },
       "prompt": {
-        "question": "Gradient: $\\nabla f = \\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\rangle$",
-        "hint": "$\\langle 2x, 4y \\rangle$"
+        "question": "Use formula $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$. What is $\\binom{5}{2}$?",
+        "hint": "$\\frac{5!}{2!3!} = \\frac{120}{2 \\cdot 6} = 10$"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\langle 2x, 4y \\rangle$"
+          "text": "$10$"
         },
         {
           "id": "b",
-          "text": "$\\langle x^2, 2y^2 \\rangle$"
+          "text": "$20$"
         },
         {
           "id": "c",
-          "text": "$\\langle 2x, 2y \\rangle$"
+          "text": "$25$"
         }
       ],
       "correctOptionIndex": 0,
@@ -63,21 +64,17 @@
         "description": "Step 2"
       },
       "prompt": {
-        "question": "At point $(1, 1)$, what is $\\nabla f$?",
-        "hint": "$\\langle 2(1), 4(1) \\rangle = \\langle 2, 4 \\rangle$"
+        "question": "Verify: list some combinations",
+        "hint": "AB, AC, AD, AE, BC, BD, BE, CD, CE, DE = 10 combinations"
       },
       "options": [
         {
           "id": "a",
-          "text": "$\\langle 2, 4 \\rangle$"
+          "text": "$10$ combinations"
         },
         {
           "id": "b",
-          "text": "$\\langle 1, 1 \\rangle$"
-        },
-        {
-          "id": "c",
-          "text": "$\\langle 2, 2 \\rangle$"
+          "text": "$5$ combinations"
         }
       ],
       "correctOptionIndex": 0,
@@ -87,8 +84,7 @@
           "insight": "Good work"
         },
         "incorrect": {
-          "1": "Try again",
-          "2": "Try again"
+          "1": "Try again"
         }
       },
       "resultState": {
@@ -98,23 +94,23 @@
   ],
   "summary": {
     "keyInsights": [
-      "$\\nabla f = \\langle 2x, 4y \\rangle$"
+      "$\\binom{5}{2} = 10$"
     ],
-    "fullSolution": "$\\nabla f = \\langle 2x, 4y \\rangle$",
+    "fullSolution": "$\\binom{5}{2} = 10$",
     "relatedProblems": []
   },
   "learningResources": [
     {
       "type": "video",
-      "title": "Gradient",
-      "url": "https://www.youtube.com/watch?v=tIpKfDc295M",
+      "title": "Combinations",
+      "url": "https://www.youtube.com/watch?v=iKy-d5_erhI",
       "source": "Khan Academy"
     },
     {
       "type": "article",
-      "title": "Gradient",
-      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/Gradient.aspx",
-      "source": "Paul's Online Math Notes"
+      "title": "Combinations",
+      "url": "https://brilliant.org/wiki/combinations/",
+      "source": "Brilliant"
     }
   ]
 }

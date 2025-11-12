@@ -1,0 +1,128 @@
+{
+  "id": "algebra-geometric-sequence-1",
+  "type": "problem",
+  "title": "Geometric Sequence Formula",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "sequences",
+    "geometric"
+  ],
+  "statement": {
+    "text": "Find the 6th term of the geometric sequence: $3, 6, 12, 24, \\ldots$"
+  },
+  "objectives": [
+    "Find common ratio",
+    "Apply geometric sequence formula"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find common ratio"
+      },
+      "prompt": {
+        "question": "What is the common ratio $r$?",
+        "hint": "$r = \\frac{6}{3} = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$r = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$r = 3$"
+        },
+        {
+          "id": "c",
+          "text": "$r = 6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Each term is double the previous: $r = 2$",
+          "insight": "Formula: $a_n = a_1 \\cdot r^{n-1}$"
+        },
+        "incorrect": {
+          "1": "Divide consecutive terms",
+          "2": "Divide consecutive terms: $6/3 = 2$"
+        }
+      },
+      "resultState": {
+        "description": "$r = 2$, $a_1 = 3$"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate 6th term"
+      },
+      "prompt": {
+        "question": "$a_6 = 3 \\cdot 2^{6-1} = 3 \\cdot 2^5 = ?$",
+        "hint": "$3 \\cdot 32 = 96$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$96$"
+        },
+        {
+          "id": "b",
+          "text": "$48$"
+        },
+        {
+          "id": "c",
+          "text": "$192$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "$a_6 = 3 \\cdot 2^5 = 3 \\cdot 32 = 96$",
+          "insight": "Sequence: $3, 6, 12, 24, 48, 96$"
+        },
+        "incorrect": {
+          "1": "That's $a_5$",
+          "2": "That's $a_7$"
+        }
+      },
+      "resultState": {
+        "description": "$a_6 = 96$"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Geometric: $a_n = a_1 \\cdot r^{n-1}$",
+      "$a_6 = 96$"
+    ],
+    "fullSolution": "$a_1 = 3$, $r = 2$\\n\\n$a_6 = 3 \\cdot 2^5 = 3 \\cdot 32 = 96$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometric Sequences",
+      "url": "https://www.youtube.com/watch?v=kMh1bsj72yQ",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometric Sequences",
+      "url": "https://brilliant.org/wiki/geometric-progression/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Geometric Sequences",
+      "url": "https://www.youtube.com/watch?v=BSkceYY38Jk",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
