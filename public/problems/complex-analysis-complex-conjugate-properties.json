@@ -1,0 +1,176 @@
+{
+  "id": "complex-analysis-complex-conjugate-properties",
+  "type": "problem",
+  "title": "Complex Conjugate Properties",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "complex-analysis",
+    "complex-conjugate",
+    "properties",
+    "magnitude"
+  ],
+  "statement": {
+    "text": "Let $z = 3 + 4i$. Find $\\bar{z}$, $z + \\bar{z}$, $z \\cdot \\bar{z}$, and $|z|$."
+  },
+  "objectives": [
+    "Find complex conjugate",
+    "Apply conjugate properties",
+    "Calculate magnitude"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find the complex conjugate."
+      },
+      "prompt": {
+        "question": "What is $\\bar{z}$?",
+        "hint": "Complex conjugate: change sign of imaginary part. $\\bar{3+4i} = 3-4i$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\bar{z} = 3 - 4i$"
+        },
+        {
+          "id": "b",
+          "text": "$\\bar{z} = -3 + 4i$"
+        },
+        {
+          "id": "c",
+          "text": "$\\bar{z} = -3 - 4i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Complex conjugate: flip the sign of the imaginary part. $\\overline{a+bi} = a-bi$. So $\\overline{3+4i} = 3-4i$.",
+          "insight": "Geometrically, conjugate reflects the complex number across the real axis."
+        },
+        "incorrect": {
+          "1": "Only change the sign of the imaginary part, not the real part! $\\overline{3+4i} = 3-4i$.",
+          "2": "Conjugate means changing sign of imaginary part only: $3+4i \\to 3-4i$."
+        }
+      },
+      "resultState": {
+        "description": "Found conjugate"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate $z + \\bar{z}$."
+      },
+      "prompt": {
+        "question": "What is $z + \\bar{z}$?",
+        "hint": "$(3+4i) + (3-4i) = 6$ (imaginary parts cancel)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$z + \\bar{z} = 6$ (real number, twice the real part)"
+        },
+        {
+          "id": "b",
+          "text": "$z + \\bar{z} = 8i$ (imaginary)"
+        },
+        {
+          "id": "c",
+          "text": "$z + \\bar{z} = 6 + 8i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $(3+4i) + (3-4i) = 3+3 + (4i-4i) = 6 + 0i = 6$. Imaginary parts cancel!",
+          "insight": "General property: $z + \\bar{z} = 2\\text{Re}(z)$ (twice the real part). Always gives a real number."
+        },
+        "incorrect": {
+          "1": "The imaginary parts $4i$ and $-4i$ cancel, they don't add to $8i$!",
+          "2": "Add components: $(3+4i) + (3-4i) = 6 + 0i = 6$, not $6+8i$."
+        }
+      },
+      "resultState": {
+        "description": "Found z + z̄ = 6"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Calculate $z \\cdot \\bar{z}$ and $|z|$."
+      },
+      "prompt": {
+        "question": "What are $z \\cdot \\bar{z}$ and $|z|$?",
+        "hint": "$z \\cdot \\bar{z} = (3+4i)(3-4i) = 9 - 16i^2 = 9 + 16 = 25$. So $|z| = \\sqrt{25} = 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$z \\cdot \\bar{z} = 25$ and $|z| = 5$"
+        },
+        {
+          "id": "b",
+          "text": "$z \\cdot \\bar{z} = 7$ and $|z| = \\sqrt{7}$"
+        },
+        {
+          "id": "c",
+          "text": "$z \\cdot \\bar{z} = 9 - 16 = -7$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $(3+4i)(3-4i) = 9 - 12i + 12i - 16i^2 = 9 - 16(-1) = 9 + 16 = 25$. Magnitude: $|z| = \\sqrt{z \\cdot \\bar{z}} = \\sqrt{25} = 5$.",
+          "insight": "Key property: $z \\cdot \\bar{z} = |z|^2 = a^2 + b^2$ for $z = a+bi$. This is always a non-negative real number! Also: 3-4-5 is a Pythagorean triple."
+        },
+        "incorrect": {
+          "1": "Expand correctly: $(3+4i)(3-4i) = 9 + 16 = 25$ (difference of squares with $i^2=-1$).",
+          "2": "Remember $i^2 = -1$, so $-16i^2 = -16(-1) = +16$. Don't forget this!"
+        }
+      },
+      "resultState": {
+        "description": "Found z·z̄ = 25, |z| = 5"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Complex conjugate: $\\overline{a+bi} = a-bi$ (flip sign of imaginary part)",
+      "For $z = 3+4i$: $\\bar{z} = 3-4i$",
+      "$z + \\bar{z} = 6$ (real, equals $2\\text{Re}(z)$)",
+      "$z \\cdot \\bar{z} = 25$ (real, equals $|z|^2$)",
+      "Magnitude: $|z| = \\sqrt{z \\cdot \\bar{z}} = \\sqrt{3^2 + 4^2} = 5$",
+      "Conjugate is reflection across real axis"
+    ],
+    "fullSolution": "For z = 3+4i: conjugate z̄ = 3-4i. Sum: z + z̄ = (3+4i) + (3-4i) = 6. Product: z·z̄ = (3+4i)(3-4i) = 9+16 = 25. Magnitude: |z| = √25 = 5.",
+    "relatedProblems": [
+      "complex-analysis-complex-exponential",
+      "complex-analysis-roots-of-unity"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Conjugates",
+      "url": "https://www.youtube.com/watch?v=QIXKy1RsF1k",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complex Conjugate",
+      "url": "https://brilliant.org/wiki/complex-conjugate/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Conjugates",
+      "url": "https://www.youtube.com/watch?v=fHq0n2ov6Kg",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "statistics-hypothesis-test-proportion",
+  "type": "problem",
+  "title": "Hypothesis Test for Proportion",
+  "topic": "Statistics",
+  "difficulty": 4,
+  "estimatedTime": 14,
+  "tags": [
+    "statistics",
+    "hypothesis-testing",
+    "proportions",
+    "z-test"
+  ],
+  "statement": {
+    "text": "A company claims 80% of customers are satisfied. In a random sample of 200 customers, 150 reported satisfaction. Test at 5% significance level if the true proportion is less than 80%."
+  },
+  "objectives": [
+    "Set up null and alternative hypotheses",
+    "Calculate test statistic",
+    "Make decision based on p-value"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "State the hypotheses."
+      },
+      "prompt": {
+        "question": "What are the null and alternative hypotheses?",
+        "hint": "$H_0: p = 0.8$ (claim), $H_a: p < 0.8$ (test if less than claimed). Left-tailed test."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$H_0: p = 0.8$, $H_a: p < 0.8$ (left-tailed test)"
+        },
+        {
+          "id": "b",
+          "text": "$H_0: p < 0.8$, $H_a: p = 0.8$"
+        },
+        {
+          "id": "c",
+          "text": "$H_0: p = 0.8$, $H_a: p \\neq 0.8$ (two-tailed test)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Null hypothesis assumes the claim is true: $H_0: p = 0.8$. Alternative tests if proportion is less: $H_a: p < 0.8$.",
+          "insight": "The alternative hypothesis reflects what we're testing for: 'is it less than 80%?' This is a left-tailed test."
+        },
+        "incorrect": {
+          "1": "Null always has equality ($=$). Alternative can be $<$, $>$, or $\\neq$.",
+          "2": "We're specifically testing if it's LESS than 80%, not just different. Use $H_a: p < 0.8$, not $\\neq$."
+        }
+      },
+      "resultState": {
+        "description": "Set up hypotheses"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate test statistic."
+      },
+      "prompt": {
+        "question": "What is the z-test statistic?",
+        "hint": "$\\hat{p} = \\frac{150}{200} = 0.75$. $z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1-p_0)}{n}}} = \\frac{0.75 - 0.8}{\\sqrt{\\frac{0.8(0.2)}{200}}} = \\frac{-0.05}{0.0283} \\approx -1.77$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$z \\approx -1.77$ (negative because $\\hat{p} < p_0$)"
+        },
+        {
+          "id": "b",
+          "text": "$z \\approx 1.77$ (positive)"
+        },
+        {
+          "id": "c",
+          "text": "$z \\approx -0.05$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Sample proportion: $\\hat{p} = \\frac{150}{200} = 0.75$. Standard error: $SE = \\sqrt{\\frac{0.8(0.2)}{200}} \\approx 0.0283$. Test statistic: $z = \\frac{0.75-0.8}{0.0283} \\approx -1.77$.",
+          "insight": "Negative z-score indicates sample proportion is below the claimed value, which aligns with our alternative hypothesis $H_a: p < 0.8$."
+        },
+        "incorrect": {
+          "1": "Direction matters! Since $\\hat{p} = 0.75 < 0.8 = p_0$, we get negative z-score.",
+          "2": "That's just the numerator! Need to divide by the standard error: $\\frac{-0.05}{0.0283} \\approx -1.77$."
+        }
+      },
+      "resultState": {
+        "description": "Calculated z ≈ -1.77"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find p-value and make decision."
+      },
+      "prompt": {
+        "question": "What is the conclusion?",
+        "hint": "p-value $= P(Z < -1.77) \\approx 0.0384 < 0.05$. Reject $H_0$. Evidence supports that true proportion is less than 80%."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "p-value $\\approx 0.038 < 0.05$. Reject $H_0$. Evidence that $p < 0.8$."
+        },
+        {
+          "id": "b",
+          "text": "p-value $\\approx 0.038 < 0.05$. Fail to reject $H_0$. No evidence."
+        },
+        {
+          "id": "c",
+          "text": "p-value $\\approx 0.962 > 0.05$. Fail to reject $H_0$."
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! For left-tailed test: p-value $= P(Z < -1.77) \\approx 0.0384$. Since $0.0384 < 0.05$ (significance level), we reject $H_0$. There's significant evidence that the true proportion is less than 80%.",
+          "insight": "Only 3.84% chance of getting such a low sample proportion (or lower) if true proportion were 80%. This is strong evidence against the claim."
+        },
+        "incorrect": {
+          "1": "When p-value < significance level, we REJECT $H_0$, not fail to reject!",
+          "2": "That's $P(Z > -1.77)$ for a right-tailed test. We need left tail: $P(Z < -1.77) \\approx 0.038$."
+        }
+      },
+      "resultState": {
+        "description": "Rejected H₀ at 5% level"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Hypotheses: $H_0: p = 0.8$ vs $H_a: p < 0.8$ (left-tailed)",
+      "Sample proportion: $\\hat{p} = \\frac{150}{200} = 0.75$ or 75%",
+      "Test statistic: $z = \\frac{0.75 - 0.8}{\\sqrt{\\frac{0.8(0.2)}{200}}} \\approx -1.77$",
+      "p-value: $P(Z < -1.77) \\approx 0.038 < 0.05$",
+      "Conclusion: Reject $H_0$. Significant evidence that true proportion < 80%",
+      "Company's claim appears to be overstated"
+    ],
+    "fullSolution": "H₀: p=0.8, Hₐ: p<0.8. Sample: p̂=150/200=0.75. SE = √[0.8(0.2)/200] ≈ 0.0283. Test statistic: z = (0.75-0.8)/0.0283 ≈ -1.77. P-value = P(Z<-1.77) ≈ 0.038 < 0.05. Reject H₀: evidence that p < 0.8.",
+    "relatedProblems": [
+      "statistics-normal-distribution-zscore",
+      "statistics-confidence-interval"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Hypothesis Testing for Proportions",
+      "url": "https://www.youtube.com/watch?v=5ABpqVSx33I",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Hypothesis Testing",
+      "url": "https://brilliant.org/wiki/hypothesis-testing/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Hypothesis Test for Proportions",
+      "url": "https://www.youtube.com/watch?v=LYHS6-44_MQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

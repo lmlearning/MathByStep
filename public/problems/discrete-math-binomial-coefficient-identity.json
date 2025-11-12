@@ -1,0 +1,176 @@
+{
+  "id": "discrete-math-binomial-coefficient-identity",
+  "type": "problem",
+  "title": "Pascal's Identity and Combinations",
+  "topic": "Discrete Math",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "discrete-math",
+    "combinatorics",
+    "pascals-triangle",
+    "binomial-coefficients"
+  ],
+  "statement": {
+    "text": "Verify Pascal's identity: $\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$ for $n=5, k=2$."
+  },
+  "objectives": [
+    "Calculate binomial coefficients",
+    "Verify identity numerically",
+    "Understand combinatorial meaning"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Calculate left side: $\\binom{5}{2}$."
+      },
+      "prompt": {
+        "question": "What is $\\binom{5}{2}$?",
+        "hint": "$\\binom{5}{2} = \\frac{5!}{2!(5-2)!} = \\frac{5!}{2!3!} = \\frac{5 \\cdot 4}{2 \\cdot 1} = 10$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\binom{5}{2} = 10$ (ways to choose 2 from 5)"
+        },
+        {
+          "id": "b",
+          "text": "$\\binom{5}{2} = 5$ (just $n$)"
+        },
+        {
+          "id": "c",
+          "text": "$\\binom{5}{2} = 20$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\cdot 6} = \\frac{120}{12} = 10$. There are 10 ways to choose 2 items from 5.",
+          "insight": "Formula: $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$. Often easier to cancel: $\\frac{5 \\cdot 4}{2 \\cdot 1} = 10$."
+        },
+        "incorrect": {
+          "1": "Use the formula! Not just $n$. $\\binom{5}{2} = \\frac{5!}{2!3!} = 10$.",
+          "2": "Check calculation: $\\frac{5 \\cdot 4}{2 \\cdot 1} = \\frac{20}{2} = 10$, not 20."
+        }
+      },
+      "resultState": {
+        "description": "Found C(5,2) = 10"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate right side terms."
+      },
+      "prompt": {
+        "question": "What are $\\binom{4}{1}$ and $\\binom{4}{2}$?",
+        "hint": "$\\binom{4}{1} = 4$ and $\\binom{4}{2} = \\frac{4 \\cdot 3}{2 \\cdot 1} = 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\binom{4}{1} = 4$ and $\\binom{4}{2} = 6$"
+        },
+        {
+          "id": "b",
+          "text": "$\\binom{4}{1} = 1$ and $\\binom{4}{2} = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$\\binom{4}{1} = 4$ and $\\binom{4}{2} = 12$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\binom{4}{1} = 4$ (4 ways to choose 1 from 4). $\\binom{4}{2} = \\frac{4 \\cdot 3}{2 \\cdot 1} = 6$ (6 ways to choose 2 from 4).",
+          "insight": "$\\binom{n}{1} = n$ always (n ways to choose 1 item). $\\binom{n}{2} = \\frac{n(n-1)}{2}$ (pairs formula)."
+        },
+        "incorrect": {
+          "1": "$\\binom{4}{1} = 4$ (number of ways to choose 1 from 4), not 1. $\\binom{4}{2} = 6$, not 2.",
+          "2": "$\\binom{4}{2} = \\frac{4!}{2!2!} = \\frac{24}{4} = 6$, not 12."
+        }
+      },
+      "resultState": {
+        "description": "Found C(4,1)=4, C(4,2)=6"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Verify the identity."
+      },
+      "prompt": {
+        "question": "Does Pascal's identity hold?",
+        "hint": "$\\binom{4}{1} + \\binom{4}{2} = 4 + 6 = 10 = \\binom{5}{2}$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes! $4 + 6 = 10$. Identity verified: $\\binom{5}{2} = \\binom{4}{1} + \\binom{4}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "No, $4 + 6 = 10 \\neq \\binom{5}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "Identity doesn't apply here"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\binom{4}{1} + \\binom{4}{2} = 4 + 6 = 10 = \\binom{5}{2}$. Pascal's identity holds!",
+          "insight": "Combinatorial meaning: To choose 2 from 5 items, either (1) include a specific item and choose 1 more from remaining 4, OR (2) exclude that item and choose 2 from remaining 4. Total: $\\binom{4}{1} + \\binom{4}{2}$."
+        },
+        "incorrect": {
+          "1": "But $10 = \\binom{5}{2}$! We calculated this in step 1.",
+          "2": "Pascal's identity is universal: $\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$ for all valid $n,k$."
+        }
+      },
+      "resultState": {
+        "description": "Verified Pascal's identity"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Pascal's identity: $\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$",
+      "For $n=5, k=2$: $\\binom{5}{2} = 10$",
+      "Right side: $\\binom{4}{1} + \\binom{4}{2} = 4 + 6 = 10$ ✓",
+      "Identity verified numerically",
+      "Combinatorial interpretation: include/exclude argument",
+      "This identity generates Pascal's triangle row by row"
+    ],
+    "fullSolution": "Calculate: C(5,2) = 5!/(2!3!) = 10. Pascal's identity: C(5,2) = C(4,1) + C(4,2). Right side: C(4,1) = 4, C(4,2) = 6, sum = 10. Since 10 = 10, identity holds.",
+    "relatedProblems": [
+      "discrete-math-permutations-with-repetition",
+      "discrete-math-graph-handshake-lemma"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Pascal's Triangle and Binomial Coefficients",
+      "url": "https://www.youtube.com/watch?v=0iMtlus-afo",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Pascal's Triangle",
+      "url": "https://brilliant.org/wiki/pascals-triangle/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Binomial Coefficients and Pascal's Triangle",
+      "url": "https://www.youtube.com/watch?v=oEsu3xPNUS0",
+      "source": "Mathologer"
+    }
+  ]
+}

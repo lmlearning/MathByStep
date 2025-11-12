@@ -1,0 +1,176 @@
+{
+  "id": "algebra-polynomial-long-division",
+  "type": "problem",
+  "title": "Polynomial Long Division",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "algebra",
+    "polynomials",
+    "division",
+    "remainder"
+  ],
+  "statement": {
+    "text": "Divide $x^3 + 2x^2 - 5x + 3$ by $x - 1$ using polynomial long division."
+  },
+  "objectives": [
+    "Perform polynomial long division",
+    "Find quotient and remainder",
+    "Verify using remainder theorem"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Divide leading terms."
+      },
+      "prompt": {
+        "question": "What is the first term of the quotient?",
+        "hint": "Divide leading terms: $\\frac{x^3}{x} = x^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2$ (divide $x^3$ by $x$)"
+        },
+        {
+          "id": "b",
+          "text": "$x$ (just cancel one power)"
+        },
+        {
+          "id": "c",
+          "text": "$x^3$ (keep the same)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! First term of quotient: $\\frac{x^3}{x} = x^2$. Multiply back: $x^2(x-1) = x^3 - x^2$. Subtract from dividend.",
+          "insight": "Polynomial long division is like regular long division: divide, multiply, subtract, bring down, repeat."
+        },
+        "incorrect": {
+          "1": "$\\frac{x^3}{x} = x^{3-1} = x^2$, not just $x$.",
+          "2": "Need to divide: $\\frac{x^3}{x} = x^2$."
+        }
+      },
+      "resultState": {
+        "description": "First quotient term: x²"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Continue division process."
+      },
+      "prompt": {
+        "question": "After subtracting $x^3 - x^2$, what do we get?",
+        "hint": "$(x^3+2x^2-5x+3) - (x^3-x^2) = 3x^2-5x+3$. Continue: $\\frac{3x^2}{x} = 3x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Remainder: $3x^2 - 5x + 3$. Next quotient term: $3x$"
+        },
+        {
+          "id": "b",
+          "text": "Remainder: $x^2 - 5x + 3$"
+        },
+        {
+          "id": "c",
+          "text": "Already done, quotient is $x^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! After subtracting: $(2x^2) - (-x^2) = 3x^2$. New dividend: $3x^2-5x+3$. Next term: $\\frac{3x^2}{x} = 3x$.",
+          "insight": "Each step: divide leading terms, multiply back, subtract. Repeat until degree of remainder < degree of divisor."
+        },
+        "incorrect": {
+          "1": "Check subtraction: $2x^2 - (-x^2) = 2x^2 + x^2 = 3x^2$, not just $x^2$.",
+          "2": "Not finished! Degree of remainder (2) ≥ degree of divisor (1), so continue dividing."
+        }
+      },
+      "resultState": {
+        "description": "Second quotient term: 3x"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Complete the division."
+      },
+      "prompt": {
+        "question": "What are the final quotient and remainder?",
+        "hint": "After $3x$: subtract $3x(x-1) = 3x^2-3x$, get $-2x+3$. Divide: $\\frac{-2x}{x} = -2$. Subtract $-2(x-1) = -2x+2$, remainder = $1$. Quotient: $x^2+3x-2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Quotient: $x^2 + 3x - 2$, Remainder: $1$"
+        },
+        {
+          "id": "b",
+          "text": "Quotient: $x^2 + 3x$, Remainder: $3$"
+        },
+        {
+          "id": "c",
+          "text": "Quotient: $x^2 + 2x - 5$, Remainder: $0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Full division: $x^3+2x^2-5x+3 = (x-1)(x^2+3x-2) + 1$. Verify by expanding: $(x-1)(x^2+3x-2)+1 = x^3+3x^2-2x-x^2-3x+2+1 = x^3+2x^2-5x+3$ ✓",
+          "insight": "Remainder theorem check: $P(1) = 1+2-5+3 = 1$ matches our remainder! When dividing by $(x-c)$, remainder is $P(c)$."
+        },
+        "incorrect": {
+          "1": "Continue one more step! After $3x$, still have $-2x+3$ to divide.",
+          "2": "The original polynomial has degree 3, so quotient should have degree 2 when dividing by degree-1 polynomial. Check your work!"
+        }
+      },
+      "resultState": {
+        "description": "Final: Q = x²+3x-2, R = 1"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Polynomial long division: divide, multiply, subtract, repeat",
+      "$(x^3+2x^2-5x+3) \\div (x-1) = x^2+3x-2$ with remainder $1$",
+      "Can write: $x^3+2x^2-5x+3 = (x-1)(x^2+3x-2) + 1$",
+      "Remainder theorem: when dividing $P(x)$ by $(x-c)$, remainder is $P(c)$",
+      "Check: $P(1) = 1+2-5+3 = 1$ ✓",
+      "Division algorithm: $P(x) = Q(x) \\cdot D(x) + R(x)$ where deg$(R) <$ deg$(D)$"
+    ],
+    "fullSolution": "Divide x³+2x²-5x+3 by x-1. Step 1: x³÷x = x², multiply: x²(x-1) = x³-x², subtract: get 3x²-5x+3. Step 2: 3x²÷x = 3x, multiply: 3x(x-1) = 3x²-3x, subtract: get -2x+3. Step 3: -2x÷x = -2, multiply: -2(x-1) = -2x+2, subtract: remainder = 1. Quotient: x²+3x-2, Remainder: 1.",
+    "relatedProblems": [
+      "algebra-rational-equation-solve",
+      "algebra-factor-theorem"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Polynomial Long Division",
+      "url": "https://www.youtube.com/watch?v=LLb54ui9LvM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Polynomial Division",
+      "url": "https://brilliant.org/wiki/polynomial-division/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Polynomial Long Division",
+      "url": "https://www.youtube.com/watch?v=Dx3omptroRs",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

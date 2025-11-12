@@ -1,0 +1,175 @@
+{
+  "id": "trigonometry-law-of-cosines",
+  "type": "problem",
+  "title": "Law of Cosines Application",
+  "topic": "Trigonometry",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "trigonometry",
+    "law-of-cosines",
+    "triangles",
+    "sss"
+  ],
+  "statement": {
+    "text": "A triangle has sides $a = 7$, $b = 9$, and $c = 5$. Find the measure of angle $C$ (the angle opposite side $c$)."
+  },
+  "objectives": [
+    "Apply law of cosines",
+    "Solve for angle",
+    "Use inverse cosine"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall the law of cosines."
+      },
+      "prompt": {
+        "question": "What is the law of cosines for finding angle $C$?",
+        "hint": "$c^2 = a^2 + b^2 - 2ab\\cos(C)$, so $\\cos(C) = \\frac{a^2 + b^2 - c^2}{2ab}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$c^2 = a^2 + b^2 - 2ab\\cos(C)$"
+        },
+        {
+          "id": "b",
+          "text": "$c^2 = a^2 + b^2 + 2ab\\cos(C)$"
+        },
+        {
+          "id": "c",
+          "text": "$c = a + b - 2ab\\cos(C)$ (without squares)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos(C)$. Generalizes Pythagorean theorem (when $C=90°$, $\\cos(C)=0$ and we get $c^2 = a^2 + b^2$).",
+          "insight": "The $-2ab\\cos(C)$ term adjusts for the angle between sides $a$ and $b$."
+        },
+        "incorrect": {
+          "1": "Sign matters! Should be minus: $-2ab\\cos(C)$. The plus sign would give a different formula.",
+          "2": "Need squares! It's $c^2$, not $c$. Remember it generalizes $a^2 + b^2 = c^2$."
+        }
+      },
+      "resultState": {
+        "description": "Stated law of cosines"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve for $\\cos(C)$."
+      },
+      "prompt": {
+        "question": "What is $\\cos(C)$?",
+        "hint": "$\\cos(C) = \\frac{a^2 + b^2 - c^2}{2ab} = \\frac{49 + 81 - 25}{2(7)(9)} = \\frac{105}{126} = \\frac{5}{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos(C) = \\frac{5}{6}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\cos(C) = \\frac{1}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\cos(C) = \\frac{105}{126}$ (not simplified)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\cos(C) = \\frac{7^2 + 9^2 - 5^2}{2(7)(9)} = \\frac{49 + 81 - 25}{126} = \\frac{105}{126} = \\frac{5}{6}$ (dividing by GCD 21).",
+          "insight": "Positive cosine means $C$ is acute (less than 90°). Makes sense since 5 is the smallest side!"
+        },
+        "incorrect": {
+          "1": "Calculate: $\\frac{49+81-25}{126} = \\frac{105}{126}$. Simplify: divide both by 21 to get $\\frac{5}{6}$.",
+          "2": "This is correct but not fully simplified. $\\frac{105}{126} = \\frac{5}{6}$ after dividing by 21."
+        }
+      },
+      "resultState": {
+        "description": "Found cos(C) = 5/6"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Find angle $C$ using inverse cosine."
+      },
+      "prompt": {
+        "question": "What is $C = \\arccos(\\frac{5}{6})$?",
+        "hint": "$C = \\arccos(\\frac{5}{6}) \\approx 33.56°$ or about $0.5856$ radians"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$C \\approx 33.56°$ (or $\\approx 0.5856$ radians)"
+        },
+        {
+          "id": "b",
+          "text": "$C = 60°$"
+        },
+        {
+          "id": "c",
+          "text": "$C = 30°$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $C = \\arccos(\\frac{5}{6}) \\approx 33.56°$. This is the smallest angle, opposite the smallest side ($c=5$).",
+          "insight": "In any triangle, smallest angle is opposite smallest side, largest angle opposite largest side. Here: angle $C$ (opposite 5) < angle $A$ (opposite 7) < angle $B$ (opposite 9)."
+        },
+        "incorrect": {
+          "1": "$\\cos(60°) = \\frac{1}{2} \\neq \\frac{5}{6}$. Use calculator: $\\arccos(\\frac{5}{6}) \\approx 33.56°$.",
+          "2": "$\\cos(30°) = \\frac{\\sqrt{3}}{2} \\approx 0.866 \\neq \\frac{5}{6} \\approx 0.833$."
+        }
+      },
+      "resultState": {
+        "description": "Found C ≈ 33.56°"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos(C)$",
+      "Rearranged: $\\cos(C) = \\frac{a^2 + b^2 - c^2}{2ab}$",
+      "For this triangle: $\\cos(C) = \\frac{49 + 81 - 25}{126} = \\frac{5}{6}$",
+      "Angle: $C = \\arccos(\\frac{5}{6}) \\approx 33.56°$",
+      "Use law of cosines for SSS (three sides) or SAS (two sides, included angle)"
+    ],
+    "fullSolution": "By law of cosines: c² = a² + b² - 2ab·cos(C). Solve: cos(C) = (a² + b² - c²)/(2ab) = (49 + 81 - 25)/(2·7·9) = 105/126 = 5/6. Therefore C = arccos(5/6) ≈ 33.56°.",
+    "relatedProblems": [
+      "trigonometry-law-of-sines",
+      "geometry-triangle-angle-bisector"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Law of Cosines",
+      "url": "https://www.youtube.com/watch?v=qvlO74vLk4c",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Law of Cosines",
+      "url": "https://brilliant.org/wiki/law-of-cosines/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Law of Cosines",
+      "url": "https://www.youtube.com/watch?v=hLb4-i6mmTQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
