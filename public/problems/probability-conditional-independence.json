@@ -1,0 +1,175 @@
+{
+  "id": "probability-conditional-independence",
+  "type": "problem",
+  "title": "Conditional Probability with Cards",
+  "topic": "Probability",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "probability",
+    "conditional-probability",
+    "cards",
+    "without-replacement"
+  ],
+  "statement": {
+    "text": "From a standard deck of 52 cards, you draw two cards without replacement. What is the probability that both are hearts?"
+  },
+  "objectives": [
+    "Understand conditional probability",
+    "Calculate dependent events",
+    "Apply multiplication rule"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify the sample space and events."
+      },
+      "prompt": {
+        "question": "What changes after the first card is drawn?",
+        "hint": "Initially 13 hearts out of 52 cards. After drawing one heart, 12 hearts out of 51 cards remain."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "First draw: 13/52. After drawing a heart: 12/51 (without replacement changes probabilities)"
+        },
+        {
+          "id": "b",
+          "text": "Both draws have probability 13/52 (independent)"
+        },
+        {
+          "id": "c",
+          "text": "First draw: 13/52. Second draw: 13/51"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Without replacement, the deck changes. After removing one heart, only 12 hearts remain among 51 total cards.",
+          "insight": "Without replacement creates dependence: the second probability depends on the first outcome."
+        },
+        "incorrect": {
+          "1": "These would be independent only if we replaced the first card before drawing the second.",
+          "2": "Close, but the number of hearts also decreases! If we drew a heart first, only 12 hearts remain."
+        }
+      },
+      "resultState": {
+        "description": "Recognized dependent events"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply multiplication rule for conditional probability."
+      },
+      "prompt": {
+        "question": "What formula should we use?",
+        "hint": "$P(A \\text{ and } B) = P(A) \\cdot P(B|A)$ where $P(B|A)$ is probability of B given A occurred"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(\\text{both hearts}) = P(\\text{first heart}) \\cdot P(\\text{second heart}|\\text{first heart})$"
+        },
+        {
+          "id": "b",
+          "text": "$P(\\text{both hearts}) = P(\\text{first heart}) + P(\\text{second heart})$"
+        },
+        {
+          "id": "c",
+          "text": "$P(\\text{both hearts}) = P(\\text{first heart}) \\cdot P(\\text{second heart})$ (independent)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! For sequential events: multiply the first probability by the conditional probability of the second given the first.",
+          "insight": "Multiplication rule: $P(A \\cap B) = P(A) \\cdot P(B|A)$. The vertical bar means 'given that'."
+        },
+        "incorrect": {
+          "1": "Addition is for 'or' (union), not 'and' (intersection). We want both events to occur.",
+          "2": "These aren't independent! The second draw depends on the first since we don't replace the card."
+        }
+      },
+      "resultState": {
+        "description": "Identified correct formula"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Calculate the probability."
+      },
+      "prompt": {
+        "question": "What is the final probability?",
+        "hint": "$\\frac{13}{52} \\cdot \\frac{12}{51} = \\frac{13 \\cdot 12}{52 \\cdot 51} = \\frac{156}{2652} = \\frac{1}{17}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{17}$ (approximately 5.88%)"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{16}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{13}{204}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $\\frac{13}{52} \\cdot \\frac{12}{51} = \\frac{1}{4} \\cdot \\frac{12}{51} = \\frac{12}{204} = \\frac{1}{17} \\approx 0.0588$ or 5.88%.",
+          "insight": "Simplification: $\\frac{13}{52} = \\frac{1}{4}$, then $\\frac{1}{4} \\cdot \\frac{12}{51} = \\frac{12}{204}$. Divide both by 12: $\\frac{1}{17}$."
+        },
+        "incorrect": {
+          "1": "Close! Calculate: $\\frac{13 \\cdot 12}{52 \\cdot 51} = \\frac{156}{2652}$. Simplify by dividing by 156: $\\frac{1}{17}$.",
+          "2": "Check the arithmetic carefully. $\\frac{156}{2652} = \\frac{1}{17}$, not $\\frac{13}{204}$."
+        }
+      },
+      "resultState": {
+        "description": "Calculated P = 1/17"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Conditional probability: $P(B|A) = $ probability of B given A has occurred",
+      "Multiplication rule: $P(A \\cap B) = P(A) \\cdot P(B|A)$",
+      "Without replacement creates dependence between draws",
+      "P(both hearts) = $\\frac{13}{52} \\cdot \\frac{12}{51} = \\frac{1}{17} \\approx$ 5.88%",
+      "Compare to with replacement: $\\frac{13}{52} \\cdot \\frac{13}{52} = \\frac{1}{16} \\approx$ 6.25%"
+    ],
+    "fullSolution": "P(first heart) = 13/52 = 1/4. After drawing one heart, 12 hearts remain in 51 cards, so P(second heart | first heart) = 12/51. By multiplication rule: P(both hearts) = (1/4)·(12/51) = 12/204 = 1/17 ≈ 5.88%.",
+    "relatedProblems": [
+      "probability-bayes-theorem-medical",
+      "probability-independent-events"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Conditional Probability",
+      "url": "https://www.youtube.com/watch?v=_IgyaD7vOOA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Conditional Probability",
+      "url": "https://brilliant.org/wiki/conditional-probability/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Conditional Probability and Cards",
+      "url": "https://www.youtube.com/watch?v=sqDVrXq_eh0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

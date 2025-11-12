@@ -1,0 +1,175 @@
+{
+  "id": "complex-analysis-complex-exponential",
+  "type": "problem",
+  "title": "Euler's Formula Application",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "complex-analysis",
+    "euler-formula",
+    "exponential",
+    "polar-form"
+  ],
+  "statement": {
+    "text": "Express $e^{i\\pi/4}$ in rectangular form $a + bi$."
+  },
+  "objectives": [
+    "Apply Euler's formula",
+    "Calculate exact trigonometric values",
+    "Convert to rectangular form"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall Euler's formula."
+      },
+      "prompt": {
+        "question": "What is Euler's formula?",
+        "hint": "$e^{i\\theta} = \\cos(\\theta) + i\\sin(\\theta)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^{i\\theta} = \\cos(\\theta) + i\\sin(\\theta)$"
+        },
+        {
+          "id": "b",
+          "text": "$e^{i\\theta} = \\cos(\\theta) - i\\sin(\\theta)$"
+        },
+        {
+          "id": "c",
+          "text": "$e^{i\\theta} = \\sin(\\theta) + i\\cos(\\theta)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Euler's formula: $e^{i\\theta} = \\cos(\\theta) + i\\sin(\\theta)$. One of the most beautiful equations in mathematics!",
+          "insight": "Euler's formula connects exponential, trigonometric, and complex functions. Special case: $e^{i\\pi} + 1 = 0$ (Euler's identity)."
+        },
+        "incorrect": {
+          "1": "Close, but that's the formula for $e^{-i\\theta}$ (complex conjugate). Euler's formula has a plus sign.",
+          "2": "The order matters! Cosine comes first: $\\cos + i\\sin$, not $\\sin + i\\cos$."
+        }
+      },
+      "resultState": {
+        "description": "Recalled Euler's formula"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply Euler's formula with $\\theta = \\pi/4$."
+      },
+      "prompt": {
+        "question": "What are $\\cos(\\pi/4)$ and $\\sin(\\pi/4)$?",
+        "hint": "Both equal $\\frac{\\sqrt{2}}{2}$ (or $\\frac{1}{\\sqrt{2}}$). This is 45° angle."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos(\\pi/4) = \\sin(\\pi/4) = \\frac{\\sqrt{2}}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\cos(\\pi/4) = \\frac{1}{2}$, $\\sin(\\pi/4) = \\frac{\\sqrt{3}}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\cos(\\pi/4) = \\sin(\\pi/4) = \\frac{1}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! At $\\pi/4$ radians (45°), we have an isosceles right triangle. Both sine and cosine equal $\\frac{\\sqrt{2}}{2} \\approx 0.707$.",
+          "insight": "Key angles to memorize: 0°, 30°, 45°, 60°, 90° (in radians: 0, π/6, π/4, π/3, π/2). At 45°, sine and cosine are equal."
+        },
+        "incorrect": {
+          "1": "Those are values for $\\pi/3$ (60°). At $\\pi/4$ (45°), both sine and cosine equal $\\frac{\\sqrt{2}}{2}$.",
+          "2": "Close to the decimal value, but exact value is $\\frac{\\sqrt{2}}{2}$, not $\\frac{1}{2}$."
+        }
+      },
+      "resultState": {
+        "description": "Found cos and sin values"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Write in rectangular form."
+      },
+      "prompt": {
+        "question": "What is $e^{i\\pi/4}$ in form $a + bi$?",
+        "hint": "$e^{i\\pi/4} = \\cos(\\pi/4) + i\\sin(\\pi/4) = \\frac{\\sqrt{2}}{2} + i\\frac{\\sqrt{2}}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^{i\\pi/4} = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2}i$ or $\\frac{\\sqrt{2}}{2}(1 + i)$"
+        },
+        {
+          "id": "b",
+          "text": "$e^{i\\pi/4} = \\frac{1}{2} + \\frac{\\sqrt{3}}{2}i$"
+        },
+        {
+          "id": "c",
+          "text": "$e^{i\\pi/4} = 1 + i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $e^{i\\pi/4} = \\frac{\\sqrt{2}}{2}(1 + i) \\approx 0.707 + 0.707i$. This complex number has magnitude 1 (on unit circle) and argument $\\pi/4$ radians.",
+          "insight": "All numbers $e^{i\\theta}$ lie on the unit circle. The angle $\\theta$ gives the direction, and Euler's formula provides the rectangular coordinates!"
+        },
+        "incorrect": {
+          "1": "That's $e^{i\\pi/3}$ (60° angle), not $e^{i\\pi/4}$ (45° angle).",
+          "2": "Close direction, but wrong magnitude! Should be $\\frac{\\sqrt{2}}{2}(1+i)$, which has magnitude 1. Your answer $1+i$ has magnitude $\\sqrt{2}$."
+        }
+      },
+      "resultState": {
+        "description": "Expressed in rectangular form"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Euler's formula: $e^{i\\theta} = \\cos(\\theta) + i\\sin(\\theta)$",
+      "At $\\theta = \\pi/4$ (45°): $\\cos(\\pi/4) = \\sin(\\pi/4) = \\frac{\\sqrt{2}}{2}$",
+      "Result: $e^{i\\pi/4} = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2}i = \\frac{\\sqrt{2}}{2}(1+i)$",
+      "This point lies on unit circle at 45° angle",
+      "Magnitude: $|e^{i\\pi/4}| = 1$, Argument: $\\arg(e^{i\\pi/4}) = \\pi/4$"
+    ],
+    "fullSolution": "Apply Euler's formula: e^(iπ/4) = cos(π/4) + i·sin(π/4). Since π/4 radians = 45°, both cos(π/4) and sin(π/4) equal √2/2. Therefore: e^(iπ/4) = (√2/2) + (√2/2)i = (√2/2)(1 + i) ≈ 0.707 + 0.707i.",
+    "relatedProblems": [
+      "complex-analysis-roots-of-unity",
+      "complex-analysis-polar-multiplication"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Euler's Formula",
+      "url": "https://www.youtube.com/watch?v=mvmuCPvRoWQ",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Euler's Formula",
+      "url": "https://brilliant.org/wiki/eulers-formula/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Euler's Formula and Identity",
+      "url": "https://www.youtube.com/watch?v=sKtloBAuP74",
+      "source": "3Blue1Brown"
+    }
+  ]
+}

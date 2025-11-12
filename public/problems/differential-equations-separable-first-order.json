@@ -1,0 +1,176 @@
+{
+  "id": "differential-equations-separable-first-order",
+  "type": "problem",
+  "title": "Separable Differential Equation",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "differential-equations",
+    "separable",
+    "first-order",
+    "integration"
+  ],
+  "statement": {
+    "text": "Solve the differential equation $\\frac{dy}{dx} = xy$ with initial condition $y(0) = 2$."
+  },
+  "objectives": [
+    "Separate variables",
+    "Integrate both sides",
+    "Apply initial condition"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Separate variables."
+      },
+      "prompt": {
+        "question": "How do we separate the variables?",
+        "hint": "Move all $y$ terms to left, all $x$ terms to right: $\\frac{dy}{y} = x\\,dx$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{y}\\,dy = x\\,dx$ (or $\\frac{dy}{y} = x\\,dx$)"
+        },
+        {
+          "id": "b",
+          "text": "$dy = xy\\,dx$ (not separated)"
+        },
+        {
+          "id": "c",
+          "text": "$y\\,dy = x\\,dx$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Divide both sides by $y$ and multiply by $dx$: $\\frac{dy}{y} = x\\,dx$. Now $y$ terms are on left, $x$ terms on right.",
+          "insight": "Separation of variables works when we can write $\\frac{dy}{dx} = f(x)g(y)$. Here: $f(x) = x$ and $g(y) = y$."
+        },
+        "incorrect": {
+          "1": "This hasn't separated the variables yet. We need $y$ terms on one side, $x$ terms on the other.",
+          "2": "Close, but need $\\frac{1}{y}$ on the left, not $y$. Divide the original equation by $y$."
+        }
+      },
+      "resultState": {
+        "description": "Separated variables"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Integrate both sides."
+      },
+      "prompt": {
+        "question": "What do we get after integrating?",
+        "hint": "$\\int \\frac{1}{y}\\,dy = \\int x\\,dx$ gives $\\ln|y| = \\frac{x^2}{2} + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln|y| = \\frac{x^2}{2} + C$"
+        },
+        {
+          "id": "b",
+          "text": "$y = \\frac{x^2}{2} + C$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{y^2}{2} = \\frac{x^2}{2} + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\int \\frac{dy}{y} = \\ln|y|$ and $\\int x\\,dx = \\frac{x^2}{2}$. So: $\\ln|y| = \\frac{x^2}{2} + C$.",
+          "insight": "Don't forget the constant of integration $C$! It will be determined by the initial condition."
+        },
+        "incorrect": {
+          "1": "Integral of $\\frac{1}{y}$ is $\\ln|y|$, not just $y$!",
+          "2": "Integral of $\\frac{1}{y}\\,dy$ is $\\ln|y|$, not $\\frac{y^2}{2}$. That would be from $\\int y\\,dy$."
+        }
+      },
+      "resultState": {
+        "description": "Integrated: ln|y| = x²/2 + C"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve for $y$ and apply initial condition."
+      },
+      "prompt": {
+        "question": "What is the final solution?",
+        "hint": "Exponentiate: $y = Ae^{x^2/2}$. Use $y(0) = 2$: $2 = Ae^0 = A$. So $y = 2e^{x^2/2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 2e^{x^2/2}$"
+        },
+        {
+          "id": "b",
+          "text": "$y = e^{x^2/2 + 2}$"
+        },
+        {
+          "id": "c",
+          "text": "$y = e^{x^2/2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Exponentiate: $|y| = e^{x^2/2 + C} = e^C \\cdot e^{x^2/2}$. Let $A = \\pm e^C$, so $y = Ae^{x^2/2}$. Initial condition $y(0) = 2$ gives $A = 2$.",
+          "insight": "This solution grows exponentially as $x$ moves away from 0 (in either direction, since $x^2$ is always positive). Exponential growth model!"
+        },
+        "incorrect": {
+          "1": "Can't add inside the exponent like that. Should be $y = Ce^{x^2/2}$ form, then use initial condition.",
+          "2": "Missing the constant from initial condition! $y(0) = 2$, not 1, so need factor of 2."
+        }
+      },
+      "resultState": {
+        "description": "Solution: y = 2e^(x²/2)"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Separable DE: can write as $\\frac{dy}{dx} = f(x)g(y)$",
+      "Method: separate variables, integrate both sides",
+      "Here: $\\frac{dy}{y} = x\\,dx \\Rightarrow \\ln|y| = \\frac{x^2}{2} + C$",
+      "Exponentiate: $y = Ae^{x^2/2}$",
+      "Apply $y(0) = 2$: $A = 2$",
+      "Final solution: $y = 2e^{x^2/2}$"
+    ],
+    "fullSolution": "Separate: dy/y = x dx. Integrate: ln|y| = x²/2 + C. Exponentiate: y = Ae^(x²/2) where A = ±e^C. Apply y(0) = 2: 2 = Ae^0 = A. Final solution: y = 2e^(x²/2).",
+    "relatedProblems": [
+      "differential-equations-homogeneous-second-order",
+      "calculus-integration-by-parts-basic"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Separable Differential Equations",
+      "url": "https://www.youtube.com/watch?v=_yPJEXmF2TM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Separable Equations",
+      "url": "https://brilliant.org/wiki/separable-differential-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Separable First Order Differential Equations",
+      "url": "https://www.youtube.com/watch?v=EfXm42r5xms",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "discrete-math-graph-handshake-lemma",
+  "type": "problem",
+  "title": "Handshake Lemma Application",
+  "topic": "Discrete Math",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "discrete-math",
+    "graph-theory",
+    "handshake-lemma",
+    "degree-sum"
+  ],
+  "statement": {
+    "text": "A graph has 6 vertices. Five vertices have degree 3, and one vertex has degree $d$. What are the possible values of $d$?"
+  },
+  "objectives": [
+    "Apply handshake lemma",
+    "Understand degree constraints",
+    "Find valid graph structure"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall the handshake lemma."
+      },
+      "prompt": {
+        "question": "What does the handshake lemma state?",
+        "hint": "Sum of all vertex degrees equals twice the number of edges: $\\sum \\deg(v) = 2|E|$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Sum of all degrees = $2 \\times$ (number of edges). Sum must be even!"
+        },
+        {
+          "id": "b",
+          "text": "Sum of all degrees = number of edges"
+        },
+        {
+          "id": "c",
+          "text": "Number of vertices with odd degree is even"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Each edge contributes 1 to the degree of both its endpoints, so it contributes 2 to the total degree sum.",
+          "insight": "Handshake lemma: $\\sum \\deg(v) = 2|E|$. This means the sum of all degrees must be even. Also implies: there's always an even number of odd-degree vertices!"
+        },
+        "incorrect": {
+          "1": "Each edge is counted twice in the degree sum (once at each endpoint), so sum = 2 × edges.",
+          "2": "That's true but is a consequence of the handshake lemma, not the lemma itself!"
+        }
+      },
+      "resultState": {
+        "description": "Recalled handshake lemma"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate total degree sum."
+      },
+      "prompt": {
+        "question": "What is the degree sum?",
+        "hint": "Five vertices of degree 3 contribute $5 \\times 3 = 15$. Total: $15 + d$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Total degree sum = $15 + d$ (must be even)"
+        },
+        {
+          "id": "b",
+          "text": "Total degree sum = $18 + d$"
+        },
+        {
+          "id": "c",
+          "text": "Total degree sum = $5 \\times 3 = 15$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Five vertices with degree 3 contribute $5 \\times 3 = 15$, plus one vertex with degree $d$, giving total $15 + d$.",
+          "insight": "By handshake lemma, $15 + d$ must be even. Since 15 is odd, $d$ must be odd!"
+        },
+        "incorrect": {
+          "1": "Five vertices have degree 3, not all six. It's $5 \\times 3 = 15$, not $6 \\times 3$.",
+          "2": "Don't forget the sixth vertex with degree $d$!"
+        }
+      },
+      "resultState": {
+        "description": "Sum = 15 + d (must be even)"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Determine constraints on $d$."
+      },
+      "prompt": {
+        "question": "What values can $d$ take?",
+        "hint": "$d$ must be odd (so sum is even). Also: $0 \\leq d \\leq 5$ (max connections in a 6-vertex graph)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$d \\in \\{1, 3, 5\\}$ (odd values from 0 to 5)"
+        },
+        {
+          "id": "b",
+          "text": "$d \\in \\{0, 2, 4\\}$ (even values)"
+        },
+        {
+          "id": "c",
+          "text": "$d$ can be any value from 0 to 5"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Since $15 + d$ must be even and 15 is odd, $d$ must be odd. Also, $d \\leq 5$ (can't connect to more than 5 other vertices). So $d \\in \\{1, 3, 5\\}$.",
+          "insight": "Handshake lemma often restricts which graphs are possible. Here it forces $d$ to be odd. Note: $d = 5$ means the sixth vertex connects to all others (degree 5 vertex in a 6-vertex graph)."
+        },
+        "incorrect": {
+          "1": "Since 15 is odd, adding an even $d$ would give an odd sum, violating the handshake lemma!",
+          "2": "Not all values work! The handshake lemma requires the total degree sum to be even."
+        }
+      },
+      "resultState": {
+        "description": "Found d ∈ {1, 3, 5}"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Handshake lemma: $\\sum_{v} \\deg(v) = 2|E|$ (sum of degrees = 2 × edges)",
+      "Consequence: sum of all degrees must be even",
+      "Here: $5(3) + d = 15 + d$ must be even",
+      "Since 15 is odd, $d$ must be odd",
+      "Constraint: $d \\leq 5$ (can't exceed number of other vertices)",
+      "Solution: $d \\in \\{1, 3, 5\\}$"
+    ],
+    "fullSolution": "By handshake lemma, sum of degrees = 2×(edges) must be even. Degree sum = 5(3) + d = 15 + d. For this to be even, d must be odd (since 15 is odd). In a 6-vertex graph, maximum degree is 5. Thus d ∈ {1, 3, 5}.",
+    "relatedProblems": [
+      "discrete-math-permutations-with-repetition",
+      "graph-theory-euler-path"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory - Handshaking Lemma",
+      "url": "https://www.youtube.com/watch?v=nIXjQdVgDwE",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Handshaking Lemma",
+      "url": "https://brilliant.org/wiki/handshaking-lemma/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Handshaking Theorem",
+      "url": "https://www.youtube.com/watch?v=h9wxtqoa1jY",
+      "source": "Trev Tutor"
+    }
+  ]
+}

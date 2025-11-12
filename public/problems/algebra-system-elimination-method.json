@@ -1,0 +1,174 @@
+{
+  "id": "algebra-system-elimination-method",
+  "type": "problem",
+  "title": "System of Equations - Elimination",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "systems-of-equations",
+    "elimination",
+    "linear-equations"
+  ],
+  "statement": {
+    "text": "Solve the system: $3x + 2y = 16$ and $5x - 2y = 8$."
+  },
+  "objectives": [
+    "Apply elimination method",
+    "Solve for both variables",
+    "Verify solution"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Observe that $y$ coefficients are opposites."
+      },
+      "prompt": {
+        "question": "What do you notice about the $y$ terms?",
+        "hint": "One equation has $+2y$, the other has $-2y$. They'll cancel when added!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The $y$ coefficients are opposites ($2$ and $-2$), perfect for elimination"
+        },
+        {
+          "id": "b",
+          "text": "Need to multiply equations first"
+        },
+        {
+          "id": "c",
+          "text": "Use substitution instead"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! When coefficients are opposites, we can add equations to eliminate that variable immediately.",
+          "insight": "Elimination is especially efficient when coefficients are already opposites or equal."
+        },
+        "incorrect": {
+          "1": "Look at the coefficients of $y$: $+2$ and $-2$. These are ready to cancel!",
+          "2": "Elimination is faster here since coefficients are already opposites."
+        }
+      },
+      "resultState": {
+        "description": "Recognized elimination opportunity"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Add the two equations."
+      },
+      "prompt": {
+        "question": "What happens when you add the equations?",
+        "hint": "$(3x + 2y) + (5x - 2y) = 16 + 8$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$8x = 24$, so $x = 3$"
+        },
+        {
+          "id": "b",
+          "text": "$8x + 4y = 24$"
+        },
+        {
+          "id": "c",
+          "text": "$2x = 8$, so $x = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $3x + 5x = 8x$ and $2y - 2y = 0$. The $y$ terms cancel: $8x = 24$, so $x = 3$.",
+          "insight": "Elimination removes one variable, leaving a simple equation in one variable."
+        },
+        "incorrect": {
+          "1": "The $y$ terms should cancel: $2y + (-2y) = 0$.",
+          "2": "Add carefully: $3x + 5x = 8x$, not $2x$."
+        }
+      },
+      "resultState": {
+        "description": "Found x = 3"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Substitute $x = 3$ into one equation."
+      },
+      "prompt": {
+        "question": "Find $y$ using the first equation: $3(3) + 2y = 16$",
+        "hint": "$9 + 2y = 16$, so $2y = 7$, thus $y = 3.5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 3.5$ (or $\\frac{7}{2}$)"
+        },
+        {
+          "id": "b",
+          "text": "$y = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$y = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $3(3) + 2y = 16 \\Rightarrow 9 + 2y = 16 \\Rightarrow 2y = 7 \\Rightarrow y = 3.5$. Check in second equation: $5(3) - 2(3.5) = 15 - 7 = 8$ ✓",
+          "insight": "Always verify your solution in both original equations!"
+        },
+        "incorrect": {
+          "1": "$9 + 2y = 16$ means $2y = 7$, not $2y = 4$.",
+          "2": "$9 + 2y = 16$ means $2y = 7$, not $2y = 8$."
+        }
+      },
+      "resultState": {
+        "description": "Solution: (3, 3.5)"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Elimination method: add or subtract equations to cancel one variable",
+      "When coefficients are opposites, add the equations directly",
+      "Solution: $x = 3$, $y = 3.5$ (or $\\frac{7}{2}$)",
+      "Verify: $3(3) + 2(3.5) = 16$ ✓ and $5(3) - 2(3.5) = 8$ ✓"
+    ],
+    "fullSolution": "Add equations: (3x + 2y) + (5x - 2y) = 16 + 8, giving 8x = 24, so x = 3. Substitute into first equation: 3(3) + 2y = 16, so 9 + 2y = 16, thus 2y = 7 and y = 3.5. Solution: (3, 3.5).",
+    "relatedProblems": [
+      "linear-algebra-system-3-variables",
+      "algebra-substitution-method"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Systems of Equations - Elimination",
+      "url": "https://www.youtube.com/watch?v=s7S3oJ_0Uvo",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Elimination Method",
+      "url": "https://brilliant.org/wiki/systems-of-equations-elimination/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Solving Systems by Elimination",
+      "url": "https://www.youtube.com/watch?v=s14F-iBKAxw",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "id": "number-theory-prime-factorization-lcm",
+  "type": "problem",
+  "title": "LCM Using Prime Factorization",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "number-theory",
+    "prime-factorization",
+    "lcm",
+    "gcd"
+  ],
+  "statement": {
+    "text": "Find the least common multiple (LCM) of 72 and 108 using prime factorization."
+  },
+  "objectives": [
+    "Find prime factorizations",
+    "Apply LCM algorithm",
+    "Understand relationship to GCD"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Find prime factorization of both numbers."
+      },
+      "prompt": {
+        "question": "What are the prime factorizations?",
+        "hint": "$72 = 2^3 \\cdot 3^2$ and $108 = 2^2 \\cdot 3^3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$72 = 2^3 \\cdot 3^2$ and $108 = 2^2 \\cdot 3^3$"
+        },
+        {
+          "id": "b",
+          "text": "$72 = 8 \\cdot 9$ and $108 = 12 \\cdot 9$"
+        },
+        {
+          "id": "c",
+          "text": "$72 = 2^3 \\cdot 9$ and $108 = 4 \\cdot 27$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $72 = 8 \\cdot 9 = 2^3 \\cdot 3^2$ and $108 = 4 \\cdot 27 = 2^2 \\cdot 3^3$. All factors are prime powers.",
+          "insight": "Prime factorization breaks numbers into fundamental building blocks."
+        },
+        "incorrect": {
+          "1": "These aren't complete prime factorizations. Need to factor 8, 9, 12 further into primes.",
+          "2": "Close, but 9 and 4, 27 aren't prime. Factor completely: $9 = 3^2$, $4 = 2^2$, $27 = 3^3$."
+        }
+      },
+      "resultState": {
+        "description": "Factored both numbers"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply LCM rule: take highest power of each prime."
+      },
+      "prompt": {
+        "question": "How do we find LCM from prime factorizations?",
+        "hint": "For each prime, take the highest exponent: $\\max(3,2) = 3$ for 2, and $\\max(2,3) = 3$ for 3"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "LCM = $2^{\\max(3,2)} \\cdot 3^{\\max(2,3)} = 2^3 \\cdot 3^3$"
+        },
+        {
+          "id": "b",
+          "text": "LCM = $2^{3+2} \\cdot 3^{2+3} = 2^5 \\cdot 3^5$"
+        },
+        {
+          "id": "c",
+          "text": "LCM = $2^{\\min(3,2)} \\cdot 3^{\\min(2,3)} = 2^2 \\cdot 3^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! LCM uses the highest power of each prime. Here: $2^3$ (from 72) and $3^3$ (from 108).",
+          "insight": "LCM must be divisible by both numbers, so needs at least the highest power of each prime factor. GCD uses minimum powers instead."
+        },
+        "incorrect": {
+          "1": "Don't add exponents for LCM! That would give a much larger number. Use maximum, not sum.",
+          "2": "That's the GCD rule (minimum powers), not LCM! LCM uses maximum powers."
+        }
+      },
+      "resultState": {
+        "description": "Applied LCM algorithm"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Calculate the final value."
+      },
+      "prompt": {
+        "question": "What is $2^3 \\cdot 3^3$?",
+        "hint": "$2^3 = 8$ and $3^3 = 27$, so $8 \\cdot 27 = 216$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "LCM(72, 108) = 216"
+        },
+        {
+          "id": "b",
+          "text": "LCM(72, 108) = 432"
+        },
+        {
+          "id": "c",
+          "text": "LCM(72, 108) = 108"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $2^3 \\cdot 3^3 = 8 \\cdot 27 = 216$. Check: $216 \\div 72 = 3$ ✓ and $216 \\div 108 = 2$ ✓. Both divide evenly!",
+          "insight": "Bonus: GCD(72,108) = $2^2 \\cdot 3^2$ = 36. Note: LCM × GCD = 216 × 36 = 7776 = 72 × 108. This relationship always holds!"
+        },
+        "incorrect": {
+          "1": "You might have added an extra factor. $8 \\cdot 27 = 216$, not 432.",
+          "2": "LCM can't be equal to one of the numbers unless one divides the other. Here 72 doesn't divide 108."
+        }
+      },
+      "resultState": {
+        "description": "Found LCM = 216"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Prime factorization: $72 = 2^3 \\cdot 3^2$, $108 = 2^2 \\cdot 3^3$",
+      "LCM rule: take highest power of each prime factor",
+      "LCM(72, 108) = $2^3 \\cdot 3^3$ = 216",
+      "Compare to GCD: takes lowest power of each common prime",
+      "Identity: LCM(a,b) × GCD(a,b) = a × b"
+    ],
+    "fullSolution": "Factor: 72 = 2³·3², 108 = 2²·3³. For LCM, take highest powers: 2³ and 3³. Thus LCM = 2³·3³ = 8·27 = 216. Verify: 216÷72 = 3 and 216÷108 = 2, both whole numbers.",
+    "relatedProblems": [
+      "number-theory-gcd-euclidean",
+      "number-theory-divisibility-rule-3"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "LCM and GCD",
+      "url": "https://www.youtube.com/watch?v=ZEiD1rw55D4",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Least Common Multiple",
+      "url": "https://brilliant.org/wiki/least-common-multiple/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "LCM Using Prime Factorization",
+      "url": "https://www.youtube.com/watch?v=8Y4JSp5U82I",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

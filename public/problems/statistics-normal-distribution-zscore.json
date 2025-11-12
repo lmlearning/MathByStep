@@ -1,0 +1,175 @@
+{
+  "id": "statistics-normal-distribution-zscore",
+  "type": "problem",
+  "title": "Z-Score and Normal Distribution",
+  "topic": "Statistics",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "statistics",
+    "normal-distribution",
+    "z-score",
+    "standardization"
+  ],
+  "statement": {
+    "text": "Test scores are normally distributed with mean 75 and standard deviation 10. What is the z-score for a test score of 92? What percentile is this approximately?"
+  },
+  "objectives": [
+    "Calculate z-score",
+    "Interpret standardized value",
+    "Use z-table for percentiles"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall z-score formula."
+      },
+      "prompt": {
+        "question": "What is the formula for z-score?",
+        "hint": "$z = \\frac{x - \\mu}{\\sigma}$ where $x$ is the value, $\\mu$ is mean, $\\sigma$ is standard deviation"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$z = \\frac{x - \\mu}{\\sigma}$ (value minus mean, divided by standard deviation)"
+        },
+        {
+          "id": "b",
+          "text": "$z = \\frac{\\mu - x}{\\sigma}$"
+        },
+        {
+          "id": "c",
+          "text": "$z = \\frac{x - \\mu}{\\sigma^2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Z-score measures how many standard deviations a value is from the mean. Formula: $z = \\frac{x - \\mu}{\\sigma}$.",
+          "insight": "Positive z-score means above average, negative means below average. Magnitude tells how unusual the value is."
+        },
+        "incorrect": {
+          "1": "Sign matters! Should be $x - \\mu$ (value minus mean), so positive z-score means above average.",
+          "2": "Divide by $\\sigma$ (standard deviation), not $\\sigma^2$ (variance)."
+        }
+      },
+      "resultState": {
+        "description": "Recalled z-score formula"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate the z-score."
+      },
+      "prompt": {
+        "question": "What is the z-score for 92?",
+        "hint": "$z = \\frac{92 - 75}{10} = \\frac{17}{10} = 1.7$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$z = 1.7$"
+        },
+        {
+          "id": "b",
+          "text": "$z = 0.17$"
+        },
+        {
+          "id": "c",
+          "text": "$z = 17$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $z = \\frac{92 - 75}{10} = \\frac{17}{10} = 1.7$. This score is 1.7 standard deviations above the mean.",
+          "insight": "A z-score of 1.7 is quite good! It means the score is higher than most of the distribution."
+        },
+        "incorrect": {
+          "1": "Be careful with decimal placement: $\\frac{17}{10} = 1.7$, not 0.17.",
+          "2": "Don't forget to divide by the standard deviation (10)! $z = \\frac{17}{10} = 1.7$, not 17."
+        }
+      },
+      "resultState": {
+        "description": "Found z = 1.7"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Interpret using standard normal table."
+      },
+      "prompt": {
+        "question": "What percentile does z = 1.7 represent?",
+        "hint": "From z-table: $P(Z < 1.7) \\approx 0.9554$ or 95.54th percentile. About 95.5% scored lower."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Approximately 95.5th percentile (about 95.5% scored lower)"
+        },
+        {
+          "id": "b",
+          "text": "Approximately 85th percentile"
+        },
+        {
+          "id": "c",
+          "text": "Exactly 70th percentile"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! A z-score of 1.7 corresponds to about the 95.5th percentile. Only about 4.5% of scores are higher than 92.",
+          "insight": "Rule of thumb: z = 1 is ~84th percentile, z = 2 is ~97.7th percentile, z = 3 is ~99.9th percentile. Our z = 1.7 is between 1 and 2."
+        },
+        "incorrect": {
+          "1": "Too low! A z-score of 1.7 is well above average. It's approximately the 95.5th percentile.",
+          "2": "Way off! A z-score of 1.7 is quite high, around the 95.5th percentile, not 70th."
+        }
+      },
+      "resultState": {
+        "description": "Found ~95.5th percentile"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Z-score formula: $z = \\frac{x - \\mu}{\\sigma}$ (standardization)",
+      "For score 92: $z = \\frac{92 - 75}{10} = 1.7$",
+      "Interpretation: 1.7 standard deviations above mean",
+      "Percentile: approximately 95.5th (95.5% scored lower)",
+      "Z-scores convert any normal distribution to standard normal ($\\mu = 0$, $\\sigma = 1$)"
+    ],
+    "fullSolution": "Given: x = 92, μ = 75, σ = 10. Calculate z-score: z = (x - μ)/σ = (92 - 75)/10 = 17/10 = 1.7. From standard normal table, P(Z < 1.7) ≈ 0.9554, meaning the score is at approximately the 95.5th percentile. About 95.5% of students scored lower than 92.",
+    "relatedProblems": [
+      "probability-normal-distribution",
+      "statistics-confidence-interval"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Z-Scores and Percentiles",
+      "url": "https://www.youtube.com/watch?v=GkgH3B1xfJM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Z-Score",
+      "url": "https://brilliant.org/wiki/z-score/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Z-Scores, Standardization, and Normal Distribution",
+      "url": "https://www.youtube.com/watch?v=2tuBREK_mgE",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

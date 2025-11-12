@@ -1,0 +1,174 @@
+{
+  "id": "calculus-chain-rule-composition",
+  "type": "problem",
+  "title": "Chain Rule with Composition",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "derivatives",
+    "chain-rule",
+    "composition"
+  ],
+  "statement": {
+    "text": "Find the derivative of $f(x) = \\sin(x^2 + 3x)$."
+  },
+  "objectives": [
+    "Identify composite function",
+    "Apply chain rule",
+    "Simplify result"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify outer and inner functions."
+      },
+      "prompt": {
+        "question": "What are the outer and inner functions?",
+        "hint": "Outer function: $\\sin(u)$, Inner function: $u = x^2 + 3x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Outer: $\\sin(u)$, Inner: $u = x^2 + 3x$"
+        },
+        {
+          "id": "b",
+          "text": "Outer: $x^2$, Inner: $\\sin(x)$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot separate into composition"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! This is $\\sin(u)$ where $u = x^2 + 3x$. The sine function is applied to the polynomial.",
+          "insight": "Chain rule applies when one function is inside another: $f(g(x))$."
+        },
+        "incorrect": {
+          "1": "The outer function is what's applied last. Here, we compute $x^2 + 3x$ first, then take sine.",
+          "2": "This is definitely a composition: sine of a polynomial."
+        }
+      },
+      "resultState": {
+        "description": "Identified composition structure"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Find derivatives of outer and inner functions."
+      },
+      "prompt": {
+        "question": "What are the derivatives?",
+        "hint": "$(\\sin u)' = \\cos u$ and $(x^2 + 3x)' = 2x + 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Outer derivative: $\\cos(u)$, Inner derivative: $2x + 3$"
+        },
+        {
+          "id": "b",
+          "text": "Outer derivative: $\\cos(x)$, Inner derivative: $x^2$"
+        },
+        {
+          "id": "c",
+          "text": "Just multiply: $\\cos(x) \\cdot (2x + 3)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! The derivative of $\\sin(u)$ with respect to $u$ is $\\cos(u)$. The derivative of $x^2 + 3x$ is $2x + 3$.",
+          "insight": "For chain rule, we need the outer derivative (as a function of the inner) and the inner derivative."
+        },
+        "incorrect": {
+          "1": "The outer derivative should be in terms of the inner function $u$, not $x$ directly.",
+          "2": "Chain rule is more than just multiplication. Need proper derivatives of both functions."
+        }
+      },
+      "resultState": {
+        "description": "Found component derivatives"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply chain rule formula."
+      },
+      "prompt": {
+        "question": "Apply chain rule: $\\frac{df}{dx} = \\frac{df}{du} \\cdot \\frac{du}{dx}$",
+        "hint": "$f'(x) = \\cos(x^2 + 3x) \\cdot (2x + 3)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(x) = (2x + 3)\\cos(x^2 + 3x)$"
+        },
+        {
+          "id": "b",
+          "text": "$f'(x) = \\cos(x^2 + 3x)$"
+        },
+        {
+          "id": "c",
+          "text": "$f'(x) = (2x + 3)\\cos(x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Chain rule: multiply outer derivative by inner derivative. $\\cos(x^2 + 3x) \\cdot (2x + 3)$.",
+          "insight": "Chain rule pattern: derivative of outer (evaluated at inner) times derivative of inner."
+        },
+        "incorrect": {
+          "1": "Missing the inner derivative $(2x + 3)$. Chain rule requires both parts!",
+          "2": "The cosine should have the full inner function $(x^2 + 3x)$ inside, not just $x$."
+        }
+      },
+      "resultState": {
+        "description": "Applied chain rule successfully"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Chain rule: $(f \\circ g)'(x) = f'(g(x)) \\cdot g'(x)$",
+      "For $\\sin(x^2 + 3x)$: outer is sine, inner is $x^2 + 3x$",
+      "Result: $f'(x) = (2x + 3)\\cos(x^2 + 3x)$",
+      "Always multiply outer derivative by inner derivative"
+    ],
+    "fullSolution": "Let u = x² + 3x. Then f(x) = sin(u). By chain rule: f'(x) = cos(u)·(du/dx) = cos(x² + 3x)·(2x + 3) = (2x + 3)cos(x² + 3x).",
+    "relatedProblems": [
+      "calculus-product-rule-basic",
+      "calculus-quotient-rule"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Chain Rule",
+      "url": "https://www.youtube.com/watch?v=HfACrKJ_Y2w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Chain Rule",
+      "url": "https://brilliant.org/wiki/chain-rule/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Chain Rule - Calculus",
+      "url": "https://www.youtube.com/watch?v=H-ybCx8gt-8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
