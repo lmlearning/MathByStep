@@ -1,0 +1,167 @@
+{
+  "id": "calculus-chain-rule-trig",
+  "type": "problem",
+  "title": "Chain Rule with Trig Function",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 8,
+  "tags": [
+    "calculus",
+    "derivatives",
+    "chain-rule",
+    "trigonometry"
+  ],
+  "statement": {
+    "text": "Find $\\frac{d}{dx}[\\sin(3x^2)]$."
+  },
+  "objectives": [
+    "Apply chain rule",
+    "Differentiate composite function"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Identify outer and inner functions: $f(g(x))$ where $f(u) = \\sin(u)$ and $g(x) = 3x^2$",
+        "hint": "Chain rule: $(f \\circ g)'(x) = f'(g(x)) \\cdot g'(x)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos(3x^2) \\cdot \\frac{d}{dx}[3x^2]$"
+        },
+        {
+          "id": "b",
+          "text": "$\\cos(3x^2)$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin(6x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Derivative of outer times derivative of inner",
+          "insight": "Chain rule: differentiate outside, keep inside, multiply by derivative of inside"
+        },
+        "incorrect": {
+          "1": "Don't forget to multiply by derivative of inner function",
+          "2": "Can't simplify like this; use chain rule"
+        }
+      },
+      "resultState": {
+        "description": "Applied chain rule"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Find $\\frac{d}{dx}[3x^2]$",
+        "hint": "$\\frac{d}{dx}[3x^2] = 6x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$6x$"
+        },
+        {
+          "id": "b",
+          "text": "$3x$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Power rule: $\\frac{d}{dx}[3x^2] = 3 \\cdot 2x = 6x$",
+          "insight": "Now multiply: $\\cos(3x^2) \\cdot 6x$"
+        },
+        "incorrect": {
+          "1": "Power rule: bring down exponent and reduce power",
+          "2": "Use power rule: $\\frac{d}{dx}[ax^n] = anx^{n-1}$"
+        }
+      },
+      "resultState": {
+        "description": "Found derivative of inner function"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Combine: $\\cos(3x^2) \\cdot 6x = ?$",
+        "hint": "$6x\\cos(3x^2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$6x\\cos(3x^2)$"
+        },
+        {
+          "id": "b",
+          "text": "$6\\cos(3x^2)$"
+        },
+        {
+          "id": "c",
+          "text": "$x\\cos(3x^2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Final answer: $\\frac{d}{dx}[\\sin(3x^2)] = 6x\\cos(3x^2)$",
+          "insight": "Chain rule is essential for composite functions"
+        },
+        "incorrect": {
+          "1": "Include the full coefficient: $6x$",
+          "2": "Don't forget the $x$ from $6x$"
+        }
+      },
+      "resultState": {
+        "description": "Found complete derivative"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{d}{dx}[\\sin(3x^2)] = 6x\\cos(3x^2)$ using chain rule"
+    ],
+    "fullSolution": "Chain rule: outer derivative $\\cos(3x^2)$ times inner derivative $6x$ gives $6x\\cos(3x^2)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Chain Rule",
+      "url": "https://www.youtube.com/watch?v=H-ybCx8gt-8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Chain Rule",
+      "url": "https://brilliant.org/wiki/chain-rule/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Chain Rule",
+      "url": "https://www.youtube.com/watch?v=5bPGHM3NPNs",
+      "source": "Professor Leonard"
+    }
+  ]
+}

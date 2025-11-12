@@ -1,0 +1,127 @@
+{
+  "id": "calculus-definite-integral-basic",
+  "type": "problem",
+  "title": "Evaluate Definite Integral",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "calculus",
+    "integration",
+    "definite-integrals"
+  ],
+  "statement": {
+    "text": "Evaluate $\\int_1^3 (2x + 1)\\,dx$."
+  },
+  "objectives": [
+    "Find antiderivative",
+    "Apply fundamental theorem of calculus"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find antiderivative of $2x + 1$",
+        "hint": "$\\int (2x + 1)\\,dx = x^2 + x + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x) = x^2 + x$"
+        },
+        {
+          "id": "b",
+          "text": "$F(x) = 2x^2 + x$"
+        },
+        {
+          "id": "c",
+          "text": "$F(x) = x^2 + 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Power rule: $\\int 2x\\,dx = x^2$ and $\\int 1\\,dx = x$",
+          "insight": "For definite integrals, the constant C cancels out"
+        },
+        "incorrect": {
+          "1": "$\\int 2x\\,dx = x^2$, not $2x^2$",
+          "2": "Don't forget to integrate the constant term: $\\int 1\\,dx = x$"
+        }
+      },
+      "resultState": {
+        "description": "Found antiderivative"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Evaluate: $[x^2 + x]_1^3 = F(3) - F(1)$",
+        "hint": "$F(3) = 9 + 3 = 12$, $F(1) = 1 + 1 = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$12 - 2 = 10$"
+        },
+        {
+          "id": "b",
+          "text": "$12 + 2 = 14$"
+        },
+        {
+          "id": "c",
+          "text": "$9 - 1 = 8$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\int_1^3 (2x + 1)\\,dx = 10$",
+          "insight": "This represents the area under the curve from $x=1$ to $x=3$"
+        },
+        "incorrect": {
+          "1": "Subtract, don't add: $F(3) - F(1)$",
+          "2": "Evaluate at both bounds: $(3^2+3) - (1^2+1) = 12 - 2$"
+        }
+      },
+      "resultState": {
+        "description": "Evaluated definite integral"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\int_1^3 (2x + 1)\\,dx = 10$. This is the signed area under the curve."
+    ],
+    "fullSolution": "Antiderivative: $x^2 + x$. Evaluate: $(3^2 + 3) - (1^2 + 1) = 12 - 2 = 10$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Definite Integrals",
+      "url": "https://www.youtube.com/watch?v=Gc3QvUB0PkI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Definite Integrals",
+      "url": "https://brilliant.org/wiki/definite-integrals/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Fundamental Theorem of Calculus",
+      "url": "https://www.youtube.com/watch?v=rfG8ce4nNh0",
+      "source": "3Blue1Brown"
+    }
+  ]
+}

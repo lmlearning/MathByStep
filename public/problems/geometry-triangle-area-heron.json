@@ -1,0 +1,167 @@
+{
+  "id": "geometry-triangle-area-heron",
+  "type": "problem",
+  "title": "Triangle Area (Heron's Formula)",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "geometry",
+    "triangles",
+    "area",
+    "herons-formula"
+  ],
+  "statement": {
+    "text": "Find the area of a triangle with sides $a = 5$, $b = 6$, $c = 7$ using Heron's formula."
+  },
+  "objectives": [
+    "Calculate semi-perimeter",
+    "Apply Heron's formula"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find semi-perimeter: $s = \\frac{a + b + c}{2}$",
+        "hint": "$s = \\frac{5 + 6 + 7}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$s = 9$"
+        },
+        {
+          "id": "b",
+          "text": "$s = 18$"
+        },
+        {
+          "id": "c",
+          "text": "$s = 6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $s = \\frac{18}{2} = 9$",
+          "insight": "Semi-perimeter is half the perimeter"
+        },
+        "incorrect": {
+          "1": "That's the full perimeter; divide by 2",
+          "2": "$5 + 6 + 7 = 18$, then divide by 2"
+        }
+      },
+      "resultState": {
+        "description": "Found semi-perimeter"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Heron's formula: $A = \\sqrt{s(s-a)(s-b)(s-c)}$",
+        "hint": "$A = \\sqrt{9(9-5)(9-6)(9-7)}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$A = \\sqrt{9 \\cdot 4 \\cdot 3 \\cdot 2}$"
+        },
+        {
+          "id": "b",
+          "text": "$A = \\sqrt{9 + 4 + 3 + 2}$"
+        },
+        {
+          "id": "c",
+          "text": "$A = 9 \\cdot 4 \\cdot 3 \\cdot 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Substitute values into Heron's formula",
+          "insight": "Multiply under the square root, don't add"
+        },
+        "incorrect": {
+          "1": "Multiply the values, don't add them",
+          "2": "Don't forget the square root"
+        }
+      },
+      "resultState": {
+        "description": "Set up formula"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Calculate: $\\sqrt{9 \\cdot 4 \\cdot 3 \\cdot 2} = \\sqrt{216}$",
+        "hint": "$\\sqrt{216} = \\sqrt{36 \\cdot 6} = 6\\sqrt{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$A = 6\\sqrt{6}$ sq units"
+        },
+        {
+          "id": "b",
+          "text": "$A = \\sqrt{216}$ (leave as is)"
+        },
+        {
+          "id": "c",
+          "text": "$A = 12\\sqrt{3}$ sq units"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Area = $6\\sqrt{6} \\approx 14.7$ square units",
+          "insight": "$216 = 36 \\times 6 = 6^2 \\times 6$, so $\\sqrt{216} = 6\\sqrt{6}$"
+        },
+        "incorrect": {
+          "1": "Simplify by factoring: $216 = 36 \\times 6$",
+          "2": "Check: $12\\sqrt{3} \\approx 20.8$, but calculation gives $6\\sqrt{6} \\approx 14.7$"
+        }
+      },
+      "resultState": {
+        "description": "Found area"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Area = $6\\sqrt{6} \\approx 14.7$ sq units using Heron's formula with $s = 9$"
+    ],
+    "fullSolution": "$s = 9$, then $A = \\sqrt{9(4)(3)(2)} = \\sqrt{216} = 6\\sqrt{6}$ sq units",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Heron's Formula",
+      "url": "https://www.youtube.com/watch?v=JJOvKABJoIM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Heron's Formula",
+      "url": "https://brilliant.org/wiki/herons-formula/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Heron's Formula",
+      "url": "https://www.youtube.com/watch?v=t1EnNDLMRW8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

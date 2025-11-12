@@ -1,0 +1,166 @@
+{
+  "id": "complex-analysis-de-moivre-basic",
+  "type": "problem",
+  "title": "De Moivre's Theorem Application",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "complex-analysis",
+    "de-moivres-theorem",
+    "polar-form"
+  ],
+  "statement": {
+    "text": "Find $(1 + i)^4$ using De Moivre's theorem."
+  },
+  "objectives": [
+    "Convert to polar form",
+    "Apply De Moivre's theorem"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Convert $1 + i$ to polar form: $r(\\cos\\theta + i\\sin\\theta)$",
+        "hint": "$r = \\sqrt{2}$, $\\theta = \\frac{\\pi}{4}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$1 + i = \\sqrt{2}(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$"
+        },
+        {
+          "id": "b",
+          "text": "$1 + i = 2(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$"
+        },
+        {
+          "id": "c",
+          "text": "$1 + i = \\sqrt{2}(\\cos\\frac{\\pi}{2} + i\\sin\\frac{\\pi}{2})$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $r = \\sqrt{1^2 + 1^2} = \\sqrt{2}$ and $\\theta = \\arctan(1) = \\frac{\\pi}{4}$",
+          "insight": "Polar form makes powers much easier to compute"
+        },
+        "incorrect": {
+          "1": "$|1 + i| = \\sqrt{2}$, not 2",
+          "2": "$\\arctan(1/1) = \\frac{\\pi}{4}$ (45°), not $\\frac{\\pi}{2}$ (90°)"
+        }
+      },
+      "resultState": {
+        "description": "Converted to polar form"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "De Moivre: $[r(\\cos\\theta + i\\sin\\theta)]^n = r^n(\\cos n\\theta + i\\sin n\\theta)$",
+        "hint": "$(\\sqrt{2})^4 = 4$ and $4 \\cdot \\frac{\\pi}{4} = \\pi$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4(\\cos\\pi + i\\sin\\pi)$"
+        },
+        {
+          "id": "b",
+          "text": "$2(\\cos\\pi + i\\sin\\pi)$"
+        },
+        {
+          "id": "c",
+          "text": "$4(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $(\\sqrt{2})^4 = 4$ and angle becomes $4 \\cdot \\frac{\\pi}{4} = \\pi$",
+          "insight": "De Moivre's theorem: raise modulus to power, multiply angle by power"
+        },
+        "incorrect": {
+          "1": "$(\\sqrt{2})^4 = (\\sqrt{2})^2 \\cdot (\\sqrt{2})^2 = 2 \\cdot 2 = 4$",
+          "2": "Multiply the angle by 4: $4 \\times \\frac{\\pi}{4} = \\pi$"
+        }
+      },
+      "resultState": {
+        "description": "Applied De Moivre"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Convert back: $4(\\cos\\pi + i\\sin\\pi) = ?$",
+        "hint": "$\\cos\\pi = -1$ and $\\sin\\pi = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-4$"
+        },
+        {
+          "id": "b",
+          "text": "$4i$"
+        },
+        {
+          "id": "c",
+          "text": "$4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $(1 + i)^4 = -4$",
+          "insight": "Verify by expanding: $(1+i)^2 = 2i$, then $(2i)^2 = -4$ ✓"
+        },
+        "incorrect": {
+          "1": "$\\cos\\pi = -1$ (not 1), so result is $4(-1 + 0i) = -4$",
+          "2": "$\\sin\\pi = 0$ (not 1)"
+        }
+      },
+      "resultState": {
+        "description": "Found final answer"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$(1 + i)^4 = -4$ using De Moivre's theorem via polar form"
+    ],
+    "fullSolution": "$1+i = \\sqrt{2}e^{i\\pi/4}$. By De Moivre: $(\\sqrt{2})^4 e^{i\\pi} = 4(-1) = -4$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "De Moivre's Theorem",
+      "url": "https://www.youtube.com/watch?v=haUIydKDW7Q",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "De Moivre's Theorem",
+      "url": "https://brilliant.org/wiki/de-moivres-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "De Moivre's Theorem",
+      "url": "https://www.youtube.com/watch?v=gCVbuCW8zlA",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

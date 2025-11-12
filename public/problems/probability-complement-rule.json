@@ -1,0 +1,126 @@
+{
+  "id": "probability-complement-rule",
+  "type": "problem",
+  "title": "Complement Rule",
+  "topic": "Probability & Statistics",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "probability",
+    "complement-rule"
+  ],
+  "statement": {
+    "text": "If P(rain) = 0.3, what is P(no rain)?"
+  },
+  "objectives": [
+    "Apply complement rule",
+    "Understand complementary events"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Complement rule: $P(A^c) = 1 - P(A)$ where $A^c$ is 'not A'",
+        "hint": "Rain and no rain are complementary events"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(\\text{no rain}) = 1 - P(\\text{rain})$"
+        },
+        {
+          "id": "b",
+          "text": "$P(\\text{no rain}) = P(\\text{rain})$"
+        },
+        {
+          "id": "c",
+          "text": "$P(\\text{no rain}) = \\frac{1}{P(\\text{rain})}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Complementary events have probabilities that sum to 1",
+          "insight": "$P(A) + P(A^c) = 1$ for any event A"
+        },
+        "incorrect": {
+          "1": "These are opposite events, not equal",
+          "2": "Use subtraction, not division: $P(A^c) = 1 - P(A)$"
+        }
+      },
+      "resultState": {
+        "description": "Applied complement rule"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $P(\\text{no rain}) = 1 - 0.3 = ?$",
+        "hint": "$1 - 0.3 = 0.7$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$0.7$ or $70\\%$"
+        },
+        {
+          "id": "b",
+          "text": "$0.3$ or $30\\%$"
+        },
+        {
+          "id": "c",
+          "text": "$1.3$ or $130\\%$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! P(no rain) = 0.7 = 70%",
+          "insight": "Complement rule is useful when easier to calculate opposite event"
+        },
+        "incorrect": {
+          "1": "That's P(rain), not P(no rain)",
+          "2": "Probabilities cannot exceed 1 (100%)"
+        }
+      },
+      "resultState": {
+        "description": "Found complementary probability"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "P(no rain) = 0.7. Complement rule: probabilities of complementary events sum to 1."
+    ],
+    "fullSolution": "Using $P(A^c) = 1 - P(A)$: P(no rain) = $1 - 0.3 = 0.7 = 70\\%$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Probability Basics",
+      "url": "https://www.youtube.com/watch?v=uzkc-qNVoOk",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complement Rule",
+      "url": "https://brilliant.org/wiki/probability-by-complement/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Probability Rules",
+      "url": "https://www.youtube.com/watch?v=vwv5FXGMTd0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

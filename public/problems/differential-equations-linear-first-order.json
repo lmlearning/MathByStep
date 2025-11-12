@@ -1,0 +1,166 @@
+{
+  "id": "differential-equations-linear-first-order",
+  "type": "problem",
+  "title": "First-Order Linear DE",
+  "topic": "Differential Equations",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "differential-equations",
+    "first-order",
+    "integrating-factor"
+  ],
+  "statement": {
+    "text": "Solve $\\frac{dy}{dx} + 2y = 4$ using integrating factor method."
+  },
+  "objectives": [
+    "Find integrating factor",
+    "Apply integration technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Form: $\\frac{dy}{dx} + P(x)y = Q(x)$. Here $P(x) = 2$, $Q(x) = 4$",
+        "hint": "Integrating factor: $\\mu(x) = e^{\\int P(x)\\,dx}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mu(x) = e^{2x}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\mu(x) = e^{4x}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\mu(x) = 2x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\mu = e^{\\int 2\\,dx} = e^{2x}$",
+          "insight": "Integrating factor converts left side to exact derivative"
+        },
+        "incorrect": {
+          "1": "Integrate $P(x) = 2$, not $Q(x) = 4$",
+          "2": "Integrating factor must be exponential: $e^{\\int P\\,dx}$"
+        }
+      },
+      "resultState": {
+        "description": "Found integrating factor"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Multiply equation by $e^{2x}$: $e^{2x}\\frac{dy}{dx} + 2e^{2x}y = 4e^{2x}$",
+        "hint": "Left side is $\\frac{d}{dx}[e^{2x}y]$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{d}{dx}[e^{2x}y] = 4e^{2x}$"
+        },
+        {
+          "id": "b",
+          "text": "$e^{2x}y = 4e^{2x}$"
+        },
+        {
+          "id": "c",
+          "text": "$y = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Integrating factor makes left side a perfect derivative",
+          "insight": "This is the key property of integrating factors"
+        },
+        "incorrect": {
+          "1": "This would be after integrating, not before",
+          "2": "Need to write as derivative before integrating"
+        }
+      },
+      "resultState": {
+        "description": "Rewrote as exact derivative"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Integrate: $e^{2x}y = \\int 4e^{2x}\\,dx$",
+        "hint": "$\\int 4e^{2x}\\,dx = 2e^{2x} + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 2 + Ce^{-2x}$"
+        },
+        {
+          "id": "b",
+          "text": "$y = 4 + Ce^{-2x}$"
+        },
+        {
+          "id": "c",
+          "text": "$y = 2e^{2x} + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! From $e^{2x}y = 2e^{2x} + C$, divide by $e^{2x}$",
+          "insight": "General solution: $y = 2 + Ce^{-2x}$. As $x \\to \\infty$, $y \\to 2$"
+        },
+        "incorrect": {
+          "1": "$\\int 4e^{2x}\\,dx = \\frac{4}{2}e^{2x} = 2e^{2x}$, not $4e^{2x}$",
+          "2": "Don't forget to divide by $e^{2x}$: $\\frac{C}{e^{2x}} = Ce^{-2x}$"
+        }
+      },
+      "resultState": {
+        "description": "Found general solution"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "General solution: $y = 2 + Ce^{-2x}$. Particular solution depends on initial condition."
+    ],
+    "fullSolution": "Integrating factor: $e^{2x}$. Then $\\frac{d}{dx}[e^{2x}y] = 4e^{2x}$, so $e^{2x}y = 2e^{2x} + C$, giving $y = 2 + Ce^{-2x}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "First Order Linear DEs",
+      "url": "https://www.youtube.com/watch?v=VhEGcUv89yQ",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "First Order Linear Equations",
+      "url": "https://brilliant.org/wiki/first-order-linear-differential-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Integrating Factor Method",
+      "url": "https://www.youtube.com/watch?v=oJtkzJULSJw",
+      "source": "Professor Leonard"
+    }
+  ]
+}

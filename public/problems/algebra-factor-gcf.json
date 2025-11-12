@@ -1,0 +1,127 @@
+{
+  "id": "algebra-factor-gcf",
+  "type": "problem",
+  "title": "Factor Out GCF",
+  "topic": "Algebra",
+  "difficulty": 1,
+  "estimatedTime": 5,
+  "tags": [
+    "algebra",
+    "factoring",
+    "gcf"
+  ],
+  "statement": {
+    "text": "Factor completely: $6x^3 + 9x^2 - 12x$."
+  },
+  "objectives": [
+    "Find greatest common factor",
+    "Factor expression"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find GCF of coefficients (6, 9, 12) and powers of $x$",
+        "hint": "GCF of 6, 9, 12 is 3. Lowest power of $x$ is $x^1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "GCF = $3x$"
+        },
+        {
+          "id": "b",
+          "text": "GCF = $3$"
+        },
+        {
+          "id": "c",
+          "text": "GCF = $6x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! GCF is $3x$ (divides all terms evenly)",
+          "insight": "GCF includes both numerical and variable factors"
+        },
+        "incorrect": {
+          "1": "Don't forget the variable factor: all terms have at least $x$",
+          "2": "6 doesn't divide 9, so GCF of coefficients is 3"
+        }
+      },
+      "resultState": {
+        "description": "Found GCF"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Factor out $3x$: divide each term by $3x$",
+        "hint": "$\\frac{6x^3}{3x} = 2x^2$, $\\frac{9x^2}{3x} = 3x$, $\\frac{-12x}{3x} = -4$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3x(2x^2 + 3x - 4)$"
+        },
+        {
+          "id": "b",
+          "text": "$3(2x^3 + 3x^2 - 4x)$"
+        },
+        {
+          "id": "c",
+          "text": "$x(6x^2 + 9x - 12)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Verify: $3x \\cdot 2x^2 = 6x^3$ ✓",
+          "insight": "Always check by multiplying back out"
+        },
+        "incorrect": {
+          "1": "Factor includes the variable: GCF is $3x$, not just $3$",
+          "2": "Need to factor out 3 as well: GCF is $3x$"
+        }
+      },
+      "resultState": {
+        "description": "Factored completely"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$6x^3 + 9x^2 - 12x = 3x(2x^2 + 3x - 4)$"
+    ],
+    "fullSolution": "GCF = $3x$. Factor: $6x^3 + 9x^2 - 12x = 3x(2x^2 + 3x - 4)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Factoring GCF",
+      "url": "https://www.youtube.com/watch?v=Oe4pvHWAXgE",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Factoring",
+      "url": "https://brilliant.org/wiki/factoring/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Factoring Polynomials",
+      "url": "https://www.youtube.com/watch?v=8_NQd2bZV5w",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
