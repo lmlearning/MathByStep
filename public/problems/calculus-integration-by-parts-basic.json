@@ -1,0 +1,166 @@
+{
+  "id": "calculus-integration-by-parts-basic",
+  "type": "problem",
+  "title": "Integration by Parts",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "integration",
+    "integration-by-parts"
+  ],
+  "statement": {
+    "text": "Evaluate $\\int x e^x \\, dx$ using integration by parts."
+  },
+  "objectives": [
+    "Apply integration by parts formula",
+    "Choose appropriate u and dv"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Integration by parts: $\\int u\\,dv = uv - \\int v\\,du$. Choose $u$ and $dv$",
+        "hint": "Let $u = x$ (becomes simpler when differentiated), $dv = e^x\\,dx$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$u = x$, $dv = e^x\\,dx$"
+        },
+        {
+          "id": "b",
+          "text": "$u = e^x$, $dv = x\\,dx$"
+        },
+        {
+          "id": "c",
+          "text": "$u = xe^x$, $dv = dx$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Choose $u$ as the function that simplifies when differentiated",
+          "insight": "LIATE rule: Logarithmic, Inverse trig, Algebraic, Trig, Exponential - pick $u$ in this order"
+        },
+        "incorrect": {
+          "1": "$e^x$ doesn't simplify when differentiated; pick $u = x$ instead",
+          "2": "Can't integrate $xe^x$ directly; that's what we're trying to find"
+        }
+      },
+      "resultState": {
+        "description": "Chose u and dv"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Find $du$ and $v$",
+        "hint": "$du = dx$ and $v = \\int e^x\\,dx = e^x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$du = dx$, $v = e^x$"
+        },
+        {
+          "id": "b",
+          "text": "$du = 1$, $v = xe^x$"
+        },
+        {
+          "id": "c",
+          "text": "$du = x\\,dx$, $v = e^x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $u = x \\Rightarrow du = dx$ and $dv = e^x\\,dx \\Rightarrow v = e^x$",
+          "insight": "Now apply the formula: $uv - \\int v\\,du$"
+        },
+        "incorrect": {
+          "1": "$du$ is a differential: $du = 1\\cdot dx = dx$",
+          "2": "$du = \\frac{d}{dx}[x]\\,dx = 1\\,dx = dx$"
+        }
+      },
+      "resultState": {
+        "description": "Found du and v"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Apply formula: $uv - \\int v\\,du = ?$",
+        "hint": "$xe^x - \\int e^x\\,dx = xe^x - e^x + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$xe^x - e^x + C = e^x(x-1) + C$"
+        },
+        {
+          "id": "b",
+          "text": "$xe^x + e^x + C$"
+        },
+        {
+          "id": "c",
+          "text": "$xe^x + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\int xe^x\\,dx = xe^x - e^x + C = e^x(x-1) + C$",
+          "insight": "Verify by differentiating: $\\frac{d}{dx}[e^x(x-1)] = e^x(x-1) + e^x = xe^x$ ✓"
+        },
+        "incorrect": {
+          "1": "Formula is $uv - \\int v\\,du$, not plus",
+          "2": "Don't forget to evaluate $\\int e^x\\,dx = e^x$"
+        }
+      },
+      "resultState": {
+        "description": "Completed integration"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\int xe^x\\,dx = e^x(x-1) + C$. Use LIATE to choose $u$ in integration by parts."
+    ],
+    "fullSolution": "Let $u=x$, $dv=e^x\\,dx$. Then $du=dx$, $v=e^x$. By parts: $xe^x - \\int e^x\\,dx = xe^x - e^x + C = e^x(x-1) + C$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Integration by Parts",
+      "url": "https://www.youtube.com/watch?v=2I-_SV8cwsw",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Integration by Parts",
+      "url": "https://brilliant.org/wiki/integration-by-parts/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Integration By Parts",
+      "url": "https://www.youtube.com/watch?v=vEqi42buKGY",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

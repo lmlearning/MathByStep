@@ -1,0 +1,166 @@
+{
+  "id": "differential-equations-homogeneous-second-order",
+  "type": "problem",
+  "title": "Second-Order Linear Homogeneous DE",
+  "topic": "Differential Equations",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "differential-equations",
+    "second-order",
+    "characteristic-equation"
+  ],
+  "statement": {
+    "text": "Solve $y'' - 5y' + 6y = 0$."
+  },
+  "objectives": [
+    "Find characteristic equation",
+    "Write general solution"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Assume solution $y = e^{rx}$. Then $y' = re^{rx}$ and $y'' = r^2e^{rx}$",
+        "hint": "Substitute into DE"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$r^2e^{rx} - 5re^{rx} + 6e^{rx} = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$y = e^{rx}$ is the solution"
+        },
+        {
+          "id": "c",
+          "text": "$r^2 - 5r + 6 = 0$ immediately"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Substitute derivatives of $y = e^{rx}$",
+          "insight": "Factor out $e^{rx}$ (never zero) to get characteristic equation"
+        },
+        "incorrect": {
+          "1": "Need to substitute into DE and simplify first",
+          "2": "Close! That's the next step after factoring"
+        }
+      },
+      "resultState": {
+        "description": "Substituted exponential"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Factor out $e^{rx}$ to get characteristic equation",
+        "hint": "$e^{rx}(r^2 - 5r + 6) = 0 \\Rightarrow r^2 - 5r + 6 = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$r^2 - 5r + 6 = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$e^{rx} = 0$ or $r^2 - 5r + 6 = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$r - 5 + 6 = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $e^{rx} \\neq 0$, so characteristic equation is $r^2 - 5r + 6 = 0$",
+          "insight": "This is just a quadratic in $r$"
+        },
+        "incorrect": {
+          "1": "$e^{rx}$ is never zero",
+          "2": "Characteristic equation involves $r$ terms, not just constants"
+        }
+      },
+      "resultState": {
+        "description": "Got characteristic equation"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Solve: $r^2 - 5r + 6 = (r-2)(r-3) = 0$",
+        "hint": "$r = 2$ or $r = 3$. General solution: $y = c_1e^{2x} + c_2e^{3x}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = c_1e^{2x} + c_2e^{3x}$"
+        },
+        {
+          "id": "b",
+          "text": "$y = e^{2x}$ or $y = e^{3x}$"
+        },
+        {
+          "id": "c",
+          "text": "$y = c_1e^{5x} + c_2e^{6x}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! General solution is linear combination of $e^{2x}$ and $e^{3x}$",
+          "insight": "Two distinct real roots give two exponential solutions. Need both for general solution (2nd order needs 2 constants)."
+        },
+        "incorrect": {
+          "1": "Need linear combination with arbitrary constants",
+          "2": "Roots are 2 and 3, not 5 and 6"
+        }
+      },
+      "resultState": {
+        "description": "Found general solution"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$y = c_1e^{2x} + c_2e^{3x}$. For constant coefficient homogeneous: find characteristic roots, write exponentials."
+    ],
+    "fullSolution": "Assume $y=e^{rx}$. Substitute: $r^2e^{rx} - 5re^{rx} + 6e^{rx} = 0$. Characteristic: $r^2-5r+6=0 \\Rightarrow r=2,3$. Solution: $y = c_1e^{2x} + c_2e^{3x}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Second Order Linear DEs",
+      "url": "https://www.youtube.com/watch?v=7VQN27kdeXk",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Second Order Differential Equations",
+      "url": "https://brilliant.org/wiki/second-order-differential-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Second Order Linear Differential Equations",
+      "url": "https://www.youtube.com/watch?v=PXlHWDMbi4w",
+      "source": "Professor Leonard"
+    }
+  ]
+}

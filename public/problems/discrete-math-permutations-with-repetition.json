@@ -1,0 +1,166 @@
+{
+  "id": "discrete-math-permutations-with-repetition",
+  "type": "problem",
+  "title": "Permutations with Repetition",
+  "topic": "Discrete Mathematics",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "discrete-math",
+    "permutations",
+    "combinatorics"
+  ],
+  "statement": {
+    "text": "How many distinct arrangements are there of the letters in MISSISSIPPI?"
+  },
+  "objectives": [
+    "Apply permutations with repetition formula",
+    "Account for repeated elements"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Count total letters and repetitions",
+        "hint": "11 letters: M(1), I(4), S(4), P(2)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "11 total: I appears 4 times, S appears 4 times, P appears 2 times, M appears 1 time"
+        },
+        {
+          "id": "b",
+          "text": "11 total: each letter appears once"
+        },
+        {
+          "id": "c",
+          "text": "10 letters total"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! MISSISSIPPI = M-I-S-S-I-S-S-I-P-P-I",
+          "insight": "Repetitions reduce the number of distinct arrangements"
+        },
+        "incorrect": {
+          "1": "Count carefully: there are repeated letters",
+          "2": "M-I-S-S-I-S-S-I-P-P-I is 11 letters"
+        }
+      },
+      "resultState": {
+        "description": "Counted letters"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Formula: $\\frac{n!}{n_1! \\cdot n_2! \\cdot \\ldots \\cdot n_k!}$ where $n_i$ are repetition counts",
+        "hint": "$\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!} = \\frac{11!}{4! \\cdot 4! \\cdot 2!}$"
+        },
+        {
+          "id": "b",
+          "text": "$11!$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{11!}{4 \\cdot 4 \\cdot 2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Divide by factorial of each repetition count",
+          "insight": "We divide to avoid counting identical arrangements multiple times"
+        },
+        "incorrect": {
+          "1": "This counts arrangements as if all letters were distinct",
+          "2": "Need factorials: $4!$, not just 4"
+        }
+      },
+      "resultState": {
+        "description": "Set up formula"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Calculate: $\\frac{11!}{4! \\cdot 4! \\cdot 2!}$",
+        "hint": "$\\frac{39,916,800}{24 \\cdot 24 \\cdot 2} = \\frac{39,916,800}{1,152} = 34,650$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$34,650$ distinct arrangements"
+        },
+        {
+          "id": "b",
+          "text": "$39,916,800$ arrangements"
+        },
+        {
+          "id": "c",
+          "text": "$11,000$ arrangements"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! 34,650 distinct arrangements of MISSISSIPPI",
+          "insight": "Much less than $11! = 39,916,800$ because of repetitions"
+        },
+        "incorrect": {
+          "1": "That's $11!$ without accounting for repetitions",
+          "2": "Check calculation: $\\frac{39,916,800}{1,152} = 34,650$"
+        }
+      },
+      "resultState": {
+        "description": "Found total arrangements"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "34,650 distinct arrangements. Formula: $\\frac{n!}{n_1! n_2! \\cdots n_k!}$ for repeated elements."
+    ],
+    "fullSolution": "11 letters with I(4), S(4), P(2), M(1). Distinct arrangements: $\\frac{11!}{4! \\cdot 4! \\cdot 2!} = \\frac{39,916,800}{1,152} = 34,650$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Permutations with Repetition",
+      "url": "https://www.youtube.com/watch?v=C3MYi2AaLcI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Permutations",
+      "url": "https://brilliant.org/wiki/permutations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Permutations With Repeated Items",
+      "url": "https://www.youtube.com/watch?v=FzrUXuFcd4Y",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "algebra-exponential-equation-different-bases",
+  "type": "problem",
+  "title": "Solve Exponential Equation (Different Bases)",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "algebra",
+    "exponential-equations",
+    "logarithms"
+  ],
+  "statement": {
+    "text": "Solve for $x$: $3^{2x} = 27$."
+  },
+  "objectives": [
+    "Express both sides with same base",
+    "Equate exponents"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Express 27 as a power of 3",
+        "hint": "$27 = 3^3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$27 = 3^3$"
+        },
+        {
+          "id": "b",
+          "text": "$27 = 9^2$"
+        },
+        {
+          "id": "c",
+          "text": "$27 = 3 \\times 9$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $3^3 = 3 \\times 3 \\times 3 = 27$",
+          "insight": "When both sides have same base, we can equate exponents"
+        },
+        "incorrect": {
+          "1": "While true, this doesn't help since we need base 3",
+          "2": "This is true but we need it as a single power: $3^3$"
+        }
+      },
+      "resultState": {
+        "description": "Rewrote with common base"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Now equation is $3^{2x} = 3^3$. What can we conclude?",
+        "hint": "If $a^m = a^n$, then $m = n$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x = 3$"
+        },
+        {
+          "id": "b",
+          "text": "$2x = 9$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Since bases are equal, exponents must be equal",
+          "insight": "This is the key property: $a^m = a^n \\Rightarrow m = n$ (for $a > 0$, $a \\neq 1$)"
+        },
+        "incorrect": {
+          "1": "Don't multiply: $2x = 3$, not $2x = 2 \\times 3$",
+          "2": "Need to solve $2x = 3$ first"
+        }
+      },
+      "resultState": {
+        "description": "Equated exponents"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Solve $2x = 3$ for $x$",
+        "hint": "$x = \\frac{3}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = \\frac{3}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 6$"
+        },
+        {
+          "id": "c",
+          "text": "$x = \\frac{2}{3}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $x = \\frac{3}{2} = 1.5$",
+          "insight": "Verify: $3^{2(1.5)} = 3^3 = 27$ ✓"
+        },
+        "incorrect": {
+          "1": "Divide both sides by 2: $x = \\frac{3}{2}$, not multiply",
+          "2": "That's the reciprocal; divide 3 by 2, not 2 by 3"
+        }
+      },
+      "resultState": {
+        "description": "Found solution"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$x = \\frac{3}{2}$. Key strategy: express both sides with same base, then equate exponents."
+    ],
+    "fullSolution": "Rewrite: $3^{2x} = 27 = 3^3$. Since bases equal, $2x = 3$, so $x = \\frac{3}{2}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Exponential Equations",
+      "url": "https://www.youtube.com/watch?v=xAB5VRjCO2w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Exponential Equations",
+      "url": "https://brilliant.org/wiki/exponential-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Solving Exponential Equations",
+      "url": "https://www.youtube.com/watch?v=6CdJFUWWeXs",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

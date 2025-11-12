@@ -1,0 +1,128 @@
+{
+  "id": "geometry-coordinate-distance-midpoint",
+  "type": "problem",
+  "title": "Distance and Midpoint Together",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "geometry",
+    "coordinate-geometry",
+    "distance",
+    "midpoint"
+  ],
+  "statement": {
+    "text": "Points $A(-2, 3)$ and $B(4, 7)$ are endpoints of a segment. Find the distance $AB$ and the midpoint $M$."
+  },
+  "objectives": [
+    "Apply distance formula",
+    "Apply midpoint formula"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Distance formula: $d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$",
+        "hint": "$d = \\sqrt{(4-(-2))^2 + (7-3)^2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$d = \\sqrt{6^2 + 4^2} = \\sqrt{36 + 16} = \\sqrt{52}$"
+        },
+        {
+          "id": "b",
+          "text": "$d = \\sqrt{2^2 + 4^2} = \\sqrt{20}$"
+        },
+        {
+          "id": "c",
+          "text": "$d = 6 + 4 = 10$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $4 - (-2) = 6$ and $7 - 3 = 4$",
+          "insight": "Can simplify: $\\sqrt{52} = \\sqrt{4 \\cdot 13} = 2\\sqrt{13} \\approx 7.21$"
+        },
+        "incorrect": {
+          "1": "Careful with signs: $4 - (-2) = 4 + 2 = 6$",
+          "2": "Need to use the distance formula, not just add differences"
+        }
+      },
+      "resultState": {
+        "description": "Found distance"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Midpoint formula: $M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)$",
+        "hint": "$M = \\left(\\frac{-2+4}{2}, \\frac{3+7}{2}\\right)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$M = (1, 5)$"
+        },
+        {
+          "id": "b",
+          "text": "$M = (2, 10)$"
+        },
+        {
+          "id": "c",
+          "text": "$M = (3, 2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $M = \\left(\\frac{2}{2}, \\frac{10}{2}\\right) = (1, 5)$",
+          "insight": "Midpoint is exactly halfway between the two points"
+        },
+        "incorrect": {
+          "1": "Don't forget to divide by 2: $\\frac{-2+4}{2} = 1$, $\\frac{3+7}{2} = 5$",
+          "2": "Check your arithmetic"
+        }
+      },
+      "resultState": {
+        "description": "Found midpoint"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Distance $AB = 2\\sqrt{13} \\approx 7.21$ units. Midpoint $M = (1, 5)$."
+    ],
+    "fullSolution": "$d = \\sqrt{(4-(-2))^2 + (7-3)^2} = \\sqrt{36+16} = \\sqrt{52} = 2\\sqrt{13}$. $M = \\left(\\frac{-2+4}{2}, \\frac{3+7}{2}\\right) = (1,5)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Distance and Midpoint Formulas",
+      "url": "https://www.youtube.com/watch?v=QPGMH_oys5A",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Distance Formula",
+      "url": "https://brilliant.org/wiki/distance-formula/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Distance and Midpoint",
+      "url": "https://www.youtube.com/watch?v=aKhq_l1YBfM",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "number-theory-divisibility-rule-3",
+  "type": "problem",
+  "title": "Divisibility Rule for 3",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "number-theory",
+    "divisibility"
+  ],
+  "statement": {
+    "text": "Is 5,427 divisible by 3? Use the divisibility rule."
+  },
+  "objectives": [
+    "Apply divisibility rule for 3",
+    "Sum digits and check"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Divisibility rule for 3: a number is divisible by 3 if and only if the sum of its digits is divisible by 3",
+        "hint": "Add: $5 + 4 + 2 + 7 = ?$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$5 + 4 + 2 + 7 = 18$"
+        },
+        {
+          "id": "b",
+          "text": "$5 + 4 + 2 + 7 = 16$"
+        },
+        {
+          "id": "c",
+          "text": "$5 + 4 + 2 + 7 = 17$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Sum of digits is 18",
+          "insight": "Now check if 18 is divisible by 3"
+        },
+        "incorrect": {
+          "1": "$5 + 4 = 9$, $9 + 2 = 11$, $11 + 7 = 18$",
+          "2": "Recheck your addition"
+        }
+      },
+      "resultState": {
+        "description": "Summed digits"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Is 18 divisible by 3?",
+        "hint": "$18 = 3 \\times 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, $18 \\div 3 = 6$ exactly"
+        },
+        {
+          "id": "b",
+          "text": "No, 18 is not divisible by 3"
+        },
+        {
+          "id": "c",
+          "text": "Need to check original number"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! 18 is divisible by 3, therefore 5,427 is divisible by 3",
+          "insight": "Verify: $5427 \\div 3 = 1809$ exactly ✓"
+        },
+        "incorrect": {
+          "1": "$18 = 3 \\times 6$, so it's divisible",
+          "2": "The rule says if digit sum is divisible by 3, so is the original number"
+        }
+      },
+      "resultState": {
+        "description": "Applied rule"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Yes, 5,427 is divisible by 3 because digit sum 18 is divisible by 3."
+    ],
+    "fullSolution": "Sum of digits: $5 + 4 + 2 + 7 = 18$. Since $18 \\div 3 = 6$, the number 5,427 is divisible by 3. Check: $5427 \\div 3 = 1809$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Divisibility Rules",
+      "url": "https://www.youtube.com/watch?v=7DQJVp8nwlU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Divisibility Rules",
+      "url": "https://brilliant.org/wiki/divisibility-rules/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Divisibility Rules for 2, 3, 4, 5, 6, 9, and 10",
+      "url": "https://www.youtube.com/watch?v=UNXZczpVHMM",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

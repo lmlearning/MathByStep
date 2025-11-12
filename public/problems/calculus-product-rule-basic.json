@@ -1,0 +1,166 @@
+{
+  "id": "calculus-product-rule-basic",
+  "type": "problem",
+  "title": "Apply Product Rule",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "calculus",
+    "derivatives",
+    "product-rule"
+  ],
+  "statement": {
+    "text": "Find the derivative of $f(x) = x^2\\sin(x)$."
+  },
+  "objectives": [
+    "Apply product rule",
+    "Simplify derivative"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Product rule: $(uv)' = u'v + uv'$. Identify $u$ and $v$",
+        "hint": "Let $u = x^2$ and $v = \\sin(x)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$u = x^2$, $v = \\sin(x)$"
+        },
+        {
+          "id": "b",
+          "text": "$u = x$, $v = x\\sin(x)$"
+        },
+        {
+          "id": "c",
+          "text": "Can't use product rule here"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! We have a product of two functions",
+          "insight": "Product rule is needed whenever multiplying two functions"
+        },
+        "incorrect": {
+          "1": "Split into simpler factors: $x^2$ and $\\sin(x)$",
+          "2": "This is a product of two functions, so product rule applies"
+        }
+      },
+      "resultState": {
+        "description": "Identified u and v"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Find $u'$ and $v'$",
+        "hint": "$u' = 2x$ and $v' = \\cos(x)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$u' = 2x$, $v' = \\cos(x)$"
+        },
+        {
+          "id": "b",
+          "text": "$u' = 2x$, $v' = -\\sin(x)$"
+        },
+        {
+          "id": "c",
+          "text": "$u' = x$, $v' = \\cos(x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Power rule: $(x^2)' = 2x$. Trig: $(\\sin x)' = \\cos x$",
+          "insight": "Now apply formula: $u'v + uv'$"
+        },
+        "incorrect": {
+          "1": "$(\\sin x)' = \\cos x$, not $-\\sin x$",
+          "2": "$(x^2)' = 2x$, not $x$"
+        }
+      },
+      "resultState": {
+        "description": "Found derivatives"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Apply formula: $f'(x) = u'v + uv' = ?$",
+        "hint": "$2x\\sin(x) + x^2\\cos(x)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(x) = 2x\\sin(x) + x^2\\cos(x)$"
+        },
+        {
+          "id": "b",
+          "text": "$f'(x) = 2x\\cos(x)$"
+        },
+        {
+          "id": "c",
+          "text": "$f'(x) = x^2\\cos(x) - 2x\\sin(x)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $f'(x) = 2x\\sin(x) + x^2\\cos(x)$",
+          "insight": "Can factor as $x(2\\sin x + x\\cos x)$ if desired"
+        },
+        "incorrect": {
+          "1": "This is just one term; need both $u'v$ AND $uv'$",
+          "2": "Product rule is $u'v + uv'$, not subtraction"
+        }
+      },
+      "resultState": {
+        "description": "Applied product rule"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$f'(x) = 2x\\sin(x) + x^2\\cos(x)$. Product rule: $(uv)' = u'v + uv'$."
+    ],
+    "fullSolution": "Let $u=x^2$, $v=\\sin x$. Then $u'=2x$, $v'=\\cos x$. By product rule: $f'(x) = (2x)(\\sin x) + (x^2)(\\cos x) = 2x\\sin x + x^2\\cos x$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Product Rule",
+      "url": "https://www.youtube.com/watch?v=HxFj7WP7ehk",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Product Rule",
+      "url": "https://brilliant.org/wiki/product-rule/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Product Rule",
+      "url": "https://www.youtube.com/watch?v=dLhz77pOdSw",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

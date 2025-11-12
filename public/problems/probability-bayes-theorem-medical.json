@@ -1,0 +1,166 @@
+{
+  "id": "probability-bayes-theorem-medical",
+  "type": "problem",
+  "title": "Bayes' Theorem: Disease Testing",
+  "topic": "Probability & Statistics",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "probability",
+    "bayes-theorem",
+    "conditional-probability"
+  ],
+  "statement": {
+    "text": "A disease affects 1% of the population. A test is 95% accurate (for both positive and negative results). If someone tests positive, what's the probability they actually have the disease?"
+  },
+  "objectives": [
+    "Set up Bayes' theorem",
+    "Calculate posterior probability"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Define events: $D$ = has disease, $T$ = tests positive. Given: $P(D) = 0.01$, $P(T|D) = 0.95$, $P(T^c|D^c) = 0.95$",
+        "hint": "Want: $P(D|T)$. Note: $P(T|D^c) = 1 - 0.95 = 0.05$ (false positive rate)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(D) = 0.01$, $P(T|D) = 0.95$, $P(T|D^c) = 0.05$"
+        },
+        {
+          "id": "b",
+          "text": "$P(D|T) = 0.95$"
+        },
+        {
+          "id": "c",
+          "text": "$P(T) = 0.95$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Organize the given information clearly",
+          "insight": "Common misconception: $P(D|T) \\neq P(T|D)$ - these are different!"
+        },
+        "incorrect": {
+          "1": "That's what we're solving for, not what's given",
+          "2": "$P(T)$ needs to be calculated using law of total probability"
+        }
+      },
+      "resultState": {
+        "description": "Organized information"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Find $P(T)$ using: $P(T) = P(T|D)P(D) + P(T|D^c)P(D^c)$",
+        "hint": "$P(T) = 0.95(0.01) + 0.05(0.99)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(T) = 0.0095 + 0.0495 = 0.059$"
+        },
+        {
+          "id": "b",
+          "text": "$P(T) = 0.95$"
+        },
+        {
+          "id": "c",
+          "text": "$P(T) = 0.01$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $P(T) = 0.059 = 5.9\\%$ of population tests positive",
+          "insight": "Most positives are false positives when disease is rare!"
+        },
+        "incorrect": {
+          "1": "That's the test accuracy, not overall positive rate",
+          "2": "That's the disease prevalence, not test positive rate"
+        }
+      },
+      "resultState": {
+        "description": "Found P(T)"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Apply Bayes: $P(D|T) = \\frac{P(T|D)P(D)}{P(T)}$",
+        "hint": "$P(D|T) = \\frac{0.95 \\times 0.01}{0.059}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(D|T) = \\frac{0.0095}{0.059} \\approx 0.161$ or $16.1\\%$"
+        },
+        {
+          "id": "b",
+          "text": "$P(D|T) = 0.95$ or $95\\%$"
+        },
+        {
+          "id": "c",
+          "text": "$P(D|T) = 0.01$ or $1\\%$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Only ~16% chance of actually having disease despite positive test!",
+          "insight": "Counterintuitive: even with 95% accurate test, low prevalence means most positives are false. This is why retesting is important."
+        },
+        "incorrect": {
+          "1": "Can't ignore base rate (prevalence) - use Bayes' theorem",
+          "2": "Base rate hasn't changed from prior; must use test result to update"
+        }
+      },
+      "resultState": {
+        "description": "Found posterior probability"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$P(D|T) \\approx 16.1\\%$. Despite 95% test accuracy, rare disease means most positives are false positives."
+    ],
+    "fullSolution": "$P(T) = 0.95(0.01) + 0.05(0.99) = 0.059$. Then $P(D|T) = \\frac{0.95 \\times 0.01}{0.059} = \\frac{0.0095}{0.059} \\approx 0.161$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Bayes' Theorem",
+      "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Bayes' Theorem",
+      "url": "https://brilliant.org/wiki/bayes-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Bayes Theorem Problems",
+      "url": "https://www.youtube.com/watch?v=OqmJhPQYRc8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

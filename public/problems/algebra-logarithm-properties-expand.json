@@ -1,0 +1,166 @@
+{
+  "id": "algebra-logarithm-properties-expand",
+  "type": "problem",
+  "title": "Expand Logarithmic Expression",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "algebra",
+    "logarithms",
+    "properties"
+  ],
+  "statement": {
+    "text": "Expand $\\log_2\\left(\\frac{8x^3}{y^2}\\right)$ using logarithm properties."
+  },
+  "objectives": [
+    "Apply quotient rule for logs",
+    "Apply product and power rules"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Apply quotient rule: $\\log\\left(\\frac{A}{B}\\right) = \\log(A) - \\log(B)$",
+        "hint": "$\\log_2(8x^3) - \\log_2(y^2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_2(8x^3) - \\log_2(y^2)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\log_2(8x^3)}{\\log_2(y^2)}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\log_2(8x^3 - y^2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Quotient becomes subtraction",
+          "insight": "Log of quotient = difference of logs"
+        },
+        "incorrect": {
+          "1": "Don't divide logs; use subtraction",
+          "2": "Can't bring subtraction inside log like that"
+        }
+      },
+      "resultState": {
+        "description": "Applied quotient rule"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Expand first term using product rule: $\\log(AB) = \\log(A) + \\log(B)$",
+        "hint": "$\\log_2(8) + \\log_2(x^3) - \\log_2(y^2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_2(8) + \\log_2(x^3) - \\log_2(y^2)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\log_2(8x^3) - \\log_2(y^2)$"
+        },
+        {
+          "id": "c",
+          "text": "$\\log_2(8 \\cdot x^3) - \\log_2(y^2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Product becomes addition",
+          "insight": "Log of product = sum of logs"
+        },
+        "incorrect": {
+          "1": "Need to expand further using product rule",
+          "2": "This is the same; expand using product rule"
+        }
+      },
+      "resultState": {
+        "description": "Applied product rule"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Apply power rule: $\\log(A^n) = n\\log(A)$. Also simplify $\\log_2(8)$",
+        "hint": "$\\log_2(8) = 3$ since $2^3 = 8$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3 + 3\\log_2(x) - 2\\log_2(y)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\log_2(8) + 3\\log_2(x) - 2\\log_2(y)$"
+        },
+        {
+          "id": "c",
+          "text": "$8 + 3\\log_2(x) - 2\\log_2(y)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Fully expanded: $3 + 3\\log_2(x) - 2\\log_2(y)$",
+          "insight": "Power rule brings exponents down as coefficients"
+        },
+        "incorrect": {
+          "1": "Simplify $\\log_2(8) = \\log_2(2^3) = 3$",
+          "2": "$\\log_2(8) = 3$, not 8"
+        }
+      },
+      "resultState": {
+        "description": "Fully expanded"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\log_2\\left(\\frac{8x^3}{y^2}\\right) = 3 + 3\\log_2(x) - 2\\log_2(y)$. Use quotient, product, and power rules."
+    ],
+    "fullSolution": "Quotient: $\\log_2(8x^3) - \\log_2(y^2)$. Product: $\\log_2(8) + \\log_2(x^3) - \\log_2(y^2)$. Power: $3 + 3\\log_2(x) - 2\\log_2(y)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Logarithm Properties",
+      "url": "https://www.youtube.com/watch?v=wS7eN3-5eIg",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Logarithms",
+      "url": "https://brilliant.org/wiki/logarithms/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Properties of Logarithms",
+      "url": "https://www.youtube.com/watch?v=5_oFfcVoIrc",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "calculus-squeeze-theorem-trig",
+  "type": "problem",
+  "title": "Squeeze Theorem with Trig",
+  "topic": "Calculus",
+  "difficulty": 4,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "limits",
+    "squeeze-theorem"
+  ],
+  "statement": {
+    "text": "Evaluate $\\lim_{x \\to 0} x^2 \\sin\\left(\\frac{1}{x}\\right)$ using the Squeeze Theorem."
+  },
+  "objectives": [
+    "Apply Squeeze Theorem",
+    "Use trigonometric bounds"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Key fact: $-1 \\leq \\sin\\left(\\frac{1}{x}\\right) \\leq 1$ for all $x \\neq 0$",
+        "hint": "Sine is always bounded between -1 and 1"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1 \\leq \\sin\\left(\\frac{1}{x}\\right) \\leq 1$"
+        },
+        {
+          "id": "b",
+          "text": "$\\sin\\left(\\frac{1}{x}\\right)$ oscillates wildly near 0"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin\\left(\\frac{1}{x}\\right) \\to 0$ as $x \\to 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Sine is bounded even though $\\frac{1}{x} \\to \\infty$",
+          "insight": "$\\sin\\left(\\frac{1}{x}\\right)$ oscillates infinitely fast near 0 but stays bounded"
+        },
+        "incorrect": {
+          "1": "True, but being bounded is what matters for Squeeze Theorem",
+          "2": "$\\sin\\left(\\frac{1}{x}\\right)$ has no limit as $x \\to 0$ (oscillates)"
+        }
+      },
+      "resultState": {
+        "description": "Established bounds"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Multiply inequality by $x^2$ (note: $x^2 \\geq 0$)",
+        "hint": "$-x^2 \\leq x^2\\sin\\left(\\frac{1}{x}\\right) \\leq x^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-x^2 \\leq x^2\\sin\\left(\\frac{1}{x}\\right) \\leq x^2$"
+        },
+        {
+          "id": "b",
+          "text": "$-1 \\leq x^2\\sin\\left(\\frac{1}{x}\\right) \\leq 1$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2 \\leq x^2\\sin\\left(\\frac{1}{x}\\right) \\leq x^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Multiplying by $x^2 > 0$ preserves inequality",
+          "insight": "Now we've squeezed our function between two simpler functions"
+        },
+        "incorrect": {
+          "1": "Need to multiply all parts of inequality by $x^2$",
+          "2": "Left and right bounds are different: $-x^2$ and $+x^2$"
+        }
+      },
+      "resultState": {
+        "description": "Squeezed function"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Find limits of bounds: $\\lim_{x \\to 0} (-x^2)$ and $\\lim_{x \\to 0} (x^2)$",
+        "hint": "Both limits equal 0"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Both limits = 0, so by Squeeze Theorem: $\\lim_{x \\to 0} x^2\\sin\\left(\\frac{1}{x}\\right) = 0$"
+        },
+        {
+          "id": "b",
+          "text": "Limits are $-1$ and $1$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine limit"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Since bounds both approach 0, squeezed function must also approach 0",
+          "insight": "Squeeze Theorem: if $f(x) \\leq g(x) \\leq h(x)$ and $\\lim f = \\lim h = L$, then $\\lim g = L$"
+        },
+        "incorrect": {
+          "1": "$\\lim_{x \\to 0} (\\pm x^2) = 0$, not $\\pm 1$",
+          "2": "Can determine using Squeeze Theorem"
+        }
+      },
+      "resultState": {
+        "description": "Applied Squeeze Theorem"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\lim_{x \\to 0} x^2\\sin\\left(\\frac{1}{x}\\right) = 0$. Key: bound oscillating function, multiply by vanishing term."
+    ],
+    "fullSolution": "$-1 \\leq \\sin\\left(\\frac{1}{x}\\right) \\leq 1 \\Rightarrow -x^2 \\leq x^2\\sin\\left(\\frac{1}{x}\\right) \\leq x^2$. Since $\\lim_{x\\to 0} (\\pm x^2) = 0$, Squeeze Theorem gives limit = 0",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Squeeze Theorem",
+      "url": "https://www.youtube.com/watch?v=duhDNzP0M_s",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Squeeze Theorem",
+      "url": "https://brilliant.org/wiki/squeeze-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Squeeze Theorem",
+      "url": "https://www.youtube.com/watch?v=W-Wo2xoCR3k",
+      "source": "Professor Leonard"
+    }
+  ]
+}
