@@ -1,0 +1,120 @@
+{
+  "id": "graph-theory-path-length-1",
+  "type": "problem",
+  "title": "Find Path Length",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "graph-theory",
+    "paths"
+  ],
+  "statement": {
+    "text": "In a path with 5 vertices, how many edges are there?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "A path connects vertices consecutively",
+        "hint": "5 vertices: $v_1 - v_2 - v_3 - v_4 - v_5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Count edges between consecutive vertices"
+        },
+        {
+          "id": "b",
+          "text": "Multiply vertices"
+        },
+        {
+          "id": "c",
+          "text": "Divide by 2"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Number of edges in path of $n$ vertices?",
+        "hint": "$n - 1$ edges"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$ edges (5-1)"
+        },
+        {
+          "id": "b",
+          "text": "$5$ edges"
+        },
+        {
+          "id": "c",
+          "text": "$10$ edges"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Path with $n$ vertices has $n-1$ edges. For 5 vertices: 4 edges"
+    ],
+    "fullSolution": "Path with $n$ vertices has $n-1$ edges. For 5 vertices: 4 edges",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory Basics",
+      "url": "https://www.youtube.com/watch?v=LFKZLXVO-Dg",
+      "source": "Trefor Bazett"
+    },
+    {
+      "type": "article",
+      "title": "Paths and Circuits",
+      "url": "https://brilliant.org/wiki/paths-and-circuits/",
+      "source": "Brilliant"
+    }
+  ]
+}

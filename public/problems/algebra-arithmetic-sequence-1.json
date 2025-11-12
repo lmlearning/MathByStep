@@ -1,0 +1,121 @@
+{
+  "id": "algebra-arithmetic-sequence-1",
+  "type": "problem",
+  "title": "Arithmetic Sequence Formula",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "algebra",
+    "sequences",
+    "arithmetic"
+  ],
+  "statement": {
+    "text": "Find the 10th term of: $5, 8, 11, 14, \\ldots$"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Common difference: $d = 8 - 5 = 3$",
+        "hint": "Each term increases by 3"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$d = 3$"
+        },
+        {
+          "id": "b",
+          "text": "$d = 5$"
+        },
+        {
+          "id": "c",
+          "text": "$d = 8$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Formula: $a_n = a_1 + (n-1)d$. Calculate $a_{10}$",
+        "hint": "$a_{10} = 5 + (10-1)(3) = 5 + 27 = 32$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$32$"
+        },
+        {
+          "id": "b",
+          "text": "$35$"
+        },
+        {
+          "id": "c",
+          "text": "$29$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$a_{10} = 32$"
+    ],
+    "fullSolution": "$a_{10} = 32$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Arithmetic Sequences",
+      "url": "https://www.youtube.com/watch?v=Tj89FA-d0f8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Arithmetic Sequences",
+      "url": "https://brilliant.org/wiki/arithmetic-progressions/",
+      "source": "Brilliant"
+    }
+  ]
+}

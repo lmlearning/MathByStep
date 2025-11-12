@@ -1,0 +1,120 @@
+{
+  "id": "numerical-analysis-absolute-error-1",
+  "type": "problem",
+  "title": "Calculate Absolute Error",
+  "topic": "Numerical Analysis",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "numerical-analysis",
+    "error-analysis"
+  ],
+  "statement": {
+    "text": "True value = 5, approximate value = 4.8. Find absolute error."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Absolute error = $|$true - approximate$|$",
+        "hint": "$|5 - 4.8| = |0.2| = 0.2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$0.2$"
+        },
+        {
+          "id": "b",
+          "text": "$-0.2$"
+        },
+        {
+          "id": "c",
+          "text": "$0.04$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Relative error = $\\frac{\\text{absolute error}}{\\text{true value}}$",
+        "hint": "$\\frac{0.2}{5} = 0.04 = 4\\%$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4\\%$"
+        },
+        {
+          "id": "b",
+          "text": "$20\\%$"
+        },
+        {
+          "id": "c",
+          "text": "$0.2\\%$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Absolute error = $0.2$, Relative error = $4\\%$"
+    ],
+    "fullSolution": "Absolute error = $0.2$, Relative error = $4\\%$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Error Analysis",
+      "url": "https://www.youtube.com/watch?v=YC0eI8O1fj8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Error Analysis",
+      "url": "https://brilliant.org/wiki/error-estimation/",
+      "source": "Brilliant"
+    }
+  ]
+}

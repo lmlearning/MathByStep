@@ -1,0 +1,120 @@
+{
+  "id": "differential-equations-first-order-1",
+  "type": "problem",
+  "title": "Solve First Order Linear DE",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "differential-equations",
+    "first-order-linear"
+  ],
+  "statement": {
+    "text": "Solve $\\frac{dy}{dx} + y = e^x$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "This is linear: $y' + p(x)y = q(x)$. Find integrating factor $\\mu = e^{\\int p dx}$",
+        "hint": "$p = 1$, so $\\mu = e^x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^x$"
+        },
+        {
+          "id": "b",
+          "text": "$e^{-x}$"
+        },
+        {
+          "id": "c",
+          "text": "$x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Multiply by $\\mu$: $e^x y' + e^x y = e^{2x}$. Left side is $(e^x y)'$",
+        "hint": "Integrate: $e^x y = \\frac{e^{2x}}{2} + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = \\frac{e^x}{2} + Ce^{-x}$"
+        },
+        {
+          "id": "b",
+          "text": "$y = e^x + C$"
+        },
+        {
+          "id": "c",
+          "text": "$y = \\frac{e^{2x}}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$y = \\frac{e^x}{2} + Ce^{-x}$"
+    ],
+    "fullSolution": "$y = \\frac{e^x}{2} + Ce^{-x}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "First Order Linear",
+      "url": "https://www.youtube.com/watch?v=vc9gVL6kR1w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "First Order Linear",
+      "url": "https://tutorial.math.lamar.edu/Classes/DE/Linear.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
+}

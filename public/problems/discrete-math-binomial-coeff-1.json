@@ -1,0 +1,126 @@
+{
+  "id": "discrete-math-binomial-coeff-1",
+  "type": "problem",
+  "title": "Calculate Binomial Coefficient",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "discrete-math",
+    "binomial-coefficient"
+  ],
+  "statement": {
+    "text": "Calculate $\\binom{6}{2}$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Use formula $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$",
+        "hint": "$\\binom{6}{2} = \\frac{6!}{2! \\cdot 4!}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{6!}{2! \\cdot 4!}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{6!}{2!}$"
+        },
+        {
+          "id": "c",
+          "text": "$6 \\times 2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Simplify: $\\frac{6 \\times 5 \\times 4!}{2 \\times 1 \\times 4!} = ?$",
+        "hint": "$\\frac{6 \\times 5}{2} = 15$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$15$"
+        },
+        {
+          "id": "b",
+          "text": "$30$"
+        },
+        {
+          "id": "c",
+          "text": "$12$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\binom{6}{2} = 15$"
+    ],
+    "fullSolution": "$\\binom{6}{2} = 15$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Binomial Coefficients",
+      "url": "https://www.youtube.com/watch?v=UCdel4V30qM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Binomial Coefficients",
+      "url": "https://brilliant.org/wiki/binomial-coefficients/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Binomial Theorem",
+      "url": "https://www.youtube.com/watch?v=8iDMnJphBPw",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

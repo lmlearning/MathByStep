@@ -1,0 +1,81 @@
+{
+  "id": "geometry-rectangular-prism-volume-1",
+  "type": "problem",
+  "title": "Volume of Rectangular Prism",
+  "topic": "Geometry",
+  "difficulty": 1,
+  "estimatedTime": 5,
+  "tags": [
+    "geometry",
+    "volume"
+  ],
+  "statement": {
+    "text": "Find volume of box: length 5 cm, width 3 cm, height 4 cm."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Volume = length × width × height",
+        "hint": "$V = 5 \\times 3 \\times 4$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$60$ cm³"
+        },
+        {
+          "id": "b",
+          "text": "$12$ cm³"
+        },
+        {
+          "id": "c",
+          "text": "$20$ cm³"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$V = 60$ cm³"
+    ],
+    "fullSolution": "$V = 60$ cm³",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Volume",
+      "url": "https://www.youtube.com/watch?v=qJwecTgce6c",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Volume",
+      "url": "https://brilliant.org/wiki/3d-coordinate-geometry-volume/",
+      "source": "Brilliant"
+    }
+  ]
+}

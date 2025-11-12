@@ -1,0 +1,127 @@
+{
+  "id": "trigonometry-double-angle-1",
+  "type": "problem",
+  "title": "Double Angle Formula for Cosine",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "trigonometry",
+    "double-angle",
+    "identities"
+  ],
+  "statement": {
+    "text": "If $\\cos(\\theta) = \\frac{3}{5}$, find $\\cos(2\\theta)$ using $\\cos(2\\theta) = 2\\cos^2(\\theta) - 1$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Calculate $\\cos^2(\\theta)$",
+        "hint": "$(\\frac{3}{5})^2 = \\frac{9}{25}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{9}{25}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{5}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{6}{5}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate $2\\cos^2(\\theta) - 1$",
+        "hint": "$2(\\frac{9}{25}) - 1 = \\frac{18}{25} - \\frac{25}{25} = -\\frac{7}{25}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{7}{25}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{18}{25}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{7}{25}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\cos(2\\theta) = -\\frac{7}{25}$"
+    ],
+    "fullSolution": "$\\cos(2\\theta) = -\\frac{7}{25}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Double Angle Formulas",
+      "url": "https://www.youtube.com/watch?v=5sYOje_Us3w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Double Angle Identities",
+      "url": "https://brilliant.org/wiki/double-angle-identities/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Double Angle Formulas",
+      "url": "https://www.youtube.com/watch?v=Zo-jThfvL_8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

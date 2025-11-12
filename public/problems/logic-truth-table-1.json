@@ -1,0 +1,144 @@
+{
+  "id": "logic-truth-table-1",
+  "type": "problem",
+  "title": "Construct Truth Table",
+  "topic": "Logic & Proofs",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "logic",
+    "truth-tables"
+  ],
+  "statement": {
+    "text": "Construct truth table for $P \\land Q$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "When $P = T$ and $Q = T$, what is $P \\land Q$?",
+        "hint": "Both true, so AND is true"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$T$"
+        },
+        {
+          "id": "b",
+          "text": "$F$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "When $P = T$ and $Q = F$?",
+        "hint": "One false, so AND is false"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F$"
+        },
+        {
+          "id": "b",
+          "text": "$T$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "When $P = F$ and $Q = T$?",
+        "hint": "One false, so AND is false"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F$"
+        },
+        {
+          "id": "b",
+          "text": "$T$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$P \\land Q$ is true only when both $P$ and $Q$ are true"
+    ],
+    "fullSolution": "$P \\land Q$ is true only when both $P$ and $Q$ are true",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Truth Tables",
+      "url": "https://www.youtube.com/watch?v=O0KbymjE7xU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Truth Tables",
+      "url": "https://brilliant.org/wiki/truth-tables/",
+      "source": "Brilliant"
+    }
+  ]
+}

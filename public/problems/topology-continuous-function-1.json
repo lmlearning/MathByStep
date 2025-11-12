@@ -1,0 +1,115 @@
+{
+  "id": "topology-continuous-function-1",
+  "type": "problem",
+  "title": "Verify Continuous Function",
+  "topic": "Topology",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "topology",
+    "continuity"
+  ],
+  "statement": {
+    "text": "Is $f(x) = x^2$ continuous at $x = 2$?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "For continuity at $a$: need $\\lim_{x \\to a} f(x) = f(a)$",
+        "hint": "Check if $\\lim_{x \\to 2} x^2 = f(2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate both"
+        },
+        {
+          "id": "b",
+          "text": "Only need limit"
+        },
+        {
+          "id": "c",
+          "text": "Only need $f(2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "$\\lim_{x \\to 2} x^2 = 4$ and $f(2) = 2^2 = 4$",
+        "hint": "Equal, so continuous"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, continuous"
+        },
+        {
+          "id": "b",
+          "text": "No, not continuous"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$f(x) = x^2$ is continuous at $x = 2$ (and everywhere)"
+    ],
+    "fullSolution": "$f(x) = x^2$ is continuous at $x = 2$ (and everywhere)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Continuity",
+      "url": "https://www.youtube.com/watch?v=kfqI2RdMftc",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Continuous Functions",
+      "url": "https://brilliant.org/wiki/continuous-functions/",
+      "source": "Brilliant"
+    }
+  ]
+}

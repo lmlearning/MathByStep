@@ -1,0 +1,126 @@
+{
+  "id": "probability-addition-rule-1",
+  "type": "problem",
+  "title": "Addition Rule for Mutually Exclusive Events",
+  "topic": "Probability & Statistics",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "probability",
+    "addition-rule"
+  ],
+  "statement": {
+    "text": "Rolling a die: P(1 or 2) = ?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Events are mutually exclusive. P(1) = ?",
+        "hint": "$P(1) = \\frac{1}{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{6}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{3}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "P(1 or 2) = P(1) + P(2) = ?",
+        "hint": "$\\frac{1}{6} + \\frac{1}{6} = \\frac{2}{6} = \\frac{1}{3}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{3}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{6}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$P(1 \\text{ or } 2) = \\frac{1}{3}$"
+    ],
+    "fullSolution": "$P(1 \\text{ or } 2) = \\frac{1}{3}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Addition Rule",
+      "url": "https://www.youtube.com/watch?v=94AmzeR9n2w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Addition Rule",
+      "url": "https://brilliant.org/wiki/probability-rule-of-sum/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Probability Rules",
+      "url": "https://www.youtube.com/watch?v=WqQniFw28c8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

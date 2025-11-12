@@ -1,0 +1,120 @@
+{
+  "id": "statistics-variance-basic-1",
+  "type": "problem",
+  "title": "Calculate Sample Variance",
+  "topic": "Probability & Statistics",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "statistics",
+    "variance"
+  ],
+  "statement": {
+    "text": "Find variance of: $2, 4, 6, 8$. (Mean = 5)"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Deviations from mean: $(2-5)^2, (4-5)^2, (6-5)^2, (8-5)^2$",
+        "hint": "$9, 1, 1, 9$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$9, 1, 1, 9$"
+        },
+        {
+          "id": "b",
+          "text": "$3, 1, 1, 3$"
+        },
+        {
+          "id": "c",
+          "text": "$-3, -1, 1, 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Variance = $\\frac{\\sum(x_i - \\bar{x})^2}{n-1}$ for sample",
+        "hint": "$\\frac{9+1+1+9}{3} = \\frac{20}{3} \\approx 6.67$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$6.67$"
+        },
+        {
+          "id": "b",
+          "text": "$5$"
+        },
+        {
+          "id": "c",
+          "text": "$20$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Sample variance $s^2 = \\frac{20}{3} \\approx 6.67$"
+    ],
+    "fullSolution": "Sample variance $s^2 = \\frac{20}{3} \\approx 6.67$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Variance",
+      "url": "https://www.youtube.com/watch?v=E4HAYd0QnRc",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Variance",
+      "url": "https://brilliant.org/wiki/variance/",
+      "source": "Brilliant"
+    }
+  ]
+}

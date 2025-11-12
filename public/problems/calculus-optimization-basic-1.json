@@ -1,0 +1,150 @@
+{
+  "id": "calculus-optimization-basic-1",
+  "type": "problem",
+  "title": "Basic Optimization",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "calculus",
+    "optimization",
+    "applications"
+  ],
+  "statement": {
+    "text": "Find the maximum of $f(x) = -x^2 + 4x + 1$ on $\\mathbb{R}$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find critical points: $f'(x) = 0$",
+        "hint": "$f'(x) = -2x + 4 = 0 \\Rightarrow x = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 4$"
+        },
+        {
+          "id": "c",
+          "text": "$x = -2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Second derivative test: $f''(x) = -2 < 0$",
+        "hint": "Concave down, so $x=2$ is maximum"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Maximum at $x=2$"
+        },
+        {
+          "id": "b",
+          "text": "Minimum at $x=2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Calculate $f(2)$",
+        "hint": "$f(2) = -4 + 8 + 1 = 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Maximum value is $5$"
+        },
+        {
+          "id": "b",
+          "text": "Maximum value is $2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Maximum at $(2, 5)$"
+    ],
+    "fullSolution": "Maximum at $(2, 5)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Optimization",
+      "url": "https://www.youtube.com/watch?v=RG9CNcbLCEI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Optimization",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx",
+      "source": "Paul's Online Math Notes"
+    }
+  ]
+}

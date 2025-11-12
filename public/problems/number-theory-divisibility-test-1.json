@@ -1,0 +1,126 @@
+{
+  "id": "number-theory-divisibility-test-1",
+  "type": "problem",
+  "title": "Divisibility by 3",
+  "topic": "Number Theory",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "number-theory",
+    "divisibility"
+  ],
+  "statement": {
+    "text": "Is 12,345 divisible by 3?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Sum of digits: $1 + 2 + 3 + 4 + 5 = ?$",
+        "hint": "$15$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$15$"
+        },
+        {
+          "id": "b",
+          "text": "$12$"
+        },
+        {
+          "id": "c",
+          "text": "$18$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Is 15 divisible by 3?",
+        "hint": "Yes, $15 = 3 \\times 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, so 12,345 is divisible by 3"
+        },
+        {
+          "id": "b",
+          "text": "No"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "12,345 is divisible by 3 (digit sum is 15, which is divisible by 3)"
+    ],
+    "fullSolution": "12,345 is divisible by 3 (digit sum is 15, which is divisible by 3)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Divisibility Tests",
+      "url": "https://www.youtube.com/watch?v=UDhyBb32JxY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Divisibility Rules",
+      "url": "https://brilliant.org/wiki/divisibility-rules/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Divisibility Rules",
+      "url": "https://www.youtube.com/watch?v=UVW52viKTFs",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

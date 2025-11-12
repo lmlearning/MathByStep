@@ -1,0 +1,127 @@
+{
+  "id": "geometry-circle-area-1",
+  "type": "problem",
+  "title": "Circle Area Formula",
+  "topic": "Geometry",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "geometry",
+    "circles",
+    "area"
+  ],
+  "statement": {
+    "text": "A circle has diameter 10 cm. Find its area."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Diameter = 10, so radius = ?",
+        "hint": "$r = 5$ cm"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$5$ cm"
+        },
+        {
+          "id": "b",
+          "text": "$10$ cm"
+        },
+        {
+          "id": "c",
+          "text": "$2.5$ cm"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Area = $\\pi r^2 = ?$",
+        "hint": "$\\pi(5)^2 = 25\\pi$ cm²"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$25\\pi$ cm²"
+        },
+        {
+          "id": "b",
+          "text": "$10\\pi$ cm²"
+        },
+        {
+          "id": "c",
+          "text": "$100\\pi$ cm²"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$A = 25\\pi \\approx 78.54$ cm²"
+    ],
+    "fullSolution": "$A = 25\\pi \\approx 78.54$ cm²",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Area of a Circle",
+      "url": "https://www.youtube.com/watch?v=1mSFAk8Mnqs",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Circles",
+      "url": "https://brilliant.org/wiki/circle/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Area and Circumference",
+      "url": "https://www.youtube.com/watch?v=wz2eyGpyxxc",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

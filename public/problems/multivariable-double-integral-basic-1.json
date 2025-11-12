@@ -1,0 +1,126 @@
+{
+  "id": "multivariable-double-integral-basic-1",
+  "type": "problem",
+  "title": "Evaluate Double Integral",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "multivariable",
+    "double-integrals"
+  ],
+  "statement": {
+    "text": "Evaluate $\\int_0^2 \\int_0^1 (x + y) dy dx$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Integrate with respect to $y$ first",
+        "hint": "$\\int_0^1 (x + y) dy = [xy + \\frac{y^2}{2}]_0^1 = x + \\frac{1}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x + \\frac{1}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$x + 1$"
+        },
+        {
+          "id": "c",
+          "text": "$xy$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Now integrate with respect to $x$",
+        "hint": "$\\int_0^2 (x + \\frac{1}{2}) dx = [\\frac{x^2}{2} + \\frac{x}{2}]_0^2 = 2 + 1 = 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$"
+        },
+        {
+          "id": "b",
+          "text": "$4$"
+        },
+        {
+          "id": "c",
+          "text": "$2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\int_0^2 \\int_0^1 (x + y) dy dx = 3$"
+    ],
+    "fullSolution": "$\\int_0^2 \\int_0^1 (x + y) dy dx = 3$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Double Integrals",
+      "url": "https://www.youtube.com/watch?v=85zGYB-34jQ",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Double Integrals",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/DoubleIntegrals.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Double Integrals",
+      "url": "https://www.youtube.com/watch?v=TdLD2Zh-nUQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

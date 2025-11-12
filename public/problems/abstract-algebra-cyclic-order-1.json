@@ -1,0 +1,120 @@
+{
+  "id": "abstract-algebra-cyclic-order-1",
+  "type": "problem",
+  "title": "Order of Element in Cyclic Group",
+  "topic": "Abstract Algebra",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "abstract-algebra",
+    "cyclic-groups"
+  ],
+  "statement": {
+    "text": "In $\\mathbb{Z}_8$, what is the order of element 2?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Calculate multiples: $2, 2+2=4, 4+2=6, 6+2=?$",
+        "hint": "$6+2=8 \\equiv 0 \\pmod{8}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Returns to 0 after 4 steps"
+        },
+        {
+          "id": "b",
+          "text": "Never returns"
+        },
+        {
+          "id": "c",
+          "text": "Returns after 2 steps"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Order is the smallest $k$ where $k \\cdot 2 \\equiv 0 \\pmod{8}$",
+        "hint": "Order = 4"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$"
+        },
+        {
+          "id": "b",
+          "text": "$8$"
+        },
+        {
+          "id": "c",
+          "text": "$2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Element 2 has order 4 in $\\mathbb{Z}_8$"
+    ],
+    "fullSolution": "Element 2 has order 4 in $\\mathbb{Z}_8$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Cyclic Groups",
+      "url": "https://www.youtube.com/watch?v=VR0qYkx4z6Q",
+      "source": "Socratica"
+    },
+    {
+      "type": "article",
+      "title": "Cyclic Groups",
+      "url": "https://brilliant.org/wiki/cyclic-groups/",
+      "source": "Brilliant"
+    }
+  ]
+}

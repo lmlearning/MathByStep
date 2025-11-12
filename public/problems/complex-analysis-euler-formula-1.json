@@ -1,0 +1,120 @@
+{
+  "id": "complex-analysis-euler-formula-1",
+  "type": "problem",
+  "title": "Apply Euler's Formula",
+  "topic": "Complex Analysis",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "complex-analysis",
+    "eulers-formula"
+  ],
+  "statement": {
+    "text": "Write $e^{i\\pi}$ using Euler's formula."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Euler's formula: $e^{i\\theta} = \\cos(\\theta) + i\\sin(\\theta)$",
+        "hint": "With $\\theta = \\pi$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos(\\pi) + i\\sin(\\pi)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\cos(1) + i\\sin(1)$"
+        },
+        {
+          "id": "c",
+          "text": "$\\pi i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Evaluate: $\\cos(\\pi) = -1$, $\\sin(\\pi) = 0$",
+        "hint": "$e^{i\\pi} = -1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1$"
+        },
+        {
+          "id": "b",
+          "text": "$1$"
+        },
+        {
+          "id": "c",
+          "text": "$i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$e^{i\\pi} = -1$ (Euler's identity: $e^{i\\pi} + 1 = 0$)"
+    ],
+    "fullSolution": "$e^{i\\pi} = -1$ (Euler's identity: $e^{i\\pi} + 1 = 0$)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Euler's Formula",
+      "url": "https://www.youtube.com/watch?v=mvmuCPvRoWQ",
+      "source": "3Blue1Brown"
+    },
+    {
+      "type": "article",
+      "title": "Euler's Formula",
+      "url": "https://brilliant.org/wiki/eulers-formula/",
+      "source": "Brilliant"
+    }
+  ]
+}

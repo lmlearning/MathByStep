@@ -1,0 +1,126 @@
+{
+  "id": "algebra-logarithm-basic-1",
+  "type": "problem",
+  "title": "Evaluate Basic Logarithm",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "algebra",
+    "logarithms"
+  ],
+  "statement": {
+    "text": "Evaluate $\\log_2(8)$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "$\\log_2(8)$ means: 2 to what power equals 8?",
+        "hint": "$2^? = 8$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^3 = 8$, so answer is 3"
+        },
+        {
+          "id": "b",
+          "text": "$2^2 = 8$"
+        },
+        {
+          "id": "c",
+          "text": "$2^8 = 8$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Verify: $2^3 = ?$",
+        "hint": "$2^3 = 8$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$8$"
+        },
+        {
+          "id": "b",
+          "text": "$6$"
+        },
+        {
+          "id": "c",
+          "text": "$9$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\log_2(8) = 3$ because $2^3 = 8$"
+    ],
+    "fullSolution": "$\\log_2(8) = 3$ because $2^3 = 8$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Introduction to Logarithms",
+      "url": "https://www.youtube.com/watch?v=ntBWrcbAhaY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Logarithms",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/LogFunctions.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Logarithms",
+      "url": "https://www.youtube.com/watch?v=BcBnOhkmiqo",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
