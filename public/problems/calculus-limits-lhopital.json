@@ -1,0 +1,176 @@
+{
+  "id": "calculus-limits-lhopital",
+  "type": "problem",
+  "title": "L'Hôpital's Rule Application",
+  "topic": "Calculus",
+  "difficulty": 4,
+  "estimatedTime": 11,
+  "tags": [
+    "calculus",
+    "limits",
+    "lhopital",
+    "indeterminate-forms"
+  ],
+  "statement": {
+    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(x) - x}{x^3}$ using L'Hôpital's rule."
+  },
+  "objectives": [
+    "Identify indeterminate form",
+    "Apply L'Hôpital's rule",
+    "Evaluate limit"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Verify indeterminate form."
+      },
+      "prompt": {
+        "question": "What form does this limit have?",
+        "hint": "As $x \\to 0$: numerator $\\to \\sin(0) - 0 = 0$, denominator $\\to 0^3 = 0$. Form: $\\frac{0}{0}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{0}{0}$ indeterminate form (L'Hôpital's rule applies)"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{0}$ (undefined, limit doesn't exist)"
+        },
+        {
+          "id": "c",
+          "text": "$0$ (determinate, no need for L'Hôpital)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Both numerator and denominator approach 0 as $x \\to 0$. This is the indeterminate form $\\frac{0}{0}$, perfect for L'Hôpital's rule.",
+          "insight": "L'Hôpital's rule applies to indeterminate forms $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$. Other forms require algebraic manipulation first."
+        },
+        "incorrect": {
+          "1": "Check: $\\sin(0) = 0$, so numerator $\\to 0 - 0 = 0$. Denominator also $\\to 0$. Form is $\\frac{0}{0}$.",
+          "2": "The limit exists and requires L'Hôpital's rule since we have $\\frac{0}{0}$ form."
+        }
+      },
+      "resultState": {
+        "description": "Identified 0/0 form"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Apply L'Hôpital's rule once."
+      },
+      "prompt": {
+        "question": "After applying L'Hôpital's rule, what do we get?",
+        "hint": "$\\lim_{x \\to 0} \\frac{\\cos(x) - 1}{3x^2}$. Still $\\frac{0}{0}$ form! Apply L'Hôpital again."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lim_{x \\to 0} \\frac{\\cos(x) - 1}{3x^2}$ (still $\\frac{0}{0}$, need to apply again)"
+        },
+        {
+          "id": "b",
+          "text": "$\\lim_{x \\to 0} \\frac{\\cos(x)}{3x^2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\lim_{x \\to 0} \\frac{1}{3} = \\frac{1}{3}$ (done)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Differentiate numerator: $(\\sin x - x)' = \\cos x - 1$. Differentiate denominator: $(x^3)' = 3x^2$. New limit: $\\frac{\\cos x - 1}{3x^2}$. Check: still $\\frac{0}{0}$!",
+          "insight": "Sometimes need to apply L'Hôpital multiple times until we get a determinate form."
+        },
+        "incorrect": {
+          "1": "Derivative of $(\\sin x - x)$ is $\\cos x - 1$, not just $\\cos x$. The $-x$ contributes $-1$.",
+          "2": "After one application, we still have $\\frac{0}{0}$ form. Can't evaluate yet!"
+        }
+      },
+      "resultState": {
+        "description": "First application done"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Apply L'Hôpital's rule second time."
+      },
+      "prompt": {
+        "question": "What is the final answer?",
+        "hint": "$\\lim_{x \\to 0} \\frac{-\\sin(x)}{6x}$. Still $\\frac{0}{0}$! Third time: $\\lim_{x \\to 0} \\frac{-\\cos(x)}{6} = \\frac{-1}{6} = -\\frac{1}{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{1}{6}$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{6}$ (positive)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Second application: $\\frac{(\\cos x - 1)'}{(3x^2)'} = \\frac{-\\sin x}{6x}$. Still $\\frac{0}{0}$! Third: $\\frac{(-\\sin x)'}{(6x)'} = \\frac{-\\cos x}{6} \\to \\frac{-1}{6}$ as $x \\to 0$.",
+          "insight": "This limit reveals a Taylor series insight: $\\sin x = x - \\frac{x^3}{6} + O(x^5)$, so $\\frac{\\sin x - x}{x^3} \\approx \\frac{-x^3/6}{x^3} = -\\frac{1}{6}$."
+        },
+        "incorrect": {
+          "1": "Not zero! Apply L'Hôpital carefully through all steps to get $-\\frac{1}{6}$.",
+          "2": "Check the sign: derivative of $\\cos x$ is $-\\sin x$ (negative). Final answer is $-\\frac{1}{6}$."
+        }
+      },
+      "resultState": {
+        "description": "Found limit = -1/6"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "L'Hôpital's rule: for $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$, $\\lim \\frac{f}{g} = \\lim \\frac{f'}{g'}$",
+      "May need multiple applications until determinate form reached",
+      "Here: applied 3 times to resolve $\\frac{0}{0}$ form",
+      "Steps: $\\frac{\\sin x - x}{x^3} \\to \\frac{\\cos x - 1}{3x^2} \\to \\frac{-\\sin x}{6x} \\to \\frac{-\\cos x}{6}$",
+      "Final answer: $-\\frac{1}{6}$",
+      "Connects to Taylor series: $\\sin x = x - \\frac{x^3}{6} + \\cdots$"
+    ],
+    "fullSolution": "Check form: 0/0 ✓. Apply L'Hôpital: lim (cos x - 1)/(3x²). Still 0/0, apply again: lim (-sin x)/(6x). Still 0/0, apply third time: lim (-cos x)/6 = -cos(0)/6 = -1/6.",
+    "relatedProblems": [
+      "calculus-squeeze-theorem-trig",
+      "calculus-taylor-series"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "L'Hôpital's Rule",
+      "url": "https://www.youtube.com/watch?v=2mfPsER5rxs",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "L'Hôpital's Rule",
+      "url": "https://brilliant.org/wiki/lhopitals-rule/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "L'Hôpital's Rule",
+      "url": "https://www.youtube.com/watch?v=kfF40MiS7zA",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

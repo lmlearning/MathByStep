@@ -1,0 +1,176 @@
+{
+  "id": "geometry-pythagorean-theorem-distance",
+  "type": "problem",
+  "title": "Pythagorean Theorem - Real World",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "geometry",
+    "pythagorean-theorem",
+    "right-triangles",
+    "applications"
+  ],
+  "statement": {
+    "text": "A 13-foot ladder leans against a wall. The base of the ladder is 5 feet from the wall. How high up the wall does the ladder reach?"
+  },
+  "objectives": [
+    "Identify right triangle",
+    "Apply Pythagorean theorem",
+    "Solve for unknown side"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Set up the problem with Pythagorean theorem."
+      },
+      "prompt": {
+        "question": "What equation represents this situation?",
+        "hint": "Ladder (13 ft) is hypotenuse, base (5 ft) is one leg, height $h$ is other leg: $5^2 + h^2 = 13^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$5^2 + h^2 = 13^2$ (base² + height² = ladder²)"
+        },
+        {
+          "id": "b",
+          "text": "$5 + h = 13$"
+        },
+        {
+          "id": "c",
+          "text": "$h^2 + 13^2 = 5^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Pythagorean theorem: $a^2 + b^2 = c^2$ where $c$ is hypotenuse. Here: ladder (13 ft) is hypotenuse, base and height are legs.",
+          "insight": "Ladder forms hypotenuse because it's the longest side, opposite the right angle (ground meets wall at 90°)."
+        },
+        "incorrect": {
+          "1": "Can't just add lengths! Need Pythagorean theorem for right triangles: $a^2 + b^2 = c^2$.",
+          "2": "Hypotenuse (13) should be alone on one side. It's the longest side: $5^2 + h^2 = 13^2$."
+        }
+      },
+      "resultState": {
+        "description": "Set up equation"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve for height."
+      },
+      "prompt": {
+        "question": "What is $h$?",
+        "hint": "$5^2 + h^2 = 13^2 \\Rightarrow 25 + h^2 = 169 \\Rightarrow h^2 = 144 \\Rightarrow h = 12$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$h = 12$ feet"
+        },
+        {
+          "id": "b",
+          "text": "$h = 8$ feet"
+        },
+        {
+          "id": "c",
+          "text": "$h = \\sqrt{144} = \\pm 12$ feet"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $h^2 = 169 - 25 = 144$, so $h = \\sqrt{144} = 12$ feet. We take the positive root since height must be positive.",
+          "insight": "This is a 5-12-13 Pythagorean triple, one of the most common! Others: 3-4-5, 8-15-17, 7-24-25."
+        },
+        "incorrect": {
+          "1": "Calculate: $\\sqrt{169 - 25} = \\sqrt{144} = 12$, not 8.",
+          "2": "Physical distances are positive. Take $h = +12$ feet only."
+        }
+      },
+      "resultState": {
+        "description": "Found h = 12 feet"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Verify the answer."
+      },
+      "prompt": {
+        "question": "Let's verify: does $5^2 + 12^2 = 13^2$?",
+        "hint": "$25 + 144 = 169$ ✓ Yes!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes! $25 + 144 = 169$. The ladder reaches 12 feet up the wall."
+        },
+        {
+          "id": "b",
+          "text": "No, doesn't work"
+        },
+        {
+          "id": "c",
+          "text": "Close enough"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Verification: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$ ✓. The ladder reaches exactly 12 feet up the wall.",
+          "insight": "Always verify your answer! Check: $\\sqrt{5^2 + 12^2} = \\sqrt{169} = 13$ ✓ matches the ladder length."
+        },
+        "incorrect": {
+          "1": "It does work! Check: $25 + 144 = 169$.",
+          "2": "In mathematics, we need exact answers, not approximations (unless the problem involves measurements)."
+        }
+      },
+      "resultState": {
+        "description": "Verified answer"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Pythagorean theorem: $a^2 + b^2 = c^2$ for right triangles",
+      "$c$ is hypotenuse (longest side, opposite right angle)",
+      "Here: $5^2 + h^2 = 13^2$",
+      "Solve: $h^2 = 169 - 25 = 144$, so $h = 12$ feet",
+      "5-12-13 is a Pythagorean triple",
+      "Ladder reaches 12 feet up the wall"
+    ],
+    "fullSolution": "Right triangle: base = 5 ft, height = h ft, hypotenuse (ladder) = 13 ft. Pythagorean theorem: 5² + h² = 13². Calculate: 25 + h² = 169, so h² = 144, thus h = 12 feet. This is the 5-12-13 Pythagorean triple.",
+    "relatedProblems": [
+      "geometry-triangle-inequality",
+      "geometry-coordinate-distance-midpoint"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Pythagorean Theorem",
+      "url": "https://www.youtube.com/watch?v=AA6RfgP-AHU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Pythagorean Theorem",
+      "url": "https://brilliant.org/wiki/pythagorean-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Pythagorean Theorem Word Problems",
+      "url": "https://www.youtube.com/watch?v=Cr6kXKotXeU",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

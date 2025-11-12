@@ -1,0 +1,176 @@
+{
+  "id": "number-theory-euclidean-algorithm-gcd",
+  "type": "problem",
+  "title": "Euclidean Algorithm for GCD",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "number-theory",
+    "gcd",
+    "euclidean-algorithm",
+    "division"
+  ],
+  "statement": {
+    "text": "Use the Euclidean algorithm to find $\\gcd(252, 105)$."
+  },
+  "objectives": [
+    "Apply Euclidean algorithm",
+    "Perform successive divisions",
+    "Find GCD efficiently"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Start with the division algorithm."
+      },
+      "prompt": {
+        "question": "Divide 252 by 105 with remainder",
+        "hint": "$252 = 105 \\cdot 2 + 42$ (quotient 2, remainder 42)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$252 = 105 \\cdot 2 + 42$ (so $\\gcd(252, 105) = \\gcd(105, 42)$)"
+        },
+        {
+          "id": "b",
+          "text": "$252 = 105 \\cdot 1 + 147$"
+        },
+        {
+          "id": "c",
+          "text": "$252 \\div 105 = 2.4$, so GCD is 2"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $252 \\div 105 = 2$ remainder $42$. Key insight: $\\gcd(252, 105) = \\gcd(105, 42)$. GCD is preserved when we replace the larger number with the remainder.",
+          "insight": "Euclidean algorithm: repeatedly apply $\\gcd(a,b) = \\gcd(b, a \\bmod b)$ until remainder is 0."
+        },
+        "incorrect": {
+          "1": "Check: $105 \\times 1 = 105$, so remainder would be $252 - 105 = 147 > 105$. Remainder must be less than divisor!",
+          "2": "Need integer division with remainder, not decimal division."
+        }
+      },
+      "resultState": {
+        "description": "First step: gcd(105, 42)"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Continue the algorithm."
+      },
+      "prompt": {
+        "question": "Now find $\\gcd(105, 42)$",
+        "hint": "$105 = 42 \\cdot 2 + 21$, so $\\gcd(105, 42) = \\gcd(42, 21)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$105 = 42 \\cdot 2 + 21$, continue with $\\gcd(42, 21)$"
+        },
+        {
+          "id": "b",
+          "text": "$105 = 42 \\cdot 3 + 0$, done"
+        },
+        {
+          "id": "c",
+          "text": "GCD is 42 (the smaller number)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $105 = 42 \\times 2 + 21$. Now we need $\\gcd(42, 21)$. Keep going!",
+          "insight": "Pattern: each step roughly halves the numbers, making the algorithm very efficient even for large numbers."
+        },
+        "incorrect": {
+          "1": "$42 \\times 3 = 126 > 105$, so quotient can't be 3. It's $42 \\times 2 = 84$, remainder $21$.",
+          "2": "GCD might divide both, but we need to continue the algorithm to be sure."
+        }
+      },
+      "resultState": {
+        "description": "Second step: gcd(42, 21)"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Complete the algorithm."
+      },
+      "prompt": {
+        "question": "What is $\\gcd(42, 21)$?",
+        "hint": "$42 = 21 \\cdot 2 + 0$. Remainder is 0, so $\\gcd(42, 21) = 21$. Therefore $\\gcd(252, 105) = 21$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\gcd(252, 105) = 21$ (algorithm terminates when remainder is 0)"
+        },
+        {
+          "id": "b",
+          "text": "$\\gcd(252, 105) = 42$"
+        },
+        {
+          "id": "c",
+          "text": "$\\gcd(252, 105) = 1$ (coprime)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $42 = 21 \\times 2 + 0$. When remainder is 0, the algorithm stops. The GCD is the last non-zero remainder: 21.",
+          "insight": "Verify: $252 = 21 \\times 12$ and $105 = 21 \\times 5$. Indeed, 21 divides both and is the largest such divisor (since $\\gcd(12,5) = 1$)."
+        },
+        "incorrect": {
+          "1": "42 is A common divisor, but not the greatest. Check: $252 \\div 42 = 6$ and $105 \\div 42 = 2.5$ (not integer!).",
+          "2": "They're not coprime. The algorithm found GCD = 21, meaning they share common factor 21."
+        }
+      },
+      "resultState": {
+        "description": "Found gcd(252, 105) = 21"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Euclidean algorithm: $\\gcd(a,b) = \\gcd(b, a \\bmod b)$",
+      "Steps: $252 = 105(2) + 42$, $105 = 42(2) + 21$, $42 = 21(2) + 0$",
+      "Algorithm stops when remainder = 0",
+      "GCD is last non-zero remainder: 21",
+      "Verify: $252 = 21 \\times 12$, $105 = 21 \\times 5$",
+      "Most efficient method for finding GCD"
+    ],
+    "fullSolution": "Step 1: 252 = 105·2 + 42. Step 2: 105 = 42·2 + 21. Step 3: 42 = 21·2 + 0. Remainder is 0, so gcd(252, 105) = 21 (last non-zero remainder).",
+    "relatedProblems": [
+      "number-theory-prime-factorization-lcm",
+      "number-theory-modular-exponentiation"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Euclidean Algorithm",
+      "url": "https://www.youtube.com/watch?v=fwuj4yzoX1o",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Euclidean Algorithm",
+      "url": "https://brilliant.org/wiki/euclidean-algorithm/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "GCD - Euclidean Algorithm",
+      "url": "https://www.youtube.com/watch?v=JUzYl1TYMcU",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
