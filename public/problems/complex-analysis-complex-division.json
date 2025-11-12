@@ -1,0 +1,166 @@
+{
+  "id": "complex-analysis-complex-division",
+  "type": "problem",
+  "title": "Divide Complex Numbers",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "complex-analysis",
+    "complex-arithmetic",
+    "division"
+  ],
+  "statement": {
+    "text": "Compute $\\frac{2 + 3i}{1 - i}$."
+  },
+  "objectives": [
+    "Multiply by conjugate",
+    "Simplify complex quotient"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Multiply numerator and denominator by conjugate of denominator",
+        "hint": "Conjugate of $1 - i$ is $1 + i$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{(2+3i)(1+i)}{(1-i)(1+i)}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{(2+3i)(1-i)}{(1-i)(1-i)}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2+3i}{1+i}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Multiply by $\\frac{1+i}{1+i}$ (which equals 1)",
+          "insight": "Conjugate eliminates imaginary part from denominator"
+        },
+        "incorrect": {
+          "1": "Use conjugate of denominator, not denominator itself",
+          "2": "Need to multiply both top and bottom by conjugate"
+        }
+      },
+      "resultState": {
+        "description": "Multiplied by conjugate"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Denominator: $(1-i)(1+i) = 1 - i^2 = ?$",
+        "hint": "$1 - (-1) = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$1 + i^2 = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $(1-i)(1+i) = 1 - i^2 = 1 - (-1) = 2$",
+          "insight": "Denominator becomes real (this is why we use conjugates)"
+        },
+        "incorrect": {
+          "1": "$(a-b)(a+b) = a^2 - b^2$, so $1 - i^2 = 1 - (-1) = 2$",
+          "2": "$i^2 = -1$, so $1 - i^2 = 1 - (-1) = 2$"
+        }
+      },
+      "resultState": {
+        "description": "Simplified denominator"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Numerator: $(2+3i)(1+i) = 2 + 2i + 3i + 3i^2 = ?$",
+        "hint": "$2 + 5i + 3(-1) = -1 + 5i$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1 + 5i$, so answer is $\\frac{-1 + 5i}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$2 + 5i$, so answer is $\\frac{2 + 5i}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$5 + 5i$, so answer is $\\frac{5 + 5i}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{2+3i}{1-i} = \\frac{-1+5i}{2} = -\\frac{1}{2} + \\frac{5}{2}i$",
+          "insight": "Final form has real and imaginary parts separated"
+        },
+        "incorrect": {
+          "1": "Don't forget $3i^2 = 3(-1) = -3$",
+          "2": "$2 + 5i - 3 = -1 + 5i$"
+        }
+      },
+      "resultState": {
+        "description": "Computed quotient"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{2+3i}{1-i} = -\\frac{1}{2} + \\frac{5}{2}i$. Multiply by conjugate to rationalize denominator."
+    ],
+    "fullSolution": "$\\frac{(2+3i)(1+i)}{(1-i)(1+i)} = \\frac{2+2i+3i-3}{2} = \\frac{-1+5i}{2} = -\\frac{1}{2} + \\frac{5}{2}i$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Dividing Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=69hKf8lnYEo",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complex Number Arithmetic",
+      "url": "https://brilliant.org/wiki/complex-numbers-arithmetic/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Number Division",
+      "url": "https://www.youtube.com/watch?v=B8YXW5sT_kA",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

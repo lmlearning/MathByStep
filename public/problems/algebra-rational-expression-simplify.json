@@ -1,0 +1,166 @@
+{
+  "id": "algebra-rational-expression-simplify",
+  "type": "problem",
+  "title": "Simplify Rational Expression",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "rational-expressions",
+    "factoring"
+  ],
+  "statement": {
+    "text": "Simplify: $\\frac{x^2 - 9}{x^2 + 6x + 9}$."
+  },
+  "objectives": [
+    "Factor numerator and denominator",
+    "Cancel common factors"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Factor numerator: $x^2 - 9$",
+        "hint": "Difference of squares: $x^2 - 9 = (x-3)(x+3)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x-3)(x+3)$"
+        },
+        {
+          "id": "b",
+          "text": "$(x-9)(x+1)$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot factor"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $x^2 - 9 = x^2 - 3^2 = (x-3)(x+3)$",
+          "insight": "Pattern: $a^2 - b^2 = (a-b)(a+b)$"
+        },
+        "incorrect": {
+          "1": "Check: $(x-9)(x+1) = x^2 - 8x - 9 \\neq x^2 - 9$",
+          "2": "This is a difference of squares"
+        }
+      },
+      "resultState": {
+        "description": "Factored numerator"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Factor denominator: $x^2 + 6x + 9$",
+        "hint": "Perfect square trinomial: $(x+3)^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x+3)^2$"
+        },
+        {
+          "id": "b",
+          "text": "$(x+3)(x-3)$"
+        },
+        {
+          "id": "c",
+          "text": "$(x+9)(x+1)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $x^2 + 6x + 9 = (x+3)^2$",
+          "insight": "Pattern: $a^2 + 2ab + b^2 = (a+b)^2$. Here: $x^2 + 2(3)x + 3^2$"
+        },
+        "incorrect": {
+          "1": "That would give $x^2 - 9$, not $x^2 + 6x + 9$",
+          "2": "Check: $(x+9)(x+1) = x^2 + 10x + 9$"
+        }
+      },
+      "resultState": {
+        "description": "Factored denominator"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Simplify: $\\frac{(x-3)(x+3)}{(x+3)^2}$",
+        "hint": "Cancel one factor of $(x+3)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{x-3}{x+3}$ where $x \\neq -3$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{x-3}{1}$"
+        },
+        {
+          "id": "c",
+          "text": "$1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Cancel one $(x+3)$ from numerator and denominator",
+          "insight": "Must note restriction: $x \\neq -3$ (from original denominator)"
+        },
+        "incorrect": {
+          "1": "Only cancel one $(x+3)$; denominator still has one left",
+          "2": "The numerator and denominator are not equal"
+        }
+      },
+      "resultState": {
+        "description": "Simplified expression"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{x^2 - 9}{x^2 + 6x + 9} = \\frac{x-3}{x+3}$ for $x \\neq -3$"
+    ],
+    "fullSolution": "$\\frac{(x-3)(x+3)}{(x+3)^2} = \\frac{x-3}{x+3}$ where $x \\neq -3$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Simplifying Rational Expressions",
+      "url": "https://www.youtube.com/watch?v=9mGHq8T_u9Q",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Rational Expressions",
+      "url": "https://brilliant.org/wiki/rational-expressions/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Rational Expressions",
+      "url": "https://www.youtube.com/watch?v=lKWDEMSeFKs",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

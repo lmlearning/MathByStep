@@ -1,0 +1,165 @@
+{
+  "id": "differential-equations-exact-equation-basic",
+  "type": "problem",
+  "title": "Exact Differential Equation",
+  "topic": "Differential Equations",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "differential-equations",
+    "exact-equations"
+  ],
+  "statement": {
+    "text": "Verify that $(2x + y)dx + (x + 2y)dy = 0$ is exact, then solve."
+  },
+  "objectives": [
+    "Check exactness condition",
+    "Find potential function"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "For $M\\,dx + N\\,dy = 0$: exactness requires $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$",
+        "hint": "$M = 2x + y$, $N = x + 2y$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\partial M}{\\partial y} = 1 = \\frac{\\partial N}{\\partial x}$ (exact ✓)"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\partial M}{\\partial y} = 2 \\neq \\frac{\\partial N}{\\partial x} = 1$"
+        },
+        {
+          "id": "c",
+          "text": "Not exact"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $M_y = 1$ and $N_x = 1$, so equation is exact",
+          "insight": "Exactness means there exists potential function $F$ with $dF = 0$"
+        },
+        "incorrect": {
+          "1": "$\\frac{\\partial(2x+y)}{\\partial y} = 1$, not 2",
+          "2": "Check calculations: both partials equal 1"
+        }
+      },
+      "resultState": {
+        "description": "Verified exactness"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Find $F$ where $\\frac{\\partial F}{\\partial x} = M = 2x + y$",
+        "hint": "Integrate with respect to $x$: $F = x^2 + xy + g(y)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F = x^2 + xy + g(y)$"
+        },
+        {
+          "id": "b",
+          "text": "$F = 2x^2 + xy$"
+        },
+        {
+          "id": "c",
+          "text": "$F = x^2 + y^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\int (2x+y)\\,dx = x^2 + xy + g(y)$ where $g(y)$ is unknown",
+          "insight": "$g(y)$ is the 'constant' of integration (depends on $y$, not $x$)"
+        },
+        "incorrect": {
+          "1": "$\\int 2x\\,dx = x^2$, not $2x^2$",
+          "2": "Need $+g(y)$ term for general solution"
+        }
+      },
+      "resultState": {
+        "description": "Found partial F"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Use $\\frac{\\partial F}{\\partial y} = N = x + 2y$ to find $g(y)$",
+        "hint": "$\\frac{\\partial}{\\partial y}[x^2 + xy + g(y)] = x + g'(y) = x + 2y$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$g'(y) = 2y$, so $g(y) = y^2$. Solution: $x^2 + xy + y^2 = C$"
+        },
+        {
+          "id": "b",
+          "text": "$g(y) = 2y$"
+        },
+        {
+          "id": "c",
+          "text": "$g(y) = y$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $g'(y) = 2y \\Rightarrow g(y) = y^2$. Implicit solution: $x^2 + xy + y^2 = C$",
+          "insight": "Solution represents a family of curves (one for each value of $C$)"
+        },
+        "incorrect": {
+          "1": "Need to integrate $g'(y) = 2y$ to get $g(y) = y^2$",
+          "2": "$\\int 2y\\,dy = y^2$, not $y$"
+        }
+      },
+      "resultState": {
+        "description": "Found complete solution"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Solution: $x^2 + xy + y^2 = C$. Exact equations have potential function $F$ with $F_x = M$, $F_y = N$."
+    ],
+    "fullSolution": "Exact since $M_y = N_x = 1$. Find $F$: $F_x = 2x+y$ gives $F = x^2 + xy + g(y)$. Then $F_y = x + g' = x + 2y$, so $g = y^2$. Solution: $x^2 + xy + y^2 = C$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Exact Equations",
+      "url": "https://www.youtube.com/watch?v=Ov94v47jQv8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Exact Differential Equations",
+      "url": "https://brilliant.org/wiki/exact-differential-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Exact Differential Equations",
+      "url": "https://www.youtube.com/watch?v=3_AiOTjJUDg",
+      "source": "Professor Leonard"
+    }
+  ]
+}

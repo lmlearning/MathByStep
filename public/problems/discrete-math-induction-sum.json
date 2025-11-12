@@ -1,0 +1,166 @@
+{
+  "id": "discrete-math-induction-sum",
+  "type": "problem",
+  "title": "Proof by Induction (Sum Formula)",
+  "topic": "Discrete Mathematics",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "discrete-math",
+    "mathematical-induction",
+    "proofs"
+  ],
+  "statement": {
+    "text": "Prove by induction: $1 + 2 + 3 + \\cdots + n = \\frac{n(n+1)}{2}$ for all $n \\geq 1$."
+  },
+  "objectives": [
+    "Apply induction method",
+    "Prove base case and inductive step"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Base case: verify formula for $n = 1$",
+        "hint": "LHS: $1$. RHS: $\\frac{1(2)}{2} = 1$. Equal ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Base case holds: both sides equal 1"
+        },
+        {
+          "id": "b",
+          "text": "Base case fails"
+        },
+        {
+          "id": "c",
+          "text": "Don't need base case"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! For $n=1$: $1 = \\frac{1(2)}{2} = 1$ ✓",
+          "insight": "Base case establishes formula works for smallest value"
+        },
+        "incorrect": {
+          "1": "$1 = \\frac{1 \\cdot 2}{2} = 1$, so base case holds",
+          "2": "Base case is essential for induction"
+        }
+      },
+      "resultState": {
+        "description": "Verified base case"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Inductive hypothesis: assume true for $n = k$: $1+2+\\cdots+k = \\frac{k(k+1)}{2}$",
+        "hint": "Now prove for $n = k+1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Show: $1+2+\\cdots+k+(k+1) = \\frac{(k+1)(k+2)}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "We're done after assuming it"
+        },
+        {
+          "id": "c",
+          "text": "Show: $1+2+\\cdots+k = \\frac{k(k+1)}{2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Must prove $P(k+1)$ using $P(k)$",
+          "insight": "Inductive step: prove $(k+1)$ case assuming $k$ case"
+        },
+        "incorrect": {
+          "1": "After assuming, must prove the next case",
+          "2": "That's what we assumed, not what we need to prove"
+        }
+      },
+      "resultState": {
+        "description": "Set up inductive step"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "LHS: $(1+2+\\cdots+k) + (k+1) = \\frac{k(k+1)}{2} + (k+1)$",
+        "hint": "$= \\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2}$ = RHS ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Equals $\\frac{(k+1)(k+2)}{2}$, proof complete"
+        },
+        {
+          "id": "b",
+          "text": "Equals $\\frac{k(k+1)}{2} + k + 1$ (cannot simplify)"
+        },
+        {
+          "id": "c",
+          "text": "Need more steps"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Factor: $\\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2}$ ✓",
+          "insight": "By induction, formula holds for all $n \\geq 1$"
+        },
+        "incorrect": {
+          "1": "Can simplify: $\\frac{k(k+1)}{2} + (k+1) = \\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2}$",
+          "2": "This completes the proof"
+        }
+      },
+      "resultState": {
+        "description": "Completed proof"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Proven by induction: $\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$. Induction has base case + inductive step."
+    ],
+    "fullSolution": "Base: $n=1$ gives $1 = \\frac{1(2)}{2}$ ✓. Step: assume $k$, prove $k+1$: $\\frac{k(k+1)}{2} + (k+1) = \\frac{(k+1)(k+2)}{2}$ ✓",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Mathematical Induction",
+      "url": "https://www.youtube.com/watch?v=dxIDZ_NGjS0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Mathematical Induction",
+      "url": "https://brilliant.org/wiki/mathematical-induction/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Proof by Induction",
+      "url": "https://www.youtube.com/watch?v=wblW_M_HVQ8",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

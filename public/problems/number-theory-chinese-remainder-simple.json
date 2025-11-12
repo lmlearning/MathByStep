@@ -1,0 +1,166 @@
+{
+  "id": "number-theory-chinese-remainder-simple",
+  "type": "problem",
+  "title": "Chinese Remainder Theorem (Simple)",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "number-theory",
+    "chinese-remainder-theorem",
+    "modular-arithmetic"
+  ],
+  "statement": {
+    "text": "Find the smallest positive integer $x$ where $x \\equiv 2 \\pmod{3}$ and $x \\equiv 3 \\pmod{5}$."
+  },
+  "objectives": [
+    "Apply Chinese Remainder Theorem",
+    "Find solution systematically"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "From first condition: $x = 3k + 2$ for some integer $k$",
+        "hint": "Numbers: 2, 5, 8, 11, 14, 17, 20, 23, ..."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 2, 5, 8, 11, 14, ...$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 3, 6, 9, 12, 15, ...$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 2, 4, 6, 8, 10, ...$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $x \\equiv 2 \\pmod{3}$ means $x = 3k + 2$",
+          "insight": "List values satisfying first condition, then test second"
+        },
+        "incorrect": {
+          "1": "These give remainder 0 mod 3, not 2",
+          "2": "These give all even numbers, not necessarily $\\equiv 2 \\pmod{3}$"
+        }
+      },
+      "resultState": {
+        "description": "Listed candidates"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Which value also satisfies $x \\equiv 3 \\pmod{5}$?",
+        "hint": "Test: $2 \\bmod 5 = 2$, $5 \\bmod 5 = 0$, $8 \\bmod 5 = 3$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 8$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 5$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $8 = 3(2) + 2$ and $8 = 5(1) + 3$",
+          "insight": "8 is the smallest positive integer satisfying both conditions"
+        },
+        "incorrect": {
+          "1": "$2 \\bmod 5 = 2 \\neq 3$",
+          "2": "$5 \\bmod 5 = 0 \\neq 3$"
+        }
+      },
+      "resultState": {
+        "description": "Found solution"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "General solution: $x = 8 + 15n$ for any integer $n$",
+        "hint": "Solutions repeat every $\\text{lcm}(3,5) = 15$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Smallest: $x = 8$, general: $x \\equiv 8 \\pmod{15}$"
+        },
+        {
+          "id": "b",
+          "text": "Only solution is $x = 8$"
+        },
+        {
+          "id": "c",
+          "text": "Solutions: $x = 8, 13, 18, ...$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! All solutions: $x = 8, 23, 38, ...$ (adding 15 each time)",
+          "insight": "CRT: solutions repeat with period $\\text{lcm}(m_1, m_2)$ when moduli are coprime"
+        },
+        "incorrect": {
+          "1": "Infinitely many solutions, all $\\equiv 8 \\pmod{15}$",
+          "2": "$13 \\bmod 3 = 1 \\neq 2$"
+        }
+      },
+      "resultState": {
+        "description": "Found general solution"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Smallest solution: $x = 8$. General: $x \\equiv 8 \\pmod{15}$"
+    ],
+    "fullSolution": "$x \\equiv 2 \\pmod{3}$: test $2, 5, 8, ...$. First satisfying $x \\equiv 3 \\pmod{5}$ is 8. General: $x = 8 + 15n$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://www.youtube.com/watch?v=zIFehsBHB8o",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://brilliant.org/wiki/chinese-remainder-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://www.youtube.com/watch?v=ru7mWZJlRQg",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "calculus-limit-factoring",
+  "type": "problem",
+  "title": "Limit by Factoring",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "calculus",
+    "limits",
+    "factoring"
+  ],
+  "statement": {
+    "text": "Evaluate $\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$."
+  },
+  "objectives": [
+    "Identify indeterminate form",
+    "Factor and simplify"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Direct substitution gives $\\frac{0}{0}$ (indeterminate). Factor numerator",
+        "hint": "$x^2 - 4 = (x-2)(x+2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{(x-2)(x+2)}{x-2}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{x^2 - 4}{x - 2}$ (cannot factor)"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{(x-4)(x+1)}{x-2}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Difference of squares: $x^2 - 4 = (x-2)(x+2)$",
+          "insight": "Factoring reveals the common factor causing the indeterminate form"
+        },
+        "incorrect": {
+          "1": "Difference of squares: $a^2 - b^2 = (a-b)(a+b)$",
+          "2": "Check factorization: $(x-4)(x+1) = x^2 - 3x - 4 \\neq x^2 - 4$"
+        }
+      },
+      "resultState": {
+        "description": "Factored expression"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Cancel common factor $(x-2)$ for $x \\neq 2$",
+        "hint": "$\\frac{(x-2)(x+2)}{x-2} = x+2$ for $x \\neq 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lim_{x \\to 2} (x+2)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\lim_{x \\to 2} (x-2)$"
+        },
+        {
+          "id": "c",
+          "text": "Limit does not exist"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Simplified to $x+2$",
+          "insight": "We can cancel because we're taking limit as $x \\to 2$, not evaluating at $x = 2$"
+        },
+        "incorrect": {
+          "1": "Cancel $(x-2)$ from numerator and denominator",
+          "2": "After canceling, the limit exists"
+        }
+      },
+      "resultState": {
+        "description": "Simplified expression"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Evaluate $\\lim_{x \\to 2} (x+2)$ by direct substitution",
+        "hint": "$2 + 2 = 4$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = 4$",
+          "insight": "This is the slope of $y = x^2$ at $x = 2$ (derivative concept preview)"
+        },
+        "incorrect": {
+          "1": "That was the original indeterminate form",
+          "2": "Substitute: $2 + 2 = 4$"
+        }
+      },
+      "resultState": {
+        "description": "Found limit"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = 4$. Factor to resolve $\\frac{0}{0}$ indeterminate form."
+    ],
+    "fullSolution": "Factor: $\\frac{(x-2)(x+2)}{x-2} = x+2$ for $x \\neq 2$. Then $\\lim_{x \\to 2} (x+2) = 4$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Limits by Factoring",
+      "url": "https://www.youtube.com/watch?v=riXcZT2ICjA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Limits",
+      "url": "https://brilliant.org/wiki/limits-of-functions/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Calculus Limits",
+      "url": "https://www.youtube.com/watch?v=YNstP0ESndU",
+      "source": "Professor Leonard"
+    }
+  ]
+}

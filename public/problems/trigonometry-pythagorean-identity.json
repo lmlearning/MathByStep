@@ -1,0 +1,166 @@
+{
+  "id": "trigonometry-pythagorean-identity",
+  "type": "problem",
+  "title": "Apply Pythagorean Identity",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "trigonometry",
+    "identities",
+    "pythagorean-identity"
+  ],
+  "statement": {
+    "text": "If $\\cos\\theta = \\frac{3}{5}$ and $0 < \\theta < \\frac{\\pi}{2}$, find $\\sin\\theta$."
+  },
+  "objectives": [
+    "Apply Pythagorean identity",
+    "Find sine from cosine"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Pythagorean identity: $\\sin^2\\theta + \\cos^2\\theta = 1$",
+        "hint": "Solve for $\\sin^2\\theta$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sin^2\\theta = 1 - \\cos^2\\theta$"
+        },
+        {
+          "id": "b",
+          "text": "$\\sin\\theta = \\sqrt{1 - \\cos\\theta}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin\\theta = 1 - \\cos\\theta$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Rearrange to isolate $\\sin^2\\theta$",
+          "insight": "Most fundamental trigonometric identity"
+        },
+        "incorrect": {
+          "1": "Need $\\cos^2\\theta$, not just $\\cos\\theta$",
+          "2": "Don't forget the squares"
+        }
+      },
+      "resultState": {
+        "description": "Applied identity"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $\\sin^2\\theta = 1 - (\\frac{3}{5})^2$",
+        "hint": "$1 - \\frac{9}{25} = \\frac{16}{25}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sin^2\\theta = \\frac{16}{25}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\sin^2\\theta = \\frac{9}{25}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin^2\\theta = \\frac{2}{5}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $1 - \\frac{9}{25} = \\frac{25}{25} - \\frac{9}{25} = \\frac{16}{25}$",
+          "insight": "Now take square root to find $\\sin\\theta$"
+        },
+        "incorrect": {
+          "1": "That's $\\cos^2\\theta$, not $1 - \\cos^2\\theta$",
+          "2": "$(\\frac{3}{5})^2 = \\frac{9}{25}$, so $1 - \\frac{9}{25} = \\frac{16}{25}$"
+        }
+      },
+      "resultState": {
+        "description": "Found sin²θ"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Take square root: $\\sin\\theta = \\pm\\sqrt{\\frac{16}{25}}$. Which sign?",
+        "hint": "$0 < \\theta < \\frac{\\pi}{2}$ (Quadrant I), so $\\sin\\theta > 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sin\\theta = \\frac{4}{5}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\sin\\theta = -\\frac{4}{5}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin\\theta = \\frac{16}{25}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! In Quadrant I, all trig functions are positive",
+          "insight": "This is a 3-4-5 right triangle"
+        },
+        "incorrect": {
+          "1": "In Q1, sine is positive",
+          "2": "Don't forget to take the square root"
+        }
+      },
+      "resultState": {
+        "description": "Found sine value"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\sin\\theta = \\frac{4}{5}$. Pythagorean identity connects sine and cosine."
+    ],
+    "fullSolution": "$\\sin^2\\theta = 1 - (\\frac{3}{5})^2 = \\frac{16}{25}$. Since $\\theta$ in Q1, $\\sin\\theta = +\\frac{4}{5}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Pythagorean Identity",
+      "url": "https://www.youtube.com/watch?v=lJUwm7X8ZxY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Trigonometric Identities",
+      "url": "https://brilliant.org/wiki/trigonometric-identities/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Trig Identities",
+      "url": "https://www.youtube.com/watch?v=A0LV4r2c56c",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
