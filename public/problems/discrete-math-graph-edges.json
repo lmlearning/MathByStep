@@ -1,0 +1,126 @@
+{
+  "id": "discrete-math-graph-edges",
+  "type": "problem",
+  "title": "Count Graph Edges",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "discrete-math",
+    "graph-theory"
+  ],
+  "statement": {
+    "text": "How many edges are in a complete graph $K_6$ (6 vertices, all connected)?"
+  },
+  "objectives": [
+    "Apply complete graph formula",
+    "Use combinatorics"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Complete graph: every pair of vertices connected. How many pairs of 6 vertices?",
+        "hint": "Use combination formula: $\\binom{6}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\binom{6}{2} = \\frac{6!}{2!4!}$"
+        },
+        {
+          "id": "b",
+          "text": "$6 \\times 5 = 30$"
+        },
+        {
+          "id": "c",
+          "text": "$6 + 5 + 4 + 3 + 2 + 1 = 21$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Choose 2 vertices from 6 for each edge",
+          "insight": "Complete graph on $n$ vertices has $\\binom{n}{2}$ edges"
+        },
+        "incorrect": {
+          "1": "This counts ordered pairs, but edges are unordered",
+          "2": "This approach works but let's use the combination formula"
+        }
+      },
+      "resultState": {
+        "description": "Set up formula"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $\\binom{6}{2} = \\frac{6 \\times 5}{2 \\times 1} = ?$",
+        "hint": "$\\frac{30}{2} = 15$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$15$ edges"
+        },
+        {
+          "id": "b",
+          "text": "$30$ edges"
+        },
+        {
+          "id": "c",
+          "text": "$12$ edges"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $K_6$ has 15 edges",
+          "insight": "General formula: $K_n$ has $\\frac{n(n-1)}{2}$ edges"
+        },
+        "incorrect": {
+          "1": "Remember to divide by 2: $\\frac{30}{2} = 15$",
+          "2": "$\\frac{6 \\times 5}{2} = \\frac{30}{2} = 15$"
+        }
+      },
+      "resultState": {
+        "description": "Counted edges"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$K_6$ has $\\binom{6}{2} = 15$ edges. Formula: $K_n$ has $\\frac{n(n-1)}{2}$ edges."
+    ],
+    "fullSolution": "Complete graph $K_6$ connects all pairs of 6 vertices: $\\binom{6}{2} = \\frac{6 \\times 5}{2} = 15$ edges",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory",
+      "url": "https://www.youtube.com/watch?v=HkNdNpKUByM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complete Graphs",
+      "url": "https://brilliant.org/wiki/complete-graphs/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Graph Theory Basics",
+      "url": "https://www.youtube.com/watch?v=eQA-m22wjTQ",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

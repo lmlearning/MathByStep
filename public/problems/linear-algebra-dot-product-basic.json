@@ -1,0 +1,127 @@
+{
+  "id": "linear-algebra-dot-product-basic",
+  "type": "problem",
+  "title": "Calculate Dot Product",
+  "topic": "Linear Algebra",
+  "difficulty": 2,
+  "estimatedTime": 6,
+  "tags": [
+    "linear-algebra",
+    "vectors",
+    "dot-product"
+  ],
+  "statement": {
+    "text": "Find the dot product of vectors $\\vec{u} = \\langle 2, -3, 1 \\rangle$ and $\\vec{v} = \\langle 4, 1, -2 \\rangle$."
+  },
+  "objectives": [
+    "Apply dot product formula",
+    "Compute scalar result"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Dot product: $\\vec{u} \\cdot \\vec{v} = u_1v_1 + u_2v_2 + u_3v_3$",
+        "hint": "Multiply corresponding components and sum"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(2)(4) + (-3)(1) + (1)(-2)$"
+        },
+        {
+          "id": "b",
+          "text": "$\\langle 8, -3, -2 \\rangle$"
+        },
+        {
+          "id": "c",
+          "text": "$2 + 4 + (-3) + 1 + 1 + (-2)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Multiply corresponding components",
+          "insight": "Dot product produces a scalar, not a vector"
+        },
+        "incorrect": {
+          "1": "Dot product is a scalar, not a vector",
+          "2": "Multiply corresponding components, don't just add all values"
+        }
+      },
+      "resultState": {
+        "description": "Set up calculation"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $8 + (-3) + (-2) = ?$",
+        "hint": "$8 - 3 - 2 = 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$"
+        },
+        {
+          "id": "b",
+          "text": "$13$"
+        },
+        {
+          "id": "c",
+          "text": "$-3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\vec{u} \\cdot \\vec{v} = 3$",
+          "insight": "Positive dot product means angle < 90°; negative means angle > 90°"
+        },
+        "incorrect": {
+          "1": "$8 - 3 - 2 = 5 - 2 = 3$, not 13",
+          "2": "Check your arithmetic: $8 - 3 - 2 = 3$"
+        }
+      },
+      "resultState": {
+        "description": "Found dot product"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\vec{u} \\cdot \\vec{v} = 3$. Positive value indicates acute angle between vectors."
+    ],
+    "fullSolution": "$\\langle 2, -3, 1 \\rangle \\cdot \\langle 4, 1, -2 \\rangle = (2)(4) + (-3)(1) + (1)(-2) = 8 - 3 - 2 = 3$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Dot Product",
+      "url": "https://www.youtube.com/watch?v=WNuIhXo39_k",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Dot Product",
+      "url": "https://brilliant.org/wiki/dot-product/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Dot Product and Cross Product",
+      "url": "https://www.youtube.com/watch?v=h0NJK4mEIJU",
+      "source": "3Blue1Brown"
+    }
+  ]
+}

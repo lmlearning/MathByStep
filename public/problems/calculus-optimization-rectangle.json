@@ -1,0 +1,166 @@
+{
+  "id": "calculus-optimization-rectangle",
+  "type": "problem",
+  "title": "Maximize Rectangle Area",
+  "topic": "Calculus",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "calculus",
+    "optimization",
+    "applications"
+  ],
+  "statement": {
+    "text": "You have 100 meters of fence to enclose a rectangular garden. What dimensions maximize the area?"
+  },
+  "objectives": [
+    "Set up optimization problem",
+    "Use calculus to find maximum"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Let length = $x$ and width = $y$. Perimeter: $2x + 2y = 100$",
+        "hint": "Solve for $y$: $y = 50 - x$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 50 - x$"
+        },
+        {
+          "id": "b",
+          "text": "$y = 100 - 2x$"
+        },
+        {
+          "id": "c",
+          "text": "$y = 100 - x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! From $2x + 2y = 100$: $y = 50 - x$",
+          "insight": "Express one variable in terms of the other using the constraint"
+        },
+        "incorrect": {
+          "1": "$2x + 2y = 100 \\Rightarrow 2y = 100 - 2x \\Rightarrow y = 50 - x$",
+          "2": "Divide by 2: $x + y = 50$, so $y = 50 - x$"
+        }
+      },
+      "resultState": {
+        "description": "Expressed constraint"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Area: $A = xy = x(50 - x) = 50x - x^2$. Find critical points: $\\frac{dA}{dx} = 0$",
+        "hint": "$\\frac{dA}{dx} = 50 - 2x = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 25$ meters"
+        },
+        {
+          "id": "b",
+          "text": "$x = 50$ meters"
+        },
+        {
+          "id": "c",
+          "text": "$x = 12.5$ meters"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $50 - 2x = 0 \\Rightarrow x = 25$",
+          "insight": "Critical point occurs where derivative equals zero"
+        },
+        "incorrect": {
+          "1": "$50 - 2x = 0 \\Rightarrow 2x = 50 \\Rightarrow x = 25$",
+          "2": "$50 - 2x = 0$ gives $x = 25$, not 12.5"
+        }
+      },
+      "resultState": {
+        "description": "Found critical point"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Verify maximum: $\\frac{d^2A}{dx^2} = -2 < 0$ (concave down). Find $y$",
+        "hint": "$y = 50 - 25 = 25$ meters"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$25 \\times 25$ m square, area = 625 m²"
+        },
+        {
+          "id": "b",
+          "text": "$50 \\times 0$ m, area = 0 m²"
+        },
+        {
+          "id": "c",
+          "text": "$30 \\times 20$ m, area = 600 m²"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! A square maximizes area for fixed perimeter",
+          "insight": "For fixed perimeter, square has maximum area among rectangles"
+        },
+        "incorrect": {
+          "1": "These are endpoints, not the maximum",
+          "2": "Check: does this satisfy perimeter = 100?"
+        }
+      },
+      "resultState": {
+        "description": "Found optimal dimensions"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Optimal dimensions: $25 \\times 25$ m square with area 625 m². Square maximizes area for fixed perimeter."
+    ],
+    "fullSolution": "Constraint: $y = 50 - x$. Area: $A = x(50-x)$. $\\frac{dA}{dx} = 50 - 2x = 0 \\Rightarrow x = 25$. Then $y = 25$. Max area = 625 m²",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Optimization Problems",
+      "url": "https://www.youtube.com/watch?v=Ku-8TIvYcRk",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Optimization",
+      "url": "https://brilliant.org/wiki/optimization/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Calculus Optimization",
+      "url": "https://www.youtube.com/watch?v=Mwz_qRq-54k",
+      "source": "Professor Leonard"
+    }
+  ]
+}

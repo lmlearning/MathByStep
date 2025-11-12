@@ -1,0 +1,166 @@
+{
+  "id": "calculus-partial-fractions-basic",
+  "type": "problem",
+  "title": "Partial Fraction Decomposition",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "integration",
+    "partial-fractions"
+  ],
+  "statement": {
+    "text": "Decompose $\\frac{7x + 5}{(x+1)(x+2)}$ into partial fractions."
+  },
+  "objectives": [
+    "Set up partial fraction form",
+    "Solve for coefficients"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Write as sum of simpler fractions: $\\frac{7x + 5}{(x+1)(x+2)} = \\frac{A}{x+1} + \\frac{B}{x+2}$",
+        "hint": "Multiply both sides by $(x+1)(x+2)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$7x + 5 = A(x+2) + B(x+1)$"
+        },
+        {
+          "id": "b",
+          "text": "$7x + 5 = A + B$"
+        },
+        {
+          "id": "c",
+          "text": "$7x + 5 = Ax + B$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Clear denominators by multiplying by $(x+1)(x+2)$",
+          "insight": "Each fraction multiplied by LCD gives its numerator times other factors"
+        },
+        "incorrect": {
+          "1": "Need to multiply each term: $\\frac{A}{x+1} \\cdot (x+1)(x+2) = A(x+2)$",
+          "2": "This doesn't account for the structure of the denominators"
+        }
+      },
+      "resultState": {
+        "description": "Set up equation"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Substitute $x = -1$: $7(-1) + 5 = A(-1+2) + B(-1+1)$",
+        "hint": "$-2 = A(1) + 0 \\Rightarrow A = -2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$A = -2$"
+        },
+        {
+          "id": "b",
+          "text": "$A = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$A = -7$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Choosing $x = -1$ eliminates $B$",
+          "insight": "Strategic substitution simplifies solving for coefficients"
+        },
+        "incorrect": {
+          "1": "$-7 + 5 = -2$, and $A(1) = A$, so $A = -2$",
+          "2": "Check signs: $7(-1) + 5 = -2$"
+        }
+      },
+      "resultState": {
+        "description": "Found coefficient A"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Substitute $x = -2$: $7(-2) + 5 = A(-2+2) + B(-2+1)$",
+        "hint": "$-9 = 0 + B(-1) \\Rightarrow B = 9$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$B = 9$"
+        },
+        {
+          "id": "b",
+          "text": "$B = -9$"
+        },
+        {
+          "id": "c",
+          "text": "$B = 14$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Final answer: $\\frac{-2}{x+1} + \\frac{9}{x+2}$",
+          "insight": "Can verify by combining back to original fraction"
+        },
+        "incorrect": {
+          "1": "$-9 = B(-1)$, so $B = 9$",
+          "2": "$7(-2) + 5 = -14 + 5 = -9$"
+        }
+      },
+      "resultState": {
+        "description": "Completed decomposition"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{7x + 5}{(x+1)(x+2)} = \\frac{-2}{x+1} + \\frac{9}{x+2}$"
+    ],
+    "fullSolution": "Set up: $7x + 5 = A(x+2) + B(x+1)$. At $x=-1$: $A = -2$. At $x=-2$: $B = 9$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Partial Fraction Decomposition",
+      "url": "https://www.youtube.com/watch?v=gfTRvGWBXsU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Partial Fractions",
+      "url": "https://brilliant.org/wiki/partial-fractions/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Partial Fractions",
+      "url": "https://www.youtube.com/watch?v=GRztgIFJHdI",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

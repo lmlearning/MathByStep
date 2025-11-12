@@ -1,0 +1,127 @@
+{
+  "id": "geometry-circle-arc-length",
+  "type": "problem",
+  "title": "Calculate Arc Length",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "geometry",
+    "circles",
+    "arc-length"
+  ],
+  "statement": {
+    "text": "A circle has radius 6 cm. Find the arc length subtended by a central angle of $\\frac{\\pi}{3}$ radians."
+  },
+  "objectives": [
+    "Apply arc length formula",
+    "Use radians correctly"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Arc length formula: $s = r\\theta$ (when $\\theta$ in radians)",
+        "hint": "$s = 6 \\cdot \\frac{\\pi}{3}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$s = 6 \\cdot \\frac{\\pi}{3}$"
+        },
+        {
+          "id": "b",
+          "text": "$s = 6 \\cdot \\frac{\\pi}{3} \\cdot \\frac{180}{\\pi}$"
+        },
+        {
+          "id": "c",
+          "text": "$s = \\frac{\\pi \\cdot 6^2}{3}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Simple formula: arc length = radius × angle (in radians)",
+          "insight": "This formula only works when angle is in radians"
+        },
+        "incorrect": {
+          "1": "Don't convert to degrees; formula needs radians",
+          "2": "That's closer to area formula. Use $s = r\\theta$"
+        }
+      },
+      "resultState": {
+        "description": "Applied formula"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $6 \\cdot \\frac{\\pi}{3} = \\frac{6\\pi}{3} = ?$",
+        "hint": "Simplify the fraction"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2\\pi$ cm"
+        },
+        {
+          "id": "b",
+          "text": "$6\\pi$ cm"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\pi}{2}$ cm"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Arc length is $2\\pi$ cm $\\approx 6.28$ cm",
+          "insight": "$\\frac{\\pi}{3}$ radians = 60°, which is $\\frac{1}{6}$ of circle. Arc = $\\frac{1}{6}(2\\pi r) = 2\\pi$"
+        },
+        "incorrect": {
+          "1": "$\\frac{6\\pi}{3} = 2\\pi$, not $6\\pi$",
+          "2": "$\\frac{6}{3} = 2$, so $\\frac{6\\pi}{3} = 2\\pi$"
+        }
+      },
+      "resultState": {
+        "description": "Found arc length"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Arc length = $2\\pi$ cm. For $r = 6$ and $\\theta = \\frac{\\pi}{3}$: $s = r\\theta = 2\\pi$"
+    ],
+    "fullSolution": "Using $s = r\\theta$ with $r = 6$ cm and $\\theta = \\frac{\\pi}{3}$: $s = 6 \\cdot \\frac{\\pi}{3} = 2\\pi \\approx 6.28$ cm",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Arc Length",
+      "url": "https://www.youtube.com/watch?v=LoyXJPDhoRg",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Arc Length",
+      "url": "https://brilliant.org/wiki/arc-length/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Arc Length and Sector Area",
+      "url": "https://www.youtube.com/watch?v=LyxEGw49W84",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

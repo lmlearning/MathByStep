@@ -1,0 +1,126 @@
+{
+  "id": "complex-analysis-complex-conjugate",
+  "type": "problem",
+  "title": "Complex Conjugate Properties",
+  "topic": "Complex Analysis",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "complex-analysis",
+    "conjugates"
+  ],
+  "statement": {
+    "text": "For $z = 3 - 4i$, find $z \\cdot \\overline{z}$ (z times its conjugate)."
+  },
+  "objectives": [
+    "Find complex conjugate",
+    "Multiply complex numbers"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Complex conjugate: flip sign of imaginary part",
+        "hint": "$\\overline{z} = \\overline{3 - 4i} = 3 + 4i$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overline{z} = 3 + 4i$"
+        },
+        {
+          "id": "b",
+          "text": "$\\overline{z} = -3 + 4i$"
+        },
+        {
+          "id": "c",
+          "text": "$\\overline{z} = 3 - 4i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Conjugate changes $-4i$ to $+4i$",
+          "insight": "Conjugate reflects the complex number across the real axis"
+        },
+        "incorrect": {
+          "1": "Only flip the sign of the imaginary part, not the real part",
+          "2": "The conjugate has the opposite sign on the imaginary part"
+        }
+      },
+      "resultState": {
+        "description": "Found conjugate"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Multiply: $(3 - 4i)(3 + 4i)$. Use $(a-b)(a+b) = a^2 - b^2$",
+        "hint": "$3^2 - (4i)^2 = 9 - 16i^2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$9 - 16i^2 = 9 - 16(-1) = 25$"
+        },
+        {
+          "id": "b",
+          "text": "$9 - 16 = -7$"
+        },
+        {
+          "id": "c",
+          "text": "$9 + 16i^2 = 9 - 16 = -7$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $z \\cdot \\overline{z} = 25 = |z|^2$",
+          "insight": "$i^2 = -1$, so $-16i^2 = -16(-1) = 16$. Result is always real and equals $|z|^2$"
+        },
+        "incorrect": {
+          "1": "Remember: $(4i)^2 = 16i^2$, not just 16",
+          "2": "Don't forget $i^2 = -1$"
+        }
+      },
+      "resultState": {
+        "description": "Found product"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$z \\cdot \\overline{z} = 25 = |z|^2$. Product of complex number and conjugate always gives $|z|^2$ (real)."
+    ],
+    "fullSolution": "$\\overline{3-4i} = 3+4i$. $(3-4i)(3+4i) = 9 - (4i)^2 = 9 + 16 = 25 = |z|^2$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Conjugates",
+      "url": "https://www.youtube.com/watch?v=sREFP88ZmH0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complex Conjugate",
+      "url": "https://brilliant.org/wiki/complex-conjugate/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=T647CGsuOVU",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

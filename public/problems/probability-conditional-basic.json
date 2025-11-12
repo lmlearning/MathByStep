@@ -1,0 +1,126 @@
+{
+  "id": "probability-conditional-basic",
+  "type": "problem",
+  "title": "Conditional Probability",
+  "topic": "Probability & Statistics",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "probability",
+    "conditional-probability"
+  ],
+  "statement": {
+    "text": "A bag has 5 red and 3 blue marbles. You draw 2 without replacement. Find P(2nd red | 1st red)."
+  },
+  "objectives": [
+    "Apply conditional probability",
+    "Account for changed sample space"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Given 1st marble is red, what's the new situation?",
+        "hint": "4 red and 3 blue left, 7 total"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "4 red out of 7 remaining"
+        },
+        {
+          "id": "b",
+          "text": "5 red out of 8 remaining"
+        },
+        {
+          "id": "c",
+          "text": "4 red out of 8 remaining"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! One red was removed, so 4 red out of 7 total",
+          "insight": "Conditional probability updates the sample space based on given information"
+        },
+        "incorrect": {
+          "1": "One marble was removed (the red one), leaving 7 total",
+          "2": "One red marble was removed, leaving 4 red"
+        }
+      },
+      "resultState": {
+        "description": "Identified new sample space"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: P(2nd red | 1st red) = $\\frac{4}{7}$",
+        "hint": "Conditional probability is straightforward here"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{4}{7}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{8}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{4}{8}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! P(2nd red | 1st red) = $\\frac{4}{7} \\approx 0.571$",
+          "insight": "Formula: P(A|B) = number of favorable outcomes / total outcomes in updated space"
+        },
+        "incorrect": {
+          "1": "Use updated counts: 4 red out of 7 total",
+          "2": "After removing one red marble, 7 marbles remain"
+        }
+      },
+      "resultState": {
+        "description": "Found conditional probability"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "P(2nd red | 1st red) = $\\frac{4}{7}$. Conditional probability adjusts for known information."
+    ],
+    "fullSolution": "Given 1st is red: 4 red and 3 blue remain (7 total). P(2nd red | 1st red) = $\\frac{4}{7}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Conditional Probability",
+      "url": "https://www.youtube.com/watch?v=H02umWLUuKw",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Conditional Probability",
+      "url": "https://brilliant.org/wiki/conditional-probability/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Conditional Probability",
+      "url": "https://www.youtube.com/watch?v=_IgyaD7vOOA",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

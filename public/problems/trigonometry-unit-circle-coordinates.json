@@ -1,0 +1,126 @@
+{
+  "id": "trigonometry-unit-circle-coordinates",
+  "type": "problem",
+  "title": "Unit Circle Coordinates",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "trigonometry",
+    "unit-circle"
+  ],
+  "statement": {
+    "text": "Find the coordinates of the point on the unit circle at angle $\\theta = \\frac{2\\pi}{3}$."
+  },
+  "objectives": [
+    "Use unit circle definition",
+    "Find sine and cosine values"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "On unit circle, point at angle $\\theta$ is $(\\cos\\theta, \\sin\\theta)$. What quadrant is $\\frac{2\\pi}{3}$?",
+        "hint": "$\\frac{2\\pi}{3} = 120°$ is in Quadrant II"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Quadrant II (negative x, positive y)"
+        },
+        {
+          "id": "b",
+          "text": "Quadrant I"
+        },
+        {
+          "id": "c",
+          "text": "Quadrant III"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{2\\pi}{3} \\approx 2.09$ radians is between $\\frac{\\pi}{2}$ and $\\pi$",
+          "insight": "Quadrant II: cos is negative, sin is positive"
+        },
+        "incorrect": {
+          "1": "Quadrant I is $0$ to $\\frac{\\pi}{2}$",
+          "2": "Quadrant III is $\\pi$ to $\\frac{3\\pi}{2}$"
+        }
+      },
+      "resultState": {
+        "description": "Identified quadrant"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Reference angle: $\\pi - \\frac{2\\pi}{3} = \\frac{\\pi}{3}$ (60°). Values at $\\frac{\\pi}{3}$: $\\cos = \\frac{1}{2}$, $\\sin = \\frac{\\sqrt{3}}{2}$",
+        "hint": "Apply Q2 signs: $(-\\frac{1}{2}, \\frac{\\sqrt{3}}{2})$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(-\\frac{1}{2}, \\frac{\\sqrt{3}}{2})$"
+        },
+        {
+          "id": "b",
+          "text": "$(\\frac{1}{2}, \\frac{\\sqrt{3}}{2})$"
+        },
+        {
+          "id": "c",
+          "text": "$(-\\frac{\\sqrt{3}}{2}, \\frac{1}{2})$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! At $\\frac{2\\pi}{3}$: $\\cos = -\\frac{1}{2}$, $\\sin = \\frac{\\sqrt{3}}{2}$",
+          "insight": "Use reference angle values with appropriate signs for the quadrant"
+        },
+        "incorrect": {
+          "1": "In Q2, cosine is negative",
+          "2": "Check: reference angle $\\frac{\\pi}{3}$ gives values $\\frac{1}{2}$ and $\\frac{\\sqrt{3}}{2}$"
+        }
+      },
+      "resultState": {
+        "description": "Found coordinates"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "At $\\theta = \\frac{2\\pi}{3}$: point is $(-\\frac{1}{2}, \\frac{\\sqrt{3}}{2})$"
+    ],
+    "fullSolution": "$\\frac{2\\pi}{3}$ is in Q2 with reference angle $\\frac{\\pi}{3}$. Coordinates: $(\\cos\\frac{2\\pi}{3}, \\sin\\frac{2\\pi}{3}) = (-\\frac{1}{2}, \\frac{\\sqrt{3}}{2})$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Unit Circle",
+      "url": "https://www.youtube.com/watch?v=1m9p9iubMLU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Unit Circle",
+      "url": "https://brilliant.org/wiki/unit-circle/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Unit Circle and Trigonometry",
+      "url": "https://www.youtube.com/watch?v=oVy-vu3VwIQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

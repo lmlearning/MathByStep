@@ -1,0 +1,127 @@
+{
+  "id": "number-theory-prime-factorization-basic",
+  "type": "problem",
+  "title": "Prime Factorization",
+  "topic": "Number Theory",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "number-theory",
+    "prime-factorization",
+    "primes"
+  ],
+  "statement": {
+    "text": "Find the prime factorization of 84."
+  },
+  "objectives": [
+    "Factor using prime numbers",
+    "Express as product of primes"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Start with smallest prime: $84 = 2 \\times 42$",
+        "hint": "Continue factoring 42"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$84 = 2 \\times 2 \\times 21$"
+        },
+        {
+          "id": "b",
+          "text": "$84 = 2 \\times 42$ (done)"
+        },
+        {
+          "id": "c",
+          "text": "$84 = 4 \\times 21$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Keep factoring: $42 = 2 \\times 21$",
+          "insight": "Continue until all factors are prime"
+        },
+        "incorrect": {
+          "1": "42 is not prime, continue factoring",
+          "2": "4 is not prime; use only prime factors"
+        }
+      },
+      "resultState": {
+        "description": "Partially factored"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Now factor 21: $21 = 3 \\times 7$",
+        "hint": "Both 3 and 7 are prime"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$84 = 2^2 \\times 3 \\times 7$"
+        },
+        {
+          "id": "b",
+          "text": "$84 = 2 \\times 3 \\times 14$"
+        },
+        {
+          "id": "c",
+          "text": "$84 = 2 \\times 2 \\times 21$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Complete prime factorization: $2^2 \\times 3 \\times 7$",
+          "insight": "Verify: $4 \\times 3 \\times 7 = 84$ ✓"
+        },
+        "incorrect": {
+          "1": "14 is not prime: $14 = 2 \\times 7$",
+          "2": "21 is not prime: $21 = 3 \\times 7$"
+        }
+      },
+      "resultState": {
+        "description": "Complete factorization"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$84 = 2^2 \\times 3 \\times 7$. This is the unique prime factorization."
+    ],
+    "fullSolution": "$84 = 2 \\times 42 = 2 \\times 2 \\times 21 = 2 \\times 2 \\times 3 \\times 7 = 2^2 \\times 3 \\times 7$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Prime Factorization",
+      "url": "https://www.youtube.com/watch?v=KeS20K_WCdY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Prime Factorization",
+      "url": "https://brilliant.org/wiki/prime-factorization/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Prime Factorization",
+      "url": "https://www.youtube.com/watch?v=GRfA8999XUY",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

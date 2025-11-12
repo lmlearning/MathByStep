@@ -1,0 +1,127 @@
+{
+  "id": "differential-equations-euler-method-basic",
+  "type": "problem",
+  "title": "Euler's Method (One Step)",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "differential-equations",
+    "euler-method",
+    "numerical-methods"
+  ],
+  "statement": {
+    "text": "Use Euler's method with step size $h = 0.1$ to approximate $y(0.1)$ for $\\frac{dy}{dx} = 2x$ with $y(0) = 1$."
+  },
+  "objectives": [
+    "Apply Euler's method formula",
+    "Perform one iteration"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Euler's formula: $y_{n+1} = y_n + h \\cdot f(x_n, y_n)$ where $f(x,y) = \\frac{dy}{dx}$",
+        "hint": "Here: $y_1 = y_0 + h \\cdot f(x_0, y_0)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_1 = 1 + 0.1 \\cdot f(0, 1)$"
+        },
+        {
+          "id": "b",
+          "text": "$y_1 = 1 + f(0.1, 1)$"
+        },
+        {
+          "id": "c",
+          "text": "$y_1 = 1 \\cdot 0.1 \\cdot 2(0)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Start at $(x_0, y_0) = (0, 1)$ with step $h = 0.1$",
+          "insight": "Euler's method approximates solution using tangent line"
+        },
+        "incorrect": {
+          "1": "Use $f(x_0, y_0)$ at starting point, not ending point",
+          "2": "Formula is: $y_{n+1} = y_n + h \\cdot f(x_n, y_n)$"
+        }
+      },
+      "resultState": {
+        "description": "Set up formula"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $f(0, 1) = 2(0) = 0$, so $y_1 = 1 + 0.1(0) = ?$",
+        "hint": "$y_1 = 1 + 0 = 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_1 = 1$"
+        },
+        {
+          "id": "b",
+          "text": "$y_1 = 1.1$"
+        },
+        {
+          "id": "c",
+          "text": "$y_1 = 0.9$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Euler approximation: $y(0.1) \\approx 1$",
+          "insight": "Exact solution: $y = x^2 + 1$ gives $y(0.1) = 1.01$. Euler gives 1, error = 0.01"
+        },
+        "incorrect": {
+          "1": "$0.1 \\times 0 = 0$, so $y_1 = 1 + 0 = 1$",
+          "2": "Calculate: $1 + 0.1(0) = 1 + 0 = 1$"
+        }
+      },
+      "resultState": {
+        "description": "Completed one step"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Euler's method gives $y(0.1) \\approx 1$. Exact: $y = x^2 + 1$ gives $y(0.1) = 1.01$"
+    ],
+    "fullSolution": "At $(0,1)$: slope = $2(0) = 0$. Move to $x_1 = 0.1$: $y_1 = 1 + 0.1(0) = 1$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Euler's Method",
+      "url": "https://www.youtube.com/watch?v=q87L9R9v274",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Euler Method",
+      "url": "https://brilliant.org/wiki/euler-method/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Euler's Method",
+      "url": "https://www.youtube.com/watch?v=ukNJNNZN1iQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
