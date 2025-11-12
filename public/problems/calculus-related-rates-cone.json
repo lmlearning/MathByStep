@@ -1,0 +1,166 @@
+{
+  "id": "calculus-related-rates-cone",
+  "type": "problem",
+  "title": "Related Rates: Cone Volume",
+  "topic": "Calculus",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "calculus",
+    "related-rates",
+    "applications"
+  ],
+  "statement": {
+    "text": "Water fills a cone (vertex down) at 2 m³/min. The cone has height = radius. When radius is 3m, how fast is the radius increasing?"
+  },
+  "objectives": [
+    "Set up related rates problem",
+    "Differentiate implicitly with respect to time"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Volume of cone: $V = \\frac{1}{3}\\pi r^2 h$. Given $h = r$, substitute",
+        "hint": "$V = \\frac{1}{3}\\pi r^3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$V = \\frac{1}{3}\\pi r^3$"
+        },
+        {
+          "id": "b",
+          "text": "$V = \\pi r^2 h$"
+        },
+        {
+          "id": "c",
+          "text": "$V = \\frac{1}{3}\\pi r^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Since $h = r$, we get $V = \\frac{1}{3}\\pi r^2(r) = \\frac{1}{3}\\pi r^3$",
+          "insight": "Expressing V in terms of single variable r simplifies differentiation"
+        },
+        "incorrect": {
+          "1": "Remember to substitute $h = r$ into the volume formula",
+          "2": "Don't forget the $\\frac{1}{3}$ coefficient for cone volume"
+        }
+      },
+      "resultState": {
+        "description": "Simplified volume formula"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Differentiate both sides with respect to time $t$",
+        "hint": "$\\frac{dV}{dt} = \\frac{1}{3}\\pi \\cdot 3r^2 \\frac{dr}{dt}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dV}{dt} = \\pi r^2 \\frac{dr}{dt}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dV}{dt} = \\pi r^3$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dV}{dt} = 3\\pi r^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Chain rule gives $\\frac{dV}{dt} = \\pi r^2 \\frac{dr}{dt}$",
+          "insight": "Each variable that depends on time needs its derivative"
+        },
+        "incorrect": {
+          "1": "Missing $\\frac{dr}{dt}$ - remember to use chain rule",
+          "2": "You need to differentiate, not just evaluate"
+        }
+      },
+      "resultState": {
+        "description": "Differentiated equation"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Substitute: $\\frac{dV}{dt} = 2$, $r = 3$, solve for $\\frac{dr}{dt}$",
+        "hint": "$2 = \\pi(3)^2\\frac{dr}{dt}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dr}{dt} = \\frac{2}{9\\pi}$ m/min"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dr}{dt} = \\frac{2}{3\\pi}$ m/min"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dr}{dt} = \\frac{1}{9\\pi}$ m/min"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{dr}{dt} = \\frac{2}{9\\pi} \\approx 0.071$ m/min",
+          "insight": "As radius increases, the rate of radius change decreases for constant volume rate"
+        },
+        "incorrect": {
+          "1": "Remember $r = 3$, so $r^2 = 9$",
+          "2": "Solve: $2 = 9\\pi \\frac{dr}{dt}$, so $\\frac{dr}{dt} = \\frac{2}{9\\pi}$"
+        }
+      },
+      "resultState": {
+        "description": "Found rate of change"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "When $r = 3$m and $\\frac{dV}{dt} = 2$ m³/min, the radius increases at $\\frac{2}{9\\pi} \\approx 0.071$ m/min"
+    ],
+    "fullSolution": "$V = \\frac{1}{3}\\pi r^3 \\Rightarrow \\frac{dV}{dt} = \\pi r^2\\frac{dr}{dt}$. With $r=3$, $\\frac{dV}{dt}=2$: $2 = 9\\pi\\frac{dr}{dt} \\Rightarrow \\frac{dr}{dt} = \\frac{2}{9\\pi}$ m/min",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Related Rates",
+      "url": "https://www.youtube.com/watch?v=S97AZyXdFw8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Related Rates",
+      "url": "https://brilliant.org/wiki/related-rates/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Related Rates Problems",
+      "url": "https://www.youtube.com/watch?v=2FLNwzFnmZY",
+      "source": "Professor Leonard"
+    }
+  ]
+}

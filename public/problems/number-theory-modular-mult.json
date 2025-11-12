@@ -1,0 +1,126 @@
+{
+  "id": "number-theory-modular-mult",
+  "type": "problem",
+  "title": "Modular Arithmetic Operations",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "number-theory",
+    "modular-arithmetic"
+  ],
+  "statement": {
+    "text": "Compute $(47 \\times 53) \\bmod 10$."
+  },
+  "objectives": [
+    "Use modular arithmetic properties",
+    "Simplify before computing"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "First reduce each number: $47 \\equiv 7 \\pmod{10}$ and $53 \\equiv 3 \\pmod{10}$",
+        "hint": "Use property: $(a \\times b) \\bmod n = ((a \\bmod n) \\times (b \\bmod n)) \\bmod n$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(7 \\times 3) \\bmod 10$"
+        },
+        {
+          "id": "b",
+          "text": "$(47 \\times 53) \\bmod 10$ directly"
+        },
+        {
+          "id": "c",
+          "text": "$(4 \\times 5) \\bmod 10$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Reducing first simplifies the calculation",
+          "insight": "Modular arithmetic allows reduction at any step"
+        },
+        "incorrect": {
+          "1": "Computing $47 \\times 53 = 2491$ works but is harder",
+          "2": "Use the last digit of each number: 47 → 7, 53 → 3"
+        }
+      },
+      "resultState": {
+        "description": "Reduced modulo 10"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $7 \\times 3 = 21 \\equiv ? \\pmod{10}$",
+        "hint": "Find remainder when dividing 21 by 10"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$"
+        },
+        {
+          "id": "b",
+          "text": "$21$"
+        },
+        {
+          "id": "c",
+          "text": "$2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $21 = 2 \\times 10 + 1$, so $21 \\equiv 1 \\pmod{10}$",
+          "insight": "The result is just the last digit of the product"
+        },
+        "incorrect": {
+          "1": "We need the remainder: $21 \\bmod 10 = 1$",
+          "2": "Take only the ones digit: 21 → 1"
+        }
+      },
+      "resultState": {
+        "description": "Found final answer"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$(47 \\times 53) \\bmod 10 = 1$. Key: reduce before multiplying for efficiency."
+    ],
+    "fullSolution": "$47 \\equiv 7 \\pmod{10}$, $53 \\equiv 3 \\pmod{10}$. Then $7 \\times 3 = 21 \\equiv 1 \\pmod{10}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Modular Arithmetic",
+      "url": "https://www.youtube.com/watch?v=r0gYad8auYY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Modular Arithmetic",
+      "url": "https://brilliant.org/wiki/modular-arithmetic/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Introduction to Modular Arithmetic",
+      "url": "https://www.youtube.com/watch?v=MEVBCoJR3bs",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

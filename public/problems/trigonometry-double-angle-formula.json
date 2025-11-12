@@ -1,0 +1,127 @@
+{
+  "id": "trigonometry-double-angle-formula",
+  "type": "problem",
+  "title": "Apply Double Angle Formula",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "trigonometry",
+    "identities",
+    "double-angle"
+  ],
+  "statement": {
+    "text": "If $\\sin(\\theta) = \\frac{3}{5}$ and $0 < \\theta < \\frac{\\pi}{2}$, find $\\sin(2\\theta)$."
+  },
+  "objectives": [
+    "Use double angle formula",
+    "Find cosine from sine"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find $\\cos(\\theta)$ using $\\sin^2(\\theta) + \\cos^2(\\theta) = 1$",
+        "hint": "$\\cos^2(\\theta) = 1 - (\\frac{3}{5})^2 = 1 - \\frac{9}{25}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos(\\theta) = \\frac{4}{5}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\cos(\\theta) = \\frac{3}{5}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\cos(\\theta) = \\frac{2}{5}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\cos^2(\\theta) = \\frac{16}{25}$, and since $\\theta$ is in Q1, $\\cos(\\theta) = \\frac{4}{5}$",
+          "insight": "This is a 3-4-5 right triangle"
+        },
+        "incorrect": {
+          "1": "That's $\\sin(\\theta)$, not $\\cos(\\theta)$",
+          "2": "$1 - \\frac{9}{25} = \\frac{16}{25}$, so $\\cos(\\theta) = \\frac{4}{5}$"
+        }
+      },
+      "resultState": {
+        "description": "Found cosine"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Apply double angle formula: $\\sin(2\\theta) = 2\\sin(\\theta)\\cos(\\theta)$",
+        "hint": "$\\sin(2\\theta) = 2 \\cdot \\frac{3}{5} \\cdot \\frac{4}{5}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sin(2\\theta) = \\frac{24}{25}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\sin(2\\theta) = \\frac{12}{25}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\sin(2\\theta) = \\frac{6}{5}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\sin(2\\theta) = 2 \\cdot \\frac{3}{5} \\cdot \\frac{4}{5} = \\frac{24}{25}$",
+          "insight": "Double angle formulas express trig functions of $2\\theta$ in terms of $\\theta$"
+        },
+        "incorrect": {
+          "1": "Don't forget to multiply by 2: $2 \\cdot \\frac{3}{5} \\cdot \\frac{4}{5} = \\frac{24}{25}$",
+          "2": "This would be greater than 1, impossible for sine"
+        }
+      },
+      "resultState": {
+        "description": "Applied double angle formula"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\sin(2\\theta) = \\frac{24}{25}$ using double angle formula $\\sin(2\\theta) = 2\\sin(\\theta)\\cos(\\theta)$"
+    ],
+    "fullSolution": "From $\\sin(\\theta) = \\frac{3}{5}$: $\\cos(\\theta) = \\frac{4}{5}$ (3-4-5 triangle). Then $\\sin(2\\theta) = 2(\\frac{3}{5})(\\frac{4}{5}) = \\frac{24}{25}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Double Angle Formulas",
+      "url": "https://www.youtube.com/watch?v=to12M8hS6Gw",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Trigonometric Identities",
+      "url": "https://brilliant.org/wiki/trigonometric-identities/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Double Angle Identities",
+      "url": "https://www.youtube.com/watch?v=4Bb-hT33wZk",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

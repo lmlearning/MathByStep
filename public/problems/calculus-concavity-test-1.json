@@ -1,0 +1,127 @@
+{
+  "id": "calculus-concavity-test-1",
+  "type": "problem",
+  "title": "Determine Concavity",
+  "topic": "Calculus",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "calculus",
+    "concavity",
+    "second-derivative"
+  ],
+  "statement": {
+    "text": "Determine where $f(x) = x^3 - 3x^2$ is concave up."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find second derivative: $f'(x) = 3x^2 - 6x$",
+        "hint": "$f''(x) = 6x - 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f''(x) = 6x - 6$"
+        },
+        {
+          "id": "b",
+          "text": "$f''(x) = 6x^2 - 6x$"
+        },
+        {
+          "id": "c",
+          "text": "$f''(x) = 3x^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Concave up where $f''(x) > 0$. Solve $6x - 6 > 0$",
+        "hint": "$6x > 6$, so $x > 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x > 1$"
+        },
+        {
+          "id": "b",
+          "text": "$x < 1$"
+        },
+        {
+          "id": "c",
+          "text": "$x > 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Concave up on $(1, \\infty)$. Concave down on $(-\\infty, 1)$. Inflection point at $x=1$."
+    ],
+    "fullSolution": "Concave up on $(1, \\infty)$. Concave down on $(-\\infty, 1)$. Inflection point at $x=1$.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Concavity",
+      "url": "https://www.youtube.com/watch?v=4jbcLfCuIek",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Concavity and Inflection Points",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ShapeofGraphPtII.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Concavity and Inflection Points",
+      "url": "https://www.youtube.com/watch?v=t0r8Z9O0HJQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

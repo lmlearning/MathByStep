@@ -1,0 +1,121 @@
+{
+  "id": "differential-equations-slope-field-1",
+  "type": "problem",
+  "title": "Interpret Slope Field",
+  "topic": "Differential Equations",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "differential-equations",
+    "slope-fields"
+  ],
+  "statement": {
+    "text": "For $\\frac{dy}{dx} = x$, what is the slope at point $(2, 1)$?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Slope field: slope at each point $(x,y)$ equals value of $\\frac{dy}{dx}$",
+        "hint": "At $(2, 1)$: slope = $x = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Slope = $2$"
+        },
+        {
+          "id": "b",
+          "text": "Slope = $1$"
+        },
+        {
+          "id": "c",
+          "text": "Slope = $3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Note: slope only depends on $x$, not $y$",
+        "hint": "All points with same $x$ have same slope"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Vertical lines have constant slope"
+        },
+        {
+          "id": "b",
+          "text": "Horizontal lines have constant slope"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "At $(2, 1)$, slope = $2$. Solution curves are $y = \\frac{x^2}{2} + C$"
+    ],
+    "fullSolution": "At $(2, 1)$, slope = $2$. Solution curves are $y = \\frac{x^2}{2} + C$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Slope Fields",
+      "url": "https://www.youtube.com/watch?v=Dtt_wI6YV_M",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Slope Fields",
+      "url": "https://brilliant.org/wiki/slope-fields/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Slope Fields",
+      "url": "https://www.youtube.com/watch?v=4hB_K_wV8ng",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

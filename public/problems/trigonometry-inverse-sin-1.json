@@ -1,0 +1,126 @@
+{
+  "id": "trigonometry-inverse-sin-1",
+  "type": "problem",
+  "title": "Evaluate Inverse Sine",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "trigonometry",
+    "inverse-functions"
+  ],
+  "statement": {
+    "text": "Evaluate $\\sin^{-1}(\\frac{1}{2})$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "$\\sin^{-1}(x)$ returns angle in $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$ whose sine is $x$",
+        "hint": "What angle has $\\sin(\\theta) = \\frac{1}{2}$?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\theta = 30° = \\frac{\\pi}{6}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\theta = 60° = \\frac{\\pi}{3}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\theta = 45°$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Verify: $\\sin(\\frac{\\pi}{6}) = \\sin(30°) = \\frac{1}{2}$ ✓",
+        "hint": "$\\sin^{-1}(\\frac{1}{2}) = \\frac{\\pi}{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{6}$ radians (or 30°)"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{3}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\pi}{4}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\sin^{-1}(\\frac{1}{2}) = \\frac{\\pi}{6}$ radians = 30°"
+    ],
+    "fullSolution": "$\\sin^{-1}(\\frac{1}{2}) = \\frac{\\pi}{6}$ radians = 30°",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Inverse Trig Functions",
+      "url": "https://www.youtube.com/watch?v=OluPaIPCDP8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Inverse Trigonometric Functions",
+      "url": "https://brilliant.org/wiki/inverse-trigonometric-functions/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Inverse Trig Functions",
+      "url": "https://www.youtube.com/watch?v=NDP_1_fqhLw",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "calculus-implicit-differentiation-2",
+  "type": "problem",
+  "title": "Implicit Differentiation of Circle",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "derivatives",
+    "implicit-differentiation"
+  ],
+  "statement": {
+    "text": "Find $\\frac{dy}{dx}$ for the circle $x^2 + y^2 = 25$."
+  },
+  "objectives": [
+    "Apply implicit differentiation",
+    "Solve for dy/dx"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Differentiate both sides with respect to $x$",
+        "hint": "$\\frac{d}{dx}[x^2 + y^2] = \\frac{d}{dx}[25]$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x + 2y\\frac{dy}{dx} = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$2x + 2y = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2 + y^2 = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Use chain rule for $y^2$: $\\frac{d}{dx}[y^2] = 2y\\frac{dy}{dx}$",
+          "insight": "Implicit differentiation treats $y$ as a function of $x$"
+        },
+        "incorrect": {
+          "1": "Remember to use chain rule when differentiating $y^2$",
+          "2": "You need to differentiate the equation, not just rearrange it"
+        }
+      },
+      "resultState": {
+        "description": "Differentiated implicitly"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Solve for $\\frac{dy}{dx}$",
+        "hint": "Isolate $\\frac{dy}{dx}$ on one side"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dy}{dx} = -\\frac{y}{x}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dy}{dx} = \\frac{x}{y}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! From $2y\\frac{dy}{dx} = -2x$, divide by $2y$",
+          "insight": "The slope of the circle at any point is perpendicular to the radius"
+        },
+        "incorrect": {
+          "1": "Check your algebra when solving for $\\frac{dy}{dx}$",
+          "2": "Don't forget the negative sign when moving $2x$ to the other side"
+        }
+      },
+      "resultState": {
+        "description": "Found derivative"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "For $x^2 + y^2 = 25$: $\\frac{dy}{dx} = -\\frac{x}{y}$ (slope at any point on circle)"
+    ],
+    "fullSolution": "Differentiating implicitly: $2x + 2y\\frac{dy}{dx} = 0$, so $\\frac{dy}{dx} = -\\frac{x}{y}$. At $(3,4)$: slope = $-\\frac{3}{4}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=qb40J4N1fa4",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Implicit Differentiation",
+      "url": "https://brilliant.org/wiki/implicit-differentiation/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=LGTRAPZzbeY",
+      "source": "Professor Leonard"
+    }
+  ]
+}

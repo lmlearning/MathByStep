@@ -1,0 +1,165 @@
+{
+  "id": "differential-equations-separable-basic",
+  "type": "problem",
+  "title": "Solve Separable Differential Equation",
+  "topic": "Differential Equations",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "differential-equations",
+    "separable-equations"
+  ],
+  "statement": {
+    "text": "Solve the differential equation $\\frac{dy}{dx} = 2xy$ with initial condition $y(0) = 1$."
+  },
+  "objectives": [
+    "Separate variables",
+    "Integrate and apply initial condition"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Separate variables: move all $y$ terms to left, all $x$ terms to right",
+        "hint": "$\\frac{dy}{y} = 2x\\,dx$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{y} = 2x\\,dx$"
+        },
+        {
+          "id": "b",
+          "text": "$dy = 2xy\\,dx$"
+        },
+        {
+          "id": "c",
+          "text": "$y\\,dy = 2x\\,dx$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Divided both sides by $y$ to separate variables",
+          "insight": "Separable equations can be written as $g(y)dy = f(x)dx$"
+        },
+        "incorrect": {
+          "1": "This is the original equation, need to separate variables",
+          "2": "Close, but divide by $y$: $\\frac{dy}{y} = 2x\\,dx$"
+        }
+      },
+      "resultState": {
+        "description": "Separated variables"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Integrate both sides: $\\int\\frac{dy}{y} = \\int 2x\\,dx$",
+        "hint": "$\\ln|y| = x^2 + C$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln|y| = x^2 + C$"
+        },
+        {
+          "id": "b",
+          "text": "$y = x^2 + C$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{y} = x^2 + C$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\int\\frac{1}{y}dy = \\ln|y|$ and $\\int 2x\\,dx = x^2$",
+          "insight": "Don't forget the constant of integration"
+        },
+        "incorrect": {
+          "1": "$\\int\\frac{dy}{y} = \\ln|y|$, not $y$",
+          "2": "$\\int\\frac{dy}{y} = \\ln|y|$, not $\\frac{1}{y}$"
+        }
+      },
+      "resultState": {
+        "description": "Integrated both sides"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Solve for $y$ and apply $y(0) = 1$: $y = e^{x^2+C} = Ae^{x^2}$",
+        "hint": "From $y(0) = 1$: $1 = Ae^0 \\Rightarrow A = 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = e^{x^2}$"
+        },
+        {
+          "id": "b",
+          "text": "$y = 2e^{x^2}$"
+        },
+        {
+          "id": "c",
+          "text": "$y = e^{x^2} + 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The particular solution is $y = e^{x^2}$",
+          "insight": "Initial conditions determine the constant of integration"
+        },
+        "incorrect": {
+          "1": "$y(0) = 2e^0 = 2 \\neq 1$, so this doesn't satisfy the initial condition",
+          "2": "$y(0) = e^0 + 1 = 2 \\neq 1$"
+        }
+      },
+      "resultState": {
+        "description": "Found particular solution"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Solution: $y = e^{x^2}$. This is exponential growth with rate proportional to position."
+    ],
+    "fullSolution": "Separate: $\\frac{dy}{y} = 2x\\,dx$. Integrate: $\\ln|y| = x^2 + C$. So $y = Ae^{x^2}$. With $y(0)=1$: $A=1$, thus $y = e^{x^2}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Separable Differential Equations",
+      "url": "https://www.youtube.com/watch?v=6d9-w-N4-8M",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Separable Equations",
+      "url": "https://brilliant.org/wiki/separable-differential-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Separable Differential Equations",
+      "url": "https://www.youtube.com/watch?v=_dBKJW2KE9Y",
+      "source": "Professor Leonard"
+    }
+  ]
+}

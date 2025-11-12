@@ -1,0 +1,88 @@
+{
+  "id": "linear-algebra-matrix-addition-1",
+  "type": "problem",
+  "title": "Add Two Matrices",
+  "topic": "Linear Algebra",
+  "difficulty": 1,
+  "estimatedTime": 5,
+  "tags": [
+    "linear-algebra",
+    "matrices",
+    "addition"
+  ],
+  "statement": {
+    "text": "Compute $\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} + \\begin{bmatrix} 5 & 6 \\\\ 7 & 8 \\end{bmatrix}$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Add matrices element-wise",
+        "hint": "$(1+5, 2+6)$ in first row, $(3+7, 4+8)$ in second row"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\begin{bmatrix} 6 & 8 \\\\ 10 & 12 \\end{bmatrix}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\begin{bmatrix} 5 & 8 \\\\ 10 & 12 \\end{bmatrix}$"
+        },
+        {
+          "id": "c",
+          "text": "Cannot add"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\begin{bmatrix} 6 & 8 \\\\ 10 & 12 \\end{bmatrix}$"
+    ],
+    "fullSolution": "$\\begin{bmatrix} 6 & 8 \\\\ 10 & 12 \\end{bmatrix}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Matrix Addition",
+      "url": "https://www.youtube.com/watch?v=WR9qCSXJlyY",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Matrix Operations",
+      "url": "https://brilliant.org/wiki/matrix-operations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Matrix Operations",
+      "url": "https://www.youtube.com/watch?v=kT4Mp9EdVqs",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

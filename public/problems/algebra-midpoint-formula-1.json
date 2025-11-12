@@ -1,0 +1,127 @@
+{
+  "id": "algebra-midpoint-formula-1",
+  "type": "problem",
+  "title": "Find Midpoint Between Points",
+  "topic": "Algebra",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "algebra",
+    "coordinate-geometry",
+    "midpoint"
+  ],
+  "statement": {
+    "text": "Find the midpoint between $(2, 5)$ and $(8, 13)$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Midpoint formula: $M = (\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2})$",
+        "hint": "Average the coordinates"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\frac{2+8}{2}, \\frac{5+13}{2})$"
+        },
+        {
+          "id": "b",
+          "text": "$(2+8, 5+13)$"
+        },
+        {
+          "id": "c",
+          "text": "$(8-2, 13-5)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $(\\frac{10}{2}, \\frac{18}{2}) = ?$",
+        "hint": "$(5, 9)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(5, 9)$"
+        },
+        {
+          "id": "b",
+          "text": "$(10, 18)$"
+        },
+        {
+          "id": "c",
+          "text": "$(6, 8)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Midpoint at $(5, 9)$"
+    ],
+    "fullSolution": "Midpoint at $(5, 9)$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Midpoint Formula",
+      "url": "https://www.youtube.com/watch?v=OvJlmV0YTDs",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Midpoint Formula",
+      "url": "https://brilliant.org/wiki/midpoint-formula/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Midpoint Formula",
+      "url": "https://www.youtube.com/watch?v=N6CMYvFO4_s",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

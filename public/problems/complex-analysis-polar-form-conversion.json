@@ -1,0 +1,166 @@
+{
+  "id": "complex-analysis-polar-form-conversion",
+  "type": "problem",
+  "title": "Convert Complex to Polar Form",
+  "topic": "Complex Analysis",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "complex-analysis",
+    "polar-form",
+    "modulus-argument"
+  ],
+  "statement": {
+    "text": "Convert $z = 1 + i$ to polar form $r(\\cos\\theta + i\\sin\\theta)$."
+  },
+  "objectives": [
+    "Find modulus and argument",
+    "Express in polar form"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Find modulus: $r = |z| = \\sqrt{a^2 + b^2}$ where $z = a + bi$",
+        "hint": "$r = \\sqrt{1^2 + 1^2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$r = \\sqrt{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$r = 2$"
+        },
+        {
+          "id": "c",
+          "text": "$r = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $r = \\sqrt{1 + 1} = \\sqrt{2}$",
+          "insight": "The modulus is the distance from origin to the point"
+        },
+        "incorrect": {
+          "1": "$r = \\sqrt{1^2 + 1^2} = \\sqrt{2}$, not 2",
+          "2": "$|1 + i| = \\sqrt{2}$, not 1"
+        }
+      },
+      "resultState": {
+        "description": "Found modulus"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Find argument: $\\theta = \\arctan(\\frac{b}{a})$ for $z$ in Q1",
+        "hint": "$\\theta = \\arctan(\\frac{1}{1}) = \\arctan(1)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\theta = \\frac{\\pi}{4}$ (45°)"
+        },
+        {
+          "id": "b",
+          "text": "$\\theta = \\frac{\\pi}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\theta = \\frac{\\pi}{6}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\arctan(1) = 45° = \\frac{\\pi}{4}$ radians",
+          "insight": "The point $(1,1)$ lies on the line $y = x$ at 45° from x-axis"
+        },
+        "incorrect": {
+          "1": "$\\arctan(1) = \\frac{\\pi}{4}$, not $\\frac{\\pi}{2}$ (which is 90°)",
+          "2": "$\\arctan(1) = 45° = \\frac{\\pi}{4}$"
+        }
+      },
+      "resultState": {
+        "description": "Found argument"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Write in polar form: $z = r(\\cos\\theta + i\\sin\\theta)$",
+        "hint": "$z = \\sqrt{2}(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$z = \\sqrt{2}(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$"
+        },
+        {
+          "id": "b",
+          "text": "$z = 2(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$"
+        },
+        {
+          "id": "c",
+          "text": "$z = \\sqrt{2}e^{i\\pi/4}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! This is the standard polar form",
+          "insight": "Option c is also correct (Euler's formula), but a is the requested form"
+        },
+        "incorrect": {
+          "1": "Use $r = \\sqrt{2}$, not 2",
+          "2": "Both are correct, but the question asks for $r(\\cos\\theta + i\\sin\\theta)$ form"
+        }
+      },
+      "resultState": {
+        "description": "Converted to polar form"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$1 + i = \\sqrt{2}(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4}) = \\sqrt{2}e^{i\\pi/4}$"
+    ],
+    "fullSolution": "$r = \\sqrt{1^2+1^2} = \\sqrt{2}$, $\\theta = \\arctan(1) = \\frac{\\pi}{4}$. Therefore: $z = \\sqrt{2}(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4})$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Polar Form of Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=O7B5KXE4xI8",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Polar Form of Complex Numbers",
+      "url": "https://brilliant.org/wiki/complex-numbers-modulus-argument/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers in Polar Form",
+      "url": "https://www.youtube.com/watch?v=DPU3K71jRuE",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

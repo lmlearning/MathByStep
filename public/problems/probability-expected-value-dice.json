@@ -1,0 +1,127 @@
+{
+  "id": "probability-expected-value-dice",
+  "type": "problem",
+  "title": "Expected Value of Die Roll",
+  "topic": "Probability & Statistics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "probability",
+    "expected-value",
+    "statistics"
+  ],
+  "statement": {
+    "text": "Find the expected value when rolling a fair 6-sided die."
+  },
+  "objectives": [
+    "Apply expected value formula",
+    "Calculate weighted average"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Expected value: $E(X) = \\sum x \\cdot P(x)$. Each outcome has probability $\\frac{1}{6}$",
+        "hint": "$E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + \\ldots + 6 \\cdot \\frac{1}{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E(X) = \\frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$"
+        },
+        {
+          "id": "b",
+          "text": "$E(X) = \\frac{1 + 6}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$E(X) = 6 \\cdot \\frac{1}{6}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Factor out $\\frac{1}{6}$ from each term",
+          "insight": "Expected value is the weighted average of all outcomes"
+        },
+        "incorrect": {
+          "1": "While this formula works for uniform distributions, show the full calculation",
+          "2": "This doesn't account for all six outcomes"
+        }
+      },
+      "resultState": {
+        "description": "Set up formula"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $\\frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = \\frac{1}{6}(21) = ?$",
+        "hint": "Sum = 21, divide by 6"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3.5$"
+        },
+        {
+          "id": "b",
+          "text": "$3$"
+        },
+        {
+          "id": "c",
+          "text": "$4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $E(X) = 3.5$",
+          "insight": "Expected value can be non-integer even for discrete distributions"
+        },
+        "incorrect": {
+          "1": "$\\frac{21}{6} = 3.5$, not 3",
+          "2": "Calculate: $21 \\div 6 = 3.5$"
+        }
+      },
+      "resultState": {
+        "description": "Found expected value"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Expected value of fair die = $3.5$. This is the long-run average of many rolls."
+    ],
+    "fullSolution": "$E(X) = \\sum_{i=1}^{6} i \\cdot P(i) = \\frac{1}{6}(1+2+3+4+5+6) = \\frac{21}{6} = 3.5$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Expected Value",
+      "url": "https://www.youtube.com/watch?v=DAjVAEDil_Q",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Expected Value",
+      "url": "https://brilliant.org/wiki/expected-value/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Expected Value and Variance",
+      "url": "https://www.youtube.com/watch?v=OvTEhNL96v0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

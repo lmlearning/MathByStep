@@ -1,0 +1,87 @@
+{
+  "id": "complex-analysis-complex-addition-1",
+  "type": "problem",
+  "title": "Add Complex Numbers",
+  "topic": "Complex Analysis",
+  "difficulty": 1,
+  "estimatedTime": 6,
+  "tags": [
+    "complex-analysis",
+    "complex-arithmetic"
+  ],
+  "statement": {
+    "text": "Compute $(3 + 2i) + (1 - 4i)$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Add real parts and imaginary parts separately",
+        "hint": "Real: $3 + 1 = 4$, Imaginary: $2i + (-4i) = -2i$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4 - 2i$"
+        },
+        {
+          "id": "b",
+          "text": "$4 + 6i$"
+        },
+        {
+          "id": "c",
+          "text": "$2 - 2i$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$(3 + 2i) + (1 - 4i) = 4 - 2i$"
+    ],
+    "fullSolution": "$(3 + 2i) + (1 - 4i) = 4 - 2i$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Complex Number Operations",
+      "url": "https://www.youtube.com/watch?v=T647CGsuOVU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Complex Number Arithmetic",
+      "url": "https://brilliant.org/wiki/complex-numbers-arithmetic/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Complex Numbers",
+      "url": "https://www.youtube.com/watch?v=SP-YJe7Vldo",
+      "source": "3Blue1Brown"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "discrete-math-combinations-basic",
+  "type": "problem",
+  "title": "Choose Committee Members",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 7,
+  "tags": [
+    "discrete-math",
+    "combinatorics",
+    "combinations"
+  ],
+  "statement": {
+    "text": "How many ways can you choose 3 people from a group of 7 for a committee?"
+  },
+  "objectives": [
+    "Apply combination formula",
+    "Calculate binomial coefficient"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Use combination formula: $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$",
+        "hint": "Here $n = 7$, $k = 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\binom{7}{3} = \\frac{7!}{3!4!}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\binom{7}{3} = \\frac{7!}{3!}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\binom{7}{3} = 7 \\times 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Order doesn't matter for committees, so use combinations",
+          "insight": "Combinations: order doesn't matter. Permutations: order matters"
+        },
+        "incorrect": {
+          "1": "Don't forget $(n-k)!$ in denominator: $(7-3)! = 4!$",
+          "2": "This isn't a simple multiplication problem"
+        }
+      },
+      "resultState": {
+        "description": "Set up combination"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $\\frac{7!}{3!4!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1}$",
+        "hint": "Simplify: $\\frac{210}{6} = 35$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$35$ ways"
+        },
+        {
+          "id": "b",
+          "text": "$21$ ways"
+        },
+        {
+          "id": "c",
+          "text": "$42$ ways"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! There are 35 different committees possible",
+          "insight": "Shortcut: $\\binom{7}{3} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1}$ (only expand what's needed)"
+        },
+        "incorrect": {
+          "1": "Check calculation: $\\frac{7 \\times 6 \\times 5}{6} = \\frac{210}{6} = 35$",
+          "2": "Verify: $7 \\times 6 \\times 5 = 210$ and $3! = 6$"
+        }
+      },
+      "resultState": {
+        "description": "Found number of combinations"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "There are $\\binom{7}{3} = 35$ ways to choose 3 people from 7."
+    ],
+    "fullSolution": "$\\binom{7}{3} = \\frac{7!}{3!4!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = \\frac{210}{6} = 35$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Combinations",
+      "url": "https://www.youtube.com/watch?v=iKy-d5_erhI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Combinations and Permutations",
+      "url": "https://brilliant.org/wiki/combinations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Combinations and Permutations",
+      "url": "https://www.youtube.com/watch?v=XJnIdRXUi7A",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

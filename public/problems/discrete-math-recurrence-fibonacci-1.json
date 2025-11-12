@@ -1,0 +1,127 @@
+{
+  "id": "discrete-math-recurrence-fibonacci-1",
+  "type": "problem",
+  "title": "Fibonacci Recurrence",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "discrete-math",
+    "recurrence-relations",
+    "fibonacci"
+  ],
+  "statement": {
+    "text": "Fibonacci: $F_0=0, F_1=1, F_n=F_{n-1}+F_{n-2}$. Find $F_5$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Calculate sequence: $F_2 = F_1 + F_0 = 1 + 0 = 1$",
+        "hint": "$F_3 = F_2 + F_1 = 1 + 1 = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F_3 = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$F_3 = 3$"
+        },
+        {
+          "id": "c",
+          "text": "$F_3 = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Continue: $F_4 = 2 + 1 = 3$, $F_5 = 3 + 2 = ?$",
+        "hint": "$F_5 = 5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$F_5 = 5$"
+        },
+        {
+          "id": "b",
+          "text": "$F_5 = 8$"
+        },
+        {
+          "id": "c",
+          "text": "$F_5 = 6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$F_5 = 5$. Sequence: 0, 1, 1, 2, 3, 5, ..."
+    ],
+    "fullSolution": "$F_5 = 5$. Sequence: 0, 1, 1, 2, 3, 5, ...",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Fibonacci Sequence",
+      "url": "https://www.youtube.com/watch?v=ahXIMUkSXX0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Fibonacci Numbers",
+      "url": "https://brilliant.org/wiki/fibonacci-sequence/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Recurrence Relations",
+      "url": "https://www.youtube.com/watch?v=eAaP4XaB8hM",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "geometry-pythagorean-word-problem",
+  "type": "problem",
+  "title": "Ladder Problem (Pythagorean)",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "geometry",
+    "pythagorean-theorem",
+    "word-problems"
+  ],
+  "statement": {
+    "text": "A 13-foot ladder leans against a wall. The base is 5 feet from the wall. How high up the wall does the ladder reach?"
+  },
+  "objectives": [
+    "Model with right triangle",
+    "Apply Pythagorean theorem"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Identify the right triangle: ladder is hypotenuse, ground distance and wall height are legs",
+        "hint": "$c = 13$ (hypotenuse), $a = 5$ (base), $b = ?$ (height)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$5^2 + b^2 = 13^2$"
+        },
+        {
+          "id": "b",
+          "text": "$5 + b = 13$"
+        },
+        {
+          "id": "c",
+          "text": "$5^2 + 13^2 = b^2$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Using $a^2 + b^2 = c^2$ with ladder as hypotenuse",
+          "insight": "The ladder, ground, and wall form a right triangle"
+        },
+        "incorrect": {
+          "1": "This is a distance problem, not simple addition",
+          "2": "The ladder (13) is the hypotenuse, not a leg"
+        }
+      },
+      "resultState": {
+        "description": "Set up equation"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Solve: $25 + b^2 = 169$",
+        "hint": "$b^2 = 144$, so $b = 12$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$b = 12$ feet"
+        },
+        {
+          "id": "b",
+          "text": "$b = 8$ feet"
+        },
+        {
+          "id": "c",
+          "text": "$b = 13$ feet"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The ladder reaches 12 feet up the wall",
+          "insight": "This is a Pythagorean triple: 5-12-13"
+        },
+        "incorrect": {
+          "1": "$b^2 = 169 - 25 = 144$, so $b = \\sqrt{144} = 12$",
+          "2": "The ladder length is 13, but the height is what we're solving for"
+        }
+      },
+      "resultState": {
+        "description": "Found height"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "The ladder reaches 12 feet up the wall. Forms a 5-12-13 Pythagorean triple."
+    ],
+    "fullSolution": "Using $a^2 + b^2 = c^2$: $5^2 + b^2 = 13^2 \\Rightarrow 25 + b^2 = 169 \\Rightarrow b^2 = 144 \\Rightarrow b = 12$ feet",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Pythagorean Theorem",
+      "url": "https://www.youtube.com/watch?v=AA6RfgP-AHU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Pythagorean Theorem",
+      "url": "https://brilliant.org/wiki/pythagorean-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Pythagorean Theorem Word Problems",
+      "url": "https://www.youtube.com/watch?v=Ln7MyeqrSc0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "calculus-disk-method-basic-1",
+  "type": "problem",
+  "title": "Volume by Disk Method",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "calculus",
+    "volumes",
+    "disk-method"
+  ],
+  "statement": {
+    "text": "Find volume when $y = x$ from $x=0$ to $x=2$ is rotated about x-axis."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Disk method: $V = \\pi \\int_a^b [f(x)]^2 dx$",
+        "hint": "$V = \\pi \\int_0^2 x^2 dx$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\pi \\int_0^2 x^2 dx$"
+        },
+        {
+          "id": "b",
+          "text": "$\\int_0^2 x dx$"
+        },
+        {
+          "id": "c",
+          "text": "$\\pi \\int_0^2 x dx$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Evaluate integral",
+        "hint": "$\\pi [\\frac{x^3}{3}]_0^2 = \\pi \\cdot \\frac{8}{3} = \\frac{8\\pi}{3}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{8\\pi}{3}$ cubic units"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{4\\pi}{3}$"
+        },
+        {
+          "id": "c",
+          "text": "$8\\pi$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$V = \\frac{8\\pi}{3}$ cubic units"
+    ],
+    "fullSolution": "$V = \\frac{8\\pi}{3}$ cubic units",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Disk Method",
+      "url": "https://www.youtube.com/watch?v=N2lPGMrU0c0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Volume with Disk Method",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/VolumeWithRings.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Disk and Washer Method",
+      "url": "https://www.youtube.com/watch?v=dYZFJUp1F0E",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

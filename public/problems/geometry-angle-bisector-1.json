@@ -1,0 +1,127 @@
+{
+  "id": "geometry-angle-bisector-1",
+  "type": "problem",
+  "title": "Angle Bisector Theorem",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "geometry",
+    "triangles",
+    "angle-bisector"
+  ],
+  "statement": {
+    "text": "In triangle ABC, angle bisector from A divides BC. If AB=6, AC=9, find ratio BD:DC."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Angle Bisector Theorem: bisector divides opposite side in ratio of adjacent sides",
+        "hint": "$\\frac{BD}{DC} = \\frac{AB}{AC}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Ratio equals side ratio"
+        },
+        {
+          "id": "b",
+          "text": "Bisector creates equal segments"
+        },
+        {
+          "id": "c",
+          "text": "Need more info"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $\\frac{BD}{DC} = \\frac{6}{9} = ?$",
+        "hint": "$\\frac{2}{3}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2}{3}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{2}$"
+        },
+        {
+          "id": "c",
+          "text": "$1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$BD:DC = 2:3$ by Angle Bisector Theorem"
+    ],
+    "fullSolution": "$BD:DC = 2:3$ by Angle Bisector Theorem",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Angle Bisector Theorem",
+      "url": "https://www.youtube.com/watch?v=H8xNqE2wMcc",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Angle Bisector Theorem",
+      "url": "https://brilliant.org/wiki/angle-bisector-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Angle Bisector Theorem",
+      "url": "https://www.youtube.com/watch?v=SDq06gM6bBQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
