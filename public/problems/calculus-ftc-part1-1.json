@@ -1,0 +1,127 @@
+{
+  "id": "calculus-ftc-part1-1",
+  "type": "problem",
+  "title": "FTC Part 1 - Derivative of Integral",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 9,
+  "tags": [
+    "calculus",
+    "ftc",
+    "integrals"
+  ],
+  "statement": {
+    "text": "Find $\\frac{d}{dx}\\int_0^x t^2 dt$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "FTC Part 1: $\\frac{d}{dx}\\int_a^x f(t) dt = f(x)$",
+        "hint": "Replace $t$ with $x$ in integrand"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(x) = x^2$"
+        },
+        {
+          "id": "b",
+          "text": "Need to integrate first"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Verify by computing integral: $\\int_0^x t^2 dt = [\\frac{t^3}{3}]_0^x = \\frac{x^3}{3}$",
+        "hint": "$\\frac{d}{dx}[\\frac{x^3}{3}] = x^2$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{x^3}{3}$"
+        },
+        {
+          "id": "c",
+          "text": "$2x$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{d}{dx}\\int_0^x t^2 dt = x^2$ by FTC Part 1"
+    ],
+    "fullSolution": "$\\frac{d}{dx}\\int_0^x t^2 dt = x^2$ by FTC Part 1",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Fundamental Theorem of Calculus",
+      "url": "https://www.youtube.com/watch?v=Gc3QvUB0PkI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Fundamental Theorem",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDefiniteIntegral.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "FTC Part 1",
+      "url": "https://www.youtube.com/watch?v=nqSBK7u-qGU",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

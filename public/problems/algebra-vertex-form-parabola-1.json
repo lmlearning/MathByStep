@@ -1,0 +1,127 @@
+{
+  "id": "algebra-vertex-form-parabola-1",
+  "type": "problem",
+  "title": "Find Vertex of Parabola",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "algebra",
+    "quadratics",
+    "vertex"
+  ],
+  "statement": {
+    "text": "Find the vertex of $y = x^2 - 4x + 7$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Vertex x-coordinate: $x = -\\frac{b}{2a}$ where $a=1, b=-4$",
+        "hint": "$x = -\\frac{-4}{2(1)} = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 2$"
+        },
+        {
+          "id": "b",
+          "text": "$x = -2$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Substitute $x=2$ into equation to find y",
+        "hint": "$y = 2^2 - 4(2) + 7 = 4 - 8 + 7 = 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Vertex: $(2, 3)$"
+        },
+        {
+          "id": "b",
+          "text": "Vertex: $(2, 7)$"
+        },
+        {
+          "id": "c",
+          "text": "Vertex: $(4, 3)$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Vertex at $(2, 3)$. Parabola opens upward ($a > 0$)"
+    ],
+    "fullSolution": "Vertex at $(2, 3)$. Parabola opens upward ($a > 0$)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Vertex of a Parabola",
+      "url": "https://www.youtube.com/watch?v=Xthu3J6kAsM",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Vertex Form",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/Quadratics.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Vertex Form",
+      "url": "https://www.youtube.com/watch?v=uoAZdY5aK6E",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

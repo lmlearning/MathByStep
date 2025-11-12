@@ -1,0 +1,165 @@
+{
+  "id": "number-theory-crt-simple-1",
+  "type": "problem",
+  "title": "Chinese Remainder Theorem - Simple Case",
+  "topic": "Number Theory",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "number-theory",
+    "chinese-remainder-theorem"
+  ],
+  "statement": {
+    "text": "Find $x$ where $x \\equiv 2 \\pmod{3}$ and $x \\equiv 3 \\pmod{5}$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "From first congruence: $x = 3k + 2$ for some integer $k$",
+        "hint": "Substitute into second congruence"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3k + 2 \\equiv 3 \\pmod{5}$"
+        },
+        {
+          "id": "b",
+          "text": "Solve directly"
+        },
+        {
+          "id": "c",
+          "text": "Use CRT formula"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "$3k + 2 \\equiv 3 \\pmod{5}$ means $3k \\equiv 1 \\pmod{5}$",
+        "hint": "$k \\equiv 2 \\pmod{5}$, so $k = 5m + 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$k = 5m + 2$"
+        },
+        {
+          "id": "b",
+          "text": "$k = 3$"
+        },
+        {
+          "id": "c",
+          "text": "$k = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Substitute back: $x = 3(5m + 2) + 2 = 15m + 8$",
+        "hint": "$x \\equiv 8 \\pmod{15}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 8$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 15$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Solution: $x \\equiv 8 \\pmod{15}$. General solution: $x = 15k + 8$"
+    ],
+    "fullSolution": "Solution: $x \\equiv 8 \\pmod{15}$. General solution: $x = 15k + 8$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://www.youtube.com/watch?v=ru7mWZJlRQg",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://brilliant.org/wiki/chinese-remainder-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Chinese Remainder Theorem",
+      "url": "https://www.youtube.com/watch?v=zIFehsBHB8o",
+      "source": "Socratica"
+    }
+  ]
+}

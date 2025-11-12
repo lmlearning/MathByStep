@@ -1,0 +1,126 @@
+{
+  "id": "probability-conditional-calculation-1",
+  "type": "problem",
+  "title": "Calculate Conditional Probability",
+  "topic": "Probability & Statistics",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "probability",
+    "conditional-probability"
+  ],
+  "statement": {
+    "text": "Given P(A) = 0.6, P(B) = 0.5, P(A ∩ B) = 0.3. Find P(A|B)."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Conditional probability formula: $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$",
+        "hint": "Need P(A ∩ B) and P(B)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Use formula with given values"
+        },
+        {
+          "id": "b",
+          "text": "Multiply probabilities"
+        },
+        {
+          "id": "c",
+          "text": "Add probabilities"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $P(A|B) = \\frac{0.3}{0.5} = ?$",
+        "hint": "$0.6 = 60\\%$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$0.6$"
+        },
+        {
+          "id": "b",
+          "text": "$0.15$"
+        },
+        {
+          "id": "c",
+          "text": "$0.8$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$P(A|B) = 0.6$ or $60\\%$"
+    ],
+    "fullSolution": "$P(A|B) = 0.6$ or $60\\%$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Conditional Probability",
+      "url": "https://www.youtube.com/watch?v=_IgyaD7vOOA",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Conditional Probability",
+      "url": "https://brilliant.org/wiki/conditional-probability/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Conditional Probability",
+      "url": "https://www.youtube.com/watch?v=sqDVrXq_eh0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

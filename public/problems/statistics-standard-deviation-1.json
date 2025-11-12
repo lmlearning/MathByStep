@@ -1,0 +1,121 @@
+{
+  "id": "statistics-standard-deviation-1",
+  "type": "problem",
+  "title": "Calculate Standard Deviation",
+  "topic": "Probability & Statistics",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "statistics",
+    "standard-deviation"
+  ],
+  "statement": {
+    "text": "Find standard deviation of: $4, 8, 6, 5, 7$. (Mean = 6)"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Variance $s^2 = \\frac{\\sum(x_i - \\bar{x})^2}{n-1}$",
+        "hint": "Deviations squared: $(4-6)^2=4, (8-6)^2=4, (6-6)^2=0, (5-6)^2=1, (7-6)^2=1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Sum = $4+4+0+1+1=10$"
+        },
+        {
+          "id": "b",
+          "text": "Sum = $6$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Variance = $\\frac{10}{4} = 2.5$. Standard deviation = $\\sqrt{\\text{variance}}$",
+        "hint": "$s = \\sqrt{2.5} \\approx 1.58$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$s \\approx 1.58$"
+        },
+        {
+          "id": "b",
+          "text": "$s = 2.5$"
+        },
+        {
+          "id": "c",
+          "text": "$s = 10$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Standard deviation $s \\approx 1.58$"
+    ],
+    "fullSolution": "Standard deviation $s \\approx 1.58$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Standard Deviation",
+      "url": "https://www.youtube.com/watch?v=MRqtXL2WX2M",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Standard Deviation",
+      "url": "https://brilliant.org/wiki/standard-deviation/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Standard Deviation",
+      "url": "https://www.youtube.com/watch?v=WVx3MYd-Q9w",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

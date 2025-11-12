@@ -1,0 +1,126 @@
+{
+  "id": "geometry-similar-triangles-ratio-1",
+  "type": "problem",
+  "title": "Similar Triangles - Side Ratios",
+  "topic": "Geometry",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "geometry",
+    "similar-triangles"
+  ],
+  "statement": {
+    "text": "Two similar triangles have sides 3, 4, 5 and 6, 8, $x$. Find $x$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Similar triangles have proportional sides",
+        "hint": "Ratio: $\\frac{6}{3} = \\frac{8}{4} = \\frac{x}{5}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "All ratios equal 2"
+        },
+        {
+          "id": "b",
+          "text": "Ratios not equal"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Solve: $\\frac{x}{5} = 2$",
+        "hint": "$x = 10$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 10$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 5$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 15$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Corresponding sides have ratio 2:1, so $x = 10$"
+    ],
+    "fullSolution": "Corresponding sides have ratio 2:1, so $x = 10$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Similar Triangles",
+      "url": "https://www.youtube.com/watch?v=uk7gNfxWSMI",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Similar Triangles",
+      "url": "https://brilliant.org/wiki/similar-triangles/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Similar Triangles",
+      "url": "https://www.youtube.com/watch?v=Dp92yLu7d2I",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

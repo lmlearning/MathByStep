@@ -1,0 +1,126 @@
+{
+  "id": "linear-algebra-eigenvalue-2x2-1",
+  "type": "problem",
+  "title": "Find Eigenvalues of 2×2 Matrix",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "linear-algebra",
+    "eigenvalues"
+  ],
+  "statement": {
+    "text": "Find eigenvalues of $A = \\begin{bmatrix} 4 & 1 \\\\ 0 & 3 \\end{bmatrix}$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Characteristic equation: $\\det(A - \\lambda I) = 0$",
+        "hint": "$\\det\\begin{bmatrix} 4-\\lambda & 1 \\\\ 0 & 3-\\lambda \\end{bmatrix} = 0$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$(4-\\lambda)(3-\\lambda) = 0$"
+        },
+        {
+          "id": "b",
+          "text": "Cannot factor"
+        },
+        {
+          "id": "c",
+          "text": "Use quadratic formula"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Solve $(4-\\lambda)(3-\\lambda) = 0$",
+        "hint": "$\\lambda = 4$ or $\\lambda = 3$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lambda_1 = 4, \\lambda_2 = 3$"
+        },
+        {
+          "id": "b",
+          "text": "$\\lambda = 7$"
+        },
+        {
+          "id": "c",
+          "text": "$\\lambda = 12$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Eigenvalues: $\\lambda_1 = 4, \\lambda_2 = 3$"
+    ],
+    "fullSolution": "Eigenvalues: $\\lambda_1 = 4, \\lambda_2 = 3$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Eigenvalues",
+      "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://brilliant.org/wiki/eigenvalues-and-eigenvectors/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Eigenvalues and Eigenvectors",
+      "url": "https://www.youtube.com/watch?v=IdsV0RaC9jM",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

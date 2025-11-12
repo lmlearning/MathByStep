@@ -1,0 +1,122 @@
+{
+  "id": "algebra-rational-root-theorem-1",
+  "type": "problem",
+  "title": "Apply Rational Root Theorem",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "algebra",
+    "polynomials",
+    "rational-root-theorem"
+  ],
+  "statement": {
+    "text": "List possible rational roots of $2x^3 - 5x^2 + 3x - 6 = 0$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Rational Root Theorem: $\\frac{p}{q}$ where $p$ divides constant, $q$ divides leading coefficient",
+        "hint": "Constant: 6, Leading: 2"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$p$ divides 6, $q$ divides 2"
+        },
+        {
+          "id": "b",
+          "text": "$p$ divides 2, $q$ divides 6"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Factors of 6: $\\pm 1, \\pm 2, \\pm 3, \\pm 6$. Factors of 2: $\\pm 1, \\pm 2$",
+        "hint": "Possible roots: $\\pm 1, \\pm 2, \\pm 3, \\pm 6, \\pm \\frac{1}{2}, \\pm \\frac{3}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\pm 1, \\pm 2, \\pm 3, \\pm 6, \\pm \\frac{1}{2}, \\pm \\frac{3}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "Only $\\pm 1, \\pm 2$"
+        },
+        {
+          "id": "c",
+          "text": "All integers"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Possible rational roots: $\\pm 1, \\pm 2, \\pm 3, \\pm 6, \\pm \\frac{1}{2}, \\pm \\frac{3}{2}$"
+    ],
+    "fullSolution": "Possible rational roots: $\\pm 1, \\pm 2, \\pm 3, \\pm 6, \\pm \\frac{1}{2}, \\pm \\frac{3}{2}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Rational Root Theorem",
+      "url": "https://www.youtube.com/watch?v=ILuKH4SGe0U",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Rational Root Theorem",
+      "url": "https://brilliant.org/wiki/rational-root-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Rational Root Theorem",
+      "url": "https://www.youtube.com/watch?v=CJxSnabjy4k",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

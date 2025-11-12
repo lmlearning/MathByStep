@@ -1,0 +1,127 @@
+{
+  "id": "discrete-math-complete-graph-1",
+  "type": "problem",
+  "title": "Complete Graph Properties",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "discrete-math",
+    "graph-theory",
+    "complete-graphs"
+  ],
+  "statement": {
+    "text": "In a complete graph $K_5$ (5 vertices, all connected), how many edges are there?"
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Complete graph: every vertex connects to every other vertex",
+        "hint": "Number of edges = $\\binom{n}{2}$ for $n$ vertices"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Use combination formula"
+        },
+        {
+          "id": "b",
+          "text": "Multiply vertices"
+        },
+        {
+          "id": "c",
+          "text": "Count by hand"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate $\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{5 \\cdot 4}{2} = ?$",
+        "hint": "$10$ edges"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$10$ edges"
+        },
+        {
+          "id": "b",
+          "text": "$5$ edges"
+        },
+        {
+          "id": "c",
+          "text": "$20$ edges"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$K_5$ has $\\binom{5}{2} = 10$ edges. Each vertex has degree 4."
+    ],
+    "fullSolution": "$K_5$ has $\\binom{5}{2} = 10$ edges. Each vertex has degree 4.",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Graph Theory",
+      "url": "https://www.youtube.com/watch?v=HkNdNpKUByM",
+      "source": "Trefor Bazett"
+    },
+    {
+      "type": "article",
+      "title": "Complete Graphs",
+      "url": "https://brilliant.org/wiki/complete-graphs/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Introduction to Graphs",
+      "url": "https://www.youtube.com/watch?v=eQA-m22wjTQ",
+      "source": "William Fiset"
+    }
+  ]
+}

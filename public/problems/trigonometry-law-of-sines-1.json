@@ -1,0 +1,126 @@
+{
+  "id": "trigonometry-law-of-sines-1",
+  "type": "problem",
+  "title": "Apply Law of Sines",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "trigonometry",
+    "law-of-sines"
+  ],
+  "statement": {
+    "text": "Triangle ABC: $a = 7$, $A = 30°$, $B = 45°$. Find side $b$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Law of Sines: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$",
+        "hint": "$\\frac{7}{\\sin 30°} = \\frac{b}{\\sin 45°}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Set up proportion"
+        },
+        {
+          "id": "b",
+          "text": "Use law of cosines"
+        },
+        {
+          "id": "c",
+          "text": "Use Pythagorean theorem"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "$\\sin 30° = \\frac{1}{2}$, $\\sin 45° = \\frac{\\sqrt{2}}{2}$. Solve for $b$",
+        "hint": "$b = 7 \\cdot \\frac{\\sin 45°}{\\sin 30°} = 7 \\cdot \\frac{\\sqrt{2}/2}{1/2} = 7\\sqrt{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$7\\sqrt{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$7$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{7}{\\sqrt{2}}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$b = 7\\sqrt{2} \\approx 9.9$"
+    ],
+    "fullSolution": "$b = 7\\sqrt{2} \\approx 9.9$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Law of Sines",
+      "url": "https://www.youtube.com/watch?v=8YLO8RKGp-c",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Law of Sines",
+      "url": "https://brilliant.org/wiki/law-of-sines/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Law of Sines",
+      "url": "https://www.youtube.com/watch?v=9lkJKFLH4X8",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

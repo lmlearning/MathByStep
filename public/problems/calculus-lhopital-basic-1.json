@@ -1,0 +1,127 @@
+{
+  "id": "calculus-lhopital-basic-1",
+  "type": "problem",
+  "title": "Apply L'Hôpital's Rule",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "calculus",
+    "limits",
+    "lhopitals-rule"
+  ],
+  "statement": {
+    "text": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$ using L'Hôpital's Rule."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Check form at $x=0$: $\\frac{\\sin(0)}{0} = \\frac{0}{0}$",
+        "hint": "Indeterminate, can use L'Hôpital"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Indeterminate $\\frac{0}{0}$"
+        },
+        {
+          "id": "b",
+          "text": "Not indeterminate"
+        },
+        {
+          "id": "c",
+          "text": "Undefined"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "L'Hôpital: differentiate numerator and denominator",
+        "hint": "$\\lim_{x \\to 0} \\frac{\\cos(x)}{1} = \\frac{\\cos(0)}{1} = 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "Undefined"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$ (fundamental limit)"
+    ],
+    "fullSolution": "$\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$ (fundamental limit)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "L'Hôpital's Rule",
+      "url": "https://www.youtube.com/watch?v=GOrJjJo7GM0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "L'Hôpital's Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/LHospitalsRule.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "L'Hôpital's Rule",
+      "url": "https://www.youtube.com/watch?v=0PhyZepBQi0",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

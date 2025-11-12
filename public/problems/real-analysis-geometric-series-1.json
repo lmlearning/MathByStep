@@ -1,0 +1,127 @@
+{
+  "id": "real-analysis-geometric-series-1",
+  "type": "problem",
+  "title": "Geometric Series Convergence",
+  "topic": "Real Analysis",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "real-analysis",
+    "series",
+    "convergence"
+  ],
+  "statement": {
+    "text": "Does $\\sum_{n=0}^\\infty (\\frac{1}{3})^n$ converge? If so, find the sum."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Geometric series: $\\sum_{n=0}^\\infty ar^n$ converges if $|r| < 1$",
+        "hint": "Here $r = \\frac{1}{3}$, so $|r| = \\frac{1}{3} < 1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Converges"
+        },
+        {
+          "id": "b",
+          "text": "Diverges"
+        },
+        {
+          "id": "c",
+          "text": "Cannot determine"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Sum formula: $\\sum_{n=0}^\\infty ar^n = \\frac{a}{1-r}$ where $a=1, r=\\frac{1}{3}$",
+        "hint": "$\\frac{1}{1 - \\frac{1}{3}} = \\frac{1}{\\frac{2}{3}} = \\frac{3}{2}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$3$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{3}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Series converges to $\\frac{3}{2}$"
+    ],
+    "fullSolution": "Series converges to $\\frac{3}{2}$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometric Series",
+      "url": "https://www.youtube.com/watch?v=E8P_iC2kjGU",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometric Series",
+      "url": "https://brilliant.org/wiki/geometric-series/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Geometric Series",
+      "url": "https://www.youtube.com/watch?v=cYe35rgVqbQ",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

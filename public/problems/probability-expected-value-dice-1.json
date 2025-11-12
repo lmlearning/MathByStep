@@ -1,0 +1,121 @@
+{
+  "id": "probability-expected-value-dice-1",
+  "type": "problem",
+  "title": "Expected Value of Fair Die",
+  "topic": "Probability & Statistics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "probability",
+    "expected-value"
+  ],
+  "statement": {
+    "text": "Find the expected value when rolling a fair 6-sided die."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Expected value: $E(X) = \\sum x_i \\cdot P(x_i)$",
+        "hint": "Each outcome $1-6$ has probability $\\frac{1}{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E(X) = 1(\\frac{1}{6}) + 2(\\frac{1}{6}) + \\cdots + 6(\\frac{1}{6})$"
+        },
+        {
+          "id": "b",
+          "text": "$E(X) = \\frac{1+2+\\cdots+6}{6}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Calculate: $\\frac{1}{6}(1+2+3+4+5+6) = \\frac{21}{6} = ?$",
+        "hint": "$3.5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3.5$"
+        },
+        {
+          "id": "b",
+          "text": "$3$"
+        },
+        {
+          "id": "c",
+          "text": "$4$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$E(X) = 3.5$ (average outcome of fair die)"
+    ],
+    "fullSolution": "$E(X) = 3.5$ (average outcome of fair die)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Expected Value",
+      "url": "https://www.youtube.com/watch?v=DAjVAEDil_Q",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Expected Value",
+      "url": "https://brilliant.org/wiki/expected-value/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Expected Value",
+      "url": "https://www.youtube.com/watch?v=OvCNtzlJPpY",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

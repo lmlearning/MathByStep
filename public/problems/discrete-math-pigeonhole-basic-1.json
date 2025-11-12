@@ -1,0 +1,126 @@
+{
+  "id": "discrete-math-pigeonhole-basic-1",
+  "type": "problem",
+  "title": "Apply Pigeonhole Principle",
+  "topic": "Discrete Mathematics",
+  "difficulty": 2,
+  "estimatedTime": 8,
+  "tags": [
+    "discrete-math",
+    "pigeonhole-principle"
+  ],
+  "statement": {
+    "text": "If 13 people are in a room, prove at least 2 share a birth month."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Pigeonhole principle: if $n$ items in $m$ containers and $n > m$, then some container has $\\geq 2$ items",
+        "hint": "Here: 13 people (pigeons), 12 months (holes)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$13 > 12$, so principle applies"
+        },
+        {
+          "id": "b",
+          "text": "Need more info"
+        },
+        {
+          "id": "c",
+          "text": "Cannot prove"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "By pigeonhole principle",
+        "hint": "At least one month has $\\geq 2$ people"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "At least 2 people share a month"
+        },
+        {
+          "id": "b",
+          "text": "All different months"
+        },
+        {
+          "id": "c",
+          "text": "Exactly 2 share"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "By pigeonhole principle: $13 > 12$, so at least 2 people share a birth month"
+    ],
+    "fullSolution": "By pigeonhole principle: $13 > 12$, so at least 2 people share a birth month",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Pigeonhole Principle",
+      "url": "https://www.youtube.com/watch?v=kZBfPOiKYM0",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Pigeonhole Principle",
+      "url": "https://brilliant.org/wiki/pigeonhole-principle/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Pigeonhole Principle",
+      "url": "https://www.youtube.com/watch?v=KkbI5dXZUxQ",
+      "source": "Trefor Bazett"
+    }
+  ]
+}

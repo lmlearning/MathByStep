@@ -1,0 +1,166 @@
+{
+  "id": "algebra-absolute-value-eq-1",
+  "type": "problem",
+  "title": "Solve Absolute Value Equation",
+  "topic": "Algebra",
+  "difficulty": 2,
+  "estimatedTime": 9,
+  "tags": [
+    "algebra",
+    "absolute-value",
+    "equations"
+  ],
+  "statement": {
+    "text": "Solve $|2x - 3| = 5$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Absolute value equation splits into two cases",
+        "hint": "Case 1: $2x - 3 = 5$; Case 2: $2x - 3 = -5$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Two cases: positive and negative"
+        },
+        {
+          "id": "b",
+          "text": "One equation"
+        },
+        {
+          "id": "c",
+          "text": "No solution"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "Solve Case 1: $2x - 3 = 5$",
+        "hint": "$2x = 8$, so $x = 4$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 4$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 1$"
+        },
+        {
+          "id": "c",
+          "text": "$x = -1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "currentState": {
+        "description": "Step 3"
+      },
+      "prompt": {
+        "question": "Solve Case 2: $2x - 3 = -5$",
+        "hint": "$2x = -2$, so $x = -1$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = -1$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 4$"
+        },
+        {
+          "id": "c",
+          "text": "$x = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Solutions: $x = 4$ or $x = -1$"
+    ],
+    "fullSolution": "Solutions: $x = 4$ or $x = -1$",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Absolute Value Equations",
+      "url": "https://www.youtube.com/watch?v=bPh0JMuXxkQ",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Absolute Value Equations",
+      "url": "https://tutorial.math.lamar.edu/Classes/Alg/SolveAbsValueEqns.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Absolute Value Equations",
+      "url": "https://www.youtube.com/watch?v=r8wQwCAUPkw",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

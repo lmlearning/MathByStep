@@ -1,0 +1,126 @@
+{
+  "id": "multivariable-chain-rule-composition-1",
+  "type": "problem",
+  "title": "Multivariable Chain Rule",
+  "topic": "Multivariable Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "multivariable",
+    "chain-rule"
+  ],
+  "statement": {
+    "text": "If $z = x^2 + y^2$ where $x = t^2$ and $y = 2t$, find $\\frac{dz}{dt}$."
+  },
+  "objectives": [
+    "Understand concept",
+    "Apply technique"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "currentState": {
+        "description": "Step 1"
+      },
+      "prompt": {
+        "question": "Chain rule: $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$",
+        "hint": "Find each partial and derivative"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate each term"
+        },
+        {
+          "id": "b",
+          "text": "Substitute first"
+        },
+        {
+          "id": "c",
+          "text": "Use product rule"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "currentState": {
+        "description": "Step 2"
+      },
+      "prompt": {
+        "question": "$\\frac{\\partial z}{\\partial x} = 2x$, $\\frac{dx}{dt} = 2t$, $\\frac{\\partial z}{\\partial y} = 2y$, $\\frac{dy}{dt} = 2$",
+        "hint": "$\\frac{dz}{dt} = 2x(2t) + 2y(2) = 4xt + 4y$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$4xt + 4y = 4t^3 + 8t$"
+        },
+        {
+          "id": "b",
+          "text": "$4t^3$"
+        },
+        {
+          "id": "c",
+          "text": "$8t$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct!",
+          "insight": "Good work"
+        },
+        "incorrect": {
+          "1": "Try again",
+          "2": "Try again"
+        }
+      },
+      "resultState": {
+        "description": "Solved"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "$\\frac{dz}{dt} = 4t^3 + 8t$ (substituting $x=t^2$, $y=2t$)"
+    ],
+    "fullSolution": "$\\frac{dz}{dt} = 4t^3 + 8t$ (substituting $x=t^2$, $y=2t$)",
+    "relatedProblems": []
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Multivariable Chain Rule",
+      "url": "https://www.youtube.com/watch?v=NO3AqAaAE6o",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Chain Rule",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcIII/ChainRule.aspx",
+      "source": "Paul's Online Math Notes"
+    },
+    {
+      "type": "video",
+      "title": "Multivariable Chain Rule",
+      "url": "https://www.youtube.com/watch?v=HM-zJQ4-Dr4",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
