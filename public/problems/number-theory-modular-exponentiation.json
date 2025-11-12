@@ -1,0 +1,175 @@
+{
+  "id": "number-theory-modular-exponentiation",
+  "type": "problem",
+  "title": "Modular Exponentiation",
+  "topic": "Number Theory",
+  "difficulty": 4,
+  "estimatedTime": 12,
+  "tags": [
+    "number-theory",
+    "modular-arithmetic",
+    "exponentiation",
+    "repeated-squaring"
+  ],
+  "statement": {
+    "text": "Find $7^{100} \\bmod 13$ efficiently."
+  },
+  "objectives": [
+    "Use Fermat's Little Theorem",
+    "Apply modular arithmetic",
+    "Calculate efficiently"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify that we can use Fermat's Little Theorem."
+      },
+      "prompt": {
+        "question": "Why can we use Fermat's Little Theorem?",
+        "hint": "13 is prime and $\\gcd(7, 13) = 1$, so $7^{12} \\equiv 1 \\pmod{13}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "13 is prime and $\\gcd(7,13) = 1$, so Fermat's Little Theorem applies: $7^{12} \\equiv 1 \\pmod{13}$"
+        },
+        {
+          "id": "b",
+          "text": "Need to calculate $7^{100}$ directly"
+        },
+        {
+          "id": "c",
+          "text": "$7^{13} \\equiv 1 \\pmod{13}$ by Fermat"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Fermat's Little Theorem: if $p$ is prime and $\\gcd(a,p) = 1$, then $a^{p-1} \\equiv 1 \\pmod{p}$. Here: $7^{12} \\equiv 1 \\pmod{13}$.",
+          "insight": "This theorem lets us reduce large exponents modulo $(p-1)$, making calculations much easier!"
+        },
+        "incorrect": {
+          "1": "That would take forever! Use Fermat's Little Theorem to simplify first.",
+          "2": "For prime $p$, Fermat says $a^{p-1} \\equiv 1$, not $a^p$. So $7^{12} \\equiv 1$, not $7^{13}$."
+        }
+      },
+      "resultState": {
+        "description": "Identified 7^12 ≡ 1 (mod 13)"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Reduce the exponent modulo 12."
+      },
+      "prompt": {
+        "question": "How do we simplify $7^{100}$?",
+        "hint": "$100 = 12 \\cdot 8 + 4$, so $7^{100} = (7^{12})^8 \\cdot 7^4 \\equiv 1^8 \\cdot 7^4 \\equiv 7^4 \\pmod{13}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$7^{100} = (7^{12})^8 \\cdot 7^4 \\equiv 1^8 \\cdot 7^4 \\equiv 7^4 \\pmod{13}$"
+        },
+        {
+          "id": "b",
+          "text": "$7^{100} \\equiv 7^{100 \\bmod 13} = 7^9 \\pmod{13}$"
+        },
+        {
+          "id": "c",
+          "text": "$7^{100} \\equiv 7^{10} \\pmod{13}$ (use powers of 10)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Since $7^{12} \\equiv 1 \\pmod{13}$, we can reduce the exponent: $100 = 12(8) + 4$, so $7^{100} \\equiv 7^4 \\pmod{13}$.",
+          "insight": "The key is dividing the exponent by $(p-1)$ and using the remainder. This is why $100 \\bmod 12 = 4$."
+        },
+        "incorrect": {
+          "1": "We reduce the exponent modulo $(p-1) = 12$, not modulo $p = 13$. So $100 \\bmod 12 = 4$.",
+          "2": "Not related to base 10. Use the period from Fermat's theorem: $7^{12} \\equiv 1$."
+        }
+      },
+      "resultState": {
+        "description": "Reduced to 7^4 (mod 13)"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Calculate $7^4 \\bmod 13$."
+      },
+      "prompt": {
+        "question": "What is $7^4 \\bmod 13$?",
+        "hint": "$7^2 = 49 \\equiv 49 - 3(13) = 49 - 39 = 10 \\pmod{13}$. Then $7^4 = (7^2)^2 \\equiv 10^2 = 100 \\equiv 9 \\pmod{13}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$7^4 \\equiv 9 \\pmod{13}$"
+        },
+        {
+          "id": "b",
+          "text": "$7^4 \\equiv 1 \\pmod{13}$"
+        },
+        {
+          "id": "c",
+          "text": "$7^4 \\equiv 10 \\pmod{13}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $7^2 = 49 \\equiv 10 \\pmod{13}$ (since $49 = 3(13) + 10$). Then $7^4 = (7^2)^2 \\equiv 10^2 = 100 \\equiv 9 \\pmod{13}$ (since $100 = 7(13) + 9$).",
+          "insight": "Repeated squaring is efficient: compute $7^2$, then square it for $7^4$. Each step reduces modulo 13 to keep numbers small."
+        },
+        "incorrect": {
+          "1": "$7^4 \\equiv 1$ would mean the order of 7 is 4, but Fermat tells us $7^{12} \\equiv 1$ (order divides 12).",
+          "2": "That's $7^2 \\bmod 13$. Square it to get $7^4$: $10^2 = 100 \\equiv 9 \\pmod{13}$."
+        }
+      },
+      "resultState": {
+        "description": "Found 7^100 ≡ 9 (mod 13)"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Fermat's Little Theorem: if $p$ prime and $\\gcd(a,p)=1$, then $a^{p-1} \\equiv 1 \\pmod{p}$",
+      "For $p=13$: $7^{12} \\equiv 1 \\pmod{13}$",
+      "Reduce exponent: $100 = 12(8) + 4$, so $7^{100} \\equiv 7^4 \\pmod{13}$",
+      "Calculate: $7^2 \\equiv 10$, $7^4 \\equiv 10^2 \\equiv 100 \\equiv 9 \\pmod{13}$",
+      "Answer: $7^{100} \\equiv 9 \\pmod{13}$"
+    ],
+    "fullSolution": "By Fermat's Little Theorem: 7^12 ≡ 1 (mod 13) since 13 is prime. Write 100 = 12(8) + 4, so 7^100 = (7^12)^8 · 7^4 ≡ 1^8 · 7^4 ≡ 7^4 (mod 13). Calculate: 7^2 = 49 ≡ 10 (mod 13), then 7^4 ≡ 10^2 = 100 ≡ 9 (mod 13).",
+    "relatedProblems": [
+      "number-theory-chinese-remainder-1",
+      "number-theory-modular-arithmetic-1"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Modular Exponentiation",
+      "url": "https://www.youtube.com/watch?v=tTuWmcikE0Q",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Fermat's Little Theorem",
+      "url": "https://brilliant.org/wiki/fermats-little-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Modular Exponentiation",
+      "url": "https://www.youtube.com/watch?v=cbGB__V8MNk",
+      "source": "Bill Kinney"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "id": "geometry-triangle-angle-bisector",
+  "type": "problem",
+  "title": "Angle Bisector Theorem",
+  "topic": "Geometry",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "geometry",
+    "triangles",
+    "angle-bisector",
+    "proportions"
+  ],
+  "statement": {
+    "text": "In triangle $ABC$, the angle bisector of angle $A$ intersects side $BC$ at point $D$. If $AB = 6$, $AC = 9$, and $BC = 10$, find $BD$ and $DC$."
+  },
+  "objectives": [
+    "Apply angle bisector theorem",
+    "Set up proportion equation",
+    "Solve for segment lengths"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Recall the angle bisector theorem."
+      },
+      "prompt": {
+        "question": "What does the angle bisector theorem state?",
+        "hint": "The angle bisector divides the opposite side in the ratio of the adjacent sides: $\\frac{BD}{DC} = \\frac{AB}{AC}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{BD}{DC} = \\frac{AB}{AC}$ (ratio of segments equals ratio of sides)"
+        },
+        {
+          "id": "b",
+          "text": "$BD = DC$ (bisects the side into equal parts)"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{BD}{AB} = \\frac{DC}{AC}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! The angle bisector theorem: the angle bisector divides the opposite side in the ratio of the two adjacent sides.",
+          "insight": "This is NOT the same as splitting the side in half! The ratio depends on the triangle's shape."
+        },
+        "incorrect": {
+          "1": "Angle bisector doesn't necessarily split the opposite side equally unless the triangle is isosceles.",
+          "2": "Close, but this is a different form. The standard form is $\\frac{BD}{DC} = \\frac{AB}{AC}$."
+        }
+      },
+      "resultState": {
+        "description": "Stated angle bisector theorem"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Set up the equation using the theorem."
+      },
+      "prompt": {
+        "question": "What equation do we get?",
+        "hint": "$\\frac{BD}{DC} = \\frac{6}{9} = \\frac{2}{3}$ and $BD + DC = 10$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{BD}{DC} = \\frac{2}{3}$ and $BD + DC = 10$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{BD}{DC} = \\frac{3}{2}$ and $BD + DC = 10$"
+        },
+        {
+          "id": "c",
+          "text": "$BD = DC = 5$ (equal split)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! $\\frac{BD}{DC} = \\frac{AB}{AC} = \\frac{6}{9} = \\frac{2}{3}$ (simplify the ratio). Also, $BD + DC = BC = 10$.",
+          "insight": "Two equations, two unknowns. We can solve this system!"
+        },
+        "incorrect": {
+          "1": "The ratio is $\\frac{AB}{AC} = \\frac{6}{9} = \\frac{2}{3}$, not $\\frac{3}{2}$. Order matters!",
+          "2": "If $AB \\neq AC$, then $BD \\neq DC$. The angle bisector theorem tells us the exact ratio."
+        }
+      },
+      "resultState": {
+        "description": "Set up system of equations"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve for BD and DC."
+      },
+      "prompt": {
+        "question": "What are the lengths?",
+        "hint": "If $BD = 2k$ and $DC = 3k$, then $2k + 3k = 10$, so $k = 2$. Thus $BD = 4$ and $DC = 6$."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$BD = 4$ and $DC = 6$"
+        },
+        {
+          "id": "b",
+          "text": "$BD = 6$ and $DC = 4$"
+        },
+        {
+          "id": "c",
+          "text": "$BD = 3$ and $DC = 7$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! From $\\frac{BD}{DC} = \\frac{2}{3}$, let $BD = 2k$ and $DC = 3k$. Then $2k + 3k = 10 \\Rightarrow 5k = 10 \\Rightarrow k = 2$. So $BD = 4$ and $DC = 6$.",
+          "insight": "Check: $\\frac{4}{6} = \\frac{2}{3}$ ✓ and $4 + 6 = 10$ ✓. The point $D$ is closer to $B$ because $AB < AC$."
+        },
+        "incorrect": {
+          "1": "You swapped them! $BD$ corresponds to side $AB = 6$ (shorter), so $BD < DC$.",
+          "2": "Check the ratio: $\\frac{3}{7} \\neq \\frac{2}{3}$. Use the parametric approach: $BD = 2k$, $DC = 3k$."
+        }
+      },
+      "resultState": {
+        "description": "Found BD = 4, DC = 6"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Angle Bisector Theorem: $\\frac{BD}{DC} = \\frac{AB}{AC}$",
+      "The bisector divides opposite side in ratio of adjacent sides",
+      "Here: $\\frac{BD}{DC} = \\frac{6}{9} = \\frac{2}{3}$",
+      "With $BD + DC = 10$: solve to get $BD = 4$, $DC = 6$",
+      "Point $D$ is closer to $B$ since $AB < AC$"
+    ],
+    "fullSolution": "By angle bisector theorem: BD/DC = AB/AC = 6/9 = 2/3. Let BD = 2k, DC = 3k. Then BD + DC = 10, so 2k + 3k = 10, giving k = 2. Therefore BD = 4 and DC = 6.",
+    "relatedProblems": [
+      "geometry-triangle-inequality",
+      "geometry-similar-triangles"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Angle Bisector Theorem",
+      "url": "https://www.youtube.com/watch?v=QR3CIV_t4Mo",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Angle Bisector Theorem",
+      "url": "https://brilliant.org/wiki/angle-bisector-theorem/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Angle Bisector Theorem",
+      "url": "https://www.youtube.com/watch?v=fU8JQdal_GY",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

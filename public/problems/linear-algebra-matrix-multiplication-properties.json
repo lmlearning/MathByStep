@@ -1,0 +1,175 @@
+{
+  "id": "linear-algebra-matrix-multiplication-properties",
+  "type": "problem",
+  "title": "Matrix Multiplication Properties",
+  "topic": "Linear Algebra",
+  "difficulty": 3,
+  "estimatedTime": 10,
+  "tags": [
+    "linear-algebra",
+    "matrix-multiplication",
+    "associative",
+    "non-commutative"
+  ],
+  "statement": {
+    "text": "Let $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ and $B = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Calculate $AB$ and $BA$. Are they equal?"
+  },
+  "objectives": [
+    "Perform matrix multiplication",
+    "Understand non-commutativity",
+    "Compare products"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Calculate AB."
+      },
+      "prompt": {
+        "question": "What is $AB$?",
+        "hint": "Row × Column: $(AB)_{ij} = \\sum A_{ik}B_{kj}$. First row, first column: $1(0) + 2(1) = 2$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$AB = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "text": "$AB = \\begin{pmatrix} 0 & 1 \\\\ 3 & 4 \\end{pmatrix}$"
+        },
+        {
+          "id": "c",
+          "text": "$AB = \\begin{pmatrix} 0 & 2 \\\\ 3 & 0 \\end{pmatrix}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Row 1 × Columns: $[1,2]·[0,1]^T = 0+2=2$ and $[1,2]·[1,0]^T = 1+0=1$. Row 2 × Columns: $[3,4]·[0,1]^T = 0+4=4$ and $[3,4]·[1,0]^T = 3+0=3$.",
+          "insight": "Matrix multiplication: each entry is dot product of corresponding row from first matrix and column from second."
+        },
+        "incorrect": {
+          "1": "Can't just multiply element-wise! Use row × column dot products.",
+          "2": "Check calculations. $(AB)_{11} = 1(0)+2(1) = 2$, not 0."
+        }
+      },
+      "resultState": {
+        "description": "Found AB"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate BA."
+      },
+      "prompt": {
+        "question": "What is $BA$?",
+        "hint": "$(BA)_{11} = 0(1) + 1(3) = 3$, $(BA)_{12} = 0(2) + 1(4) = 4$, etc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$BA = \\begin{pmatrix} 3 & 4 \\\\ 1 & 2 \\end{pmatrix}$"
+        },
+        {
+          "id": "b",
+          "text": "$BA = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}$ (same as AB)"
+        },
+        {
+          "id": "c",
+          "text": "$BA = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ (just returns A)"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $B$ row 1 × $A$ columns: $[0,1]·[1,3]^T = 3$, $[0,1]·[2,4]^T = 4$. $B$ row 2 × $A$ columns: $[1,0]·[1,3]^T = 1$, $[1,0]·[2,4]^T = 2$.",
+          "insight": "$BA$ swaps the rows of $A$! Matrix $B = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$ is a permutation matrix."
+        },
+        "incorrect": {
+          "1": "Order matters! $BA$ is different from $AB$ in general.",
+          "2": "Not quite. $B$ as a permutation matrix swaps rows: row 1 becomes row 2, row 2 becomes row 1."
+        }
+      },
+      "resultState": {
+        "description": "Found BA"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Compare AB and BA."
+      },
+      "prompt": {
+        "question": "Are $AB$ and $BA$ equal?",
+        "hint": "$AB = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}$ but $BA = \\begin{pmatrix} 3 & 4 \\\\ 1 & 2 \\end{pmatrix}$. They're different!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No, $AB \\neq BA$. Matrix multiplication is NOT commutative."
+        },
+        {
+          "id": "b",
+          "text": "Yes, $AB = BA$ always"
+        },
+        {
+          "id": "c",
+          "text": "They're transposes of each other"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! $AB \\neq BA$. Matrix multiplication is generally NOT commutative. Order matters!",
+          "insight": "Important exception: some matrices do commute (e.g., identity matrix, or diagonal matrices with each other). But in general, $AB \\neq BA$."
+        },
+        "incorrect": {
+          "1": "Not in general! We just showed $AB \\neq BA$ for these specific matrices.",
+          "2": "Check: $(AB)^T = \\begin{pmatrix} 2 & 4 \\\\ 1 & 3 \\end{pmatrix} \\neq BA$. They're not transposes."
+        }
+      },
+      "resultState": {
+        "description": "Confirmed non-commutativity"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Matrix multiplication: $(AB)_{ij} = \\sum_k A_{ik}B_{kj}$ (row × column)",
+      "$AB = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}$ but $BA = \\begin{pmatrix} 3 & 4 \\\\ 1 & 2 \\end{pmatrix}$",
+      "Matrix multiplication is NOT commutative: $AB \\neq BA$ in general",
+      "Order matters! Always check which matrix multiplies which",
+      "Associative: $(AB)C = A(BC)$, but not commutative: $AB \\neq BA$"
+    ],
+    "fullSolution": "AB: [[1,2],[3,4]]·[[0,1],[1,0]] = [[2,1],[4,3]]. BA: [[0,1],[1,0]]·[[1,2],[3,4]] = [[3,4],[1,2]]. Since AB ≠ BA, matrix multiplication is not commutative.",
+    "relatedProblems": [
+      "linear-algebra-matrix-inverse-2x2",
+      "linear-algebra-eigenvalue-2x2"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Matrix Multiplication",
+      "url": "https://www.youtube.com/watch?v=vzt9c7iWPxs",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Matrix Multiplication",
+      "url": "https://brilliant.org/wiki/matrix-multiplication/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Matrix Multiplication",
+      "url": "https://www.youtube.com/watch?v=OMA2Mwo0aZg",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

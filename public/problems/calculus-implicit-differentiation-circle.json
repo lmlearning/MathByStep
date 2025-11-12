@@ -1,0 +1,175 @@
+{
+  "id": "calculus-implicit-differentiation-circle",
+  "type": "problem",
+  "title": "Implicit Differentiation - Circle",
+  "topic": "Calculus",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "calculus",
+    "implicit-differentiation",
+    "derivatives",
+    "related-rates"
+  ],
+  "statement": {
+    "text": "Find $\\frac{dy}{dx}$ for the circle $x^2 + y^2 = 25$ using implicit differentiation."
+  },
+  "objectives": [
+    "Apply implicit differentiation",
+    "Handle dependent variables",
+    "Solve for derivative"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Differentiate both sides with respect to x."
+      },
+      "prompt": {
+        "question": "When differentiating $x^2 + y^2 = 25$, what do we get?",
+        "hint": "$\\frac{d}{dx}(x^2) = 2x$ and $\\frac{d}{dx}(y^2) = 2y\\frac{dy}{dx}$ by chain rule"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x + 2y\\frac{dy}{dx} = 0$"
+        },
+        {
+          "id": "b",
+          "text": "$2x + 2y = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$x^2 + 2y\\frac{dy}{dx} = 0$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! $\\frac{d}{dx}(x^2) = 2x$, $\\frac{d}{dx}(y^2) = 2y\\frac{dy}{dx}$ (chain rule since $y$ depends on $x$), and $\\frac{d}{dx}(25) = 0$.",
+          "insight": "For $y^2$, we treat $y$ as a function of $x$, so we need the chain rule: derivative of outer times derivative of inner."
+        },
+        "incorrect": {
+          "1": "Missing $\\frac{dy}{dx}$ when differentiating $y^2$. Since $y$ depends on $x$, we need chain rule!",
+          "2": "Differentiate $x^2$ to get $2x$, not keep it as $x^2$."
+        }
+      },
+      "resultState": {
+        "description": "Differentiated implicitly"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Solve for $\\frac{dy}{dx}$."
+      },
+      "prompt": {
+        "question": "Isolate $\\frac{dy}{dx}$ from $2x + 2y\\frac{dy}{dx} = 0$",
+        "hint": "$2y\\frac{dy}{dx} = -2x$, so $\\frac{dy}{dx} = -\\frac{2x}{2y} = -\\frac{x}{y}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{dy}{dx} = \\frac{x}{y}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{dy}{dx} = -\\frac{y}{x}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Rearrange: $2y\\frac{dy}{dx} = -2x$, then divide by $2y$: $\\frac{dy}{dx} = -\\frac{x}{y}$.",
+          "insight": "The slope at any point $(x,y)$ on the circle is $-\\frac{x}{y}$. Notice: it's undefined when $y=0$ (vertical tangent at $x = \\pm 5$)."
+        },
+        "incorrect": {
+          "1": "Don't forget the negative sign! $2y\\frac{dy}{dx} = -2x$, not $+2x$.",
+          "2": "Be careful: divide both sides by $2y$ to get $\\frac{dy}{dx} = -\\frac{x}{y}$, not $-\\frac{y}{x}$."
+        }
+      },
+      "resultState": {
+        "description": "Found dy/dx = -x/y"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Verify with a specific point."
+      },
+      "prompt": {
+        "question": "What is the slope at point $(3, 4)$?",
+        "hint": "$\\frac{dy}{dx}\\bigg|_{(3,4)} = -\\frac{3}{4}$. Check: $3^2 + 4^2 = 9 + 16 = 25$ ✓"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Slope at $(3, 4)$ is $-\\frac{3}{4}$ (tangent line descends left to right)"
+        },
+        {
+          "id": "b",
+          "text": "Slope at $(3, 4)$ is $\\frac{3}{4}$"
+        },
+        {
+          "id": "c",
+          "text": "Slope at $(3, 4)$ is $-\\frac{4}{3}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! At $(3,4)$: $\\frac{dy}{dx} = -\\frac{3}{4}$. The tangent line has negative slope, descending as we move right along the circle's upper right arc.",
+          "insight": "Radius from origin to $(3,4)$ has slope $\\frac{4}{3}$. Tangent has slope $-\\frac{3}{4}$. Notice: $\\frac{4}{3} \\cdot (-\\frac{3}{4}) = -1$ (perpendicular!)."
+        },
+        "incorrect": {
+          "1": "The negative sign matters! At $(3,4)$ on the circle, the tangent slopes downward: $-\\frac{3}{4}$.",
+          "2": "Substitute into $-\\frac{x}{y}$: $-\\frac{3}{4}$, not $-\\frac{4}{3}$."
+        }
+      },
+      "resultState": {
+        "description": "Verified at specific point"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Implicit differentiation: differentiate both sides with respect to $x$",
+      "Use chain rule for $y^2$: $\\frac{d}{dx}(y^2) = 2y\\frac{dy}{dx}$",
+      "For $x^2 + y^2 = 25$: derivative is $\\frac{dy}{dx} = -\\frac{x}{y}$",
+      "Slope depends on the point: varies around the circle",
+      "Tangent line perpendicular to radius at any point"
+    ],
+    "fullSolution": "Differentiate both sides: d/dx(x² + y²) = d/dx(25). Get: 2x + 2y(dy/dx) = 0. Solve for dy/dx: 2y(dy/dx) = -2x, so dy/dx = -x/y. At (3,4): dy/dx = -3/4.",
+    "relatedProblems": [
+      "calculus-chain-rule-composition",
+      "calculus-related-rates"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=qb40J4N1fa4",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Implicit Differentiation",
+      "url": "https://brilliant.org/wiki/implicit-differentiation/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Implicit Differentiation",
+      "url": "https://www.youtube.com/watch?v=qNjtzYkcx3s",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}

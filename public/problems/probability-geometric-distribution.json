@@ -1,0 +1,175 @@
+{
+  "id": "probability-geometric-distribution",
+  "type": "problem",
+  "title": "Geometric Distribution - First Success",
+  "topic": "Probability",
+  "difficulty": 3,
+  "estimatedTime": 11,
+  "tags": [
+    "probability",
+    "geometric-distribution",
+    "expected-value",
+    "independent-trials"
+  ],
+  "statement": {
+    "text": "You roll a fair die repeatedly until you get a 6. What is the probability that you need exactly 3 rolls? What is the expected number of rolls?"
+  },
+  "objectives": [
+    "Apply geometric distribution",
+    "Calculate probability of first success",
+    "Find expected value"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify the scenario as geometric distribution."
+      },
+      "prompt": {
+        "question": "What makes this a geometric distribution?",
+        "hint": "Independent trials, constant success probability $p = \\frac{1}{6}$, counting trials until first success"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Independent trials with constant probability, counting until first success"
+        },
+        {
+          "id": "b",
+          "text": "Fixed number of trials with varying success probability"
+        },
+        {
+          "id": "c",
+          "text": "This is a binomial distribution"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! Geometric distribution: independent trials, each with same success probability $p$, counting trials until first success.",
+          "insight": "Key difference from binomial: we don't know how many trials in advance. We stop when we succeed."
+        },
+        "incorrect": {
+          "1": "Each die roll has the same $\\frac{1}{6}$ probability of rolling a 6, not varying probability.",
+          "2": "Binomial counts successes in a fixed number of trials. Geometric counts trials until first success."
+        }
+      },
+      "resultState": {
+        "description": "Recognized geometric distribution"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Calculate probability of exactly 3 rolls."
+      },
+      "prompt": {
+        "question": "What's the probability of getting first 6 on exactly the 3rd roll?",
+        "hint": "Need to fail twice then succeed: $(\\frac{5}{6})(\\frac{5}{6})(\\frac{1}{6}) = \\frac{25}{216}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(X=3) = (\\frac{5}{6})^2 \\cdot \\frac{1}{6} = \\frac{25}{216} \\approx 11.6\\%$"
+        },
+        {
+          "id": "b",
+          "text": "$P(X=3) = (\\frac{1}{6})^3 = \\frac{1}{216}$"
+        },
+        {
+          "id": "c",
+          "text": "$P(X=3) = \\frac{1}{6}$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Geometric distribution: $P(X=k) = (1-p)^{k-1} \\cdot p$. Here: $P(X=3) = (\\frac{5}{6})^2 \\cdot \\frac{1}{6} = \\frac{25}{216}$.",
+          "insight": "Pattern: fail $(k-1)$ times with probability $(1-p)$, then succeed once with probability $p$."
+        },
+        "incorrect": {
+          "1": "This would be if we needed three 6's in a row. We only need one 6 on the third roll, after two non-6's.",
+          "2": "Success probability changes with number of attempts. It's $(\\frac{5}{6})^{k-1} \\cdot \\frac{1}{6}$, not constant."
+        }
+      },
+      "resultState": {
+        "description": "Found P(X=3) = 25/216"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Calculate expected number of rolls."
+      },
+      "prompt": {
+        "question": "What is the expected number of rolls until first 6?",
+        "hint": "For geometric distribution: $E[X] = \\frac{1}{p} = \\frac{1}{1/6} = 6$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$E[X] = 6$ rolls (expect to roll 6 times on average)"
+        },
+        {
+          "id": "b",
+          "text": "$E[X] = 3.5$ rolls"
+        },
+        {
+          "id": "c",
+          "text": "$E[X] = 1$ roll"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Expected value for geometric distribution: $E[X] = \\frac{1}{p} = \\frac{1}{1/6} = 6$ rolls on average.",
+          "insight": "Intuition: if success probability is $\\frac{1}{6}$, we expect to try about 6 times. More generally, harder events (smaller $p$) require more attempts: $E[X] = \\frac{1}{p}$."
+        },
+        "incorrect": {
+          "1": "That's the expected value of a single die roll ($\\frac{1+2+3+4+5+6}{6} = 3.5$), not the expected number of rolls until a 6.",
+          "2": "If $E[X]=1$, we'd get a 6 on first try every time! But $P(X=1) = \\frac{1}{6} \\approx 17\\%$."
+        }
+      },
+      "resultState": {
+        "description": "Found E[X] = 6"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Geometric distribution: count trials until first success",
+      "PMF: $P(X=k) = (1-p)^{k-1} \\cdot p$ (fail $k-1$ times, then succeed)",
+      "Here: $P(X=3) = (\\frac{5}{6})^2 \\cdot \\frac{1}{6} = \\frac{25}{216} \\approx 11.6\\%$",
+      "Expected value: $E[X] = \\frac{1}{p} = 6$ rolls",
+      "Memoryless property: past failures don't affect future probabilities"
+    ],
+    "fullSolution": "Geometric distribution with p = 1/6. P(first 6 on roll 3) = P(not-6)·P(not-6)·P(6) = (5/6)²·(1/6) = 25/216 ≈ 11.6%. Expected rolls: E[X] = 1/p = 1/(1/6) = 6.",
+    "relatedProblems": [
+      "probability-conditional-independence",
+      "probability-binomial-distribution"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Geometric Distribution",
+      "url": "https://www.youtube.com/watch?v=JRDuXp6c0Zc",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Geometric Distribution",
+      "url": "https://brilliant.org/wiki/geometric-distribution/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Geometric Distribution",
+      "url": "https://www.youtube.com/watch?v=1cdYWLM4jBo",
+      "source": "jbstatistics"
+    }
+  ]
+}

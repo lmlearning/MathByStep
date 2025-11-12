@@ -1,0 +1,176 @@
+{
+  "id": "algebra-rational-equation-solve",
+  "type": "problem",
+  "title": "Solving Rational Equations",
+  "topic": "Algebra",
+  "difficulty": 3,
+  "estimatedTime": 12,
+  "tags": [
+    "algebra",
+    "rational-equations",
+    "lcd",
+    "extraneous-solutions"
+  ],
+  "statement": {
+    "text": "Solve: $\\frac{3}{x} + \\frac{2}{x-1} = 1$"
+  },
+  "objectives": [
+    "Find LCD of rational expressions",
+    "Clear denominators",
+    "Check for extraneous solutions"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "order": 1,
+      "currentState": {
+        "description": "Identify restrictions and find LCD."
+      },
+      "prompt": {
+        "question": "What is the LCD and what are the restrictions?",
+        "hint": "LCD is $x(x-1)$. Restrictions: $x \\neq 0$ and $x \\neq 1$ (can't divide by zero)"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "LCD = $x(x-1)$, restrictions: $x \\neq 0, 1$"
+        },
+        {
+          "id": "b",
+          "text": "LCD = $x + x - 1 = 2x - 1$"
+        },
+        {
+          "id": "c",
+          "text": "LCD = $x - 1$, restriction: $x \\neq 1$ only"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Correct! LCD is the product $x(x-1)$ since the denominators are coprime. Restrictions come from setting each denominator to zero.",
+          "insight": "Always identify restrictions first! These values make the equation undefined and can't be solutions."
+        },
+        "incorrect": {
+          "1": "LCD for fractions is found by multiplication (or LCM), not addition of denominators.",
+          "2": "Need both restrictions! Both $x$ and $x-1$ appear as denominators."
+        }
+      },
+      "resultState": {
+        "description": "Found LCD and restrictions"
+      }
+    },
+    {
+      "id": "step-2",
+      "order": 2,
+      "currentState": {
+        "description": "Multiply both sides by LCD to clear denominators."
+      },
+      "prompt": {
+        "question": "What equation results after clearing denominators?",
+        "hint": "Multiply by $x(x-1)$: $3(x-1) + 2x = x(x-1)$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$3(x-1) + 2x = x(x-1)$"
+        },
+        {
+          "id": "b",
+          "text": "$3 + 2 = x(x-1)$"
+        },
+        {
+          "id": "c",
+          "text": "$3(x-1) + 2x = 1$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Perfect! Multiply each term by LCD $x(x-1)$:\n$\\frac{3}{x} \\cdot x(x-1) + \\frac{2}{x-1} \\cdot x(x-1) = 1 \\cdot x(x-1)$\nSimplifies to: $3(x-1) + 2x = x(x-1)$.",
+          "insight": "Multiplying by LCD clears all denominators, converting to a polynomial equation."
+        },
+        "incorrect": {
+          "1": "Need to multiply EACH term (including the right side) by the LCD.",
+          "2": "Don't forget to multiply the right side by LCD too! Should be $x(x-1)$, not just 1."
+        }
+      },
+      "resultState": {
+        "description": "Cleared denominators"
+      }
+    },
+    {
+      "id": "step-3",
+      "order": 3,
+      "currentState": {
+        "description": "Solve the resulting equation."
+      },
+      "prompt": {
+        "question": "Solve: $3(x-1) + 2x = x(x-1)$",
+        "hint": "Expand: $3x - 3 + 2x = x^2 - x$. Rearrange: $x^2 - 6x + 3 = 0$. Use quadratic formula: $x = \\frac{6 \\pm \\sqrt{36-12}}{2} = \\frac{6 \\pm \\sqrt{24}}{2} = 3 \\pm \\sqrt{6}$"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 3 + \\sqrt{6}$ or $x = 3 - \\sqrt{6}$ (both approximately 5.45 and 0.55)"
+        },
+        {
+          "id": "b",
+          "text": "$x = 3$ only"
+        },
+        {
+          "id": "c",
+          "text": "$x = 1$ or $x = 3$"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "feedback": {
+        "correct": {
+          "explanation": "Excellent! Expand: $5x - 3 = x^2 - x$. Rearrange: $x^2 - 6x + 3 = 0$. Quadratic formula: $x = \\frac{6 \\pm \\sqrt{24}}{2} = 3 \\pm \\sqrt{6}$. Both solutions are valid (neither is 0 or 1).",
+          "insight": "Always check solutions against restrictions! Here $3 \\pm \\sqrt{6}$ are both valid since neither equals 0 or 1."
+        },
+        "incorrect": {
+          "1": "$x = 3$ doesn't satisfy the original equation. Check: $\\frac{3}{3} + \\frac{2}{2} = 1 + 1 = 2 \\neq 1$.",
+          "2": "$x = 1$ is a restriction (makes denominator zero), not a solution!"
+        }
+      },
+      "resultState": {
+        "description": "Found x = 3 ± √6"
+      }
+    }
+  ],
+  "summary": {
+    "keyInsights": [
+      "Rational equations: find LCD and clear denominators",
+      "Always identify restrictions first: values that make denominators zero",
+      "After clearing denominators: $3(x-1) + 2x = x(x-1)$",
+      "Simplifies to: $x^2 - 6x + 3 = 0$",
+      "Solutions: $x = 3 + \\sqrt{6} \\approx 5.45$ and $x = 3 - \\sqrt{6} \\approx 0.55$",
+      "Both solutions are valid (neither equals 0 or 1)"
+    ],
+    "fullSolution": "LCD = x(x-1), restrictions: x ≠ 0, 1. Multiply by LCD: 3(x-1) + 2x = x(x-1). Expand: 3x-3+2x = x²-x, so 5x-3 = x²-x. Rearrange: x²-6x+3 = 0. Quadratic formula: x = (6±√24)/2 = 3±√6. Both valid since ≠ 0, 1.",
+    "relatedProblems": [
+      "algebra-quadratic-formula",
+      "algebra-system-elimination-method"
+    ]
+  },
+  "learningResources": [
+    {
+      "type": "video",
+      "title": "Rational Equations",
+      "url": "https://www.youtube.com/watch?v=ILbx7rOJB-w",
+      "source": "Khan Academy"
+    },
+    {
+      "type": "article",
+      "title": "Solving Rational Equations",
+      "url": "https://brilliant.org/wiki/rational-equations/",
+      "source": "Brilliant"
+    },
+    {
+      "type": "video",
+      "title": "Solving Rational Equations",
+      "url": "https://www.youtube.com/watch?v=tePRlQwe_No",
+      "source": "The Organic Chemistry Tutor"
+    }
+  ]
+}
